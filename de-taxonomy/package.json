@@ -1,0 +1,21 @@
+{
+  "name": "de-curriculum-taxonomy",
+  "version": "0.1.0",
+  "description": "A graph-structured taxonomy of the German school curriculum (Vorschule to Klasse 13, Gymnasium from Klasse 7), modelled on the Marble os-taxonomy, with a crosswalk to it.",
+  "private": true,
+  "license": "(MIT AND ODbL-1.0 AND CC-BY-SA-4.0)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codingarchitect-wq/lernlandkarte.git"
+  },
+  "type": "module",
+  "scripts": {
+    "check": "node tools/check-authoring.mjs --all --quiet",
+    "build": "node tools/build.mjs",
+    "validate": "node scripts/validate.mjs",
+    "compare": "node scripts/compare.mjs && node scripts/build-explorer.mjs",
+    "all": "npm run build && npm run validate && npm run browser && npm run graph && npm run compare",
+    "browser": "node scripts/build-browser.mjs",
+    "graph": "node scripts/build-graph.mjs"
+  }
+}

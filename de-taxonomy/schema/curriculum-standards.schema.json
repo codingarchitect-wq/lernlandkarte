@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "German Curriculum Taxonomy — curriculum standards",
+  "type": "object", "required": ["curriculumCount", "curricula"], "additionalProperties": false,
+  "properties": {
+    "note": { "type": "string" }, "curriculumCount": { "type": "integer" },
+    "curricula": { "type": "array", "items": {
+      "type": "object", "required": ["slug", "country", "name", "version", "textIncluded", "topicCount", "topics"], "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" }, "country": { "type": "string" }, "region": { "type": ["string", "null"] },
+        "name": { "type": "string" }, "version": { "type": "string" }, "sourceUrl": { "type": ["string", "null"] },
+        "level": { "type": ["string", "null"] }, "textIncluded": { "type": "boolean" }, "license": { "type": "string" },
+        "notes": { "type": ["string", "null"] }, "topicCount": { "type": "integer" },
+        "topics": { "type": "array", "items": {
+          "type": "object", "required": ["key", "code"], "additionalProperties": false,
+          "properties": { "key": { "type": "string" }, "code": { "type": "string" }, "data": { "type": "object" } } } }
+      } } }
+  }
+}

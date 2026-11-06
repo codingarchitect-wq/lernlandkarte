@@ -1,0 +1,4002 @@
+{
+ "summary": {
+  "bm25": 215,
+  "override": 88,
+  "dropped-by-override": 11
+ },
+ "droppedForCycles": [],
+ "rows": [
+  {
+   "topic": "de-le-nichtlineare-texte",
+   "subject": "Mathematik",
+   "concept": "reading simple tables and bar charts",
+   "strength": "soft",
+   "resolvedTo": "ma-dz-saeulendiagramm",
+   "how": "bm25",
+   "score": 17.83,
+   "alternatives": [
+    "ma-dz-saeulendiagramm (17.8)",
+    "ma-dz-diagramme-lesen (9.3)",
+    "ma-dz-tabellen (8.8)"
+   ]
+  },
+  {
+   "topic": "en-lv-wortbilder",
+   "subject": "Deutsch",
+   "concept": "decoding written words in German (alphabetic reading)",
+   "strength": "hard",
+   "resolvedTo": "de-sse-erlesen",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "en-sc-abschreiben",
+   "subject": "Deutsch",
+   "concept": "fluent handwriting of letters and words",
+   "strength": "hard",
+   "resolvedTo": "de-sf-fluessig-leserlich",
+   "how": "bm25",
+   "score": 16.49,
+   "alternatives": [
+    "de-sf-fluessig-leserlich (16.5)",
+    "de-sf-verbundene-schrift (11.8)",
+    "de-sf-stifthaltung (6.6)"
+   ]
+  },
+  {
+   "topic": "en-sc-texte",
+   "subject": "Deutsch",
+   "concept": "planning and structuring a short text",
+   "strength": "soft",
+   "resolvedTo": "de-tv-planen",
+   "how": "bm25",
+   "score": 8.31,
+   "alternatives": [
+    "de-tv-planen (8.3)",
+    "de-tv-schreibziel-adressat (7.0)",
+    "de-sz-kurzvortrag (6.7)"
+   ]
+  },
+  {
+   "topic": "en-ws-zahlen-farben",
+   "subject": "Mathematik",
+   "concept": "counting and number words to 20",
+   "strength": "soft",
+   "resolvedTo": "ma-zo-zahlwortreihe",
+   "how": "bm25",
+   "score": 15.18,
+   "alternatives": [
+    "ma-zo-zahlwortreihe (15.2)",
+    "ma-zo-zaehlprinzipien (13.7)",
+    "ma-zo-zahlraum-20 (11.3)"
+   ]
+  },
+  {
+   "topic": "en-ws-uhrzeit-tagesablauf",
+   "subject": "Mathematik",
+   "concept": "reading an analogue clock",
+   "strength": "hard",
+   "resolvedTo": "ma-gm-uhr-minuten",
+   "how": "bm25",
+   "score": 15.96,
+   "alternatives": [
+    "ma-gm-uhr-minuten (16.0)",
+    "ma-gm-uhr-lesen (15.2)",
+    "ma-dz-tabellen (3.6)"
+   ]
+  },
+  {
+   "topic": "en-gr-sprachvergleich",
+   "subject": "Deutsch",
+   "concept": "capitalisation of nouns and plural forms in German",
+   "strength": "soft",
+   "resolvedTo": "de-gr-singular-plural",
+   "how": "bm25",
+   "score": 15.93,
+   "alternatives": [
+    "de-gr-singular-plural (15.9)",
+    "de-rs-nomen-gross (13.5)",
+    "de-rs-abstrakta-gross (12.8)"
+   ]
+  },
+  {
+   "topic": "en-gr-wortstellung",
+   "subject": "Deutsch",
+   "concept": "verb-second and verb-final word order in German sentences",
+   "strength": "soft",
+   "resolvedTo": "de-gr-verbstellung",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "en-au-buchstabe-laut",
+   "subject": "Deutsch",
+   "concept": "German alphabet and letter–sound correspondences",
+   "strength": "hard",
+   "resolvedTo": "de-sse-buchstaben-laut",
+   "how": "bm25",
+   "score": 17.04,
+   "alternatives": [
+    "de-sse-buchstaben-laut (17.0)",
+    "de-sse-alphabet (15.0)",
+    "de-sse-anlauttabelle (11.0)"
+   ]
+  },
+  {
+   "topic": "en-ik-laender",
+   "subject": "Sachunterricht",
+   "concept": "finding places on a world map or globe",
+   "strength": "soft",
+   "resolvedTo": "su-ro-erde-globus",
+   "how": "bm25",
+   "score": 15.6,
+   "alternatives": [
+    "su-ro-erde-globus (15.6)",
+    "su-ro-digitale-karten (10.4)",
+    "su-ro-planquadrate (10.1)"
+   ]
+  },
+  {
+   "topic": "en-sl-woerterbuch",
+   "subject": "Deutsch",
+   "concept": "alphabetical order and looking up words in a German dictionary",
+   "strength": "hard",
+   "resolvedTo": "de-rs-woerterbuch",
+   "how": "bm25",
+   "score": 24.92,
+   "alternatives": [
+    "de-rs-woerterbuch (24.9)",
+    "de-sse-alphabet (17.7)",
+    "de-rs-digitale-hilfen (13.7)"
+   ]
+  },
+  {
+   "topic": "in-id-caesar",
+   "subject": "Deutsch",
+   "concept": "alphabet in order",
+   "strength": "hard",
+   "resolvedTo": "de-sse-alphabet",
+   "how": "bm25",
+   "score": 15.53,
+   "alternatives": [
+    "de-sse-alphabet (15.5)",
+    "de-sz-erlebnisse-erzaehlen (3.9)",
+    "de-tv-anleitung (3.8)"
+   ]
+  },
+  {
+   "topic": "in-id-bits-bytes",
+   "subject": "Mathematik",
+   "concept": "decimal place-value system",
+   "strength": "hard",
+   "resolvedTo": "ma-zo-stellenwerttafel",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "in-al-pfeilcode",
+   "subject": "Mathematik",
+   "concept": "left/right orientation and positions on a grid",
+   "strength": "hard",
+   "resolvedTo": "ma-rf-lagebeziehungen",
+   "how": "bm25",
+   "score": 12.69,
+   "alternatives": [
+    "ma-rf-lagebeziehungen (12.7)",
+    "ma-rf-ebene-figuren (8.2)",
+    "ma-rf-wege-beschreiben (5.4)"
+   ]
+  },
+  {
+   "topic": "in-pp-tastatur",
+   "subject": "Deutsch",
+   "concept": "letter knowledge and writing simple words",
+   "strength": "hard",
+   "resolvedTo": "de-sse-lautgetreu-schreiben",
+   "how": "bm25",
+   "score": 8.59,
+   "alternatives": [
+    "de-sse-lautgetreu-schreiben (8.6)",
+    "de-rs-mitsprechen (8.0)",
+    "de-sf-druckschrift (7.8)"
+   ]
+  },
+  {
+   "topic": "in-pp-praesentation",
+   "subject": "Deutsch",
+   "concept": "giving a short oral presentation",
+   "strength": "soft",
+   "resolvedTo": "de-sz-kurzvortrag",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "in-ir-kindersuchmaschinen",
+   "subject": "Deutsch",
+   "concept": "reading short informational texts",
+   "strength": "hard",
+   "resolvedTo": "de-sse-saetze-erlesen",
+   "how": "bm25",
+   "score": 8.2,
+   "alternatives": [
+    "de-sse-saetze-erlesen (8.2)",
+    "de-tv-erste-texte (7.4)",
+    "de-tm-lesetagebuch (7.4)"
+   ]
+  },
+  {
+   "topic": "in-kk-cybermobbing",
+   "subject": "Sachunterricht",
+   "concept": "recognising bullying and asking for help",
+   "strength": "soft",
+   "resolvedTo": "su-dg-konflikte",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "in-ss-kostenfallen",
+   "subject": "Mathematik",
+   "concept": "calculating with money (Euro and Cent)",
+   "strength": "soft",
+   "resolvedTo": "ma-gm-geld-rechnen",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "bi-sw-enzymaktivitaet",
+   "subject": "Mathematik",
+   "concept": "reading and interpreting graphs of functions (saturation curves, limits)",
+   "strength": "soft",
+   "resolvedTo": "ma-ms-graphen-interpretieren",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "bi-sw-chloroplast-pigmente",
+   "subject": "Physik",
+   "concept": "visible light spectrum and colour (wavelength)",
+   "strength": "soft",
+   "resolvedTo": "ph-op-farben",
+   "how": "bm25",
+   "score": 19.29,
+   "alternatives": [
+    "ph-op-farben (19.3)",
+    "ph-op-em-spektrum (17.4)",
+    "ph-sw-doppelspalt-gitter (11.9)"
+   ]
+  },
+  {
+   "topic": "bi-eb-bewerten",
+   "subject": "Religion & Ethik",
+   "concept": "ethical argument types (consequentialist and duty-based reasoning)",
+   "strength": "soft",
+   "resolvedTo": "re-wz-verantwortung",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "bi-iv-auge",
+   "subject": "Physik",
+   "concept": "converging and diverging lenses and image formation",
+   "strength": "hard",
+   "resolvedTo": "ph-op-sammellinse-bild",
+   "how": "bm25",
+   "score": 33.55,
+   "alternatives": [
+    "ph-op-sammellinse-bild (33.5)",
+    "ph-op-auge-sehfehler (27.0)",
+    "ph-op-optische-instrumente (11.4)"
+   ]
+  },
+  {
+   "topic": "bi-iv-ruhepotenzial",
+   "subject": "Physik",
+   "concept": "electric charge, potential difference and voltage",
+   "strength": "hard",
+   "resolvedTo": "ph-el-spannung",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "bi-ge-mendel",
+   "subject": "Mathematik",
+   "concept": "probabilities of combined events with tree diagrams",
+   "strength": "soft",
+   "resolvedTo": "ma-dz-wahrscheinlichkeitsbaum",
+   "how": "bm25",
+   "score": 18.12,
+   "alternatives": [
+    "ma-dz-wahrscheinlichkeitsbaum (18.1)",
+    "ma-dz-verknuepfte-ereignisse (16.8)",
+    "ma-dz-ziehen-ohne-zuruecklegen (14.3)"
+   ]
+  },
+  {
+   "topic": "bi-ge-pcr-gelelektrophorese",
+   "subject": "Mathematik",
+   "concept": "exponential growth and powers of 2",
+   "strength": "soft",
+   "resolvedTo": "ma-ms-exponentielles-wachstum",
+   "how": "bm25",
+   "score": 12.2,
+   "alternatives": [
+    "ma-ms-exponentielles-wachstum (12.2)",
+    "ma-an-wachstumsmodelle (11.3)",
+    "ma-zo-logarithmus (10.3)"
+   ]
+  },
+  {
+   "topic": "bi-ev-populationsgenetik",
+   "subject": "Mathematik",
+   "concept": "binomial expansion and solving quadratic equations",
+   "strength": "hard",
+   "resolvedTo": "ma-ms-binomische-formeln",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "bi-oe-kohlenstoffkreislauf",
+   "subject": "Erdkunde",
+   "concept": "causes and consequences of climate change (greenhouse effect)",
+   "strength": "soft",
+   "resolvedTo": "su-ne-klimawandel",
+   "how": "bm25",
+   "score": 22.52,
+   "alternatives": [
+    "su-ne-klimawandel (22.5)",
+    "ek-wi-ruhrgebiet (8.9)",
+    "ek-lz-regenwald-nutzung (7.1)"
+   ]
+  },
+  {
+   "topic": "bi-oe-populationswachstum",
+   "subject": "Mathematik",
+   "concept": "exponential functions and growth models",
+   "strength": "hard",
+   "resolvedTo": "ma-an-wachstumsmodelle",
+   "how": "bm25",
+   "score": 16.03,
+   "alternatives": [
+    "ma-an-wachstumsmodelle (16.0)",
+    "ma-an-e-funktion (14.2)",
+    "ma-ms-exponentialfunktion (13.9)"
+   ]
+  },
+  {
+   "topic": "ch-ap-kern-huelle",
+   "subject": "Physik",
+   "concept": "electric charge: like charges repel, unlike charges attract",
+   "strength": "hard",
+   "resolvedTo": "ph-el-ladung",
+   "how": "bm25",
+   "score": 31.7,
+   "alternatives": [
+    "ph-el-ladung (31.7)",
+    "su-un-magnetpole (19.2)",
+    "ph-el-stromstaerke (9.9)"
+   ]
+  },
+  {
+   "topic": "ch-cr-stoffmenge",
+   "subject": "Mathematik",
+   "concept": "scientific notation with powers of ten",
+   "strength": "hard",
+   "resolvedTo": "ma-zo-wissenschaftliche-schreibweise",
+   "how": "bm25",
+   "score": 13.55,
+   "alternatives": [
+    "ma-zo-wissenschaftliche-schreibweise (13.5)",
+    "ma-zo-potenzen (10.0)",
+    "ma-zo-mehrsystemblocke (7.7)"
+   ]
+  },
+  {
+   "topic": "ch-en-kalorimetrie",
+   "subject": "Physik",
+   "concept": "specific heat capacity and Q = m·c·ΔT",
+   "strength": "hard",
+   "resolvedTo": "ph-wl-waermekapazitaet",
+   "how": "bm25",
+   "score": 20.74,
+   "alternatives": [
+    "ph-wl-waermekapazitaet (20.7)",
+    "ph-en-energiespeicher (8.9)",
+    "su-ta-bruecken (6.7)"
+   ]
+  },
+  {
+   "topic": "ch-rg-reaktionsgeschwindigkeit",
+   "subject": "Mathematik",
+   "concept": "average and instantaneous rate of change (difference quotient, tangent slope)",
+   "strength": "hard",
+   "resolvedTo": "ma-an-lokale-aenderungsrate",
+   "how": "bm25",
+   "score": 34.76,
+   "alternatives": [
+    "ma-an-lokale-aenderungsrate (34.8)",
+    "ma-an-mittlere-aenderungsrate (33.6)",
+    "ma-an-wendepunkte (13.9)"
+   ]
+  },
+  {
+   "topic": "ch-rg-mwg",
+   "subject": "Mathematik",
+   "concept": "solving equations including quadratic equations",
+   "strength": "hard",
+   "resolvedTo": "ma-ms-loesungsformel",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ch-sb-ph-berechnung",
+   "subject": "Mathematik",
+   "concept": "logarithms to base 10",
+   "strength": "hard",
+   "resolvedTo": "ma-zo-logarithmus",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ch-re-galvanisches-element",
+   "subject": "Physik",
+   "concept": "electric current and voltage in a circuit",
+   "strength": "soft",
+   "resolvedTo": "ph-el-spannung",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ch-re-faraday",
+   "subject": "Physik",
+   "concept": "electric charge as current times time (Q = I·t)",
+   "strength": "hard",
+   "resolvedTo": "ph-el-stromstaerke",
+   "how": "bm25",
+   "score": 18.4,
+   "alternatives": [
+    "ph-el-stromstaerke (18.4)",
+    "ph-fe-kondensator-entladung (12.8)",
+    "ph-fe-elektrische-feldstaerke (11.4)"
+   ]
+  },
+  {
+   "topic": "ch-an-instrumentell",
+   "subject": "Mathematik",
+   "concept": "linear functions and reading values from a line of best fit",
+   "strength": "soft",
+   "resolvedTo": "ma-ms-funktionsmodelle-waehlen",
+   "how": "bm25",
+   "score": 16.37,
+   "alternatives": [
+    "ma-ms-funktionsmodelle-waehlen (16.4)",
+    "ma-an-lineare-approximation (14.5)",
+    "ma-ms-lineare-funktionen (10.6)"
+   ]
+  },
+  {
+   "topic": "ch-cg-treibhausgase",
+   "subject": "Erdkunde",
+   "concept": "the greenhouse effect and climate change",
+   "strength": "soft",
+   "resolvedTo": "ek-wk-treibhauseffekt",
+   "how": "bm25",
+   "score": 19.24,
+   "alternatives": [
+    "ek-wk-treibhauseffekt (19.2)",
+    "su-ne-klimawandel (18.4)",
+    "ek-wk-klimawandel-folgen (7.9)"
+   ]
+  },
+  {
+   "topic": "de-rs-fremdwortschreibung",
+   "subject": "Latein",
+   "concept": "Latin word roots and their meaning in loanwords",
+   "strength": "soft",
+   "resolvedTo": "la-sr-basissprache",
+   "how": "bm25",
+   "score": 10.46,
+   "alternatives": [
+    "la-sr-basissprache (10.5)",
+    "la-ws-wortbildung (7.1)",
+    "la-sr-sprachvergleich (5.5)"
+   ]
+  },
+  {
+   "topic": "de-lg-aufklaerung",
+   "subject": "Geschichte",
+   "concept": "Enlightenment and absolutism in the 18th century",
+   "strength": "soft",
+   "resolvedTo": "ge-re-aufklaerung",
+   "how": "bm25",
+   "score": 15.06,
+   "alternatives": [
+    "ge-re-aufklaerung (15.1)",
+    "ge-fn-absolutismus (6.6)",
+    "ge-hd-zeitrechnung (6.2)"
+   ]
+  },
+  {
+   "topic": "de-lg-barock",
+   "subject": "Geschichte",
+   "concept": "the Thirty Years' War (1618–1648)",
+   "strength": "soft",
+   "resolvedTo": "ge-fn-dreissigjaehriger-krieg",
+   "how": "bm25",
+   "score": 23.48,
+   "alternatives": [
+    "ge-fn-dreissigjaehriger-krieg (23.5)",
+    "ge-hd-zeitrechnung (6.6)",
+    "su-zw-zeitleiste (6.0)"
+   ]
+  },
+  {
+   "topic": "de-lg-klassik",
+   "subject": "Geschichte",
+   "concept": "the French Revolution of 1789 and its reception in Germany",
+   "strength": "soft",
+   "resolvedTo": "ge-re-franzoesische-revolution",
+   "how": "bm25",
+   "score": 20.6,
+   "alternatives": [
+    "ge-re-franzoesische-revolution (20.6)",
+    "ge-re-menschenrechte-1789 (11.7)",
+    "ge-ik-industrialisierung (8.2)"
+   ]
+  },
+  {
+   "topic": "de-lg-romantik",
+   "subject": "Musik",
+   "concept": "the Romantic art song (Lied) and settings of poems",
+   "strength": "soft",
+   "resolvedTo": "mu-ge-romantik",
+   "how": "bm25",
+   "score": 12.22,
+   "alternatives": [
+    "mu-ge-romantik (12.2)",
+    "mu-ge-vokalmusik-geschichte (10.6)",
+    "mu-hd-lied-wort-ton (9.8)"
+   ]
+  },
+  {
+   "topic": "de-lg-vormaerz",
+   "subject": "Geschichte",
+   "concept": "Restoration, Vormärz and the revolution of 1848/49",
+   "strength": "soft",
+   "resolvedTo": "ge-re-revolution-1848",
+   "how": "bm25",
+   "score": 21.85,
+   "alternatives": [
+    "ge-re-revolution-1848 (21.8)",
+    "ge-re-wiener-kongress (16.5)",
+    "ge-dd-partizipation (14.2)"
+   ]
+  },
+  {
+   "topic": "de-lg-naturalismus",
+   "subject": "Geschichte",
+   "concept": "industrialisation and the social question in the German Empire",
+   "strength": "soft",
+   "resolvedTo": "ge-ik-soziale-frage",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "de-lg-expressionismus",
+   "subject": "Geschichte",
+   "concept": "the First World War",
+   "strength": "soft",
+   "resolvedTo": "ge-iw-moderner-krieg",
+   "how": "bm25",
+   "score": 15.37,
+   "alternatives": [
+    "ge-iw-moderner-krieg (15.4)",
+    "ge-iw-julikrise (14.5)",
+    "ge-ns-zweiter-weltkrieg (10.6)"
+   ]
+  },
+  {
+   "topic": "de-lg-expressionismus",
+   "subject": "Kunst",
+   "concept": "Expressionist painting (Die Brücke, Der Blaue Reiter)",
+   "strength": "soft",
+   "resolvedTo": "ku-kg-klassische-moderne",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "de-lg-weimarer-republik",
+   "subject": "Geschichte",
+   "concept": "the Weimar Republic 1918–1933",
+   "strength": "soft",
+   "resolvedTo": "ge-wr-krisen-stabilisierung",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "de-lg-exilliteratur",
+   "subject": "Geschichte",
+   "concept": "the National Socialist dictatorship and persecution 1933–1945",
+   "strength": "hard",
+   "resolvedTo": "ge-ns-entrechtung",
+   "how": "bm25",
+   "score": 13.85,
+   "alternatives": [
+    "ge-ns-entrechtung (13.8)",
+    "ge-dd-ns-erklaerungen (10.2)",
+    "ge-dd-totalitarismus (9.3)"
+   ]
+  },
+  {
+   "topic": "de-lg-nachkriegsliteratur",
+   "subject": "Geschichte",
+   "concept": "Germany after 1945 and the Holocaust",
+   "strength": "hard",
+   "resolvedTo": "ge-gk-vergangenheitsbewaeltigung",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "de-lg-ost-west",
+   "subject": "Geschichte",
+   "concept": "the division of Germany and the GDR 1949–1990",
+   "strength": "hard",
+   "resolvedTo": "ge-nk-ddr",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "de-tm-intertextualitaet",
+   "subject": "Latein",
+   "concept": "Ovid's Metamorphoses and ancient myths",
+   "strength": "soft",
+   "resolvedTo": "la-li-ovid",
+   "how": "bm25",
+   "score": 17.38,
+   "alternatives": [
+    "la-li-ovid (17.4)",
+    "la-ku-rezeption (6.2)",
+    "la-ku-mythos (4.6)"
+   ]
+  },
+  {
+   "topic": "de-sr-rhetorik-rede",
+   "subject": "Politik und Wirtschaft",
+   "concept": "political communication and the role of speeches in democracy",
+   "strength": "soft",
+   "resolvedTo": "po-me-mediendemokratie",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "de-sr-sprachlenkung",
+   "subject": "Geschichte",
+   "concept": "National Socialist propaganda",
+   "strength": "soft",
+   "resolvedTo": "ge-ns-volksgemeinschaft-alltag",
+   "how": "bm25",
+   "score": 8.18,
+   "alternatives": [
+    "ge-ns-volksgemeinschaft-alltag (8.2)",
+    "ge-ik-kaiserreich (6.2)",
+    "ge-dd-ns-erklaerungen (5.8)"
+   ]
+  },
+  {
+   "topic": "de-sr-sprache-denken",
+   "subject": "Religion & Ethik",
+   "concept": "epistemology: how humans know reality (Philosophie)",
+   "strength": "soft",
+   "resolvedTo": "re-ew-rationalismus-empirismus",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "de-sr-sprachskepsis",
+   "subject": "Religion & Ethik",
+   "concept": "Nietzsche's philosophy and his critique of metaphysics",
+   "strength": "soft",
+   "resolvedTo": "re-et-moralkritik-nietzsche",
+   "how": "bm25",
+   "score": 16.04,
+   "alternatives": [
+    "re-et-moralkritik-nietzsche (16.0)",
+    "re-rw-religionskritik (10.6)",
+    "re-pm-philosophische-fragen (5.1)"
+   ]
+  },
+  {
+   "topic": "en-gr-passive",
+   "subject": "Deutsch",
+   "concept": "active and passive voice in German (Vorgangspassiv)",
+   "strength": "soft",
+   "resolvedTo": "de-gr-aktiv-passiv",
+   "how": "bm25",
+   "score": 30.34,
+   "alternatives": [
+    "de-gr-aktiv-passiv (30.3)",
+    "de-gr-passiv-formen (14.8)",
+    "de-sz-sprechweise (5.8)"
+   ]
+  },
+  {
+   "topic": "en-gr-reported-speech",
+   "subject": "Deutsch",
+   "concept": "indirect speech with Konjunktiv I",
+   "strength": "soft",
+   "resolvedTo": "de-gr-indirekte-rede",
+   "how": "bm25",
+   "score": 18.38,
+   "alternatives": [
+    "de-gr-indirekte-rede (18.4)",
+    "de-gr-konjunktiv-i (11.2)",
+    "de-gr-konjunktiv-ii (8.4)"
+   ]
+  },
+  {
+   "topic": "en-so-usa-geschichte",
+   "subject": "Geschichte",
+   "concept": "American Revolution and Declaration of Independence",
+   "strength": "soft",
+   "resolvedTo": null,
+   "how": "dropped-by-override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "en-so-politik-uk-usa",
+   "subject": "Politik und Wirtschaft",
+   "concept": "parliamentary democracy and separation of powers in Germany",
+   "strength": "soft",
+   "resolvedTo": "po-rs-rechtsstaat",
+   "how": "bm25",
+   "score": 14.27,
+   "alternatives": [
+    "po-rs-rechtsstaat (14.3)",
+    "po-me-medien-demokratie (5.5)",
+    "su-dg-wahlen (5.2)"
+   ]
+  },
+  {
+   "topic": "en-so-empire",
+   "subject": "Geschichte",
+   "concept": "European imperialism and colonialism in the 19th century",
+   "strength": "soft",
+   "resolvedTo": "ge-iw-imperialismus",
+   "how": "bm25",
+   "score": 12.6,
+   "alternatives": [
+    "ge-iw-imperialismus (12.6)",
+    "ge-nm-nation-imperium (8.2)",
+    "ge-hd-zeitrechnung (6.2)"
+   ]
+  },
+  {
+   "topic": "en-so-globalisation",
+   "subject": "Erdkunde",
+   "concept": "economic globalisation and global trade networks",
+   "strength": "soft",
+   "resolvedTo": "ek-gl-globalisierung-merkmale",
+   "how": "bm25",
+   "score": 18.77,
+   "alternatives": [
+    "ek-gl-globalisierung-merkmale (18.8)",
+    "ek-wk-passat-zirkulation (9.5)",
+    "ek-gl-produktionskette (9.4)"
+   ]
+  },
+  {
+   "topic": "en-so-environment",
+   "subject": "Erdkunde",
+   "concept": "causes and consequences of climate change",
+   "strength": "soft",
+   "resolvedTo": "ek-wk-klimawandel-folgen",
+   "how": "bm25",
+   "score": 13.05,
+   "alternatives": [
+    "ek-wk-klimawandel-folgen (13.0)",
+    "su-ne-klimawandel (12.3)",
+    "ek-wi-ruhrgebiet (8.9)"
+   ]
+  },
+  {
+   "topic": "en-sc-application",
+   "subject": "Deutsch",
+   "concept": "writing a German letter of application and CV (Bewerbung)",
+   "strength": "soft",
+   "resolvedTo": "de-tv-bewerbung",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "en-sc-opinion",
+   "subject": "Deutsch",
+   "concept": "argumentative essay (Erörterung)",
+   "strength": "soft",
+   "resolvedTo": "de-tv-lineare-eroerterung",
+   "how": "bm25",
+   "score": 16.54,
+   "alternatives": [
+    "de-tv-lineare-eroerterung (16.5)",
+    "de-tv-dialektische-eroerterung (16.4)",
+    "de-tm-sachtextanalyse (6.6)"
+   ]
+  },
+  {
+   "topic": "en-sc-summary",
+   "subject": "Deutsch",
+   "concept": "Inhaltsangabe (summary of a text in German)",
+   "strength": "soft",
+   "resolvedTo": "de-tv-inhaltsangabe",
+   "how": "bm25",
+   "score": 15.02,
+   "alternatives": [
+    "de-tv-inhaltsangabe (15.0)",
+    "de-tv-handlung-zusammenfassen (13.3)",
+    "de-le-sachtexte-erschliessen (7.1)"
+   ]
+  },
+  {
+   "topic": "en-sc-operators",
+   "subject": "Deutsch",
+   "concept": "operators and Anforderungsbereiche in written exams",
+   "strength": "soft",
+   "resolvedTo": null,
+   "how": "dropped-by-override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "en-sc-analysis",
+   "subject": "Deutsch",
+   "concept": "writing a text analysis with quotations (Textanalyse, Zitiertechnik)",
+   "strength": "soft",
+   "resolvedTo": "de-tv-textanalyse-schreiben",
+   "how": "bm25",
+   "score": 20.54,
+   "alternatives": [
+    "de-tv-textanalyse-schreiben (20.5)",
+    "de-tv-zitieren (15.5)",
+    "de-tv-figurencharakteristik (9.3)"
+   ]
+  },
+  {
+   "topic": "en-tm-characterisation",
+   "subject": "Deutsch",
+   "concept": "writing a literary characterisation (Charakterisierung)",
+   "strength": "soft",
+   "resolvedTo": "de-tv-figurencharakteristik",
+   "how": "bm25",
+   "score": 11.46,
+   "alternatives": [
+    "de-tv-figurencharakteristik (11.5)",
+    "de-tv-textanalyse-schreiben (6.9)",
+    "de-tm-literarisches-gespraech (4.2)"
+   ]
+  },
+  {
+   "topic": "en-tm-poetry",
+   "subject": "Deutsch",
+   "concept": "poetry analysis: metre, rhyme and imagery",
+   "strength": "soft",
+   "resolvedTo": "de-tm-gedichtanalyse",
+   "how": "bm25",
+   "score": 18.51,
+   "alternatives": [
+    "de-tm-gedichtanalyse (18.5)",
+    "de-tm-metrum (9.3)",
+    "de-tm-reimschema (7.4)"
+   ]
+  },
+  {
+   "topic": "en-tm-drama",
+   "subject": "Deutsch",
+   "concept": "drama analysis (Szenenanalyse)",
+   "strength": "soft",
+   "resolvedTo": "de-tm-dramenszene",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "en-tm-speeches",
+   "subject": "Deutsch",
+   "concept": "rhetorical devices and speech analysis",
+   "strength": "soft",
+   "resolvedTo": "de-tm-stilmittel",
+   "how": "bm25",
+   "score": 18.3,
+   "alternatives": [
+    "de-tm-stilmittel (18.3)",
+    "de-sz-rede (15.9)",
+    "de-sr-rhetorik-rede (11.4)"
+   ]
+  },
+  {
+   "topic": "en-ws-analysis-vocab",
+   "subject": "Deutsch",
+   "concept": "technical terms for text analysis and stylistic devices",
+   "strength": "soft",
+   "resolvedTo": "de-tm-stilmittel",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "fr-gr-conditionnel-si",
+   "subject": "Englisch",
+   "concept": "conditional sentences (if-clauses type I and II)",
+   "strength": "soft",
+   "resolvedTo": "en-gr-conditional-2",
+   "how": "bm25",
+   "score": 28.26,
+   "alternatives": [
+    "en-gr-conditional-2 (28.3)",
+    "en-gr-conditional-3 (21.7)",
+    "en-gr-conditional-1 (21.3)"
+   ]
+  },
+  {
+   "topic": "fr-gr-conditionnel-si",
+   "subject": "Deutsch",
+   "concept": "Konjunktiv II and würde-Form for unreal conditions",
+   "strength": "soft",
+   "resolvedTo": "de-gr-konjunktiv-ii",
+   "how": "bm25",
+   "score": 36.71,
+   "alternatives": [
+    "de-gr-konjunktiv-ii (36.7)",
+    "de-gr-indirekte-rede (18.3)",
+    "de-gr-konjunktiv-i (12.1)"
+   ]
+  },
+  {
+   "topic": "fr-gr-indirekte-rede",
+   "subject": "Deutsch",
+   "concept": "indirekte Rede mit Konjunktiv I",
+   "strength": "soft",
+   "resolvedTo": "de-gr-indirekte-rede",
+   "how": "bm25",
+   "score": 25.96,
+   "alternatives": [
+    "de-gr-indirekte-rede (26.0)",
+    "de-gr-konjunktiv-i (8.8)",
+    "de-gr-konjunktiv-ii (8.4)"
+   ]
+  },
+  {
+   "topic": "fr-sc-bewerbung",
+   "subject": "Deutsch",
+   "concept": "Bewerbungsschreiben und Lebenslauf verfassen",
+   "strength": "soft",
+   "resolvedTo": "de-tv-bewerbung",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "fr-sc-resume",
+   "subject": "Deutsch",
+   "concept": "Inhaltsangabe zu literarischen und pragmatischen Texten",
+   "strength": "soft",
+   "resolvedTo": "de-tv-inhaltsangabe",
+   "how": "bm25",
+   "score": 24.07,
+   "alternatives": [
+    "de-tv-inhaltsangabe (24.1)",
+    "de-tm-motiv-symbol (13.3)",
+    "de-tv-gestaltend-oberstufe (10.5)"
+   ]
+  },
+  {
+   "topic": "fr-sc-commentaire",
+   "subject": "Deutsch",
+   "concept": "textgebundene Erörterung",
+   "strength": "soft",
+   "resolvedTo": "de-tv-eroerterung-pragmatisch",
+   "how": "bm25",
+   "score": 14.43,
+   "alternatives": [
+    "de-tv-eroerterung-pragmatisch (14.4)",
+    "de-tv-dialektische-eroerterung (6.5)",
+    "de-tv-lineare-eroerterung (5.7)"
+   ]
+  },
+  {
+   "topic": "fr-sc-commentaire",
+   "subject": "Englisch",
+   "concept": "writing a comment or argumentative essay",
+   "strength": "soft",
+   "resolvedTo": "en-sc-opinion",
+   "how": "bm25",
+   "score": 14.15,
+   "alternatives": [
+    "en-sc-opinion (14.1)",
+    "en-sc-comment (7.6)",
+    "en-sc-summary (5.5)"
+   ]
+  },
+  {
+   "topic": "fr-ik-deutsch-franz",
+   "subject": "Geschichte",
+   "concept": "Franco-German reconciliation after 1945 and the Élysée Treaty",
+   "strength": "soft",
+   "resolvedTo": "po-eu-einigung",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "fr-ik-banlieue",
+   "subject": "Erdkunde",
+   "concept": "urbanisation and social segregation in metropolitan areas",
+   "strength": "soft",
+   "resolvedTo": "ek-sl-verstaedterung-megastaedte",
+   "how": "bm25",
+   "score": 14.35,
+   "alternatives": [
+    "ek-sl-verstaedterung-megastaedte (14.4)",
+    "ek-sl-stadtgliederung (7.2)",
+    "su-ne-nachhaltigkeit (5.0)"
+   ]
+  },
+  {
+   "topic": "fr-ik-kolonial",
+   "subject": "Geschichte",
+   "concept": "European imperialism and decolonisation in Africa",
+   "strength": "soft",
+   "resolvedTo": "ge-iw-imperialismus",
+   "how": "bm25",
+   "score": 19.89,
+   "alternatives": [
+    "ge-iw-imperialismus (19.9)",
+    "ge-mi-fernhandel (8.0)",
+    "ge-nk-entkolonialisierung (7.9)"
+   ]
+  },
+  {
+   "topic": "fr-tm-erzaehltext",
+   "subject": "Deutsch",
+   "concept": "Erzähltextanalyse (Erzählinstanz, Figurencharakterisierung)",
+   "strength": "soft",
+   "resolvedTo": "de-tm-erzaehltextanalyse",
+   "how": "bm25",
+   "score": 7.8,
+   "alternatives": [
+    "de-tm-erzaehltextanalyse (7.8)"
+   ]
+  },
+  {
+   "topic": "fr-tm-lyrik-chanson",
+   "subject": "Deutsch",
+   "concept": "Gedichtanalyse (Metrum, Reim, sprachliche Bilder)",
+   "strength": "soft",
+   "resolvedTo": "de-tm-gedichtanalyse",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "fr-tm-film",
+   "subject": "Deutsch",
+   "concept": "Filmanalyse: Einstellungsgrößen, Kameraperspektiven, Montage",
+   "strength": "soft",
+   "resolvedTo": "de-tm-filmanalyse",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "fr-tm-sachtext",
+   "subject": "Deutsch",
+   "concept": "Sachtextanalyse und rhetorische Mittel",
+   "strength": "soft",
+   "resolvedTo": "de-tm-sachtextanalyse",
+   "how": "bm25",
+   "score": 13.65,
+   "alternatives": [
+    "de-tm-sachtextanalyse (13.6)",
+    "de-tm-stilmittel (8.6)",
+    "de-tm-werbung (7.3)"
+   ]
+  },
+  {
+   "topic": "fr-tm-kontext",
+   "subject": "Deutsch",
+   "concept": "literary epochs and their historical background (Aufklärung, Realismus)",
+   "strength": "soft",
+   "resolvedTo": "de-lg-epochenbegriff",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "fr-sl-register",
+   "subject": "Deutsch",
+   "concept": "Sprachvarietäten: Standardsprache, Umgangssprache, Jugendsprache",
+   "strength": "soft",
+   "resolvedTo": "de-sv-jugendsprache",
+   "how": "bm25",
+   "score": 7.62,
+   "alternatives": [
+    "de-sv-jugendsprache (7.6)",
+    "de-sv-dialekt (6.9)",
+    "de-sz-standardsprache (5.0)"
+   ]
+  },
+  {
+   "topic": "la-sl-konjunktiv-hauptsatz",
+   "subject": "Deutsch",
+   "concept": "Konjunktiv II und würde-Form für Irreales",
+   "strength": "soft",
+   "resolvedTo": "de-gr-konjunktiv-ii",
+   "how": "bm25",
+   "score": 32.93,
+   "alternatives": [
+    "de-gr-konjunktiv-ii (32.9)",
+    "de-gr-indirekte-rede (19.2)",
+    "de-gr-konjunktiv-i (12.1)"
+   ]
+  },
+  {
+   "topic": "la-sl-oratio-obliqua",
+   "subject": "Deutsch",
+   "concept": "indirekte Rede mit Konjunktiv I",
+   "strength": "soft",
+   "resolvedTo": "de-gr-indirekte-rede",
+   "how": "bm25",
+   "score": 25.96,
+   "alternatives": [
+    "de-gr-indirekte-rede (26.0)",
+    "de-gr-konjunktiv-i (8.8)",
+    "de-gr-konjunktiv-ii (8.4)"
+   ]
+  },
+  {
+   "topic": "la-tk-stilmittel",
+   "subject": "Deutsch",
+   "concept": "rhetorische Stilmittel in Gedichten und Reden erkennen und deuten",
+   "strength": "soft",
+   "resolvedTo": "de-tm-stilmittel",
+   "how": "bm25",
+   "score": 27.95,
+   "alternatives": [
+    "de-tm-stilmittel (28.0)",
+    "de-tm-kontext (6.8)",
+    "de-gr-adjektiv (6.5)"
+   ]
+  },
+  {
+   "topic": "la-tk-hexameter",
+   "subject": "Deutsch",
+   "concept": "Metrum und Versfuß (Jambus, Trochäus, Daktylus)",
+   "strength": "soft",
+   "resolvedTo": "de-tm-metrum",
+   "how": "bm25",
+   "score": 35.52,
+   "alternatives": [
+    "de-tm-metrum (35.5)",
+    "de-tv-protokoll (1.2)",
+    "de-sz-pro-kontra-diskussion (1.2)"
+   ]
+  },
+  {
+   "topic": "la-li-cicero-reden",
+   "subject": "Deutsch",
+   "concept": "politische Reden analysieren (Redeaufbau, rhetorische Mittel)",
+   "strength": "soft",
+   "resolvedTo": "de-tm-stilmittel",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "la-ku-philosophie",
+   "subject": "Religion & Ethik",
+   "concept": "Hellenistic ethics: Stoa and Epicurus on the good life",
+   "strength": "soft",
+   "resolvedTo": null,
+   "how": "dropped-by-override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "la-ku-rezeption",
+   "subject": "Kunst",
+   "concept": "Antikenrezeption in Renaissance und Klassizismus",
+   "strength": "soft",
+   "resolvedTo": "ku-kg-19jh",
+   "how": "bm25",
+   "score": 6.27,
+   "alternatives": [
+    "ku-kg-19jh (6.3)",
+    "ku-kg-renaissance (5.2)",
+    "ku-bb-kunst-epochen (3.7)"
+   ]
+  },
+  {
+   "topic": "fr-ik-republique",
+   "subject": "Politik und Wirtschaft",
+   "concept": "federal system and constitutional organs of Germany",
+   "strength": "soft",
+   "resolvedTo": "po-rs-foederalismus",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "la-ku-romidee",
+   "subject": "Geschichte",
+   "concept": "imperialism and legitimation of empire",
+   "strength": "soft",
+   "resolvedTo": "ge-iw-imperialismus",
+   "how": "bm25",
+   "score": 9.24,
+   "alternatives": [
+    "ge-iw-imperialismus (9.2)",
+    "ge-ro-christentum (5.6)",
+    "ge-nm-nation-imperium (5.5)"
+   ]
+  },
+  {
+   "topic": "ge-wr-ende-republik",
+   "subject": "Mathematik",
+   "concept": "reading and comparing line and bar charts of statistical data",
+   "strength": "soft",
+   "resolvedTo": "ma-dz-diagramme-kritisch",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ge-ns-holocaust",
+   "subject": "Religion & Ethik",
+   "concept": "Judaism: beliefs and religious practice",
+   "strength": "soft",
+   "resolvedTo": "re-rw-abrahamitische-religionen",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ge-hd-quellenkritik",
+   "subject": "Deutsch",
+   "concept": "analysing argumentative non-fiction texts (Sachtextanalyse)",
+   "strength": "soft",
+   "resolvedTo": "de-tm-sachtextanalyse",
+   "how": "bm25",
+   "score": 28.8,
+   "alternatives": [
+    "de-tm-sachtextanalyse (28.8)",
+    "de-tv-sachtextanalyse-abitur (16.3)",
+    "de-tv-eroerterung-pragmatisch (14.2)"
+   ]
+  },
+  {
+   "topic": "ge-hd-urteilsbildung",
+   "subject": "Deutsch",
+   "concept": "writing an argumentative essay (Erörterung)",
+   "strength": "soft",
+   "resolvedTo": "de-tv-dialektische-eroerterung",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ek-or-diagramme",
+   "subject": "Mathematik",
+   "concept": "percentages and relative change",
+   "strength": "soft",
+   "resolvedTo": "ma-zo-prozentuale-veraenderung",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ek-or-raumanalyse",
+   "subject": "Deutsch",
+   "concept": "analysing non-continuous texts and writing a structured analysis",
+   "strength": "soft",
+   "resolvedTo": "de-le-nichtlineare-texte",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ek-wk-treibhauseffekt",
+   "subject": "Physik",
+   "concept": "absorption and emission of thermal radiation",
+   "strength": "soft",
+   "resolvedTo": "ph-op-em-spektrum",
+   "how": "bm25",
+   "score": 10.27,
+   "alternatives": [
+    "ph-op-em-spektrum (10.3)",
+    "ph-ak-anwendungen (9.7)",
+    "ph-en-energieversorgung (7.6)"
+   ]
+  },
+  {
+   "topic": "ek-wk-treibhauseffekt",
+   "subject": "Chemie",
+   "concept": "carbon dioxide formation in combustion",
+   "strength": "soft",
+   "resolvedTo": "ch-cr-verbrennung",
+   "how": "bm25",
+   "score": 11.24,
+   "alternatives": [
+    "ch-cr-verbrennung (11.2)",
+    "nw-mk-atmung (9.8)",
+    "ch-an-gasnachweise (9.2)"
+   ]
+  },
+  {
+   "topic": "ek-lz-regenwald-oekosystem",
+   "subject": "Biologie",
+   "concept": "nutrient cycles and decomposers in ecosystems",
+   "strength": "soft",
+   "resolvedTo": "nw-oe-nahrungsbeziehungen",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ek-bm-weltbevoelkerung",
+   "subject": "Mathematik",
+   "concept": "exponential growth and growth rates",
+   "strength": "soft",
+   "resolvedTo": "ma-zo-prozentuale-veraenderung",
+   "how": "bm25",
+   "score": 5.27,
+   "alternatives": [
+    "ma-zo-prozentuale-veraenderung (5.3)",
+    "ma-ms-lineare-modelle (4.7)",
+    "ma-zo-zinseszins (3.6)"
+   ]
+  },
+  {
+   "topic": "po-me-desinformation",
+   "subject": "Informatik & Medienbildung",
+   "concept": "how recommendation algorithms rank and filter content",
+   "strength": "soft",
+   "resolvedTo": "in-ar-algorithmen-feeds",
+   "how": "bm25",
+   "score": 14.14,
+   "alternatives": [
+    "in-ar-algorithmen-feeds (14.1)",
+    "in-ir-suchmaschinen (7.3)",
+    "in-pp-html-css (5.1)"
+   ]
+  },
+  {
+   "topic": "po-wi-budget-verschuldung",
+   "subject": "Mathematik",
+   "concept": "percentage calculation and interest",
+   "strength": "soft",
+   "resolvedTo": "ma-zo-zinsrechnung",
+   "how": "bm25",
+   "score": 15.96,
+   "alternatives": [
+    "ma-zo-zinsrechnung (16.0)",
+    "ma-zo-prozent-grundaufgaben (11.2)",
+    "ma-zo-zinseszins (8.4)"
+   ]
+  },
+  {
+   "topic": "po-wi-geldanlage-zins",
+   "subject": "Mathematik",
+   "concept": "compound interest and exponential growth",
+   "strength": "hard",
+   "resolvedTo": "ma-zo-zinseszins",
+   "how": "bm25",
+   "score": 21.27,
+   "alternatives": [
+    "ma-zo-zinseszins (21.3)",
+    "ma-zo-zinsrechnung (9.5)",
+    "ma-zo-prozentuale-veraenderung (5.3)"
+   ]
+  },
+  {
+   "topic": "po-wo-inflation",
+   "subject": "Mathematik",
+   "concept": "percentages and index numbers",
+   "strength": "soft",
+   "resolvedTo": "ma-zo-prozentuale-veraenderung",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "po-wo-marktmodell",
+   "subject": "Mathematik",
+   "concept": "linear functions and their graphs",
+   "strength": "soft",
+   "resolvedTo": "ma-ms-lineare-funktionen",
+   "how": "bm25",
+   "score": 12.51,
+   "alternatives": [
+    "ma-ms-lineare-funktionen (12.5)",
+    "ma-ms-exponentialfunktion (11.3)",
+    "ma-ms-lineare-modelle (11.1)"
+   ]
+  },
+  {
+   "topic": "po-wo-konjunktur",
+   "subject": "Mathematik",
+   "concept": "reading time-series graphs and trends",
+   "strength": "soft",
+   "resolvedTo": "ma-ms-graphen-interpretieren",
+   "how": "bm25",
+   "score": 9.16,
+   "alternatives": [
+    "ma-ms-graphen-interpretieren (9.2)",
+    "ma-ms-schoene-paeckchen (8.5)",
+    "ma-dz-gesetz-grosse-zahlen (7.5)"
+   ]
+  },
+  {
+   "topic": "po-sg-armut-grundsicherung",
+   "subject": "Mathematik",
+   "concept": "median, mean and percentages in statistics",
+   "strength": "soft",
+   "resolvedTo": "ma-dz-median-modalwert",
+   "how": "bm25",
+   "score": 12.45,
+   "alternatives": [
+    "ma-dz-median-modalwert (12.4)",
+    "ma-dz-arithmetisches-mittel (10.4)",
+    "ma-zo-prozent (8.9)"
+   ]
+  },
+  {
+   "topic": "po-sg-sozialisation",
+   "subject": "Biologie",
+   "concept": "nature versus nurture in human development",
+   "strength": "soft",
+   "resolvedTo": "re-af-mensch-natur-kultur",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "po-sg-soziale-ungleichheit",
+   "subject": "Mathematik",
+   "concept": "reading cumulative distributions and statistical measures",
+   "strength": "soft",
+   "resolvedTo": "ma-dz-boxplot",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "po-sg-soziale-ungleichheit",
+   "subject": "Religion & Ethik",
+   "concept": "theories of justice",
+   "strength": "soft",
+   "resolvedTo": null,
+   "how": "dropped-by-override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "po-ip-aussenhandelstheorie",
+   "subject": "Mathematik",
+   "concept": "ratios and opportunity cost calculations",
+   "strength": "soft",
+   "resolvedTo": "ma-ms-proportionalitaet",
+   "how": "bm25",
+   "score": 7.86,
+   "alternatives": [
+    "ma-ms-proportionalitaet (7.9)",
+    "ma-dz-laplace (7.1)",
+    "ma-rf-hoehen-seitenhalbierende (6.4)"
+   ]
+  },
+  {
+   "topic": "po-pt-vertragstheorien",
+   "subject": "Religion & Ethik",
+   "concept": "images of humans (Menschenbilder) in philosophy",
+   "strength": "soft",
+   "resolvedTo": "re-af-mensch-natur-kultur",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "po-pt-rawls",
+   "subject": "Religion & Ethik",
+   "concept": "theories of justice",
+   "strength": "soft",
+   "resolvedTo": null,
+   "how": "dropped-by-override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ma-zo-wurzel-naeherung",
+   "subject": "Informatik & Medienbildung",
+   "concept": "variables, loops and assignments in a text-based programming language",
+   "strength": "soft",
+   "resolvedTo": "in-al-textbasiert",
+   "how": "bm25",
+   "score": 14.34,
+   "alternatives": [
+    "in-al-textbasiert (14.3)",
+    "in-oo-klassen-implementieren (11.1)",
+    "in-al-blockprogrammierung (8.8)"
+   ]
+  },
+  {
+   "topic": "ma-ms-formeln-umstellen",
+   "subject": "Physik",
+   "concept": "formulas linking physical quantities such as v = s/t or ρ = m/V",
+   "strength": "soft",
+   "resolvedTo": "ph-me-geschwindigkeit",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ma-ms-lineare-modelle",
+   "subject": "Physik",
+   "concept": "uniform motion: distance–time graphs and speed as their slope",
+   "strength": "soft",
+   "resolvedTo": "ph-me-geschwindigkeit",
+   "how": "bm25",
+   "score": 38.86,
+   "alternatives": [
+    "ph-me-geschwindigkeit (38.9)",
+    "ph-me-beschleunigung (27.7)",
+    "nw-na-messen-darstellen (8.8)"
+   ]
+  },
+  {
+   "topic": "ma-pk-beweisen",
+   "subject": "Deutsch",
+   "concept": "argumentieren: Behauptung, Begründung und Beispiel unterscheiden",
+   "strength": "soft",
+   "resolvedTo": "de-tv-lineare-eroerterung",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ma-pk-tabellenkalkulation",
+   "subject": "Informatik & Medienbildung",
+   "concept": "spreadsheet basics: cells, formulas and cell references",
+   "strength": "soft",
+   "resolvedTo": "in-id-tabellenkalkulation",
+   "how": "bm25",
+   "score": 32.64,
+   "alternatives": [
+    "in-id-tabellenkalkulation (32.6)",
+    "in-pp-tastatur (3.6)",
+    "in-is-internet (3.5)"
+   ]
+  },
+  {
+   "topic": "ma-an-mittlere-aenderungsrate",
+   "subject": "Physik",
+   "concept": "average speed as distance travelled divided by time taken",
+   "strength": "soft",
+   "resolvedTo": "ph-me-geschwindigkeit",
+   "how": "bm25",
+   "score": 21.7,
+   "alternatives": [
+    "ph-me-geschwindigkeit (21.7)",
+    "ph-me-beschleunigung (15.4)",
+    "su-mv-umweltfreundlich-mobil (8.0)"
+   ]
+  },
+  {
+   "topic": "ma-an-wachstumsmodelle",
+   "subject": "Physik",
+   "concept": "radioactive decay and half-life",
+   "strength": "soft",
+   "resolvedTo": "ph-ak-halbwertszeit",
+   "how": "bm25",
+   "score": 27.24,
+   "alternatives": [
+    "ph-ak-halbwertszeit (27.2)",
+    "ph-ak-zerfallsgesetz (21.5)",
+    "ph-ak-anwendungen (10.8)"
+   ]
+  },
+  {
+   "topic": "ma-an-rekonstruktion-bestand",
+   "subject": "Physik",
+   "concept": "distance travelled as the area under a velocity–time graph",
+   "strength": "soft",
+   "resolvedTo": "ph-me-beschleunigung",
+   "how": "bm25",
+   "score": 21.46,
+   "alternatives": [
+    "ph-me-beschleunigung (21.5)",
+    "ph-fe-kondensator-entladung (17.9)",
+    "ph-me-geschwindigkeit (14.7)"
+   ]
+  },
+  {
+   "topic": "ma-ag-vektorbegriff",
+   "subject": "Physik",
+   "concept": "forces and velocities as directed quantities with magnitude and direction",
+   "strength": "soft",
+   "resolvedTo": "ph-me-kraefteaddition",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "mu-gl-akustik",
+   "subject": "Physik",
+   "concept": "acoustics: sound waves, frequency, amplitude and resonance",
+   "strength": "soft",
+   "resolvedTo": "nw-ls-schall",
+   "how": "bm25",
+   "score": 15.3,
+   "alternatives": [
+    "nw-ls-schall (15.3)",
+    "nw-ls-schallausbreitung-laerm (7.6)",
+    "su-un-schall (7.4)"
+   ]
+  },
+  {
+   "topic": "mu-hd-lied-wort-ton",
+   "subject": "Deutsch",
+   "concept": "analysing poems: metre, rhyme and imagery",
+   "strength": "soft",
+   "resolvedTo": "de-tm-gedichtanalyse",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "mu-hd-werkanalyse-methoden",
+   "subject": "Deutsch",
+   "concept": "writing a structured analytical essay with evidence",
+   "strength": "soft",
+   "resolvedTo": "de-tv-textanalyse-schreiben",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "mu-er-daw-produktion",
+   "subject": "Informatik & Medienbildung",
+   "concept": "digitising sound: sampling rate, bit depth and audio file formats",
+   "strength": "soft",
+   "resolvedTo": "in-id-digitalisierung",
+   "how": "bm25",
+   "score": 42.81,
+   "alternatives": [
+    "in-id-digitalisierung (42.8)",
+    "in-id-pixel-vektorgrafik (14.1)",
+    "in-pp-foto-audio (12.1)"
+   ]
+  },
+  {
+   "topic": "mu-kg-jazz",
+   "subject": "Geschichte",
+   "concept": "slavery and racial segregation in the USA",
+   "strength": "soft",
+   "resolvedTo": "en-so-civil-rights",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "mu-kg-politische-musik",
+   "subject": "Geschichte",
+   "concept": "National Socialist dictatorship: propaganda and persecution",
+   "strength": "hard",
+   "resolvedTo": "ge-ns-volksgemeinschaft-alltag",
+   "how": "bm25",
+   "score": 12.11,
+   "alternatives": [
+    "ge-ns-volksgemeinschaft-alltag (12.1)",
+    "ge-ik-kaiserreich (6.2)",
+    "ge-ns-entrechtung (6.1)"
+   ]
+  },
+  {
+   "topic": "mu-kg-musik-technik",
+   "subject": "Informatik & Medienbildung",
+   "concept": "data compression and streaming of media",
+   "strength": "soft",
+   "resolvedTo": "in-id-kompression",
+   "how": "bm25",
+   "score": 9.48,
+   "alternatives": [
+    "in-id-kompression (9.5)",
+    "in-ar-nachhaltige-it (8.1)",
+    "in-ar-medien-alltag (7.2)"
+   ]
+  },
+  {
+   "topic": "mu-ge-epochenueberblick",
+   "subject": "Geschichte",
+   "concept": "chronology of European history from the Middle Ages to the modern era",
+   "strength": "soft",
+   "resolvedTo": "ge-hd-zeitleiste",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "mu-ge-wiener-klassik",
+   "subject": "Geschichte",
+   "concept": "Enlightenment and the French Revolution",
+   "strength": "soft",
+   "resolvedTo": "ge-re-franzoesische-revolution",
+   "how": "bm25",
+   "score": 13.06,
+   "alternatives": [
+    "ge-re-franzoesische-revolution (13.1)",
+    "ge-re-aufklaerung (10.0)",
+    "ge-re-revolution-1848 (6.2)"
+   ]
+  },
+  {
+   "topic": "mu-ge-barock",
+   "subject": "Geschichte",
+   "concept": "absolutism and court culture",
+   "strength": "soft",
+   "resolvedTo": "ge-fn-absolutismus",
+   "how": "bm25",
+   "score": 11.75,
+   "alternatives": [
+    "ge-fn-absolutismus (11.8)",
+    "ge-re-aufklaerung (5.1)",
+    "su-dg-vielfalt (4.4)"
+   ]
+  },
+  {
+   "topic": "mu-ae-texte-ueber-musik",
+   "subject": "Deutsch",
+   "concept": "analysing argumentative non-fiction texts",
+   "strength": "hard",
+   "resolvedTo": "de-tm-sachtextanalyse",
+   "how": "bm25",
+   "score": 21.39,
+   "alternatives": [
+    "de-tm-sachtextanalyse (21.4)",
+    "de-tv-sachtextanalyse-abitur (16.3)",
+    "de-tv-eroerterung-pragmatisch (14.2)"
+   ]
+  },
+  {
+   "topic": "ku-fa-additiv-subtraktiv",
+   "subject": "Physik",
+   "concept": "dispersion of white light into the colour spectrum",
+   "strength": "soft",
+   "resolvedTo": "ph-op-farben",
+   "how": "bm25",
+   "score": 26.38,
+   "alternatives": [
+    "ph-op-farben (26.4)",
+    "ph-op-em-spektrum (7.7)",
+    "ph-as-sterne-entwicklung (7.1)"
+   ]
+  },
+  {
+   "topic": "ku-bb-werkanalyse-schema",
+   "subject": "Deutsch",
+   "concept": "writing a factual description of a picture",
+   "strength": "soft",
+   "resolvedTo": "de-tv-beschreibung",
+   "how": "bm25",
+   "score": 9.03,
+   "alternatives": [
+    "de-tv-beschreibung (9.0)",
+    "de-tv-bildergeschichte (8.5)",
+    "de-gr-adjektiv (8.4)"
+   ]
+  },
+  {
+   "topic": "ku-kg-renaissance",
+   "subject": "Geschichte",
+   "concept": "Renaissance and humanism",
+   "strength": "soft",
+   "resolvedTo": "ge-fn-renaissance-buchdruck",
+   "how": "bm25",
+   "score": 18.29,
+   "alternatives": [
+    "ge-fn-renaissance-buchdruck (18.3)"
+   ]
+  },
+  {
+   "topic": "ku-kg-barock",
+   "subject": "Geschichte",
+   "concept": "absolutism and court culture",
+   "strength": "soft",
+   "resolvedTo": "ge-fn-absolutismus",
+   "how": "bm25",
+   "score": 11.75,
+   "alternatives": [
+    "ge-fn-absolutismus (11.8)",
+    "ge-re-aufklaerung (5.1)",
+    "su-dg-vielfalt (4.4)"
+   ]
+  },
+  {
+   "topic": "ku-kg-19jh",
+   "subject": "Geschichte",
+   "concept": "French Revolution, nation-building and industrialisation in the 19th century",
+   "strength": "soft",
+   "resolvedTo": "ge-re-franzoesische-revolution",
+   "how": "bm25",
+   "score": 13.06,
+   "alternatives": [
+    "ge-re-franzoesische-revolution (13.1)",
+    "ge-ik-industrialisierung (10.8)",
+    "ge-iw-versailles (8.3)"
+   ]
+  },
+  {
+   "topic": "ku-kg-ns-kunst",
+   "subject": "Geschichte",
+   "concept": "National Socialist dictatorship: ideology and propaganda",
+   "strength": "hard",
+   "resolvedTo": "ge-ns-volksgemeinschaft-alltag",
+   "how": "bm25",
+   "score": 12.11,
+   "alternatives": [
+    "ge-ns-volksgemeinschaft-alltag (12.1)",
+    "ge-ns-ideologie (8.7)",
+    "ge-ik-kaiserreich (6.2)"
+   ]
+  },
+  {
+   "topic": "ku-kg-kanon-restitution",
+   "subject": "Geschichte",
+   "concept": "European colonialism and imperialism",
+   "strength": "hard",
+   "resolvedTo": "ge-iw-imperialismus",
+   "how": "bm25",
+   "score": 12.6,
+   "alternatives": [
+    "ge-iw-imperialismus (12.6)",
+    "ge-ew-kolonialismus-erbe (10.1)",
+    "ge-iw-deutsche-kolonien (6.0)"
+   ]
+  },
+  {
+   "topic": "ku-ar-sakralbau",
+   "subject": "Physik",
+   "concept": "forces, equilibrium and stability of structures",
+   "strength": "soft",
+   "resolvedTo": "ph-me-wechselwirkung",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ku-ar-staedtebau",
+   "subject": "Erdkunde",
+   "concept": "urbanisation and models of urban structure",
+   "strength": "soft",
+   "resolvedTo": "ek-sl-stadtgliederung",
+   "how": "bm25",
+   "score": 10.01,
+   "alternatives": [
+    "ek-sl-stadtgliederung (10.0)",
+    "ek-sl-verstaedterung-megastaedte (9.7)",
+    "ek-bm-demographischer-uebergang (5.4)"
+   ]
+  },
+  {
+   "topic": "ku-md-fotografie-gestaltung",
+   "subject": "Physik",
+   "concept": "converging lenses and image formation",
+   "strength": "soft",
+   "resolvedTo": "ph-op-sammellinse-bild",
+   "how": "bm25",
+   "score": 27.25,
+   "alternatives": [
+    "ph-op-sammellinse-bild (27.3)",
+    "ph-op-auge-sehfehler (20.4)",
+    "ph-op-optische-instrumente (11.4)"
+   ]
+  },
+  {
+   "topic": "ku-md-film-filmsprache",
+   "subject": "Deutsch",
+   "concept": "film analysis: camera work and editing",
+   "strength": "soft",
+   "resolvedTo": "de-tm-filmanalyse",
+   "how": "bm25",
+   "score": 17.67,
+   "alternatives": [
+    "de-tm-filmanalyse (17.7)",
+    "de-tm-film-einstellungen (13.5)",
+    "de-tm-buch-film (12.3)"
+   ]
+  },
+  {
+   "topic": "sp-fg-doping",
+   "subject": "Biologie",
+   "concept": "hormones and hormonal regulation",
+   "strength": "soft",
+   "resolvedTo": "bi-iv-hormone",
+   "how": "bm25",
+   "score": 12.13,
+   "alternatives": [
+    "bi-iv-hormone (12.1)",
+    "bi-sx-zyklus-hormone (10.5)",
+    "bi-iv-blutzucker (6.7)"
+   ]
+  },
+  {
+   "topic": "sp-tl-energiebereitstellung",
+   "subject": "Biologie",
+   "concept": "cellular respiration and ATP",
+   "strength": "hard",
+   "resolvedTo": "bi-sw-atp",
+   "how": "bm25",
+   "score": 11.4,
+   "alternatives": [
+    "bi-sw-atp (11.4)",
+    "bi-sw-atmungskette (7.6)",
+    "bi-sw-fotosynthese-zellatmung (6.4)"
+   ]
+  },
+  {
+   "topic": "sp-bl-biomechanik",
+   "subject": "Physik",
+   "concept": "Newton's laws, momentum and angular momentum",
+   "strength": "hard",
+   "resolvedTo": "ph-me-grundgleichung",
+   "how": "bm25",
+   "score": 15.4,
+   "alternatives": [
+    "ph-me-grundgleichung (15.4)",
+    "ph-me-gravitationsgesetz (10.9)",
+    "ph-me-traegheit (9.9)"
+   ]
+  },
+  {
+   "topic": "sp-bl-muskel-nerv",
+   "subject": "Biologie",
+   "concept": "neurons, action potentials and synapses",
+   "strength": "hard",
+   "resolvedTo": "bi-iv-nervenzelle",
+   "how": "bm25",
+   "score": 13.49,
+   "alternatives": [
+    "bi-iv-nervenzelle (13.5)",
+    "bi-iv-verrechnung (13.5)",
+    "bi-iv-aktionspotenzial (13.5)"
+   ]
+  },
+  {
+   "topic": "sp-sg-medien-wirtschaft",
+   "subject": "Politik und Wirtschaft",
+   "concept": "media, public opinion and the market economy",
+   "strength": "soft",
+   "resolvedTo": "po-wo-soziale-marktwirtschaft",
+   "how": "bm25",
+   "score": 15.31,
+   "alternatives": [
+    "po-wo-soziale-marktwirtschaft (15.3)",
+    "po-me-medien-demokratie (13.1)",
+    "po-me-meinungsbildung (12.6)"
+   ]
+  },
+  {
+   "topic": "re-wz-rechte-pflichten-jugend",
+   "subject": "Politik und Wirtschaft",
+   "concept": "basic rights and the rule of law in Germany",
+   "strength": "soft",
+   "resolvedTo": "po-rs-grundrechte",
+   "how": "bm25",
+   "score": 12.36,
+   "alternatives": [
+    "po-rs-grundrechte (12.4)",
+    "po-zl-regeln-schule (11.2)",
+    "po-rs-kinderrechte (8.6)"
+   ]
+  },
+  {
+   "topic": "re-sr-friedensethik",
+   "subject": "Geschichte",
+   "concept": "causes and consequences of the World Wars",
+   "strength": "soft",
+   "resolvedTo": "ge-iw-julikrise",
+   "how": "bm25",
+   "score": 13.51,
+   "alternatives": [
+    "ge-iw-julikrise (13.5)",
+    "ge-fn-dreissigjaehriger-krieg (11.8)",
+    "ge-ns-zweiter-weltkrieg (10.6)"
+   ]
+  },
+  {
+   "topic": "re-pm-texterschliessung",
+   "subject": "Deutsch",
+   "concept": "analysing argumentative non-fiction texts",
+   "strength": "soft",
+   "resolvedTo": "de-tm-sachtextanalyse",
+   "how": "bm25",
+   "score": 21.39,
+   "alternatives": [
+    "de-tm-sachtextanalyse (21.4)",
+    "de-le-sachtexte-erschliessen (12.6)",
+    "de-tm-sachtextsorten (11.6)"
+   ]
+  },
+  {
+   "topic": "re-pm-problemreflexion",
+   "subject": "Deutsch",
+   "concept": "writing an argumentative essay (Erörterung)",
+   "strength": "soft",
+   "resolvedTo": "de-tv-dialektische-eroerterung",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "re-ae-bioethik-lebensanfang",
+   "subject": "Biologie",
+   "concept": "genetic engineering and genome editing (CRISPR/Cas9)",
+   "strength": "soft",
+   "resolvedTo": "bi-ge-gentechnik-verfahren",
+   "how": "bm25",
+   "score": 32.21,
+   "alternatives": [
+    "bi-ge-gentechnik-verfahren (32.2)",
+    "bi-ge-gentechnik-grundlagen (15.7)",
+    "bi-ge-genregulation (7.5)"
+   ]
+  },
+  {
+   "topic": "re-ae-ki-technikethik",
+   "subject": "Informatik & Medienbildung",
+   "concept": "how machine-learning systems learn from training data",
+   "strength": "soft",
+   "resolvedTo": "in-ak-maschinelles-lernen",
+   "how": "bm25",
+   "score": 10.82,
+   "alternatives": [
+    "in-ak-maschinelles-lernen (10.8)",
+    "in-ak-neuronale-netze (9.1)",
+    "in-ak-ki-bias (7.6)"
+   ]
+  },
+  {
+   "topic": "re-af-mensch-natur-kultur",
+   "subject": "Biologie",
+   "concept": "human evolution",
+   "strength": "soft",
+   "resolvedTo": "bi-ev-menschwerdung",
+   "how": "bm25",
+   "score": 13.07,
+   "alternatives": [
+    "bi-ev-menschwerdung (13.1)",
+    "bi-ev-belege (10.6)",
+    "bi-ev-darwin (5.8)"
+   ]
+  },
+  {
+   "topic": "re-af-willensfreiheit",
+   "subject": "Biologie",
+   "concept": "structure and function of the brain and nervous system",
+   "strength": "soft",
+   "resolvedTo": "bi-iv-reiz-reaktion",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "re-ew-wissenschaftstheorie",
+   "subject": "Physik",
+   "concept": "the scientific method: hypothesis, experiment and theory",
+   "strength": "soft",
+   "resolvedTo": "nw-na-erkenntnisweg",
+   "how": "bm25",
+   "score": 22.89,
+   "alternatives": [
+    "nw-na-erkenntnisweg (22.9)",
+    "ph-pa-experiment-planen (20.1)",
+    "nw-st-verbrennung (7.1)"
+   ]
+  },
+  {
+   "topic": "re-sr-staatsphilosophie-vertrag",
+   "subject": "Politik und Wirtschaft",
+   "concept": "principles of democracy: popular sovereignty and separation of powers",
+   "strength": "soft",
+   "resolvedTo": "po-pt-gewaltenteilung",
+   "how": "bm25",
+   "score": 14.49,
+   "alternatives": [
+    "po-pt-gewaltenteilung (14.5)",
+    "po-rs-rechtsstaat (11.7)",
+    "po-rs-wahlen (11.0)"
+   ]
+  },
+  {
+   "topic": "re-sr-macht-gewalt-arendt",
+   "subject": "Geschichte",
+   "concept": "the Holocaust and Nazi crimes",
+   "strength": "hard",
+   "resolvedTo": "ge-ns-holocaust",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "re-rw-religion-wissenschaft",
+   "subject": "Biologie",
+   "concept": "theory of evolution",
+   "strength": "hard",
+   "resolvedTo": "bi-ev-darwin",
+   "how": "bm25",
+   "score": 11.51,
+   "alternatives": [
+    "bi-ev-darwin (11.5)",
+    "bi-ev-menschwerdung (7.6)",
+    "bi-ev-belege (7.4)"
+   ]
+  },
+  {
+   "topic": "re-rw-religion-staat-de",
+   "subject": "Politik und Wirtschaft",
+   "concept": "the Grundgesetz and the Federal Constitutional Court",
+   "strength": "soft",
+   "resolvedTo": "po-rs-bverfg",
+   "how": "bm25",
+   "score": 20.28,
+   "alternatives": [
+    "po-rs-bverfg (20.3)",
+    "po-rs-grundgesetz-prinzipien (15.6)",
+    "po-rs-grundrechte (6.9)"
+   ]
+  },
+  {
+   "topic": "in-id-tabellenkalkulation",
+   "subject": "Mathematik",
+   "concept": "functional relationships in tables",
+   "strength": "soft",
+   "resolvedTo": "ma-ms-funktionale-beziehungen",
+   "how": "bm25",
+   "score": 10.14,
+   "alternatives": [
+    "ma-ms-funktionale-beziehungen (10.1)",
+    "ma-ms-dreisatz (9.1)",
+    "ma-ms-antiproportionale-zuordnung (7.6)"
+   ]
+  },
+  {
+   "topic": "in-al-funktionen",
+   "subject": "Mathematik",
+   "concept": "functions as input–output assignments",
+   "strength": "soft",
+   "resolvedTo": "ma-ms-funktionsbegriff",
+   "how": "bm25",
+   "score": 24.48,
+   "alternatives": [
+    "ma-ms-funktionsbegriff (24.5)",
+    "ma-zo-zaehlprinzipien (4.5)",
+    "ma-ms-lineare-funktionen (3.7)"
+   ]
+  },
+  {
+   "topic": "in-al-effizienz",
+   "subject": "Mathematik",
+   "concept": "growth of power, exponential and logarithmic functions",
+   "strength": "hard",
+   "resolvedTo": "ma-ms-exponentialfunktion",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "in-ak-klassifikation",
+   "subject": "Mathematik",
+   "concept": "distance between points in a coordinate system",
+   "strength": "soft",
+   "resolvedTo": "ma-ag-betrag",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "in-ak-neuronale-netze-oberstufe",
+   "subject": "Mathematik",
+   "concept": "weighted sums and functions; derivative as slope",
+   "strength": "soft",
+   "resolvedTo": "ma-an-ableitungsfunktion",
+   "how": "bm25",
+   "score": 13.77,
+   "alternatives": [
+    "ma-an-ableitungsfunktion (13.8)",
+    "ma-an-lokale-aenderungsrate (13.0)",
+    "ma-ms-lineare-funktionen (10.9)"
+   ]
+  },
+  {
+   "topic": "in-ak-ki-modelle-bewerten",
+   "subject": "Mathematik",
+   "concept": "relative frequencies and conditional probability",
+   "strength": "soft",
+   "resolvedTo": "ma-dz-bedingte-wahrscheinlichkeit",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "in-ss-tracking-profiling",
+   "subject": "Politik und Wirtschaft",
+   "concept": "fundamental rights in the Grundgesetz",
+   "strength": "soft",
+   "resolvedTo": "po-rs-grundrechte",
+   "how": "bm25",
+   "score": 11.91,
+   "alternatives": [
+    "po-rs-grundrechte (11.9)",
+    "po-rs-grundrechte-schranken (8.7)",
+    "po-rs-grundgesetz-prinzipien (6.6)"
+   ]
+  },
+  {
+   "topic": "in-ss-datenschutzprinzipien",
+   "subject": "Politik und Wirtschaft",
+   "concept": "tension between freedom and security in a democracy",
+   "strength": "soft",
+   "resolvedTo": "po-rs-grundrechte-schranken",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "in-ar-plattformen",
+   "subject": "Politik und Wirtschaft",
+   "concept": "market power, competition and monopolies",
+   "strength": "soft",
+   "resolvedTo": "po-wo-soziale-marktwirtschaft",
+   "how": "bm25",
+   "score": 12.38,
+   "alternatives": [
+    "po-wo-soziale-marktwirtschaft (12.4)",
+    "po-wi-markt-preis (11.8)",
+    "po-eu-binnenmarkt (10.5)"
+   ]
+  },
+  {
+   "topic": "in-ar-automatisierung",
+   "subject": "Politik und Wirtschaft",
+   "concept": "structural change of the labour market",
+   "strength": "soft",
+   "resolvedTo": "ek-wi-ruhrgebiet",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "in-ar-ki-ethik",
+   "subject": "Religion & Ethik",
+   "concept": "ethical theories: consequentialism and deontology",
+   "strength": "soft",
+   "resolvedTo": "re-et-utilitarismus",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ph-pa-messreihen-auswerten",
+   "subject": "Mathematik",
+   "concept": "proportional relationships and their graphs (Proportionalität, Ursprungsgerade)",
+   "strength": "hard",
+   "resolvedTo": "ma-ms-proportionale-zuordnung",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ph-pa-bewerten",
+   "subject": "Politik und Wirtschaft",
+   "concept": "weighing arguments and forming a reasoned judgement (Urteilsbildung)",
+   "strength": "soft",
+   "resolvedTo": "de-tv-dialektische-eroerterung",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ph-pa-experiment-planen",
+   "subject": "Mathematik",
+   "concept": "linear functions: slope and y-intercept",
+   "strength": "soft",
+   "resolvedTo": "ma-ms-lineare-funktionen",
+   "how": "bm25",
+   "score": 23.49,
+   "alternatives": [
+    "ma-ms-lineare-funktionen (23.5)",
+    "ma-ms-lineare-modelle (8.9)",
+    "ma-ms-lgs-grafisch (8.7)"
+   ]
+  },
+  {
+   "topic": "ph-op-sammellinse-bild",
+   "subject": "Mathematik",
+   "concept": "rearranging formulas with fractions",
+   "strength": "soft",
+   "resolvedTo": "ma-ms-formeln-umstellen",
+   "how": "bm25",
+   "score": 13.82,
+   "alternatives": [
+    "ma-ms-formeln-umstellen (13.8)",
+    "ma-rf-flaeche-auslegen (8.6)",
+    "ma-gm-flaeche-dreieck-parallelogramm (8.3)"
+   ]
+  },
+  {
+   "topic": "ph-op-auge-sehfehler",
+   "subject": "Biologie",
+   "concept": "structure of the human eye (Netzhaut, Linse, Pupille)",
+   "strength": "soft",
+   "resolvedTo": "bi-iv-auge",
+   "how": "bm25",
+   "score": 6.08,
+   "alternatives": [
+    "bi-iv-auge (6.1)",
+    "su-ro-plan (5.5)",
+    "su-mv-toter-winkel (5.2)"
+   ]
+  },
+  {
+   "topic": "ph-op-treibhauseffekt",
+   "subject": "Erdkunde",
+   "concept": "climate change: causes and consequences",
+   "strength": "soft",
+   "resolvedTo": "ek-wk-klimawandel-folgen",
+   "how": "bm25",
+   "score": 13.05,
+   "alternatives": [
+    "ek-wk-klimawandel-folgen (13.0)",
+    "su-ne-klimawandel (12.3)",
+    "ek-wi-ruhrgebiet (8.9)"
+   ]
+  },
+  {
+   "topic": "ph-op-treibhauseffekt",
+   "subject": "Chemie",
+   "concept": "carbon dioxide as a combustion product",
+   "strength": "soft",
+   "resolvedTo": "ch-cr-verbrennung",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ph-me-geschwindigkeit",
+   "subject": "Mathematik",
+   "concept": "proportional functions and their graphs",
+   "strength": "soft",
+   "resolvedTo": "ma-ms-proportionale-zuordnung",
+   "how": "bm25",
+   "score": 10.88,
+   "alternatives": [
+    "ma-ms-proportionale-zuordnung (10.9)",
+    "ma-ms-antiproportionale-zuordnung (10.3)",
+    "ma-ms-dreisatz (9.8)"
+   ]
+  },
+  {
+   "topic": "ph-me-grundgleichung",
+   "subject": "Mathematik",
+   "concept": "rearranging equations with several variables",
+   "strength": "soft",
+   "resolvedTo": "ma-ms-formeln-umstellen",
+   "how": "bm25",
+   "score": 11.77,
+   "alternatives": [
+    "ma-ms-formeln-umstellen (11.8)",
+    "ma-ms-terme-zusammenfassen (8.5)",
+    "ma-ms-lgs-grafisch (7.1)"
+   ]
+  },
+  {
+   "topic": "ph-me-dichte",
+   "subject": "Chemie",
+   "concept": "density as a characteristic property of substances (Stoffeigenschaft)",
+   "strength": "soft",
+   "resolvedTo": "ch-st-stoffeigenschaften",
+   "how": "bm25",
+   "score": 19.72,
+   "alternatives": [
+    "ch-st-stoffeigenschaften (19.7)",
+    "nw-st-stoffeigenschaften (10.4)",
+    "nw-lz-kennzeichen-lebendigen (7.1)"
+   ]
+  },
+  {
+   "topic": "ph-me-waagerechter-wurf",
+   "subject": "Mathematik",
+   "concept": "quadratic functions and parabolas",
+   "strength": "hard",
+   "resolvedTo": "ma-ms-quadratische-funktion",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ph-me-stoesse",
+   "subject": "Mathematik",
+   "concept": "systems of two linear equations",
+   "strength": "soft",
+   "resolvedTo": "ma-ms-lgs-grafisch",
+   "how": "bm25",
+   "score": 12.92,
+   "alternatives": [
+    "ma-ms-lgs-grafisch (12.9)",
+    "ma-ms-lgs-rechnerisch (12.4)",
+    "ma-ms-gleichungen-sachaufgaben (8.5)"
+   ]
+  },
+  {
+   "topic": "ph-me-kreisbewegung",
+   "subject": "Mathematik",
+   "concept": "radian measure and the unit circle",
+   "strength": "soft",
+   "resolvedTo": "ma-gm-bogenmass",
+   "how": "bm25",
+   "score": 23.49,
+   "alternatives": [
+    "ma-gm-bogenmass (23.5)",
+    "ma-ms-sinusfunktion (16.2)",
+    "ma-rf-einheitskreis (10.0)"
+   ]
+  },
+  {
+   "topic": "ph-me-gravitationsgesetz",
+   "subject": "Mathematik",
+   "concept": "powers of ten and scientific notation",
+   "strength": "hard",
+   "resolvedTo": "ma-zo-wissenschaftliche-schreibweise",
+   "how": "bm25",
+   "score": 13.55,
+   "alternatives": [
+    "ma-zo-wissenschaftliche-schreibweise (13.5)",
+    "ma-zo-potenzen (10.0)",
+    "ma-zo-mehrsystemblocke (7.7)"
+   ]
+  },
+  {
+   "topic": "ph-en-mechanische-energie-berechnen",
+   "subject": "Mathematik",
+   "concept": "solving equations with squares and square roots",
+   "strength": "hard",
+   "resolvedTo": "ma-zo-quadratwurzel",
+   "how": "bm25",
+   "score": 15.5,
+   "alternatives": [
+    "ma-zo-quadratwurzel (15.5)",
+    "ma-zo-wurzelterme (12.5)",
+    "ma-zo-wurzel-naeherung (10.4)"
+   ]
+  },
+  {
+   "topic": "ph-en-energieversorgung",
+   "subject": "Erdkunde",
+   "concept": "energy resources and the energy transition (Energiewende) in Germany",
+   "strength": "soft",
+   "resolvedTo": "ek-re-energietraeger",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ph-wl-gasgesetze",
+   "subject": "Mathematik",
+   "concept": "inversely proportional relationships",
+   "strength": "soft",
+   "resolvedTo": "ma-ms-antiproportionale-zuordnung",
+   "how": "bm25",
+   "score": 22.68,
+   "alternatives": [
+    "ma-ms-antiproportionale-zuordnung (22.7)",
+    "ma-ms-proportionale-zuordnung (15.1)",
+    "ma-ms-proportionalitaet (13.4)"
+   ]
+  },
+  {
+   "topic": "ph-ak-atomaufbau",
+   "subject": "Chemie",
+   "concept": "atomic structure with nucleus and electron shells (Kern-Hülle-Modell, Schalenmodell)",
+   "strength": "hard",
+   "resolvedTo": "ch-ap-kern-huelle",
+   "how": "bm25",
+   "score": 44.05,
+   "alternatives": [
+    "ch-ap-kern-huelle (44.0)",
+    "ch-ap-periodensystem (19.2)",
+    "ch-ap-schalenmodell (13.5)"
+   ]
+  },
+  {
+   "topic": "ph-ak-strahlenschutz",
+   "subject": "Biologie",
+   "concept": "DNA and mutations",
+   "strength": "soft",
+   "resolvedTo": "bi-ge-chromosomen-dna",
+   "how": "bm25",
+   "score": 6.87,
+   "alternatives": [
+    "bi-ge-chromosomen-dna (6.9)",
+    "bi-ge-trisomie (5.2)",
+    "bi-ge-mitose (3.4)"
+   ]
+  },
+  {
+   "topic": "ph-ak-zerfallsgesetz",
+   "subject": "Mathematik",
+   "concept": "exponential functions with base e and the natural logarithm",
+   "strength": "hard",
+   "resolvedTo": "ma-an-e-funktion",
+   "how": "bm25",
+   "score": 22.27,
+   "alternatives": [
+    "ma-an-e-funktion (22.3)",
+    "ma-an-ln-funktion (17.7)",
+    "ma-zo-logarithmengesetze (16.3)"
+   ]
+  },
+  {
+   "topic": "ph-ak-bindungsenergie",
+   "subject": "Mathematik",
+   "concept": "powers of ten and scientific notation",
+   "strength": "soft",
+   "resolvedTo": "ma-zo-wissenschaftliche-schreibweise",
+   "how": "bm25",
+   "score": 13.55,
+   "alternatives": [
+    "ma-zo-wissenschaftliche-schreibweise (13.5)",
+    "ma-zo-potenzen (10.0)",
+    "ma-zo-mehrsystemblocke (7.7)"
+   ]
+  },
+  {
+   "topic": "ph-fe-kondensator-entladung",
+   "subject": "Mathematik",
+   "concept": "exponential functions with base e",
+   "strength": "hard",
+   "resolvedTo": "ma-an-e-funktion",
+   "how": "bm25",
+   "score": 15.23,
+   "alternatives": [
+    "ma-an-e-funktion (15.2)",
+    "ma-ms-exponentialfunktion (13.6)",
+    "ma-an-exponentialfunktionen-untersuchen (9.6)"
+   ]
+  },
+  {
+   "topic": "ph-fe-kondensator-entladung",
+   "subject": "Mathematik",
+   "concept": "integral as area under a curve",
+   "strength": "soft",
+   "resolvedTo": "ma-an-bestimmtes-integral",
+   "how": "bm25",
+   "score": 12.15,
+   "alternatives": [
+    "ma-an-bestimmtes-integral (12.1)",
+    "ma-an-hauptsatz (10.4)",
+    "ma-rf-aehnlichkeit-flaeche-volumen (9.8)"
+   ]
+  },
+  {
+   "topic": "ph-fe-coulomb-potential",
+   "subject": "Mathematik",
+   "concept": "integration of power functions",
+   "strength": "soft",
+   "resolvedTo": "ma-an-stammfunktion",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ph-fe-induktionsgesetz",
+   "subject": "Mathematik",
+   "concept": "derivative as instantaneous rate of change",
+   "strength": "hard",
+   "resolvedTo": "ma-an-lokale-aenderungsrate",
+   "how": "bm25",
+   "score": 24.43,
+   "alternatives": [
+    "ma-an-lokale-aenderungsrate (24.4)",
+    "ma-an-mittlere-aenderungsrate (11.0)",
+    "ma-an-rekonstruktion-bestand (10.4)"
+   ]
+  },
+  {
+   "topic": "ph-sw-harmonische-schwingung",
+   "subject": "Mathematik",
+   "concept": "sine and cosine functions and their parameters",
+   "strength": "hard",
+   "resolvedTo": "ma-ms-sinus-parameter",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ph-sw-daempfung-resonanz",
+   "subject": "Mathematik",
+   "concept": "exponential functions with base e",
+   "strength": "soft",
+   "resolvedTo": "ma-an-e-funktion",
+   "how": "bm25",
+   "score": 15.23,
+   "alternatives": [
+    "ma-an-e-funktion (15.2)",
+    "ma-ms-exponentialfunktion (13.6)",
+    "ma-an-exponentialfunktionen-untersuchen (9.6)"
+   ]
+  },
+  {
+   "topic": "ph-sw-doppelspalt-gitter",
+   "subject": "Mathematik",
+   "concept": "trigonometry: sine and tangent in right-angled triangles",
+   "strength": "hard",
+   "resolvedTo": "ma-rf-trigonometrie",
+   "how": "bm25",
+   "score": 23.55,
+   "alternatives": [
+    "ma-rf-trigonometrie (23.6)",
+    "ma-rf-trigonometrie-anwendungen (17.9)",
+    "ma-rf-dreiecke (13.9)"
+   ]
+  },
+  {
+   "topic": "ph-qu-quantenobjekte",
+   "subject": "Mathematik",
+   "concept": "probability and relative frequency",
+   "strength": "soft",
+   "resolvedTo": "ma-dz-relative-haeufigkeit",
+   "how": "bm25",
+   "score": 15.48,
+   "alternatives": [
+    "ma-dz-relative-haeufigkeit (15.5)",
+    "ma-dz-gesetz-grosse-zahlen (13.0)",
+    "ma-dz-kreisdiagramm (11.4)"
+   ]
+  },
+  {
+   "topic": "ph-qu-weltbild",
+   "subject": "Religion & Ethik",
+   "concept": "philosophical concepts of determinism and causality",
+   "strength": "soft",
+   "resolvedTo": "re-af-willensfreiheit",
+   "how": "bm25",
+   "score": 5.69,
+   "alternatives": [
+    "re-af-willensfreiheit (5.7)",
+    "re-pm-philosophische-fragen (5.0)",
+    "re-pm-problemreflexion (4.9)"
+   ]
+  },
+  {
+   "topic": "ph-qu-atommodell",
+   "subject": "Chemie",
+   "concept": "orbital model of the atom",
+   "strength": "soft",
+   "resolvedTo": null,
+   "how": "dropped-by-override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ph-rt-zeitdilatation",
+   "subject": "Mathematik",
+   "concept": "Pythagorean theorem",
+   "strength": "hard",
+   "resolvedTo": "ma-rf-pythagoras",
+   "how": "bm25",
+   "score": 13.69,
+   "alternatives": [
+    "ma-rf-pythagoras (13.7)",
+    "ma-rf-pythagoras-raum (7.9)",
+    "ma-ag-betrag (7.4)"
+   ]
+  },
+  {
+   "topic": "ma-zo-rechengeschichten",
+   "subject": "Deutsch",
+   "concept": "listening comprehension / reading simple sentences",
+   "strength": "soft",
+   "resolvedTo": "de-tm-vorlesen-zuhoeren",
+   "how": "bm25",
+   "score": 10.06,
+   "alternatives": [
+    "de-tm-vorlesen-zuhoeren (10.1)",
+    "de-sz-zuhoeren (9.0)",
+    "de-sse-saetze-erlesen (7.5)"
+   ]
+  },
+  {
+   "topic": "ma-zo-sachaufgaben",
+   "subject": "Deutsch",
+   "concept": "reading comprehension of short factual texts",
+   "strength": "soft",
+   "resolvedTo": "de-sse-saetze-erlesen",
+   "how": "bm25",
+   "score": 8.2,
+   "alternatives": [
+    "de-sse-saetze-erlesen (8.2)",
+    "de-tv-erste-texte (7.4)",
+    "de-tm-lesetagebuch (7.4)"
+   ]
+  },
+  {
+   "topic": "ma-gm-kalender",
+   "subject": "Sachunterricht",
+   "concept": "Zeitbegriff: Tag, Woche, Jahreszeiten",
+   "strength": "soft",
+   "resolvedTo": "su-un-jahreszeiten",
+   "how": "bm25",
+   "score": 7.07,
+   "alternatives": [
+    "su-un-jahreszeiten (7.1)",
+    "su-zw-kalender (6.6)"
+   ]
+  },
+  {
+   "topic": "ma-gm-massstab",
+   "subject": "Sachunterricht",
+   "concept": "Karten lesen und Orientierung (GEO)",
+   "strength": "soft",
+   "resolvedTo": "su-ro-legende",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ma-ms-verschluesselung",
+   "subject": "Informatik & Medienbildung",
+   "concept": "Daten codieren und decodieren (Verschlüsselung)",
+   "strength": "soft",
+   "resolvedTo": "in-id-caesar",
+   "how": "bm25",
+   "score": 5.59,
+   "alternatives": [
+    "in-id-caesar (5.6)",
+    "in-ss-persoenliche-daten (4.7)",
+    "in-is-dateien (0.7)"
+   ]
+  },
+  {
+   "topic": "ma-rf-lagebeziehungen",
+   "subject": "Deutsch",
+   "concept": "Präpositionen und Lagewörter im Wortschatz",
+   "strength": "soft",
+   "resolvedTo": null,
+   "how": "dropped-by-override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ma-rf-wege-beschreiben",
+   "subject": "Sachunterricht",
+   "concept": "Schulweg und Orientierung im Nahraum",
+   "strength": "soft",
+   "resolvedTo": "su-mv-schulweg",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ma-rf-lageplaene",
+   "subject": "Sachunterricht",
+   "concept": "Karten und Pläne lesen (GEO)",
+   "strength": "soft",
+   "resolvedTo": "su-ro-plan",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ma-dz-diagramme-kritisch",
+   "subject": "Informatik & Medienbildung",
+   "concept": "Informationen in Medien kritisch bewerten",
+   "strength": "soft",
+   "resolvedTo": "in-ir-quellen-bewerten",
+   "how": "bm25",
+   "score": 12.48,
+   "alternatives": [
+    "in-ir-quellen-bewerten (12.5)",
+    "in-ar-wirklichkeit-fiktion (6.6)"
+   ]
+  },
+  {
+   "topic": "ma-pk-fachsprache",
+   "subject": "Deutsch",
+   "concept": "Fachwortschatz und Bildungssprache",
+   "strength": "soft",
+   "resolvedTo": "de-sz-standardsprache",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ma-pk-informationen-entnehmen",
+   "subject": "Deutsch",
+   "concept": "Sachtexte lesen und verstehen",
+   "strength": "hard",
+   "resolvedTo": "de-tm-textarten",
+   "how": "bm25",
+   "score": 8.93,
+   "alternatives": [
+    "de-tm-textarten (8.9)",
+    "de-le-text-bild (7.1)",
+    "de-le-hypertexte (5.8)"
+   ]
+  },
+  {
+   "topic": "ma-pk-rechengeschichten-erfinden",
+   "subject": "Deutsch",
+   "concept": "kurze Texte verfassen",
+   "strength": "soft",
+   "resolvedTo": "de-tv-erste-texte",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ma-pk-digitale-werkzeuge",
+   "subject": "Informatik & Medienbildung",
+   "concept": "Grundlagen der Bedienung digitaler Geräte",
+   "strength": "soft",
+   "resolvedTo": "in-is-bedienen",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ma-pk-algorithmen",
+   "subject": "Informatik & Medienbildung",
+   "concept": "Algorithmen erkennen und formulieren",
+   "strength": "soft",
+   "resolvedTo": "in-ar-werbung",
+   "how": "bm25",
+   "score": 5.35,
+   "alternatives": [
+    "in-ar-werbung (5.4)",
+    "in-kk-cybermobbing (5.3)",
+    "in-al-handlungsanweisungen (5.2)"
+   ]
+  },
+  {
+   "topic": "mu-gl-klaenge-erkunden",
+   "subject": "Sachunterricht",
+   "concept": "the senses, especially hearing",
+   "strength": "soft",
+   "resolvedTo": "su-kg-sinne",
+   "how": "bm25",
+   "score": 12.56,
+   "alternatives": [
+    "su-kg-sinne (12.6)",
+    "su-mv-sehen-gesehen (4.4)",
+    "su-aw-beobachten (3.8)"
+   ]
+  },
+  {
+   "topic": "mu-gl-grafische-notation",
+   "subject": "Deutsch",
+   "concept": "left-to-right reading direction",
+   "strength": "soft",
+   "resolvedTo": "de-sse-schrift-funktion",
+   "how": "bm25",
+   "score": 13,
+   "alternatives": [
+    "de-sse-schrift-funktion (13.0)",
+    "de-sse-saetze-erlesen (6.8)",
+    "de-sz-nacherzaehlen (5.8)"
+   ]
+  },
+  {
+   "topic": "mu-gl-notenwerte-pausen",
+   "subject": "Mathematik",
+   "concept": "halving and doubling (Halbieren und Verdoppeln)",
+   "strength": "soft",
+   "resolvedTo": "ma-zo-verdoppeln-halbieren",
+   "how": "bm25",
+   "score": 29.26,
+   "alternatives": [
+    "ma-zo-verdoppeln-halbieren (29.3)",
+    "ma-zo-nachbaraufgaben (7.1)",
+    "ma-zo-gerade-ungerade (5.3)"
+   ]
+  },
+  {
+   "topic": "mu-gl-notensystem-stammtoene",
+   "subject": "Deutsch",
+   "concept": "alphabet and letter names",
+   "strength": "soft",
+   "resolvedTo": "de-sse-alphabet",
+   "how": "bm25",
+   "score": 14.98,
+   "alternatives": [
+    "de-sse-alphabet (15.0)",
+    "de-rs-satzanfang-namen (10.3)",
+    "de-sse-schrift-funktion (5.6)"
+   ]
+  },
+  {
+   "topic": "mu-kg-komponisten-epochen",
+   "subject": "Sachunterricht",
+   "concept": "time and simple timelines (früher – heute)",
+   "strength": "soft",
+   "resolvedTo": "su-zw-frueher-heute",
+   "how": "bm25",
+   "score": 14.43,
+   "alternatives": [
+    "su-zw-frueher-heute (14.4)",
+    "su-zw-tagesablauf (10.8)",
+    "su-kg-bewegung-schlaf (4.0)"
+   ]
+  },
+  {
+   "topic": "mu-kg-musik-medien",
+   "subject": "Sachunterricht",
+   "concept": "the ear and protecting the senses",
+   "strength": "soft",
+   "resolvedTo": "su-kg-sinne",
+   "how": "bm25",
+   "score": 11.25,
+   "alternatives": [
+    "su-kg-sinne (11.2)",
+    "su-un-schall (7.0)",
+    "su-bn-fruehblueher (7.0)"
+   ]
+  },
+  {
+   "topic": "ku-ze-spuren-zeichnen",
+   "subject": "Deutsch",
+   "concept": "pencil grip and graphomotor skills",
+   "strength": "soft",
+   "resolvedTo": "de-sf-stifthaltung",
+   "how": "bm25",
+   "score": 18.84,
+   "alternatives": [
+    "de-sf-stifthaltung (18.8)",
+    "de-sse-schrift-funktion (4.0)"
+   ]
+  },
+  {
+   "topic": "ku-ze-beobachtung",
+   "subject": "Sachunterricht",
+   "concept": "observing and describing plants and animals",
+   "strength": "soft",
+   "resolvedTo": "su-aw-beobachten",
+   "how": "bm25",
+   "score": 14.97,
+   "alternatives": [
+    "su-aw-beobachten (15.0)",
+    "su-bn-wiese-hecke (7.3)",
+    "su-bn-keimung-wachstum (6.7)"
+   ]
+  },
+  {
+   "topic": "ku-ze-perspektive",
+   "subject": "Mathematik",
+   "concept": "drawing straight lines and parallels with a ruler",
+   "strength": "soft",
+   "resolvedTo": "ma-rf-zeichnen-gitter-lineal",
+   "how": "bm25",
+   "score": 19.52,
+   "alternatives": [
+    "ma-rf-zeichnen-gitter-lineal (19.5)",
+    "ma-rf-senkrecht-parallel (11.8)",
+    "ma-rf-geodreieck (10.8)"
+   ]
+  },
+  {
+   "topic": "ku-bb-bild-beschreiben",
+   "subject": "Deutsch",
+   "concept": "oral describing (Beschreiben)",
+   "strength": "soft",
+   "resolvedTo": "de-sz-standardsprache",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ku-bb-kunst-epochen",
+   "subject": "Geschichte",
+   "concept": "chronology and timelines",
+   "strength": "soft",
+   "resolvedTo": "su-zw-zeitleiste",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ku-md-digitale-bildbearbeitung",
+   "subject": "Informatik & Medienbildung",
+   "concept": "basic use of tablets/computers (apps, files)",
+   "strength": "soft",
+   "resolvedTo": "in-is-bedienen",
+   "how": "bm25",
+   "score": 15.18,
+   "alternatives": [
+    "in-is-bedienen (15.2)",
+    "in-is-hardware-software (7.1)",
+    "in-ss-datenschutz (6.9)"
+   ]
+  },
+  {
+   "topic": "ku-md-schrift-plakat",
+   "subject": "Deutsch",
+   "concept": "handwriting (Schreibschrift/Druckschrift)",
+   "strength": "soft",
+   "resolvedTo": "de-sf-verbundene-schrift",
+   "how": "bm25",
+   "score": 13.57,
+   "alternatives": [
+    "de-sf-verbundene-schrift (13.6)",
+    "de-sf-druckschrift (7.7)",
+    "de-sf-fluessig-leserlich (7.2)"
+   ]
+  },
+  {
+   "topic": "sp-lsw-ausdauernd-laufen",
+   "subject": "Sachunterricht",
+   "concept": "heart and breathing during exercise",
+   "strength": "soft",
+   "resolvedTo": "su-kg-bewegung-schlaf",
+   "how": "bm25",
+   "score": 13.61,
+   "alternatives": [
+    "su-kg-bewegung-schlaf (13.6)",
+    "su-un-luft (4.8)",
+    "su-un-jahreszeiten (3.9)"
+   ]
+  },
+  {
+   "topic": "sp-lsw-orientierungslauf",
+   "subject": "Sachunterricht",
+   "concept": "reading simple maps and site plans",
+   "strength": "hard",
+   "resolvedTo": "su-ro-legende",
+   "how": "bm25",
+   "score": 11.54,
+   "alternatives": [
+    "su-ro-legende (11.5)",
+    "su-mv-bus-bahn (9.5)",
+    "su-ro-massstab (8.2)"
+   ]
+  },
+  {
+   "topic": "sp-ws-wassergewoehnung",
+   "subject": "Sachunterricht",
+   "concept": "floating and sinking (Schwimmen und Sinken)",
+   "strength": "soft",
+   "resolvedTo": "su-un-schwimmen-sinken",
+   "how": "bm25",
+   "score": 28.92,
+   "alternatives": [
+    "su-un-schwimmen-sinken (28.9)",
+    "su-un-stoffe-eigenschaften (4.5)",
+    "su-dg-beduerfnisse (1.2)"
+   ]
+  },
+  {
+   "topic": "sp-fg-koerper-belastung",
+   "subject": "Sachunterricht",
+   "concept": "heart, lungs and circulation",
+   "strength": "soft",
+   "resolvedTo": "su-kg-atmung-kreislauf",
+   "how": "bm25",
+   "score": 17.68,
+   "alternatives": [
+    "su-kg-atmung-kreislauf (17.7)",
+    "su-kg-gefuehle (3.9)",
+    "su-kg-bewegung-schlaf (3.6)"
+   ]
+  },
+  {
+   "topic": "re-ph-philosophisches-gespraech",
+   "subject": "Deutsch",
+   "concept": "conversation rules (Gesprächsregeln)",
+   "strength": "soft",
+   "resolvedTo": "de-sz-gespraechsregeln",
+   "how": "bm25",
+   "score": 20.28,
+   "alternatives": [
+    "de-sz-gespraechsregeln (20.3)",
+    "de-rs-satzanfang-namen (3.3)"
+   ]
+  },
+  {
+   "topic": "re-rw-heilige-schriften",
+   "subject": "Deutsch",
+   "concept": "listening to and retelling stories",
+   "strength": "soft",
+   "resolvedTo": "de-sz-nacherzaehlen",
+   "how": "bm25",
+   "score": 12.79,
+   "alternatives": [
+    "de-sz-nacherzaehlen (12.8)",
+    "de-tm-vorlesen-zuhoeren (11.5)",
+    "de-sz-zuhoeren (9.7)"
+   ]
+  },
+  {
+   "topic": "re-rw-schoepfung",
+   "subject": "Sachunterricht",
+   "concept": "Earth in space and how living things change over time",
+   "strength": "soft",
+   "resolvedTo": "su-bn-lebendig",
+   "how": "bm25",
+   "score": 11.15,
+   "alternatives": [
+    "su-bn-lebendig (11.1)",
+    "su-un-luft (9.3)",
+    "su-aw-beobachten (8.3)"
+   ]
+  },
+  {
+   "topic": "re-nv-natur-schuetzen",
+   "subject": "Sachunterricht",
+   "concept": "waste separation and environmental protection",
+   "strength": "soft",
+   "resolvedTo": "su-ne-muell-vermeiden",
+   "how": "bm25",
+   "score": 7.13,
+   "alternatives": [
+    "su-ne-muell-vermeiden (7.1)",
+    "su-ne-muelltrennung (6.3)",
+    "su-bn-igel (3.5)"
+   ]
+  },
+  {
+   "topic": "su-aw-beobachten",
+   "subject": "Deutsch",
+   "concept": "describing objects orally with precise words",
+   "strength": "soft",
+   "resolvedTo": null,
+   "how": "dropped-by-override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "su-aw-vergleichen-ordnen",
+   "subject": "Mathematik",
+   "concept": "sorting and classifying objects by attributes",
+   "strength": "soft",
+   "resolvedTo": "ma-dz-sortieren",
+   "how": "bm25",
+   "score": 25.48,
+   "alternatives": [
+    "ma-dz-sortieren (25.5)",
+    "ma-zo-gerade-ungerade (6.8)",
+    "ma-rf-ebene-figuren (6.6)"
+   ]
+  },
+  {
+   "topic": "su-aw-messen",
+   "subject": "Mathematik",
+   "concept": "measuring length in cm and reading scales",
+   "strength": "hard",
+   "resolvedTo": "ma-gm-laengen-cm-m",
+   "how": "bm25",
+   "score": 16.63,
+   "alternatives": [
+    "ma-gm-laengen-cm-m (16.6)",
+    "ma-gm-stuetzpunkte-schaetzen (12.7)",
+    "ma-gm-messen-unnormiert (8.5)"
+   ]
+  },
+  {
+   "topic": "su-aw-tabellen-diagramme",
+   "subject": "Mathematik",
+   "concept": "reading and drawing a bar chart",
+   "strength": "hard",
+   "resolvedTo": "ma-dz-saeulendiagramm",
+   "how": "bm25",
+   "score": 20.66,
+   "alternatives": [
+    "ma-dz-saeulendiagramm (20.7)",
+    "ma-dz-strichliste (8.0)",
+    "ma-dz-zufallsexperimente (5.6)"
+   ]
+  },
+  {
+   "topic": "su-aw-versuchsprotokoll",
+   "subject": "Deutsch",
+   "concept": "writing short factual texts",
+   "strength": "soft",
+   "resolvedTo": "de-tv-erste-texte",
+   "how": "bm25",
+   "score": 8.17,
+   "alternatives": [
+    "de-tv-erste-texte (8.2)",
+    "de-tm-textarten (7.0)",
+    "de-tv-gedichte-schreiben (6.2)"
+   ]
+  },
+  {
+   "topic": "su-aw-erkunden-befragen",
+   "subject": "Deutsch",
+   "concept": "asking and answering questions in conversation",
+   "strength": "soft",
+   "resolvedTo": "de-sz-zuhoeren",
+   "how": "bm25",
+   "score": 12.12,
+   "alternatives": [
+    "de-sz-zuhoeren (12.1)",
+    "de-tm-literarisches-gespraech (10.5)",
+    "de-le-informationen-finden (8.7)"
+   ]
+  },
+  {
+   "topic": "su-aw-recherchieren",
+   "subject": "Deutsch",
+   "concept": "reading simple factual texts",
+   "strength": "hard",
+   "resolvedTo": "de-tv-sachtext",
+   "how": "bm25",
+   "score": 7.05,
+   "alternatives": [
+    "de-tv-sachtext (7.1)",
+    "de-tm-textarten (7.0)",
+    "de-le-vorlesen (5.7)"
+   ]
+  },
+  {
+   "topic": "su-aw-praesentieren",
+   "subject": "Deutsch",
+   "concept": "speaking in front of others",
+   "strength": "soft",
+   "resolvedTo": "de-sz-kurzvortrag",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "su-un-thermometer",
+   "subject": "Mathematik",
+   "concept": "reading scales and number lines",
+   "strength": "hard",
+   "resolvedTo": "ma-zo-zahlenstrahl",
+   "how": "bm25",
+   "score": 9.49,
+   "alternatives": [
+    "ma-zo-zahlenstrahl (9.5)",
+    "ma-zo-zahlraum-100 (5.1)",
+    "ma-zo-zahlraum-10 (4.3)"
+   ]
+  },
+  {
+   "topic": "su-kg-koerperteile",
+   "subject": "Deutsch",
+   "concept": "naming words (nouns) for everyday things",
+   "strength": "soft",
+   "resolvedTo": null,
+   "how": "dropped-by-override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "su-kg-notruf",
+   "subject": "Deutsch",
+   "concept": "speaking clearly and answering questions",
+   "strength": "soft",
+   "resolvedTo": "de-sz-standardsprache",
+   "how": "bm25",
+   "score": 12.3,
+   "alternatives": [
+    "de-sz-standardsprache (12.3)",
+    "de-le-informationen-finden (8.7)",
+    "de-rs-mitsprechen (7.8)"
+   ]
+  },
+  {
+   "topic": "su-kg-atmung-kreislauf",
+   "subject": "Mathematik",
+   "concept": "counting and comparing numbers to 200",
+   "strength": "soft",
+   "resolvedTo": "ma-zo-zahlraum-1000",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "su-ro-schulgebaeude",
+   "subject": "Mathematik",
+   "concept": "position words (links, rechts, vor, hinter)",
+   "strength": "hard",
+   "resolvedTo": "ma-rf-lagebeziehungen",
+   "how": "bm25",
+   "score": 28.84,
+   "alternatives": [
+    "ma-rf-lagebeziehungen (28.8)",
+    "ma-rf-wege-beschreiben (7.7)",
+    "ma-zo-zahlraum-10 (6.3)"
+   ]
+  },
+  {
+   "topic": "su-ro-plan",
+   "subject": "Mathematik",
+   "concept": "views of objects (Ansichten)",
+   "strength": "soft",
+   "resolvedTo": null,
+   "how": "dropped-by-override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "su-ro-massstab",
+   "subject": "Mathematik",
+   "concept": "measuring lengths and converting cm, m, km",
+   "strength": "hard",
+   "resolvedTo": "ma-gm-laengen-mm-km",
+   "how": "bm25",
+   "score": 22.29,
+   "alternatives": [
+    "ma-gm-laengen-mm-km (22.3)",
+    "ma-gm-kommaschreibweise (17.6)",
+    "ma-gm-laengen-cm-m (16.6)"
+   ]
+  },
+  {
+   "topic": "su-ro-planquadrate",
+   "subject": "Mathematik",
+   "concept": "coordinates in a grid",
+   "strength": "soft",
+   "resolvedTo": "ma-rf-wege-beschreiben",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "su-mv-bus-bahn",
+   "subject": "Mathematik",
+   "concept": "reading times and time intervals",
+   "strength": "hard",
+   "resolvedTo": "ma-gm-uhr-minuten",
+   "how": "bm25",
+   "score": 9.96,
+   "alternatives": [
+    "ma-gm-uhr-minuten (10.0)",
+    "ma-gm-zeitspannen (9.4)",
+    "ma-gm-uhr-lesen (7.0)"
+   ]
+  },
+  {
+   "topic": "su-mv-fahrrad-motorik",
+   "subject": "Sport",
+   "concept": "balance and motor coordination",
+   "strength": "soft",
+   "resolvedTo": "sp-tu-balancieren",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "su-zw-tagesablauf",
+   "subject": "Deutsch",
+   "concept": "using tenses for past and future",
+   "strength": "soft",
+   "resolvedTo": null,
+   "how": "dropped-by-override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "su-zw-kalender",
+   "subject": "Mathematik",
+   "concept": "reading clock times and time units",
+   "strength": "soft",
+   "resolvedTo": "ma-gm-uhr-lesen",
+   "how": "bm25",
+   "score": 12.85,
+   "alternatives": [
+    "ma-gm-uhr-lesen (12.8)",
+    "ma-gm-messen-unnormiert (4.5)",
+    "ma-dz-tabellen (3.6)"
+   ]
+  },
+  {
+   "topic": "su-zw-geschichte-geschichten",
+   "subject": "Deutsch",
+   "concept": "distinguishing fiction and non-fiction texts",
+   "strength": "hard",
+   "resolvedTo": "in-ar-wirklichkeit-fiktion",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "su-zw-zeitleiste",
+   "subject": "Mathematik",
+   "concept": "numbers up to 10 000 and the number line",
+   "strength": "hard",
+   "resolvedTo": "ma-zo-stellenwerttafel",
+   "how": "bm25",
+   "score": 13.01,
+   "alternatives": [
+    "ma-zo-stellenwerttafel (13.0)",
+    "ma-zo-zahlenstrahl (12.9)",
+    "ma-zo-zahlraum-10 (10.5)"
+   ]
+  },
+  {
+   "topic": "su-zw-erzaehlen",
+   "subject": "Deutsch",
+   "concept": "writing a coherent narrative text",
+   "strength": "soft",
+   "resolvedTo": "de-tv-erlebniserzaehlung",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "su-dg-abstimmen",
+   "subject": "Mathematik",
+   "concept": "counting and comparing quantities",
+   "strength": "soft",
+   "resolvedTo": "ma-zo-simultanerfassung",
+   "how": "bm25",
+   "score": 9.94,
+   "alternatives": [
+    "ma-zo-simultanerfassung (9.9)",
+    "ma-zo-mengen-vergleichen (9.6)",
+    "ma-zo-kraft-der-fuenf (6.1)"
+   ]
+  },
+  {
+   "topic": "su-dg-taschengeld",
+   "subject": "Mathematik",
+   "concept": "calculating with Euro and Cent",
+   "strength": "hard",
+   "resolvedTo": "ma-gm-geld-rechnen",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "su-dg-klassenrat",
+   "subject": "Deutsch",
+   "concept": "discussion rules (Gesprächsregeln)",
+   "strength": "soft",
+   "resolvedTo": "de-sz-gespraechsregeln",
+   "how": "bm25",
+   "score": 13.63,
+   "alternatives": [
+    "de-sz-gespraechsregeln (13.6)",
+    "de-sz-standardsprache (4.0)",
+    "de-tv-anleitung (3.6)"
+   ]
+  },
+  {
+   "topic": "nw-na-erkenntnisweg",
+   "subject": "Sachunterricht",
+   "concept": "carrying out simple guided experiments and making predictions (Vermutungen) in primary science",
+   "strength": "soft",
+   "resolvedTo": "su-aw-vermuten",
+   "how": "bm25",
+   "score": 22.39,
+   "alternatives": [
+    "su-aw-vermuten (22.4)",
+    "su-aw-versuch-durchfuehren (19.3)",
+    "su-ta-standfestigkeit (6.3)"
+   ]
+  },
+  {
+   "topic": "nw-na-versuchsprotokoll",
+   "subject": "Deutsch",
+   "concept": "writing short structured factual texts (Sachtexte) with headings",
+   "strength": "soft",
+   "resolvedTo": "de-tm-textarten",
+   "how": "bm25",
+   "score": 15.02,
+   "alternatives": [
+    "de-tm-textarten (15.0)",
+    "de-le-sachtexte-erschliessen (13.0)",
+    "de-tv-sachtext (9.2)"
+   ]
+  },
+  {
+   "topic": "nw-na-messen-darstellen",
+   "subject": "Mathematik",
+   "concept": "measuring quantities with units (Größen: Länge, Masse, Zeit) and converting units",
+   "strength": "hard",
+   "resolvedTo": "ma-gm-einheiten-umwandeln",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "nw-na-messen-darstellen",
+   "subject": "Mathematik",
+   "concept": "reading and drawing bar charts and tables (Daten)",
+   "strength": "soft",
+   "resolvedTo": "ma-dz-saeulendiagramm",
+   "how": "bm25",
+   "score": 20.66,
+   "alternatives": [
+    "ma-dz-saeulendiagramm (20.7)",
+    "ma-dz-daten-erheben (11.0)",
+    "ma-dz-diagramme-lesen (9.3)"
+   ]
+  },
+  {
+   "topic": "nw-na-sicherheit-fachraum",
+   "subject": "Sachunterricht",
+   "concept": "following safety rules when experimenting with heat, water and tools in primary school",
+   "strength": "soft",
+   "resolvedTo": "su-aw-versuch-durchfuehren",
+   "how": "bm25",
+   "score": 16.5,
+   "alternatives": [
+    "su-aw-versuch-durchfuehren (16.5)",
+    "su-un-strom-sicherheit (15.3)",
+    "su-ta-werkzeuge (15.2)"
+   ]
+  },
+  {
+   "topic": "nw-lz-kennzeichen-lebendigen",
+   "subject": "Sachunterricht",
+   "concept": "distinguishing living and non-living things and what plants and animals need",
+   "strength": "soft",
+   "resolvedTo": "su-bn-lebendig",
+   "how": "bm25",
+   "score": 19.19,
+   "alternatives": [
+    "su-bn-lebendig (19.2)",
+    "su-bn-wiese-hecke (10.0)",
+    "su-bn-insekten (9.4)"
+   ]
+  },
+  {
+   "topic": "nw-lz-mikroskopieren",
+   "subject": "Mathematik",
+   "concept": "multiplying whole numbers (magnification = ocular × objective)",
+   "strength": "soft",
+   "resolvedTo": "ma-zo-einmaleins",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "nw-ti-hund-katze",
+   "subject": "Sachunterricht",
+   "concept": "pets and their needs; naming common animal groups",
+   "strength": "soft",
+   "resolvedTo": "su-bn-haustiere",
+   "how": "bm25",
+   "score": 14.95,
+   "alternatives": [
+    "su-bn-haustiere (15.0)",
+    "su-kg-koerperteile (8.6)",
+    "su-aw-vergleichen-ordnen (8.1)"
+   ]
+  },
+  {
+   "topic": "nw-pf-pflanzenorgane",
+   "subject": "Sachunterricht",
+   "concept": "parts of a plant and what plants need to grow",
+   "strength": "soft",
+   "resolvedTo": "su-bn-keimung-wachstum",
+   "how": "bm25",
+   "score": 11.9,
+   "alternatives": [
+    "su-bn-keimung-wachstum (11.9)",
+    "su-bn-pflanzenteile (9.3)",
+    "su-bn-lebendig (5.7)"
+   ]
+  },
+  {
+   "topic": "nw-mk-bewegungsapparat",
+   "subject": "Sachunterricht",
+   "concept": "naming body parts and basic knowledge of bones and muscles",
+   "strength": "soft",
+   "resolvedTo": "su-kg-skelett-muskeln",
+   "how": "bm25",
+   "score": 15.84,
+   "alternatives": [
+    "su-kg-skelett-muskeln (15.8)",
+    "su-kg-koerperteile (14.5)",
+    "su-kg-bewegung-schlaf (7.0)"
+   ]
+  },
+  {
+   "topic": "nw-mk-ernaehrung",
+   "subject": "Sachunterricht",
+   "concept": "healthy eating and food groups (Ernährungspyramide)",
+   "strength": "soft",
+   "resolvedTo": "su-kg-ernaehrungskreis",
+   "how": "bm25",
+   "score": 25.13,
+   "alternatives": [
+    "su-kg-ernaehrungskreis (25.1)",
+    "su-bn-igel (6.2)",
+    "su-kg-verdauung (6.2)"
+   ]
+  },
+  {
+   "topic": "nw-ps-pubertaet",
+   "subject": "Sachunterricht",
+   "concept": "primary sex education (body parts, growing up, where babies come from)",
+   "strength": "soft",
+   "resolvedTo": "su-kg-fortpflanzung",
+   "how": "bm25",
+   "score": 30.94,
+   "alternatives": [
+    "su-kg-fortpflanzung (30.9)",
+    "su-bn-igel (9.7)",
+    "su-kg-koerperteile (8.8)"
+   ]
+  },
+  {
+   "topic": "nw-st-stoffeigenschaften",
+   "subject": "Sachunterricht",
+   "concept": "materials and their properties (wood, metal, plastic, glass)",
+   "strength": "soft",
+   "resolvedTo": "su-un-stoffe-eigenschaften",
+   "how": "bm25",
+   "score": 29.08,
+   "alternatives": [
+    "su-un-stoffe-eigenschaften (29.1)",
+    "su-un-leiter-nichtleiter (20.7)",
+    "su-un-magnete (10.1)"
+   ]
+  },
+  {
+   "topic": "nw-st-dichte-schwimmen",
+   "subject": "Mathematik",
+   "concept": "volume units (ml, l, cm³)",
+   "strength": "soft",
+   "resolvedTo": "ma-gm-volumeneinheiten",
+   "how": "bm25",
+   "score": 26.79,
+   "alternatives": [
+    "ma-gm-volumeneinheiten (26.8)",
+    "ma-rf-rauminhalt-einheitswuerfel (10.3)",
+    "ma-gm-volumen-quader (10.2)"
+   ]
+  },
+  {
+   "topic": "nw-st-aggregatzustaende",
+   "subject": "Sachunterricht",
+   "concept": "water as ice, liquid and steam; evaporation in the water cycle",
+   "strength": "hard",
+   "resolvedTo": "su-un-wasserkreislauf",
+   "how": "bm25",
+   "score": 16.84,
+   "alternatives": [
+    "su-un-wasserkreislauf (16.8)",
+    "su-un-aggregatzustaende (13.9)",
+    "su-un-trennen (8.0)"
+   ]
+  },
+  {
+   "topic": "nw-we-temperatur-thermometer",
+   "subject": "Mathematik",
+   "concept": "reading scales and number lines, including values below zero",
+   "strength": "soft",
+   "resolvedTo": "ma-zo-zahlenstrahl",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "nw-em-stromkreis",
+   "subject": "Sachunterricht",
+   "concept": "simple circuit with battery, wires and bulb",
+   "strength": "hard",
+   "resolvedTo": "su-un-stromkreis",
+   "how": "bm25",
+   "score": 27.17,
+   "alternatives": [
+    "su-un-stromkreis (27.2)",
+    "su-un-leiter-nichtleiter (6.1)",
+    "su-bn-fruehblueher (5.6)"
+   ]
+  },
+  {
+   "topic": "nw-em-magnete",
+   "subject": "Sachunterricht",
+   "concept": "magnets attract objects made of iron",
+   "strength": "soft",
+   "resolvedTo": "su-un-magnete",
+   "how": "bm25",
+   "score": 20.21,
+   "alternatives": [
+    "su-un-magnete (20.2)",
+    "su-un-magnetpole (10.5)",
+    "su-zw-quellen (7.7)"
+   ]
+  },
+  {
+   "topic": "nw-ls-lichtausbreitung",
+   "subject": "Sachunterricht",
+   "concept": "light sources, light and shadow",
+   "strength": "soft",
+   "resolvedTo": "su-un-licht-schatten",
+   "how": "bm25",
+   "score": 17.61,
+   "alternatives": [
+    "su-un-licht-schatten (17.6)",
+    "su-zw-quellen (5.4)",
+    "su-ne-energiequellen (5.0)"
+   ]
+  },
+  {
+   "topic": "nw-ls-schall",
+   "subject": "Sachunterricht",
+   "concept": "sound sources and hearing",
+   "strength": "soft",
+   "resolvedTo": "su-un-schall",
+   "how": "bm25",
+   "score": 18.45,
+   "alternatives": [
+    "su-un-schall (18.5)",
+    "su-zw-quellen (5.4)",
+    "su-ne-energiequellen (5.0)"
+   ]
+  },
+  {
+   "topic": "ek-or-himmelsrichtungen",
+   "subject": "Sachunterricht",
+   "concept": "the four cardinal directions and orientation in the local area (Schulweg, Ortsplan)",
+   "strength": "hard",
+   "resolvedTo": "su-ro-himmelsrichtungen",
+   "how": "bm25",
+   "score": 17.59,
+   "alternatives": [
+    "su-ro-himmelsrichtungen (17.6)",
+    "su-ro-kompass (12.3)",
+    "su-ro-kartenskizze (9.4)"
+   ]
+  },
+  {
+   "topic": "ek-or-karten-legende",
+   "subject": "Sachunterricht",
+   "concept": "from model and plan to map (Vogelperspektive, Kartenzeichen)",
+   "strength": "hard",
+   "resolvedTo": "su-ro-legende",
+   "how": "bm25",
+   "score": 14.43,
+   "alternatives": [
+    "su-ro-legende (14.4)",
+    "su-ro-plan (11.5)",
+    "su-ro-massstab (8.2)"
+   ]
+  },
+  {
+   "topic": "ek-or-massstab",
+   "subject": "Mathematik",
+   "concept": "multiplication with large numbers and converting length units (cm, m, km)",
+   "strength": "hard",
+   "resolvedTo": "ma-gm-laengen-mm-km",
+   "how": "bm25",
+   "score": 25.82,
+   "alternatives": [
+    "ma-gm-laengen-mm-km (25.8)",
+    "ma-gm-kommaschreibweise (21.2)",
+    "ma-gm-einheiten-umwandeln (18.0)"
+   ]
+  },
+  {
+   "topic": "ek-pe-kontinente-ozeane",
+   "subject": "Sachunterricht",
+   "concept": "globe and world map as representations of the Earth",
+   "strength": "soft",
+   "resolvedTo": "su-ro-erde-globus",
+   "how": "bm25",
+   "score": 24.42,
+   "alternatives": [
+    "su-ro-erde-globus (24.4)",
+    "su-ro-tag-nacht (11.0)",
+    "su-ro-sonne-erde-mond (6.6)"
+   ]
+  },
+  {
+   "topic": "ek-pe-tag-nacht",
+   "subject": "Sachunterricht",
+   "concept": "Sun, Earth and Moon; daily course of the Sun",
+   "strength": "soft",
+   "resolvedTo": "su-ro-sonne-erde-mond",
+   "how": "bm25",
+   "score": 21.13,
+   "alternatives": [
+    "su-ro-sonne-erde-mond (21.1)",
+    "su-ro-tag-nacht (10.4)",
+    "su-zw-tagesablauf (5.5)"
+   ]
+  },
+  {
+   "topic": "ek-nr-grosslandschaften",
+   "subject": "Sachunterricht",
+   "concept": "own region and Bundesland on the map",
+   "strength": "soft",
+   "resolvedTo": "su-ro-bundesland",
+   "how": "bm25",
+   "score": 10.81,
+   "alternatives": [
+    "su-ro-bundesland (10.8)",
+    "su-ro-deutschland (8.3)",
+    "su-ro-legende (4.9)"
+   ]
+  },
+  {
+   "topic": "ek-wk-wetterelemente",
+   "subject": "Sachunterricht",
+   "concept": "observing and recording the weather",
+   "strength": "soft",
+   "resolvedTo": "su-un-wetterbeobachtung",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ek-wk-klimadiagramm",
+   "subject": "Mathematik",
+   "concept": "reading bar and line diagrams and computing means",
+   "strength": "hard",
+   "resolvedTo": "ma-dz-diagramme-lesen",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ek-sl-stadt-land",
+   "subject": "Sachunterricht",
+   "concept": "own municipality and its public facilities",
+   "strength": "soft",
+   "resolvedTo": "su-dg-gemeinde",
+   "how": "bm25",
+   "score": 8.51,
+   "alternatives": [
+    "su-dg-gemeinde (8.5)",
+    "su-ro-heimatort (6.6)",
+    "su-dg-gerechtigkeit (4.3)"
+   ]
+  },
+  {
+   "topic": "ek-pg-bundeslaender",
+   "subject": "Sachunterricht",
+   "concept": "own Bundesland and its capital",
+   "strength": "soft",
+   "resolvedTo": "su-ro-bundesland",
+   "how": "bm25",
+   "score": 12.92,
+   "alternatives": [
+    "su-ro-bundesland (12.9)",
+    "su-ro-deutschland (12.8)",
+    "su-ro-europa (5.5)"
+   ]
+  },
+  {
+   "topic": "ge-hd-geschichte-spuren",
+   "subject": "Sachunterricht",
+   "concept": "past and present ('früher – heute'), family history and local history",
+   "strength": "soft",
+   "resolvedTo": "su-zw-frueher-heute",
+   "how": "bm25",
+   "score": 17.48,
+   "alternatives": [
+    "su-zw-frueher-heute (17.5)",
+    "su-zw-erzaehlen (12.4)",
+    "su-zw-ortsgeschichte (12.4)"
+   ]
+  },
+  {
+   "topic": "ge-hd-zeitrechnung",
+   "subject": "Mathematik",
+   "concept": "number line, large numbers and subtraction; intuition for counting backwards across a zero point",
+   "strength": "hard",
+   "resolvedTo": "ma-zo-negative-zahlen",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "po-zl-familie",
+   "subject": "Sachunterricht",
+   "concept": "living together in families and groups; diversity of families",
+   "strength": "soft",
+   "resolvedTo": "su-dg-familienformen",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "po-zl-regeln-schule",
+   "subject": "Sachunterricht",
+   "concept": "agreeing on rules in class and school life",
+   "strength": "soft",
+   "resolvedTo": "su-dg-klassenregeln",
+   "how": "bm25",
+   "score": 16.28,
+   "alternatives": [
+    "su-dg-klassenregeln (16.3)",
+    "su-mv-radfahrpruefung (5.7)",
+    "su-ro-lebenssituationen-fern (5.6)"
+   ]
+  },
+  {
+   "topic": "po-dm-gemeinde",
+   "subject": "Sachunterricht",
+   "concept": "the town hall and public facilities of the home municipality",
+   "strength": "soft",
+   "resolvedTo": "su-dg-gemeinde",
+   "how": "bm25",
+   "score": 15.66,
+   "alternatives": [
+    "su-dg-gemeinde (15.7)",
+    "su-ro-heimatort (15.2)",
+    "su-ro-stadt-land (8.7)"
+   ]
+  },
+  {
+   "topic": "po-rs-kinderrechte",
+   "subject": "Sachunterricht",
+   "concept": "children's rights and equal treatment",
+   "strength": "soft",
+   "resolvedTo": "su-dg-kinderrechte",
+   "how": "bm25",
+   "score": 6.62,
+   "alternatives": [
+    "su-dg-kinderrechte (6.6)",
+    "su-un-trinkwasser-klaeranlage (6.2)",
+    "su-mv-vorfahrt (5.3)"
+   ]
+  },
+  {
+   "topic": "po-wi-beduerfnisse-gueter",
+   "subject": "Sachunterricht",
+   "concept": "needs and wants; money and shopping",
+   "strength": "soft",
+   "resolvedTo": "su-dg-beduerfnisse",
+   "how": "bm25",
+   "score": 14.5,
+   "alternatives": [
+    "su-dg-beduerfnisse (14.5)",
+    "su-dg-taschengeld (8.5)",
+    "su-ta-hebel (4.3)"
+   ]
+  },
+  {
+   "topic": "po-wi-geld",
+   "subject": "Mathematik",
+   "concept": "calculating with euro and cent",
+   "strength": "hard",
+   "resolvedTo": "ma-gm-geld-rechnen",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "po-me-mediennutzung",
+   "subject": "Sachunterricht",
+   "concept": "safe and responsible internet use (Medienbildung in der Grundschule)",
+   "strength": "soft",
+   "resolvedTo": "in-ss-mediennutzung",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  }
+ ]
+}

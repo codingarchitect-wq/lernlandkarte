@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>German curriculum vs os-taxonomy — comparison explorer</title>
+<style>
+.viz-root {
+  color-scheme: light;
+  --page: #f9f9f7; --surface-1: #fcfcfb; --text-primary: #0b0b0b; --text-secondary: #52514e; --muted: #898781;
+  --grid: #e1e0d9; --axis: #c3c2b7; --ring: rgba(11,11,11,0.10);
+  --ord-1: #104281; --ord-2: #2a78d6; --ord-3: #86b6ef; --none: #d9d8d2;
+  --series-1: #2a78d6; --div-neg: #2a78d6; --div-mid: #c3c2b7; --div-pos: #e34948;
+  --seq-0: #f0efec; --seq-1: #cde2fb; --seq-2: #86b6ef; --seq-3: #3987e5; --seq-4: #1c5cab; --seq-5: #0d366b;
+  --accent-wash: rgba(42,120,214,0.08); --ink-high: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) .viz-root {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface-1: #1a1a19; --text-primary: #f0efec; --text-secondary: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+    --ord-1: #9ec5f4; --ord-2: #3987e5; --ord-3: #184f95; --none: #383835;
+    --series-1: #3987e5; --div-neg: #3987e5; --div-mid: #5a5955; --div-pos: #e66767;
+    --seq-0: #262624; --seq-1: #104281; --seq-2: #1c5cab; --seq-3: #2a78d6; --seq-4: #6da7ec; --seq-5: #b7d3f6;
+    --accent-wash: rgba(57,135,229,0.14); --ink-high: #0b0b0b;
+  }
+}
+:root[data-theme="dark"] .viz-root {
+  color-scheme: dark;
+  --page: #0d0d0d; --surface-1: #1a1a19; --text-primary: #f0efec; --text-secondary: #c3c2b7; --muted: #898781;
+  --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+  --ord-1: #9ec5f4; --ord-2: #3987e5; --ord-3: #184f95; --none: #383835;
+  --series-1: #3987e5; --div-neg: #3987e5; --div-mid: #5a5955; --div-pos: #e66767;
+  --seq-0: #262624; --seq-1: #104281; --seq-2: #1c5cab; --seq-3: #2a78d6; --seq-4: #6da7ec; --seq-5: #b7d3f6;
+  --accent-wash: rgba(57,135,229,0.14); --ink-high: #0b0b0b;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.viz-root { background: var(--page); color: var(--text-primary); min-height: 100vh; padding: 24px clamp(12px, 3vw, 40px) 64px; }
+h1 { font-size: 22px; margin: 0 0 4px; } h2 { font-size: 16px; margin: 0 0 4px; } h3 { font-size: 14px; margin: 16px 0 6px; }
+p.sub, .sub { color: var(--text-secondary); font-size: 13px; margin: 0 0 12px; line-height: 1.45; }
+.card { background: var(--surface-1); border: 1px solid var(--ring); border-radius: 10px; padding: 16px 18px; margin-bottom: 16px; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 16px 0; }
+.kpi .v { font-size: 32px; font-weight: 600; line-height: 1.1; } .kpi .l { font-size: 12px; color: var(--text-secondary); margin-top: 4px; line-height: 1.35; }
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--grid); margin: 8px 0 16px; flex-wrap: wrap; }
+.tabs button { background: none; border: 0; padding: 8px 12px; font: inherit; font-size: 14px; color: var(--text-secondary); cursor: pointer; border-bottom: 2px solid transparent; }
+.tabs button[aria-selected="true"] { color: var(--text-primary); border-bottom-color: var(--series-1); font-weight: 600; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 16px; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--text-secondary); margin: 6px 0 10px; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+.hbar { display: grid; grid-template-columns: 170px 1fr 52px; align-items: center; gap: 8px; font-size: 13px; margin: 3px 0; }
+.hbar .lab { color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hbar .track { display: flex; gap: 2px; height: 16px; }
+.hbar .seg { height: 100%; } .hbar .seg:first-child { border-radius: 4px 0 0 4px; } .hbar .seg:last-child { border-radius: 0 4px 4px 0; } .hbar .seg:only-child { border-radius: 4px; }
+.hbar .val { font-variant-numeric: tabular-nums; color: var(--text-primary); text-align: right; }
+.hit { cursor: default; }
+.tip { position: fixed; pointer-events: none; background: var(--surface-1); color: var(--text-primary); border: 1px solid var(--ring); box-shadow: 0 4px 16px rgba(0,0,0,.12); border-radius: 8px; padding: 8px 10px; font-size: 12px; line-height: 1.4; max-width: 320px; z-index: 10; display: none; }
+.tip b { font-weight: 600; }
+svg text { fill: var(--muted); font-size: 11px; font-family: inherit; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+th { color: var(--text-secondary); font-weight: 600; font-size: 12px; }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+.heat td.c { text-align: center; font-variant-numeric: tabular-nums; min-width: 44px; }
+.filters { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+.filters select, .filters input[type=search] { font: inherit; font-size: 13px; padding: 6px 8px; border-radius: 6px; border: 1px solid var(--axis); background: var(--surface-1); color: var(--text-primary); }
+.filters input[type=search] { min-width: 240px; }
+.filters label { font-size: 13px; color: var(--text-secondary); }
+.split { display: grid; grid-template-columns: minmax(300px, 1fr) minmax(320px, 1.2fr); gap: 16px; }
+@media (max-width: 860px) { .split, .grid2 { grid-template-columns: 1fr; } .hbar { grid-template-columns: 120px 1fr 44px; } }
+.list { max-height: 70vh; overflow: auto; border: 1px solid var(--grid); border-radius: 8px; }
+.row { padding: 8px 10px; border-bottom: 1px solid var(--grid); cursor: pointer; font-size: 13px; }
+.row:hover, .row[aria-selected="true"] { background: var(--accent-wash); }
+.row .meta { color: var(--muted); font-size: 12px; }
+.pill { display: inline-block; font-size: 11px; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--axis); color: var(--text-secondary); margin-right: 4px; white-space: nowrap; }
+.pill .sw { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 4px; vertical-align: 0; }
+.detail { position: sticky; top: 12px; max-height: 80vh; overflow: auto; }
+.detail .k { color: var(--muted); font-size: 12px; }
+.detail ul, .card ul { margin: 4px 0 8px; padding-left: 18px; font-size: 13px; line-height: 1.5; }
+.match { border-top: 1px solid var(--grid); padding: 8px 0; font-size: 13px; }
+.count { color: var(--muted); font-size: 12px; margin: 0 0 6px; }
+.subjtoggle { float: right; margin-left: 8px; display: inline-flex; border: 1px solid var(--axis); border-radius: 6px; overflow: hidden; }
+.subjtoggle button { font: inherit; font-size: 12px; background: var(--surface-1); color: var(--text-secondary); border: 0; padding: 4px 9px; cursor: pointer; }
+.subjtoggle button[aria-pressed="true"] { background: var(--series-1); color: var(--ink-high); }
+.themebtn { float: right; font: inherit; font-size: 12px; background: var(--surface-1); color: var(--text-secondary); border: 1px solid var(--axis); border-radius: 6px; padding: 4px 8px; cursor: pointer; }
+a { color: var(--series-1); }
+.btn { font: inherit; font-size: 12px; background: var(--surface-1); color: var(--text-secondary); border: 1px solid var(--axis); border-radius: 6px; padding: 5px 10px; cursor: pointer; }
+.btn:hover { color: var(--text-primary); border-color: var(--series-1); }
+.stats { display: flex; gap: 36px; flex-wrap: wrap; margin-top: 6px; }
+.stat .v { font-size: 26px; font-weight: 600; line-height: 1.15; font-variant-numeric: tabular-nums; } .stat .l { font-size: 12px; color: var(--text-secondary); }
+.click { cursor: pointer; }
+.hbar.click, .dbar.click { border-radius: 4px; padding: 1px 4px; margin-left: -4px; margin-right: -4px; }
+.hbar.click:hover .lab, .dbar.click:hover .lab { color: var(--series-1); }
+.hbar.on, .dbar.on, tr.on { background: var(--accent-wash); }
+.hbar.on .lab, .dbar.on .lab { color: var(--text-primary); font-weight: 600; }
+.dbar { display: grid; grid-template-columns: minmax(150px, 1.4fr) minmax(140px, 1fr) 44px 46px; gap: 8px; align-items: center; font-size: 13px; margin: 2px 0; }
+.dbar .lab { color: var(--text-secondary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dbar .trk { position: relative; height: 14px; }
+.dbar .trk::before { content: ''; position: absolute; left: 50%; top: -3px; bottom: -3px; border-left: 1px solid var(--axis); }
+.dbar .b { position: absolute; top: 0; bottom: 0; }
+.dbar .val { text-align: right; font-variant-numeric: tabular-nums; }
+.dbar .nn { text-align: right; color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.scroll { max-height: 460px; overflow: auto; padding-right: 4px; }
+.fchip { font: inherit; font-size: 12px; border: 1px solid var(--series-1); color: var(--text-primary); background: var(--accent-wash); border-radius: 999px; padding: 2px 9px; margin: 0 6px 4px 0; cursor: pointer; }
+.ptab td { vertical-align: middle; }
+.ptab th.dumb, .ptab td.dumb { width: 170px; }
+.prow { cursor: pointer; } .prow:hover, .prow.open { background: var(--accent-wash); }
+.pdet > td { background: var(--accent-wash); padding: 10px 14px 16px; }
+.pdg { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 860px) { .pdg { grid-template-columns: 1fr; } }
+.pdg p { font-size: 13px; line-height: 1.5; margin: 4px 0 6px; }
+table.mini { width: auto; margin-top: 10px; } table.mini td, table.mini th { padding: 3px 12px 3px 0; border-bottom: 1px solid var(--grid); }
+svg text.vlab { fill: var(--text-primary); font-size: 11px; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="viz-root">
+<button class="themebtn" id="theme" type="button" aria-label="Toggle light or dark theme">Theme</button>
+<div class="subjtoggle" role="group" aria-label="Subjects included"><button type="button" data-var="all">All subjects</button><button type="button" data-var="core">Core subjects only</button></div>
+<h1>German curriculum taxonomy vs os-taxonomy</h1>
+<p class="sub">German micro-topics from Vorschule to Klasse 13 (Gymnasium from Klasse 7; KMK Bildungsstandards, GDSU Perspektivrahmen, Länder curricula) compared topic-by-topic with the Marble os-taxonomy (England, US, Australia, Ontario, IB), which runs to about age 15. Generated <span id="gen"></span>. <a class="xl" href="../de-taxonomy/index.html">Browse the German taxonomy →</a> · <a class="xl" href="../de-taxonomy/graph.html">3D map of both taxonomies →</a></p>
+<div class="kpis" id="kpis"></div>
+<div class="tabs" role="tablist" id="tabs">
+  <button role="tab" aria-selected="true" data-tab="overview">Overview</button>
+  <button role="tab" aria-selected="false" data-tab="timing">Timing: when, compared?</button>
+  <button role="tab" aria-selected="false" data-tab="de">Explore German topics</button>
+  <button role="tab" aria-selected="false" data-tab="os">Explore os-taxonomy</button>
+  <button role="tab" aria-selected="false" data-tab="gaps">Gaps</button>
+</div>
+
+<section data-panel="overview">
+  <div class="grid2">
+    <div class="card">
+      <h2>How much of each German subject exists in os-taxonomy?</h2>
+      <p class="sub">Share of German topics by best crosswalk match. Value = strong + partial.</p>
+      <div class="legend" id="covLegend"></div>
+      <div id="deCov"></div>
+      <h3>By school stage</h3>
+      <div id="stageCov"></div>
+      <p class="sub" style="margin-top:6px">os-taxonomy runs to about age 15 (≈ Klasse 9), so the Oberstufe has almost no counterparts by construction.</p>
+    </div>
+    <div class="card">
+      <h2>How much of each os-taxonomy subject appears in the German taxonomy?</h2>
+      <p class="sub">Share of os topics with at least one strong or partial German counterpart.</p>
+      <div id="osCov"></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h2>When do German children meet the same idea?</h2>
+      <p class="sub">German start age minus os-taxonomy start age, per German topic with an exact/close match. Right of 0 = later in Germany.</p>
+      <div class="legend"><span><i style="background:var(--div-neg)"></i>Earlier in Germany</span><span><i style="background:var(--div-mid)"></i>Same age</span><span><i style="background:var(--div-pos)"></i>Later in Germany</span></div>
+      <div id="hist"></div>
+      <button class="btn" type="button" data-to-timing>Drill down by subject, domain and topic →</button>
+    </div>
+    <div class="card">
+      <h2>Median age offset by jurisdiction</h2>
+      <p class="sub">Years later (+) or earlier (−) in Germany than in each os-taxonomy jurisdiction, for the same matched topic. Ages per jurisdiction come from os-taxonomy's scoped alignment contexts. Click a row or cell to see the topics behind it.</p>
+      <div id="jurTable"></div>
+      <h3>By school stage</h3>
+      <div id="jurStage"></div>
+      <p class="sub" style="margin-top:8px">Caveat: os-taxonomy's Ontario contexts often carry the linked topic's own age (e.g. age 6 on Grade 4–6 expectations), so the Ontario column understates Ontario grade placement. England's Year N starts at age N+4; US Grade N, Australian Year N and German Klasse N start at about N+5.</p>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Where German subjects land in os-taxonomy</h2>
+    <p class="sub">Number of strong/partial crosswalk links from each German subject (rows) to each os subject (columns). Darker = more links.</p>
+    <div id="matrix" style="overflow:auto"></div>
+  </div>
+  <div class="card">
+    <h2>Structure side by side</h2>
+    <div id="structure"></div>
+  </div>
+</section>
+
+<section data-panel="timing" hidden>
+  <div class="card">
+    <h2>When do German children meet the same idea?</h2>
+    <p class="sub" style="max-width:1000px">Each German topic with an exact or close os-taxonomy match is paired with its closest counterpart. <b>Δ</b> = the age German children start the topic (Klasse + 5) minus the age the matched topic starts in os-taxonomy, or in the jurisdiction you pick. Positive = later in Germany. Click a bar, subject or domain to filter the topic list at the bottom; click a topic row to see both descriptions and the start age in every jurisdiction.</p>
+    <div class="filters">
+      <label>Compare with <select id="tBase" aria-label="Compare with"></select></label>
+      <select id="tMatch" aria-label="Match strength"><option value="strong">Exact and close matches</option><option value="exact">Exact matches only</option></select>
+      <select id="tSubj" aria-label="German subject"></select>
+      <select id="tStage" aria-label="School stage"><option value="">All school stages</option><option value="0-4">Grundschule (Vorschule–Kl. 4)</option><option value="5-6">Kl. 5–6</option><option value="7-10">Kl. 7–10 (Gymnasium)</option><option value="11-13">Oberstufe (Kl. 11–13)</option></select>
+      <button class="btn" type="button" id="tClear">Clear filters</button>
+    </div>
+    <p class="sub" id="tNote" style="max-width:1000px"></p>
+    <div class="stats" id="tStats"></div>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h2>Distribution of Δ</h2>
+      <p class="sub" id="tHistSub"></p>
+      <div class="legend"><span><i style="background:var(--div-neg)"></i>Earlier in Germany</span><span><i style="background:var(--div-mid)"></i>Same age</span><span><i style="background:var(--div-pos)"></i>Later in Germany</span></div>
+      <div id="tHist"></div>
+    </div>
+    <div class="card">
+      <h2>By German subject</h2>
+      <p class="sub">Share of matched topics met earlier, at the same age or later in Germany. Value = median Δ in years. Click a subject to filter.</p>
+      <div class="legend"><span><i style="background:var(--div-neg)"></i>Earlier</span><span><i style="background:var(--div-mid)"></i>Same age</span><span><i style="background:var(--div-pos)"></i>Later</span></div>
+      <div id="tSub"></div>
+    </div>
+  </div>
+  <div class="card">
+    <h2 id="tDomH">By domain</h2>
+    <p class="sub">Median Δ per German domain with at least 2 matched topics, sorted from latest to earliest in Germany. Columns: median Δ, number of topics. Click a domain to filter.</p>
+    <div class="scroll" id="tDom"></div>
+  </div>
+  <div class="card">
+    <h2>Topic pairs</h2>
+    <p class="sub" id="tSel"></p>
+    <div class="filters">
+      <input type="search" id="tQ" placeholder="Search German or os topic…" aria-label="Search topic pairs">
+      <select id="tSort" aria-label="Sort"><option value="later">Latest in Germany first</option><option value="earlier">Earliest in Germany first</option><option value="grade">By Klasse</option><option value="subject">By subject</option></select>
+      <span class="legend" style="margin:0"><span><svg width="14" height="12" aria-hidden="true"><circle cx="7" cy="6" r="4" fill="none" stroke="var(--text-secondary)" stroke-width="1.5"/></svg> start age in the comparison (os-taxonomy or the chosen jurisdiction)</span><span><svg width="14" height="12" aria-hidden="true"><circle cx="7" cy="6" r="4.5" fill="var(--text-secondary)"/></svg> German start age</span></span>
+    </div>
+    <div id="tList" style="overflow:auto"></div>
+  </div>
+</section>
+
+<section data-panel="de" hidden>
+  <div class="filters">
+    <select id="deSubject" aria-label="German subject"></select>
+    <select id="deRel" aria-label="Match type">
+      <option value="">All match types</option><option value="strong">Strong (exact/close)</option><option value="partial">Partial (broader/narrower)</option><option value="related">Related only</option><option value="none">No os counterpart</option>
+    </select>
+    <select id="deGrade" aria-label="Grade"><option value="">All grades</option><option value="0">Vorschule (0)</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option></select>
+    <label><input type="checkbox" id="deGS"> German-specific only</label>
+    <input type="search" id="deQ" placeholder="Search German or English…" aria-label="Search German topics">
+  </div>
+  <div class="split">
+    <div><p class="count" id="deCount"></p><div class="list" id="deList"></div></div>
+    <div class="card detail" id="deDetail"><p class="sub">Select a topic to see its os-taxonomy counterparts, ages by jurisdiction and prerequisites.</p></div>
+  </div>
+</section>
+
+<section data-panel="os" hidden>
+  <div class="filters">
+    <select id="osSubject" aria-label="os subject"></select>
+    <select id="osCovSel" aria-label="Coverage"><option value="">All</option><option value="covered">Has German counterpart</option><option value="related">Related only</option><option value="none">No German counterpart</option></select>
+    <input type="search" id="osQ" placeholder="Search os-taxonomy…" aria-label="Search os topics">
+  </div>
+  <div class="split">
+    <div><p class="count" id="osCount"></p><div class="list" id="osList"></div></div>
+    <div class="card detail" id="osDetail"><p class="sub">Select an os-taxonomy topic to see its German counterparts.</p></div>
+  </div>
+</section>
+
+<section data-panel="gaps" hidden>
+  <div class="grid2">
+    <div class="card"><h2>German topics with no os-taxonomy counterpart</h2><p class="sub">Grouped by subject — what an os-based product would miss for a child in a German school.</p><div id="gapDe"></div></div>
+    <div class="card"><h2>os-taxonomy domains with no German counterpart</h2><p class="sub">Content that is not part of the typical German curriculum.</p><div id="gapOs"></div></div>
+  </div>
+</section>
+<div class="tip" id="tip" role="tooltip"></div>
+</div>
+
+<script id="cmp" type="application/json">__COMPARISON__</script>
+<script id="exp" type="application/json">__EXPLORER__</script>
+<script>
+// ?subjects=core shows the core subjects only (no second foreign languages, Musik, Kunst, Sport, Religion & Ethik)
+const VAR = new URLSearchParams(location.search).get('subjects') === 'core' ? 'core' : 'all';
+const C0 = JSON.parse(document.getElementById('cmp').textContent);
+const C = { ...C0, ...(C0.variants?.[VAR] || {}) };
+const X = JSON.parse(document.getElementById('exp').textContent);
+if (VAR === 'core') { X.de = X.de.filter(t => t.tr !== 'extended'); for (const o of X.os) o.c = o.cc; }
+for (const b of document.querySelectorAll('.subjtoggle button')) {
+  b.setAttribute('aria-pressed', b.dataset.var === VAR);
+  b.onclick = () => { if (b.dataset.var === VAR) return; const u = new URL(location.href); b.dataset.var === 'core' ? u.searchParams.set('subjects', 'core') : u.searchParams.delete('subjects'); location.href = u.href; };
+}
+if (VAR === 'core') for (const a of document.querySelectorAll('a.xl')) a.href += '?subjects=core';
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const pct = (a, b) => b ? Math.round(100 * a / b) : 0;
+const sgn = v => v == null ? '–' : (v > 0 ? '+' : v < 0 ? '−' : '±') + Math.abs(v);
+const JUR = C.jurisdictions;
+const osById = new Map(X.os.map(t => [t.id, t]));
+const deById = new Map(X.de.map(t => [t.id, t]));
+const REL = { exact: 'exact', close: 'close', broader: 'os broader', narrower: 'os narrower', related: 'related' };
+const bucket = r => r === 'exact' || r === 'close' ? 'strong' : r === 'broader' || r === 'narrower' ? 'partial' : r === 'related' ? 'related' : 'none';
+const relRank = { exact: 0, close: 1, broader: 2, narrower: 3, related: 4 };
+const best = t => t.m.length ? t.m.map(m => m[1]).sort((a, b) => relRank[a] - relRank[b])[0] : 'none';
+const BCOL = { strong: 'var(--ord-1)', partial: 'var(--ord-2)', related: 'var(--ord-3)', none: 'var(--none)' };
+const BLAB = { strong: 'Strong (exact/close)', partial: 'Partial (os broader/narrower)', related: 'Related only', none: 'No counterpart' };
+
+// theme toggle
+$('#theme').onclick = () => { const r = document.documentElement; const dark = r.dataset.theme ? r.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches; r.dataset.theme = dark ? 'light' : 'dark'; };
+$('#gen').textContent = C.generatedAt;
+
+// tooltip
+const tip = $('#tip');
+document.addEventListener('mousemove', e => {
+  const el = e.target.closest('[data-tip]');
+  if (!el) { tip.style.display = 'none'; return; }
+  tip.innerHTML = el.dataset.tip; tip.style.display = 'block';
+  const w = tip.offsetWidth, h = tip.offsetHeight;
+  tip.style.left = Math.min(innerWidth - w - 8, e.clientX + 14) + 'px';
+  tip.style.top = Math.min(innerHeight - h - 8, e.clientY + 14) + 'px';
+});
+
+// tabs
+function showTab(tab) {
+  for (const x of document.querySelectorAll('#tabs button')) x.setAttribute('aria-selected', x.dataset.tab === tab);
+  for (const p of document.querySelectorAll('[data-panel]')) p.hidden = p.dataset.panel !== tab;
+}
+$('#tabs').addEventListener('click', e => { const b = e.target.closest('button[data-tab]'); if (b) showTab(b.dataset.tab); });
+
+// KPIs
+const S = C.structure;
+const tot = C.deCoverage.reduce((a, r) => ({ t: a.t + r.topics, c: a.c + r.strong + r.partial }), { t: 0, c: 0 });
+const osTot = C.osCoverage.reduce((a, r) => ({ t: a.t + r.topics, c: a.c + r.covered }), { t: 0, c: 0 });
+const pa = C.prerequisiteAgreement;
+const kpis = [
+  [S.de.topics.toLocaleString('en'), `German micro-topics in ${S.de.subjects} subjects (${S.os.topics.toLocaleString('en')} in os-taxonomy)`],
+  [pct(tot.c, tot.t) + '%', 'of German topics have a strong or partial os-taxonomy counterpart'],
+  [pct(osTot.c, osTot.t) + '%', 'of os-taxonomy topics have a German counterpart'],
+  [S.de.germanSpecific, 'topics flagged German-specific (language, Länder, institutions)'],
+  [sgn(C.offsets.overallByJurisdiction.GB.median) + ' yr', `median age offset vs England for matched topics (US ${sgn(C.offsets.overallByJurisdiction.US.median)}, AU ${sgn(C.offsets.overallByJurisdiction.AU.median)}, Ontario ${sgn(C.offsets.overallByJurisdiction.CA.median)})`],
+  [pct(pa.agree, pa.pairs) + '%', `of mappable German prerequisite edges also hold in the os graph (${pa.reversed} reversed)`],
+];
+$('#kpis').innerHTML = kpis.map(([v, l]) => `<div class="card kpi"><div class="v">${esc(v)}</div><div class="l">${esc(l)}</div></div>`).join('');
+
+// German coverage stacked bars
+$('#covLegend').innerHTML = ['strong', 'partial', 'related', 'none'].map(b => `<span><i style="background:${BCOL[b]}"></i>${BLAB[b]}</span>`).join('');
+$('#deCov').innerHTML = C.deCoverage.map(r => {
+  const segs = ['strong', 'partial', 'related', 'none'].filter(b => r[b] > 0).map(b => `<div class="seg hit" style="width:${100 * r[b] / r.topics}%;background:${BCOL[b]}" data-tip="<b>${esc(r.subject)}</b><br>${BLAB[b]}: ${r[b]} of ${r.topics} (${pct(r[b], r.topics)}%)"></div>`).join('');
+  return `<div class="hbar"><div class="lab" title="${esc(r.subject)}">${esc(r.subject)}</div><div class="track">${segs}</div><div class="val">${pct(r.strong + r.partial, r.topics)}%</div></div>`;
+}).join('');
+
+// coverage by school stage
+$('#stageCov').innerHTML = (C.deByStage || []).map(r => {
+  const segs = ['strong', 'partial', 'related', 'none'].filter(b => r[b] > 0).map(b => `<div class="seg hit" style="width:${100 * r[b] / r.topics}%;background:${BCOL[b]}" data-tip="<b>${esc(r.stage)}</b><br>${BLAB[b]}: ${r[b]} of ${r.topics} (${pct(r[b], r.topics)}%)"></div>`).join('');
+  return `<div class="hbar"><div class="lab" title="${esc(r.stage)}">${esc(r.stage)}</div><div class="track">${segs}</div><div class="val">${pct(r.strong + r.partial, r.topics)}%</div></div>`;
+}).join('');
+
+// os coverage ranked bars
+$('#osCov').innerHTML = [...C.osCoverage].sort((a, b) => b.pct - a.pct).map(r =>
+  `<div class="hbar"><div class="lab">${esc(r.subject)}</div><div class="track"><div class="seg hit" style="width:${Math.max(r.pct, 0.5)}%;background:var(--series-1)" data-tip="<b>${esc(r.subject)}</b><br>${r.covered} of ${r.topics} os topics have a German counterpart<br>${r.relatedOnly} more are only related"></div></div><div class="val">${Math.round(r.pct)}%</div></div>`).join('');
+
+// histogram: rendered by the timing section below (shared histSVG)
+
+// jurisdiction table
+$('#jurTable').innerHTML = `<table><thead><tr><th>German subject</th><th class="n">n</th>${Object.values(JUR).map(j => `<th class="n">${esc(j)}</th>`).join('')}</tr></thead><tbody>` +
+  C.offsets.bySubject.map(r => `<tr class="prow" data-s="${esc(r.subject)}"><td>${esc(r.subject)}</td><td class="n">${r.n}</td>${Object.keys(JUR).map(k => `<td class="n" data-base="${k}">${sgn(r.byJurisdiction[k])}</td>`).join('')}</tr>`).join('') +
+  `<tr class="prow" data-s=""><td><b>All</b></td><td class="n">${C.offsets.n}</td>${Object.keys(JUR).map(k => `<td class="n" data-base="${k}"><b>${sgn(C.offsets.overallByJurisdiction[k].median)}</b></td>`).join('')}</tr></tbody></table>`;
+
+// offsets by school stage (rows click through to the timing tab)
+$('#jurStage').innerHTML = (C.offsets.byStage || []).length ? `<table><thead><tr><th>Stage</th><th class="n">n</th>${Object.values(JUR).map(j => `<th class="n">${esc(j)}</th>`).join('')}</tr></thead><tbody>` +
+  C.offsets.byStage.map(r => `<tr class="prow" data-stage="${{ 'Grundschule (Vorschule–Kl. 4)': '0-4', 'Kl. 5–6': '5-6', 'Kl. 7–10': '7-10', 'Oberstufe (Kl. 11–13)': '11-13' }[r.stage] || ''}"><td>${esc(r.stage)}</td><td class="n">${r.n}</td>${Object.keys(JUR).map(k => `<td class="n" data-base="${k}" title="n = ${r.byJurisdiction[k].n}">${r.byJurisdiction[k].n ? sgn(r.byJurisdiction[k].median) : '–'}</td>`).join('')}</tr>`).join('') + '</tbody></table>' : '';
+
+// matrix heatmap
+(function () {
+  const rows = C.deCoverage.map(r => r.subject);
+  const cols = [...new Set(rows.flatMap(r => Object.keys(C.matrix[r] || {})))].sort();
+  const max = Math.max(1, ...rows.flatMap(r => cols.map(c => C.matrix[r]?.[c] || 0)));
+  const step = v => v === 0 ? 'var(--seq-0)' : `var(--seq-${Math.min(5, 1 + Math.floor(4.999 * Math.sqrt(v / max)))})`;
+  const ink = v => v > 0 && Math.sqrt(v / max) > 0.55 ? 'var(--ink-high)' : 'var(--text-primary)';
+  $('#matrix').innerHTML = `<table class="heat"><thead><tr><th></th>${cols.map(c => `<th class="n">${esc(c)}</th>`).join('')}</tr></thead><tbody>` +
+    rows.map(r => `<tr><th>${esc(r)}</th>${cols.map(c => { const v = C.matrix[r]?.[c] || 0; return `<td class="c hit" style="background:${step(v)};color:${ink(v)}" data-tip="<b>${esc(r)} → ${esc(c)}</b><br>${v} links">${v || ''}</td>`; }).join('')}</tr>`).join('') + '</tbody></table>';
+})();
+
+// structure table
+const SL = [['topics', 'Topics'], ['subjects', 'Subjects'], ['domains', 'Domains'], ['edges', 'Prerequisite edges'], ['hardShare', 'Hard edges %'], ['edgesPerTopic', 'Edges per topic'], ['roots', 'Roots (no prerequisites)'], ['maxDepth', 'Max depth'], ['meanDepth', 'Mean depth'], ['crossSubjectEdgeShare', 'Cross-subject edges %'], ['curricula', 'Curriculum sources'], ['standards', 'Standards in catalogue'], ['topicsWithStandards', 'Topics with ≥1 standard %'], ['ageMin', 'Youngest age'], ['ageMax', 'Oldest age'], ['meanAgeSpan', 'Mean age span (years)']];
+$('#structure').innerHTML = `<table><thead><tr><th>Metric</th><th class="n">German</th><th class="n">os-taxonomy</th></tr></thead><tbody>${SL.map(([k, l]) => `<tr><td>${l}</td><td class="n">${S.de[k]}</td><td class="n">${S.os[k]}</td></tr>`).join('')}</tbody></table>`;
+
+// ---------- German explorer ----------
+const deSubjects = [...new Set(X.de.map(t => t.s))];
+$('#deSubject').innerHTML = '<option value="">All German subjects</option>' + deSubjects.map(s => `<option>${esc(s)}</option>`).join('');
+const preOf = new Map(), depOf = new Map();
+for (const [a, b, h] of X.deEdges) { (preOf.get(a) || preOf.set(a, []).get(a)).push([b, h]); (depOf.get(b) || depOf.set(b, []).get(b)).push([a, h]); }
+const gradeLab = g => g[0] === g[1] ? (g[0] === 0 ? 'Vorschule' : `Kl. ${g[0]}`) : `Kl. ${g[0]}–${g[1]}`;
+const levelLab = t => t.cl ? ` · ${t.cl === 'eA' ? 'Leistungskurs (eA)' : 'all courses (gA)'}` : '';
+function renderDe() {
+  const s = $('#deSubject').value, r = $('#deRel').value, g = $('#deGrade').value, gs = $('#deGS').checked, q = $('#deQ').value.trim().toLowerCase();
+  const xs = X.de.filter(t => (!s || t.s === s) && (!r || bucket(best(t)) === r) && (g === '' || (t.g[0] <= +g && t.g[1] >= +g)) && (!gs || t.gs) && (!q || (t.n + ' ' + t.nd + ' ' + t.ds + ' ' + t.d).toLowerCase().includes(q)));
+  $('#deCount').textContent = `${xs.length} topics`;
+  $('#deList').innerHTML = xs.slice(0, 600).map(t => { const b = bucket(best(t)); return `<div class="row" data-id="${t.id}"><div><b>${esc(t.nd)}</b> · ${esc(t.n)}</div><div class="meta"><span class="pill"><span class="sw" style="background:${BCOL[b]}"></span>${BLAB[b]}</span>${esc(t.s)} › ${esc(t.d)} · ${gradeLab(t.g)}${levelLab(t)}${t.gs ? ' · <span class="pill">German-specific</span>' : ''}</div></div>`; }).join('');
+}
+function showDe(id) {
+  const t = deById.get(id); if (!t) return;
+  for (const r of document.querySelectorAll('#deList .row')) r.setAttribute('aria-selected', r.dataset.id === id);
+  const prer = (preOf.get(id) || []).map(([p, h]) => deById.get(p)).filter(Boolean);
+  const deps = (depOf.get(id) || []).map(([p]) => deById.get(p)).filter(Boolean);
+  const matches = [...t.m].sort((a, b) => relRank[a[1]] - relRank[b[1]]).map(([oid, rel, note]) => { const o = osById.get(oid); if (!o) return ''; const j = Object.entries(o.j).map(([k, a]) => `${k} ${a}`).join(' · ');
+    return `<div class="match"><span class="pill">${REL[rel]}</span> <a href="#os/${o.id}"><b>${esc(o.n)}</b></a> <span class="k">${esc(o.s)} › ${esc(o.d)} · age ${o.a[0]}–${o.a[1]} (Δ ${sgn(t.a[0] - o.a[0])})</span><div class="k">${esc(o.ds)}</div>${j ? `<div class="k">Start age by jurisdiction: ${esc(j)}</div>` : ''}${note ? `<div class="k">Note: ${esc(note)}</div>` : ''}</div>`; }).join('');
+  $('#deDetail').innerHTML = `<div class="k">${esc(t.s)} › ${esc(t.d)} · ${gradeLab(t.g)}${levelLab(t)} · age ${t.a[0]}–${t.a[1]} · ${t.ty}${t.gs ? ' · German-specific' : ''}</div><h2 style="margin-top:4px">${esc(t.nd)}</h2><div class="sub">${esc(t.n)}</div><p style="font-size:13px;line-height:1.5">${esc(t.ds)}</p>` +
+    `<h3>Evidence of mastery</h3><ul>${t.ev.map(e => `<li>${esc(e)}</li>`).join('')}</ul>` +
+    (t.ln ? `<h3>Länder variation</h3><p class="sub">${esc(t.ln)}</p>` : '') +
+    `<h3>os-taxonomy counterparts (${t.m.length})</h3>${matches || '<p class="sub">None — no comparable os-taxonomy topic.</p>'}` +
+    `<h3>Prerequisites (${prer.length})</h3><ul>${prer.map(p => `<li><a href="#" data-go="${p.id}">${esc(p.nd)}</a> <span class="k">${gradeLab(p.g)}</span></li>`).join('') || '<li class="k">none</li>'}</ul>` +
+    `<h3>Unlocks (${deps.length})</h3><ul>${deps.slice(0, 20).map(p => `<li><a href="#" data-go="${p.id}">${esc(p.nd)}</a> <span class="k">${gradeLab(p.g)}</span></li>`).join('') || '<li class="k">none</li>'}</ul>` +
+    `<h3>Standards</h3><p class="k">${t.st.map(esc).join('<br>') || 'none'}</p>` +
+    `<p><a href="../de-taxonomy/index.html#t/${esc(t.k)}">Open in the German taxonomy browser →</a> · <a href="../de-taxonomy/index.html#path/${esc(t.k)}">Learning path →</a></p>`;
+}
+for (const id of ['#deSubject', '#deRel', '#deGrade', '#deGS']) $(id).addEventListener('change', renderDe);
+$('#deQ').addEventListener('input', renderDe);
+$('#deList').addEventListener('click', e => { const r = e.target.closest('.row'); if (r) showDe(r.dataset.id); });
+$('#deDetail').addEventListener('click', e => { const a = e.target.closest('[data-go]'); if (a) { e.preventDefault(); showDe(a.dataset.go); } });
+renderDe();
+
+// ---------- os explorer ----------
+const osSubjects = [...new Set(X.os.map(t => t.s))].sort();
+$('#osSubject').innerHTML = '<option value="">All os subjects</option>' + osSubjects.map(s => `<option>${esc(s)}</option>`).join('');
+const deByOs = new Map();
+for (const t of X.de) for (const [oid, rel] of t.m) (deByOs.get(oid) || deByOs.set(oid, []).get(oid)).push([t.id, rel]);
+const osBucket = t => t.c && t.c !== 'related' ? 'covered' : t.c === 'related' ? 'related' : 'none';
+function renderOs() {
+  const s = $('#osSubject').value, c = $('#osCovSel').value, q = $('#osQ').value.trim().toLowerCase();
+  const xs = X.os.filter(t => (!s || t.s === s) && (!c || osBucket(t) === c) && (!q || (t.n + ' ' + t.ds + ' ' + t.d).toLowerCase().includes(q)));
+  $('#osCount').textContent = `${xs.length} topics`;
+  const lab = { covered: 'Has German counterpart', related: 'Related only', none: 'No German counterpart' }, col = { covered: 'var(--ord-1)', related: 'var(--ord-3)', none: 'var(--none)' };
+  $('#osList').innerHTML = xs.slice(0, 600).map(t => { const b = osBucket(t); return `<div class="row" data-id="${t.id}"><div><b>${esc(t.n)}</b></div><div class="meta"><span class="pill"><span class="sw" style="background:${col[b]}"></span>${lab[b]}</span>${esc(t.s)} › ${esc(t.d)} · age ${t.a[0]}–${t.a[1]}</div></div>`; }).join('') + (xs.length > 600 ? '<div class="row meta">Showing first 600 — refine the filters.</div>' : '');
+}
+function showOs(id) {
+  const o = osById.get(id); if (!o) return;
+  for (const r of document.querySelectorAll('#osList .row')) r.setAttribute('aria-selected', r.dataset.id === id);
+  const ms = (deByOs.get(id) || []).map(([did, rel]) => { const t = deById.get(did); return `<div class="match"><span class="pill">${REL[rel]}</span> <a href="#de/${t.k}"><b>${esc(t.nd)}</b></a> · ${esc(t.n)} <span class="k">${esc(t.s)} › ${esc(t.d)} · ${gradeLab(t.g)} · age ${t.a[0]}–${t.a[1]} (Δ ${sgn(t.a[0] - o.a[0])})</span></div>`; }).join('');
+  const j = Object.entries(o.j).map(([k, a]) => `${JUR[k]}: ${a}`).join(' · ');
+  $('#osDetail').innerHTML = `<div class="k">${esc(o.s)} › ${esc(o.d)} · age ${o.a[0]}–${o.a[1]}</div><h2 style="margin-top:4px">${esc(o.n)}</h2><p style="font-size:13px;line-height:1.5">${esc(o.ds)}</p>${j ? `<p class="k">Start age by jurisdiction — ${esc(j)}</p>` : ''}<h3>German counterparts</h3>${ms || '<p class="sub">None in the German taxonomy.</p>'}`;
+}
+for (const id of ['#osSubject', '#osCovSel']) $(id).addEventListener('change', renderOs);
+$('#osQ').addEventListener('input', renderOs);
+$('#osList').addEventListener('click', e => { const r = e.target.closest('.row'); if (r) showOs(r.dataset.id); });
+renderOs();
+
+// ---------- timing: when do German children meet the same idea? ----------
+const tipA = h => `data-tip="${esc(h)}"`;
+const median = xs => { if (!xs.length) return null; const s = [...xs].sort((a, b) => a - b), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+const deByKey = new Map(X.de.map(t => [t.k, t]));
+const PAIRS = C.offsets.pairs.map(([k, oid]) => { const d = deByKey.get(k), o = osById.get(oid); const m = (d?.m || []).find(x => x[0] === oid) || []; return { d, o, rel: m[1], note: m[2] }; }).filter(p => p.d && p.o);
+const BASES = { os: 'os-taxonomy overall', ...JUR };
+const baseAge = (p, b) => b === 'os' ? p.o.a[0] : p.o.j[b];
+const BINS = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5];
+const clampBin = v => Math.max(-5, Math.min(5, v));
+const binLab = b => b === 0 ? '0' : (b <= -5 ? '≤' : b >= 5 ? '≥' : '') + sgn(b);
+const dcol = v => v < 0 ? 'var(--div-neg)' : v > 0 ? 'var(--div-pos)' : 'var(--div-mid)';
+function histSVG(diffs, sel) {
+  const H = {}; for (const v of diffs) { const b = clampBin(v); H[b] = (H[b] || 0) + 1; }
+  const vals = BINS.map(b => H[b] || 0), max = Math.max(...vals, 1), n = diffs.length;
+  const W = 480, Ht = 210, pl = 36, pr = 8, pt = 16, pb = 34, bw = (W - pl - pr) / BINS.length, y0 = Ht - pb;
+  const y = v => pt + (y0 - pt) * (1 - v / max);
+  let s = `<svg viewBox="0 0 ${W} ${Ht}" width="100%" role="img" aria-label="Histogram of age offsets">`;
+  for (const t of [...new Set([0, Math.round(max / 2), max])]) s += `<line x1="${pl}" x2="${W - pr}" y1="${y(t)}" y2="${y(t)}" stroke="var(--grid)"/><text x="${pl - 6}" y="${y(t) + 4}" text-anchor="end">${t}</text>`;
+  BINS.forEach((b, i) => {
+    const v = vals[i], x = pl + i * bw + 2, w = bw - 4, top = y(v), r = Math.min(4, y0 - top);
+    const tt = tipA(`<b>Δ ${binLab(b)} year${Math.abs(b) === 1 ? '' : 's'}</b><br>${v} German topics (${pct(v, n)}%)<br><span style="color:var(--muted)">Click to list them</span>`);
+    if (v) s += `<path d="M${x},${y0} V${top + r} q0,-${r} ${r},-${r} H${x + w - r} q${r},0 ${r},${r} V${y0} Z" fill="${dcol(b)}" opacity="${sel == null || sel === b ? 1 : 0.3}"/>`;
+    if (sel === b) s += `<text class="vlab" x="${x + w / 2}" y="${top - 4}" text-anchor="middle">${v}</text>`;
+    s += `<rect x="${x - 2}" y="${pt}" width="${bw}" height="${y0 - pt}" fill="transparent" class="click" data-bin="${b}" ${tt}/><text x="${x + w / 2}" y="${y0 + 16}" text-anchor="middle">${binLab(b)}</text>`;
+  });
+  return s + `<line x1="${pl}" x2="${W - pr}" y1="${y0}" y2="${y0}" stroke="var(--axis)"/><text x="${(W + pl) / 2}" y="${Ht - 4}" text-anchor="middle">Δ years (German start age − comparison start age)</text></svg>`;
+}
+const TS = { base: 'os', match: 'strong', stage: '', subject: '', domain: '', bin: null, q: '', sort: 'later', open: null };
+function toTiming() { showTab('timing'); renderTiming(); scrollTo({ top: $('#tabs').offsetTop - 8 }); }
+
+// overview: histogram + jurisdiction table drill into the timing tab
+$('#hist').innerHTML = histSVG(PAIRS.map(p => p.d.a[0] - p.o.a[0]), null) + `<p class="sub">n = ${C.offsets.n} German topics with an exact/close match; median ${sgn(C.offsets.median)} years. Click a bar to see its topics.</p>`;
+$('#hist').addEventListener('click', e => { const b = e.target.closest('[data-bin]'); if (!b) return; Object.assign(TS, { base: 'os', match: 'strong', subject: '', domain: '', bin: +b.dataset.bin, q: '', open: null }); toTiming(); });
+document.querySelector('[data-to-timing]').onclick = () => toTiming();
+$('#jurStage').addEventListener('click', e => { const r = e.target.closest('tr[data-stage]'); if (!r) return; const c = e.target.closest('[data-base]'); Object.assign(TS, { stage: r.dataset.stage, subject: '', domain: '', bin: null, q: '', open: null, base: c ? c.dataset.base : TS.base }); toTiming(); });
+$('#jurTable').addEventListener('click', e => { const r = e.target.closest('tr[data-s]'); if (!r) return; const c = e.target.closest('[data-base]'); Object.assign(TS, { subject: r.dataset.s, domain: '', bin: null, q: '', open: null, base: c ? c.dataset.base : TS.base }); toTiming(); });
+
+$('#tBase').innerHTML = Object.entries(BASES).map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join('');
+$('#tSubj').innerHTML = '<option value="">All German subjects</option>' + C.offsets.bySubject.map(r => `<option>${esc(r.subject)}</option>`).join('');
+const NOTE = {
+  os: 'Uses each os-taxonomy topic’s own start age (its ageRangeStart).',
+  GB: 'England’s Year N starts at age N+4, a year before German Klasse N (age N+5), so +1 here means the same school year.',
+  US: 'US Grade N starts at about age N+5, like German Klasse N, so Δ is also the difference in school years.',
+  AU: 'Australian Year N starts at about age N+5, like German Klasse N, so Δ is also the difference in school years.',
+  CA: 'Caveat: os-taxonomy’s Ontario contexts often carry the linked topic’s own age (e.g. age 6 on Grade 4–6 expectations), so this comparison understates how late Ontario places topics.',
+};
+const AGES = PAIRS.flatMap(p => [p.d.a[0], p.o.a[0], ...Object.values(p.o.j)]);
+const AMIN = Math.min(...AGES), AMAX = Math.max(...AGES), DW = 160, ax = a => 7 + (DW - 14) * (a - AMIN) / Math.max(1, AMAX - AMIN);
+const dumb = (b, g) => { const c = dcol(g - b); let s = `<svg width="${DW}" height="16" aria-hidden="true">`; for (let a = AMIN; a <= AMAX; a++) if (a % 2 === 0) s += `<line x1="${ax(a)}" x2="${ax(a)}" y1="2" y2="14" stroke="var(--grid)"/>`; return s + `<line x1="${ax(b)}" x2="${ax(g)}" y1="8" y2="8" stroke="${c}" stroke-width="2"/><circle cx="${ax(g)}" cy="8" r="4.5" fill="${c}"/><circle cx="${ax(b)}" cy="8" r="4" fill="none" stroke="var(--text-secondary)" stroke-width="1.5"/></svg>`; };
+const dumbAxis = () => { let s = `<svg width="${DW}" height="14" aria-hidden="true" style="display:block">`; for (let a = AMIN; a <= AMAX; a++) if (a % 2 === 0) s += `<text x="${ax(a)}" y="11" text-anchor="middle">${a}</text>`; return s + '</svg>'; };
+function pairDetail(p) {
+  const d = p.d, o = p.o, ga = d.a[0];
+  const rows = [['os', o.a[0]], ...Object.keys(JUR).map(k => [k, o.j[k]])].filter(([, a]) => a != null);
+  const others = d.m.filter(m => (m[1] === 'exact' || m[1] === 'close') && m[0] !== o.id).map(m => osById.get(m[0])).filter(Boolean);
+  return `<div class="pdg">
+    <div><div class="k">German topic · ${esc(d.s)} › ${esc(d.d)} · ${gradeLab(d.g)} · age ${d.a[0]}–${d.a[1]}</div><b>${esc(d.nd)}</b> <span class="k">· ${esc(d.n)}</span><p>${esc(d.ds)}</p>
+      <div class="k"><a href="#de/${esc(d.k)}">Open in German topics</a> · <a href="../de-taxonomy/index.html#t/${esc(d.k)}">German taxonomy</a> · <a href="../de-taxonomy/index.html#path/${esc(d.k)}">learning path</a></div></div>
+    <div><div class="k">os-taxonomy · ${esc(o.s)} › ${esc(o.d)} · age ${o.a[0]}–${o.a[1]}</div><b>${esc(o.n)}</b><p>${esc(o.ds)}</p>
+      <div class="k"><a href="#os/${esc(o.id)}">Open in os-taxonomy tab</a></div></div>
+  </div>
+  <p class="k" style="margin:10px 0 0">Match: <b>${REL[p.rel]}</b>${p.note ? ' — ' + esc(p.note) : ''}</p>
+  <table class="mini"><thead><tr><th>Start age of the matched topic in</th><th class="n">Age</th><th class="n">Δ vs Germany (${ga})</th></tr></thead><tbody>${rows.map(([k, a]) => `<tr class="${k === TS.base ? 'on' : ''}"><td>${esc(BASES[k])}</td><td class="n">${a}</td><td class="n">${sgn(ga - a)}</td></tr>`).join('')}</tbody></table>
+  ${others.length ? `<p class="k" style="margin-top:10px">Other strong os-taxonomy counterparts: ${others.map(x => `<a href="#os/${esc(x.id)}">${esc(x.n)}</a> (age ${x.a[0]}, Δ ${sgn(ga - x.a[0])})`).join(' · ')}</p>` : ''}`;
+}
+function renderTiming() {
+  $('#tBase').value = TS.base; $('#tMatch').value = TS.match; $('#tSubj').value = TS.subject; $('#tStage').value = TS.stage; $('#tSort').value = TS.sort;
+  if (document.activeElement !== $('#tQ')) $('#tQ').value = TS.q;
+  const diff = p => p.d.a[0] - baseAge(p, TS.base);
+  const [sg0, sg1] = TS.stage ? TS.stage.split('-').map(Number) : [0, 13];
+  const matchOk = p => (TS.match === 'strong' || p.rel === 'exact') && p.d.g[0] >= sg0 && p.d.g[0] <= sg1;
+  const pool = PAIRS.filter(p => matchOk(p) && baseAge(p, TS.base) != null);
+  const inSub = p => !TS.subject || p.d.s === TS.subject;
+  const inDom = p => !TS.domain || p.d.s + '|' + p.d.d === TS.domain;
+  const sub = pool.filter(p => inSub(p) && inDom(p));
+  const q = TS.q.toLowerCase();
+  const list = sub.filter(p => (TS.bin == null || clampBin(diff(p)) === TS.bin) && (!q || (p.d.nd + ' ' + p.d.n + ' ' + p.o.n).toLowerCase().includes(q)));
+  const ds = sub.map(diff), med = median(ds);
+  const all = PAIRS.filter(matchOk).length;
+  $('#tNote').innerHTML = esc(NOTE[TS.base]) + (pool.length < all ? ` ${all - pool.length} of ${all} pairs have no ${esc(BASES[TS.base])} age and are left out.` : '');
+  const e = ds.filter(v => v < 0).length, z = ds.filter(v => v === 0).length, l = ds.filter(v => v > 0).length;
+  $('#tStats').innerHTML = [[sub.length, 'matched German topics in view'], [med == null ? '–' : sgn(med) + ' yr', 'median Δ'], [pct(e, ds.length) + '%', `earlier in Germany (${e})`], [pct(z, ds.length) + '%', `same age (${z})`], [pct(l, ds.length) + '%', `later in Germany (${l})`]]
+    .map(([v, t]) => `<div class="stat"><div class="v">${esc(v)}</div><div class="l">${esc(t)}</div></div>`).join('');
+  $('#tHistSub').textContent = `${sub.length} German topics${TS.subject ? ' in ' + TS.subject : ''}${TS.domain ? ' › ' + TS.domain.split('|')[1] : ''}, compared with ${BASES[TS.base]}. Click a bar to list its topics; click it again to clear.`;
+  $('#tHist').innerHTML = histSVG(ds, TS.bin);
+  const subs = [...new Set(pool.map(p => p.d.s))].map(s => { const v = pool.filter(p => p.d.s === s).map(diff); return { s, n: v.length, e: v.filter(x => x < 0).length, z: v.filter(x => x === 0).length, l: v.filter(x => x > 0).length, m: median(v) }; }).sort((a, b) => b.n - a.n);
+  $('#tSub').innerHTML = subs.map(r => `<div class="hbar click ${TS.subject === r.s ? 'on' : ''}" data-s="${esc(r.s)}"><div class="lab" title="${esc(r.s)}">${esc(r.s)} <span class="k">${r.n}</span></div><div class="track">${[['e', 'Earlier in Germany', 'var(--div-neg)'], ['z', 'Same age', 'var(--div-mid)'], ['l', 'Later in Germany', 'var(--div-pos)']].filter(([k]) => r[k]).map(([k, lab, col]) => `<div class="seg" style="width:${100 * r[k] / r.n}%;background:${col}" ${tipA(`<b>${esc(r.s)}</b><br>${lab}: ${r[k]} of ${r.n} (${pct(r[k], r.n)}%)<br>median Δ ${sgn(r.m)}`)}></div>`).join('')}</div><div class="val">${sgn(r.m)}</div></div>`).join('');
+  const dp = pool.filter(inSub);
+  const doms = [...new Set(dp.map(p => p.d.s + '|' + p.d.d))].map(k => { const v = dp.filter(p => p.d.s + '|' + p.d.d === k).map(diff); const [s, d] = k.split('|'); return { k, s, d, n: v.length, m: median(v), e: v.filter(x => x < 0).length, l: v.filter(x => x > 0).length }; }).filter(r => r.n >= 2).sort((a, b) => b.m - a.m || b.n - a.n);
+  const mx = Math.max(1, ...doms.map(r => Math.abs(r.m)));
+  $('#tDomH').textContent = TS.subject ? `By domain · ${TS.subject}` : 'By domain · all German subjects';
+  $('#tDom').innerHTML = (doms.length ? `<div class="dbar k"><div>Domain</div><div style="display:flex;justify-content:space-between"><span>← earlier in Germany</span><span>later →</span></div><div class="val">Δ</div><div class="nn">n</div></div>` : '') + doms.map(r => {
+    const w = 50 * Math.abs(r.m) / mx, pos = r.m >= 0;
+    const bar = r.m ? `<div class="b" style="left:${pos ? 50 : 50 - w}%;width:${w}%;background:${dcol(r.m)};border-radius:${pos ? '0 4px 4px 0' : '4px 0 0 4px'}"></div>` : '<div class="b" style="left:calc(50% - 2px);width:4px;background:var(--div-mid);border-radius:2px"></div>';
+    return `<div class="dbar click ${TS.domain === r.k ? 'on' : ''}" data-dom="${esc(r.k)}" ${tipA(`<b>${esc(r.s)} › ${esc(r.d)}</b><br>median Δ ${sgn(r.m)} · ${r.n} topics<br>${r.e} earlier, ${r.n - r.e - r.l} same, ${r.l} later`)}><div class="lab">${esc(r.d)}${TS.subject ? '' : ` <span class="k">· ${esc(r.s)}</span>`}</div><div class="trk">${bar}</div><div class="val">${sgn(r.m)}</div><div class="nn">${r.n}</div></div>`;
+  }).join('') || '<p class="sub">No domain has 2 or more matched topics with these filters.</p>';
+  const chips = [];
+  if (TS.stage) chips.push(['stage', $('#tStage').selectedOptions[0].textContent]);
+  if (TS.subject) chips.push(['subject', TS.subject]);
+  if (TS.domain) chips.push(['domain', TS.domain.split('|')[1]]);
+  if (TS.bin != null) chips.push(['bin', `Δ ${binLab(TS.bin)}`]);
+  if (TS.q) chips.push(['q', `“${TS.q}”`]);
+  $('#tSel').innerHTML = `${list.length} of ${pool.length} topic pairs, compared with ${esc(BASES[TS.base])}. Click a row for details.${chips.length ? '<br>' : ''}` + chips.map(([k, v]) => `<button type="button" class="fchip" data-clear="${k}" aria-label="Remove filter ${esc(v)}">${esc(v)} ✕</button>`).join('');
+  const srt = {
+    later: (a, b) => diff(b) - diff(a) || a.d.s.localeCompare(b.d.s) || a.d.g[0] - b.d.g[0],
+    earlier: (a, b) => diff(a) - diff(b) || a.d.s.localeCompare(b.d.s) || a.d.g[0] - b.d.g[0],
+    grade: (a, b) => a.d.g[0] - b.d.g[0] || diff(b) - diff(a),
+    subject: (a, b) => a.d.s.localeCompare(b.d.s) || a.d.d.localeCompare(b.d.d) || diff(b) - diff(a),
+  }[TS.sort];
+  list.sort(srt);
+  $('#tList').innerHTML = list.length ? `<table class="ptab"><thead><tr><th>German topic</th><th>Kl.</th><th>Closest os-taxonomy counterpart</th><th>Match</th><th class="dumb">Start age${dumbAxis()}</th><th class="n">Δ</th></tr></thead><tbody>` + list.map(p => {
+    const b = baseAge(p, TS.base), v = diff(p), open = TS.open === p.d.k;
+    return `<tr class="prow ${open ? 'open' : ''}" data-k="${esc(p.d.k)}"><td><b>${esc(p.d.nd)}</b><div class="k">${esc(p.d.n)} · ${esc(p.d.s)} › ${esc(p.d.d)}</div></td><td>${gradeLab(p.d.g)}</td><td>${esc(p.o.n)}<div class="k">${esc(p.o.s)} › ${esc(p.o.d)}</div></td><td><span class="pill">${REL[p.rel]}</span></td><td class="dumb" ${tipA(`German start age ${p.d.a[0]} (${gradeLab(p.d.g)})<br>${esc(BASES[TS.base])} start age ${b}<br><b>Δ ${sgn(v)}</b>`)}>${dumb(b, p.d.a[0])}</td><td class="n"><b>${sgn(v)}</b></td></tr>` + (open ? `<tr class="pdet"><td colspan="6">${pairDetail(p)}</td></tr>` : '');
+  }).join('') + '</tbody></table>' : '<p class="sub">No topic pairs match these filters.</p>';
+}
+$('#tBase').onchange = e => { TS.base = e.target.value; TS.bin = null; renderTiming(); };
+$('#tMatch').onchange = e => { TS.match = e.target.value; renderTiming(); };
+$('#tStage').onchange = e => { TS.stage = e.target.value; TS.bin = null; renderTiming(); };
+$('#tSubj').onchange = e => { TS.subject = e.target.value; TS.domain = ''; renderTiming(); };
+$('#tSort').onchange = e => { TS.sort = e.target.value; renderTiming(); };
+$('#tQ').oninput = e => { TS.q = e.target.value.trim(); renderTiming(); };
+$('#tClear').onclick = () => { Object.assign(TS, { stage: '', subject: '', domain: '', bin: null, q: '', open: null }); renderTiming(); };
+$('#tHist').onclick = e => { const b = e.target.closest('[data-bin]'); if (!b) return; const v = +b.dataset.bin; TS.bin = TS.bin === v ? null : v; renderTiming(); };
+$('#tSub').onclick = e => { const r = e.target.closest('[data-s]'); if (!r) return; TS.subject = TS.subject === r.dataset.s ? '' : r.dataset.s; TS.domain = ''; renderTiming(); };
+$('#tDom').onclick = e => { const r = e.target.closest('[data-dom]'); if (!r) return; TS.domain = TS.domain === r.dataset.dom ? '' : r.dataset.dom; renderTiming(); };
+$('#tSel').onclick = e => { const c = e.target.closest('[data-clear]'); if (!c) return; const k = c.dataset.clear; if (k === 'subject') { TS.subject = ''; TS.domain = ''; } else if (k === 'bin') TS.bin = null; else TS[k] = ''; renderTiming(); };
+$('#tList').onclick = e => { if (e.target.closest('a')) return; const r = e.target.closest('.prow[data-k]'); if (!r) return; TS.open = TS.open === r.dataset.k ? null : r.dataset.k; renderTiming(); };
+renderTiming();
+
+// deep links: #de/<key> or #os/<id>
+function openHash() {
+  const [kind, ref] = decodeURIComponent(location.hash.slice(1)).split('/');
+  const go = showTab;
+  if (kind === 'de') { const t = X.de.find(x => x.k === ref || x.id === ref); if (t) { go('de'); $('#deQ').value = t.nd; renderDe(); showDe(t.id); } }
+  else if (kind === 'os' && osById.has(ref)) { go('os'); $('#osQ').value = osById.get(ref).n; renderOs(); showOs(ref); }
+  else if (['overview', 'timing', 'de', 'os', 'gaps'].includes(kind)) go(kind);
+}
+addEventListener('hashchange', openHash); openHash();
+
+// ---------- gaps ----------
+const bySub = {};
+for (const t of C.germanOnly) (bySub[t.subject] ||= []).push(t);
+$('#gapDe').innerHTML = Object.entries(bySub).sort((a, b) => b[1].length - a[1].length).map(([s, xs]) => `<h3>${esc(s)} <span class="k">(${xs.length})</span></h3><p style="font-size:13px;line-height:1.6">${xs.map(t => `<span title="${esc(t.name)}">${esc(t.nameDe)}</span>`).join(' · ')}</p>`).join('');
+const osGap = {};
+for (const d of C.osUnmatchedDomains) (osGap[d.subject] ||= []).push(d);
+const partial = C.osCoverage.flatMap(s => s.domains.filter(d => d.covered > 0 && d.pct < 25).map(d => ({ subject: s.subject, ...d })));
+$('#gapOs').innerHTML = (Object.entries(osGap).map(([s, ds]) => `<h3>${esc(s)}</h3><ul>${ds.map(d => `<li>${esc(d.domain)} <span class="k">${d.topics} topics</span></li>`).join('')}</ul>`).join('') || '<p class="sub">Every os domain has at least one German counterpart.</p>') +
+  (partial.length ? `<h3>Barely covered (&lt; 25% of the domain)</h3><ul>${partial.map(d => `<li>${esc(d.subject)} › ${esc(d.domain)} <span class="k">${d.covered}/${d.topics}</span></li>`).join('')}</ul>` : '');
+</script>
+</body>
+</html>

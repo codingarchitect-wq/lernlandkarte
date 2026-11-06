@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+
+# Built pages: regenerate with `cd de-taxonomy && npm run all`
+de-taxonomy/index.html
+de-taxonomy/graph.html
+comparison/index.html
+comparison/explorer-data.json

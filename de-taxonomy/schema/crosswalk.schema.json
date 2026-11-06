@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "German Curriculum Taxonomy — crosswalk to os-taxonomy v1",
+  "type": "object", "required": ["version", "count", "links"], "additionalProperties": false,
+  "properties": {
+    "version": { "type": "string" }, "osTaxonomyVersion": { "type": "string" }, "note": { "type": "string" }, "count": { "type": "integer" },
+    "links": { "type": "array", "items": {
+      "type": "object", "required": ["deId", "deKey", "osId", "relation"], "additionalProperties": false,
+      "properties": {
+        "deId": { "type": "string", "pattern": "^de_" }, "deKey": { "type": "string" },
+        "osId": { "type": "string", "pattern": "^mt_" },
+        "relation": { "enum": ["exact", "close", "broader", "narrower", "related"], "description": "From the German topic's view: broader = os topic is broader; narrower = os topic covers only part" },
+        "note": { "type": ["string", "null"] }
+      } } }
+  }
+}

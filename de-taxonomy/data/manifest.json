@@ -1,0 +1,79 @@
+{
+ "dataset": "German Curriculum Taxonomy (Vorschule – Klasse 13)",
+ "taxonomyVersion": "de-v2",
+ "generatedFrom": [
+  "deutsch.json",
+  "englisch-informatik.json",
+  "gym-biologie-chemie.json",
+  "gym-deutsch.json",
+  "gym-englisch.json",
+  "gym-franzoesisch-latein.json",
+  "gym-gesellschaft.json",
+  "gym-mathematik.json",
+  "gym-musik-kunst-sport-ethik.json",
+  "gym-physik-informatik.json",
+  "mathematik.json",
+  "musik-kunst-sport-ethik.json",
+  "sachunterricht.json",
+  "sek1-gesellschaft-natur.json"
+ ],
+ "counts": {
+  "topics": 2225,
+  "topicsBySubject": {
+   "Biologie": 97,
+   "Chemie": 92,
+   "Deutsch": 328,
+   "Englisch": 154,
+   "Erdkunde": 83,
+   "Französisch": 73,
+   "Geschichte": 104,
+   "Informatik & Medienbildung": 128,
+   "Kunst": 74,
+   "Latein": 64,
+   "Mathematik": 363,
+   "Musik": 75,
+   "Naturwissenschaften": 61,
+   "Physik": 112,
+   "Politik und Wirtschaft": 86,
+   "Religion & Ethik": 82,
+   "Sachunterricht": 164,
+   "Sport": 85
+  },
+  "dependencies": 4513,
+  "hardDependencies": 2500,
+  "curricula": 107,
+  "curriculumStandards": 4619,
+  "topicStandardLinks": 6994,
+  "linkedStandards": 3976,
+  "clusters": 589,
+  "crosswalkLinks": 2133,
+  "topicsWithOsMatch": 1295,
+  "germanSpecificTopics": 278
+ },
+ "files": {
+  "topics.json": {
+   "sha256": "453f3e395a487d941fada16716d8e070c2eed3eb2e6aea252949a9907f5f3db7",
+   "bytes": 3052669
+  },
+  "dependencies.json": {
+   "sha256": "2638465b06d278e754c0e0de0896d20861cdef1e572246c94b82daae79244b6d",
+   "bytes": 821496
+  },
+  "curriculum-standards.json": {
+   "sha256": "2257e4d5a63698f95c12400fba48bb1535eff84941ce1bc8f07e28175ee8c0a7",
+   "bytes": 1675063
+  },
+  "clusters.json": {
+   "sha256": "b1f8453846cc2f544b03320e3d3c5df52cb7f6f7517d536c027e2c857ef63b8c",
+   "bytes": 257459
+  },
+  "subjects.json": {
+   "sha256": "614ec77ffbde398d51084efbc1c51124ff84515a22a3198b5a0ac32a9d23765a",
+   "bytes": 65157
+  },
+  "crosswalk-os-taxonomy.json": {
+   "sha256": "111977373c51acba0ddad793f1184b9b039f3fb389d02ea8e38fe53421701497",
+   "bytes": 332395
+  }
+ }
+}

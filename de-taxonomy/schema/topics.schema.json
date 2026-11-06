@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "German Curriculum Taxonomy — topics",
+  "description": "Mirrors os-taxonomy topics.schema.json, adding German fields (key, nameDe, subjectEn/domainEn, grades, stage, courseLevel, germanSpecific, laenderNotes). Ages are derived: ageRangeStart = gradeStart + 5, ageRangeEnd = gradeEnd + 6.",
+  "type": "object",
+  "required": ["version", "topicCount", "topics"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "type": "string" },
+    "topicCount": { "type": "integer", "minimum": 0 },
+    "topics": { "type": "array", "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "key", "type", "subject", "domain", "name", "nameDe", "description", "gradeStart", "gradeEnd", "stage", "ageRangeStart", "ageRangeEnd", "evidence", "assessmentPrompt", "standards", "germanSpecific"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^de_[A-Za-z0-9_-]{10}$" },
+        "key": { "type": "string", "pattern": "^[a-z]{2}-[a-z0-9-]+$" },
+        "type": { "enum": ["CONCEPTUAL", "PROCEDURAL", "REPRESENTATIONAL", "LANGUAGE", "META"] },
+        "subject": { "type": "string" }, "subjectEn": { "type": ["string", "null"] },
+        "domain": { "type": "string" }, "domainEn": { "type": ["string", "null"] },
+        "name": { "type": "string" }, "nameDe": { "type": "string" },
+        "description": { "type": "string", "minLength": 20 },
+        "gradeStart": { "type": "integer", "minimum": 0, "maximum": 13 },
+        "gradeEnd": { "type": "integer", "minimum": 0, "maximum": 13 },
+        "stage": { "enum": ["Elementarbereich", "Primarstufe", "Sekundarstufe I", "Sekundarstufe II"] },
+        "courseLevel": { "enum": ["gA", "eA", null], "description": "Oberstufe only: gA = grundlegendes Anforderungsniveau (taught in all courses), eA = erhöhtes Anforderungsniveau (Leistungskurs only)" },
+        "ageRangeStart": { "type": "integer" }, "ageRangeEnd": { "type": "integer" },
+        "centrality": { "type": "number", "minimum": 0, "maximum": 1 },
+        "evidence": { "type": "array", "minItems": 3, "maxItems": 3, "items": { "type": "string" } },
+        "assessmentPrompt": { "type": "string", "pattern": "\\{\\{name\\}\\}" },
+        "standards": { "type": "array", "items": { "type": "string", "pattern": "^[^:\\s]+:.+$" } },
+        "germanSpecific": { "type": "boolean" },
+        "laenderNotes": { "type": ["string", "null"] }
+      }
+    } }
+  }
+}
