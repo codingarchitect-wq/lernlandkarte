@@ -20,7 +20,7 @@ canvas { position: absolute; inset: 0; display: block; cursor: grab; touch-actio
 .hero > * { pointer-events: auto; }
 .kicker { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-secondary); display: flex; align-items: center; gap: 8px; }
 .kicker .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); display: inline-block; }
-h1 { font-size: clamp(38px, 5.4vw, 84px); line-height: .98; letter-spacing: -.025em; font-weight: 700; margin: 18px 0 18px; pointer-events: none; }
+h1 { font-size: clamp(34px, min(5.4vw, 8.5vh), 84px); line-height: .98; letter-spacing: -.025em; font-weight: 700; margin: 18px 0 18px; pointer-events: none; }
 h1 .stop { color: var(--accent); }
 .lead { font-size: 15px; line-height: 1.55; margin: 0 0 10px; color: var(--text-primary); max-width: 460px; }
 .sub { font-size: 13px; line-height: 1.55; margin: 0 0 16px; color: var(--text-secondary); max-width: 440px; }
@@ -37,7 +37,15 @@ h1 .stop { color: var(--accent); }
 .credit a { color: var(--muted); text-decoration: underline; }
 a { color: #6da7ec; text-decoration: none; } a:hover { text-decoration: underline; }
 .legend { position: absolute; left: clamp(16px, 3vw, 44px); bottom: clamp(16px, 3vh, 36px); width: min(400px, 90vw); background: rgba(26,26,25,.72); border: 1px solid var(--ring); border-radius: 14px; padding: 12px 14px 8px; backdrop-filter: blur(6px); }
-.legend .lh { font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.legend .lh { display: flex; justify-content: space-between; align-items: center; gap: 10px; width: 100%; font: inherit; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); background: none; border: 0; padding: 0; margin: 0 0 6px; cursor: pointer; text-align: left; }
+.legend .lh:hover { color: var(--text-secondary); }
+.legend .lh:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+.legend .car { flex: none; width: 7px; height: 7px; margin: 0 3px 4px 0; border-right: 1.5px solid var(--text-secondary); border-bottom: 1.5px solid var(--text-secondary); transform: rotate(45deg); }
+.legend.collapsed .car { margin: 4px 3px 0 0; transform: rotate(-135deg); }
+.legend.collapsed { padding-bottom: 12px; }
+.legend.collapsed .lh { margin-bottom: 0; }
+.legend.collapsed #chips { display: none; }
+.hero.compact .sub { display: none; }
 .chip { display: grid; grid-template-columns: 14px 1fr auto; gap: 10px; align-items: center; width: 100%; font: inherit; font-size: 13px; background: none; border: 0; color: var(--text-primary); padding: 5px 0; cursor: pointer; text-align: left; }
 .chip .sw { width: 10px; height: 10px; border-radius: 50%; }
 .chip .ct { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 12px; }
@@ -97,7 +105,7 @@ a { color: #6da7ec; text-decoration: none; } a:hover { text-decoration: underlin
     <div class="search"><input id="q" type="search" placeholder="Find a topic…" autocomplete="off" aria-label="Find a topic"><div class="sug" id="sug" hidden></div></div>
     <p class="links"><a class="xl" href="index.html">Browse as lists and tables →</a> · <a class="xl" href="../comparison/index.html">Compare with os-taxonomy →</a></p>
   </header>
-  <div class="legend" id="legend"><div class="lh">Subjects · click to show or hide</div><div id="chips"></div></div>
+  <div class="legend" id="legend"><button type="button" class="lh" id="lgBtn" aria-expanded="true" aria-controls="chips"><span id="lgTxt">Subjects · click to show or hide</span><span class="car" aria-hidden="true"></span></button><div id="chips"></div></div>
   <aside class="card" id="card" aria-live="polite"></aside>
   <div class="tip" id="tip"></div>
   <p class="credit">Lernlandkarte © 2026 Alexandru Prian: database ODbL 1.0, content CC BY-SA 4.0, code MIT · builds on and contains data from the Marble Skill Taxonomy (v1) · © Generative Spark, Inc. (Marble) · ODbL 1.0 / CC BY-SA 4.0 · <a href="https://github.com/codingarchitect-wq/lernlandkarte">Data and source on GitHub</a></p>
@@ -335,6 +343,24 @@ a { color: #6da7ec; text-decoration: none; } a:hover { text-decoration: underlin
   });
 
   // ---------- legend, dataset, language, search ----------
+  // On short screens the subject list would cover the controls above it. Then it collapses to its
+  // header, and if even that clashes, the explanatory paragraph is dropped. Clicking the header
+  // overrides the automatic choice.
+  const lg = $('#legend'), hero = $('.hero');
+  let lgOpen = null;                         // null = automatic; true/false = the reader's choice
+  function fitLegend() {
+    if (getComputedStyle(lg).display === 'none') return;
+    const clash = () => lg.getBoundingClientRect().top < hero.getBoundingClientRect().bottom + 12;
+    hero.classList.remove('compact'); lg.classList.remove('collapsed');
+    const collapsed = lgOpen === null ? clash() : !lgOpen;
+    lg.classList.toggle('collapsed', collapsed);
+    if (collapsed && clash()) hero.classList.add('compact');
+    const fc = CORE ? S.fcountCore : S.fcount, ids = FAM.map((_, i) => i).filter(i => fc[i]);
+    $('#lgBtn').setAttribute('aria-expanded', String(!collapsed));
+    $('#lgTxt').textContent = collapsed ? `Subjects · ${ids.filter(i => active.has(i)).length} of ${ids.length} shown` : 'Subjects · click to show or hide';
+  }
+  $('#lgBtn').addEventListener('click', () => { lgOpen = lg.classList.contains('collapsed'); fitLegend(); });
+  addEventListener('resize', fitLegend);
   function renderLegend() {
     const fc = CORE ? S.fcountCore : S.fcount;
     $('#chips').innerHTML = FAM.map((f, i) => fc[i] ? `<button type="button" class="chip ${active.has(i) ? '' : 'off'}" data-f="${i}" aria-pressed="${active.has(i)}"><span class="sw" style="background:${f.color}"></span><span class="nm">${esc(S.kind === 'de' ? (CORE ? f.de.replace(/ · (Französisch|Latein)/g, '') : f.de) : f.os)}</span><span class="ct">${fc[i]}</span></button>` : '').join('');
@@ -359,7 +385,7 @@ a { color: #6da7ec; text-decoration: none; } a:hover { text-decoration: underlin
     hover = -1; hideTip();
     if (reset) { clearSel(); growStart = performance.now(); grow = reduce ? 1 : 0; }
     else { sel = -1; lin = null; }
-    renderLegend(); setTexts();
+    renderLegend(); setTexts(); fitLegend();
   }
   function setTier(core) {
     CORE = core;
@@ -367,7 +393,7 @@ a { color: #6da7ec; text-decoration: none; } a:hover { text-decoration: underlin
     const u = new URL(location.href); CORE ? u.searchParams.set('subjects', 'core') : u.searchParams.delete('subjects'); history.replaceState(null, '', u.href);
     for (const a of document.querySelectorAll('a.xl')) { const v = new URL(a.getAttribute('href'), location.href); CORE ? v.searchParams.set('subjects', 'core') : v.searchParams.delete('subjects'); a.href = v.href; }
     if (sel >= 0 && CORE && S.N[sel].x) clearSel();
-    renderLegend(); setTexts();
+    renderLegend(); setTexts(); fitLegend();
   }
   $('#tier').addEventListener('click', e => { const b = e.target.closest('[data-tier]'); if (b) setTier(b.dataset.tier === 'core'); });
   $('#ds').addEventListener('click', e => { const b = e.target.closest('[data-ds]'); if (b && b.dataset.ds !== DS) setDS(b.dataset.ds); });
