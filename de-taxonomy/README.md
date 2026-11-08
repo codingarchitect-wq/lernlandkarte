@@ -20,8 +20,9 @@ tailored to the German system:
 > **Subjects** 18 (12 core, 6 extended) · **Curriculum sources** 107 / 4,619 codes ·
 > **Crosswalk links to os-taxonomy** 2,133
 
-**Browse it:** run `npm run all` (see [Build and check](#build-and-check)), then open
-`index.html` in a browser (works offline). The built pages aren't committed. It has five views:
+**Browse it** [online](https://codingarchitect-wq.com/lernlandkarte/de-taxonomy/index.html),
+or run `npm run all` (see [Build and check](#build-and-check)) and open `index.html` in a
+browser (works offline). The built pages aren't committed. It has five views:
 - a curriculum map per subject (domains × Klasse), with a stage filter for
   Vorschule–4, 5–10 and the Oberstufe;
 - a filterable list of all topics, including the Oberstufe course level;
@@ -34,14 +35,15 @@ and Religion & Ethik. It is kept in the link (`?subjects=core`) and carried to t
 other pages. Every topic opens a details panel. Deep links look like
 `index.html#t/de-rs-verlaengern` or `index.html#path/ph-qu-weltbild`.
 
-**3D map:** `graph.html` shows every topic as a dot and every prerequisite as
+**3D map:** `graph.html` ([online](https://codingarchitect-wq.com/lernlandkarte/de-taxonomy/graph.html)) shows every topic as a dot and every prerequisite as
 a thread. Height is the age a topic starts, from Vorschule to Klasse 13. Click a dot to trace
 everything that comes before it, and switch to os-taxonomy to compare the two shapes on the
 same age scale. It uses the technique of os-taxonomy's preview (`media/curriculum-viz.*`):
 positions are computed at build time, then drawn on a canvas.
 
 How it compares with os-taxonomy: **[../comparison/README.md](../comparison/README.md)**
-(interactive explorer: `../comparison/index.html`, also built by `npm run all`).
+(interactive explorer: [online](https://codingarchitect-wq.com/lernlandkarte/comparison/index.html),
+or `../comparison/index.html`, also built by `npm run all`).
 Review of os-taxonomy: [../reviews/os-taxonomy-review.md](../reviews/os-taxonomy-review.md).
 
 ## Scope and subjects

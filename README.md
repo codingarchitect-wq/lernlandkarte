@@ -7,6 +7,11 @@ and the [comparison](comparison/README.md) shows where the two agree and differ.
 
 *Lernlandkarte* is German for "learning map".
 
+**Browse it online: [codingarchitect-wq.com/lernlandkarte](https://codingarchitect-wq.com/lernlandkarte/)**
+(the [3D map](https://codingarchitect-wq.com/lernlandkarte/de-taxonomy/graph.html), the
+[taxonomy browser](https://codingarchitect-wq.com/lernlandkarte/de-taxonomy/index.html) and the
+[comparison](https://codingarchitect-wq.com/lernlandkarte/comparison/index.html)).
+
 > **Research prototype.** It was written with AI assistance from the KMK educational
 > standards and Länder curricula. No German teacher or Land has reviewed it. See the
 > [limitations](de-taxonomy/README.md#limitations).
@@ -40,7 +45,8 @@ npm run all
 ```
 
 If you cloned without `--recurse-submodules`, run `git submodule update --init` first.
-The build checks the data and writes three pages that work offline:
+The build checks the data and writes three pages that work offline. The start page,
+[`index.html`](index.html), links to all three:
 
 | Page | What it shows |
 |---|---|
@@ -48,8 +54,11 @@ The build checks the data and writes three pages that work offline:
 | `de-taxonomy/graph.html` | A rotating 3D map of every topic and prerequisite, German and os-taxonomy on the same age scale |
 | `comparison/index.html` | The comparison explorer, including when German children meet an idea compared with England, the US and Australia |
 
-The pages aren't committed: each build rewrites them in full. On every page, the
-**Core only** switch hides Französisch, Latein, Musik, Kunst, Sport and Religion & Ethik.
+The pages aren't committed: each build rewrites them in full. Instead, a GitHub Actions
+workflow ([`.github/workflows/pages.yml`](.github/workflows/pages.yml)) runs the same
+build and checks on every push to `main` and publishes the pages online. If a check
+fails, nothing is published. On every page, the **Core only** switch hides Französisch,
+Latein, Musik, Kunst, Sport and Religion & Ethik.
 
 ## Licence
 

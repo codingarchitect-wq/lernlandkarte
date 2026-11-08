@@ -2,13 +2,16 @@
 
 *2026-11-06 · German taxonomy `de-v2` (2,225 topics, Vorschule to Klasse 13, Gymnasium
 from Klasse 7) vs Marble os-taxonomy `v1` (1,861 topics, ages 4–15). Interactive
-explorer: `index.html`, built with `cd ../de-taxonomy && npm run all` (opens offline; deep links like
+explorer: [online](https://codingarchitect-wq.com/lernlandkarte/comparison/index.html), or
+`index.html`, built with `cd ../de-taxonomy && npm run all` (opens offline; deep links like
 `index.html#de/ma-zo-bruchbegriff`, `#os/mt_N8CpN1EJrP` or `#timing`).
 - **Timing tab:** drills into the age offsets. Compare with os-taxonomy overall or with England, the US, Australia or Ontario. Filter by school stage, subject, domain or offset, and open any topic pair to see both descriptions and the start age in every jurisdiction.
 - **Core subjects only** (top right, or `index.html?subjects=core`): recomputes every number without Französisch, Latein, Musik, Kunst, Sport and Religion & Ethik.
 
-The same build makes the German taxonomy browsable at `../de-taxonomy/index.html`, and
-both taxonomies as a 3D map at `../de-taxonomy/graph.html`.
+The German taxonomy itself is browsable
+[online](https://codingarchitect-wq.com/lernlandkarte/de-taxonomy/index.html), and both
+taxonomies as a [3D map](https://codingarchitect-wq.com/lernlandkarte/de-taxonomy/graph.html);
+the same build writes them locally to `../de-taxonomy/`.
 Every number below is in [`generated-tables.md`](generated-tables.md) and
 [`comparison.json`](comparison.json), produced by `de-taxonomy/scripts/compare.mjs`.*
 
