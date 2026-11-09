@@ -1,0 +1,1828 @@
+{
+ "version": "ro-v1",
+ "subjects": [
+  {
+   "name": "Matematică",
+   "nameEn": "Mathematics",
+   "nameDe": "Mathematik",
+   "tier": "core",
+   "grades": [
+    0,
+    12
+   ],
+   "description": "Liceu (theoretical track, new framework plans OMEC 4.350/2025): Matematică is in the trunchi comun of all four specialisations in clasele a IX-a – a X-a (2 h/week). The humanities follow the programme Matematică TC (IX–X); matematică-informatică (4/4/4/5 h/week) and științe ale naturii (3/3/3/3 h/week) follow combined TC+CS programmes for IX–XII. In XI–XII științe sociale has the new CS subject Matematică aplicată în științe sociale (1 h/week) and filologie has no mathematics (only the integrated subject ȘTIAM). The new programmes (OMEC 6.930/2025, 3.716/2026) apply from clasa a IX-a in 2026–27; older cohorts finish liceu with the 2004–2009 programmes (Matematică revised by OMECI 5.099/2009), which still had vectors (IX), financial mathematics (X) and rings, fields and polynomial rings (XII, MI). The Bacalaureat 2030 makes mathematics the compulsory first E paper for MI and an option for SN and the humanities.",
+   "descriptionRo": "Liceu (filiera teoretică, noile planuri-cadru OMEC 4.350/2025): Matematica face parte din trunchiul comun al tuturor celor patru specializări în clasele a IX-a – a X-a (2 ore/săptămână). Specializările umaniste urmează programa Matematică TC (IX–X); matematică-informatică (4/4/4/5 ore/săptămână) și științe ale naturii (3/3/3/3 ore/săptămână) urmează programe combinate TC+CS pentru IX–XII. În XI–XII, științe sociale are noua disciplină de CS Matematică aplicată în științe sociale (1 oră/săptămână), iar filologie nu are matematică (doar disciplina integrată ȘTIAM). Noile programe (OMEC 6.930/2025, 3.716/2026) se aplică de la clasa a IX-a în anul școlar 2026–2027; generațiile mai vechi termină liceul cu programele din 2004–2009 (Matematică, revizuită prin OMECI 5.099/2009), care încă includeau vectori (IX), matematici financiare (X) și inele, corpuri și inele de polinoame (XII, MI). La Bacalaureatul 2030, matematica devine prima probă E obligatorie pentru MI și o opțiune pentru SN și specializările umaniste.",
+   "descriptionDe": "Liceu (theoretischer Zweig, neue Rahmenpläne OMEC 4.350/2025): Matematică gehört in den clasele a IX-a – a X-a in allen vier Fachrichtungen zum trunchi comun (Pflichtbereich, 2 Std./Woche). Die geisteswissenschaftliche Fachrichtung folgt dem Lehrplan Matematică TC (IX–X); matematică-informatică (4/4/4/5 Std./Woche) und științe ale naturii (3/3/3/3 Std./Woche) folgen kombinierten TC+CS-Lehrplänen für IX–XII. In XI–XII hat științe sociale das neue CS-Fach Matematică aplicată în științe sociale (1 Std./Woche), filologie hat keine Mathematik (nur das integrierte Fach ȘTIAM). Die neuen Lehrpläne (OMEC 6.930/2025, 3.716/2026) gelten ab clasa a IX-a im Schuljahr 2026–27; ältere Jahrgänge beenden das Liceu mit den Lehrplänen von 2004–2009 (Matematică überarbeitet durch OMECI 5.099/2009), die noch Vektoren (IX), Finanzmathematik (X) sowie Ringe, Körper und Polynomringe (XII, MI) enthielten. Mit dem Bacalaureat 2030 wird Mathematik für MI zur verpflichtenden ersten Prüfung im Teil E und für SN und die geisteswissenschaftliche Fachrichtung zur Wahlmöglichkeit.",
+   "domains": [
+    {
+     "name": "Numere și operații",
+     "nameEn": "Numbers and Operations",
+     "nameDe": "Zahlen und Operationen",
+     "basis": "SN IX 'Mulțimea numerelor reale'; roots, powers and logarithms (TC IX, MI IX–X, SN IX–X); 'Numere complexe' (MI X, SN X; filed under Algebră in the programmes); Matematică aplicată în științe sociale XI 'Numere și mărimi. Relații de proporționalitate'. Continues the gimnaziu domain.",
+     "basisRo": "SN IX „Mulțimea numerelor reale”; radicali, puteri și logaritmi (TC IX, MI IX–X, SN IX–X); „Numere complexe” (MI X, SN X; încadrate la Algebră în programe); Matematică aplicată în științe sociale XI „Numere și mărimi. Relații de proporționalitate”. Continuă domeniul de la gimnaziu.",
+     "basisDe": "SN IX „Mulțimea numerelor reale“; Wurzeln, Potenzen und Logarithmen (TC IX, MI IX–X, SN IX–X); „Numere complexe“ (MI X, SN X; in den Lehrplänen unter Algebră eingeordnet); Matematică aplicată în științe sociale XI „Numere și mărimi. Relații de proporționalitate“. Setzt den gleichnamigen Bereich des gimnaziu fort.",
+     "topicCount": 82
+    },
+    {
+     "name": "Algebră",
+     "nameEn": "Algebra",
+     "nameDe": "Algebra",
+     "basis": "Programme domain 'Algebră': 'Progresii' (IX), quadratic equation (MI IX, SN X), 'Metode de numărare' / 'Elemente de combinatorică' (X), 'Polinoame' (SN IX, MI X), 'Matrice. Determinanți', 'Sisteme de ecuații liniare' (MI XI, SN XI–XII), 'Legi de compoziție', 'Grupuri' (MI XII); MASS XI 'Matrice și grafuri'.",
+     "basisRo": "Domeniul „Algebră” din programe: „Progresii” (IX), ecuația de gradul al doilea (MI IX, SN X), „Metode de numărare” / „Elemente de combinatorică” (X), „Polinoame” (SN IX, MI X), „Matrice. Determinanți”, „Sisteme de ecuații liniare” (MI XI, SN XI–XII), „Legi de compoziție”, „Grupuri” (MI XII); MASS XI „Matrice și grafuri”.",
+     "basisDe": "Lehrplanbereich „Algebră“: „Progresii“ (IX), quadratische Gleichung (MI IX, SN X), „Metode de numărare“ / „Elemente de combinatorică“ (X), „Polinoame“ (SN IX, MI X), „Matrice. Determinanți“, „Sisteme de ecuații liniare“ (MI XI, SN XI–XII), „Legi de compoziție“, „Grupuri“ (MI XII); MASS XI „Matrice și grafuri“.",
+     "topicCount": 44
+    },
+    {
+     "name": "Rapoarte, proporții și funcții",
+     "nameEn": "Ratios, Proportions and Functions",
+     "nameDe": "Verhältnisse, Proportionalität und Funktionen",
+     "basis": "'Funcții – observarea unor proprietăți ale funcțiilor utilizând lecturi grafice' (TC IX, SN IX), 'Funcții' (MI IX–X, SN X); MASS XI proportionality and XII 'Funcții. Studiul comportamentului acestora'. Continues the gimnaziu domain of the same name.",
+     "basisRo": "„Funcții – observarea unor proprietăți ale funcțiilor utilizând lecturi grafice” (TC IX, SN IX), „Funcții” (MI IX–X, SN X); MASS XI proporționalitate și XII „Funcții. Studiul comportamentului acestora”. Continuă domeniul omonim de la gimnaziu.",
+     "basisDe": "„Funcții – observarea unor proprietăți ale funcțiilor utilizând lecturi grafice“ (TC IX, SN IX), „Funcții“ (MI IX–X, SN X); MASS XI Proportionalität und XII „Funcții. Studiul comportamentului acestora“. Setzt den gleichnamigen Bereich des gimnaziu fort.",
+     "topicCount": 29
+    },
+    {
+     "name": "Trigonometrie",
+     "nameEn": "Trigonometry",
+     "nameDe": "Trigonometrie",
+     "basis": "Programme domain 'Trigonometrie': 'Elemente de trigonometrie' (TC IX, SN IX), 'Funcții trigonometrice. Ecuații trigonometrice' (MI IX), trigonometric functions and equations (SN X).",
+     "basisRo": "Domeniul „Trigonometrie” din programe: „Elemente de trigonometrie” (TC IX, SN IX), „Funcții trigonometrice. Ecuații trigonometrice” (MI IX), funcții și ecuații trigonometrice (SN X).",
+     "basisDe": "Lehrplanbereich „Trigonometrie“: „Elemente de trigonometrie“ (TC IX, SN IX), „Funcții trigonometrice. Ecuații trigonometrice“ (MI IX), trigonometrische Funktionen und Gleichungen (SN X).",
+     "topicCount": 10
+    },
+    {
+     "name": "Geometrie",
+     "nameEn": "Geometry",
+     "nameDe": "Geometrie",
+     "basis": "Programme domain 'Geometrie': 'Aplicații ale trigonometriei în geometrie' (TC X, MI IX, SN IX), 'Geometrie analitică' (TC IX, SN IX; MI XI 'drepte în planul cartezian'), 'Conice' (MI XII), 'Elemente de geometrie analitică în spațiu' (SN XII), complex numbers in geometry (MI X).",
+     "basisRo": "Domeniul „Geometrie” din programe: „Aplicații ale trigonometriei în geometrie” (TC X, MI IX, SN IX), „Geometrie analitică” (TC IX, SN IX; MI XI „drepte în planul cartezian”), „Conice” (MI XII), „Elemente de geometrie analitică în spațiu” (SN XII), numere complexe în geometrie (MI X).",
+     "basisDe": "Lehrplanbereich „Geometrie“: „Aplicații ale trigonometriei în geometrie“ (TC X, MI IX, SN IX), „Geometrie analitică“ (TC IX, SN IX; MI XI „drepte în planul cartezian“), „Conice“ (MI XII), „Elemente de geometrie analitică în spațiu“ (SN XII), komplexe Zahlen in der Geometrie (MI X).",
+     "topicCount": 85
+    },
+    {
+     "name": "Analiză matematică",
+     "nameEn": "Calculus",
+     "nameDe": "Analysis",
+     "basis": "Programme domain 'Analiză matematică': limits of sequences (MI XI), limits, continuity, derivatives and their applications (MI XI, SN XI), graph sketching (MI XII), primitives and the definite integral (MI XII, SN XII), differential equations (SN XII); MASS XII intuitive rate of change and accumulation.",
+     "basisRo": "Domeniul „Analiză matematică” din programe: limite de șiruri (MI XI), limite, continuitate, derivate și aplicațiile lor (MI XI, SN XI), reprezentarea grafică a funcțiilor (MI XII), primitive și integrala definită (MI XII, SN XII), ecuații diferențiale (SN XII); MASS XII rata de variație și acumularea, abordate intuitiv.",
+     "basisDe": "Lehrplanbereich „Analiză matematică“: Grenzwerte von Folgen (MI XI), Grenzwerte, Stetigkeit, Ableitungen und ihre Anwendungen (MI XI, SN XI), Kurvendiskussion (MI XII), Stammfunktionen und bestimmtes Integral (MI XII, SN XII), Differentialgleichungen (SN XII); MASS XII intuitive Änderungsrate und Akkumulation.",
+     "topicCount": 35
+    },
+    {
+     "name": "Organizarea datelor și probabilități",
+     "nameEn": "Data, Statistics and Probability",
+     "nameDe": "Daten, Statistik und Wahrscheinlichkeit",
+     "basis": "Programme domain 'Date, statistică matematică și probabilități': statistics, surveys and probability (TC X, MI X, SN X); MASS XII 'Statistică și probabilități în științele sociale'. Continues the gimnaziu domain.",
+     "basisRo": "Domeniul „Date, statistică matematică și probabilități” din programe: statistică, sondaje și probabilități (TC X, MI X, SN X); MASS XII „Statistică și probabilități în științele sociale”. Continuă domeniul de la gimnaziu.",
+     "basisDe": "Lehrplanbereich „Date, statistică matematică și probabilități“: Statistik, Erhebungen und Wahrscheinlichkeit (TC X, MI X, SN X); MASS XII „Statistică și probabilități în științele sociale“. Setzt den Bereich des gimnaziu fort.",
+     "topicCount": 23
+    },
+    {
+     "name": "Rezolvarea de probleme și raționament",
+     "nameEn": "Problem Solving and Reasoning",
+     "nameDe": "Problemlösen und Argumentieren",
+     "basis": "'Elemente de logică matematică' (IX in all three programmes, filed under Algebră), methods of proof (MI and SN IX), the modelling and validation competences CG5–CG6 with digital tools and an AI assistant; MASS XI 'Elemente de logică și gândire critică'; the Bacalaureat 2030 exam programmes (OMEC 5.077/2026).",
+     "basisRo": "„Elemente de logică matematică” (IX în toate cele trei programe, încadrate la Algebră), metode de demonstrație (MI și SN IX), competențele de modelare și validare CG5–CG6, cu instrumente digitale și un asistent AI; MASS XI „Elemente de logică și gândire critică”; programele de examen pentru Bacalaureat 2030 (OMEC 5.077/2026).",
+     "basisDe": "„Elemente de logică matematică“ (IX in allen drei Lehrplänen, unter Algebră eingeordnet), Beweismethoden (MI und SN IX), die Modellierungs- und Validierungskompetenzen CG5–CG6 mit digitalen Werkzeugen und einem KI-Assistenten; MASS XI „Elemente de logică și gândire critică“; die Prüfungslehrpläne für das Bacalaureat 2030 (OMEC 5.077/2026).",
+     "topicCount": 27
+    },
+    {
+     "name": "Măsurări",
+     "nameEn": "Measurement",
+     "nameDe": "Größen und Messen",
+     "basis": "MEM CP–II 'Măsurări' (CG6: lungime, capacitate, masă, timp, bani); Matematică III–IV 'Unități și instrumente de măsură' (CG4); Matematică V 'Unități de măsură' within 'Elemente de geometrie și unități de măsură'",
+     "basisRo": "MEM CP–II „Măsurări” (CG6: lungime, capacitate, masă, timp, bani); Matematică III–IV „Unități și instrumente de măsură” (CG4); Matematică V „Unități de măsură” în cadrul „Elemente de geometrie și unități de măsură”",
+     "basisDe": "MEM CP–II „Măsurări“ (CG6: lungime, capacitate, masă, timp, bani); Matematică III–IV „Unități și instrumente de măsură“ (CG4); Matematică V „Unități de măsură“ innerhalb von „Elemente de geometrie și unități de măsură“",
+     "topicCount": 15
+    }
+   ],
+   "topicCount": 350
+  },
+  {
+   "name": "Limba și literatura română",
+   "nameEn": "Romanian Language and Literature",
+   "nameDe": "Rumänische Sprache und Literatur",
+   "tier": "core",
+   "grades": [
+    0,
+    12
+   ],
+   "description": "Liceu: Limba și literatura română is in the trunchi comun of all four theoretical specialisations (3 h/week in IX–X, 2 h in XI–XII under OMEC 4.350/2025), with curriculum de specialitate of 1/1/2/2 h for științe sociale and 2 h every year for filologie. The new programmes (IX approved in Feb 2026, X–XII approved by OMEC 4.106/2026) replace the thematic approach of 2004–2006 with a diachronic history of Romanian literature from the 16th century to the present and add argumentation, language variation and digital/AI literacy; a written exam and an oral competence test in Romanian are compulsory in the Bacalaureat. Filologie's separate Literatură universală (XI–XII) and the 1 h CS \"Discursuri multiple – literatură și științe\" for MI/SN in XI are not covered.",
+   "descriptionRo": "Liceu: Limba și literatura română face parte din trunchiul comun al tuturor celor patru specializări teoretice (3 ore/săptămână în IX–X, 2 ore în XI–XII, conform OMEC 4.350/2025), cu curriculum de specialitate de 1/1/2/2 ore la științe sociale și de 2 ore în fiecare an la filologie. Noile programe (IX aprobată în februarie 2026, X–XII aprobate prin OMEC 4.106/2026) înlocuiesc abordarea tematică din 2004–2006 cu o istorie diacronică a literaturii române din secolul al XVI-lea până în prezent și adaugă argumentarea, variația lingvistică și alfabetizarea digitală/IA; la Bacalaureat sunt obligatorii o probă scrisă și o probă orală de evaluare a competențelor de comunicare în limba română. Disciplina separată Literatură universală de la filologie (XI–XII) și CS-ul de 1 oră „Discursuri multiple – literatură și științe” pentru MI/SN în clasa a XI-a nu sunt acoperite.",
+   "descriptionDe": "Liceu: Limba și literatura română gehört in allen vier theoretischen Fachrichtungen zum trunchi comun (3 Std./Woche in IX–X, 2 Std. in XI–XII nach OMEC 4.350/2025), mit curriculum de specialitate von 1/1/2/2 Std. für științe sociale und jährlich 2 Std. für filologie. Die neuen Lehrpläne (IX im Februar 2026 genehmigt, X–XII durch OMEC 4.106/2026) ersetzen den thematischen Ansatz von 2004–2006 durch eine diachrone Geschichte der rumänischen Literatur vom 16. Jahrhundert bis zur Gegenwart und ergänzen Argumentation, sprachliche Variation sowie Digital- und KI-Kompetenz; im Bacalaureat sind eine schriftliche Prüfung und eine mündliche Kompetenzprüfung in Rumänisch verpflichtend. Das gesonderte Fach Literatură universală der filologie (XI–XII) und das einstündige CS-Fach „Discursuri multiple – literatură și științe“ für MI/SN in XI sind nicht erfasst.",
+   "domains": [
+    {
+     "name": "Text literar și cultura lecturii",
+     "nameEn": "Literature and Reading Culture",
+     "nameDe": "Literatur und Lesekultur",
+     "basis": "IX (2026): CG1 and the module \"Reflecții despre literatură\" (literature as representation, institution, historical path, space of creation, table of genres; strategies of comprehension and interpretation); X–XII (2026 TC): CG1, \"Elemente de stilistică pentru textul literar\" (X)",
+     "basisRo": "IX (2026): CG1 și modulul „Reflecții despre literatură” (literatura ca reprezentare, instituție, parcurs istoric, spațiu al creației, tabloul genurilor; strategii de înțelegere și interpretare); X–XII (2026 TC): CG1, „Elemente de stilistică pentru textul literar” (X)",
+     "basisDe": "IX (2026): CG1 und das Modul „Reflecții despre literatură“ (Literatur als Darstellung, Institution, historischer Weg, Raum des Schaffens, Gattungssystem; Strategien des Verstehens und Interpretierens); X–XII (2026 TC): CG1, „Elemente de stilistică pentru textul literar“ (X)",
+     "topicCount": 42
+    },
+    {
+     "name": "Epoci și curente literare",
+     "nameEn": "Literary Periods and Movements",
+     "nameDe": "Literarische Epochen und Strömungen",
+     "basis": "IX–XII (2026): CG2 and the diachronic modules of the LITERATURĂ domain (Contexte; Teme și forme), from \"Începuturile scrisului în limba română (sec. XVI–XVII)\" in IX to \"Perioada contemporană\" and \"Literatura ca formă de cunoaștere a lumii și a omului\" in XII",
+     "basisRo": "IX–XII (2026): CG2 și modulele diacronice ale domeniului LITERATURĂ (Contexte; Teme și forme), de la „Începuturile scrisului în limba română (sec. XVI–XVII)” în IX până la „Perioada contemporană” și „Literatura ca formă de cunoaștere a lumii și a omului” în XII",
+     "basisDe": "IX–XII (2026): CG2 und die diachronen Module des Bereichs LITERATURĂ (Contexte; Teme și forme), von „Începuturile scrisului în limba română (sec. XVI–XVII)“ in IX bis „Perioada contemporană“ und „Literatura ca formă de cunoaștere a lumii și a omului“ in XII",
+     "topicCount": 53
+    },
+    {
+     "name": "Redactare",
+     "nameEn": "Writing Composition",
+     "nameDe": "Texte verfassen",
+     "basis": "IX–XII (2026): CG3, \"Comunicare scrisă\" (texte propuse spre redactare) and the criteria for monitoring writing kept throughout liceu",
+     "basisRo": "IX–XII (2026): CG3, „Comunicare scrisă” (texte propuse spre redactare) și criteriile de monitorizare a scrierii, păstrate pe tot parcursul liceului",
+     "basisDe": "IX–XII (2026): CG3, „Comunicare scrisă“ (texte propuse spre redactare) und die im ganzen Liceu beibehaltenen Kriterien zur Beobachtung des Schreibens",
+     "topicCount": 32
+    },
+    {
+     "name": "Exprimare orală și interacțiune",
+     "nameEn": "Speaking and Interaction",
+     "nameDe": "Sprechen und Gesprächsführung",
+     "basis": "IX–XII (2026): CG3, \"Comunicare orală\"; Bacalaureat oral test of communication skills (proba A / A01)",
+     "basisRo": "IX–XII (2026): CG3, „Comunicare orală”; proba orală de evaluare a competențelor de comunicare de la Bacalaureat (proba A / A01)",
+     "basisDe": "IX–XII (2026): CG3, „Comunicare orală“; mündliche Prüfung der Kommunikationsfähigkeit im Bacalaureat (proba A / A01)",
+     "topicCount": 27
+    },
+    {
+     "name": "Lectură",
+     "nameEn": "Reading Comprehension and Text Types",
+     "nameDe": "Leseverstehen und Textsorten",
+     "basis": "IX: CS 3.4 (filologie 3.5) digital media and AI; X: CS 3.4 documentation and source credibility; XI: CS 3.4 evaluation of AI-generated texts; XII: \"Comunicare în mediul online\" (strategies for reading digital texts)",
+     "basisRo": "IX: CS 3.4 (filologie 3.5) media digitale și AI; X: CS 3.4 documentare și credibilitatea surselor; XI: CS 3.4 evaluarea textelor generate de AI; XII: „Comunicare în mediul online” (strategii de lectură a textelor digitale)",
+     "basisDe": "IX: CS 3.4 (filologie 3.5) digitale Medien und KI; X: CS 3.4 Recherche und Glaubwürdigkeit von Quellen; XI: CS 3.4 Bewertung KI-generierter Texte; XII: „Comunicare în mediul online“ (Strategien zum Lesen digitaler Texte)",
+     "topicCount": 20
+    },
+    {
+     "name": "Retorică, argumentare și pragmatică",
+     "nameEn": "Rhetoric, Argumentation and Pragmatics",
+     "nameDe": "Rhetorik, Argumentation und Pragmatik",
+     "basis": "X (2026 TC): \"Elemente de retorică și argumentare\" (CS 3.2, 3.3); XI: \"Elemente de pragmatică și stilistică\" (CS 3.2)",
+     "basisRo": "X (2026 TC): „Elemente de retorică și argumentare” (CS 3.2, 3.3); XI: „Elemente de pragmatică și stilistică” (CS 3.2)",
+     "basisDe": "X (2026 TC): „Elemente de retorică și argumentare“ (CS 3.2, 3.3); XI: „Elemente de pragmatică și stilistică“ (CS 3.2)",
+     "topicCount": 8
+    },
+    {
+     "name": "Vocabular și variație stilistică",
+     "nameEn": "Vocabulary and Language Variation",
+     "nameDe": "Wortschatz und sprachliche Varietäten",
+     "basis": "IX: \"Limbă standard și variație regională\" (CS 3.1, 3.3); X: \"Variație socială a limbii\" (CS 3.1); XI: \"Variația funcțională a limbii\" (CS 3.1, 3.3)",
+     "basisRo": "IX: „Limbă standard și variație regională” (CS 3.1, 3.3); X: „Variație socială a limbii” (CS 3.1); XI: „Variația funcțională a limbii” (CS 3.1, 3.3)",
+     "basisDe": "IX: „Limbă standard și variație regională“ (CS 3.1, 3.3); X: „Variație socială a limbii“ (CS 3.1); XI: „Variația funcțională a limbii“ (CS 3.1, 3.3)",
+     "topicCount": 27
+    },
+    {
+     "name": "Evoluția limbii române",
+     "nameEn": "History of the Romanian Language",
+     "nameDe": "Geschichte der rumänischen Sprache",
+     "basis": "IX (2026): \"Evoluția limbii române\" (CS 3.1; filologie CS 3.4 on language variation in literary texts)",
+     "basisRo": "IX (2026): „Evoluția limbii române” (CS 3.1; filologie CS 3.4, privind variația limbii în textele literare)",
+     "basisDe": "IX (2026): „Evoluția limbii române“ (CS 3.1; filologie CS 3.4 zur sprachlichen Variation in literarischen Texten)",
+     "topicCount": 7
+    },
+    {
+     "name": "Sintaxă",
+     "nameEn": "Grammar: Sentence and Clause",
+     "nameDe": "Grammatik: Satzlehre",
+     "basis": "IX (2026): \"Construcția textului: coeziune și coerență\" (CS 3.2), continuing the gimnaziu syntax domain",
+     "basisRo": "IX (2026): „Construcția textului: coeziune și coerență” (CS 3.2), în continuarea domeniului de sintaxă de la gimnaziu",
+     "basisDe": "IX (2026): „Construcția textului: coeziune și coerență“ (CS 3.2), Fortsetzung des Syntaxbereichs des gimnaziu",
+     "topicCount": 27
+    },
+    {
+     "name": "Ortografie, ortoepie și punctuație",
+     "nameEn": "Spelling, Pronunciation and Punctuation",
+     "nameDe": "Rechtschreibung, Aussprache und Zeichensetzung",
+     "basis": "IX: instrumente normative (DOOM, Îndreptar); XII: \"Construcția enunțului – punctuația în construcția enunțului\" (CS 3.2)",
+     "basisRo": "IX: instrumente normative (DOOM, Îndreptar); XII: „Construcția enunțului – punctuația în construcția enunțului” (CS 3.2)",
+     "basisDe": "IX: instrumente normative (DOOM, Îndreptar); XII: „Construcția enunțului – punctuația în construcția enunțului“ (CS 3.2)",
+     "topicCount": 20
+    },
+    {
+     "name": "Elemente de interculturalitate",
+     "nameEn": "Intercultural Elements",
+     "nameDe": "Interkulturelle Aspekte",
+     "basis": "XII (2026 TC): \"Identitate lingvistică și culturală\" — multilingvism; ideologie și reprezentări despre limbă (CS 3.1), continuing gimnaziu CG5",
+     "basisRo": "XII (2026 TC): „Identitate lingvistică și culturală” — multilingvism; ideologie și reprezentări despre limbă (CS 3.1), în continuarea CG5 de la gimnaziu",
+     "basisDe": "XII (2026 TC): „Identitate lingvistică și culturală“ – multilingvism; ideologie și reprezentări despre limbă (CS 3.1), Fortsetzung von CG5 des gimnaziu",
+     "topicCount": 13
+    },
+    {
+     "name": "Receptarea mesajului oral",
+     "nameEn": "Listening Comprehension",
+     "nameDe": "Hörverstehen",
+     "basis": "Competența generală 1 in CP–II (2013) and III–IV (2014): receptarea de mesaje orale; V–VIII (2017): CG1 / domeniul 'Comunicare orală' (receptarea textului oral)",
+     "basisRo": "Competența generală 1 la CP–II (2013) și III–IV (2014): receptarea de mesaje orale; V–VIII (2017): CG1 / domeniul „Comunicare orală” (receptarea textului oral)",
+     "basisDe": "Competența generală 1 in CP–II (2013) und III–IV (2014): receptarea de mesaje orale; V–VIII (2017): CG1 / Bereich „Comunicare orală“ (receptarea textului oral)",
+     "topicCount": 10
+    },
+    {
+     "name": "Citire și scriere inițială",
+     "nameEn": "Early Reading and Writing",
+     "nameDe": "Schriftspracherwerb",
+     "basis": "CP–II (2013): CG3 and CG4, conținuturi 'Citire/lectură', 'Scriere/redactare' (litere, grupuri de litere, copieri, dictări) and 'Fonetică'",
+     "basisRo": "CP–II (2013): CG3 și CG4, conținuturile „Citire/lectură”, „Scriere/redactare” (litere, grupuri de litere, copieri, dictări) și „Fonetică”",
+     "basisDe": "CP–II (2013): CG3 und CG4, Inhalte „Citire/lectură“, „Scriere/redactare“ (litere, grupuri de litere, copieri, dictări) und „Fonetică“",
+     "topicCount": 17
+    },
+    {
+     "name": "Morfologie",
+     "nameEn": "Grammar: Parts of Speech",
+     "nameDe": "Grammatik: Wortarten",
+     "basis": "III–IV: 'Variabilitatea limbii' (intuirea claselor morfologice); V–VIII: CG4 / 'Elemente de construcție a comunicării – Gramatică' (părțile de vorbire)",
+     "basisRo": "III–IV: „Variabilitatea limbii” (intuirea claselor morfologice); V–VIII: CG4 / „Elemente de construcție a comunicării – Gramatică” (părțile de vorbire)",
+     "basisDe": "III–IV: „Variabilitatea limbii“ (intuirea claselor morfologice); V–VIII: CG4 / „Elemente de construcție a comunicării – Gramatică“ (părțile de vorbire)",
+     "topicCount": 24
+    }
+   ],
+   "topicCount": 327
+  },
+  {
+   "name": "Istorie",
+   "nameEn": "History",
+   "nameDe": "Geschichte",
+   "tier": "core",
+   "grades": [
+    4,
+    12
+   ],
+   "description": "Under OMEC 4.350/2025 Istorie is trunchi comun in all four theoretical specialisations (1 h/week IX–XII); științe sociale and filologie add curriculum de specialitate (+1 h in IX, +2 h in X, then +2 h SS / +1 h FIL in XI–XII). The new programmes teach universal history in IX (Istorie. Istorie universală, antiquity to absolutism) and X (Enlightenment to the Cold War) and the history of the Romanians in XI–XII. Two further TC subjects, 1 h/week each, are taught in every specialisation: Istoria evreilor. Holocaustul (XI) and Istoria comunismului din România (XII). History is the compulsory written Bacalaureat exam for științe sociale.",
+   "descriptionRo": "Conform OMEC 4.350/2025, Istoria este disciplină de trunchi comun în toate cele patru specializări teoretice (1 oră/săptămână în IX–XII); științe sociale și filologie adaugă curriculum de specialitate (+1 oră în IX, +2 ore în X, apoi +2 ore SS / +1 oră FIL în XI–XII). Noile programe predau istoria universală în IX (Istorie. Istorie universală, de la Antichitate la absolutism) și în X (de la Iluminism la Războiul Rece), iar istoria românilor în XI–XII. Alte două discipline de TC, de câte 1 oră/săptămână, se predau la toate specializările: Istoria evreilor. Holocaustul (XI) și Istoria comunismului din România (XII). Istoria este proba scrisă obligatorie la Bacalaureat pentru științe sociale.",
+   "descriptionDe": "Nach OMEC 4.350/2025 gehört Istorie in allen vier theoretischen Fachrichtungen zum trunchi comun (1 Std./Woche IX–XII); științe sociale und filologie ergänzen curriculum de specialitate (+1 Std. in IX, +2 Std. in X, dann +2 Std. SS / +1 Std. FIL in XI–XII). Die neuen Lehrpläne behandeln in IX Weltgeschichte (Istorie. Istorie universală, Antike bis Absolutismus) und in X (Aufklärung bis Kalter Krieg) sowie in XI–XII die Geschichte der Rumänen. Zwei weitere TC-Fächer mit je 1 Std./Woche werden in jeder Fachrichtung unterrichtet: Istoria evreilor. Holocaustul (XI) und Istoria comunismului din România (XII). Geschichte ist für științe sociale die verpflichtende schriftliche Prüfung im Bacalaureat.",
+   "domains": [
+    {
+     "name": "Gândire istorică și metode",
+     "nameEn": "Historical Thinking and Methods",
+     "nameDe": "Historisches Denken und Methoden",
+     "basis": "Programa Istorie IX (2025): domeniul 1 „Laboratorul istoriei” (surse istorice; timp, spațiu, concepte); CG2 și CG4 în X–XII (2026)",
+     "basisRo": "Programa Istorie IX (2025): domeniul 1 „Laboratorul istoriei” (surse istorice; timp, spațiu, concepte); CG2 și CG4 în X–XII (2026)",
+     "basisDe": "Lehrplan (programa) Istorie IX (2025): Bereich 1 „Laboratorul istoriei“ (historische Quellen; Zeit, Raum, Begriffe); CG2 und CG4 in X–XII (2026)",
+     "topicCount": 17
+    },
+    {
+     "name": "Preistorie și Antichitate",
+     "nameEn": "Prehistory and Antiquity",
+     "nameDe": "Ur- und Frühgeschichte und Antike",
+     "basis": "Programa Istorie IX (2025): domeniile 2 „Zorii civilizației” și 3 „Originile civilizației europene: modele politice și culturale în lumea greco-romană”",
+     "basisRo": "Programa Istorie IX (2025): domeniile 2 „Zorii civilizației” și 3 „Originile civilizației europene: modele politice și culturale în lumea greco-romană”",
+     "basisDe": "Lehrplan Istorie IX (2025): Bereiche 2 „Zorii civilizației“ und 3 „Originile civilizației europene: modele politice și culturale în lumea greco-romană“",
+     "topicCount": 23
+    },
+    {
+     "name": "Evul Mediu",
+     "nameEn": "The Middle Ages",
+     "nameDe": "Mittelalter",
+     "basis": "Programa Istorie IX (2025): domeniile 4 „Geneza lumii medievale” și 5 „Credință, putere și cunoaștere în lumea medievală”",
+     "basisRo": "Programa Istorie IX (2025): domeniile 4 „Geneza lumii medievale” și 5 „Credință, putere și cunoaștere în lumea medievală”",
+     "basisDe": "Lehrplan Istorie IX (2025): Bereiche 4 „Geneza lumii medievale“ und 5 „Credință, putere și cunoaștere în lumea medievală“",
+     "topicCount": 18
+    },
+    {
+     "name": "Epoca modernă",
+     "nameEn": "The Modern Era",
+     "nameDe": "Neuzeit",
+     "basis": "Programa Istorie IX (2025): domeniul 6 „Lumea în mișcare. Tranziția spre Modernitate”; Istorie X (2026): „Modernitatea – o nouă viziune asupra lumii”, „Secolul națiunilor”",
+     "basisRo": "Programa Istorie IX (2025): domeniul 6 „Lumea în mișcare. Tranziția spre Modernitate”; Istorie X (2026): „Modernitatea – o nouă viziune asupra lumii”, „Secolul națiunilor”",
+     "basisDe": "Lehrplan Istorie IX (2025): Bereich 6 „Lumea în mișcare. Tranziția spre Modernitate“; Istorie X (2026): „Modernitatea – o nouă viziune asupra lumii“, „Secolul națiunilor“",
+     "topicCount": 18
+    },
+    {
+     "name": "Lumea contemporană",
+     "nameEn": "The Contemporary World",
+     "nameDe": "Zeitgeschichte",
+     "basis": "Istorie X (2026, după programa de examen Bacalaureat 2030): „Mondializare, cooperare și conflict”, „Democrație și totalitarism. Al Doilea Război Mondial”, „De la Războiul Rece la istoria recentă”",
+     "basisRo": "Istorie X (2026, după programa de examen Bacalaureat 2030): „Mondializare, cooperare și conflict”, „Democrație și totalitarism. Al Doilea Război Mondial”, „De la Războiul Rece la istoria recentă”",
+     "basisDe": "Istorie X (2026, nach dem Prüfungslehrplan Bacalaureat 2030): „Mondializare, cooperare și conflict“, „Democrație și totalitarism. Al Doilea Război Mondial“, „De la Războiul Rece la istoria recentă“",
+     "topicCount": 15
+    },
+    {
+     "name": "Istoria românilor",
+     "nameEn": "History of the Romanians",
+     "nameDe": "Geschichte der Rumänen",
+     "basis": "Istorie. Istoria românilor XI–XII (2026, după programa de examen Bacalaureat 2030): domeniile de la „Moștenirea timpurilor îndepărtate” la „Regimul comunist. Revenirea la democrație și integrarea euro-atlantică”",
+     "basisRo": "Istorie. Istoria românilor XI–XII (2026, după programa de examen Bacalaureat 2030): domeniile de la „Moștenirea timpurilor îndepărtate” la „Regimul comunist. Revenirea la democrație și integrarea euro-atlantică”",
+     "basisDe": "Istorie. Istoria românilor XI–XII (2026, nach dem Prüfungslehrplan Bacalaureat 2030): die Bereiche von „Moștenirea timpurilor îndepărtate“ bis „Regimul comunist. Revenirea la democrație și integrarea euro-atlantică“",
+     "topicCount": 48
+    },
+    {
+     "name": "Istoria evreilor. Holocaustul",
+     "nameEn": "Jewish History and the Holocaust",
+     "nameDe": "Jüdische Geschichte und Holocaust",
+     "basis": "Programa Istoria evreilor. Holocaustul, clasa a XI-a (OME 5.344/2023): domeniile 1–6",
+     "basisRo": "Programa Istoria evreilor. Holocaustul, clasa a XI-a (OME 5.344/2023): domeniile 1–6",
+     "basisDe": "Lehrplan Istoria evreilor. Holocaustul, clasa a XI-a (OME 5.344/2023): Bereiche 1–6",
+     "topicCount": 8
+    },
+    {
+     "name": "Istoria comunismului din România",
+     "nameEn": "History of Communism in Romania",
+     "nameDe": "Geschichte des Kommunismus in Rumänien",
+     "basis": "Programa Istoria comunismului din România, clasa a XII-a (OME 7.734/2024): domeniile 1–13",
+     "basisRo": "Programa Istoria comunismului din România, clasa a XII-a (OME 7.734/2024): domeniile 1–13",
+     "basisDe": "Lehrplan Istoria comunismului din România, clasa a XII-a (OME 7.734/2024): Bereiche 1–13",
+     "topicCount": 8
+    },
+    {
+     "name": "Trecutul și prezentul din jurul nostru",
+     "nameEn": "The Past and Present Around Us",
+     "nameDe": "Vergangenheit und Gegenwart um uns herum",
+     "basis": "Programa Istorie IV (2014): domeniul de conținut 'Trecutul și prezentul din jurul nostru'",
+     "basisRo": "Programa Istorie IV (2014): domeniul de conținut „Trecutul și prezentul din jurul nostru”",
+     "basisDe": "Lehrplan Istorie IV (2014): Inhaltsbereich „Trecutul și prezentul din jurul nostru“",
+     "topicCount": 4
+    },
+    {
+     "name": "Cultură și patrimoniu",
+     "nameEn": "Culture and Heritage",
+     "nameDe": "Kultur und Kulturerbe",
+     "basis": "Programa Istorie IV (2014): domeniul 'Cultură și patrimoniu'; Istorie V–VIII: CG3",
+     "basisRo": "Programa Istorie IV (2014): domeniul „Cultură și patrimoniu”; Istorie V–VIII: CG3",
+     "basisDe": "Lehrplan Istorie IV (2014): Bereich „Cultură și patrimoniu“; Istorie V–VIII: CG3",
+     "topicCount": 2
+    },
+    {
+     "name": "Istorie și cetățenie",
+     "nameEn": "History and Citizenship",
+     "nameDe": "Geschichte und politische Bildung",
+     "basis": "Programa Istorie IV (2014): CG4 imaginea pozitivă despre sine și ceilalți; Istorie V–VIII (2017): CG3 comportament civic și diversitate socio-culturală",
+     "basisRo": "Programa Istorie IV (2014): CG4 imaginea pozitivă despre sine și ceilalți; Istorie V–VIII (2017): CG3 comportament civic și diversitate socio-culturală",
+     "basisDe": "Lehrplan Istorie IV (2014): CG4 positives Bild von sich selbst und anderen; Istorie V–VIII (2017): CG3 staatsbürgerliches Verhalten und soziokulturelle Vielfalt",
+     "topicCount": 3
+    }
+   ],
+   "topicCount": 164
+  },
+  {
+   "name": "Limba engleză",
+   "nameEn": "English",
+   "nameDe": "Englisch",
+   "tier": "core",
+   "grades": [
+    0,
+    12
+   ],
+   "description": "In liceu English is normally Limba modernă 1: 2 h/week trunchi comun in clasele IX–XII of all four theoretical specialisations, plus 1 h/week curriculum de specialitate in științe sociale (IX–XII) and filologie (1 h in IX–X, 2 h in XI–XII), per OMEC 4.350/2025. The new programme (Limba modernă 1, clasa a IX-a, OMEC 6.930/2025, one programme for English, French, Spanish and Italian with a separate English competence set and annex) starts from A2+ and aims at CEFR B2 by the end of clasa a XII-a, adding linguistic and cultural mediation as a fifth general competence and bringing literary texts back. From the 2030 Bacalaureat two modern languages are tested, and filologie's first profile exam becomes the language and literature of a modern language.",
+   "descriptionRo": "La liceu, engleza este de regulă Limba modernă 1: 2 ore/săptămână în trunchiul comun, în clasele IX–XII ale tuturor celor patru specializări teoretice, plus 1 oră/săptămână de curriculum de specialitate la științe sociale (IX–XII) și la filologie (1 oră în IX–X, 2 ore în XI–XII), conform OMEC 4.350/2025. Noua programă (Limba modernă 1, clasa a IX-a, OMEC 6.930/2025, o singură programă pentru engleză, franceză, spaniolă și italiană, cu un set separat de competențe și o anexă pentru engleză) pornește de la nivelul A2+ și vizează nivelul B2 CECRL la finalul clasei a XII-a, adăugând medierea lingvistică și culturală ca a cincea competență generală și readucând textele literare. De la Bacalaureatul 2030 sunt evaluate două limbi moderne, iar prima probă de profil la filologie devine limba și literatura unei limbi moderne.",
+   "descriptionDe": "Im Liceu ist Englisch in der Regel Limba modernă 1: 2 Std./Woche trunchi comun in den clasele IX–XII aller vier theoretischen Fachrichtungen, dazu 1 Std./Woche curriculum de specialitate in științe sociale (IX–XII) und filologie (1 Std. in IX–X, 2 Std. in XI–XII), nach OMEC 4.350/2025. Der neue Lehrplan (Limba modernă 1, clasa a IX-a, OMEC 6.930/2025, ein gemeinsamer Lehrplan für Englisch, Französisch, Spanisch und Italienisch mit eigenem Kompetenzsatz und Anhang für Englisch) setzt bei A2+ an und zielt bis zum Ende der clasa a XII-a auf GER-Niveau B2; er ergänzt sprachliche und kulturelle Mediation als fünfte allgemeine Kompetenz und holt literarische Texte zurück. Ab dem Bacalaureat 2030 werden zwei moderne Fremdsprachen geprüft, und die erste Profilprüfung der filologie wird Sprache und Literatur einer modernen Fremdsprache.",
+   "domains": [
+    {
+     "name": "Receptarea de mesaje orale",
+     "nameEn": "Listening",
+     "nameDe": "Hörverstehen",
+     "basis": "Limba modernă 1 IX (2025), CG1 'Receptarea de mesaje orale în situații diverse de comunicare'; CG1 of the IX–XII presentation",
+     "basisRo": "Limba modernă 1 IX (2025), CG1 „Receptarea de mesaje orale în situații diverse de comunicare”; CG1 din prezentarea pentru IX–XII",
+     "basisDe": "Limba modernă 1 IX (2025), CG1 „Receptarea de mesaje orale în situații diverse de comunicare“; CG1 der Darstellung für IX–XII",
+     "topicCount": 11
+    },
+    {
+     "name": "Exprimarea orală",
+     "nameEn": "Speaking",
+     "nameDe": "Sprechen",
+     "basis": "Limba modernă 1 IX (2025), CG2 'Exprimarea și interacțiunea orală în situații diverse de comunicare'",
+     "basisRo": "Limba modernă 1 IX (2025), CG2 „Exprimarea și interacțiunea orală în situații diverse de comunicare”",
+     "basisDe": "Limba modernă 1 IX (2025), CG2 „Exprimarea și interacțiunea orală în situații diverse de comunicare“",
+     "topicCount": 25
+    },
+    {
+     "name": "Receptarea de mesaje scrise",
+     "nameEn": "Reading",
+     "nameDe": "Leseverstehen",
+     "basis": "Limba modernă 1 IX (2025), CG3 'Receptarea de mesaje scrise în situații diverse de comunicare'",
+     "basisRo": "Limba modernă 1 IX (2025), CG3 „Receptarea de mesaje scrise în situații diverse de comunicare”",
+     "basisDe": "Limba modernă 1 IX (2025), CG3 „Receptarea de mesaje scrise în situații diverse de comunicare“",
+     "topicCount": 15
+    },
+    {
+     "name": "Redactarea de mesaje",
+     "nameEn": "Writing",
+     "nameDe": "Schreiben",
+     "basis": "Limba modernă 1 IX (2025), CG4 'Redactarea de mesaje și interacțiunea scrisă în situații diverse de comunicare'",
+     "basisRo": "Limba modernă 1 IX (2025), CG4 „Redactarea de mesaje și interacțiunea scrisă în situații diverse de comunicare”",
+     "basisDe": "Limba modernă 1 IX (2025), CG4 „Redactarea de mesaje și interacțiunea scrisă în situații diverse de comunicare“",
+     "topicCount": 17
+    },
+    {
+     "name": "Medierea lingvistică și culturală",
+     "nameEn": "Mediation",
+     "nameDe": "Sprachmittlung",
+     "basis": "Limba modernă 1 IX (2025), CG5 'Medierea lingvistică și culturală, în contexte plurilingve și pluriculturale' (new in liceu, following the CEFR Companion Volume)",
+     "basisRo": "Limba modernă 1 IX (2025), CG5 „Medierea lingvistică și culturală, în contexte plurilingve și pluriculturale” (nouă la liceu, în acord cu Volumul complementar al CEFR)",
+     "basisDe": "Limba modernă 1 IX (2025), CG5 „Medierea lingvistică și culturală, în contexte plurilingve și pluriculturale“ (neu im Liceu, nach dem GER-Begleitband)",
+     "topicCount": 3
+    },
+    {
+     "name": "Vocabular și contexte de comunicare",
+     "nameEn": "Vocabulary and Topics",
+     "nameDe": "Wortschatz und Themen",
+     "basis": "Limba modernă 1 IX (2025), conținuturi 'Sugestii de contexte de comunicare' and the 'Teme' of Anexa 1 (Limba engleză)",
+     "basisRo": "Limba modernă 1 IX (2025), conținuturile „Sugestii de contexte de comunicare” și „Teme” din Anexa 1 (Limba engleză)",
+     "basisDe": "Limba modernă 1 IX (2025), Inhalte „Sugestii de contexte de comunicare“ und die „Teme“ aus Anexa 1 (Limba engleză)",
+     "topicCount": 11
+    },
+    {
+     "name": "Gramatică funcțională",
+     "nameEn": "Functional Grammar",
+     "nameDe": "Funktionale Grammatik",
+     "basis": "Limba modernă 1 IX (2025), conținuturi 'Gramatică funcțională' and Anexa 1 'Elemente de construcție a comunicării' (English)",
+     "basisRo": "Limba modernă 1 IX (2025), conținuturile „Gramatică funcțională” și Anexa 1 „Elemente de construcție a comunicării” (engleză)",
+     "basisDe": "Limba modernă 1 IX (2025), Inhalte „Gramatică funcțională“ und Anexa 1 „Elemente de construcție a comunicării“ (Englisch)",
+     "topicCount": 37
+    },
+    {
+     "name": "Textul literar",
+     "nameEn": "Literature",
+     "nameDe": "Literatur",
+     "basis": "Limba modernă 1 IX (2025), 'extrase din texte literare' among the learning supports and the theme 'Books and movies'; the IX–XII presentation (literary texts reintroduced, their share growing to XII)",
+     "basisRo": "Limba modernă 1 IX (2025), „extrase din texte literare” printre suporturile de învățare și tema „Books and movies”; prezentarea pentru IX–XII (textele literare sunt reintroduse, cu o pondere tot mai mare până în XII)",
+     "basisDe": "Limba modernă 1 IX (2025), „extrase din texte literare“ unter den Lernmaterialien und das Thema „Books and movies“; die Darstellung für IX–XII (literarische Texte wieder eingeführt, ihr Anteil wächst bis XII)",
+     "topicCount": 3
+    },
+    {
+     "name": "Elemente de cultură și civilizație",
+     "nameEn": "Culture and Civilisation",
+     "nameDe": "Landeskunde und Kultur",
+     "basis": "Limba modernă 1 IX (2025), CS 5.4 (comparing everyday life in Romania and the English-speaking world) and the contexts on cities, festivals and personalities",
+     "basisRo": "Limba modernă 1 IX (2025), CS 5.4 (compararea vieții cotidiene din România și din lumea anglofonă) și contextele despre orașe, festivaluri și personalități",
+     "basisDe": "Limba modernă 1 IX (2025), CS 5.4 (Vergleich des Alltagslebens in Rumänien und in der englischsprachigen Welt) und die Kontexte zu Städten, Festen und Persönlichkeiten",
+     "topicCount": 7
+    }
+   ],
+   "topicCount": 129
+  },
+  {
+   "name": "Fizică",
+   "nameEn": "Physics",
+   "nameDe": "Physik",
+   "tier": "core",
+   "grades": [
+    6,
+    12
+   ],
+   "description": "In liceu (OMEC 4350/2025) physics is in the trunchi comun of every specialisation in IX–X (1 h/week); MI studies it as TC+CS with 3 h/week in IX–X and 2 h in XI–XII, SN with 3 h/week in all four years, while SS and FIL stop after X. New programmes: IX mechanics (OMEC 6930/2025), X thermodynamics and electricity, XI oscillations, waves and optics, XII relativity, atomic, semiconductor and nuclear physics (OMEC 4106/2026).",
+   "descriptionRo": "La liceu (OMEC 4350/2025), fizica face parte din trunchiul comun al tuturor specializărilor în IX–X (1 oră/săptămână); MI o studiază ca TC+CS, cu 3 ore/săptămână în IX–X și 2 ore în XI–XII, SN cu 3 ore/săptămână în toți cei patru ani, în timp ce SS și FIL nu o mai studiază după clasa a X-a. Noile programe: IX mecanică (OMEC 6930/2025), X termodinamică și electricitate, XI oscilații, unde și optică, XII relativitate, fizică atomică, fizica semiconductorilor și fizică nucleară (OMEC 4106/2026).",
+   "descriptionDe": "Im Liceu (OMEC 4350/2025) gehört Physik in IX–X in jeder Fachrichtung zum trunchi comun (1 Std./Woche); MI lernt sie als TC+CS mit 3 Std./Woche in IX–X und 2 Std. in XI–XII, SN mit 3 Std./Woche in allen vier Jahren, während SS und FIL nach X aufhören. Neue Lehrpläne: IX Mechanik (OMEC 6930/2025), X Thermodynamik und Elektrizitätslehre, XI Schwingungen, Wellen und Optik, XII Relativitätstheorie, Atom-, Halbleiter- und Kernphysik (OMEC 4106/2026).",
+   "domains": [
+    {
+     "name": "Mărimi fizice și măsurare",
+     "nameEn": "Physical Quantities and Measurement",
+     "nameDe": "Physikalische Größen und Messen",
+     "basis": "Programa Fizică IX (2025), domeniul 1 „Noțiuni introductive și metode de lucru în fizică” (măsurări, erori, incertitudine); domeniul transversal „Măsurări și date experimentale” al programelor X–XII; CG1 și CG4",
+     "basisRo": "Programa Fizică IX (2025), domeniul 1 „Noțiuni introductive și metode de lucru în fizică” (măsurări, erori, incertitudine); domeniul transversal „Măsurări și date experimentale” al programelor X–XII; CG1 și CG4",
+     "basisDe": "Lehrplan Fizică IX (2025), Bereich 1 „Noțiuni introductive și metode de lucru în fizică“ (Messungen, Fehler, Unsicherheit); der Querschnittsbereich „Măsurări și date experimentale“ der Lehrpläne X–XII; CG1 und CG4",
+     "topicCount": 7
+    },
+    {
+     "name": "Fenomene mecanice",
+     "nameEn": "Mechanical Phenomena",
+     "nameDe": "Mechanik",
+     "basis": "Programa Fizică IX (2025), domeniile 2 „Elemente de cinematică”, 3 „Principiile mecanicii newtoniene”, 5 „Echilibrul mecanic”, 6 „Temă integratoare”, 7 „*Elemente de mecanică cerească”, 8 „Noțiuni de mecanica fluidelor” și impulsul din domeniul 4",
+     "basisRo": "Programa Fizică IX (2025), domeniile 2 „Elemente de cinematică”, 3 „Principiile mecanicii newtoniene”, 5 „Echilibrul mecanic”, 6 „Temă integratoare”, 7 „*Elemente de mecanică cerească”, 8 „Noțiuni de mecanica fluidelor” și impulsul din domeniul 4",
+     "basisDe": "Lehrplan Fizică IX (2025), Bereiche 2 „Elemente de cinematică“, 3 „Principiile mecanicii newtoniene“, 5 „Echilibrul mecanic“, 6 „Temă integratoare“, 7 „*Elemente de mecanică cerească“, 8 „Noțiuni de mecanica fluidelor“ und der Impuls aus Bereich 4",
+     "topicCount": 31
+    },
+    {
+     "name": "Lucrul mecanic și energia",
+     "nameEn": "Work and Energy",
+     "nameDe": "Arbeit und Energie",
+     "basis": "Programa Fizică IX (2025), domeniul 4 „Teoreme de variație și legi de conservare în mecanică” (TC: „Energia mecanică”)",
+     "basisRo": "Programa Fizică IX (2025), domeniul 4 „Teoreme de variație și legi de conservare în mecanică” (TC: „Energia mecanică”)",
+     "basisDe": "Lehrplan Fizică IX (2025), Bereich 4 „Teoreme de variație și legi de conservare în mecanică“ (TC: „Energia mecanică“)",
+     "topicCount": 8
+    },
+    {
+     "name": "Fenomene termice",
+     "nameEn": "Thermal Phenomena",
+     "nameDe": "Wärmelehre",
+     "basis": "Proiecție/programa Fizică X, domeniul 1 „Termodinamica”",
+     "basisRo": "Proiecție/programa Fizică X, domeniul 1 „Termodinamica”",
+     "basisDe": "Entwurf/Lehrplan Fizică X, Bereich 1 „Termodinamica“",
+     "topicCount": 13
+    },
+    {
+     "name": "Fenomene electrice și magnetice",
+     "nameEn": "Electric and Magnetic Phenomena",
+     "nameDe": "Elektrizität und Magnetismus",
+     "basis": "Proiecție/programa Fizică X, domeniul 2 „Electricitate și magnetism” (TC: „Electricitate”)",
+     "basisRo": "Proiecție/programa Fizică X, domeniul 2 „Electricitate și magnetism” (TC: „Electricitate”)",
+     "basisDe": "Entwurf/Lehrplan Fizică X, Bereich 2 „Electricitate și magnetism“ (TC: „Electricitate“)",
+     "topicCount": 20
+    },
+    {
+     "name": "Oscilații și unde",
+     "nameEn": "Oscillations and Waves",
+     "nameDe": "Schwingungen und Wellen",
+     "basis": "Proiecție/programa Fizică XI, domeniile 1 „Oscilații și unde mecanice” și 2 „Oscilații și unde electromagnetice”",
+     "basisRo": "Proiecție/programa Fizică XI, domeniile 1 „Oscilații și unde mecanice” și 2 „Oscilații și unde electromagnetice”",
+     "basisDe": "Entwurf/Lehrplan Fizică XI, Bereiche 1 „Oscilații și unde mecanice“ und 2 „Oscilații și unde electromagnetice“",
+     "topicCount": 8
+    },
+    {
+     "name": "Fenomene optice",
+     "nameEn": "Optical Phenomena",
+     "nameDe": "Optik",
+     "basis": "Proiecție/programa Fizică XI, domeniul 3 „Elemente de optică geometrică și de optică ondulatorie”",
+     "basisRo": "Proiecție/programa Fizică XI, domeniul 3 „Elemente de optică geometrică și de optică ondulatorie”",
+     "basisDe": "Entwurf/Lehrplan Fizică XI, Bereich 3 „Elemente de optică geometrică și de optică ondulatorie“",
+     "topicCount": 12
+    },
+    {
+     "name": "Fizica Pământului și a atmosferei",
+     "nameEn": "Earth and Atmospheric Physics",
+     "nameDe": "Physik der Erde und der Atmosphäre",
+     "basis": "Proiecție/programa Fizică XI, domeniul 4 „Elemente de fizica Pământului” (MI, SN) și domeniul 5 „Elemente de fizica atmosferei” (doar SN)",
+     "basisRo": "Proiecție/programa Fizică XI, domeniul 4 „Elemente de fizica Pământului” (MI, SN) și domeniul 5 „Elemente de fizica atmosferei” (doar SN)",
+     "basisDe": "Entwurf/Lehrplan Fizică XI, Bereich 4 „Elemente de fizica Pământului“ (MI, SN) und Bereich 5 „Elemente de fizica atmosferei“ (nur SN)",
+     "topicCount": 2
+    },
+    {
+     "name": "Teoria relativității restrânse",
+     "nameEn": "Special Relativity",
+     "nameDe": "Spezielle Relativitätstheorie",
+     "basis": "Proiecție/programa Fizică XII, domeniul 1 „Teoria relativității restrânse”",
+     "basisRo": "Proiecție/programa Fizică XII, domeniul 1 „Teoria relativității restrânse”",
+     "basisDe": "Entwurf/Lehrplan Fizică XII, Bereich 1 „Teoria relativității restrânse“",
+     "topicCount": 2
+    },
+    {
+     "name": "Fizică atomică și semiconductori",
+     "nameEn": "Atomic Physics and Semiconductors",
+     "nameDe": "Atomphysik und Halbleiter",
+     "basis": "Proiecție/programa Fizică XII, domeniile 2 „Fizică atomică” și 3 „Semiconductori și aplicații” (inclusiv elementele de fizică cuantică)",
+     "basisRo": "Proiecție/programa Fizică XII, domeniile 2 „Fizică atomică” și 3 „Semiconductori și aplicații” (inclusiv elementele de fizică cuantică)",
+     "basisDe": "Entwurf/Lehrplan Fizică XII, Bereiche 2 „Fizică atomică“ und 3 „Semiconductori și aplicații“ (einschließlich der Elemente der Quantenphysik)",
+     "topicCount": 8
+    },
+    {
+     "name": "Fizică nucleară",
+     "nameEn": "Nuclear Physics",
+     "nameDe": "Kernphysik",
+     "basis": "Proiecție/programa Fizică XII, domeniile 4 „Fizică nucleară” și 5 „Radiațiile nucleare și efectele lor biologice”",
+     "basisRo": "Proiecție/programa Fizică XII, domeniile 4 „Fizică nucleară” și 5 „Radiațiile nucleare și efectele lor biologice”",
+     "basisDe": "Entwurf/Lehrplan Fizică XII, Bereiche 4 „Fizică nucleară“ und 5 „Radiațiile nucleare și efectele lor biologice“",
+     "topicCount": 6
+    }
+   ],
+   "topicCount": 117
+  },
+  {
+   "name": "Biologie",
+   "nameEn": "Biology",
+   "nameDe": "Biologie",
+   "tier": "core",
+   "grades": [
+    5,
+    12
+   ],
+   "description": "In liceu biology is TC for every specialisation in IX–X (1 h/week; SN 1 h TC + 2 h CS); in XI–XII it continues only as CS, 1 h/week for MI and 3 h for SN (OMEC 4350/2025). The new programme (OMEC 6930/2025, 4106/2026) is built on macroconcepts: IX the cell and diversity of life, X energy flow, heredity and human organ systems, XI molecular genetics, variability and regulation, XII evolution, ecosystems and climate, biotechnology and research ethics.",
+   "descriptionRo": "La liceu, biologia este TC pentru toate specializările în IX–X (1 oră/săptămână; SN 1 oră TC + 2 ore CS); în XI–XII continuă doar ca CS, 1 oră/săptămână la MI și 3 ore la SN (OMEC 4350/2025). Noua programă (OMEC 6930/2025, 4106/2026) este construită pe macroconcepte: IX celula și diversitatea vieții, X fluxul de energie, ereditatea și sistemele de organe ale omului, XI genetica moleculară, variabilitatea și reglarea, XII evoluția, ecosistemele și clima, biotehnologiile și etica cercetării.",
+   "descriptionDe": "Im Liceu ist Biologie in IX–X in jeder Fachrichtung TC (1 Std./Woche; SN 1 Std. TC + 2 Std. CS); in XI–XII wird sie nur als CS fortgeführt, mit 1 Std./Woche für MI und 3 Std. für SN (OMEC 4350/2025). Der neue Lehrplan (OMEC 6930/2025, 4106/2026) ist um Basiskonzepte aufgebaut: IX die Zelle und die Vielfalt des Lebens, X Energiefluss, Vererbung und Organsysteme des Menschen, XI Molekulargenetik, Variabilität und Regulation, XII Evolution, Ökosysteme und Klima, Biotechnologie und Forschungsethik.",
+   "domains": [
+    {
+     "name": "Investigarea lumii vii",
+     "nameEn": "Investigating Living Things",
+     "nameDe": "Erkenntnisgewinnung in der Biologie",
+     "basis": "Programa Biologie IX (2025), domeniul 1 „Știința ca proces”; XII domeniul 4 „Etica cercetării și rolul biologiei în societate”; CG1 și CG4",
+     "basisRo": "Programa Biologie IX (2025), domeniul 1 „Știința ca proces”; XII domeniul 4 „Etica cercetării și rolul biologiei în societate”; CG1 și CG4",
+     "basisDe": "Lehrplan Biologie IX (2025), Bereich 1 „Știința ca proces“; XII Bereich 4 „Etica cercetării și rolul biologiei în societate“; CG1 und CG4",
+     "topicCount": 6
+    },
+    {
+     "name": "Celula – unitate structurală și funcțională",
+     "nameEn": "The Cell as the Unit of Life",
+     "nameDe": "Die Zelle als Grundeinheit des Lebens",
+     "basis": "Programa Biologie IX (2025), domeniul 2 „Celula – unitate structurală și funcțională a lumii vii”",
+     "basisRo": "Programa Biologie IX (2025), domeniul 2 „Celula – unitate structurală și funcțională a lumii vii”",
+     "basisDe": "Lehrplan Biologie IX (2025), Bereich 2 „Celula – unitate structurală și funcțională a lumii vii“",
+     "topicCount": 5
+    },
+    {
+     "name": "Diversitatea și clasificarea lumii vii",
+     "nameEn": "Diversity and Classification of Life",
+     "nameDe": "Vielfalt und Systematik der Lebewesen",
+     "basis": "Programa Biologie IX (2025), domeniul 4 „Diversitatea și conservarea lumii vii” (arborele vieții, procariote, eucariote)",
+     "basisRo": "Programa Biologie IX (2025), domeniul 4 „Diversitatea și conservarea lumii vii” (arborele vieții, procariote, eucariote)",
+     "basisDe": "Lehrplan Biologie IX (2025), Bereich 4 „Diversitatea și conservarea lumii vii“ (Stammbaum des Lebens, Prokaryoten, Eukaryoten)",
+     "topicCount": 5
+    },
+    {
+     "name": "Viețuitoarele în mediul lor de viață",
+     "nameEn": "Organisms in Their Habitats",
+     "nameDe": "Lebewesen in ihrem Lebensraum",
+     "basis": "Programa Biologie IX, domeniul 3 „Niveluri de integrare și organizare a lumii vii”; X domeniul 2 „Fluxul de energie și materie la nivel de ecosisteme”; XII domeniul 2 „Dinamica populațiilor și ecosistemelor”",
+     "basisRo": "Programa Biologie IX, domeniul 3 „Niveluri de integrare și organizare a lumii vii”; X domeniul 2 „Fluxul de energie și materie la nivel de ecosisteme”; XII domeniul 2 „Dinamica populațiilor și ecosistemelor”",
+     "basisDe": "Lehrplan Biologie IX, Bereich 3 „Niveluri de integrare și organizare a lumii vii“; X Bereich 2 „Fluxul de energie și materie la nivel de ecosisteme“; XII Bereich 2 „Dinamica populațiilor și ecosistemelor“",
+     "topicCount": 15
+    },
+    {
+     "name": "Fluxul de energie și materie",
+     "nameEn": "Energy and Matter Flow in Organisms",
+     "nameDe": "Stoff- und Energiewechsel",
+     "basis": "Programa Biologie X, domeniul 1 „Fluxul de energie și materie la nivel individual: fotosinteza, respirația celulară, metabolismul”",
+     "basisRo": "Programa Biologie X, domeniul 1 „Fluxul de energie și materie la nivel individual: fotosinteza, respirația celulară, metabolismul”",
+     "basisDe": "Lehrplan Biologie X, Bereich 1 „Fluxul de energie și materie la nivel individual: fotosinteza, respirația celulară, metabolismul“",
+     "topicCount": 5
+    },
+    {
+     "name": "Funcțiile fundamentale ale viețuitoarelor",
+     "nameEn": "Fundamental Life Functions",
+     "nameDe": "Grundlegende Lebensfunktionen",
+     "basis": "Programa Biologie X, domeniul 4 „Integrarea funcțiilor sistemelor de organe la om” (4.1, 4.2, 4.4); XI domeniul 3 „Interrelația ereditate, structură și funcții și menținerea homeostaziei”",
+     "basisRo": "Programa Biologie X, domeniul 4 „Integrarea funcțiilor sistemelor de organe la om” (4.1, 4.2, 4.4); XI domeniul 3 „Interrelația ereditate, structură și funcții și menținerea homeostaziei”",
+     "basisDe": "Lehrplan Biologie X, Bereich 4 „Integrarea funcțiilor sistemelor de organe la om“ (4.1, 4.2, 4.4); XI Bereich 3 „Interrelația ereditate, structură și funcții și menținerea homeostaziei“",
+     "topicCount": 38
+    },
+    {
+     "name": "Ereditatea și variabilitatea la om",
+     "nameEn": "Human Heredity and Variation",
+     "nameDe": "Vererbung und Variabilität beim Menschen",
+     "basis": "Programa Biologie X, domeniul 3 „Transmiterea ereditară a caracterelor în lumea vie”; XI domeniul 2 „Transmiterea caracterelor ereditare și variabilitatea genetică”",
+     "basisRo": "Programa Biologie X, domeniul 3 „Transmiterea ereditară a caracterelor în lumea vie”; XI domeniul 2 „Transmiterea caracterelor ereditare și variabilitatea genetică”",
+     "basisDe": "Lehrplan Biologie X, Bereich 3 „Transmiterea ereditară a caracterelor în lumea vie“; XI Bereich 2 „Transmiterea caracterelor ereditare și variabilitatea genetică“",
+     "topicCount": 11
+    },
+    {
+     "name": "Genetică moleculară și biotehnologii",
+     "nameEn": "Molecular Genetics and Biotechnology",
+     "nameDe": "Molekulargenetik und Biotechnologie",
+     "basis": "Programa Biologie XI, domeniul 1 „Organizarea, structura și funcțiile materialului genetic”; XII domeniul 3 „Analiza materialului genetic și biotehnologii”",
+     "basisRo": "Programa Biologie XI, domeniul 1 „Organizarea, structura și funcțiile materialului genetic”; XII domeniul 3 „Analiza materialului genetic și biotehnologii”",
+     "basisDe": "Lehrplan Biologie XI, Bereich 1 „Organizarea, structura și funcțiile materialului genetic“; XII Bereich 3 „Analiza materialului genetic și biotehnologii“",
+     "topicCount": 7
+    },
+    {
+     "name": "Evoluționism",
+     "nameEn": "Evolution",
+     "nameDe": "Evolution",
+     "basis": "Programa Biologie XII, domeniul 1 „Dovezi și mecanisme ale evoluției”",
+     "basisRo": "Programa Biologie XII, domeniul 1 „Dovezi și mecanisme ale evoluției”",
+     "basisDe": "Lehrplan Biologie XII, Bereich 1 „Dovezi și mecanisme ale evoluției“",
+     "topicCount": 8
+    },
+    {
+     "name": "Sănătatea omului și a mediului",
+     "nameEn": "Human and Environmental Health",
+     "nameDe": "Gesundheit von Mensch und Umwelt",
+     "basis": "Programa Biologie IX, 4.3–4.4 și domeniul 5 „Impactul activităților umane asupra ecosistemelor”; X 4.1 (sănătatea reproducerii), 4.3 „Imunitatea”, 4.5 „Comportamente umane și starea de sănătate”; XII „Schimbări climatice și dezvoltare durabilă”",
+     "basisRo": "Programa Biologie IX, 4.3–4.4 și domeniul 5 „Impactul activităților umane asupra ecosistemelor”; X 4.1 (sănătatea reproducerii), 4.3 „Imunitatea”, 4.5 „Comportamente umane și starea de sănătate”; XII „Schimbări climatice și dezvoltare durabilă”",
+     "basisDe": "Lehrplan Biologie IX, 4.3–4.4 und Bereich 5 „Impactul activităților umane asupra ecosistemelor“; X 4.1 (reproduktive Gesundheit), 4.3 „Imunitatea“, 4.5 „Comportamente umane și starea de sănătate“; XII „Schimbări climatice și dezvoltare durabilă“",
+     "topicCount": 15
+    }
+   ],
+   "topicCount": 115
+  },
+  {
+   "name": "Geografie",
+   "nameEn": "Geography",
+   "nameDe": "Geographie",
+   "tier": "core",
+   "grades": [
+    4,
+    12
+   ],
+   "description": "Geografie is trunchi comun in all four theoretical specialisations (1 h/week IX–XII, one programme approved by OMEC 6.930/2025): IX physical geography, X human and economic geography, XI the geography of Romania, XII Europe–Romania–European Union. Științe sociale has +1 h curriculum de specialitate in IX–XII and filologie in IX–X. It is a Bacalaureat option for the umanist and real profiles.",
+   "descriptionRo": "Geografia este disciplină de trunchi comun în toate cele patru specializări teoretice (1 oră/săptămână în IX–XII, o singură programă aprobată prin OMEC 6.930/2025): IX geografie fizică, X geografie umană și economică, XI geografia României, XII Europa–România–Uniunea Europeană. Științe sociale are +1 oră de curriculum de specialitate în IX–XII, iar filologie în IX–X. Este disciplină opțională la Bacalaureat pentru profilurile umanist și real.",
+   "descriptionDe": "Geografie gehört in allen vier theoretischen Fachrichtungen zum trunchi comun (1 Std./Woche IX–XII, ein einziger Lehrplan, genehmigt durch OMEC 6.930/2025): IX physische Geographie, X Human- und Wirtschaftsgeographie, XI Geographie Rumäniens, XII Europa–Rumänien–Europäische Union. Științe sociale hat in IX–XII +1 Std. curriculum de specialitate, filologie in IX–X. Im Bacalaureat ist sie Wahlfach für das umanist- und das real-Profil.",
+   "domains": [
+    {
+     "name": "Orientare și reprezentări cartografice",
+     "nameEn": "Orientation and Maps",
+     "nameDe": "Orientierung und Karten",
+     "basis": "Programa Geografie IX–XII (2025), clasa a IX-a: domeniul I „Geografia – știința spațiului geografic”; CG2 și CG5 (instrumente, GIS, investigație)",
+     "basisRo": "Programa Geografie IX–XII (2025), clasa a IX-a: domeniul I „Geografia – știința spațiului geografic”; CG2 și CG5 (instrumente, GIS, investigație)",
+     "basisDe": "Lehrplan Geografie IX–XII (2025), clasa a IX-a: Bereich I „Geografia – știința spațiului geografic“; CG2 und CG5 (Instrumente, GIS, Untersuchung)",
+     "topicCount": 14
+    },
+    {
+     "name": "Terra în Univers",
+     "nameEn": "Earth in Space",
+     "nameDe": "Die Erde im Weltall",
+     "basis": "Programa Geografie IX–XII (2025), clasa a IX-a: domeniul II „Pământul corp cosmic”",
+     "basisRo": "Programa Geografie IX–XII (2025), clasa a IX-a: domeniul II „Pământul corp cosmic”",
+     "basisDe": "Lehrplan Geografie IX–XII (2025), clasa a IX-a: Bereich II „Pământul corp cosmic“",
+     "topicCount": 7
+    },
+    {
+     "name": "Geosferele Terrei",
+     "nameEn": "Earth's Spheres",
+     "nameDe": "Die Geosphären der Erde",
+     "basis": "Programa Geografie IX–XII (2025), clasa a IX-a: domeniile III–VIII (geologie, relief, atmosferă, hidrosferă, biosferă și soluri, medii naturale)",
+     "basisRo": "Programa Geografie IX–XII (2025), clasa a IX-a: domeniile III–VIII (geologie, relief, atmosferă, hidrosferă, biosferă și soluri, medii naturale)",
+     "basisDe": "Lehrplan Geografie IX–XII (2025), clasa a IX-a: Bereiche III–VIII (Geologie, Relief, Atmosphäre, Hydrosphäre, Biosphäre und Böden, Naturräume)",
+     "topicCount": 23
+    },
+    {
+     "name": "Geografie umană și economică",
+     "nameEn": "Human and Economic Geography",
+     "nameDe": "Human- und Wirtschaftsgeographie",
+     "basis": "Programa Geografie IX–XII (2025), clasa a X-a „Geografie umană”: domeniile I–IV (geografie politică, populație, așezări, dezvoltarea economică)",
+     "basisRo": "Programa Geografie IX–XII (2025), clasa a X-a „Geografie umană”: domeniile I–IV (geografie politică, populație, așezări, dezvoltarea economică)",
+     "basisDe": "Lehrplan Geografie IX–XII (2025), clasa a X-a „Geografie umană“: Bereiche I–IV (politische Geographie, Bevölkerung, Siedlungen, wirtschaftliche Entwicklung)",
+     "topicCount": 17
+    },
+    {
+     "name": "Geografia României",
+     "nameEn": "Geography of Romania",
+     "nameDe": "Geographie Rumäniens",
+     "basis": "Programa Geografie IX–XII (2025), clasa a XI-a „Geografia României. Probleme fundamentale”",
+     "basisRo": "Programa Geografie IX–XII (2025), clasa a XI-a „Geografia României. Probleme fundamentale”",
+     "basisDe": "Lehrplan Geografie IX–XII (2025), clasa a XI-a „Geografia României. Probleme fundamentale“",
+     "topicCount": 27
+    },
+    {
+     "name": "Europa",
+     "nameEn": "Europe",
+     "nameDe": "Europa",
+     "basis": "Programa Geografie IX–XII (2025), clasa a XII-a „Europa – România – Uniunea Europeană. Probleme fundamentale”, domeniile I–V",
+     "basisRo": "Programa Geografie IX–XII (2025), clasa a XII-a „Europa – România – Uniunea Europeană. Probleme fundamentale”, domeniile I–V",
+     "basisDe": "Lehrplan Geografie IX–XII (2025), clasa a XII-a „Europa – România – Uniunea Europeană. Probleme fundamentale“, Bereiche I–V",
+     "topicCount": 11
+    },
+    {
+     "name": "Mediul înconjurător și dezvoltare durabilă",
+     "nameEn": "Environment and Sustainability",
+     "nameDe": "Umwelt und Nachhaltigkeit",
+     "basis": "Programa Geografie IX–XII (2025): IX „Degradarea mediului”; XII domeniul VI „Probleme fundamentale în Europa”; CG5",
+     "basisRo": "Programa Geografie IX–XII (2025): IX „Degradarea mediului”; XII domeniul VI „Probleme fundamentale în Europa”; CG5",
+     "basisDe": "Lehrplan Geografie IX–XII (2025): IX „Degradarea mediului“; XII Bereich VI „Probleme fundamentale în Europa“; CG5",
+     "topicCount": 6
+    },
+    {
+     "name": "Orizontul local și apropiat",
+     "nameEn": "The Local Area",
+     "nameDe": "Der Nahraum",
+     "basis": "Programa Geografie IV (2014): domeniul 'Elemente de geografie a orizontului local și apropiat'",
+     "basisRo": "Programa Geografie IV (2014): domeniul „Elemente de geografie a orizontului local și apropiat”",
+     "basisDe": "Lehrplan Geografie IV (2014): Bereich „Elemente de geografie a orizontului local și apropiat“",
+     "topicCount": 2
+    },
+    {
+     "name": "Continentele extraeuropene",
+     "nameEn": "Continents beyond Europe",
+     "nameDe": "Außereuropäische Kontinente",
+     "basis": "Programa Geografie V–VIII (2017), clasa a VII-a: Asia, Africa, America de Nord și de Sud, Australia și Oceania, Antarctica",
+     "basisRo": "Programa Geografie V–VIII (2017), clasa a VII-a: Asia, Africa, America de Nord și de Sud, Australia și Oceania, Antarctica",
+     "basisDe": "Lehrplan Geografie V–VIII (2017), clasa a VII-a: Asien, Afrika, Nord- und Südamerika, Australien und Ozeanien, Antarktis",
+     "topicCount": 6
+    }
+   ],
+   "topicCount": 113
+  },
+  {
+   "name": "Informatică și TIC",
+   "nameEn": "Computer Science and ICT",
+   "nameDe": "Informatik und IKT",
+   "tier": "core",
+   "grades": [
+    5,
+    12
+   ],
+   "description": "In liceu the subject splits in two. Tehnologia informației și a comunicațiilor (TIC) is trunchi comun, 1 h/week in clasele IX–XII of every specialisation (digital society and AI, office and multimedia applications, hardware, maintenance, IoT, networks). Informatică is curriculum de specialitate: matematică-informatică 2, 2, 4 and 3 h/week in IX–XII, științe ale naturii 1 h/week in IX–X only (OMEC 4.350/2025). The new programmes (OMEC 6.930/2025 for IX, OMEC 4.370/2026 for Informatică X–XII, OMEC 3.716/2026 for TIC X–XII) use Python as the base language (C++ only in intensive classes) and SQL in clasa a XII-a. In the 2030 Bacalaureat, Informatică is a profile exam option (MI: IX–XII content, SN: IX–X) and TIC becomes the digital-competence test (proba C).",
+   "descriptionRo": "La liceu, disciplina se împarte în două. Tehnologia informației și a comunicațiilor (TIC) este disciplină de trunchi comun, 1 oră/săptămână în clasele IX–XII la toate specializările (societatea digitală și IA, aplicații de birou și multimedia, hardware, mentenanță, IoT, rețele). Informatica este curriculum de specialitate: la matematică-informatică 2, 2, 4 și 3 ore/săptămână în IX–XII, la științe ale naturii 1 oră/săptămână doar în IX–X (OMEC 4.350/2025). Noile programe (OMEC 6.930/2025 pentru IX, OMEC 4.370/2026 pentru Informatică X–XII, OMEC 3.716/2026 pentru TIC X–XII) folosesc Python ca limbaj de bază (C++ doar la clasele cu program intensiv) și SQL în clasa a XII-a. La Bacalaureatul 2030, Informatica este o opțiune pentru proba de profil (MI: conținuturi din IX–XII, SN: IX–X), iar TIC devine proba de evaluare a competențelor digitale (proba C).",
+   "descriptionDe": "Im Liceu teilt sich das Fach in zwei. Tehnologia informației și a comunicațiilor (TIC) gehört zum trunchi comun, 1 Std./Woche in den clasele IX–XII jeder Fachrichtung (digitale Gesellschaft und KI, Büro- und Multimedia-Anwendungen, Hardware, Wartung, IoT, Netzwerke). Informatică ist curriculum de specialitate: matematică-informatică 2, 2, 4 und 3 Std./Woche in IX–XII, științe ale naturii 1 Std./Woche nur in IX–X (OMEC 4.350/2025). Die neuen Lehrpläne (OMEC 6.930/2025 für IX, OMEC 4.370/2026 für Informatică X–XII, OMEC 3.716/2026 für TIC X–XII) verwenden Python als Basissprache (C++ nur in Intensivklassen) und SQL in clasa a XII-a. Im Bacalaureat 2030 ist Informatică eine Wahlmöglichkeit der Profilprüfung (MI: Inhalte IX–XII, SN: IX–X), und TIC wird zur Prüfung der digitalen Kompetenzen (proba C).",
+   "domains": [
+    {
+     "name": "Sisteme de calcul",
+     "nameEn": "Computer Systems",
+     "nameDe": "Informatiksysteme",
+     "basis": "TIC IX (2025) domeniul 'Sisteme de calcul' (hardware, software); TIC X–XII: întreținere și depanare, dispozitive inteligente și IoT, robotică, rețele de comunicații",
+     "basisRo": "TIC IX (2025) domeniul „Sisteme de calcul” (hardware, software); TIC X–XII: întreținere și depanare, dispozitive inteligente și IoT, robotică, rețele de comunicații",
+     "basisDe": "TIC IX (2025) Bereich „Sisteme de calcul“ (Hardware, Software); TIC X–XII: Wartung und Fehlerbehebung, intelligente Geräte und IoT, Robotik, Kommunikationsnetze",
+     "topicCount": 16
+    },
+    {
+     "name": "Internet și siguranță online",
+     "nameEn": "Internet and Online Safety",
+     "nameDe": "Internet und Sicherheit im Netz",
+     "basis": "TIC IX–XII, domeniul 'Societate digitală': comunicare și colaborare digitală (IX), securitate cibernetică și etică, navigare avansată pe web (X)",
+     "basisRo": "TIC IX–XII, domeniul „Societate digitală”: comunicare și colaborare digitală (IX), securitate cibernetică și etică, navigare avansată pe web (X)",
+     "basisDe": "TIC IX–XII, Bereich „Societate digitală“: digitale Kommunikation und Zusammenarbeit (IX), Cybersicherheit und Ethik, fortgeschrittenes Navigieren im Web (X)",
+     "topicCount": 11
+    },
+    {
+     "name": "Inteligență artificială",
+     "nameEn": "Artificial Intelligence",
+     "nameDe": "Künstliche Intelligenz",
+     "basis": "TIC IX (2025) 'Introducere în inteligența artificială' and 'tehnologii emergente'; Informatică XII (2026) 'Modele conceptuale ... folosite în învățarea automată' and 'Algoritmi utilizați în învățare automată'",
+     "basisRo": "TIC IX (2025) „Introducere în inteligența artificială” și „tehnologii emergente”; Informatică XII (2026) „Modele conceptuale ... folosite în învățarea automată” și „Algoritmi utilizați în învățare automată”",
+     "basisDe": "TIC IX (2025) „Introducere în inteligența artificială“ und „tehnologii emergente“; Informatică XII (2026) „Modele conceptuale ... folosite în învățarea automată“ und „Algoritmi utilizați în învățare automată“",
+     "topicCount": 4
+    },
+    {
+     "name": "Societate digitală",
+     "nameEn": "Digital Society",
+     "nameDe": "Digitale Gesellschaft",
+     "basis": "TIC X–XII, domeniul 'Societate digitală': modelare computerizată (XI), participare civică și profesională în spațiul digital (XII)",
+     "basisRo": "TIC X–XII, domeniul „Societate digitală”: modelare computerizată (XI), participare civică și profesională în spațiul digital (XII)",
+     "basisDe": "TIC X–XII, Bereich „Societate digitală“: Computermodellierung (XI), gesellschaftliche und berufliche Teilhabe im digitalen Raum (XII)",
+     "topicCount": 3
+    },
+    {
+     "name": "Aplicații pentru documente și date",
+     "nameEn": "Document and Data Applications",
+     "nameDe": "Anwendungen für Dokumente und Daten",
+     "basis": "TIC IX–XII, 'Birotică': documente digitale, prezentări (IX), calcul tabelar (X), baze de date (XI)",
+     "basisRo": "TIC IX–XII, „Birotică”: documente digitale, prezentări (IX), calcul tabelar (X), baze de date (XI)",
+     "basisDe": "TIC IX–XII, „Birotică“: digitale Dokumente, Präsentationen (IX), Tabellenkalkulation (X), Datenbanken (XI)",
+     "topicCount": 9
+    },
+    {
+     "name": "Multimedia și web",
+     "nameEn": "Multimedia and Web",
+     "nameDe": "Multimedia und Web",
+     "basis": "TIC X–XII: pagini web, imagini digitale (X), prelucrări audio și audio-video (XI), interfețe vizuale și ergonomie digitală (XII)",
+     "basisRo": "TIC X–XII: pagini web, imagini digitale (X), prelucrări audio și audio-video (XI), interfețe vizuale și ergonomie digitală (XII)",
+     "basisDe": "TIC X–XII: Webseiten, digitale Bilder (X), Audio- und Videobearbeitung (XI), visuelle Benutzeroberflächen und digitale Ergonomie (XII)",
+     "topicCount": 9
+    },
+    {
+     "name": "Algoritmi",
+     "nameEn": "Algorithms",
+     "nameDe": "Algorithmen",
+     "basis": "Informatică IX–XII, domeniul 'Strategii de rezolvare a problemelor' (principii de elaborare a programelor, prelucrări numerice, sortare, căutare binară, interclasare, Greedy, Divide et impera, Backtracking, algoritmi pe grafuri și arbori)",
+     "basisRo": "Informatică IX–XII, domeniul „Strategii de rezolvare a problemelor” (principii de elaborare a programelor, prelucrări numerice, sortare, căutare binară, interclasare, Greedy, Divide et impera, Backtracking, algoritmi pe grafuri și arbori)",
+     "basisDe": "Informatică IX–XII, Bereich „Strategii de rezolvare a problemelor“ (Grundsätze der Programmentwicklung, numerische Verarbeitung, Sortieren, binäre Suche, Mischen, Greedy, Divide et impera, Backtracking, Algorithmen auf Graphen und Bäumen)",
+     "topicCount": 28
+    },
+    {
+     "name": "Organizarea datelor",
+     "nameEn": "Data Structures",
+     "nameDe": "Datenstrukturen",
+     "basis": "Informatică IX–XII, domeniul 'Organizarea conceptuală a datelor' (listă, stivă, coadă, mulțime, șir de caractere, dicționar, modele mixte, graf, arbore)",
+     "basisRo": "Informatică IX–XII, domeniul „Organizarea conceptuală a datelor” (listă, stivă, coadă, mulțime, șir de caractere, dicționar, modele mixte, graf, arbore)",
+     "basisDe": "Informatică IX–XII, Bereich „Organizarea conceptuală a datelor“ (Liste, Stapel, Warteschlange, Menge, Zeichenkette, Wörterbuch, gemischte Modelle, Graph, Baum)",
+     "topicCount": 8
+    },
+    {
+     "name": "Programare",
+     "nameEn": "Programming",
+     "nameDe": "Programmieren",
+     "basis": "Informatică IX–XII, domeniul 'Memorarea datelor și organizarea codului în limbaj de programare' (Python: subprograme, recursivitate, fișiere text, Tkinter, clase și obiecte, paradigme)",
+     "basisRo": "Informatică IX–XII, domeniul „Memorarea datelor și organizarea codului în limbaj de programare” (Python: subprograme, recursivitate, fișiere text, Tkinter, clase și obiecte, paradigme)",
+     "basisDe": "Informatică IX–XII, Bereich „Memorarea datelor și organizarea codului în limbaj de programare“ (Python: Unterprogramme, Rekursion, Textdateien, Tkinter, Klassen und Objekte, Paradigmen)",
+     "topicCount": 13
+    },
+    {
+     "name": "Baze de date",
+     "nameEn": "Databases",
+     "nameDe": "Datenbanken",
+     "basis": "Informatică XII (2026): modelul entitate-relație, formele normale FN1–FN3, comenzi SQL, clase Python pentru baze de date",
+     "basisRo": "Informatică XII (2026): modelul entitate-relație, formele normale FN1–FN3, comenzi SQL, clase Python pentru baze de date",
+     "basisDe": "Informatică XII (2026): Entity-Relationship-Modell, Normalformen FN1–FN3, SQL-Befehle, Python-Klassen für Datenbanken",
+     "topicCount": 5
+    }
+   ],
+   "topicCount": 106
+  },
+  {
+   "name": "Chimie",
+   "nameEn": "Chemistry",
+   "nameDe": "Chemie",
+   "tier": "core",
+   "grades": [
+    7,
+    12
+   ],
+   "description": "In liceu chemistry is TC for every specialisation in IX–X (1 h/week); MI adds 1 h CS in IX–X and keeps 1 h CS in XI–XII, SN has 3 h/week in all four years (OMEC 4350/2025; programmes OMEC 6930/2025). IX general and inorganic chemistry, X introduction to organic chemistry and hydrocarbons, XI functional and biologically important compounds, XII thermochemistry, kinetics, electrochemistry, acid–base and complex equilibria.",
+   "descriptionRo": "La liceu, chimia este TC pentru toate specializările în IX–X (1 oră/săptămână); MI adaugă 1 oră de CS în IX–X și păstrează 1 oră de CS în XI–XII, iar SN are 3 ore/săptămână în toți cei patru ani (OMEC 4350/2025; programe OMEC 6930/2025). IX chimie generală și anorganică, X introducere în chimia organică și hidrocarburi, XI compuși cu funcțiuni și compuși cu importanță biologică, XII termochimie, cinetică chimică, electrochimie, echilibre acido-bazice și de complexare.",
+   "descriptionDe": "Im Liceu ist Chemie in IX–X in jeder Fachrichtung TC (1 Std./Woche); MI ergänzt in IX–X 1 Std. CS und behält 1 Std. CS in XI–XII, SN hat in allen vier Jahren 3 Std./Woche (OMEC 4350/2025; Lehrpläne OMEC 6930/2025). IX allgemeine und anorganische Chemie, X Einführung in die organische Chemie und Kohlenwasserstoffe, XI Verbindungen mit funktionellen Gruppen und biologisch wichtige Verbindungen, XII Thermochemie, Kinetik, Elektrochemie, Säure-Base- und Komplexgleichgewichte.",
+   "domains": [
+    {
+     "name": "Atom. Element chimic. Compuși chimici",
+     "nameEn": "Atoms, Elements and Compounds",
+     "nameDe": "Atome, Elemente und Verbindungen",
+     "basis": "Programa Chimie IX (2025), domeniul „Învelișul de electroni al atomului. Caracter metalic. Caracter nemetalic”",
+     "basisRo": "Programa Chimie IX (2025), domeniul „Învelișul de electroni al atomului. Caracter metalic. Caracter nemetalic”",
+     "basisDe": "Lehrplan Chimie IX (2025), Bereich „Învelișul de electroni al atomului. Caracter metalic. Caracter nemetalic“",
+     "topicCount": 12
+    },
+    {
+     "name": "Legături chimice și interacțiuni intermoleculare",
+     "nameEn": "Chemical Bonds and Intermolecular Forces",
+     "nameDe": "Chemische Bindungen und zwischenmolekulare Wechselwirkungen",
+     "basis": "Programa Chimie IX (2025), domeniile „Legături chimice” și „Interacțiuni intermoleculare”",
+     "basisRo": "Programa Chimie IX (2025), domeniile „Legături chimice” și „Interacțiuni intermoleculare”",
+     "basisDe": "Lehrplan Chimie IX (2025), Bereiche „Legături chimice“ und „Interacțiuni intermoleculare“",
+     "topicCount": 6
+    },
+    {
+     "name": "Soluții și starea gazoasă",
+     "nameEn": "Solutions and the Gaseous State",
+     "nameDe": "Lösungen und Gase",
+     "basis": "Programa Chimie IX (2025), domeniile „Soluții” și „Starea gazoasă”; X „Solubilitatea compușilor organici pe baza asemănării structurale solvent–solvat”",
+     "basisRo": "Programa Chimie IX (2025), domeniile „Soluții” și „Starea gazoasă”; X „Solubilitatea compușilor organici pe baza asemănării structurale solvent–solvat”",
+     "basisDe": "Lehrplan Chimie IX (2025), Bereiche „Soluții“ und „Starea gazoasă“; X „Solubilitatea compușilor organici pe baza asemănării structurale solvent–solvat“",
+     "topicCount": 6
+    },
+    {
+     "name": "Calcule chimice",
+     "nameEn": "Chemical Calculations",
+     "nameDe": "Chemisches Rechnen",
+     "basis": "Programa Chimie IX–X (2025), notele privind calculele stoechiometrice (puritate, randament, exces, concentrații) și X „formula procentuală, brută, moleculară”",
+     "basisRo": "Programa Chimie IX–X (2025), notele privind calculele stoechiometrice (puritate, randament, exces, concentrații) și X „formula procentuală, brută, moleculară”",
+     "basisDe": "Lehrplan Chimie IX–X (2025), die Hinweise zu stöchiometrischen Berechnungen (Reinheit, Ausbeute, Überschuss, Konzentrationen) und X „formula procentuală, brută, moleculară“",
+     "topicCount": 6
+    },
+    {
+     "name": "Transformări chimice ale substanțelor",
+     "nameEn": "Chemical Reactions",
+     "nameDe": "Chemische Reaktionen",
+     "basis": "Programa Chimie IX (2025), domeniile „Clasificarea reacțiilor în chimia anorganică” și „Reacții fără/cu modificarea numărului de oxidare”; XII „Reacții cu transfer de electroni”",
+     "basisRo": "Programa Chimie IX (2025), domeniile „Clasificarea reacțiilor în chimia anorganică” și „Reacții fără/cu modificarea numărului de oxidare”; XII „Reacții cu transfer de electroni”",
+     "basisDe": "Lehrplan Chimie IX (2025), Bereiche „Clasificarea reacțiilor în chimia anorganică“ und „Reacții fără/cu modificarea numărului de oxidare“; XII „Reacții cu transfer de electroni“",
+     "topicCount": 14
+    },
+    {
+     "name": "Structura și izomeria compușilor organici",
+     "nameEn": "Structure and Isomerism of Organic Compounds",
+     "nameDe": "Struktur und Isomerie organischer Verbindungen",
+     "basis": "Programa Chimie X (2025), domeniul „Introducere în studiul chimiei organice”; XI „Denumirea, clasificarea și izomeria compușilor organici”",
+     "basisRo": "Programa Chimie X (2025), domeniul „Introducere în studiul chimiei organice”; XI „Denumirea, clasificarea și izomeria compușilor organici”",
+     "basisDe": "Lehrplan Chimie X (2025), Bereich „Introducere în studiul chimiei organice“; XI „Denumirea, clasificarea și izomeria compușilor organici“",
+     "topicCount": 6
+    },
+    {
+     "name": "Hidrocarburi",
+     "nameEn": "Hydrocarbons",
+     "nameDe": "Kohlenwasserstoffe",
+     "basis": "Programa Chimie X (2025), domeniile „Hidrocarburi” și „Reacții ale hidrocarburilor”",
+     "basisRo": "Programa Chimie X (2025), domeniile „Hidrocarburi” și „Reacții ale hidrocarburilor”",
+     "basisDe": "Lehrplan Chimie X (2025), Bereiche „Hidrocarburi“ und „Reacții ale hidrocarburilor“",
+     "topicCount": 9
+    },
+    {
+     "name": "Compuși organici cu funcțiuni",
+     "nameEn": "Organic Compounds with Functional Groups",
+     "nameDe": "Organische Verbindungen mit funktionellen Gruppen",
+     "basis": "Programa Chimie X (2025), domeniul „Compuși organici cu funcțiuni”; XI „Compuși organici cu funcțiuni simple”",
+     "basisRo": "Programa Chimie X (2025), domeniul „Compuși organici cu funcțiuni”; XI „Compuși organici cu funcțiuni simple”",
+     "basisDe": "Lehrplan Chimie X (2025), Bereich „Compuși organici cu funcțiuni“; XI „Compuși organici cu funcțiuni simple“",
+     "topicCount": 7
+    },
+    {
+     "name": "Compuși organici cu importanță biologică",
+     "nameEn": "Biologically Important Organic Compounds",
+     "nameDe": "Biologisch wichtige organische Verbindungen",
+     "basis": "Programa Chimie XI (2025), domeniul „Compuși organici cu importanță biologică”",
+     "basisRo": "Programa Chimie XI (2025), domeniul „Compuși organici cu importanță biologică”",
+     "basisDe": "Lehrplan Chimie XI (2025), Bereich „Compuși organici cu importanță biologică“",
+     "topicCount": 4
+    },
+    {
+     "name": "Importanța chimiei în viața noastră",
+     "nameEn": "Chemistry in Everyday Life",
+     "nameDe": "Chemie im Alltag",
+     "basis": "Programa Chimie X (2025), domeniul „Compuși organici în viața de zi cu zi”; CG6",
+     "basisRo": "Programa Chimie X (2025), domeniul „Compuși organici în viața de zi cu zi”; CG6",
+     "basisDe": "Lehrplan Chimie X (2025), Bereich „Compuși organici în viața de zi cu zi“; CG6",
+     "topicCount": 8
+    },
+    {
+     "name": "Termochimie și cinetică chimică",
+     "nameEn": "Thermochemistry and Kinetics",
+     "nameDe": "Thermochemie und Reaktionskinetik",
+     "basis": "Programa Chimie XII (2025), domeniile „Noțiuni de termochimie” și „Noțiuni de cinetică chimică”",
+     "basisRo": "Programa Chimie XII (2025), domeniile „Noțiuni de termochimie” și „Noțiuni de cinetică chimică”",
+     "basisDe": "Lehrplan Chimie XII (2025), Bereiche „Noțiuni de termochimie“ und „Noțiuni de cinetică chimică“",
+     "topicCount": 5
+    },
+    {
+     "name": "Echilibre chimice și reacții în soluție",
+     "nameEn": "Chemical Equilibria and Reactions in Solution",
+     "nameDe": "Chemisches Gleichgewicht und Reaktionen in Lösung",
+     "basis": "Programa Chimie XI (2025), echilibrul chimic la compușii carboxilici; XII domeniile „Reacții acido-bazice”, „Reacții cu formare de compuși greu solubili”, „Reacții cu formare de combinații complexe”",
+     "basisRo": "Programa Chimie XI (2025), echilibrul chimic la compușii carboxilici; XII domeniile „Reacții acido-bazice”, „Reacții cu formare de compuși greu solubili”, „Reacții cu formare de combinații complexe”",
+     "basisDe": "Lehrplan Chimie XI (2025), chemisches Gleichgewicht bei Carbonsäureverbindungen; XII Bereiche „Reacții acido-bazice“, „Reacții cu formare de compuși greu solubili“, „Reacții cu formare de combinații complexe“",
+     "topicCount": 6
+    },
+    {
+     "name": "Chimia și viața. Substanțele în natură",
+     "nameEn": "Chemistry and Life: Substances in Nature",
+     "nameDe": "Chemie und Leben: Stoffe in der Natur",
+     "basis": "Programa Chimie VII–VIII (2017), clasa a VII-a: 'Chimia, știință a naturii', 'Aerul. Apa. Solul', 'Laboratorul de chimie'",
+     "basisRo": "Programa Chimie VII–VIII (2017), clasa a VII-a: „Chimia, știință a naturii”, „Aerul. Apa. Solul”, „Laboratorul de chimie”",
+     "basisDe": "Lehrplan Chimie VII–VIII (2017), clasa a VII-a: „Chimia, știință a naturii“, „Aerul. Apa. Solul“, „Laboratorul de chimie“",
+     "topicCount": 8
+    }
+   ],
+   "topicCount": 97
+  },
+  {
+   "name": "Educație fizică și sport",
+   "nameEn": "Physical Education and Sport",
+   "nameDe": "Sport",
+   "tier": "extended",
+   "grades": [
+    0,
+    12
+   ],
+   "description": "1 h/week in the common trunk of every specialisation, IX–XII (half the gimnaziu's 2 h), plus optional team-sport hours a school may offer in the CDEOȘ. The 2025 programme lets the teacher choose among athletics, badminton, basketball, DanceSport, football, handball, sport aerobics and volleyball (or 15 alternative sports such as swimming, skiing, orienteering, chess or rugby-tag) according to facilities and tradition, and adds interdisciplinary domains on health and body harmony, healthy lifestyle, and multiculturalism and inclusion. Marks combine theory (20 %), motor tests (60 %) and attitudes (20 %); schools also measure pupils for the national 'Programul biomotric'.",
+   "descriptionRo": "1 oră/săptămână în trunchiul comun al tuturor specializărilor, IX–XII (jumătate din cele 2 ore din gimnaziu), plus ore opționale de sporturi de echipă pe care școala le poate oferi în CDEOȘ. Programa din 2025 permite profesorului să aleagă între atletism, badminton, baschet, dans sportiv, fotbal, handbal, gimnastică aerobică sportivă și volei (sau 15 sporturi alternative, precum înot, schi, orientare sportivă, șah sau rugby-tag), în funcție de baza sportivă și de tradiție, și adaugă domenii interdisciplinare privind sănătatea și armonia corporală, stilul de viață sănătos, precum și multiculturalitatea și incluziunea. Notele combină teoria (20 %), probele motrice (60 %) și atitudinile (20 %); școlile efectuează, de asemenea, măsurători ale elevilor pentru „Programul biomotric” național.",
+   "descriptionDe": "1 Std./Woche im Pflichtbereich (trunchi comun) jeder Fachrichtung, IX–XII (halb so viel wie die 2 Std. im gimnaziu), dazu fakultative Mannschaftssportstunden, die eine Schule im CDEOȘ anbieten kann. Der Lehrplan von 2025 lässt die Lehrkraft je nach Ausstattung und Tradition zwischen Leichtathletik, Badminton, Basketball, Tanzsport, Fußball, Handball, Sport-Aerobic und Volleyball wählen (oder 15 alternativen Sportarten wie Schwimmen, Skifahren, Orientierungslauf, Schach oder Rugby-Tag) und ergänzt fächerübergreifende Bereiche zu Gesundheit und körperlicher Harmonie, gesunder Lebensweise sowie Multikulturalität und Inklusion. Die Noten setzen sich aus Theorie (20 %), motorischen Tests (60 %) und Haltungen (20 %) zusammen; die Schulen erheben außerdem Messwerte der Schülerinnen und Schüler für das nationale „Programul biomotric“.",
+   "domains": [
+    {
+     "name": "Organizarea activităților motrice",
+     "nameEn": "Organising Movement Activities",
+     "nameDe": "Bewegungsaktivitäten organisieren",
+     "basis": "EFS IX–XII (2025): CS 1.1/1.3 activities 'conducerea parțială sau integrală a unui complex de dezvoltare fizică', 'asumarea conducerii unor secvențe de instruire'",
+     "basisRo": "EFS IX–XII (2025): activitățile de la CS 1.1/1.3 „conducerea parțială sau integrală a unui complex de dezvoltare fizică”, „asumarea conducerii unor secvențe de instruire”",
+     "basisDe": "EFS IX–XII (2025): CS 1.1/1.3, Aktivitäten „conducerea parțială sau integrală a unui complex de dezvoltare fizică“, „asumarea conducerii unor secvențe de instruire“",
+     "topicCount": 2
+    },
+    {
+     "name": "Dezvoltare fizică armonioasă",
+     "nameEn": "Harmonious Physical Development",
+     "nameDe": "Harmonische körperliche Entwicklung",
+     "basis": "EFS IX–XII (2025): CS 1.1 each year; domeniul interdisciplinar 4 'Sănătate și armonie corporală' (indici somato-funcționali, atitudini corporale deficiente, ergonomie)",
+     "basisRo": "EFS IX–XII (2025): CS 1.1 în fiecare an; domeniul interdisciplinar 4 „Sănătate și armonie corporală” (indici somato-funcționali, atitudini corporale deficiente, ergonomie)",
+     "basisDe": "EFS IX–XII (2025): CS 1.1 in jedem Jahr; fächerübergreifender Bereich 4 „Sănătate și armonie corporală“ (indici somato-funcționali, atitudini corporale deficiente, ergonomie)",
+     "topicCount": 7
+    },
+    {
+     "name": "Calități motrice",
+     "nameEn": "Motor Qualities and Fitness",
+     "nameDe": "Motorische Fähigkeiten und Fitness",
+     "basis": "EFS IX–XII (2025): CS 1.2 each year; domeniile 1.3 'Metode și mijloace de dezvoltare a calităților motrice' and 2 'Calități motrice specifice disciplinelor sportive'",
+     "basisRo": "EFS IX–XII (2025): CS 1.2 în fiecare an; domeniile 1.3 „Metode și mijloace de dezvoltare a calităților motrice” și 2 „Calități motrice specifice disciplinelor sportive”",
+     "basisDe": "EFS IX–XII (2025): CS 1.2 in jedem Jahr; Bereiche 1.3 „Metode și mijloace de dezvoltare a calităților motrice“ und 2 „Calități motrice specifice disciplinelor sportive“",
+     "topicCount": 6
+    },
+    {
+     "name": "Atletism",
+     "nameEn": "Athletics",
+     "nameDe": "Leichtathletik",
+     "basis": "EFS IX–XII (2025): disciplina sportivă 'Atletism', domeniul 3 'Tehnică și tactică' (alergări, sărituri, aruncări, probe combinate)",
+     "basisRo": "EFS IX–XII (2025): disciplina sportivă „Atletism”, domeniul 3 „Tehnică și tactică” (alergări, sărituri, aruncări, probe combinate)",
+     "basisDe": "EFS IX–XII (2025): Sportart „Atletism“, Bereich 3 „Tehnică și tactică“ (Laufen, Springen, Werfen, Mehrkampf)",
+     "topicCount": 10
+    },
+    {
+     "name": "Gimnastică",
+     "nameEn": "Gymnastics",
+     "nameDe": "Turnen und Gymnastik",
+     "basis": "EFS IX–XII (2025): disciplina 'Sport aerobic' (cod de punctaj, elemente tehnice), elements of gimnastică artistică/aerobică in CS 1.1 and 1.3; gimnastică ritmică and acrobatică among 'Alte discipline sportive'",
+     "basisRo": "EFS IX–XII (2025): disciplina „Sport aerobic” (cod de punctaj, elemente tehnice), elemente de gimnastică artistică/aerobică la CS 1.1 și 1.3; gimnastica ritmică și acrobatică printre „Alte discipline sportive”",
+     "basisDe": "EFS IX–XII (2025): Sportart „Sport aerobic“ (Wertungsvorschriften, technische Elemente), Elemente der gimnastică artistică/aerobică in CS 1.1 und 1.3; gimnastică ritmică und acrobatică unter „Alte discipline sportive“",
+     "topicCount": 6
+    },
+    {
+     "name": "Dans sportiv și dans popular",
+     "nameEn": "DanceSport and Folk Dance",
+     "nameDe": "Tanzsport und Volkstanz",
+     "basis": "EFS IX–XII (2025): disciplina 'Dans sportiv' (dansuri standard și latino-americane); domeniul 6.2 'Diversitate culturală' (hora, brâul, călușul, sârba, alunelul); 'Dans folcloric specific zonei' among the alternative sports",
+     "basisRo": "EFS IX–XII (2025): disciplina „Dans sportiv” (dansuri standard și latino-americane); domeniul 6.2 „Diversitate culturală” (hora, brâul, călușul, sârba, alunelul); „Dans folcloric specific zonei” printre disciplinele sportive alternative",
+     "basisDe": "EFS IX–XII (2025): Sportart „Dans sportiv“ (Standard- und lateinamerikanische Tänze); Bereich 6.2 „Diversitate culturală“ (hora, brâul, călușul, sârba, alunelul); „Dans folcloric specific zonei“ unter den alternativen Sportarten",
+     "topicCount": 2
+    },
+    {
+     "name": "Jocuri sportive",
+     "nameEn": "Games and Team Sports",
+     "nameDe": "Spiele und Mannschaftssport",
+     "basis": "EFS IX–XII (2025): disciplinele baschet, fotbal, handbal, volei and badminton — domeniul 3 'Tehnică și tactică specifice disciplinelor sportive'; CG2",
+     "basisRo": "EFS IX–XII (2025): disciplinele baschet, fotbal, handbal, volei și badminton — domeniul 3 „Tehnică și tactică specifice disciplinelor sportive”; CG2",
+     "basisDe": "EFS IX–XII (2025): Sportarten Basketball, Fußball, Handball, Volleyball und Badminton – Bereich 3 „Tehnică și tactică specifice disciplinelor sportive“; CG2",
+     "topicCount": 13
+    },
+    {
+     "name": "Igienă și protecție individuală",
+     "nameEn": "Hygiene, Health and Safety",
+     "nameDe": "Hygiene, Gesundheit und Sicherheit",
+     "basis": "EFS IX–XII (2025): domeniul interdisciplinar 5 'Stil de viață sănătos' (factori condiționali, siguranță și protecție individuală) and 4.2 'Sănătate socio-emoțională'",
+     "basisRo": "EFS IX–XII (2025): domeniul interdisciplinar 5 „Stil de viață sănătos” (factori condiționali, siguranță și protecție individuală) și 4.2 „Sănătate socio-emoțională”",
+     "basisDe": "EFS IX–XII (2025): fächerübergreifender Bereich 5 „Stil de viață sănătos“ (factori condiționali, siguranță și protecție individuală) und 4.2 „Sănătate socio-emoțională“",
+     "topicCount": 8
+    },
+    {
+     "name": "Comportamente și atitudini",
+     "nameEn": "Behaviour and Fair Play",
+     "nameDe": "Verhalten und Fairplay",
+     "basis": "EFS IX–XII (2025): CG2 (CS 2.1–2.3), domeniul interdisciplinar 6 'Multiculturalitate, incluziune și integrare socială', domeniul 1.4 'Istoric și tradiție'",
+     "basisRo": "EFS IX–XII (2025): CG2 (CS 2.1–2.3), domeniul interdisciplinar 6 „Multiculturalitate, incluziune și integrare socială”, domeniul 1.4 „Istoric și tradiție”",
+     "basisDe": "EFS IX–XII (2025): CG2 (CS 2.1–2.3), fächerübergreifender Bereich 6 „Multiculturalitate, incluziune și integrare socială“, Bereich 1.4 „Istoric și tradiție“",
+     "topicCount": 8
+    },
+    {
+     "name": "Deprinderi motrice",
+     "nameEn": "Fundamental Movement Skills",
+     "nameDe": "Grundlegende Bewegungsfertigkeiten",
+     "basis": "Domeniul 4 'Deprinderi motrice' (locomoție, manipulare, stabilitate) CP–IV; domeniul 3 'Capacitate motrică – deprinderi' V–VIII",
+     "basisRo": "Domeniul 4 „Deprinderi motrice” (locomoție, manipulare, stabilitate) CP–IV; domeniul 3 „Capacitate motrică – deprinderi” V–VIII",
+     "basisDe": "Bereich 4 „Deprinderi motrice“ (locomoție, manipulare, stabilitate) CP–IV; Bereich 3 „Capacitate motrică – deprinderi“ V–VIII",
+     "topicCount": 5
+    },
+    {
+     "name": "Discipline sportive alternative",
+     "nameEn": "Seasonal and Alternative Sports",
+     "nameDe": "Saisonale und alternative Sportarten",
+     "basis": "III–IV 'Specifice disciplinelor sportive alternative (de sezon)'; EFS V–VIII 'Discipline sportive alternative' (înot, schi, patinaj, sanie etc.)",
+     "basisRo": "III–IV „Specifice disciplinelor sportive alternative (de sezon)”; EFS V–VIII „Discipline sportive alternative” (înot, schi, patinaj, sanie etc.)",
+     "basisDe": "III–IV „Specifice disciplinelor sportive alternative (de sezon)“; EFS V–VIII „Discipline sportive alternative“ (înot, schi, patinaj, sanie etc.)",
+     "topicCount": 2
+    }
+   ],
+   "topicCount": 69
+  },
+  {
+   "name": "Științe ale naturii",
+   "nameEn": "Natural Sciences",
+   "nameDe": "Naturwissenschaften",
+   "tier": "core",
+   "grades": [
+    0,
+    4
+   ],
+   "description": "Integrated primary science. In clasa pregătitoare–a II-a it is the 'explorarea mediului' half of the integrated subject Matematică și explorarea mediului (MEM, 4 h/week in CP and I, 5 h/week in II for the whole subject; OMEN 3418/2013); in clasele a III-a–a IV-a it is the separate subject Științe ale naturii with 1 h/week (OMEN 5003/2014). Both programmes group content into Științele vieții, Științele Pământului and Științele fizicii and build a strong investigation strand (observe, predict, measure, record, conclude).",
+   "descriptionRo": "Științe integrate în ciclul primar. În clasa pregătitoare – a II-a reprezintă componenta „explorarea mediului” a disciplinei integrate Matematică și explorarea mediului (MEM, 4 ore/săptămână în CP și clasa I, 5 ore/săptămână în clasa a II-a pentru întreaga disciplină; OMEN 3418/2013); în clasele a III-a – a IV-a este disciplina separată Științe ale naturii, cu 1 oră/săptămână (OMEN 5003/2014). Ambele programe grupează conținuturile în Științele vieții, Științele Pământului și Științele fizicii și dezvoltă o componentă solidă de investigație (a observa, a anticipa, a măsura, a înregistra, a formula concluzii).",
+   "descriptionDe": "Integrierter naturwissenschaftlicher Unterricht der Primarstufe. In clasa pregătitoare–a II-a ist er die Hälfte „explorarea mediului“ des integrierten Fachs Matematică și explorarea mediului (MEM, 4 Std./Woche in CP und I, 5 Std./Woche in II für das ganze Fach; OMEN 3418/2013); in den clasele a III-a–a IV-a ist er das eigenständige Fach Științe ale naturii mit 1 Std./Woche (OMEN 5003/2014). Beide Lehrpläne gliedern die Inhalte in Științele vieții, Științele Pământului und Științele fizicii und bauen einen starken Strang des Forschenden Lernens auf (beobachten, vorhersagen, messen, festhalten, Schlüsse ziehen).",
+   "domains": [
+    {
+     "name": "Investigarea mediului",
+     "nameEn": "Investigating the Environment",
+     "nameDe": "Die Umwelt erforschen",
+     "basis": "MEM CP–II (2013) competențele generale 4 'explicații simple prin elemente de logică' și 5 'sortarea și reprezentarea datelor'; Științe ale naturii III–IV (2014) competența generală 2 'Investigarea mediului înconjurător folosind instrumente și procedee specifice'",
+     "basisRo": "MEM CP–II (2013) competențele generale 4 „explicații simple prin elemente de logică” și 5 „sortarea și reprezentarea datelor”; Științe ale naturii III–IV (2014) competența generală 2 „Investigarea mediului înconjurător folosind instrumente și procedee specifice”",
+     "basisDe": "MEM CP–II (2013), allgemeine Kompetenzen 4 „explicații simple prin elemente de logică“ und 5 „sortarea și reprezentarea datelor“; Științe ale naturii III–IV (2014), allgemeine Kompetenz 2 „Investigarea mediului înconjurător folosind instrumente și procedee specifice“",
+     "topicCount": 10
+    },
+    {
+     "name": "Științele vieții",
+     "nameEn": "Life Sciences",
+     "nameDe": "Lebewesen (Biologie)",
+     "basis": "MEM CP–II (2013) conținuturi 'Științele vieții' (corpul omenesc, plante și animale); Științe ale naturii III–IV (2014) domeniul 'Științele vieții'",
+     "basisRo": "MEM CP–II (2013) conținuturi „Științele vieții” (corpul omenesc, plante și animale); Științe ale naturii III–IV (2014) domeniul „Științele vieții”",
+     "basisDe": "MEM CP–II (2013), Inhalte „Științele vieții“ (menschlicher Körper, Pflanzen und Tiere); Științe ale naturii III–IV (2014), Bereich „Științele vieții“",
+     "topicCount": 17
+    },
+    {
+     "name": "Științele Pământului",
+     "nameEn": "Earth Sciences",
+     "nameDe": "Erde und Weltall",
+     "basis": "MEM CP–II (2013) conținuturi 'Științele Pământului' (Pământul, Universul); Științe ale naturii III–IV (2014) domeniul 'Științele pământului' incl. 'Influența omului asupra mediului de viață'",
+     "basisRo": "MEM CP–II (2013) conținuturi „Științele Pământului” (Pământul, Universul); Științe ale naturii III–IV (2014) domeniul „Științele pământului”, inclusiv „Influența omului asupra mediului de viață”",
+     "basisDe": "MEM CP–II (2013), Inhalte „Științele Pământului“ (die Erde, das Universum); Științe ale naturii III–IV (2014), Bereich „Științele pământului“ einschließlich „Influența omului asupra mediului de viață“",
+     "topicCount": 15
+    },
+    {
+     "name": "Științele fizicii",
+     "nameEn": "Physical Sciences",
+     "nameDe": "Physikalische Phänomene",
+     "basis": "MEM CP–II (2013) conținuturi 'Științele fizicii' (forțe și mișcare, forme și transfer de energie); Științe ale naturii III–IV (2014) domeniul 'Științele fizicii'",
+     "basisRo": "MEM CP–II (2013) conținuturi „Științele fizicii” (forțe și mișcare, forme și transfer de energie); Științe ale naturii III–IV (2014) domeniul „Științele fizicii”",
+     "basisDe": "MEM CP–II (2013), Inhalte „Științele fizicii“ (Kräfte und Bewegung, Energieformen und Energieübertragung); Științe ale naturii III–IV (2014), Bereich „Științele fizicii“",
+     "topicCount": 18
+    }
+   ],
+   "topicCount": 60
+  },
+  {
+   "name": "Religie",
+   "nameEn": "Religion",
+   "nameDe": "Religion",
+   "tier": "extended",
+   "grades": [
+    0,
+    12
+   ],
+   "description": "Confessional religious education, 1 h/week in the common trunk IX–XII for every specialisation, attended on written request. Each state-recognised cult has its own liceu programme (Ortodox, Romano-catolic, Greco-catolic, Reformat, Evanghelic, Unitarian, Baptist, Penticostal, Adventist, Musulman, Ortodox de rit vechi, Ortodox ucrainean and others) sharing the four general competences and part of the specific ones; this file follows the Orthodox programme (OMEC 6.930/2025, Anexa 12), organised every year in four domains: Christ, the religious community, Christianity and today's challenges, and the religions of the world. New for the Bacalaureat 2030: Religion may be chosen as the profile test (proba E, second test) in the profil umanist (SS, FIL).",
+   "descriptionRo": "Educație religioasă confesională, 1 oră/săptămână în trunchiul comun IX–XII la toate specializările, frecventată pe baza unei cereri scrise. Fiecare cult recunoscut de stat are propria programă de liceu (Ortodox, Romano-catolic, Greco-catolic, Reformat, Evanghelic, Unitarian, Baptist, Penticostal, Adventist, Musulman, Ortodox de rit vechi, Ortodox ucrainean și altele), având în comun cele patru competențe generale și o parte din competențele specifice; acest fișier urmează programa ortodoxă (OMEC 6.930/2025, Anexa 12), organizată în fiecare an pe patru domenii: Hristos, comunitatea religioasă, creștinismul și provocările lumii de azi și religiile lumii. Noutate la Bacalaureatul 2030: Religia poate fi aleasă ca probă de profil (proba E, a doua probă) la profilul umanist (SS, FIL).",
+   "descriptionDe": "Konfessioneller Religionsunterricht, 1 Std./Woche im Pflichtbereich (trunchi comun) IX–XII für jede Fachrichtung, Teilnahme auf schriftlichen Antrag. Jede staatlich anerkannte Religionsgemeinschaft hat einen eigenen Lehrplan für das Liceu (Ortodox, Romano-catolic, Greco-catolic, Reformat, Evanghelic, Unitarian, Baptist, Penticostal, Adventist, Musulman, Ortodox de rit vechi, Ortodox ucrainean und weitere), die die vier allgemeinen Kompetenzen und einen Teil der spezifischen gemeinsam haben; diese Datei folgt dem orthodoxen Lehrplan (OMEC 6.930/2025, Anexa 12), der in jedem Jahr in vier Bereiche gegliedert ist: Christus, die Glaubensgemeinschaft, Christentum und heutige Herausforderungen sowie die Religionen der Welt. Neu für das Bacalaureat 2030: Im profil umanist (SS, FIL) kann Religion als Profilprüfung (proba E, zweite Prüfung) gewählt werden.",
+   "domains": [
+    {
+     "name": "Dumnezeu se face cunoscut omului",
+     "nameEn": "God Made Known: Scripture and Christ",
+     "nameDe": "Gottes Offenbarung: Heilige Schrift und Christus",
+     "basis": "Religie – Cultul ortodox IX–XII (2025): domeniul I 'Hristos – Calea, Adevărul și Viața' (Scriptura, creația, Hristos, Maica Domnului, Pătimirile și Învierea, darul vieții), CG1",
+     "basisRo": "Religie – Cultul ortodox IX–XII (2025): domeniul I „Hristos – Calea, Adevărul și Viața” (Scriptura, creația, Hristos, Maica Domnului, Pătimirile și Învierea, darul vieții), CG1",
+     "basisDe": "Religie – Cultul ortodox IX–XII (2025): Bereich I „Hristos – Calea, Adevărul și Viața“ (Schrift, Schöpfung, Christus, Gottesmutter, Passion und Auferstehung, Geschenk des Lebens), CG1",
+     "topicCount": 15
+    },
+    {
+     "name": "Dumnezeu și răspunsul omului",
+     "nameEn": "God's Love and the Human Response",
+     "nameDe": "Gottes Liebe und die Antwort des Menschen",
+     "basis": "Religie – Cultul ortodox IX–XII (2025): domeniul II 'Comunitatea religioasă – identitate, responsabilitate și bucuria mărturisirii' (Duhul Sfânt, Sfintele Taine, Biserica) and the Liturgy and prayer contents of domains I and III; CG1, CG3",
+     "basisRo": "Religie – Cultul ortodox IX–XII (2025): domeniul II „Comunitatea religioasă – identitate, responsabilitate și bucuria mărturisirii” (Duhul Sfânt, Sfintele Taine, Biserica) și conținuturile despre Liturghie și rugăciune din domeniile I și III; CG1, CG3",
+     "basisDe": "Religie – Cultul ortodox IX–XII (2025): Bereich II „Comunitatea religioasă – identitate, responsabilitate și bucuria mărturisirii“ (Heiliger Geist, Heilige Mysterien, Kirche) und die Inhalte zu Liturgie und Gebet aus den Bereichen I und III; CG1, CG3",
+     "topicCount": 11
+    },
+    {
+     "name": "Viața creștinului împreună cu semenii",
+     "nameEn": "Christian Life with Others",
+     "nameDe": "Christliches Leben in der Gemeinschaft",
+     "basis": "Religie – Cultul ortodox IX–XII (2025): domeniul III 'Creștinismul și provocările lumii contemporane' and the moral contents of domain II (Decalogul, Predica de pe Munte, familia, prietenia, bioetica), CG3, CG4",
+     "basisRo": "Religie – Cultul ortodox IX–XII (2025): domeniul III „Creștinismul și provocările lumii contemporane” și conținuturile morale din domeniul II (Decalogul, Predica de pe Munte, familia, prietenia, bioetica), CG3, CG4",
+     "basisDe": "Religie – Cultul ortodox IX–XII (2025): Bereich III „Creștinismul și provocările lumii contemporane“ und die ethischen Inhalte von Bereich II (Dekalog, Bergpredigt, Familie, Freundschaft, Bioethik), CG3, CG4",
+     "topicCount": 18
+    },
+    {
+     "name": "Sărbători și viața comunității",
+     "nameEn": "Feasts and Community Life",
+     "nameDe": "Feste und Gemeindeleben",
+     "basis": "Religie – Cultul ortodox IX–XII (2025): sărbătorile împărătești (X), timpul liturgic, personalități ale culturii românești, arta sacră and the UNESCO religious heritage (XII)",
+     "basisRo": "Religie – Cultul ortodox IX–XII (2025): sărbătorile împărătești (X), timpul liturgic, personalități ale culturii românești, arta sacră și patrimoniul religios UNESCO (XII)",
+     "basisDe": "Religie – Cultul ortodox IX–XII (2025): Herrenfeste (sărbătorile împărătești, X), liturgische Zeit, Persönlichkeiten der rumänischen Kultur, sakrale Kunst und das religiöse UNESCO-Erbe (XII)",
+     "topicCount": 10
+    },
+    {
+     "name": "Religiile lumii",
+     "nameEn": "Religions of the World",
+     "nameDe": "Weltreligionen",
+     "basis": "Religie – Cultul ortodox IX–XII (2025): domeniul IV 'Religiile lumii: valori și aspecte specifice', CG2 — religii antice (IX), orientale (X), monoteiste (XI), comunitățile religioase din România (XII)",
+     "basisRo": "Religie – Cultul ortodox IX–XII (2025): domeniul IV „Religiile lumii: valori și aspecte specifice”, CG2 — religii antice (IX), orientale (X), monoteiste (XI), comunitățile religioase din România (XII)",
+     "basisDe": "Religie – Cultul ortodox IX–XII (2025): Bereich IV „Religiile lumii: valori și aspecte specifice“, CG2 – antike Religionen (IX), östliche Religionen (X), monotheistische Religionen (XI), Religionsgemeinschaften in Rumänien (XII)",
+     "topicCount": 4
+    }
+   ],
+   "topicCount": 58
+  },
+  {
+   "name": "Limba franceză",
+   "nameEn": "French",
+   "nameDe": "Französisch",
+   "tier": "extended",
+   "grades": [
+    5,
+    12
+   ],
+   "description": "French is most often Limba modernă 2 in liceu: 1 h/week trunchi comun in clasele IX–XII of all four theoretical specialisations, plus 1 h/week curriculum de specialitate in științe sociale (IX–XII) and filologie (1 h in IX–X, 2 h in XI–XII), per OMEC 4.350/2025. The programme Limba modernă 2, clasa a IX-a (OMEC 6.930/2025, common to several languages with a French annex) continues the study begun in clasa a V-a and aims at about A2+ (profil real) or A2+/B1 (profil umanist) by the end of liceu; a separate 'debutanți' programme exists for beginners. Pupils taking French as L1 follow the Limba modernă 1 programme.",
+   "descriptionRo": "La liceu, franceza este cel mai adesea Limba modernă 2: 1 oră/săptămână în trunchiul comun, în clasele IX–XII ale tuturor celor patru specializări teoretice, plus 1 oră/săptămână de curriculum de specialitate la științe sociale (IX–XII) și la filologie (1 oră în IX–X, 2 ore în XI–XII), conform OMEC 4.350/2025. Programa Limba modernă 2, clasa a IX-a (OMEC 6.930/2025, comună mai multor limbi, cu o anexă pentru franceză) continuă studiul început în clasa a V-a și vizează aproximativ nivelul A2+ (profil real) sau A2+/B1 (profil umanist) la finalul liceului; pentru începători există o programă separată, „debutanți”. Elevii care studiază franceza ca L1 urmează programa Limba modernă 1.",
+   "descriptionDe": "Französisch ist im Liceu meist Limba modernă 2: 1 Std./Woche trunchi comun in den clasele IX–XII aller vier theoretischen Fachrichtungen, dazu 1 Std./Woche curriculum de specialitate in științe sociale (IX–XII) und filologie (1 Std. in IX–X, 2 Std. in XI–XII), nach OMEC 4.350/2025. Der Lehrplan Limba modernă 2, clasa a IX-a (OMEC 6.930/2025, für mehrere Sprachen gemeinsam, mit einem Anhang für Französisch) setzt das in clasa a V-a begonnene Lernen fort und zielt bis zum Ende des Liceu auf etwa A2+ (profil real) bzw. A2+/B1 (profil umanist); für Anfänger gibt es einen eigenen Lehrplan „debutanți“. Schülerinnen und Schüler mit Französisch als L1 folgen dem Lehrplan Limba modernă 1.",
+   "domains": [
+    {
+     "name": "Receptarea de mesaje orale",
+     "nameEn": "Listening",
+     "nameDe": "Hörverstehen",
+     "basis": "Limba modernă 2 IX (2025), CG1",
+     "basisRo": "Limba modernă 2 IX (2025), CG1",
+     "basisDe": "Limba modernă 2 IX (2025), CG1",
+     "topicCount": 4
+    },
+    {
+     "name": "Exprimarea orală",
+     "nameEn": "Speaking",
+     "nameDe": "Sprechen",
+     "basis": "Limba modernă 2 IX (2025), CG2",
+     "basisRo": "Limba modernă 2 IX (2025), CG2",
+     "basisDe": "Limba modernă 2 IX (2025), CG2",
+     "topicCount": 10
+    },
+    {
+     "name": "Receptarea de mesaje scrise",
+     "nameEn": "Reading",
+     "nameDe": "Leseverstehen",
+     "basis": "Limba modernă 2 IX (2025), CG3",
+     "basisRo": "Limba modernă 2 IX (2025), CG3",
+     "basisDe": "Limba modernă 2 IX (2025), CG3",
+     "topicCount": 6
+    },
+    {
+     "name": "Redactarea de mesaje",
+     "nameEn": "Writing",
+     "nameDe": "Schreiben",
+     "basis": "Limba modernă 2 IX (2025), CG4",
+     "basisRo": "Limba modernă 2 IX (2025), CG4",
+     "basisDe": "Limba modernă 2 IX (2025), CG4",
+     "topicCount": 6
+    },
+    {
+     "name": "Medierea lingvistică și culturală",
+     "nameEn": "Mediation",
+     "nameDe": "Sprachmittlung",
+     "basis": "Limba modernă 2 IX (2025), CG5 'Medierea lingvistică și culturală, în contexte plurilingve și pluriculturale'",
+     "basisRo": "Limba modernă 2 IX (2025), CG5 „Medierea lingvistică și culturală, în contexte plurilingve și pluriculturale”",
+     "basisDe": "Limba modernă 2 IX (2025), CG5 „Medierea lingvistică și culturală, în contexte plurilingve și pluriculturale“",
+     "topicCount": 1
+    },
+    {
+     "name": "Gramatică funcțională",
+     "nameEn": "Functional Grammar",
+     "nameDe": "Funktionale Grammatik",
+     "basis": "Limba modernă 2 IX (2025), conținuturi 'Gramatica funcțională' and Anexa 2 (Limba franceză) 'Elemente de construcție a comunicării'",
+     "basisRo": "Limba modernă 2 IX (2025), conținuturile „Gramatica funcțională” și Anexa 2 (Limba franceză) „Elemente de construcție a comunicării”",
+     "basisDe": "Limba modernă 2 IX (2025), Inhalte „Gramatica funcțională“ und Anexa 2 (Limba franceză) „Elemente de construcție a comunicării“",
+     "topicCount": 18
+    },
+    {
+     "name": "Elemente de cultură și civilizație",
+     "nameEn": "Culture and Civilisation",
+     "nameDe": "Landeskunde und Kultur",
+     "basis": "Limba modernă 2 IX (2025), CS 5.3–5.4 and the French 'Teme recomandate' (cultură și civilizație, simboluri francofone)",
+     "basisRo": "Limba modernă 2 IX (2025), CS 5.3–5.4 și „Teme recomandate” pentru limba franceză (cultură și civilizație, simboluri francofone)",
+     "basisDe": "Limba modernă 2 IX (2025), CS 5.3–5.4 und die französischen „Teme recomandate“ (cultură și civilizație, simboluri francofone)",
+     "topicCount": 4
+    },
+    {
+     "name": "Vocabular și contexte de comunicare",
+     "nameEn": "Vocabulary and Topics",
+     "nameDe": "Wortschatz und Themen",
+     "basis": "Limba modernă 2 V–VIII (2017), conținuturi 'Sugestii de contexte de comunicare / vocabular' and the French 'Teme recomandate'",
+     "basisRo": "Limba modernă 2 V–VIII (2017), conținuturile „Sugestii de contexte de comunicare / vocabular” și „Teme recomandate” pentru limba franceză",
+     "basisDe": "Limba modernă 2 V–VIII (2017), Inhalte „Sugestii de contexte de comunicare / vocabular“ und die französischen „Teme recomandate“",
+     "topicCount": 3
+    },
+    {
+     "name": "Fonetică, ortografie și ortoepie",
+     "nameEn": "Pronunciation and Spelling",
+     "nameDe": "Aussprache und Rechtschreibung",
+     "basis": "Limba modernă 2 V–VIII (2017), French annex part I 'Fonetică, ortografie și ortoepie'; competențele specifice 2.1 and 2.4 of clasa a V-a",
+     "basisRo": "Limba modernă 2 V–VIII (2017), anexa pentru limba franceză, partea I „Fonetică, ortografie și ortoepie”; competențele specifice 2.1 și 2.4 din clasa a V-a",
+     "basisDe": "Limba modernă 2 V–VIII (2017), französischer Anhang, Teil I „Fonetică, ortografie și ortoepie“; spezifische Kompetenzen 2.1 und 2.4 der clasa a V-a",
+     "topicCount": 2
+    }
+   ],
+   "topicCount": 54
+  },
+  {
+   "name": "Educație muzicală",
+   "nameEn": "Music",
+   "nameDe": "Musik",
+   "tier": "extended",
+   "grades": [
+    0,
+    10
+   ],
+   "description": "In the theoretical liceu, music is taught only in clasele a IX-a and a X-a, 0.5 h/week each: the common-trunk slot 'Discipline din domeniul arte' (1 h/week in IX–XI, none in XII, same in all four specialisations) is split 0.5 h Educație muzicală + 0.5 h Educație vizuală in IX and X, and goes to Educație teatrală in XI (Anexa 1 to OMEC 4.350/2025). One TC programme (2025) for all specialisations: expressive performance and digital creation, a chronological survey from Antiquity to Romanticism in IX, and 20th–21st-century, popular, media and Romanian music in X.",
+   "descriptionRo": "La liceul teoretic, muzica se predă doar în clasele a IX-a și a X-a, câte 0,5 ore/săptămână: poziția de trunchi comun „Discipline din domeniul arte” (1 oră/săptămână în IX–XI, nicio oră în XII, la fel la toate cele patru specializări) se împarte în 0,5 ore Educație muzicală + 0,5 ore Educație vizuală în IX și X și revine Educației teatrale în XI (Anexa 1 la OMEC 4.350/2025). O singură programă de TC (2025) pentru toate specializările: interpretare expresivă și creație digitală, o trecere în revistă cronologică de la Antichitate la Romantism în IX și muzica secolelor XX–XXI, muzica pop, muzica din media și muzica românească în X.",
+   "descriptionDe": "Im theoretischen Liceu wird Musik nur in den clasele a IX-a und a X-a unterrichtet, jeweils 0,5 Std./Woche: Der Pflichtbereichsplatz „Discipline din domeniul arte“ (1 Std./Woche in IX–XI, keine in XII, in allen vier Fachrichtungen gleich) wird in IX und X in 0,5 Std. Educație muzicală + 0,5 Std. Educație vizuală geteilt und geht in XI an Educație teatrală (Anexa 1 zu OMEC 4.350/2025). Ein einziger TC-Lehrplan (2025) für alle Fachrichtungen: ausdrucksvolles Musizieren und digitales Gestalten, ein chronologischer Überblick von der Antike bis zur Romantik in IX sowie Musik des 20.–21. Jahrhunderts, Popularmusik, Medienmusik und rumänische Musik in X.",
+   "domains": [
+    {
+     "name": "Cânt vocal și instrumental",
+     "nameEn": "Singing and Playing",
+     "nameDe": "Singen und Musizieren",
+     "basis": "Educație muzicală IX–X (2025): CG1 'exprimarea ideilor și emoțiilor prin interpretarea muzicală', domeniul 'Limbaj muzical și interpretare expresivă' (continues the gimnaziu domain of the same name)",
+     "basisRo": "Educație muzicală IX–X (2025): CG1 „exprimarea ideilor și emoțiilor prin interpretarea muzicală”, domeniul „Limbaj muzical și interpretare expresivă” (continuă domeniul omonim de la gimnaziu)",
+     "basisDe": "Educație muzicală IX–X (2025): CG1 „exprimarea ideilor și emoțiilor prin interpretarea muzicală“, Bereich „Limbaj muzical și interpretare expresivă“ (setzt den gleichnamigen Bereich des gimnaziu fort)",
+     "topicCount": 9
+    },
+    {
+     "name": "Creație și producție muzicală",
+     "nameEn": "Music Creation and Digital Production",
+     "nameDe": "Musik erfinden und digital produzieren",
+     "basis": "Educație muzicală IX–X (2025): CS 1.2 and 3.2; conținuturi 'creație, improvizație, acompaniament și integrarea resurselor digitale', 'producție muzicală digitală', 'creația muzicală digitală și etica utilizării conținuturilor'",
+     "basisRo": "Educație muzicală IX–X (2025): CS 1.2 și 3.2; conținuturile „creație, improvizație, acompaniament și integrarea resurselor digitale”, „producție muzicală digitală”, „creația muzicală digitală și etica utilizării conținuturilor”",
+     "basisDe": "Educație muzicală IX–X (2025): CS 1.2 und 3.2; Inhalte „creație, improvizație, acompaniament și integrarea resurselor digitale“, „producție muzicală digitală“, „creația muzicală digitală și etica utilizării conținuturilor“",
+     "topicCount": 2
+    },
+    {
+     "name": "Audiție și context cultural",
+     "nameEn": "Listening and Musical Culture",
+     "nameDe": "Musik hören und Musikkultur",
+     "basis": "Educație muzicală IX–X (2025): CG2 and CG3, domeniile 'Muzica și contextul cultural-istoric' and 'Audiție muzicală, reflecție critică și creație artistică'",
+     "basisRo": "Educație muzicală IX–X (2025): CG2 și CG3, domeniile „Muzica și contextul cultural-istoric” și „Audiție muzicală, reflecție critică și creație artistică”",
+     "basisDe": "Educație muzicală IX–X (2025): CG2 und CG3, Bereiche „Muzica și contextul cultural-istoric“ und „Audiție muzicală, reflecție critică și creație artistică“",
+     "topicCount": 19
+    },
+    {
+     "name": "Elemente de limbaj muzical",
+     "nameEn": "Elements of Musical Language",
+     "nameDe": "Elemente der Musiklehre",
+     "basis": "Muzică și mișcare CP–II (2013) and III–IV (2014): domeniul 'Elemente de limbaj muzical'; Educație muzicală V–VIII (2017): CG2 'operarea cu elemente de scris-citit și limbaj muzical'",
+     "basisRo": "Muzică și mișcare CP–II (2013) și III–IV (2014): domeniul „Elemente de limbaj muzical”; Educație muzicală V–VIII (2017): CG2 „operarea cu elemente de scris-citit și limbaj muzical”",
+     "basisDe": "Muzică și mișcare CP–II (2013) und III–IV (2014): Bereich „Elemente de limbaj muzical“; Educație muzicală V–VIII (2017): CG2 „operarea cu elemente de scris-citit și limbaj muzical“",
+     "topicCount": 18
+    },
+    {
+     "name": "Mișcare pe muzică",
+     "nameEn": "Music and Movement",
+     "nameDe": "Musik und Bewegung",
+     "basis": "Muzică și mișcare CP–IV: domeniul 'Mișcare pe muzică', CG3 'exprimarea prin muzică și mișcare'",
+     "basisRo": "Muzică și mișcare CP–IV: domeniul „Mișcare pe muzică”, CG3 „exprimarea prin muzică și mișcare”",
+     "basisDe": "Muzică și mișcare CP–IV: Bereich „Mișcare pe muzică“, CG3 „exprimarea prin muzică și mișcare“",
+     "topicCount": 4
+    }
+   ],
+   "topicCount": 52
+  },
+  {
+   "name": "Dezvoltare personală și consiliere",
+   "nameEn": "Personal Development and Guidance",
+   "nameDe": "Persönlichkeitsentwicklung und Berufsorientierung",
+   "tier": "extended",
+   "grades": [
+    0,
+    12
+   ],
+   "description": "'Dezvoltare personală și consiliere în carieră', a new common-trunk subject (1 h/week, IX–XII, all specialisations) that replaces the former form-tutor hour (dirigenție) and is taught by the profesor diriginte (programme approved by OMEC 6.930/2025, Anexa 23, Monitorul Oficial 4 bis/8.I.2026). Three domains — self-knowledge and socio-emotional development, learning and career management, a healthy, balanced and sustainable lifestyle — with a yearly progression: pupils discover (IX), develop (X), apply (XI) and act independently (XII). Not a Bacalaureat subject.",
+   "descriptionRo": "„Dezvoltare personală și consiliere în carieră”, o nouă disciplină de trunchi comun (1 oră/săptămână, IX–XII, toate specializările), care înlocuiește fosta oră de dirigenție și este predată de profesorul diriginte (programă aprobată prin OMEC 6.930/2025, Anexa 23, Monitorul Oficial 4 bis/8.I.2026). Trei domenii — autocunoaștere și dezvoltare socio-emoțională, managementul învățării și al carierei, un stil de viață sănătos, echilibrat și sustenabil — cu o progresie anuală: elevii descoperă (IX), dezvoltă (X), aplică (XI) și acționează independent (XII). Nu este disciplină de Bacalaureat.",
+   "descriptionDe": "„Dezvoltare personală și consiliere în carieră“, ein neues Fach des Pflichtbereichs (1 Std./Woche, IX–XII, alle Fachrichtungen), das die frühere Klassenlehrerstunde (dirigenție) ersetzt und vom profesor diriginte unterrichtet wird (Lehrplan genehmigt durch OMEC 6.930/2025, Anexa 23, Monitorul Oficial 4 bis/8.I.2026). Drei Bereiche – Selbsterkenntnis und sozial-emotionale Entwicklung, Lern- und Laufbahnmanagement, gesunde, ausgewogene und nachhaltige Lebensweise – mit jährlicher Progression: Die Schülerinnen und Schüler entdecken (IX), entwickeln (X), wenden an (XI) und handeln selbstständig (XII). Kein Prüfungsfach im Bacalaureat.",
+   "domains": [
+    {
+     "name": "Autocunoaștere și stil de viață sănătos",
+     "nameEn": "Self-Knowledge and Healthy Lifestyle",
+     "nameDe": "Selbsterkenntnis und gesunde Lebensweise",
+     "basis": "DPCC IX–XII (2025): subdomeniul 1.1 'Autocunoaștere și dezvoltare personală' (CS 1.1) and domeniul 3 'Stil de viață sănătos, echilibrat și sustenabil' (CS 3.1–3.2)",
+     "basisRo": "DPCC IX–XII (2025): subdomeniul 1.1 „Autocunoaștere și dezvoltare personală” (CS 1.1) și domeniul 3 „Stil de viață sănătos, echilibrat și sustenabil” (CS 3.1–3.2)",
+     "basisDe": "DPCC IX–XII (2025): Teilbereich 1.1 „Autocunoaștere și dezvoltare personală“ (CS 1.1) und Bereich 3 „Stil de viață sănătos, echilibrat și sustenabil“ (CS 3.1–3.2)",
+     "topicCount": 16
+    },
+    {
+     "name": "Dezvoltare emoțională și socială",
+     "nameEn": "Emotional and Social Development",
+     "nameDe": "Emotionale und soziale Entwicklung",
+     "basis": "DPCC IX–XII (2025): subdomeniul 1.2 'Dezvoltare socio-emoțională', CS 1.2",
+     "basisRo": "DPCC IX–XII (2025): subdomeniul 1.2 „Dezvoltare socio-emoțională”, CS 1.2",
+     "basisDe": "DPCC IX–XII (2025): Teilbereich 1.2 „Dezvoltare socio-emoțională“, CS 1.2",
+     "topicCount": 15
+    },
+    {
+     "name": "Managementul învățării",
+     "nameEn": "Learning to Learn",
+     "nameDe": "Lernen lernen",
+     "basis": "DPCC IX–XII (2025): subdomeniul 2.1 'Managementul învățării', CS 2.1",
+     "basisRo": "DPCC IX–XII (2025): subdomeniul 2.1 „Managementul învățării”, CS 2.1",
+     "basisDe": "DPCC IX–XII (2025): Teilbereich 2.1 „Managementul învățării“, CS 2.1",
+     "topicCount": 12
+    },
+    {
+     "name": "Managementul carierei",
+     "nameEn": "Career Education",
+     "nameDe": "Berufs- und Studienorientierung",
+     "basis": "DPCC IX–XII (2025): subdomeniul 2.2 'Managementul carierei', CS 2.2",
+     "basisRo": "DPCC IX–XII (2025): subdomeniul 2.2 „Managementul carierei”, CS 2.2",
+     "basisDe": "DPCC IX–XII (2025): Teilbereich 2.2 „Managementul carierei“, CS 2.2",
+     "topicCount": 9
+    }
+   ],
+   "topicCount": 52
+  },
+  {
+   "name": "Științe socio-umane",
+   "nameEn": "Social Sciences and Philosophy",
+   "nameDe": "Sozialwissenschaften und Philosophie",
+   "tier": "core",
+   "grades": [
+    9,
+    12
+   ],
+   "description": "The \"disciplină socio-umană\" slot of OMEC 4.350/2025 rotates one subject per year in the trunchi comun of all specialisations: Logică (IX), Psihologie and Sociologie (X), Filosofie (XI), Economie și educație antreprenorială (XII), each 1 h/week. Științe sociale adds curriculum de specialitate (Logică IX, Psihologie X, Filosofie and Sociologie XI, Studii sociale XI, Economie XII) and filologie adds Logică IX, Filosofie and Psihologie XI and Economie XII. The five subjects are Bacalaureat options (proba E for SS/FIL, proba F for the real profile).",
+   "descriptionRo": "Poziția „disciplină socio-umană” din OMEC 4.350/2025 rotește câte o disciplină pe an în trunchiul comun al tuturor specializărilor: Logică (IX), Psihologie și Sociologie (X), Filosofie (XI), Economie și educație antreprenorială (XII), fiecare cu 1 oră/săptămână. Științe sociale adaugă curriculum de specialitate (Logică IX, Psihologie X, Filosofie și Sociologie XI, Studii sociale XI, Economie XII), iar filologie adaugă Logică IX, Filosofie și Psihologie XI și Economie XII. Cele cinci discipline sunt opțiuni la Bacalaureat (proba E pentru SS/FIL, proba F pentru profilul real).",
+   "descriptionDe": "Der Platz „disciplină socio-umană“ nach OMEC 4.350/2025 wechselt im trunchi comun aller Fachrichtungen jährlich das Fach: Logică (IX), Psihologie und Sociologie (X), Filosofie (XI), Economie și educație antreprenorială (XII), jeweils 1 Std./Woche. Științe sociale ergänzt curriculum de specialitate (Logică IX, Psihologie X, Filosofie und Sociologie XI, Studii sociale XI, Economie XII), filologie ergänzt Logică IX, Filosofie und Psihologie XI sowie Economie XII. Die fünf Fächer sind Wahlmöglichkeiten im Bacalaureat (proba E für SS/FIL, proba F für das real-Profil).",
+   "domains": [
+    {
+     "name": "Logică și argumentare",
+     "nameEn": "Logic and Argumentation",
+     "nameDe": "Logik und Argumentation",
+     "basis": "Programa Logică IX (2025): domeniile „Logică și argumentare. Noțiuni introductive”, logica propozițiilor, logica predicatelor, logica termenilor și silogistica, logica inductivă, „Logică aplicată. Argumentare și gândire critică”",
+     "basisRo": "Programa Logică IX (2025): domeniile „Logică și argumentare. Noțiuni introductive”, logica propozițiilor, logica predicatelor, logica termenilor și silogistica, logica inductivă, „Logică aplicată. Argumentare și gândire critică”",
+     "basisDe": "Lehrplan Logică IX (2025): Bereiche „Logică și argumentare. Noțiuni introductive“, Aussagenlogik, Prädikatenlogik, Begriffslogik und Syllogistik, induktive Logik, „Logică aplicată. Argumentare și gândire critică“",
+     "topicCount": 16
+    },
+    {
+     "name": "Psihologie",
+     "nameEn": "Psychology",
+     "nameDe": "Psychologie",
+     "basis": "Programa Psihologie X (2026), după programa de examen Bacalaureat 2030: fundamente și metode, procese cognitive, afectiv-motivaționale, personalitate, dezvoltare; CS: învățare, baze bio-psiho-sociale, psihologie socială",
+     "basisRo": "Programa Psihologie X (2026), după programa de examen Bacalaureat 2030: fundamente și metode, procese cognitive, afectiv-motivaționale, personalitate, dezvoltare; CS: învățare, baze bio-psiho-sociale, psihologie socială",
+     "basisDe": "Lehrplan Psihologie X (2026), nach dem Prüfungslehrplan Bacalaureat 2030: Grundlagen und Methoden, kognitive sowie affektiv-motivationale Prozesse, Persönlichkeit, Entwicklung; CS: Lernen, bio-psycho-soziale Grundlagen, Sozialpsychologie",
+     "topicCount": 11
+    },
+    {
+     "name": "Sociologie",
+     "nameEn": "Sociology",
+     "nameDe": "Soziologie",
+     "basis": "Programa Sociologie X (TC) și XI (CS științe sociale), 2026, după programa de examen Bacalaureat 2030",
+     "basisRo": "Programa Sociologie X (TC) și XI (CS științe sociale), 2026, după programa de examen Bacalaureat 2030",
+     "basisDe": "Lehrplan Sociologie X (TC) und XI (CS științe sociale), 2026, nach dem Prüfungslehrplan Bacalaureat 2030",
+     "topicCount": 8
+    },
+    {
+     "name": "Filosofie",
+     "nameEn": "Philosophy",
+     "nameDe": "Philosophie",
+     "basis": "Programa Filosofie XI (2026), după programa de examen Bacalaureat 2030: filosofia, ontologia umanului, teoria cunoașterii, etică, filosofie politică; CS: metafizică, estetică",
+     "basisRo": "Programa Filosofie XI (2026), după programa de examen Bacalaureat 2030: filosofia, ontologia umanului, teoria cunoașterii, etică, filosofie politică; CS: metafizică, estetică",
+     "basisDe": "Lehrplan Filosofie XI (2026), nach dem Prüfungslehrplan Bacalaureat 2030: die Philosophie, Ontologie des Menschen, Erkenntnistheorie, Ethik, politische Philosophie; CS: Metaphysik, Ästhetik",
+     "topicCount": 9
+    },
+    {
+     "name": "Economie și educație antreprenorială",
+     "nameEn": "Economics and Entrepreneurship",
+     "nameDe": "Wirtschaft und Entrepreneurship Education",
+     "basis": "Programa Economie și educație antreprenorială XII (2026), după programa de examen Bacalaureat 2030: consumatorul, producătorul, piața, economia viitorului",
+     "basisRo": "Programa Economie și educație antreprenorială XII (2026), după programa de examen Bacalaureat 2030: consumatorul, producătorul, piața, economia viitorului",
+     "basisDe": "Lehrplan Economie și educație antreprenorială XII (2026), nach dem Prüfungslehrplan Bacalaureat 2030: der Verbraucher, der Produzent, der Markt, die Wirtschaft der Zukunft",
+     "topicCount": 7
+    }
+   ],
+   "topicCount": 51
+  },
+  {
+   "name": "Arte vizuale",
+   "nameEn": "Visual Arts",
+   "nameDe": "Kunst",
+   "tier": "extended",
+   "grades": [
+    0,
+    10
+   ],
+   "description": "Called 'Educație vizuală' in liceu: 0.5 h/week in clasele a IX-a and a X-a in the common trunk of all four theoretical specialisations, sharing the 1 h arts slot with Educație muzicală (OMEC 4.350/2025, Anexa 1); its XI (TC) and XII (CDEOȘ) part applies only to the vocational music specialisation. The 2025 programme studies the two-dimensional image in IX and the three-dimensional image in X through five areas: art and representation, technique, mentality (art history), innovation (photography, design, digital art) and community (cultural heritage).",
+   "descriptionRo": "Denumită „Educație vizuală” la liceu: 0,5 ore/săptămână în clasele a IX-a și a X-a, în trunchiul comun al tuturor celor patru specializări teoretice, împărțind ora de arte cu Educația muzicală (OMEC 4.350/2025, Anexa 1); partea pentru XI (TC) și XII (CDEOȘ) se aplică doar specializării vocaționale de muzică. Programa din 2025 studiază imaginea bidimensională în IX și imaginea tridimensională în X prin cinci domenii: artă și reprezentare, tehnică, mentalitate (istoria artei), inovație (fotografie, design, artă digitală) și comunitate (patrimoniu cultural).",
+   "descriptionDe": "Im Liceu „Educație vizuală“ genannt: 0,5 Std./Woche in den clasele a IX-a und a X-a im Pflichtbereich (trunchi comun) aller vier theoretischen Fachrichtungen, wobei sie sich die einstündige Kunststunde mit Educație muzicală teilt (OMEC 4.350/2025, Anexa 1); der Teil für XI (TC) und XII (CDEOȘ) gilt nur für die Fachrichtung Musik der filiera vocațională. Der Lehrplan von 2025 behandelt in IX das zweidimensionale und in X das dreidimensionale Bild in fünf Feldern: Kunst und Darstellung, Technik, Mentalität (Kunstgeschichte), Innovation (Fotografie, Design, digitale Kunst) und Gemeinschaft (Kulturerbe).",
+   "domains": [
+    {
+     "name": "Limbajul plastic",
+     "nameEn": "Visual Language",
+     "nameDe": "Bildsprache",
+     "basis": "Educație vizuală IX–X (2025): domeniul 'Artă și reprezentare' — sintaxa plastică a imaginii bidimensionale (IX) and tridimensionale (X)",
+     "basisRo": "Educație vizuală IX–X (2025): domeniul „Artă și reprezentare” — sintaxa plastică a imaginii bidimensionale (IX) și tridimensionale (X)",
+     "basisDe": "Educație vizuală IX–X (2025): Bereich „Artă și reprezentare“ – sintaxa plastică des zweidimensionalen (IX) und dreidimensionalen (X) Bildes",
+     "topicCount": 11
+    },
+    {
+     "name": "Tehnici de lucru",
+     "nameEn": "Art Techniques and Materials",
+     "nameDe": "Techniken und Materialien",
+     "basis": "Educație vizuală IX–X (2025): domeniul 'Artă și tehnică (tehnici, materiale, instrumente)'",
+     "basisRo": "Educație vizuală IX–X (2025): domeniul „Artă și tehnică (tehnici, materiale, instrumente)”",
+     "basisDe": "Educație vizuală IX–X (2025): Bereich „Artă și tehnică (tehnici, materiale, instrumente)“",
+     "topicCount": 9
+    },
+    {
+     "name": "Compoziția plastică",
+     "nameEn": "Composition",
+     "nameDe": "Bildkomposition",
+     "basis": "Educație vizuală IX–X (2025): CG2 'construirea unei identități vizuale prin mijloace și tehnici artistice' (CS IX.2.2, X.1.1, X.2.2)",
+     "basisRo": "Educație vizuală IX–X (2025): CG2 „construirea unei identități vizuale prin mijloace și tehnici artistice” (CS IX.2.2, X.1.1, X.2.2)",
+     "basisDe": "Educație vizuală IX–X (2025): CG2 „construirea unei identități vizuale prin mijloace și tehnici artistice“ (CS IX.2.2, X.1.1, X.2.2)",
+     "topicCount": 7
+    },
+    {
+     "name": "Receptare și cultură artistică",
+     "nameEn": "Responding to Art and Art History",
+     "nameDe": "Kunstbetrachtung und Kunstgeschichte",
+     "basis": "Educație vizuală IX–X (2025): CG1 'receptarea mesajului artistic', domeniul 'Artă și mentalitate (istoria artelor)' and the semiology content of 'Artă și reprezentare'",
+     "basisRo": "Educație vizuală IX–X (2025): CG1 „receptarea mesajului artistic”, domeniul „Artă și mentalitate (istoria artelor)” și conținuturile de semiologie din „Artă și reprezentare”",
+     "basisDe": "Educație vizuală IX–X (2025): CG1 „receptarea mesajului artistic“, Bereich „Artă și mentalitate (istoria artelor)“ und die semiologischen Inhalte von „Artă și reprezentare“",
+     "topicCount": 13
+    },
+    {
+     "name": "Imagine media și design",
+     "nameEn": "Photography, Film and Design",
+     "nameDe": "Fotografie, Film und Design",
+     "basis": "Educație vizuală IX–X (2025): domeniul 'Artă și inovație' — fotografia, design (IX); revoluția digitală, arta virtuală (X)",
+     "basisRo": "Educație vizuală IX–X (2025): domeniul „Artă și inovație” — fotografia, design (IX); revoluția digitală, arta virtuală (X)",
+     "basisDe": "Educație vizuală IX–X (2025): Bereich „Artă și inovație“ – Fotografie, Design (IX); digitale Revolution, virtuelle Kunst (X)",
+     "topicCount": 6
+    },
+    {
+     "name": "Patrimoniu cultural",
+     "nameEn": "Cultural Heritage",
+     "nameDe": "Kulturerbe",
+     "basis": "Educație vizuală IX–X (2025): CG3 'analiza critică a mesajelor vizuale pentru înțelegerea contextului patrimoniului cultural', domeniul 'Artă și comunitate' (patrimoniu mobil și imobil IX, imaterial X, marketing cultural)",
+     "basisRo": "Educație vizuală IX–X (2025): CG3 „analiza critică a mesajelor vizuale pentru înțelegerea contextului patrimoniului cultural”, domeniul „Artă și comunitate” (patrimoniu mobil și imobil IX, imaterial X, marketing cultural)",
+     "basisDe": "Educație vizuală IX–X (2025): CG3 „analiza critică a mesajelor vizuale pentru înțelegerea contextului patrimoniului cultural“, Bereich „Artă și comunitate“ (bewegliches und unbewegliches Kulturerbe IX, immaterielles X, Kulturmarketing)",
+     "topicCount": 2
+    },
+    {
+     "name": "Proiecte și activități integrate",
+     "nameEn": "Projects and Integrated Activities",
+     "nameDe": "Projekte und fächerverbindende Aktivitäten",
+     "basis": "AVAP competența 2.6 (CP–II) / 2.5 (III–IV) 'activități integrate'; Educație plastică: domeniul 'Proiecte și evenimente'",
+     "basisRo": "AVAP competența 2.6 (CP–II) / 2.5 (III–IV) „activități integrate”; Educație plastică: domeniul „Proiecte și evenimente”",
+     "basisDe": "AVAP Kompetenz 2.6 (CP–II) / 2.5 (III–IV) „activități integrate“; Educație plastică: Bereich „Proiecte și evenimente“",
+     "topicCount": 2
+    }
+   ],
+   "topicCount": 50
+  },
+  {
+   "name": "Limba latină",
+   "nameEn": "Latin",
+   "nameDe": "Latein",
+   "tier": "extended",
+   "grades": [
+    7,
+    12
+   ],
+   "description": "Liceu Latin belongs only to the curriculum de specialitate of profil umanist: 1 h/week in clasele IX–X for both științe sociale and filologie; filologie continues with 2 h in clasa a XI-a and 1 h in clasa a XII-a (OMEC 4.350/2025). It is not taught in matematică-informatică or științe ale naturii. The programme Limba latină IX–XII (OMEC 6.930/2025) combines Latin grammar studied by analogy with Romanian, translation from Latin into Romanian and Greco-Roman culture (IX–X), then Latin literature of the Republic (XI) and the Empire (XII).",
+   "descriptionRo": "La liceu, latina face parte doar din curriculumul de specialitate al profilului umanist: 1 oră/săptămână în clasele IX–X, atât la științe sociale, cât și la filologie; filologia continuă cu 2 ore în clasa a XI-a și 1 oră în clasa a XII-a (OMEC 4.350/2025). Nu se studiază la matematică-informatică sau la științe ale naturii. Programa Limba latină IX–XII (OMEC 6.930/2025) combină gramatica latină studiată prin analogie cu limba română, traducerea din latină în română și cultura greco-romană (IX–X), apoi literatura latină a Republicii (XI) și a Imperiului (XII).",
+   "descriptionDe": "Latein gehört im Liceu nur zum curriculum de specialitate des profil umanist: 1 Std./Woche in den clasele IX–X für științe sociale und filologie; filologie setzt mit 2 Std. in clasa a XI-a und 1 Std. in clasa a XII-a fort (OMEC 4.350/2025). In matematică-informatică und științe ale naturii wird es nicht unterrichtet. Der Lehrplan Limba latină IX–XII (OMEC 6.930/2025) verbindet lateinische Grammatik, die in Analogie zum Rumänischen erarbeitet wird, die Übersetzung aus dem Lateinischen ins Rumänische und griechisch-römische Kultur (IX–X), danach lateinische Literatur der Republik (XI) und der Kaiserzeit (XII).",
+   "domains": [
+    {
+     "name": "Elemente de limbă latină",
+     "nameEn": "Latin Language",
+     "nameDe": "Lateinische Sprache",
+     "basis": "Limba latină IX–XII (2025), domeniul de conținut 'Elemente de limbă latină' / 'Limba latină' (fonetică, morfologie, sintaxă, lexic); CG1",
+     "basisRo": "Limba latină IX–XII (2025), domeniul de conținut „Elemente de limbă latină” / „Limba latină” (fonetică, morfologie, sintaxă, lexic); CG1",
+     "basisDe": "Limba latină IX–XII (2025), Inhaltsbereich „Elemente de limbă latină“ / „Limba latină“ (Lautlehre, Formenlehre, Satzlehre, Wortschatz); CG1",
+     "topicCount": 24
+    },
+    {
+     "name": "Traducerea din limba latină",
+     "nameEn": "Translation from Latin",
+     "nameDe": "Übersetzen aus dem Lateinischen",
+     "basis": "Limba latină IX–XII (2025), CG2 'Traduce din limba latină în limba română texte/secvențe de text' and the sintaxa propoziției/frazei contents",
+     "basisRo": "Limba latină IX–XII (2025), CG2 „Traduce din limba latină în limba română texte/secvențe de text” și conținuturile de sintaxa propoziției/frazei",
+     "basisDe": "Limba latină IX–XII (2025), CG2 „Traduce din limba latină în limba română texte/secvențe de text“ und die Inhalte zur sintaxa propoziției/frazei",
+     "topicCount": 6
+    },
+    {
+     "name": "Civilizație greco-romană și cultură romanică",
+     "nameEn": "Greco-Roman Civilisation and Romance Culture",
+     "nameDe": "Griechisch-römische Antike und romanische Kultur",
+     "basis": "Limba latină IX–XII (2025), domeniul 'Cultură și civilizație greco-romană' (IX 'Ab Urbe condita', X 'Senatus populusque Romanus'); CG3",
+     "basisRo": "Limba latină IX–XII (2025), domeniul „Cultură și civilizație greco-romană” (IX „Ab Urbe condita”, X „Senatus populusque Romanus”); CG3",
+     "basisDe": "Limba latină IX–XII (2025), Bereich „Cultură și civilizație greco-romană“ (IX „Ab Urbe condita“, X „Senatus populusque Romanus“); CG3",
+     "topicCount": 9
+    },
+    {
+     "name": "Literatura latină",
+     "nameEn": "Latin Literature",
+     "nameDe": "Lateinische Literatur",
+     "basis": "Limba latină IX–XII (2025), domeniul 'Literatura latină' (XI 'Res publica Romana', XII 'Imperium Romanum') and Caesar in clasa a X-a; CS 2.2 and 3.2",
+     "basisRo": "Limba latină IX–XII (2025), domeniul „Literatura latină” (XI „Res publica Romana”, XII „Imperium Romanum”) și Caesar în clasa a X-a; CS 2.2 și 3.2",
+     "basisDe": "Limba latină IX–XII (2025), Bereich „Literatura latină“ (XI „Res publica Romana“, XII „Imperium Romanum“) und Caesar in clasa a X-a; CS 2.2 und 3.2",
+     "topicCount": 6
+    },
+    {
+     "name": "Valori greco-romane perene",
+     "nameEn": "Enduring Greco-Roman Values",
+     "nameDe": "Fortwirken griechisch-römischer Werte",
+     "basis": "Elemente de limbă latină și de cultură romanică VII (2017), conținuturi 'Valori greco-romane perene'; competența specifică 2.3",
+     "basisRo": "Elemente de limbă latină și de cultură romanică VII (2017), conținuturi „Valori greco-romane perene”; competența specifică 2.3",
+     "basisDe": "Elemente de limbă latină și de cultură romanică VII (2017), Inhalte „Valori greco-romane perene“; spezifische Kompetenz 2.3",
+     "topicCount": 1
+    }
+   ],
+   "topicCount": 46
+  },
+  {
+   "name": "Educație civică și socială",
+   "nameEn": "Civic and Social Education",
+   "nameDe": "Politische und soziale Bildung",
+   "tier": "core",
+   "grades": [
+    3,
+    8
+   ],
+   "description": "Educație civică in clasele III–IV (1 h/week, OMEN 5003/2014: the person, relations with things, living beings and people, belonging, children's rights). Educație socială in V–VIII (1 h/week, OMEN 3393/2017) with one strand per year: V Gândire critică și drepturile copilului, VI Educație interculturală, VII Educație pentru cetățenie democratică, VIII Educație economico-financiară.",
+   "descriptionRo": "Educație civică în clasele III–IV (1 oră/săptămână, OMEN 5003/2014: persoana, relațiile cu lucrurile, cu ființele și cu oamenii, apartenența, drepturile copilului). Educație socială în V–VIII (1 oră/săptămână, OMEN 3393/2017), cu câte o componentă pe an: V Gândire critică și drepturile copilului, VI Educație interculturală, VII Educație pentru cetățenie democratică, VIII Educație economico-financiară.",
+   "descriptionDe": "Educație civică in den clasele III–IV (1 Std./Woche, OMEN 5003/2014: die Person, Beziehungen zu Dingen, Lebewesen und Menschen, Zugehörigkeit, Kinderrechte). Educație socială in V–VIII (1 Std./Woche, OMEN 3393/2017) mit einem Schwerpunkt pro Jahr: V Gândire critică și drepturile copilului, VI Educație interculturală, VII Educație pentru cetățenie democratică, VIII Educație economico-financiară.",
+   "domains": [
+    {
+     "name": "Persoana",
+     "nameEn": "The Person",
+     "nameDe": "Die Person",
+     "basis": "Programa Educație civică III–IV (2014), clasa a III-a: domeniul 'Persoana' (noțiunea de persoană, trăsături morale)",
+     "basisRo": "Programa Educație civică III–IV (2014), clasa a III-a: domeniul „Persoana” (noțiunea de persoană, trăsături morale)",
+     "basisDe": "Lehrplan Educație civică III–IV (2014), clasa a III-a: Bereich „Persoana“ (Begriff der Person, moralische Eigenschaften)",
+     "topicCount": 2
+    },
+    {
+     "name": "Raporturile noastre cu lucrurile și ființele",
+     "nameEn": "Relations with Things and Living Beings",
+     "nameDe": "Beziehungen zu Dingen und Lebewesen",
+     "basis": "Programa Educație civică III–IV (2014), clasa a III-a: 'Raporturile noastre cu lucrurile', 'Raporturile noastre cu animalele și plantele'",
+     "basisRo": "Programa Educație civică III–IV (2014), clasa a III-a: „Raporturile noastre cu lucrurile”, „Raporturile noastre cu animalele și plantele”",
+     "basisDe": "Lehrplan Educație civică III–IV (2014), clasa a III-a: „Raporturile noastre cu lucrurile“, „Raporturile noastre cu animalele și plantele“",
+     "topicCount": 2
+    },
+    {
+     "name": "Raporturile noastre cu ceilalți oameni",
+     "nameEn": "Relations with Other People",
+     "nameDe": "Beziehungen zu anderen Menschen",
+     "basis": "Programa Educație civică III–IV (2014): 'Raporturile noastre cu ceilalți oameni' (grupuri, reguli; valori, norme și comportamente moral-civice)",
+     "basisRo": "Programa Educație civică III–IV (2014): „Raporturile noastre cu ceilalți oameni” (grupuri, reguli; valori, norme și comportamente moral-civice)",
+     "basisDe": "Lehrplan Educație civică III–IV (2014): „Raporturile noastre cu ceilalți oameni“ (Gruppen, Regeln; moralisch-staatsbürgerliche Werte, Normen und Verhaltensweisen)",
+     "topicCount": 5
+    },
+    {
+     "name": "Locuri de apartenență",
+     "nameEn": "Places of Belonging",
+     "nameDe": "Orte der Zugehörigkeit",
+     "basis": "Programa Educație civică III–IV (2014), clasa a IV-a: 'Locuri de apartenență' (locală, națională, europeană)",
+     "basisRo": "Programa Educație civică III–IV (2014), clasa a IV-a: „Locuri de apartenență” (locală, națională, europeană)",
+     "basisDe": "Lehrplan Educație civică III–IV (2014), clasa a IV-a: „Locuri de apartenență“ (lokal, national, europäisch)",
+     "topicCount": 3
+    },
+    {
+     "name": "Drepturile copilului",
+     "nameEn": "Children's Rights",
+     "nameDe": "Kinderrechte",
+     "basis": "Programa Educație civică IV (2014): 'Drepturile universale ale copilului'; Educație socială V (2017): 'Drepturi și responsabilități ale copilului', 'Respectarea, apărarea și promovarea drepturilor copilului'",
+     "basisRo": "Programa Educație civică IV (2014): „Drepturile universale ale copilului”; Educație socială V (2017): „Drepturi și responsabilități ale copilului”, „Respectarea, apărarea și promovarea drepturilor copilului”",
+     "basisDe": "Lehrplan Educație civică IV (2014): „Drepturile universale ale copilului“; Educație socială V (2017): „Drepturi și responsabilități ale copilului“, „Respectarea, apărarea și promovarea drepturilor copilului“",
+     "topicCount": 4
+    },
+    {
+     "name": "Gândire critică",
+     "nameEn": "Critical Thinking",
+     "nameDe": "Kritisches Denken",
+     "basis": "Programa Educație socială V (2017): 'Formularea de întrebări', 'Argumentarea unui punct de vedere personal'",
+     "basisRo": "Programa Educație socială V (2017): „Formularea de întrebări”, „Argumentarea unui punct de vedere personal”",
+     "basisDe": "Lehrplan Educație socială V (2017): „Formularea de întrebări“, „Argumentarea unui punct de vedere personal“",
+     "topicCount": 4
+    },
+    {
+     "name": "Educație interculturală",
+     "nameEn": "Intercultural Education",
+     "nameDe": "Interkulturelle Bildung",
+     "basis": "Programa Educație socială VI (2017): 'Caracteristici ale societății contemporane', 'Persoana și societatea interculturală'",
+     "basisRo": "Programa Educație socială VI (2017): „Caracteristici ale societății contemporane”, „Persoana și societatea interculturală”",
+     "basisDe": "Lehrplan Educație socială VI (2017): „Caracteristici ale societății contemporane“, „Persoana și societatea interculturală“",
+     "topicCount": 4
+    },
+    {
+     "name": "Educație pentru cetățenie democratică",
+     "nameEn": "Democratic Citizenship",
+     "nameDe": "Demokratiebildung",
+     "basis": "Programa Educație socială VII (2017): 'Sistemul politic în România', 'Raportul cetățeni – autorități'",
+     "basisRo": "Programa Educație socială VII (2017): „Sistemul politic în România”, „Raportul cetățeni – autorități”",
+     "basisDe": "Lehrplan Educație socială VII (2017): „Sistemul politic în România“, „Raportul cetățeni – autorități“",
+     "topicCount": 8
+    },
+    {
+     "name": "Educație economico-financiară",
+     "nameEn": "Economic and Financial Education",
+     "nameDe": "Ökonomische und finanzielle Bildung",
+     "basis": "Programa Educație socială VIII (2017): 'Cetățenia, dimensiunea economică', 'Banii și bugetul', 'Relația consumatorului cu instituțiile bancare și financiare nebancare'",
+     "basisRo": "Programa Educație socială VIII (2017): „Cetățenia, dimensiunea economică”, „Banii și bugetul”, „Relația consumatorului cu instituțiile bancare și financiare nebancare”",
+     "basisDe": "Lehrplan Educație socială VIII (2017): „Cetățenia, dimensiunea economică“, „Banii și bugetul“, „Relația consumatorului cu instituțiile bancare și financiare nebancare“",
+     "topicCount": 6
+    },
+    {
+     "name": "Cooperare și proiecte",
+     "nameEn": "Cooperation and Projects",
+     "nameDe": "Zusammenarbeit und Projekte",
+     "basis": "Programa Educație civică III–IV: CG3 cooperarea cu ceilalți; Educație socială V–VIII: CG2 cooperare și domeniul 'Proiectul educațional'",
+     "basisRo": "Programa Educație civică III–IV: CG3 cooperarea cu ceilalți; Educație socială V–VIII: CG2 cooperare și domeniul „Proiectul educațional”",
+     "basisDe": "Lehrplan Educație civică III–IV: CG3 Zusammenarbeit mit anderen; Educație socială V–VIII: CG2 Zusammenarbeit und Bereich „Proiectul educațional“",
+     "topicCount": 3
+    }
+   ],
+   "topicCount": 41
+  },
+  {
+   "name": "Educație tehnologică",
+   "nameEn": "Technology Education",
+   "nameDe": "Technik",
+   "tier": "extended",
+   "grades": [
+    0,
+    8
+   ],
+   "description": "In CP–IV the practical-skills part of 'Arte vizuale și abilități practice' (paper, textile and natural-material crafts, models); in V–VIII 'Educație tehnologică și aplicații practice' (1 h/week, aria Tehnologii) with a different technology field each year: V agriculture and food, VI construction and transport, VII textile/wood/metal materials and products, VIII electricity, energy and the labour market, always taught through project work with a process sheet (fișa tehnologică).",
+   "descriptionRo": "În CP–IV, partea de abilități practice din „Arte vizuale și abilități practice” (lucrări din hârtie, din materiale textile și din materiale din natură, machete); în V–VIII, „Educație tehnologică și aplicații practice” (1 oră/săptămână, aria Tehnologii), cu un alt domeniu tehnologic în fiecare an: V agricultură și alimentație, VI construcții și transporturi, VII materiale și produse textile/din lemn/din metal, VIII electricitate, energie și piața muncii, predată întotdeauna prin activități pe bază de proiect, cu fișă tehnologică.",
+   "descriptionDe": "In CP–IV der Teil praktische Fertigkeiten von „Arte vizuale și abilități practice“ (Basteln mit Papier, Textilien und Naturmaterialien, Modelle); in V–VIII „Educație tehnologică și aplicații practice“ (1 Std./Woche, aria Tehnologii) mit jedes Jahr einem anderen Technikfeld: V Landwirtschaft und Ernährung, VI Bauwesen und Verkehr, VII Werkstoffe und Produkte aus Textil, Holz und Metall, VIII Elektrizität, Energie und Arbeitsmarkt, stets in Projektarbeit mit einem Arbeitsablaufplan (fișa tehnologică) unterrichtet.",
+   "domains": [
+    {
+     "name": "Abilități practice",
+     "nameEn": "Practical Crafts",
+     "nameDe": "Werken und Gestalten",
+     "basis": "AVAP CP–II domeniile 'Confecții și jucării', 'Colaj'; AVAP III–IV 'Machete și modele'; competențele 2.1–2.5 (materials, techniques, useful products)",
+     "basisRo": "AVAP CP–II domeniile „Confecții și jucării”, „Colaj”; AVAP III–IV „Machete și modele”; competențele 2.1–2.5 (materiale, tehnici, produse utile)",
+     "basisDe": "AVAP CP–II Bereiche „Confecții și jucării“, „Colaj“; AVAP III–IV „Machete și modele“; Kompetenzen 2.1–2.5 (Materialien, Techniken, nützliche Produkte)",
+     "topicCount": 7
+    },
+    {
+     "name": "Tehnologii",
+     "nameEn": "Technologies",
+     "nameDe": "Technologien",
+     "basis": "Educație tehnologică și aplicații practice V–VIII (2017): domeniul de conținut 'Tehnologii', CG1",
+     "basisRo": "Educație tehnologică și aplicații practice V–VIII (2017): domeniul de conținut „Tehnologii”, CG1",
+     "basisDe": "Educație tehnologică și aplicații practice V–VIII (2017): Inhaltsbereich „Tehnologii“, CG1",
+     "topicCount": 9
+    },
+    {
+     "name": "Design",
+     "nameEn": "Design and Technical Drawing",
+     "nameDe": "Design und Technisches Zeichnen",
+     "basis": "Educație tehnologică V–VIII: domeniul 'Design' (desen geometric, limbaj grafic, reprezentarea în vedere, cotare)",
+     "basisRo": "Educație tehnologică V–VIII: domeniul „Design” (desen geometric, limbaj grafic, reprezentarea în vedere, cotare)",
+     "basisDe": "Educație tehnologică V–VIII: Bereich „Design“ (desen geometric, limbaj grafic, reprezentarea în vedere, cotare)",
+     "topicCount": 1
+    },
+    {
+     "name": "Calitate, economie și antreprenoriat",
+     "nameEn": "Quality, Economics and Entrepreneurship",
+     "nameDe": "Qualität, Wirtschaft und Unternehmertum",
+     "basis": "Educație tehnologică V–VIII: domeniul 'Calitate, economie și antreprenoriat'",
+     "basisRo": "Educație tehnologică V–VIII: domeniul „Calitate, economie și antreprenoriat”",
+     "basisDe": "Educație tehnologică V–VIII: Bereich „Calitate, economie și antreprenoriat“",
+     "topicCount": 3
+    },
+    {
+     "name": "Dezvoltare durabilă",
+     "nameEn": "Sustainability, Health and Safety",
+     "nameDe": "Nachhaltigkeit, Gesundheit und Sicherheit",
+     "basis": "Educație tehnologică V–VIII: domeniul 'Dezvoltare durabilă (stil de viață sănătos, mediu curat)', CG2",
+     "basisRo": "Educație tehnologică V–VIII: domeniul „Dezvoltare durabilă (stil de viață sănătos, mediu curat)”, CG2",
+     "basisDe": "Educație tehnologică V–VIII: Bereich „Dezvoltare durabilă (stil de viață sănătos, mediu curat)“, CG2",
+     "topicCount": 3
+    },
+    {
+     "name": "Activități, ocupații, meserii",
+     "nameEn": "Occupations and Trades",
+     "nameDe": "Berufe und Tätigkeiten",
+     "basis": "Educație tehnologică V–VIII: domeniul 'Activități/ocupații/meserii', CG3",
+     "basisRo": "Educație tehnologică V–VIII: domeniul „Activități/ocupații/meserii”, CG3",
+     "basisDe": "Educație tehnologică V–VIII: Bereich „Activități/ocupații/meserii“, CG3",
+     "topicCount": 1
+    }
+   ],
+   "topicCount": 24
+  }
+ ]
+}

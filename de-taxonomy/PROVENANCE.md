@@ -5,7 +5,9 @@
 Topics (names, German names, descriptions, evidence, assessment prompts),
 prerequisite edges and their reasons, cluster summaries, the crosswalk to
 os-taxonomy and the analysis were authored for this project, with AI assistance,
-from the sources below. They are a **research prototype** and have not been
+from the sources below. The texts were written in English (names and parent summaries also in
+German); their German and Romanian versions, and the Romanian names, are AI translations of
+the English. They are a **research prototype** and have not been
 reviewed by German teachers or Länder authorities.
 
 ## Curriculum sources (`data/curriculum-standards.json`)

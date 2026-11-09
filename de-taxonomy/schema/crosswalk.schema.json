@@ -10,7 +10,9 @@
         "deId": { "type": "string", "pattern": "^de_" }, "deKey": { "type": "string" },
         "osId": { "type": "string", "pattern": "^mt_" },
         "relation": { "enum": ["exact", "close", "broader", "narrower", "related"], "description": "From the German topic's view: broader = os topic is broader; narrower = os topic covers only part" },
-        "note": { "type": ["string", "null"] }
+        "note": { "type": ["string", "null"] },
+        "noteDe": { "type": ["string", "null"], "description": "German translation of note" },
+        "noteRo": { "type": ["string", "null"], "description": "Romanian translation of note" }
       } } }
   }
 }

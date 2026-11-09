@@ -94,22 +94,22 @@ a { color: #6da7ec; text-decoration: none; } a:hover { text-decoration: underlin
   <canvas id="cv" role="img" aria-label="Rotating 3D map: each dot is a topic, height is the age it starts, threads are prerequisite links"></canvas>
   <header class="hero">
     <div class="kicker"><span class="dot"></span><span id="kick"></span></div>
-    <h1>Wie Lernen aufeinander aufbaut<span class="stop">.</span></h1>
+    <h1 id="h1">Wie Lernen aufeinander aufbaut<span class="stop">.</span></h1>
     <p class="lead" id="lead"></p>
-    <p class="sub">Each dot is a teachable topic and each thread a prerequisite. Height is the age a topic starts, so the map grows upward through the school years. Click a dot to light up everything that has to come before it.</p>
+    <p class="sub" id="gsub"></p>
     <div class="ctl">
-      <div class="toggle" id="ds" role="group" aria-label="Dataset"><button type="button" data-ds="de" aria-pressed="true">German taxonomy</button><button type="button" data-ds="os" aria-pressed="false">os-taxonomy</button></div>
-      <div class="toggle" id="tier" role="group" aria-label="Subjects shown"><button type="button" data-tier="all">All subjects</button><button type="button" data-tier="core" title="Hide Französisch, Latein, Musik, Kunst, Sport and Religion &amp; Ethik">Core only</button></div>
-      <div class="toggle" id="lang" role="group" aria-label="Name language"><button type="button" data-lang="de" aria-pressed="true">DE</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+      <div class="toggle" id="ds" role="group" aria-label="Dataset"><button type="button" data-ds="de" aria-pressed="true"></button><button type="button" data-ds="ro" aria-pressed="false"></button><button type="button" data-ds="os" aria-pressed="false">os-taxonomy</button></div>
+      <div class="toggle" id="tier" role="group"><button type="button" data-tier="all"></button><button type="button" data-tier="core"></button></div>
+      <div class="toggle" id="lang" role="group"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button><button type="button" data-lang="ro">RO</button></div>
     </div>
-    <div class="search"><input id="q" type="search" placeholder="Find a topic…" autocomplete="off" aria-label="Find a topic"><div class="sug" id="sug" hidden></div></div>
-    <p class="links"><a class="xl" href="index.html">Browse as lists and tables →</a> · <a class="xl" href="../comparison/index.html">Compare with os-taxonomy →</a></p>
+    <div class="search"><input id="q" type="search" autocomplete="off"><div class="sug" id="sug" hidden></div></div>
+    <p class="links"><a class="xl" id="lnkBrowse" href="index.html"></a> · <a class="xl" id="lnkCompare" href="../comparison/index.html">Compare with os-taxonomy →</a></p>
   </header>
-  <div class="legend" id="legend"><button type="button" class="lh" id="lgBtn" aria-expanded="true" aria-controls="chips"><span id="lgTxt">Subjects · click to show or hide</span><span class="car" aria-hidden="true"></span></button><div id="chips"></div></div>
+  <div class="legend" id="legend"><button type="button" class="lh" id="lgBtn" aria-expanded="true" aria-controls="chips"><span id="lgTxt"></span><span class="car" aria-hidden="true"></span></button><div id="chips"></div></div>
   <aside class="card" id="card" aria-live="polite"></aside>
   <div class="tip" id="tip"></div>
-  <p class="credit">Lernlandkarte © 2026 Alexandru Prian: database ODbL 1.0, content CC BY-SA 4.0, code MIT · builds on and contains data from the Marble Skill Taxonomy (v1) · © Generative Spark, Inc. (Marble) · ODbL 1.0 / CC BY-SA 4.0 · <a href="https://github.com/codingarchitect-wq/lernlandkarte">Data and source on GitHub</a></p>
-  <div class="hint"><b>Drag</b> to rotate · <b>scroll</b> to zoom · <b>click</b> a dot</div>
+  <p class="credit" id="credit">Lernlandkarte © 2026 Alexandru Prian: database ODbL 1.0, content CC BY-SA 4.0, code MIT · builds on and contains data from the Marble Skill Taxonomy (v1) · © Generative Spark, Inc. (Marble) · ODbL 1.0 / CC BY-SA 4.0 · <a href="https://github.com/codingarchitect-wq/lernlandkarte">Data and source on GitHub</a></p>
+  <div class="hint" id="hint"></div>
 </div>
 
 <script id="data" type="application/json">__DATA__</script>
@@ -138,20 +138,84 @@ a { color: #6da7ec; text-decoration: none; } a:hover { text-decoration: underlin
       fcount: FAM.map((_, f) => ds.nodes.filter(t => t.f === f).length), fcountCore: FAM.map((_, f) => ds.nodes.filter(t => t.f === f && !t.x).length),
       ageMax: Math.max(...ds.nodes.map(t => t.a[0])) };
   }
-  const SETS = { de: prep(D.de, 'de'), os: prep(D.os, 'os') };
-  const CROSS = { de: new Map(), os: new Map() };
-  for (const [d, o, r] of D.cross) { if (!CROSS.de.has(d)) CROSS.de.set(d, []); CROSS.de.get(d).push([o, r]); if (!CROSS.os.has(o)) CROSS.os.set(o, []); CROSS.os.get(o).push([d, r]); }
-  const RELN = ['exact', 'close', 'os broader', 'os narrower'];
-  if (!SETS.os) $('#ds').style.display = 'none';
+  const SETS = { de: prep(D.de, 'de'), os: prep(D.os, 'os'), ro: prep(D.ro, 'ro') };
+  // CROSS[kind].get(i) = [[other kind, index, relation], ...]
+  const CROSS = { de: new Map(), os: new Map(), ro: new Map() };
+  const link = (ka, a, kb, b, r) => { if (!CROSS[ka].has(a)) CROSS[ka].set(a, []); CROSS[ka].get(a).push([kb, b, r]); };
+  for (const [d, o, r] of D.cross.deOs || []) { link('de', d, 'os', o, r); link('os', o, 'de', d, r); }
+  for (const [o, d, r] of D.cross.roDe || []) { link('ro', o, 'de', d, r); link('de', d, 'ro', o, r); }
+  for (const k of ['os', 'ro']) if (!SETS[k]) $(`#ds [data-ds="${k}"]`).remove();
+  if (!SETS.os && !SETS.ro) $('#ds').style.display = 'none';
+  const HAS_LANG = k => k === 'de' || k === 'ro';   // datasets with their own language (the dataset key is the language)
+  const ROMAN = ['CP', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
+  // Interface strings: English, and German / Romanian when the language switch is on the dataset's own language.
+  // Keys ending in ".de" / ".ro" depend on the dataset; "_one" is the singular.
+  const G18N = {
+    en: { h1: 'How learning builds up', sub: 'Each dot is a teachable topic and each thread a prerequisite. Height is the age a topic starts, so the map grows upward through the school years. Click a dot to light up everything that has to come before it.',
+      dsDe: 'Germany', dsRo: 'Romania', all: 'All subjects', core: 'Core only', 'coreTitle.de': 'Hide Französisch, Latein, Musik, Kunst, Sport and Religion & Ethik', 'coreTitle.ro': 'Hide Limba franceză, Limba latină, Educație muzicală, Arte vizuale, Educație fizică și sport, Religie, Educație tehnologică and Dezvoltare personală și consiliere',
+      dataset: 'Dataset', language: 'Language', subjectsShown: 'Subjects shown', find: 'Find a topic…', browse: 'Browse as lists and tables →', 'compare.de': 'Compare with os-taxonomy →', 'compare.ro': 'Compare with Germany →', 'compare.os': 'Compare with the German taxonomy →',
+      'kick.de': 'German curriculum · Vorschule to the Abitur · ages 5–19', 'kick.ro': 'Romanian curriculum · clasa pregătitoare to the Bacalaureat · ages 6–19', 'kick.os': 'os-taxonomy · England, US, Australia · ages 4–15',
+      'lead.de': '<b>{n}</b> topics and <b>{m}</b> prerequisite links, from counting and first letters to calculus, Goethe and quantum physics. Primary school, then the Gymnasium (G9) from Klasse 7. Built from the KMK standards and Länder curricula.',
+      'lead.ro': '<b>{n}</b> topics and <b>{m}</b> prerequisite links, from the first letters and numbers in clasa pregătitoare to the Bacalaureat. Liceu follows the theoretical track. Built from the national programe școlare.',
+      'lead.os': '<b>{n}</b> topics and <b>{m}</b> prerequisite links from the Marble os-taxonomy, laid out the same way on the same age scale so you can compare its shape with the German and Romanian maps.',
+      credit: "Lernlandkarte © 2026 Alexandru Prian: database ODbL 1.0, content CC BY-SA 4.0, code MIT · builds on and contains data from the Marble Skill Taxonomy (v1) · © Generative Spark, Inc. (Marble) · ODbL 1.0 / CC BY-SA 4.0 · <a href=\"https://github.com/codingarchitect-wq/lernlandkarte\">Data and source on GitHub</a>", legend: 'Subjects · click to show or hide', legendShort: 'Subjects · {a} of {b} shown', hint: '<b>Drag</b> to rotate · <b>scroll</b> to zoom · <b>click</b> a dot',
+      before: 'topics come before this one', before_one: 'topic comes before this one', traced: 'Everything a child needs first, traced all the way back to the start.', start: 'A starting point: nothing has to come before it.',
+      needs: 'Needs first', leads: 'Leads on to', nothing: 'nothing in this map', none: 'none', counterparts: 'Counterparts in {x}', 'name.de': 'the German taxonomy', 'name.ro': 'the Romanian taxonomy', 'name.os': 'os-taxonomy',
+      rel: ['exact', 'close', 'partial', 'partial'], details: 'Topic details →', path: 'Learning path →', cmpOs: 'Compare with os →', cmpRo: 'Compare with Romania →', cmpDe: 'Compare with Germany →', openCmp: 'Open in the comparison →',
+      back: '← Back', close: 'Close', age: 'age {a}', allCourses: 'all courses', lk: 'Leistungskurs', only: '{x} only', yourChild: 'your child' },
+    de: { h1: 'Wie Lernen aufeinander aufbaut', 'kick.ro': 'Lehrplan Rumänien · clasa pregătitoare bis Bacalaureat · Alter 6–19', 'kick.os': 'os-taxonomy · England, USA, Australien · Alter 4–15',
+      'lead.ro': '<b>{n}</b> Themen und <b>{m}</b> Verknüpfungen über Voraussetzungen, von den ersten Buchstaben und Zahlen in der clasa pregătitoare bis zum Bacalaureat. Das Lyzeum folgt dem theoretischen Zweig. Grundlage sind die nationalen Lehrpläne (programe școlare).',
+      'lead.os': '<b>{n}</b> Themen und <b>{m}</b> Verknüpfungen aus der Marble os-taxonomy, gleich angeordnet und auf derselben Altersskala, damit Sie ihre Form mit der deutschen und der rumänischen Karte vergleichen können.',
+      'coreTitle.ro': 'Blendet die zweite Fremdsprache, Latein, Musik, Bildende Kunst, Sport, Religion, Technik und Persönlichkeitsentwicklung aus', 'compare.ro': 'Mit Deutschland vergleichen →', 'compare.os': 'Mit der deutschen Taxonomie vergleichen →', cmpDe: 'Mit Deutschland vergleichen →', only: 'nur {x}', openCmp: 'Im Vergleich öffnen →',
+      sub: 'Jeder Punkt ist ein unterrichtbares Thema, jeder Faden eine Voraussetzung. Die Höhe zeigt das Alter, in dem ein Thema beginnt; so wächst die Karte durch die Schuljahre nach oben. Klicken Sie auf einen Punkt, um alles hervorzuheben, was vorher kommen muss.',
+      dsDe: 'Deutschland', dsRo: 'Rumänien', all: 'Alle Fächer', core: 'Nur Kernfächer', 'coreTitle.de': 'Blendet Französisch, Latein, Musik, Kunst, Sport sowie Religion & Ethik aus',
+      dataset: 'Datensatz', language: 'Sprache', subjectsShown: 'Angezeigte Fächer', find: 'Thema suchen…', browse: 'Als Listen und Tabellen ansehen →', 'compare.de': 'Mit os-taxonomy vergleichen →',
+      'kick.de': 'Lehrplan Deutschland · Vorschule bis Abitur · Alter 5–19',
+      'lead.de': '<b>{n}</b> Themen und <b>{m}</b> Verknüpfungen über Voraussetzungen, vom Zählen und den ersten Buchstaben bis zu Analysis, Goethe und Quantenphysik. Grundschule, dann Gymnasium (G9) ab Klasse 7. Grundlage sind die KMK-Standards und die Lehrpläne der Länder.',
+      credit: "Lernlandkarte © 2026 Alexandru Prian: Datenbank ODbL 1.0, Inhalte CC BY-SA 4.0, Code MIT · baut auf der Marble Skill Taxonomy (v1) auf und enthält Daten daraus · © Generative Spark, Inc. (Marble) · ODbL 1.0 / CC BY-SA 4.0 · <a href=\"https://github.com/codingarchitect-wq/lernlandkarte\">Daten und Quellcode auf GitHub</a>", legend: 'Fächer · zum Ein- und Ausblenden klicken', legendShort: 'Fächer · {a} von {b} sichtbar', hint: '<b>Ziehen</b> zum Drehen · <b>Scrollen</b> zum Zoomen · <b>Klicken</b> auf einen Punkt',
+      before: 'Themen kommen davor', before_one: 'Thema kommt davor', traced: 'Alles, was ein Kind vorher braucht, bis zum Anfang zurückverfolgt.', start: 'Ein Startpunkt: davor muss nichts kommen.',
+      needs: 'Braucht vorher', leads: 'Führt weiter zu', nothing: 'nichts in dieser Karte', none: 'keine', counterparts: 'Entsprechungen in {x}', 'name.de': 'der deutschen Taxonomie', 'name.ro': 'der rumänischen Taxonomie', 'name.os': 'os-taxonomy',
+      rel: ['exakt', 'nah', 'teilweise', 'teilweise'], details: 'Themendetails →', path: 'Lernpfad →', cmpOs: 'Mit os vergleichen →', cmpRo: 'Mit Rumänien vergleichen →',
+      back: '← Zurück', close: 'Schließen', age: 'Alter {a}', allCourses: 'alle Kurse', lk: 'Leistungskurs', yourChild: 'Ihr Kind' },
+    ro: { h1: 'Cum se construiește învățarea', 'kick.de': 'Curriculumul german · de la Vorschule la Abitur · vârsta 5–19', 'kick.os': 'os-taxonomy · Anglia, SUA, Australia · vârsta 4–15',
+      'lead.de': '<b>{n}</b> teme și <b>{m}</b> legături între ele, de la numărat și primele litere până la analiză matematică, Goethe și fizică cuantică. Școala primară, apoi Gymnasium (G9) din Klasse 7. Construită pe baza standardelor KMK și a curriculumurilor landurilor.',
+      'lead.os': '<b>{n}</b> teme și <b>{m}</b> legături din Marble os-taxonomy, așezate la fel, pe aceeași scară de vârstă, ca să le puteți compara forma cu hărțile germană și românească.',
+      'coreTitle.de': 'Ascunde a doua limbă străină, latina, muzica, artele vizuale, sportul și religia/etica', 'compare.de': 'Compară cu os-taxonomy →', 'compare.os': 'Compară cu taxonomia germană →', cmpOs: 'Compară cu os →', cmpRo: 'Compară cu România →', allCourses: 'toate cursurile', lk: 'Leistungskurs', openCmp: 'Deschide în comparație →',
+      sub: 'Fiecare punct este o temă care se predă, iar fiecare fir, o legătură cu ce trebuie știut înainte. Înălțimea arată vârsta la care începe tema, așa că harta crește în sus de-a lungul anilor de școală. Faceți clic pe un punct pentru a evidenția tot ce trebuie învățat înainte.',
+      dsDe: 'Germania', dsRo: 'România', all: 'Toate disciplinele', core: 'Doar de bază', 'coreTitle.ro': 'Ascunde Limba franceză, Limba latină, Educație muzicală, Arte vizuale, Educație fizică și sport, Religie, Educație tehnologică și Dezvoltare personală și consiliere',
+      dataset: 'Set de date', language: 'Limba', subjectsShown: 'Discipline afișate', find: 'Caută o temă…', browse: 'Vezi ca liste și tabele →', 'compare.ro': 'Compară cu Germania →',
+      'kick.ro': 'Curriculumul românesc · de la clasa pregătitoare la Bacalaureat · vârsta 6–19',
+      'lead.ro': '<b>{n}</b> teme și <b>{m}</b> legături între ele, de la primele litere și numere din clasa pregătitoare până la Bacalaureat. Liceul urmează filiera teoretică. Construită pe baza programelor școlare naționale.',
+      credit: "Lernlandkarte © 2026 Alexandru Prian: baza de date ODbL 1.0, conținut CC BY-SA 4.0, cod MIT · se bazează pe Marble Skill Taxonomy (v1) și conține date din ea · © Generative Spark, Inc. (Marble) · ODbL 1.0 / CC BY-SA 4.0 · <a href=\"https://github.com/codingarchitect-wq/lernlandkarte\">Datele și codul pe GitHub</a>", legend: 'Discipline · clic pentru a afișa sau ascunde', legendShort: 'Discipline · {a} din {b} afișate', hint: '<b>Trageți</b> pentru a roti · <b>derulați</b> pentru zoom · <b>faceți clic</b> pe un punct',
+      before: 'teme vin înaintea acesteia', before_one: 'temă vine înaintea acesteia', traced: 'Tot ce trebuie învățat înainte, urmărit până la început.', start: 'Un punct de pornire: nu trebuie învățat nimic înainte.',
+      needs: 'Necesită înainte', leads: 'Duce mai departe la', nothing: 'nimic în această hartă', none: 'niciunul', counterparts: 'Corespondente în {x}', 'name.de': 'taxonomia germană', 'name.ro': 'taxonomia românească', 'name.os': 'os-taxonomy',
+      rel: ['identic', 'apropiat', 'parțial', 'parțial'], details: 'Detaliile temei →', path: 'Traseul de învățare →', cmpDe: 'Compară cu Germania →',
+      back: '← Înapoi', close: 'Închide', age: 'vârsta {a}', only: 'doar {x}', yourChild: 'copilul dumneavoastră' },
+  };
+  const UIL = () => LANG;
+  function GL(k, v = {}) {
+    const keys = [...(v.n === 1 ? [`${k}_one`] : []), `${k}.${S.kind}`, k];
+    for (const tb of [G18N[UIL()], G18N.en]) for (const kk of keys) if (tb[kk] != null) { const s = tb[kk]; return typeof s === 'string' ? s.replace(/\{(\w+)\}/g, (m, x) => v[x] ?? m) : s; }
+    return k;
+  }
 
-  let DS = 'de', LANG = 'de', S = SETS.de;
+  const qLang = new URLSearchParams(location.search).get('lang');
+  let DS = 'de', LANG = ['en', 'de', 'ro'].includes(qLang) ? qLang : location.hash.startsWith('#ro') ? 'ro' : 'de', S = SETS.de;
+  // inLang(map): the text in the page language, else English
+  const inLang = m => m ? (m[LANG] ?? m.en ?? Object.values(m)[0] ?? '') : '';
+  const toBrowser = own => LANG === own ? '' : '?lang=' + LANG;
+  const cmpQ = () => LANG === 'en' ? '' : '?lang=' + LANG;  // the comparison pages open in English by default
   const active = new Set(FAM.map((_, i) => i));
-  const LEVEL = { gA: 'all courses', eA: 'Leistungskurs' };
-  const gradeLab = t => !t.g ? '' : t.g[0] === t.g[1] ? (t.g[0] === 0 ? 'Vorschule' : `Kl. ${t.g[0]}`) : `${t.g[0] === 0 ? 'Vorschule' : 'Kl. ' + t.g[0]}–${t.g[1]}`;
-  const title = t => S.kind === 'de' && LANG === 'en' ? t.ne : t.n;
-  const altTitle = t => S.kind === 'de' ? (LANG === 'en' ? t.n : t.ne) : '';
-  const where = t => S.kind === 'de' ? `${t.s} · ${gradeLab(t)}${t.cl ? ' · ' + LEVEL[t.cl] : ''} · age ${t.a[0]}` : `${t.d} · age ${t.a[0]}`;
-  const prompt = q => (q || '').replace(/\{\{name\}\}/g, 'your child');
+  const deGrade = g => g === 0 ? 'Vorschule' : `Kl. ${g}`, roGrade = g => g === 0 ? 'CP' : `cl. ${ROMAN[g]}`;
+  const gradeLabOf = (t, kind) => !t.g ? '' : kind === 'ro' ? (t.g[0] === t.g[1] ? roGrade(t.g[0]) : `${roGrade(t.g[0])}–${ROMAN[t.g[1]]}`) : (t.g[0] === t.g[1] ? deGrade(t.g[0]) : `${deGrade(t.g[0])}–${t.g[1]}`);
+  const gradeLab = t => gradeLabOf(t, S.kind);
+  const nameIn = t => inLang(t.N);
+  const title = t => inLang(t.N);
+  // the dataset's own-language name, or English when the page shows the dataset's own language
+  const altTitle = t => HAS_LANG(S.kind) ? (LANG === S.kind ? t.N.en : t.N[S.kind]) || '' : '';
+  const level = t => !t.cl ? '' : S.kind === 'de' ? ' · ' + (t.cl === 'eA' ? GL('lk') : GL('allCourses')) : t.cl.length < 4 ? ' · ' + GL('only', { x: t.cl.join('/') }) : '';
+  const where = t => HAS_LANG(S.kind) ? `${t.s} · ${gradeLab(t)}${level(t)} · ${GL('age', { a: t.a[0] })}` : `${t.d} · ${GL('age', { a: t.a[0] })}`;
+  const prompt = (q, nat) => (q || '').replace(/\{\{name\}\}/g, nat ? GL('yourChild') : 'your child');
 
   // ---------- canvas ----------
   const wrap = $('#wrap'), cv = $('#cv'), ctx = cv.getContext('2d');
@@ -200,7 +264,8 @@ a { color: #6da7ec; text-decoration: none; } a:hover { text-decoration: underlin
       const cr = Math.cos(rotY), sr = Math.sin(rotY);
       proj(-R * cr, y, -R * sr, tmp, 0);
       if (!tmp[2]) continue;
-      const g = a - 5, lab = S.kind === 'de' ? `age ${a}${g === 0 ? ' · Vorschule' : g === 11 ? ' · Kl. 11 E-Phase' : g === 12 ? ' · Kl. 12 Q1' : g === 13 ? ' · Kl. 13 Q2' : g > 0 ? ' · Kl. ' + g : ''}` : `age ${a}`;
+      const g = a - 5, gr = a - 6, ag = GL('age', { a }), lab = S.kind === 'de' ? `${ag}${g === 0 ? ' · Vorschule' : g === 11 ? ' · Kl. 11 E-Phase' : g === 12 ? ' · Kl. 12 Q1' : g === 13 ? ' · Kl. 13 Q2' : g > 0 ? ' · Kl. ' + g : ''}`
+        : S.kind === 'ro' ? `${ag}${gr === 0 ? ' · clasa pregătitoare' : gr > 0 && gr <= 12 ? ' · cl. ' + ROMAN[gr] : ''}` : ag;
       ctx.fillStyle = 'rgba(137,135,129,0.85)'; ctx.fillText(lab, tmp[0] - 14, tmp[1]);
     }
   }
@@ -293,7 +358,7 @@ a { color: #6da7ec; text-decoration: none; } a:hover { text-decoration: underlin
   const tip = $('#tip');
   function showTip(i) {
     const t = S.N[i];
-    tip.innerHTML = `<div class="ts"><span class="sw" style="background:${FAM[t.f].color}"></span>${esc(where(t))}</div><div class="tt">${esc(title(t))}</div>${altTitle(t) ? `<div class="ta">${esc(altTitle(t))}</div>` : ''}${t.q ? `<div class="q">${esc(prompt(t.q))}</div>` : ''}`;
+    tip.innerHTML = `<div class="ts"><span class="sw" style="background:${FAM[t.f].color}"></span>${esc(where(t))}</div><div class="tt">${esc(title(t))}</div>${altTitle(t) ? `<div class="ta">${esc(altTitle(t))}</div>` : ''}${t.Q ? `<div class="q">${esc(prompt(inLang(t.Q), t.Q[LANG] != null))}</div>` : ''}`;
     tip.classList.add('on');
   }
   function placeTip(e) {
@@ -316,22 +381,29 @@ a { color: #6da7ec; text-decoration: none; } a:hover { text-decoration: underlin
   function select(i, push) {
     if (push && sel >= 0 && sel !== i) hist.push([DS, sel]);
     sel = i; lin = lineage(i); hideTip(); faceCamera(i); idleSpin(); renderCard();
-    history.replaceState(null, '', (DS === 'de' ? '#t/' : '#os/') + S.N[i].k);
+    history.replaceState(null, '', ({ de: '#t/', os: '#os/', ro: '#ro/' })[DS] + S.N[i].k);
   }
   function clearSel() { sel = -1; lin = null; hist.length = 0; target = { rotY, tilt, zoom: 1, panY: 0 }; card.classList.remove('on'); idleSpin(); history.replaceState(null, '', location.pathname + location.search); }
-  const rows = (idxs, set = S) => idxs.length ? [...idxs].sort((a, b) => set.N[a].a[0] - set.N[b].a[0]).map(j => { const m = set.N[j]; return `<button type="button" class="row" data-j="${j}" data-set="${set.kind}"><span class="sw" style="background:${FAM[m.f].color}"></span><span class="rt">${esc(set.kind === 'de' && LANG === 'en' ? m.ne : m.n)}</span><span class="ra">${set.kind === 'de' ? gradeLab(m) : 'age ' + m.a[0]}</span></button>`; }).join('') : '<div class="empty">nothing in this map</div>';
+  const rows = (idxs, set = S) => idxs.length ? [...idxs].sort((a, b) => set.N[a].a[0] - set.N[b].a[0]).map(j => { const m = set.N[j]; return `<button type="button" class="row" data-j="${j}" data-set="${set.kind}"><span class="sw" style="background:${FAM[m.f].color}"></span><span class="rt">${esc(nameIn(m, set.kind))}</span><span class="ra">${HAS_LANG(set.kind) ? gradeLabOf(m, set.kind) : GL('age', { a: m.a[0] })}</span></button>`; }).join('') : `<div class="empty">${esc(GL('nothing'))}</div>`;
   function renderCard() {
-    const t = S.N[sel], n = lin.nodes.size - 1, other = S.kind === 'de' ? SETS.os : SETS.de;
-    const cross = (CROSS[S.kind].get(sel) || []).sort((a, b) => a[1] - b[1]);
-    card.innerHTML = `<div class="top"><div class="ks"><span class="sw" style="background:${FAM[t.f].color}"></span>${esc(where(t))}</div><div class="btns">${hist.length ? '<button type="button" data-act="back">← Back</button>' : ''}<button type="button" data-act="close" aria-label="Close">✕</button></div></div>
+    const t = S.N[sel], n = lin.nodes.size - 1;
+    const others = (S.kind === 'de' ? ['ro', 'os'] : ['de']).filter(k => SETS[k]);
+    const cross = k => (CROSS[S.kind].get(sel) || []).filter(x => x[0] === k).sort((a, b) => a[2] - b[2]);
+    const crossHTML = k => { const xs = cross(k), o = SETS[k]; return `<h3>${esc(GL('counterparts', { x: GL('name.' + k) }))} · ${xs.length}</h3>${xs.length ? xs.map(([, j, r]) => { const m = o.N[j]; return `<button type="button" class="row" data-j="${j}" data-set="${k}"><span class="sw" style="background:${FAM[m.f].color}"></span><span class="rt">${esc(nameIn(m, k))} <span class="ra">· ${esc(GL('rel')[r])}</span></span><span class="ra">${HAS_LANG(k) ? gradeLabOf(m, k) + ' · ' : ''}${esc(GL('age', { a: m.a[0] }))}</span></button>`; }).join('') : `<div class="empty">${esc(GL('none'))}</div>`}`; };
+    const GO = {
+      de: `<a href="index.html${toBrowser('de')}#t/${esc(t.k)}">${esc(GL('details'))}</a><a href="index.html${toBrowser('de')}#path/${esc(t.k)}">${esc(GL('path'))}</a><a href="../comparison/index.html${cmpQ()}#de/${esc(t.k)}">${esc(GL('cmpOs'))}</a>${SETS.ro ? `<a href="../comparison-ro-de/index.html${cmpQ()}#de/${esc(t.k)}">${esc(GL('cmpRo'))}</a>` : ''}`,
+      ro: `<a href="../ro-taxonomy/index.html${toBrowser('ro')}#t/${esc(t.k)}">${esc(GL('details'))}</a><a href="../ro-taxonomy/index.html${toBrowser('ro')}#path/${esc(t.k)}">${esc(GL('path'))}</a><a href="../comparison-ro-de/index.html${cmpQ()}#ro/${esc(t.k)}">${esc(GL('cmpDe'))}</a>`,
+      os: `<a href="../comparison/index.html${cmpQ()}#os/${esc(t.k)}">${esc(GL('openCmp'))}</a>`,
+    };
+    card.innerHTML = `<div class="top"><div class="ks"><span class="sw" style="background:${FAM[t.f].color}"></span>${esc(where(t))}</div><div class="btns">${hist.length ? `<button type="button" data-act="back">${esc(GL('back'))}</button>` : ''}<button type="button" data-act="close" aria-label="${esc(GL('close'))}">✕</button></div></div>
       <h2>${esc(title(t))}</h2>${altTitle(t) ? `<p class="alt">${esc(altTitle(t))}</p>` : ''}
-      <div class="big"><b>${n}</b><span>${n === 1 ? 'topic comes' : 'topics come'} before this one</span></div>
-      <p class="note">${n ? 'Everything a child needs first, traced all the way back to the start.' : 'A starting point: nothing has to come before it.'}</p>
-      ${t.ds ? `<p class="desc">${esc(t.ds)}</p>` : t.q ? `<p class="desc">${esc(prompt(t.q))}</p>` : ''}
-      <h3>Needs first · ${S.pre[sel].length}</h3>${rows(S.pre[sel])}
-      <h3>Leads on to · ${S.next[sel].length}</h3>${rows(S.next[sel])}
-      ${other ? `<h3>${S.kind === 'de' ? 'Counterparts in os-taxonomy' : 'Counterparts in the German taxonomy'} · ${cross.length}</h3>${cross.length ? cross.map(([j, r]) => { const m = other.N[j]; return `<button type="button" class="row" data-j="${j}" data-set="${other.kind}"><span class="sw" style="background:${FAM[m.f].color}"></span><span class="rt">${esc(other.kind === 'de' && LANG === 'en' ? m.ne : m.n)} <span class="ra">· ${RELN[r]}</span></span><span class="ra">age ${m.a[0]}</span></button>`; }).join('') : '<div class="empty">none</div>'}` : ''}
-      <div class="go">${S.kind === 'de' ? `<a href="index.html#t/${esc(t.k)}">Topic details →</a><a href="index.html#path/${esc(t.k)}">Learning path →</a><a href="../comparison/index.html#de/${esc(t.k)}">Compare →</a>` : `<a href="../comparison/index.html#os/${esc(t.k)}">Open in the comparison →</a>`}</div>`;
+      <div class="big"><b>${n.toLocaleString(UIL())}</b><span>${esc(GL('before', { n }))}</span></div>
+      <p class="note">${esc(GL(n ? 'traced' : 'start'))}</p>
+      ${t.DS ? `<p class="desc">${esc(inLang(t.DS))}</p>` : t.Q ? `<p class="desc">${esc(prompt(inLang(t.Q), t.Q[LANG] != null))}</p>` : ''}
+      <h3>${esc(GL('needs'))} · ${S.pre[sel].length}</h3>${rows(S.pre[sel])}
+      <h3>${esc(GL('leads'))} · ${S.next[sel].length}</h3>${rows(S.next[sel])}
+      ${others.map(crossHTML).join('')}
+      <div class="go">${GO[S.kind]}</div>`;
     card.classList.add('on'); card.scrollTop = 0;
   }
   card.addEventListener('click', e => {
@@ -357,62 +429,72 @@ a { color: #6da7ec; text-decoration: none; } a:hover { text-decoration: underlin
     if (collapsed && clash()) hero.classList.add('compact');
     const fc = CORE ? S.fcountCore : S.fcount, ids = FAM.map((_, i) => i).filter(i => fc[i]);
     $('#lgBtn').setAttribute('aria-expanded', String(!collapsed));
-    $('#lgTxt').textContent = collapsed ? `Subjects · ${ids.filter(i => active.has(i)).length} of ${ids.length} shown` : 'Subjects · click to show or hide';
+    $('#lgTxt').textContent = collapsed ? GL('legendShort', { a: ids.filter(i => active.has(i)).length, b: ids.length }) : GL('legend');
   }
   $('#lgBtn').addEventListener('click', () => { lgOpen = lg.classList.contains('collapsed'); fitLegend(); });
   addEventListener('resize', fitLegend);
   function renderLegend() {
     const fc = CORE ? S.fcountCore : S.fcount;
-    $('#chips').innerHTML = FAM.map((f, i) => fc[i] ? `<button type="button" class="chip ${active.has(i) ? '' : 'off'}" data-f="${i}" aria-pressed="${active.has(i)}"><span class="sw" style="background:${f.color}"></span><span class="nm">${esc(S.kind === 'de' ? (CORE ? f.de.replace(/ · (Französisch|Latein)/g, '') : f.de) : f.os)}</span><span class="ct">${fc[i]}</span></button>` : '').join('');
+    $('#chips').innerHTML = FAM.map((f, i) => fc[i] ? `<button type="button" class="chip ${active.has(i) ? '' : 'off'}" data-f="${i}" aria-pressed="${active.has(i)}"><span class="sw" style="background:${f.color}"></span><span class="nm">${esc(D.famLabels?.[S.kind] ? inLang(D.famLabels[S.kind][i][CORE ? 'core' : 'all']) : f.os)}</span><span class="ct">${fc[i]}</span></button>` : '').join('');
   }
   $('#chips').addEventListener('click', e => { const c = e.target.closest('[data-f]'); if (!c) return; const f = +c.dataset.f; active.has(f) ? active.delete(f) : active.add(f); renderLegend(); });
   function setTexts() {
-    const hid = t => CORE && t.x, n = S.N.filter(t => !hid(t)).length.toLocaleString('en'), m = S.E.filter(([a, b]) => !hid(S.N[a]) && !hid(S.N[b])).length.toLocaleString('en');
-    if (S.kind === 'de') {
-      $('#kick').textContent = 'German curriculum · Vorschule to the Abitur · ages 5–19';
-      $('#lead').innerHTML = `<b>${n}</b> topics and <b>${m}</b> prerequisite links, from counting and first letters to calculus, Goethe and quantum physics. Primary school, then the Gymnasium (G9) from Klasse 7. Built from the KMK standards and Länder curricula.`;
-    } else {
-      $('#kick').textContent = 'os-taxonomy · England, US, Australia · ages 4–15';
-      $('#lead').innerHTML = `<b>${n}</b> topics and <b>${m}</b> prerequisite links from the Marble os-taxonomy, laid out the same way on the same age scale so you can compare its shape with the German map.`;
-    }
+    const hid = t => CORE && t.x, loc = UIL(), n = S.N.filter(t => !hid(t)).length.toLocaleString(loc), m = S.E.filter(([a, b]) => !hid(S.N[a]) && !hid(S.N[b])).length.toLocaleString(loc);
+    $('#h1').innerHTML = esc(GL('h1')) + '<span class="stop">.</span>';
+    for (const b of document.querySelectorAll('#lang button')) b.setAttribute('aria-pressed', b.dataset.lang === LANG);
+    $('#kick').textContent = GL('kick');
+    $('#lead').innerHTML = GL('lead', { n, m });
+    document.documentElement.lang = UIL();
+    $('#gsub').textContent = GL('sub'); $('#hint').innerHTML = GL('hint'); $('#credit').innerHTML = GL('credit');
+    $('#ds').setAttribute('aria-label', GL('dataset')); $('#lang').setAttribute('aria-label', GL('language')); $('#tier').setAttribute('aria-label', GL('subjectsShown'));
+    if ($('#ds [data-ds="de"]')) $('#ds [data-ds="de"]').textContent = GL('dsDe');
+    if ($('#ds [data-ds="ro"]')) $('#ds [data-ds="ro"]').textContent = GL('dsRo');
+    $('#tier [data-tier="all"]').textContent = GL('all'); $('#tier [data-tier="core"]').textContent = GL('core'); $('#tier [data-tier="core"]').title = GL('coreTitle');
+    $('#q').placeholder = GL('find'); $('#q').setAttribute('aria-label', GL('find'));
+    const L = { de: ['index.html', '../comparison/index.html'], ro: ['../ro-taxonomy/index.html', '../comparison-ro-de/index.html'], os: ['index.html', '../comparison/index.html'] }[S.kind];
+    const lq = S.kind === 'ro' ? toBrowser('ro') : toBrowser('de');
+    $('#lnkBrowse').setAttribute('href', L[0] + lq); $('#lnkBrowse').textContent = GL('browse');
+    $('#lnkCompare').setAttribute('href', L[1] + cmpQ()); $('#lnkCompare').textContent = GL('compare');
+    tierLinks();
   }
   function setDS(ds, reset = true) {
     if (!SETS[ds]) return;
     DS = ds; S = SETS[ds];
     for (const b of document.querySelectorAll('#ds button')) b.setAttribute('aria-pressed', b.dataset.ds === ds);
-    $('#lang').style.visibility = ds === 'de' ? 'visible' : 'hidden';
-    $('#tier').style.visibility = ds === 'de' ? 'visible' : 'hidden';
+    $('#tier').style.visibility = HAS_LANG(ds) ? 'visible' : 'hidden';
     hover = -1; hideTip();
     if (reset) { clearSel(); growStart = performance.now(); grow = reduce ? 1 : 0; }
     else { sel = -1; lin = null; }
     renderLegend(); setTexts(); fitLegend();
   }
+  function tierLinks() { for (const a of document.querySelectorAll('a.xl')) { const v = new URL(a.getAttribute('href'), location.href); CORE ? v.searchParams.set('subjects', 'core') : v.searchParams.delete('subjects'); a.href = v.href; } }
   function setTier(core) {
     CORE = core;
     for (const b of document.querySelectorAll('#tier button')) b.setAttribute('aria-pressed', (b.dataset.tier === 'core') === CORE);
     const u = new URL(location.href); CORE ? u.searchParams.set('subjects', 'core') : u.searchParams.delete('subjects'); history.replaceState(null, '', u.href);
-    for (const a of document.querySelectorAll('a.xl')) { const v = new URL(a.getAttribute('href'), location.href); CORE ? v.searchParams.set('subjects', 'core') : v.searchParams.delete('subjects'); a.href = v.href; }
+    tierLinks();
     if (sel >= 0 && CORE && S.N[sel].x) clearSel();
     renderLegend(); setTexts(); fitLegend();
   }
   $('#tier').addEventListener('click', e => { const b = e.target.closest('[data-tier]'); if (b) setTier(b.dataset.tier === 'core'); });
   $('#ds').addEventListener('click', e => { const b = e.target.closest('[data-ds]'); if (b && b.dataset.ds !== DS) setDS(b.dataset.ds); });
-  $('#lang').addEventListener('click', e => { const b = e.target.closest('[data-lang]'); if (!b) return; LANG = b.dataset.lang; for (const x of document.querySelectorAll('#lang button')) x.setAttribute('aria-pressed', x === b); if (sel >= 0) renderCard(); });
+  $('#lang').addEventListener('click', e => { const b = e.target.closest('[data-lang]'); if (!b) return; LANG = b.dataset.lang; for (const x of document.querySelectorAll('#lang button')) x.setAttribute('aria-pressed', x === b); setTexts(); fitLegend(); if (sel >= 0) renderCard(); });
   const q = $('#q'), sug = $('#sug');
   q.addEventListener('input', () => {
     const s = q.value.trim().toLowerCase(); if (!s) { sug.hidden = true; return; }
-    const hits = S.N.map((t, i) => [t, i]).filter(([t]) => !(CORE && t.x) && ((t.n || '') + ' ' + (t.ne || '') + ' ' + t.d).toLowerCase().includes(s))
+    const hits = S.N.map((t, i) => [t, i]).filter(([t]) => !(CORE && t.x) && (Object.values(t.N).join(' ') + ' ' + t.d).toLowerCase().includes(s))
       .sort((a, b) => ((b[0].n.toLowerCase().startsWith(s)) - (a[0].n.toLowerCase().startsWith(s))) || a[0].a[0] - b[0].a[0]).slice(0, 12);
-    sug.innerHTML = hits.map(([t, i]) => `<button type="button" class="row" data-j="${i}" style="padding:7px 12px"><span class="sw" style="background:${FAM[t.f].color}"></span><span class="rt">${esc(title(t))}</span><span class="ra">${esc(S.kind === 'de' ? gradeLab(t) : 'age ' + t.a[0])}</span></button>`).join('') || '<div class="empty" style="padding:8px 12px">No match</div>';
+    sug.innerHTML = hits.map(([t, i]) => `<button type="button" class="row" data-j="${i}" style="padding:7px 12px"><span class="sw" style="background:${FAM[t.f].color}"></span><span class="rt">${esc(title(t))}</span><span class="ra">${esc(HAS_LANG(S.kind) ? gradeLab(t) : GL('age', { a: t.a[0] }))}</span></button>`).join('') || '<div class="empty" style="padding:8px 12px">No match</div>';
     sug.hidden = false;
   });
   sug.addEventListener('click', e => { const r = e.target.closest('[data-j]'); if (!r) return; sug.hidden = true; q.value = ''; growNow(); select(+r.dataset.j, true); });
   document.addEventListener('keydown', e => { if (e.key !== 'Escape') return; if (!sug.hidden) sug.hidden = true; else if (sel >= 0) clearSel(); });
 
-  // deep links: #t/<german key> or #os/<os id>
+  // deep links: #t/<German key>, #ro/<Romanian key>, #os/<os id>; #ro or #os alone switch the dataset
   function route() {
     const [kind, ref] = decodeURIComponent(location.hash.slice(1)).split('/');
-    const ds = kind === 't' ? 'de' : kind === 'os' ? 'os' : null; if (!ds || !SETS[ds]) return;
+    const ds = kind === 't' ? 'de' : kind === 'os' ? 'os' : kind === 'ro' ? 'ro' : null; if (!ds || !SETS[ds]) return;
+    if (!ref) { if (ds !== DS) setDS(ds); return; }
     const i = SETS[ds].N.findIndex(t => t.k === ref); if (i < 0) return;
     if (ds !== DS) setDS(ds, false); growNow(); select(i, false);
   }

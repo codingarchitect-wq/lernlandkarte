@@ -1,5 +1,5 @@
-# Build and check the taxonomy, then publish the start page, the browser, the 3D map
-# and the comparison explorer to GitHub Pages.
+# Build and check the taxonomies, then publish the start page, the German and Romanian browsers,
+# the 3D map and the two comparison explorers to GitHub Pages.
 name: Publish pages
 
 on:
@@ -26,15 +26,23 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 22
-      - name: Build, validate and render the pages
+      - name: Build and validate the German taxonomy
         working-directory: de-taxonomy
+        run: npm run build && npm run validate
+      - name: Build, validate and render the Romanian taxonomy and its comparison with the German one
+        working-directory: ro-taxonomy
         run: npm run all
+      - name: Render the German pages, the 3D map (all three taxonomies) and the os-taxonomy comparison
+        working-directory: de-taxonomy
+        run: npm run browser && npm run graph && npm run compare
       - name: Assemble the site
         run: |
-          mkdir -p _site/de-taxonomy _site/comparison
+          mkdir -p _site/de-taxonomy _site/comparison _site/ro-taxonomy _site/comparison-ro-de
           cp index.html _site/
           cp de-taxonomy/index.html de-taxonomy/graph.html _site/de-taxonomy/
           cp comparison/index.html _site/comparison/
+          cp ro-taxonomy/index.html _site/ro-taxonomy/
+          cp comparison-ro-de/index.html _site/comparison-ro-de/
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:

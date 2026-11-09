@@ -48,9 +48,10 @@ const topics = [], byKey = new Map();
 for (const g of groups) {
   for (const s of g.subjects) {
     const prev = subjects.get(s.name);
-    // the entry that reaches the highest Klasse describes the whole subject
-    const desc = prev && prev.grades[1] >= s.grades[1] ? prev.description : s.description || prev?.description;
-    subjects.set(s.name, prev ? { ...prev, description: desc, grades: [Math.min(prev.grades[0], s.grades[0]), Math.max(prev.grades[1], s.grades[1])] } : { ...s, group: g.group });
+    // the entry that reaches the highest Klasse describes the whole subject (with its translations)
+    const keepPrev = prev && prev.grades[1] >= s.grades[1];
+    const pick = f => keepPrev ? prev[f] : s[f] || prev?.[f];
+    subjects.set(s.name, prev ? { ...prev, nameRo: prev.nameRo || s.nameRo, description: pick('description'), descriptionDe: pick('descriptionDe'), descriptionRo: pick('descriptionRo'), grades: [Math.min(prev.grades[0], s.grades[0]), Math.max(prev.grades[1], s.grades[1])] } : { ...s, group: g.group });
   }
   for (const d of g.domains) domains.set(`${d.subject}|${d.name}`, d);
   for (const s of g.sources) {
@@ -120,7 +121,7 @@ const SUBJECT_ALIASES = { 'Informatik': 'Informatik & Medienbildung', 'Medienbil
 const extReport = [];
 const edges = [];
 for (const t of topics) {
-  for (const p of t.prerequisites) edges.push({ topicId: t.id, prerequisiteId: byKey.get(p.key).id, strength: p.strength, reason: p.reason || null, origin: 'authored' });
+  for (const p of t.prerequisites) edges.push({ topicId: t.id, prerequisiteId: byKey.get(p.key).id, strength: p.strength, reason: p.reason || null, reasonDe: p.reasonDe || null, reasonRo: p.reasonRo || null, origin: 'authored' });
   for (const x of t.externalPrerequisites || []) {
     const subject = SUBJECT_ALIASES[x.subject] || x.subject;
     const okey = `${t.key}|${x.concept}`;
@@ -134,7 +135,7 @@ for (const t of topics) {
       if (cands.length && cands[0][0] >= 4) { chosen = cands[0][1]; score = cands[0][0]; how = 'bm25'; }
     }
     extReport.push({ topic: t.key, subject, concept: x.concept, strength: x.strength, resolvedTo: chosen?.key || null, how, score: +score.toFixed(2), alternatives: alts });
-    if (chosen) edges.push({ topicId: t.id, prerequisiteId: chosen.id, strength: x.strength, reason: x.reason || `Builds on ${chosen.name}`, origin: how === 'override' ? 'external-override' : 'external-bm25' });
+    if (chosen) edges.push({ topicId: t.id, prerequisiteId: chosen.id, strength: x.strength, reason: x.reason || `Builds on ${chosen.name}`, reasonDe: x.reasonDe || null, reasonRo: x.reasonRo || null, origin: how === 'override' ? 'external-override' : 'external-bm25' });
   }
 }
 // dedupe edges (keep hard over soft)
@@ -193,14 +194,15 @@ const outTopics = topics
       id: t.id, key: t.key, type: t.type,
       subject: t.subject, subjectEn: subj?.nameEn || null,
       domain: t.domain, domainEn: d?.nameEn || null,
-      name: t.name, nameDe: t.nameDe, description: t.description,
+      name: t.name, nameDe: t.nameDe, nameRo: t.nameRo || null, description: t.description, descriptionDe: t.descriptionDe || null, descriptionRo: t.descriptionRo || null,
       gradeStart: t.gradeStart, gradeEnd: t.gradeEnd, stage: stageOf(t.gradeStart), courseLevel: t.gradeStart >= 11 ? t.courseLevel : null,
       ageRangeStart: t.gradeStart + 5, ageRangeEnd: t.gradeEnd + 6,
       centrality: +(reach.get(t.id) / maxReach).toFixed(4),
-      evidence: t.evidence, assessmentPrompt: t.assessmentPrompt,
+      evidence: t.evidence, evidenceDe: t.evidenceDe || null, evidenceRo: t.evidenceRo || null,
+      assessmentPrompt: t.assessmentPrompt, assessmentPromptDe: t.assessmentPromptDe || null, assessmentPromptRo: t.assessmentPromptRo || null,
       standards: [...t.standards].sort(),
       germanSpecific: !!t.germanSpecific,
-      laenderNotes: t.laenderNotes || null,
+      laenderNotes: t.laenderNotes || null, laenderNotesDe: t.laenderNotesDe || null, laenderNotesRo: t.laenderNotesRo || null,
     };
   })
   .sort((a, b) => a.subject.localeCompare(b.subject) || a.gradeStart - b.gradeStart || a.key.localeCompare(b.key));
@@ -211,20 +213,20 @@ const curricula = [...sources.values()].sort((a, b) => a.slug.localeCompare(b.sl
   slug: s.slug, country: s.country || 'DE', region: s.region ?? null, name: s.name, version: s.version,
   sourceUrl: s.sourceUrl || null, level: s.level || null, textIncluded: false,
   license: 'Codes constructed by this project; titles are short paraphrases (not official text). Upstream terms apply to the official documents.',
-  notes: s.notes || null,
+  notes: s.notes || null, notesDe: s.notesDe || null, notesRo: s.notesRo || null,
   topicCount: s.standards.length,
-  topics: s.standards.map(st => ({ key: `${s.slug}:${st.code}`, code: st.code, data: { area: st.area || null, titleDe: st.titleDe || null, titleEn: st.titleEn || null, grades: st.grades ?? null } })),
+  topics: s.standards.map(st => ({ key: `${s.slug}:${st.code}`, code: st.code, data: { area: st.area || null, titleDe: st.titleDe || null, titleEn: st.titleEn || null, titleRo: st.titleRo || null, grades: st.grades ?? null } })),
 }));
 
 const crosswalk = [];
-for (const t of topics) for (const m of t.osMatches) crosswalk.push({ deId: t.id, deKey: t.key, osId: m.id, relation: m.relation, note: m.note || null });
+for (const t of topics) for (const m of t.osMatches) crosswalk.push({ deId: t.id, deKey: t.key, osId: m.id, relation: m.relation, note: m.note || null, noteDe: m.noteDe || null, noteRo: m.noteRo || null });
 
-const outClusters = clusters.map(c => ({ subject: c.subject, domain: c.domain, gradeStart: c.gradeStart, ageRangeStart: c.gradeStart + 5, summary: c.summary, summaryDe: c.summaryDe }))
+const outClusters = clusters.map(c => ({ subject: c.subject, domain: c.domain, gradeStart: c.gradeStart, ageRangeStart: c.gradeStart + 5, summary: c.summary, summaryDe: c.summaryDe, summaryRo: c.summaryRo || null }))
   .sort((a, b) => a.subject.localeCompare(b.subject) || a.domain.localeCompare(b.domain) || a.gradeStart - b.gradeStart);
 
 const outSubjects = [...subjects.values()].map(s => ({
-  name: s.name, nameEn: s.nameEn, tier: TIER[s.name] || null, grades: s.grades, description: s.description || null,
-  domains: [...domains.values()].filter(d => d.subject === s.name).map(d => ({ name: d.name, nameEn: d.nameEn, basis: d.basis || null, topicCount: outTopics.filter(t => t.subject === s.name && t.domain === d.name).length })),
+  name: s.name, nameEn: s.nameEn, nameRo: s.nameRo || null, tier: TIER[s.name] || null, grades: s.grades, description: s.description || null, descriptionDe: s.descriptionDe || null, descriptionRo: s.descriptionRo || null,
+  domains: [...domains.values()].filter(d => d.subject === s.name).map(d => ({ name: d.name, nameEn: d.nameEn, nameRo: d.nameRo || null, basis: d.basis || null, basisDe: d.basisDe || null, basisRo: d.basisRo || null, topicCount: outTopics.filter(t => t.subject === s.name && t.domain === d.name).length })),
   topicCount: outTopics.filter(t => t.subject === s.name).length,
 })).sort((a, b) => b.topicCount - a.topicCount);
 

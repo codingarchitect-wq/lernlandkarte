@@ -1,15 +1,76 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "German Curriculum Taxonomy — dependencies",
-  "type": "object", "required": ["version", "edgeCount", "dependencies"], "additionalProperties": false,
-  "properties": {
-    "version": { "type": "string" }, "note": { "type": "string" }, "edgeCount": { "type": "integer" },
-    "dependencies": { "type": "array", "items": {
-      "type": "object", "required": ["topicId", "prerequisiteId", "strength"], "additionalProperties": false,
-      "properties": {
-        "topicId": { "type": "string", "pattern": "^de_" }, "prerequisiteId": { "type": "string", "pattern": "^de_" },
-        "strength": { "enum": ["hard", "soft"] }, "reason": { "type": ["string", "null"] },
-        "origin": { "enum": ["authored", "external-bm25", "external-override"], "description": "authored in-subject, or a cross-subject prerequisite resolved from a concept description" }
-      } } }
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "German Curriculum Taxonomy — dependencies",
+ "type": "object",
+ "required": [
+  "version",
+  "edgeCount",
+  "dependencies"
+ ],
+ "additionalProperties": false,
+ "properties": {
+  "version": {
+   "type": "string"
+  },
+  "note": {
+   "type": "string"
+  },
+  "edgeCount": {
+   "type": "integer"
+  },
+  "dependencies": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "topicId",
+     "prerequisiteId",
+     "strength"
+    ],
+    "additionalProperties": false,
+    "properties": {
+     "topicId": {
+      "type": "string",
+      "pattern": "^de_"
+     },
+     "prerequisiteId": {
+      "type": "string",
+      "pattern": "^de_"
+     },
+     "strength": {
+      "enum": [
+       "hard",
+       "soft"
+      ]
+     },
+     "reason": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "origin": {
+      "enum": [
+       "authored",
+       "external-bm25",
+       "external-override"
+      ],
+      "description": "authored in-subject, or a cross-subject prerequisite resolved from a concept description"
+     },
+     "reasonDe": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "reasonRo": {
+      "type": [
+       "string",
+       "null"
+      ]
+     }
+    }
+   }
   }
+ }
 }

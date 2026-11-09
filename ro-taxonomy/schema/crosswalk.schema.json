@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Romanian Curriculum Taxonomy — crosswalk to the German taxonomy",
+  "type": "object", "required": ["version", "count", "links"], "additionalProperties": false,
+  "properties": {
+    "version": { "type": "string" }, "deTaxonomyVersion": { "type": "string" }, "note": { "type": "string" }, "count": { "type": "integer" },
+    "links": { "type": "array", "items": {
+      "type": "object", "required": ["roId", "roKey", "deId", "deKey", "relation"], "additionalProperties": false,
+      "properties": {
+        "roId": { "type": "string", "pattern": "^ro_" }, "roKey": { "type": "string" },
+        "deId": { "type": "string", "pattern": "^de_" }, "deKey": { "type": "string" },
+        "relation": { "enum": ["exact", "close", "broader", "narrower", "related"], "description": "From the Romanian topic's view: broader = the German topic is broader; narrower = it covers only part" },
+        "note": { "type": ["string", "null"] },
+        "noteDe": { "type": ["string", "null"], "description": "German translation of note" },
+        "noteRo": { "type": ["string", "null"], "description": "Romanian translation of note" }
+      } } }
+  }
+}

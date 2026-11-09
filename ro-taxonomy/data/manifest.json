@@ -1,0 +1,78 @@
+{
+ "dataset": "Romanian Curriculum Taxonomy (clasa pregătitoare – clasa a XII-a)",
+ "taxonomyVersion": "ro-v1",
+ "generatedFrom": [
+  "liceu-arte-sport.json",
+  "liceu-limbi-tic.json",
+  "liceu-matematica.json",
+  "liceu-romana.json",
+  "liceu-societate.json",
+  "liceu-stiinte.json",
+  "pg-arte-sport.json",
+  "pg-limbi-tic.json",
+  "pg-matematica.json",
+  "pg-romana.json",
+  "pg-societate.json",
+  "pg-stiinte.json"
+ ],
+ "counts": {
+  "topics": 2075,
+  "topicsBySubject": {
+   "Arte vizuale": 50,
+   "Biologie": 115,
+   "Chimie": 97,
+   "Dezvoltare personală și consiliere": 52,
+   "Educație civică și socială": 41,
+   "Educație fizică și sport": 69,
+   "Educație muzicală": 52,
+   "Educație tehnologică": 24,
+   "Fizică": 117,
+   "Geografie": 113,
+   "Informatică și TIC": 106,
+   "Istorie": 164,
+   "Limba engleză": 129,
+   "Limba franceză": 54,
+   "Limba latină": 46,
+   "Limba și literatura română": 327,
+   "Matematică": 350,
+   "Religie": 58,
+   "Științe ale naturii": 60,
+   "Științe socio-umane": 51
+  },
+  "dependencies": 3847,
+  "hardDependencies": 2248,
+  "curricula": 88,
+  "curriculumStandards": 2731,
+  "topicStandardLinks": 5465,
+  "clusters": 475,
+  "crosswalkLinks": 2909,
+  "topicsWithDeMatch": 1878,
+  "romaniaSpecificTopics": 216
+ },
+ "files": {
+  "topics.json": {
+   "sha256": "18c10f2e7e47b5c570f46a66ef87657d261fe02584fb32c3df2160d7ae63d136",
+   "bytes": 6079860
+  },
+  "dependencies.json": {
+   "sha256": "2a6f9657ae36acfda3b9a1080fe9e6902fcdb888a040e921a544130245b548eb",
+   "bytes": 1227878
+  },
+  "curriculum-standards.json": {
+   "sha256": "02d7c5fe6e321faadc5a85abcb4fbd4dda906a6458611b09a76056d0b1819916",
+   "bytes": 1384446
+  },
+  "clusters.json": {
+   "sha256": "99c5d564fa8a89bfdef0d7a72e4f1b7f19cd475a7e7148c09a87b5d5a2917bb9",
+   "bytes": 335758
+  },
+  "subjects.json": {
+   "sha256": "456fc66855fcc35b19e3584cf047eedbe9831f3069ca4ef302f34290eff68c57",
+   "bytes": 161478
+  },
+  "crosswalk-de-taxonomy.json": {
+   "sha256": "23314dfc3c95707227002d5cecd11695deaf2c5dd9479d16967c93f4867501fb",
+   "bytes": 765107
+  }
+ }
+}

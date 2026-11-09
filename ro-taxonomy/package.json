@@ -1,0 +1,20 @@
+{
+  "name": "ro-curriculum-taxonomy",
+  "version": "0.1.0",
+  "description": "A graph-structured taxonomy of the Romanian school curriculum (clasa pregătitoare to clasa a XII-a, theoretical liceu), on the same data model as the German taxonomy, with a crosswalk to it.",
+  "private": true,
+  "license": "(MIT AND ODbL-1.0 AND CC-BY-SA-4.0)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codingarchitect-wq/lernlandkarte.git"
+  },
+  "type": "module",
+  "scripts": {
+    "check": "node tools/check-authoring.mjs --all --quiet",
+    "build": "node tools/build.mjs",
+    "validate": "node scripts/validate.mjs",
+    "browser": "node scripts/build-browser.mjs",
+    "compare": "node scripts/compare.mjs && node scripts/build-explorer.mjs",
+    "all": "npm run build && npm run validate && npm run browser && npm run compare"
+  }
+}

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>German curriculum vs os-taxonomy — comparison explorer</title>
+<title>German curriculum taxonomy vs os-taxonomy</title>
 <style>
 .viz-root {
   color-scheme: light;
@@ -112,108 +112,69 @@ a { color: var(--series-1); }
 .pdg p { font-size: 13px; line-height: 1.5; margin: 4px 0 6px; }
 table.mini { width: auto; margin-top: 10px; } table.mini td, table.mini th { padding: 3px 12px 3px 0; border-bottom: 1px solid var(--grid); }
 svg text.vlab { fill: var(--text-primary); font-size: 11px; font-weight: 600; }
+.k { color: var(--muted); font-size: 12px; }
+.langtoggle { margin-left: 8px; }
+.filters input[type=search] { min-width: 300px; }
 </style>
 </head>
 <body>
 <div class="viz-root">
-<button class="themebtn" id="theme" type="button" aria-label="Toggle light or dark theme">Theme</button>
-<div class="subjtoggle" role="group" aria-label="Subjects included"><button type="button" data-var="all">All subjects</button><button type="button" data-var="core">Core subjects only</button></div>
-<h1>German curriculum taxonomy vs os-taxonomy</h1>
-<p class="sub">German micro-topics from Vorschule to Klasse 13 (Gymnasium from Klasse 7; KMK Bildungsstandards, GDSU Perspektivrahmen, Länder curricula) compared topic-by-topic with the Marble os-taxonomy (England, US, Australia, Ontario, IB), which runs to about age 15. Generated <span id="gen"></span>. <a class="xl" href="../de-taxonomy/index.html">Browse the German taxonomy →</a> · <a class="xl" href="../de-taxonomy/graph.html">3D map of both taxonomies →</a></p>
+<div class="langtoggle subjtoggle" role="group" id="lang"><button type="button" data-lang="en">English</button><button type="button" data-lang="de">Deutsch</button><button type="button" data-lang="ro">Română</button></div>
+<button class="themebtn" id="theme" type="button"></button>
+<div class="subjtoggle" role="group" id="var"><button type="button" data-var="all"></button><button type="button" data-var="core"></button></div>
+<h1 id="title"></h1>
+<p class="sub" id="intro"></p>
 <div class="kpis" id="kpis"></div>
 <div class="tabs" role="tablist" id="tabs">
-  <button role="tab" aria-selected="true" data-tab="overview">Overview</button>
-  <button role="tab" aria-selected="false" data-tab="timing">Timing: when, compared?</button>
-  <button role="tab" aria-selected="false" data-tab="de">Explore German topics</button>
-  <button role="tab" aria-selected="false" data-tab="os">Explore os-taxonomy</button>
-  <button role="tab" aria-selected="false" data-tab="gaps">Gaps</button>
+  <button role="tab" aria-selected="true" data-tab="overview"></button>
+  <button role="tab" aria-selected="false" data-tab="timing"></button>
+  <button role="tab" aria-selected="false" data-tab="de"></button>
+  <button role="tab" aria-selected="false" data-tab="os"></button>
+  <button role="tab" aria-selected="false" data-tab="gaps"></button>
 </div>
 
 <section data-panel="overview">
   <div class="grid2">
-    <div class="card">
-      <h2>How much of each German subject exists in os-taxonomy?</h2>
-      <p class="sub">Share of German topics by best crosswalk match. Value = strong + partial.</p>
-      <div class="legend" id="covLegend"></div>
-      <div id="deCov"></div>
-      <h3>By school stage</h3>
-      <div id="stageCov"></div>
-      <p class="sub" style="margin-top:6px">os-taxonomy runs to about age 15 (≈ Klasse 9), so the Oberstufe has almost no counterparts by construction.</p>
-    </div>
-    <div class="card">
-      <h2>How much of each os-taxonomy subject appears in the German taxonomy?</h2>
-      <p class="sub">Share of os topics with at least one strong or partial German counterpart.</p>
-      <div id="osCov"></div>
-    </div>
+    <div class="card"><h2 data-i="covH"></h2><p class="sub" data-i="covSub"></p><div class="legend" id="covLegend"></div><div id="deCov"></div>
+      <h3 data-i="byStage"></h3><div id="stageCov"></div><p class="sub" style="margin-top:6px" data-i="stageNote"></p></div>
+    <div class="card"><h2 data-i="osCovH"></h2><p class="sub" data-i="osCovSub"></p><div id="osCov"></div></div>
   </div>
   <div class="grid2">
-    <div class="card">
-      <h2>When do German children meet the same idea?</h2>
-      <p class="sub">German start age minus os-taxonomy start age, per German topic with an exact/close match. Right of 0 = later in Germany.</p>
-      <div class="legend"><span><i style="background:var(--div-neg)"></i>Earlier in Germany</span><span><i style="background:var(--div-mid)"></i>Same age</span><span><i style="background:var(--div-pos)"></i>Later in Germany</span></div>
-      <div id="hist"></div>
-      <button class="btn" type="button" data-to-timing>Drill down by subject, domain and topic →</button>
-    </div>
-    <div class="card">
-      <h2>Median age offset by jurisdiction</h2>
-      <p class="sub">Years later (+) or earlier (−) in Germany than in each os-taxonomy jurisdiction, for the same matched topic. Ages per jurisdiction come from os-taxonomy's scoped alignment contexts. Click a row or cell to see the topics behind it.</p>
-      <div id="jurTable"></div>
-      <h3>By school stage</h3>
-      <div id="jurStage"></div>
-      <p class="sub" style="margin-top:8px">Caveat: os-taxonomy's Ontario contexts often carry the linked topic's own age (e.g. age 6 on Grade 4–6 expectations), so the Ontario column understates Ontario grade placement. England's Year N starts at age N+4; US Grade N, Australian Year N and German Klasse N start at about N+5.</p>
-    </div>
+    <div class="card"><h2 data-i="whenH"></h2><p class="sub" data-i="whenSub"></p><div class="legend" id="dLegend1"></div><div id="hist"></div>
+      <button class="btn" type="button" data-to-timing></button></div>
+    <div class="card"><h2 data-i="jurH"></h2><p class="sub" data-i="jurSub"></p><div id="jurTable"></div>
+      <h3 data-i="byStage"></h3><div id="jurStage"></div><p class="sub" style="margin-top:8px" data-i="jurNote"></p></div>
   </div>
-  <div class="card">
-    <h2>Where German subjects land in os-taxonomy</h2>
-    <p class="sub">Number of strong/partial crosswalk links from each German subject (rows) to each os subject (columns). Darker = more links.</p>
-    <div id="matrix" style="overflow:auto"></div>
-  </div>
-  <div class="card">
-    <h2>Structure side by side</h2>
-    <div id="structure"></div>
-  </div>
+  <div class="card"><h2 data-i="matrixH"></h2><p class="sub" data-i="matrixSub"></p><div id="matrix" style="overflow:auto"></div></div>
+  <div class="card"><h2 data-i="structH"></h2><div id="structure"></div></div>
 </section>
 
 <section data-panel="timing" hidden>
   <div class="card">
-    <h2>When do German children meet the same idea?</h2>
-    <p class="sub" style="max-width:1000px">Each German topic with an exact or close os-taxonomy match is paired with its closest counterpart. <b>Δ</b> = the age German children start the topic (Klasse + 5) minus the age the matched topic starts in os-taxonomy, or in the jurisdiction you pick. Positive = later in Germany. Click a bar, subject or domain to filter the topic list at the bottom; click a topic row to see both descriptions and the start age in every jurisdiction.</p>
+    <h2 data-i="whenH"></h2>
+    <p class="sub" style="max-width:1000px" data-i="tIntro"></p>
     <div class="filters">
-      <label>Compare with <select id="tBase" aria-label="Compare with"></select></label>
-      <select id="tMatch" aria-label="Match strength"><option value="strong">Exact and close matches</option><option value="exact">Exact matches only</option></select>
-      <select id="tSubj" aria-label="German subject"></select>
-      <select id="tStage" aria-label="School stage"><option value="">All school stages</option><option value="0-4">Grundschule (Vorschule–Kl. 4)</option><option value="5-6">Kl. 5–6</option><option value="7-10">Kl. 7–10 (Gymnasium)</option><option value="11-13">Oberstufe (Kl. 11–13)</option></select>
-      <button class="btn" type="button" id="tClear">Clear filters</button>
+      <label><span data-i="compareWith"></span> <select id="tBase"></select></label>
+      <select id="tMatch"></select>
+      <select id="tSubj"></select>
+      <select id="tStage"></select>
+      <button class="btn" type="button" id="tClear"></button>
     </div>
     <p class="sub" id="tNote" style="max-width:1000px"></p>
     <div class="stats" id="tStats"></div>
   </div>
   <div class="grid2">
-    <div class="card">
-      <h2>Distribution of Δ</h2>
-      <p class="sub" id="tHistSub"></p>
-      <div class="legend"><span><i style="background:var(--div-neg)"></i>Earlier in Germany</span><span><i style="background:var(--div-mid)"></i>Same age</span><span><i style="background:var(--div-pos)"></i>Later in Germany</span></div>
-      <div id="tHist"></div>
-    </div>
-    <div class="card">
-      <h2>By German subject</h2>
-      <p class="sub">Share of matched topics met earlier, at the same age or later in Germany. Value = median Δ in years. Click a subject to filter.</p>
-      <div class="legend"><span><i style="background:var(--div-neg)"></i>Earlier</span><span><i style="background:var(--div-mid)"></i>Same age</span><span><i style="background:var(--div-pos)"></i>Later</span></div>
-      <div id="tSub"></div>
-    </div>
+    <div class="card"><h2 data-i="histH"></h2><p class="sub" id="tHistSub"></p><div class="legend" id="dLegend2"></div><div id="tHist"></div></div>
+    <div class="card"><h2 data-i="bySubjH"></h2><p class="sub" data-i="bySubjSub"></p><div class="legend" id="dLegend3"></div><div id="tSub"></div></div>
   </div>
+  <div class="card"><h2 id="tDomH"></h2><p class="sub" data-i="byDomSub"></p><div class="scroll" id="tDom"></div></div>
   <div class="card">
-    <h2 id="tDomH">By domain</h2>
-    <p class="sub">Median Δ per German domain with at least 2 matched topics, sorted from latest to earliest in Germany. Columns: median Δ, number of topics. Click a domain to filter.</p>
-    <div class="scroll" id="tDom"></div>
-  </div>
-  <div class="card">
-    <h2>Topic pairs</h2>
+    <h2 data-i="pairsH"></h2>
     <p class="sub" id="tSel"></p>
     <div class="filters">
-      <input type="search" id="tQ" placeholder="Search German or os topic…" aria-label="Search topic pairs">
-      <select id="tSort" aria-label="Sort"><option value="later">Latest in Germany first</option><option value="earlier">Earliest in Germany first</option><option value="grade">By Klasse</option><option value="subject">By subject</option></select>
-      <span class="legend" style="margin:0"><span><svg width="14" height="12" aria-hidden="true"><circle cx="7" cy="6" r="4" fill="none" stroke="var(--text-secondary)" stroke-width="1.5"/></svg> start age in the comparison (os-taxonomy or the chosen jurisdiction)</span><span><svg width="14" height="12" aria-hidden="true"><circle cx="7" cy="6" r="4.5" fill="var(--text-secondary)"/></svg> German start age</span></span>
+      <input type="search" id="tQ">
+      <select id="tSort"></select>
+      <span class="legend" style="margin:0" id="dumbLegend"></span>
     </div>
     <div id="tList" style="overflow:auto"></div>
   </div>
@@ -221,75 +182,285 @@ svg text.vlab { fill: var(--text-primary); font-size: 11px; font-weight: 600; }
 
 <section data-panel="de" hidden>
   <div class="filters">
-    <select id="deSubject" aria-label="German subject"></select>
-    <select id="deRel" aria-label="Match type">
-      <option value="">All match types</option><option value="strong">Strong (exact/close)</option><option value="partial">Partial (broader/narrower)</option><option value="related">Related only</option><option value="none">No os counterpart</option>
-    </select>
-    <select id="deGrade" aria-label="Grade"><option value="">All grades</option><option value="0">Vorschule (0)</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option></select>
-    <label><input type="checkbox" id="deGS"> German-specific only</label>
-    <input type="search" id="deQ" placeholder="Search German or English…" aria-label="Search German topics">
+    <select id="deSubject"></select>
+    <select id="deRel"></select>
+    <select id="deGrade"></select>
+    <label><input type="checkbox" id="deGS"> <span data-i="specificOnly"></span></label>
+    <input type="search" id="deQ">
   </div>
   <div class="split">
     <div><p class="count" id="deCount"></p><div class="list" id="deList"></div></div>
-    <div class="card detail" id="deDetail"><p class="sub">Select a topic to see its os-taxonomy counterparts, ages by jurisdiction and prerequisites.</p></div>
+    <div class="card detail" id="deDetail"></div>
   </div>
 </section>
 
 <section data-panel="os" hidden>
   <div class="filters">
-    <select id="osSubject" aria-label="os subject"></select>
-    <select id="osCovSel" aria-label="Coverage"><option value="">All</option><option value="covered">Has German counterpart</option><option value="related">Related only</option><option value="none">No German counterpart</option></select>
-    <input type="search" id="osQ" placeholder="Search os-taxonomy…" aria-label="Search os topics">
+    <select id="osSubject"></select>
+    <select id="osCovSel"></select>
+    <input type="search" id="osQ">
   </div>
   <div class="split">
     <div><p class="count" id="osCount"></p><div class="list" id="osList"></div></div>
-    <div class="card detail" id="osDetail"><p class="sub">Select an os-taxonomy topic to see its German counterparts.</p></div>
+    <div class="card detail" id="osDetail"></div>
   </div>
 </section>
 
 <section data-panel="gaps" hidden>
   <div class="grid2">
-    <div class="card"><h2>German topics with no os-taxonomy counterpart</h2><p class="sub">Grouped by subject — what an os-based product would miss for a child in a German school.</p><div id="gapDe"></div></div>
-    <div class="card"><h2>os-taxonomy domains with no German counterpart</h2><p class="sub">Content that is not part of the typical German curriculum.</p><div id="gapOs"></div></div>
+    <div class="card"><h2 data-i="gapDeH"></h2><p class="sub" data-i="gapDeSub"></p><div id="gapDe"></div></div>
+    <div class="card"><h2 data-i="gapOsH"></h2><p class="sub" data-i="gapOsSub"></p><div id="gapOs"></div></div>
   </div>
 </section>
-<footer>Research prototype, authored with AI assistance and not yet reviewed by German teachers.<br>Lernlandkarte © 2026 Alexandru Prian: database ODbL 1.0, content CC BY-SA 4.0, code MIT · builds on and contains data from the Marble Skill Taxonomy (v1) · © Generative Spark, Inc. (Marble) · ODbL 1.0 / CC BY-SA 4.0 · <a href="https://github.com/codingarchitect-wq/lernlandkarte">Data and source on GitHub</a>.</footer>
+<footer id="footer"></footer>
 <div class="tip" id="tip" role="tooltip"></div>
 </div>
 
 <script id="cmp" type="application/json">__COMPARISON__</script>
 <script id="exp" type="application/json">__EXPLORER__</script>
 <script>
-// ?subjects=core shows the core subjects only (no second foreign languages, Musik, Kunst, Sport, Religion & Ethik)
-const VAR = new URLSearchParams(location.search).get('subjects') === 'core' ? 'core' : 'all';
+// German curriculum taxonomy vs os-taxonomy — comparison explorer in English, German or Romanian (?lang=en|de|ro).
+// ?subjects=core shows the core subjects only (no second foreign languages, Musik, Kunst, Sport, Religion & Ethik).
+// os-taxonomy topic and domain texts exist in English only.
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const tipA = h => `data-tip="${esc(h)}"`;
+const QS = new URLSearchParams(location.search);
+const VAR = QS.get('subjects') === 'core' ? 'core' : 'all';
+let LANG = ['en', 'de', 'ro'].includes(QS.get('lang')) ? QS.get('lang') : 'en';
 const C0 = JSON.parse(document.getElementById('cmp').textContent);
 const C = { ...C0, ...(C0.variants?.[VAR] || {}) };
 const X = JSON.parse(document.getElementById('exp').textContent);
 if (VAR === 'core') { X.de = X.de.filter(t => t.tr !== 'extended'); for (const o of X.os) o.c = o.cc; }
-for (const b of document.querySelectorAll('.subjtoggle button')) {
-  b.setAttribute('aria-pressed', b.dataset.var === VAR);
-  b.onclick = () => { if (b.dataset.var === VAR) return; const u = new URL(location.href); b.dataset.var === 'core' ? u.searchParams.set('subjects', 'core') : u.searchParams.delete('subjects'); location.href = u.href; };
+
+const I18N = {
+  en: {
+    title: 'German curriculum taxonomy vs os-taxonomy',
+    intro: 'German micro-topics from Vorschule to Klasse 13 (Gymnasium from Klasse 7; KMK Bildungsstandards, GDSU Perspektivrahmen, Länder curricula) compared topic-by-topic with the Marble os-taxonomy (England, US, Australia, Ontario, IB), which runs to about age 15. Generated {gen}. {de} · {map}',
+    linkDe: 'Browse the German taxonomy →', linkMap: '3D map of both taxonomies →', theme: 'Theme', allSubjects: 'All subjects', coreSubjects: 'Core subjects only', language: 'Language',
+    'tab.overview': 'Overview', 'tab.timing': 'Timing: when, compared?', 'tab.de': 'Explore German topics', 'tab.os': 'Explore os-taxonomy', 'tab.gaps': 'Gaps',
+    k1: 'German micro-topics in {s} subjects ({m} in os-taxonomy)', k2: 'of German topics have a strong or partial os-taxonomy counterpart', k3: 'of os-taxonomy topics have a German counterpart',
+    k4: 'topics flagged German-specific (language, Länder, institutions)', k5: 'median age offset vs England for matched topics (US {us}, AU {au}, Ontario {ca})', k6: 'of mappable German prerequisite edges also hold in the os graph ({r} reversed)',
+    yr: '{v} yr', yr_one: '{v} yr',
+    covH: 'How much of each German subject exists in os-taxonomy?', covSub: 'Share of German topics by best crosswalk match. Value = strong + partial.',
+    'b.strong': 'Strong (exact/close)', 'b.partial': 'Partial (os broader/narrower)', 'b.related': 'Related only', 'b.none': 'No counterpart',
+    byStage: 'By school stage', stageNote: 'os-taxonomy runs to about age 15 (≈ Klasse 9), so the Oberstufe has almost no counterparts by construction.',
+    osCovH: 'How much of each os-taxonomy subject appears in the German taxonomy?', osCovSub: 'Share of os topics with at least one strong or partial German counterpart.',
+    osCovTip: '{c} of {t} os topics have a German counterpart<br>{r} more are only related', ofN: '{a} of {b} ({p}%)',
+    whenH: 'When do German children meet the same idea?', whenSub: 'German start age minus os-taxonomy start age, per German topic with an exact/close match. Right of 0 = later in Germany.',
+    earlier: 'Earlier in Germany', same: 'Same age', later: 'Later in Germany', earlierS: 'Earlier', laterS: 'Later', drill: 'Drill down by subject, domain and topic →',
+    histFoot: 'n = {n} German topics with an exact/close match; median {m}. Click a bar to see its topics.',
+    jurH: 'Median age offset by jurisdiction', jurSub: 'Years later (+) or earlier (−) in Germany than in each os-taxonomy jurisdiction, for the same matched topic. Ages per jurisdiction come from os-taxonomy’s scoped alignment contexts. Click a row or cell to see the topics behind it.',
+    thSubject: 'German subject', thStage: 'Stage', all: 'All',
+    jurNote: 'Caveat: os-taxonomy’s Ontario contexts often carry the linked topic’s own age (e.g. age 6 on Grade 4–6 expectations), so the Ontario column understates Ontario grade placement. England’s Year N starts at age N+4; US Grade N, Australian Year N and German Klasse N start at about N+5.',
+    matrixH: 'Where German subjects land in os-taxonomy', matrixSub: 'Number of strong/partial crosswalk links from each German subject (rows) to each os subject (columns). Darker = more links.', links: '{v} links',
+    structH: 'Structure side by side', metric: 'Metric', german: 'German', ostax: 'os-taxonomy',
+    'sl.topics': 'Topics', 'sl.subjects': 'Subjects', 'sl.domains': 'Domains', 'sl.edges': 'Prerequisite edges', 'sl.hardShare': 'Hard edges %', 'sl.edgesPerTopic': 'Edges per topic', 'sl.roots': 'Roots (no prerequisites)', 'sl.maxDepth': 'Max depth', 'sl.meanDepth': 'Mean depth', 'sl.crossSubjectEdgeShare': 'Cross-subject edges %', 'sl.curricula': 'Curriculum sources', 'sl.standards': 'Standards in catalogue', 'sl.topicsWithStandards': 'Topics with ≥1 standard %', 'sl.ageMin': 'Youngest age', 'sl.ageMax': 'Oldest age', 'sl.meanAgeSpan': 'Mean age span (years)',
+    tIntro: 'Each German topic with an exact or close os-taxonomy match is paired with its closest counterpart. <b>Δ</b> = the age German children start the topic (Klasse + 5) minus the age the matched topic starts in os-taxonomy, or in the jurisdiction you pick. Positive = later in Germany. Click a bar, subject or domain to filter the topic list at the bottom; click a topic row to see both descriptions and the start age in every jurisdiction.',
+    compareWith: 'Compare with', 'base.os': 'os-taxonomy overall', 'cmpB.os': 'os-taxonomy overall', 'match.strong': 'Exact and close matches', 'match.exact': 'Exact matches only',
+    allDeSubjects: 'All German subjects', allStages: 'All school stages', clear: 'Clear filters',
+    'note.os': 'Uses each os-taxonomy topic’s own start age (its ageRangeStart).',
+    'note.GB': 'England’s Year N starts at age N+4, a year before German Klasse N (age N+5), so +1 here means the same school year.',
+    'note.US': 'US Grade N starts at about age N+5, like German Klasse N, so Δ is also the difference in school years.',
+    'note.AU': 'Australian Year N starts at about age N+5, like German Klasse N, so Δ is also the difference in school years.',
+    'note.CA': 'Caveat: os-taxonomy’s Ontario contexts often carry the linked topic’s own age (e.g. age 6 on Grade 4–6 expectations), so this comparison understates how late Ontario places topics.',
+    leftOut: '{x} of {y} pairs have no age for {b} and are left out.',
+    stMatched: 'matched German topics in view', stMedian: 'median Δ', stEarlier: 'earlier in Germany ({n})', stSame: 'same age ({n})', stLater: 'later in Germany ({n})',
+    histH: 'Distribution of Δ', histSub: '{n} German topics{in}, compared with {b}. Click a bar to list its topics; click it again to clear.', inX: ' in {x}',
+    histTip: '<b>Δ {b} years</b><br>{v} German topics ({p}%)<br><span style="color:var(--muted)">Click to list them</span>', histTip_one: '<b>Δ {b} year</b><br>{v} German topics ({p}%)<br><span style="color:var(--muted)">Click to list them</span>',
+    axis: 'Δ years (German start age − comparison start age)', histAria: 'Histogram of age offsets',
+    bySubjH: 'By German subject', bySubjSub: 'Share of matched topics met earlier, at the same age or later in Germany. Value = median Δ in years. Click a subject to filter.',
+    subjTip: '<b>{s}</b><br>{lab}: {v} of {n} ({p}%)<br>median Δ {m}',
+    byDomH: 'By domain · {s}', byDomAll: 'By domain · all German subjects', byDomSub: 'Median Δ per German domain with at least 2 matched topics, sorted from latest to earliest in Germany. Columns: median Δ, number of topics. Click a domain to filter.',
+    domainCol: 'Domain', earlierArrow: '← earlier in Germany', laterArrow: 'later →', domTip: '<b>{s} › {d}</b><br>median Δ {m} · {n} topics<br>{e} earlier, {z} same, {l} later', noDom: 'No domain has 2 or more matched topics with these filters.',
+    pairsH: 'Topic pairs', tSel: '{l} of {p} topic pairs, compared with {b}. Click a row for details.', removeFilter: 'Remove filter {x}', searchPairs: 'Search German or os topic…',
+    'sort.later': 'Latest in Germany first', 'sort.earlier': 'Earliest in Germany first', 'sort.grade': 'By Klasse', 'sort.subject': 'By subject',
+    dumbOs: 'start age in the comparison (os-taxonomy or the chosen jurisdiction)', dumbDe: 'German start age',
+    thDeTopic: 'German topic', thGrade: 'Kl.', thOsTopic: 'Closest os-taxonomy counterpart', thMatch: 'Match', thStart: 'Start age', noPairs: 'No topic pairs match these filters.',
+    dumbTip: 'German start age {a} ({g})<br>{b}: start age {c}<br><b>Δ {d}</b>',
+    deTopic: 'German topic', openDe: 'Open in German topics', deTax: 'German taxonomy', path: 'learning path', openOs: 'Open in the os-taxonomy tab',
+    matchLabel: 'Match', startIn: 'Start age of the matched topic in', ageCol: 'Age', deltaCol: 'Δ vs Germany ({a})', otherStrong: 'Other strong os-taxonomy counterparts:',
+    'rel.any': 'All match types', 'rel.strong': 'Strong (exact/close)', 'rel.partial': 'Partial (broader/narrower)', 'rel.related': 'Related only', 'rel.none': 'No os counterpart',
+    allGrades: 'All grades', specificOnly: 'German-specific only', specific: 'German-specific', searchDe: 'Search German topics (any language)…', nTopics: '{n} topics', nTopics_one: '{n} topic',
+    deDetailEmpty: 'Select a topic to see its os-taxonomy counterparts, ages by jurisdiction and prerequisites.', evidence: 'Evidence of mastery', laender: 'Länder variation',
+    cp: 'os-taxonomy counterparts ({n})', cpNone: 'None — no comparable os-taxonomy topic.', byJur: 'Start age by jurisdiction: {x}', note: 'Note: {x}',
+    prereqs: 'Prerequisites ({n})', unlocks: 'Unlocks ({n})', none: 'none', standards: 'Standards', openDeBrowser: 'Open in the German taxonomy browser →', pathLink: 'Learning path →',
+    allOsSubjects: 'All os subjects', 'cov.any': 'All', 'cov.covered': 'Has a German counterpart', 'cov.related': 'Related only', 'cov.none': 'No German counterpart', searchOs: 'Search os-taxonomy (English)…',
+    osDetailEmpty: 'Select an os-taxonomy topic to see its German counterparts.', deCp: 'German counterparts', deCpNone: 'None in the German taxonomy.', osEnglish: '',
+    showing600: 'Showing the first 600 — refine the filters.', age: 'age {a}–{b}',
+    gapDeH: 'German topics with no os-taxonomy counterpart', gapDeSub: 'Grouped by subject — what an os-based product would miss for a child in a German school.',
+    gapOsH: 'os-taxonomy domains with no German counterpart', gapOsSub: 'Content that is not part of the typical German curriculum.',
+    gapAllCovered: 'Every os domain has at least one German counterpart.', barely: 'Barely covered (< 25% of the domain)',
+    lk: 'Leistungskurs (eA)', allCourses: 'all courses (gA)', vorschule: 'Vorschule',
+    'st.0-4': 'Grundschule (Vorschule–Kl. 4)', 'st.5-10': 'Sek I (Kl. 5–10)', 'st.11-13': 'Oberstufe (Kl. 11–13)', 'st.5-6': 'Kl. 5–6', 'st.7-10': 'Kl. 7–10 (Gymnasium)',
+    'jur.GB': 'England (UK NC)', 'jur.US': 'USA (CCSS/NGSS)', 'jur.AU': 'Australia (ACARA v9)', 'jur.CA': 'Ontario',
+    'rel.exact': 'exact', 'rel.close': 'close', 'rel.broader': 'os broader', 'rel.narrower': 'os narrower', 'rel.related2': 'related',
+    'type.CONCEPTUAL': 'Concept', 'type.PROCEDURAL': 'Skill or procedure', 'type.REPRESENTATIONAL': 'Representation', 'type.LANGUAGE': 'Language', 'type.META': 'Learning strategy',
+    footer: 'Research prototype, authored with AI assistance and not yet reviewed by German teachers.<br>Lernlandkarte © 2026 Alexandru Prian: database ODbL 1.0, content CC BY-SA 4.0, code MIT · builds on and contains data from the Marble Skill Taxonomy (v1) · © Generative Spark, Inc. (Marble) · ODbL 1.0 / CC BY-SA 4.0 · <a href="https://github.com/codingarchitect-wq/lernlandkarte">Data and source on GitHub</a>.',
+  },
+  de: {
+    title: 'Deutsche Lehrplan-Taxonomie und os-taxonomy im Vergleich',
+    intro: 'Deutsche Mikrothemen von der Vorschule bis Klasse 13 (Gymnasium ab Klasse 7; KMK-Bildungsstandards, GDSU-Perspektivrahmen, Lehrpläne der Länder), Thema für Thema verglichen mit der Marble os-taxonomy (England, USA, Australien, Ontario, IB), die bis etwa 15 Jahre reicht. Erstellt am {gen}. {de} · {map}',
+    linkDe: 'Deutsche Taxonomie ansehen →', linkMap: '3D-Karte beider Taxonomien →', theme: 'Darstellung', allSubjects: 'Alle Fächer', coreSubjects: 'Nur Kernfächer', language: 'Sprache',
+    'tab.overview': 'Überblick', 'tab.timing': 'Zeitpunkt: wann, im Vergleich?', 'tab.de': 'Deutsche Themen', 'tab.os': 'os-taxonomy', 'tab.gaps': 'Lücken',
+    k1: 'deutsche Mikrothemen in {s} Fächern ({m} in der os-taxonomy)', k2: 'der deutschen Themen haben eine starke oder teilweise Entsprechung in der os-taxonomy', k3: 'der Themen der os-taxonomy haben eine deutsche Entsprechung',
+    k4: 'als deutschlandspezifisch markierte Themen (Sprache, Länder, Institutionen)', k5: 'mittlerer Altersabstand zu England bei zugeordneten Themen (USA {us}, AU {au}, Ontario {ca})', k6: 'der zuordenbaren deutschen Voraussetzungen gelten auch im os-Graphen ({r} umgekehrt)',
+    yr: '{v} J.', yr_one: '{v} J.',
+    covH: 'Wie viel von jedem deutschen Fach gibt es in der os-taxonomy?', covSub: 'Anteil der deutschen Themen nach bester Entsprechung. Wert = stark + teilweise.',
+    'b.strong': 'Stark (exakt/nah)', 'b.partial': 'Teilweise (os-Thema breiter/enger)', 'b.related': 'Nur verwandt', 'b.none': 'Keine Entsprechung',
+    byStage: 'Nach Schulstufe', stageNote: 'Die os-taxonomy reicht bis etwa 15 Jahre (≈ Klasse 9); die Oberstufe hat daher kaum Entsprechungen.',
+    osCovH: 'Wie viel von jedem Fach der os-taxonomy erscheint in der deutschen Taxonomie?', osCovSub: 'Anteil der os-Themen mit mindestens einer starken oder teilweisen deutschen Entsprechung.',
+    osCovTip: '{c} von {t} os-Themen haben eine deutsche Entsprechung<br>{r} weitere sind nur verwandt', ofN: '{a} von {b} ({p} %)',
+    whenH: 'Wann begegnen deutsche Kinder derselben Idee?', whenSub: 'Startalter in Deutschland minus Startalter in der os-taxonomy, je deutschem Thema mit exakter oder naher Entsprechung. Rechts von 0 = später in Deutschland.',
+    earlier: 'Früher in Deutschland', same: 'Gleiches Alter', later: 'Später in Deutschland', earlierS: 'Früher', laterS: 'Später', drill: 'Nach Fach, Bereich und Thema aufschlüsseln →',
+    histFoot: 'n = {n} deutsche Themen mit exakter oder naher Entsprechung; Median {m}. Klicken Sie auf einen Balken, um seine Themen zu sehen.',
+    jurH: 'Mittlerer Altersabstand nach Bildungssystem', jurSub: 'Jahre später (+) oder früher (−) in Deutschland als im jeweiligen Bildungssystem der os-taxonomy, für dasselbe zugeordnete Thema. Das Alter je Bildungssystem stammt aus den Zuordnungskontexten der os-taxonomy. Klicken Sie auf eine Zeile oder Zelle, um die Themen dahinter zu sehen.',
+    thSubject: 'Deutsches Fach', thStage: 'Stufe', all: 'Alle',
+    jurNote: 'Vorsicht: Die Ontario-Kontexte der os-taxonomy tragen oft das Alter des verknüpften Themas selbst (z. B. Alter 6 bei Erwartungen für Grade 4–6); die Spalte Ontario unterschätzt daher, wie spät Ontario Themen einordnet. Year N in England beginnt mit N+4 Jahren; Grade N in den USA, Year N in Australien und die deutsche Klasse N beginnen mit etwa N+5.',
+    matrixH: 'Wo deutsche Fächer in der os-taxonomy landen', matrixSub: 'Anzahl starker oder teilweiser Verknüpfungen von jedem deutschen Fach (Zeilen) zu jedem os-Fach (Spalten). Dunkler = mehr Verknüpfungen.', links: '{v} Verknüpfungen',
+    structH: 'Struktur im Vergleich', metric: 'Kennzahl', german: 'Deutsch', ostax: 'os-taxonomy',
+    'sl.topics': 'Themen', 'sl.subjects': 'Fächer', 'sl.domains': 'Bereiche', 'sl.edges': 'Voraussetzungen', 'sl.hardShare': 'Notwendige Voraussetzungen %', 'sl.edgesPerTopic': 'Voraussetzungen je Thema', 'sl.roots': 'Startthemen (ohne Voraussetzungen)', 'sl.maxDepth': 'Maximale Tiefe', 'sl.meanDepth': 'Mittlere Tiefe', 'sl.crossSubjectEdgeShare': 'Fächerübergreifende Voraussetzungen %', 'sl.curricula': 'Lehrplanquellen', 'sl.standards': 'Standards im Katalog', 'sl.topicsWithStandards': 'Themen mit ≥1 Standard %', 'sl.ageMin': 'Jüngstes Alter', 'sl.ageMax': 'Ältestes Alter', 'sl.meanAgeSpan': 'Mittlere Altersspanne (Jahre)',
+    tIntro: 'Jedes deutsche Thema mit exakter oder naher Entsprechung in der os-taxonomy wird mit seiner nächsten Entsprechung gepaart. <b>Δ</b> = das Alter, in dem deutsche Kinder das Thema beginnen (Klasse + 5), minus das Startalter des zugeordneten Themas in der os-taxonomy oder im gewählten Bildungssystem. Positiv = später in Deutschland. Klicken Sie auf einen Balken, ein Fach oder einen Bereich, um die Themenliste unten zu filtern; klicken Sie auf eine Zeile, um beide Beschreibungen und das Startalter in jedem Bildungssystem zu sehen.',
+    compareWith: 'Vergleichen mit', 'base.os': 'os-taxonomy insgesamt', 'cmpB.os': 'der os-taxonomy insgesamt', 'match.strong': 'Exakte und nahe Entsprechungen', 'match.exact': 'Nur exakte Entsprechungen',
+    allDeSubjects: 'Alle deutschen Fächer', allStages: 'Alle Schulstufen', clear: 'Filter zurücksetzen',
+    'note.os': 'Verwendet das eigene Startalter jedes Themas der os-taxonomy (ageRangeStart).',
+    'note.GB': 'Year N in England beginnt mit N+4 Jahren, ein Jahr vor der deutschen Klasse N (N+5); +1 bedeutet hier also dasselbe Schuljahr.',
+    'note.US': 'Grade N in den USA beginnt mit etwa N+5 Jahren wie die deutsche Klasse N; Δ ist also auch der Abstand in Schuljahren.',
+    'note.AU': 'Year N in Australien beginnt mit etwa N+5 Jahren wie die deutsche Klasse N; Δ ist also auch der Abstand in Schuljahren.',
+    'note.CA': 'Vorsicht: Die Ontario-Kontexte der os-taxonomy tragen oft das Alter des verknüpften Themas selbst (z. B. Alter 6 bei Erwartungen für Grade 4–6); dieser Vergleich unterschätzt daher, wie spät Ontario Themen einordnet.',
+    leftOut: '{x} von {y} Paaren haben kein Alter für {b} und bleiben unberücksichtigt.',
+    stMatched: 'zugeordnete deutsche Themen in der Ansicht', stMedian: 'Median Δ', stEarlier: 'früher in Deutschland ({n})', stSame: 'gleiches Alter ({n})', stLater: 'später in Deutschland ({n})',
+    histH: 'Verteilung von Δ', histSub: '{n} deutsche Themen{in}, verglichen mit {b}. Klicken Sie auf einen Balken, um seine Themen aufzulisten; ein zweiter Klick hebt den Filter auf.', inX: ' in {x}',
+    histTip: '<b>Δ {b} Jahre</b><br>{v} deutsche Themen ({p} %)<br><span style="color:var(--muted)">Klicken, um sie aufzulisten</span>', histTip_one: '<b>Δ {b} Jahr</b><br>{v} deutsche Themen ({p} %)<br><span style="color:var(--muted)">Klicken, um sie aufzulisten</span>',
+    axis: 'Δ Jahre (Startalter Deutschland − Startalter im Vergleich)', histAria: 'Histogramm der Altersabstände',
+    bySubjH: 'Nach deutschem Fach', bySubjSub: 'Anteil der zugeordneten Themen, die in Deutschland früher, im gleichen Alter oder später behandelt werden. Wert = Median Δ in Jahren. Klicken Sie auf ein Fach, um zu filtern.',
+    subjTip: '<b>{s}</b><br>{lab}: {v} von {n} ({p} %)<br>Median Δ {m}',
+    byDomH: 'Nach Bereich · {s}', byDomAll: 'Nach Bereich · alle deutschen Fächer', byDomSub: 'Median Δ je deutschem Bereich mit mindestens 2 zugeordneten Themen, vom spätesten zum frühesten in Deutschland sortiert. Spalten: Median Δ, Anzahl Themen. Klicken Sie auf einen Bereich, um zu filtern.',
+    domainCol: 'Bereich', earlierArrow: '← früher in Deutschland', laterArrow: 'später →', domTip: '<b>{s} › {d}</b><br>Median Δ {m} · {n} Themen<br>{e} früher, {z} gleich, {l} später', noDom: 'Kein Bereich hat mit diesen Filtern 2 oder mehr zugeordnete Themen.',
+    pairsH: 'Themenpaare', tSel: '{l} von {p} Themenpaaren, verglichen mit {b}. Klicken Sie auf eine Zeile für Details.', removeFilter: 'Filter {x} entfernen', searchPairs: 'Deutsches oder os-Thema suchen…',
+    'sort.later': 'Zuerst die spätesten in Deutschland', 'sort.earlier': 'Zuerst die frühesten in Deutschland', 'sort.grade': 'Nach Klasse', 'sort.subject': 'Nach Fach',
+    dumbOs: 'Startalter im Vergleich (os-taxonomy oder gewähltes Bildungssystem)', dumbDe: 'Startalter in Deutschland',
+    thDeTopic: 'Deutsches Thema', thGrade: 'Kl.', thOsTopic: 'Nächste Entsprechung in der os-taxonomy', thMatch: 'Entsprechung', thStart: 'Startalter', noPairs: 'Keine Themenpaare passen zu diesen Filtern.',
+    dumbTip: 'Startalter in Deutschland {a} ({g})<br>{b}: Startalter {c}<br><b>Δ {d}</b>',
+    deTopic: 'Deutsches Thema', openDe: 'Bei den deutschen Themen öffnen', deTax: 'Deutsche Taxonomie', path: 'Lernpfad', openOs: 'Im Reiter os-taxonomy öffnen',
+    matchLabel: 'Entsprechung', startIn: 'Startalter des zugeordneten Themas in', ageCol: 'Alter', deltaCol: 'Δ zu Deutschland ({a})', otherStrong: 'Weitere starke Entsprechungen in der os-taxonomy:',
+    'rel.any': 'Alle Entsprechungsarten', 'rel.strong': 'Stark (exakt/nah)', 'rel.partial': 'Teilweise (breiter/enger)', 'rel.related': 'Nur verwandt', 'rel.none': 'Keine os-Entsprechung',
+    allGrades: 'Alle Klassen', specificOnly: 'Nur deutschlandspezifische', specific: 'deutschlandspezifisch', searchDe: 'Deutsche Themen suchen (jede Sprache)…', nTopics: '{n} Themen', nTopics_one: '{n} Thema',
+    deDetailEmpty: 'Wählen Sie ein Thema, um seine Entsprechungen in der os-taxonomy, das Alter je Bildungssystem und seine Voraussetzungen zu sehen.', evidence: 'Daran erkennt man, dass es sitzt', laender: 'Unterschiede zwischen den Ländern',
+    cp: 'Entsprechungen in der os-taxonomy ({n})', cpNone: 'Keine – kein vergleichbares Thema in der os-taxonomy.', byJur: 'Startalter je Bildungssystem: {x}', note: 'Hinweis: {x}',
+    prereqs: 'Voraussetzungen ({n})', unlocks: 'Baut darauf auf ({n})', none: 'keine', standards: 'Standards', openDeBrowser: 'In der deutschen Taxonomie öffnen →', pathLink: 'Lernpfad →',
+    allOsSubjects: 'Alle os-Fächer', 'cov.any': 'Alle', 'cov.covered': 'Hat eine deutsche Entsprechung', 'cov.related': 'Nur verwandt', 'cov.none': 'Keine deutsche Entsprechung', searchOs: 'os-taxonomy durchsuchen (Englisch)…',
+    osDetailEmpty: 'Wählen Sie ein Thema der os-taxonomy, um seine deutschen Entsprechungen zu sehen.', deCp: 'Deutsche Entsprechungen', deCpNone: 'Keine in der deutschen Taxonomie.', osEnglish: 'Die Texte der os-taxonomy gibt es nur auf Englisch.',
+    showing600: 'Die ersten 600 werden angezeigt – bitte Filter verfeinern.', age: 'Alter {a}–{b}',
+    gapDeH: 'Deutsche Themen ohne Entsprechung in der os-taxonomy', gapDeSub: 'Nach Fach gruppiert – was ein auf der os-taxonomy aufbauendes Angebot für ein Kind an einer deutschen Schule nicht abdecken würde.',
+    gapOsH: 'Bereiche der os-taxonomy ohne deutsche Entsprechung', gapOsSub: 'Inhalte, die nicht zum üblichen deutschen Lehrplan gehören.',
+    gapAllCovered: 'Jeder os-Bereich hat mindestens eine deutsche Entsprechung.', barely: 'Kaum abgedeckt (< 25 % des Bereichs)',
+    lk: 'Leistungskurs (eA)', allCourses: 'alle Kurse (gA)', vorschule: 'Vorschule',
+    'st.0-4': 'Grundschule (Vorschule–Kl. 4)', 'st.5-10': 'Sek I (Kl. 5–10)', 'st.11-13': 'Oberstufe (Kl. 11–13)', 'st.5-6': 'Kl. 5–6', 'st.7-10': 'Kl. 7–10 (Gymnasium)',
+    'jur.GB': 'England (UK NC)', 'jur.US': 'USA (CCSS/NGSS)', 'jur.AU': 'Australien (ACARA v9)', 'jur.CA': 'Ontario',
+    'rel.exact': 'exakt', 'rel.close': 'nah', 'rel.broader': 'os breiter', 'rel.narrower': 'os enger', 'rel.related2': 'verwandt',
+    'type.CONCEPTUAL': 'Konzept', 'type.PROCEDURAL': 'Fertigkeit oder Verfahren', 'type.REPRESENTATIONAL': 'Darstellung', 'type.LANGUAGE': 'Fachsprache', 'type.META': 'Lernstrategie',
+    footer: 'Forschungsprototyp, mit KI-Unterstützung erstellt und noch nicht von Lehrkräften geprüft. Die deutschen Texte der Themen sind KI-Übersetzungen der englischen; die Texte der os-taxonomy gibt es nur auf Englisch.<br>Lernlandkarte © 2026 Alexandru Prian: Datenbank ODbL 1.0, Inhalte CC BY-SA 4.0, Code MIT · baut auf der Marble Skill Taxonomy (v1) auf und enthält Daten daraus · © Generative Spark, Inc. (Marble) · ODbL 1.0 / CC BY-SA 4.0 · <a href="https://github.com/codingarchitect-wq/lernlandkarte">Daten und Quellcode auf GitHub</a>.',
+  },
+  ro: {
+    title: 'Taxonomia curriculumului german comparată cu os-taxonomy',
+    intro: 'Temele curriculumului german, de la Vorschule la Klasse 13 (Gymnasium din Klasse 7; standardele educaționale KMK, cadrul GDSU, curriculumurile landurilor), comparate temă cu temă cu os-taxonomy de la Marble (Anglia, SUA, Australia, Ontario, IB), care merge până la aproximativ 15 ani. Generat pe {gen}. {de} · {map}',
+    linkDe: 'Vezi taxonomia germană →', linkMap: 'Harta 3D a celor două taxonomii →', theme: 'Temă', allSubjects: 'Toate disciplinele', coreSubjects: 'Doar disciplinele de bază', language: 'Limba',
+    'tab.overview': 'Privire de ansamblu', 'tab.timing': 'Momentul: când, comparativ?', 'tab.de': 'Teme germane', 'tab.os': 'os-taxonomy', 'tab.gaps': 'Lipsuri',
+    k1: 'teme germane în {s} discipline ({m} în os-taxonomy)', k2: 'dintre temele germane au un corespondent puternic sau parțial în os-taxonomy', k3: 'dintre temele din os-taxonomy au un corespondent german',
+    k4: 'teme marcate ca specifice Germaniei (limbă, landuri, instituții)', k5: 'diferența mediană de vârstă față de Anglia pentru temele corespondente (SUA {us}, AU {au}, Ontario {ca})', k6: 'dintre legăturile germane care pot fi corelate sunt valabile și în graful os ({r} inversate)',
+    yr: '{v} ani', yr_one: '{v} an',
+    covH: 'Cât din fiecare disciplină germană există în os-taxonomy?', covSub: 'Ponderea temelor germane după cea mai bună corespondență. Valoare = puternică + parțială.',
+    'b.strong': 'Puternică (identică/apropiată)', 'b.partial': 'Parțială (tema os mai largă/mai restrânsă)', 'b.related': 'Doar înrudită', 'b.none': 'Fără corespondent',
+    byStage: 'Pe niveluri de învățământ', stageNote: 'os-taxonomy merge până la aproximativ 15 ani (≈ Klasse 9), deci Oberstufe nu are, prin construcție, aproape niciun corespondent.',
+    osCovH: 'Cât din fiecare disciplină din os-taxonomy apare în taxonomia germană?', osCovSub: 'Ponderea temelor os cu cel puțin un corespondent german puternic sau parțial.',
+    osCovTip: '{c} din {t} teme os au un corespondent german<br>încă {r} sunt doar înrudite', ofN: '{a} din {b} ({p}%)',
+    whenH: 'Când întâlnesc copiii germani aceeași idee?', whenSub: 'Vârsta de început în Germania minus vârsta de început în os-taxonomy, pentru fiecare temă germană cu corespondent identic sau apropiat. La dreapta lui 0 = mai târziu în Germania.',
+    earlier: 'Mai devreme în Germania', same: 'La aceeași vârstă', later: 'Mai târziu în Germania', earlierS: 'Mai devreme', laterS: 'Mai târziu', drill: 'Detaliază pe discipline, domenii și teme →',
+    histFoot: 'n = {n} teme germane cu corespondent identic sau apropiat; mediana {m}. Faceți clic pe o bară pentru a vedea temele.',
+    jurH: 'Diferența mediană de vârstă pe sisteme de învățământ', jurSub: 'Cu câți ani mai târziu (+) sau mai devreme (−) în Germania decât în fiecare sistem din os-taxonomy, pentru aceeași temă corespondentă. Vârstele pe sisteme provin din contextele de aliniere ale os-taxonomy. Faceți clic pe un rând sau pe o celulă pentru a vedea temele.',
+    thSubject: 'Disciplina germană', thStage: 'Nivelul', all: 'Toate',
+    jurNote: 'Atenție: contextele Ontario din os-taxonomy poartă adesea vârsta temei legate (de ex. vârsta 6 pentru așteptările din Grade 4–6), deci coloana Ontario subestimează cât de târziu plasează Ontario temele. Year N din Anglia începe la N+4 ani; Grade N din SUA, Year N din Australia și Klasse N din Germania încep la aproximativ N+5.',
+    matrixH: 'Unde ajung disciplinele germane în os-taxonomy', matrixSub: 'Numărul de legături puternice sau parțiale de la fiecare disciplină germană (rânduri) la fiecare disciplină os (coloane). Mai închis = mai multe legături.', links: '{v} legături',
+    structH: 'Structura, față în față', metric: 'Indicator', german: 'Germană', ostax: 'os-taxonomy',
+    'sl.topics': 'Teme', 'sl.subjects': 'Discipline', 'sl.domains': 'Domenii', 'sl.edges': 'Legături de condiționare', 'sl.hardShare': 'Legături obligatorii %', 'sl.edgesPerTopic': 'Legături pe temă', 'sl.roots': 'Teme de pornire (fără condiții)', 'sl.maxDepth': 'Adâncime maximă', 'sl.meanDepth': 'Adâncime medie', 'sl.crossSubjectEdgeShare': 'Legături între discipline %', 'sl.curricula': 'Surse curriculare', 'sl.standards': 'Standarde în catalog', 'sl.topicsWithStandards': 'Teme cu ≥1 standard %', 'sl.ageMin': 'Vârsta minimă', 'sl.ageMax': 'Vârsta maximă', 'sl.meanAgeSpan': 'Durata medie (ani)',
+    tIntro: 'Fiecare temă germană cu un corespondent identic sau apropiat în os-taxonomy este pusă în pereche cu cel mai apropiat corespondent. <b>Δ</b> = vârsta la care copiii germani încep tema (Klasse + 5) minus vârsta de început a temei corespondente în os-taxonomy sau în sistemul ales. Pozitiv = mai târziu în Germania. Faceți clic pe o bară, o disciplină sau un domeniu pentru a filtra lista de jos; faceți clic pe un rând pentru a vedea ambele descrieri și vârsta de început în fiecare sistem.',
+    compareWith: 'Compară cu', 'base.os': 'os-taxonomy în ansamblu', 'cmpB.os': 'os-taxonomy în ansamblu', 'match.strong': 'Corespondențe identice și apropiate', 'match.exact': 'Doar corespondențe identice',
+    allDeSubjects: 'Toate disciplinele germane', allStages: 'Toate nivelurile', clear: 'Șterge filtrele',
+    'note.os': 'Folosește vârsta de început proprie a fiecărei teme din os-taxonomy (ageRangeStart).',
+    'note.GB': 'Year N din Anglia începe la N+4 ani, cu un an înaintea Klasse N din Germania (N+5), deci +1 înseamnă aici același an școlar.',
+    'note.US': 'Grade N din SUA începe la aproximativ N+5 ani, ca Klasse N din Germania, deci Δ este și diferența în ani școlari.',
+    'note.AU': 'Year N din Australia începe la aproximativ N+5 ani, ca Klasse N din Germania, deci Δ este și diferența în ani școlari.',
+    'note.CA': 'Atenție: contextele Ontario din os-taxonomy poartă adesea vârsta temei legate (de ex. vârsta 6 pentru așteptările din Grade 4–6), deci această comparație subestimează cât de târziu plasează Ontario temele.',
+    leftOut: '{x} din {y} perechi nu au vârstă pentru {b} și sunt omise.',
+    stMatched: 'teme germane corespondente afișate', stMedian: 'mediana Δ', stEarlier: 'mai devreme în Germania ({n})', stSame: 'la aceeași vârstă ({n})', stLater: 'mai târziu în Germania ({n})',
+    histH: 'Distribuția lui Δ', histSub: '{n} teme germane{in}, comparate cu {b}. Faceți clic pe o bară pentru a-i lista temele; al doilea clic anulează filtrul.', inX: ' din {x}',
+    histTip: '<b>Δ {b} ani</b><br>{v} teme germane ({p}%)<br><span style="color:var(--muted)">Clic pentru a le lista</span>', histTip_one: '<b>Δ {b} an</b><br>{v} teme germane ({p}%)<br><span style="color:var(--muted)">Clic pentru a le lista</span>',
+    axis: 'Δ ani (vârsta de început în Germania − în comparație)', histAria: 'Histograma diferențelor de vârstă',
+    bySubjH: 'Pe discipline germane', bySubjSub: 'Ponderea temelor corespondente întâlnite mai devreme, la aceeași vârstă sau mai târziu în Germania. Valoare = mediana Δ, în ani. Faceți clic pe o disciplină pentru a filtra.',
+    subjTip: '<b>{s}</b><br>{lab}: {v} din {n} ({p}%)<br>mediana Δ {m}',
+    byDomH: 'Pe domenii · {s}', byDomAll: 'Pe domenii · toate disciplinele germane', byDomSub: 'Mediana Δ pentru fiecare domeniu german cu cel puțin 2 teme corespondente, de la cel mai târziu la cel mai devreme în Germania. Coloane: mediana Δ, numărul de teme. Faceți clic pe un domeniu pentru a filtra.',
+    domainCol: 'Domeniu', earlierArrow: '← mai devreme în Germania', laterArrow: 'mai târziu →', domTip: '<b>{s} › {d}</b><br>mediana Δ {m} · {n} teme<br>{e} mai devreme, {z} la fel, {l} mai târziu', noDom: 'Niciun domeniu nu are 2 sau mai multe teme corespondente cu aceste filtre.',
+    pairsH: 'Perechi de teme', tSel: '{l} din {p} perechi de teme, comparate cu {b}. Faceți clic pe un rând pentru detalii.', removeFilter: 'Elimină filtrul {x}', searchPairs: 'Caută o temă germană sau os…',
+    'sort.later': 'Întâi cele mai târzii în Germania', 'sort.earlier': 'Întâi cele mai timpurii în Germania', 'sort.grade': 'După clasă (Klasse)', 'sort.subject': 'După disciplină',
+    dumbOs: 'vârsta de început în comparație (os-taxonomy sau sistemul ales)', dumbDe: 'vârsta de început în Germania',
+    thDeTopic: 'Tema germană', thGrade: 'Kl.', thOsTopic: 'Cel mai apropiat corespondent în os-taxonomy', thMatch: 'Corespondență', thStart: 'Vârsta de început', noPairs: 'Nicio pereche de teme nu corespunde acestor filtre.',
+    dumbTip: 'Vârsta de început în Germania {a} ({g})<br>{b}: vârsta de început {c}<br><b>Δ {d}</b>',
+    deTopic: 'Temă germană', openDe: 'Deschide la temele germane', deTax: 'Taxonomia germană', path: 'traseu de învățare', openOs: 'Deschide în fila os-taxonomy',
+    matchLabel: 'Corespondență', startIn: 'Vârsta de început a temei corespondente în', ageCol: 'Vârsta', deltaCol: 'Δ față de Germania ({a})', otherStrong: 'Alți corespondenți puternici în os-taxonomy:',
+    'rel.any': 'Toate tipurile de corespondență', 'rel.strong': 'Puternică (identică/apropiată)', 'rel.partial': 'Parțială (mai largă/mai restrânsă)', 'rel.related': 'Doar înrudită', 'rel.none': 'Fără corespondent os',
+    allGrades: 'Toate clasele', specificOnly: 'Doar specifice Germaniei', specific: 'specifică Germaniei', searchDe: 'Caută teme germane (în orice limbă)…', nTopics: '{n} teme', nTopics_one: '{n} temă',
+    deDetailEmpty: 'Alegeți o temă pentru a vedea corespondenții din os-taxonomy, vârstele pe sisteme și ce trebuie știut înainte.', evidence: 'Semne că a înțeles', laender: 'Diferențe între landuri',
+    cp: 'Corespondenți în os-taxonomy ({n})', cpNone: 'Niciunul — nu există o temă comparabilă în os-taxonomy.', byJur: 'Vârsta de început pe sisteme: {x}', note: 'Notă: {x}',
+    prereqs: 'Necesită înainte ({n})', unlocks: 'Duce mai departe la ({n})', none: 'niciuna', standards: 'Standarde', openDeBrowser: 'Deschide în taxonomia germană →', pathLink: 'Traseul de învățare →',
+    allOsSubjects: 'Toate disciplinele os', 'cov.any': 'Toate', 'cov.covered': 'Are corespondent german', 'cov.related': 'Doar înrudite', 'cov.none': 'Fără corespondent german', searchOs: 'Caută în os-taxonomy (în engleză)…',
+    osDetailEmpty: 'Alegeți o temă din os-taxonomy pentru a vedea corespondenții ei germani.', deCp: 'Corespondenți germani', deCpNone: 'Niciunul în taxonomia germană.', osEnglish: 'Textele din os-taxonomy există doar în engleză.',
+    showing600: 'Sunt afișate primele 600 — restrângeți filtrele.', age: 'vârsta {a}–{b}',
+    gapDeH: 'Teme germane fără corespondent în os-taxonomy', gapDeSub: 'Grupate pe discipline — ce ar rata o ofertă construită pe os-taxonomy pentru un copil dintr-o școală germană.',
+    gapOsH: 'Domenii din os-taxonomy fără corespondent german', gapOsSub: 'Conținuturi care nu fac parte din curriculumul german obișnuit.',
+    gapAllCovered: 'Fiecare domeniu os are cel puțin un corespondent german.', barely: 'Abia acoperite (< 25% din domeniu)',
+    lk: 'Leistungskurs (eA, nivel avansat)', allCourses: 'toate cursurile (gA)', vorschule: 'Vorschule',
+    'st.0-4': 'Grundschule (Vorschule–Kl. 4)', 'st.5-10': 'Sek I (Kl. 5–10)', 'st.11-13': 'Oberstufe (Kl. 11–13)', 'st.5-6': 'Kl. 5–6', 'st.7-10': 'Kl. 7–10 (Gymnasium)',
+    'jur.GB': 'Anglia (UK NC)', 'jur.US': 'SUA (CCSS/NGSS)', 'jur.AU': 'Australia (ACARA v9)', 'jur.CA': 'Ontario',
+    'rel.exact': 'identic', 'rel.close': 'apropiat', 'rel.broader': 'os mai larg', 'rel.narrower': 'os mai restrâns', 'rel.related2': 'înrudit',
+    'type.CONCEPTUAL': 'Concept', 'type.PROCEDURAL': 'Deprindere sau procedeu', 'type.REPRESENTATIONAL': 'Reprezentare', 'type.LANGUAGE': 'Limbaj de specialitate', 'type.META': 'Strategie de învățare',
+    footer: 'Prototip de cercetare, realizat cu ajutorul inteligenței artificiale și neverificat încă de profesori. Textele românești ale temelor sunt traduceri automate ale celor în engleză; textele din os-taxonomy există doar în engleză.<br>Lernlandkarte © 2026 Alexandru Prian: baza de date ODbL 1.0, conținut CC BY-SA 4.0, cod MIT · se bazează pe Marble Skill Taxonomy (v1) și conține date din ea · © Generative Spark, Inc. (Marble) · ODbL 1.0 / CC BY-SA 4.0 · <a href="https://github.com/codingarchitect-wq/lernlandkarte">Datele și codul pe GitHub</a>.',
+  },
+};
+// os-taxonomy subject names (its topic and domain texts stay English)
+const OS_SUBJ = {
+  Mathematics: { de: 'Mathematik', ro: 'Matematică' }, Science: { de: 'Naturwissenschaften', ro: 'Științe' }, English: { de: 'Englisch (Erstsprache)', ro: 'Engleză (limbă maternă)' },
+  'Personal & Social Development': { de: 'Persönliche und soziale Entwicklung', ro: 'Dezvoltare personală și socială' }, History: { de: 'Geschichte', ro: 'Istorie' }, Computing: { de: 'Informatik', ro: 'Informatică' },
+  'Life Skills': { de: 'Lebenspraktische Kompetenzen', ro: 'Abilități de viață' }, Geography: { de: 'Geographie', ro: 'Geografie' }, 'Learning to Learn': { de: 'Lernen lernen', ro: 'A învăța să înveți' },
+};
+function L(k, v = {}) {
+  const keys = v.n === 1 ? [k + '_one', k] : [k];
+  for (const tb of [I18N[LANG], I18N.en]) for (const kk of keys) if (tb[kk] != null) return tb[kk].replace(/\{(\w+)\}/g, (m, x) => typeof v[x] === 'number' ? v[x].toLocaleString(LANG) : v[x] ?? m);
+  return k;
 }
-if (VAR === 'core') for (const a of document.querySelectorAll('a.xl')) a.href += '?subjects=core';
-const $ = s => document.querySelector(s);
-const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const pick = m => m ? (m[LANG] ?? m.en ?? Object.values(m)[0] ?? '') : '';
+const NM = X.names;
+const deSubj = s => pick(NM.deSubj[s]) || s, deDom = (s, d) => pick(NM.deDom[s + '|' + d]) || d;
+const osSubj = s => OS_SUBJ[s]?.[LANG] || s;
+const nmDe = t => pick(t.N), altDe = t => LANG === 'de' ? t.N.en : t.N.de;
 const pct = (a, b) => b ? Math.round(100 * a / b) : 0;
-const sgn = v => v == null ? '–' : (v > 0 ? '+' : v < 0 ? '−' : '±') + Math.abs(v);
-const JUR = C.jurisdictions;
-const osById = new Map(X.os.map(t => [t.id, t]));
-const deById = new Map(X.de.map(t => [t.id, t]));
-const REL = { exact: 'exact', close: 'close', broader: 'os broader', narrower: 'os narrower', related: 'related' };
+const sgn = v => v == null ? '–' : (v > 0 ? '+' : v < 0 ? '−' : '±') + Math.abs(v).toLocaleString(LANG);
+const yrs = v => L('yr', { v: sgn(v), n: Math.abs(v ?? 0) });
+const JUR = C.jurisdictions, JK = Object.keys(JUR);
+const jurName = k => L('jur.' + k);
+const baseName = k => k === 'os' ? L('base.os') : jurName(k), cmpName = k => k === 'os' ? L('cmpB.os') : jurName(k);
+const gradeLab = g => g[0] === g[1] ? (g[0] === 0 ? L('vorschule') : `Kl. ${g[0]}`) : `Kl. ${g[0]}–${g[1]}`;
+const levelLab = t => t.cl ? ` · ${t.cl === 'eA' ? L('lk') : L('allCourses')}` : '';
+const REL = r => L('rel.' + (r === 'related' ? 'related2' : r));
 const bucket = r => r === 'exact' || r === 'close' ? 'strong' : r === 'broader' || r === 'narrower' ? 'partial' : r === 'related' ? 'related' : 'none';
 const relRank = { exact: 0, close: 1, broader: 2, narrower: 3, related: 4 };
 const best = t => t.m.length ? t.m.map(m => m[1]).sort((a, b) => relRank[a] - relRank[b])[0] : 'none';
 const BCOL = { strong: 'var(--ord-1)', partial: 'var(--ord-2)', related: 'var(--ord-3)', none: 'var(--none)' };
-const BLAB = { strong: 'Strong (exact/close)', partial: 'Partial (os broader/narrower)', related: 'Related only', none: 'No counterpart' };
+const osById = new Map(X.os.map(t => [t.id, t])), deById = new Map(X.de.map(t => [t.id, t])), deByKey = new Map(X.de.map(t => [t.k, t]));
+const STAGE_RANGE = { 'Grundschule (Vorschule–Kl. 4)': '0-4', 'Sek I (Kl. 5–10)': '5-10', 'Oberstufe (Kl. 11–13)': '11-13', 'Kl. 5–6': '5-6', 'Kl. 7–10': '7-10' };
+const stageLab = r => L('st.' + (r.range || STAGE_RANGE[r.stage]));
 
-// theme toggle
 $('#theme').onclick = () => { const r = document.documentElement; const dark = r.dataset.theme ? r.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches; r.dataset.theme = dark ? 'light' : 'dark'; };
-$('#gen').textContent = C.generatedAt;
-
-// tooltip
 const tip = $('#tip');
 document.addEventListener('mousemove', e => {
   const el = e.target.closest('[data-tip]');
@@ -299,138 +470,141 @@ document.addEventListener('mousemove', e => {
   tip.style.left = Math.min(innerWidth - w - 8, e.clientX + 14) + 'px';
   tip.style.top = Math.min(innerHeight - h - 8, e.clientY + 14) + 'px';
 });
-
-// tabs
 function showTab(tab) {
   for (const x of document.querySelectorAll('#tabs button')) x.setAttribute('aria-selected', x.dataset.tab === tab);
   for (const p of document.querySelectorAll('[data-panel]')) p.hidden = p.dataset.panel !== tab;
 }
 $('#tabs').addEventListener('click', e => { const b = e.target.closest('button[data-tab]'); if (b) showTab(b.dataset.tab); });
+const qsWith = (k, v) => { const u = new URLSearchParams(location.search); v == null ? u.delete(k) : u.set(k, v); const s = u.toString(); return s ? '?' + s : ''; };
+for (const b of document.querySelectorAll('#var button')) b.onclick = () => { if (b.dataset.var !== VAR) location.href = location.pathname + qsWith('subjects', b.dataset.var === 'core' ? 'core' : null) + location.hash; };
+$('#lang').addEventListener('click', e => { const b = e.target.closest('[data-lang]'); if (!b || b.dataset.lang === LANG) return; LANG = b.dataset.lang; history.replaceState(null, '', location.pathname + qsWith('lang', LANG === 'en' ? null : LANG) + location.hash); renderAll(); });
+// the German taxonomy pages open in German by default; pass the language when it differs
+const browserQ = () => { const p = new URLSearchParams(); if (VAR === 'core') p.set('subjects', 'core'); if (LANG !== 'de') p.set('lang', LANG); const s = p.toString(); return s ? '?' + s : ''; };
 
-// KPIs
-const S = C.structure;
-const tot = C.deCoverage.reduce((a, r) => ({ t: a.t + r.topics, c: a.c + r.strong + r.partial }), { t: 0, c: 0 });
-const osTot = C.osCoverage.reduce((a, r) => ({ t: a.t + r.topics, c: a.c + r.covered }), { t: 0, c: 0 });
-const pa = C.prerequisiteAgreement;
-const kpis = [
-  [S.de.topics.toLocaleString('en'), `German micro-topics in ${S.de.subjects} subjects (${S.os.topics.toLocaleString('en')} in os-taxonomy)`],
-  [pct(tot.c, tot.t) + '%', 'of German topics have a strong or partial os-taxonomy counterpart'],
-  [pct(osTot.c, osTot.t) + '%', 'of os-taxonomy topics have a German counterpart'],
-  [S.de.germanSpecific, 'topics flagged German-specific (language, Länder, institutions)'],
-  [sgn(C.offsets.overallByJurisdiction.GB.median) + ' yr', `median age offset vs England for matched topics (US ${sgn(C.offsets.overallByJurisdiction.US.median)}, AU ${sgn(C.offsets.overallByJurisdiction.AU.median)}, Ontario ${sgn(C.offsets.overallByJurisdiction.CA.median)})`],
-  [pct(pa.agree, pa.pairs) + '%', `of mappable German prerequisite edges also hold in the os graph (${pa.reversed} reversed)`],
-];
-$('#kpis').innerHTML = kpis.map(([v, l]) => `<div class="card kpi"><div class="v">${esc(v)}</div><div class="l">${esc(l)}</div></div>`).join('');
-
-// German coverage stacked bars
-$('#covLegend').innerHTML = ['strong', 'partial', 'related', 'none'].map(b => `<span><i style="background:${BCOL[b]}"></i>${BLAB[b]}</span>`).join('');
-$('#deCov').innerHTML = C.deCoverage.map(r => {
-  const segs = ['strong', 'partial', 'related', 'none'].filter(b => r[b] > 0).map(b => `<div class="seg hit" style="width:${100 * r[b] / r.topics}%;background:${BCOL[b]}" data-tip="<b>${esc(r.subject)}</b><br>${BLAB[b]}: ${r[b]} of ${r.topics} (${pct(r[b], r.topics)}%)"></div>`).join('');
-  return `<div class="hbar"><div class="lab" title="${esc(r.subject)}">${esc(r.subject)}</div><div class="track">${segs}</div><div class="val">${pct(r.strong + r.partial, r.topics)}%</div></div>`;
-}).join('');
-
-// coverage by school stage
-$('#stageCov').innerHTML = (C.deByStage || []).map(r => {
-  const segs = ['strong', 'partial', 'related', 'none'].filter(b => r[b] > 0).map(b => `<div class="seg hit" style="width:${100 * r[b] / r.topics}%;background:${BCOL[b]}" data-tip="<b>${esc(r.stage)}</b><br>${BLAB[b]}: ${r[b]} of ${r.topics} (${pct(r[b], r.topics)}%)"></div>`).join('');
-  return `<div class="hbar"><div class="lab" title="${esc(r.stage)}">${esc(r.stage)}</div><div class="track">${segs}</div><div class="val">${pct(r.strong + r.partial, r.topics)}%</div></div>`;
-}).join('');
-
-// os coverage ranked bars
-$('#osCov').innerHTML = [...C.osCoverage].sort((a, b) => b.pct - a.pct).map(r =>
-  `<div class="hbar"><div class="lab">${esc(r.subject)}</div><div class="track"><div class="seg hit" style="width:${Math.max(r.pct, 0.5)}%;background:var(--series-1)" data-tip="<b>${esc(r.subject)}</b><br>${r.covered} of ${r.topics} os topics have a German counterpart<br>${r.relatedOnly} more are only related"></div></div><div class="val">${Math.round(r.pct)}%</div></div>`).join('');
-
-// histogram: rendered by the timing section below (shared histSVG)
-
-// jurisdiction table
-$('#jurTable').innerHTML = `<table><thead><tr><th>German subject</th><th class="n">n</th>${Object.values(JUR).map(j => `<th class="n">${esc(j)}</th>`).join('')}</tr></thead><tbody>` +
-  C.offsets.bySubject.map(r => `<tr class="prow" data-s="${esc(r.subject)}"><td>${esc(r.subject)}</td><td class="n">${r.n}</td>${Object.keys(JUR).map(k => `<td class="n" data-base="${k}">${sgn(r.byJurisdiction[k])}</td>`).join('')}</tr>`).join('') +
-  `<tr class="prow" data-s=""><td><b>All</b></td><td class="n">${C.offsets.n}</td>${Object.keys(JUR).map(k => `<td class="n" data-base="${k}"><b>${sgn(C.offsets.overallByJurisdiction[k].median)}</b></td>`).join('')}</tr></tbody></table>`;
-
-// offsets by school stage (rows click through to the timing tab)
-$('#jurStage').innerHTML = (C.offsets.byStage || []).length ? `<table><thead><tr><th>Stage</th><th class="n">n</th>${Object.values(JUR).map(j => `<th class="n">${esc(j)}</th>`).join('')}</tr></thead><tbody>` +
-  C.offsets.byStage.map(r => `<tr class="prow" data-stage="${{ 'Grundschule (Vorschule–Kl. 4)': '0-4', 'Kl. 5–6': '5-6', 'Kl. 7–10': '7-10', 'Oberstufe (Kl. 11–13)': '11-13' }[r.stage] || ''}"><td>${esc(r.stage)}</td><td class="n">${r.n}</td>${Object.keys(JUR).map(k => `<td class="n" data-base="${k}" title="n = ${r.byJurisdiction[k].n}">${r.byJurisdiction[k].n ? sgn(r.byJurisdiction[k].median) : '–'}</td>`).join('')}</tr>`).join('') + '</tbody></table>' : '';
-
-// matrix heatmap
-(function () {
-  const rows = C.deCoverage.map(r => r.subject);
-  const cols = [...new Set(rows.flatMap(r => Object.keys(C.matrix[r] || {})))].sort();
+// ---------- static texts and overview ----------
+function renderStatic() {
+  document.documentElement.lang = LANG; document.title = L('title');
+  $('#title').textContent = L('title');
+  $('#intro').innerHTML = L('intro', { gen: esc(C.generatedAt), de: `<a class="xl" href="../de-taxonomy/index.html${browserQ()}">${esc(L('linkDe'))}</a>`, map: `<a class="xl" href="../de-taxonomy/graph.html${browserQ()}">${esc(L('linkMap'))}</a>` });
+  for (const b of document.querySelectorAll('#lang button')) b.setAttribute('aria-pressed', b.dataset.lang === LANG);
+  $('#lang').setAttribute('aria-label', L('language'));
+  $('#theme').textContent = L('theme');
+  $('#var [data-var="all"]').textContent = L('allSubjects'); $('#var [data-var="core"]').textContent = L('coreSubjects');
+  for (const b of document.querySelectorAll('#var button')) b.setAttribute('aria-pressed', b.dataset.var === VAR);
+  for (const b of document.querySelectorAll('#tabs button')) b.textContent = L('tab.' + b.dataset.tab);
+  for (const el of document.querySelectorAll('[data-i]')) el.innerHTML = L(el.dataset.i);
+  document.querySelector('[data-to-timing]').textContent = L('drill');
+  const dl = `<span><i style="background:var(--div-neg)"></i>${esc(L('earlier'))}</span><span><i style="background:var(--div-mid)"></i>${esc(L('same'))}</span><span><i style="background:var(--div-pos)"></i>${esc(L('later'))}</span>`;
+  $('#dLegend1').innerHTML = dl; $('#dLegend2').innerHTML = dl;
+  $('#dLegend3').innerHTML = `<span><i style="background:var(--div-neg)"></i>${esc(L('earlierS'))}</span><span><i style="background:var(--div-mid)"></i>${esc(L('same'))}</span><span><i style="background:var(--div-pos)"></i>${esc(L('laterS'))}</span>`;
+  $('#footer').innerHTML = L('footer');
+}
+function renderOverview() {
+  const S = C.structure, O = C.offsets, J = O.overallByJurisdiction, pa = C.prerequisiteAgreement;
+  const tot = C.deCoverage.reduce((a, r) => ({ t: a.t + r.topics, c: a.c + r.strong + r.partial }), { t: 0, c: 0 });
+  const osTot = C.osCoverage.reduce((a, r) => ({ t: a.t + r.topics, c: a.c + r.covered }), { t: 0, c: 0 });
+  $('#kpis').innerHTML = [
+    [S.de.topics.toLocaleString(LANG), L('k1', { s: S.de.subjects, m: S.os.topics })], [pct(tot.c, tot.t) + '%', L('k2')], [pct(osTot.c, osTot.t) + '%', L('k3')],
+    [S.de.germanSpecific, L('k4')], [yrs(J.GB.median), L('k5', { us: sgn(J.US.median), au: sgn(J.AU.median), ca: sgn(J.CA.median) })], [pct(pa.agree, pa.pairs) + '%', L('k6', { r: pa.reversed })],
+  ].map(([v, l]) => `<div class="card kpi"><div class="v">${esc(v)}</div><div class="l">${esc(l)}</div></div>`).join('');
+  $('#covLegend').innerHTML = ['strong', 'partial', 'related', 'none'].map(b => `<span><i style="background:${BCOL[b]}"></i>${esc(L('b.' + b))}</span>`).join('');
+  const bars = (rows, lab) => rows.map(r => {
+    const segs = ['strong', 'partial', 'related', 'none'].filter(b => r[b] > 0).map(b => `<div class="seg hit" style="width:${100 * r[b] / r.topics}%;background:${BCOL[b]}" ${tipA(`<b>${esc(lab(r))}</b><br>${esc(L('b.' + b))}: ${L('ofN', { a: r[b], b: r.topics, p: pct(r[b], r.topics) })}`)}></div>`).join('');
+    return `<div class="hbar"><div class="lab" title="${esc(lab(r))}">${esc(lab(r))}</div><div class="track">${segs}</div><div class="val">${pct(r.strong + r.partial, r.topics)}%</div></div>`;
+  }).join('');
+  $('#deCov').innerHTML = bars(C.deCoverage, r => deSubj(r.subject));
+  $('#stageCov').innerHTML = bars(C.deByStage || [], stageLab);
+  $('#osCov').innerHTML = [...C.osCoverage].sort((a, b) => b.pct - a.pct).map(r =>
+    `<div class="hbar"><div class="lab">${esc(osSubj(r.subject))}</div><div class="track"><div class="seg hit" style="width:${Math.max(r.pct, 0.5)}%;background:var(--series-1)" ${tipA(`<b>${esc(osSubj(r.subject))}</b><br>${L('osCovTip', { c: r.covered, t: r.topics, r: r.relatedOnly })}`)}></div></div><div class="val">${Math.round(r.pct)}%</div></div>`).join('');
+  $('#hist').innerHTML = histSVG(PAIRS.map(p => p.d.a[0] - p.o.a[0]), null) + `<p class="sub">${esc(L('histFoot', { n: O.n, m: yrs(O.median) }))}</p>`;
+  const head = `<th class="n">n</th>${JK.map(k => `<th class="n">${esc(jurName(k))}</th>`).join('')}`;
+  $('#jurTable').innerHTML = `<table><thead><tr><th>${esc(L('thSubject'))}</th>${head}</tr></thead><tbody>` +
+    O.bySubject.map(r => `<tr class="prow" data-s="${esc(r.subject)}"><td>${esc(deSubj(r.subject))}</td><td class="n">${r.n}</td>${JK.map(k => `<td class="n" data-base="${k}">${sgn(r.byJurisdiction[k])}</td>`).join('')}</tr>`).join('') +
+    `<tr class="prow" data-s=""><td><b>${esc(L('all'))}</b></td><td class="n">${O.n}</td>${JK.map(k => `<td class="n" data-base="${k}"><b>${sgn(J[k].median)}</b></td>`).join('')}</tr></tbody></table>`;
+  $('#jurStage').innerHTML = (O.byStage || []).length ? `<table><thead><tr><th>${esc(L('thStage'))}</th>${head}</tr></thead><tbody>` +
+    O.byStage.map(r => `<tr class="prow" data-stage="${esc(r.range || STAGE_RANGE[r.stage] || '')}"><td>${esc(stageLab(r))}</td><td class="n">${r.n}</td>${JK.map(k => `<td class="n" data-base="${k}" title="n = ${r.byJurisdiction[k].n}">${r.byJurisdiction[k].n ? sgn(r.byJurisdiction[k].median) : '–'}</td>`).join('')}</tr>`).join('') + '</tbody></table>' : '';
+  const rows = C.deCoverage.map(r => r.subject), cols = [...new Set(rows.flatMap(r => Object.keys(C.matrix[r] || {})))].sort((a, b) => osSubj(a).localeCompare(osSubj(b), LANG));
   const max = Math.max(1, ...rows.flatMap(r => cols.map(c => C.matrix[r]?.[c] || 0)));
   const step = v => v === 0 ? 'var(--seq-0)' : `var(--seq-${Math.min(5, 1 + Math.floor(4.999 * Math.sqrt(v / max)))})`;
   const ink = v => v > 0 && Math.sqrt(v / max) > 0.55 ? 'var(--ink-high)' : 'var(--text-primary)';
-  $('#matrix').innerHTML = `<table class="heat"><thead><tr><th></th>${cols.map(c => `<th class="n">${esc(c)}</th>`).join('')}</tr></thead><tbody>` +
-    rows.map(r => `<tr><th>${esc(r)}</th>${cols.map(c => { const v = C.matrix[r]?.[c] || 0; return `<td class="c hit" style="background:${step(v)};color:${ink(v)}" data-tip="<b>${esc(r)} → ${esc(c)}</b><br>${v} links">${v || ''}</td>`; }).join('')}</tr>`).join('') + '</tbody></table>';
-})();
+  $('#matrix').innerHTML = `<table class="heat"><thead><tr><th></th>${cols.map(c => `<th class="n">${esc(osSubj(c))}</th>`).join('')}</tr></thead><tbody>` +
+    rows.map(r => `<tr><th>${esc(deSubj(r))}</th>${cols.map(c => { const v = C.matrix[r]?.[c] || 0; return `<td class="c hit" style="background:${step(v)};color:${ink(v)}" ${tipA(`<b>${esc(deSubj(r))} → ${esc(osSubj(c))}</b><br>${L('links', { v })}`)}>${v || ''}</td>`; }).join('')}</tr>`).join('') + '</tbody></table>';
+  const SL = ['topics', 'subjects', 'domains', 'edges', 'hardShare', 'edgesPerTopic', 'roots', 'maxDepth', 'meanDepth', 'crossSubjectEdgeShare', 'curricula', 'standards', 'topicsWithStandards', 'ageMin', 'ageMax', 'meanAgeSpan'];
+  const num = v => typeof v === 'number' ? v.toLocaleString(LANG) : v;
+  $('#structure').innerHTML = `<table><thead><tr><th>${esc(L('metric'))}</th><th class="n">${esc(L('german'))}</th><th class="n">${esc(L('ostax'))}</th></tr></thead><tbody>${SL.map(k => `<tr><td>${esc(L('sl.' + k))}</td><td class="n">${num(S.de[k])}</td><td class="n">${num(S.os[k])}</td></tr>`).join('')}</tbody></table>`;
+}
+$('#hist').addEventListener('click', e => { const b = e.target.closest('[data-bin]'); if (!b) return; Object.assign(TS, { base: 'os', match: 'strong', subject: '', domain: '', bin: +b.dataset.bin, q: '', open: null }); toTiming(); });
+document.querySelector('[data-to-timing]').onclick = () => toTiming();
+$('#jurStage').addEventListener('click', e => { const r = e.target.closest('tr[data-stage]'); if (!r) return; const c = e.target.closest('[data-base]'); Object.assign(TS, { stage: r.dataset.stage, subject: '', domain: '', bin: null, q: '', open: null, base: c ? c.dataset.base : TS.base }); toTiming(); });
+$('#jurTable').addEventListener('click', e => { const r = e.target.closest('tr[data-s]'); if (!r) return; const c = e.target.closest('[data-base]'); Object.assign(TS, { subject: r.dataset.s, domain: '', bin: null, q: '', open: null, base: c ? c.dataset.base : TS.base }); toTiming(); });
 
-// structure table
-const SL = [['topics', 'Topics'], ['subjects', 'Subjects'], ['domains', 'Domains'], ['edges', 'Prerequisite edges'], ['hardShare', 'Hard edges %'], ['edgesPerTopic', 'Edges per topic'], ['roots', 'Roots (no prerequisites)'], ['maxDepth', 'Max depth'], ['meanDepth', 'Mean depth'], ['crossSubjectEdgeShare', 'Cross-subject edges %'], ['curricula', 'Curriculum sources'], ['standards', 'Standards in catalogue'], ['topicsWithStandards', 'Topics with ≥1 standard %'], ['ageMin', 'Youngest age'], ['ageMax', 'Oldest age'], ['meanAgeSpan', 'Mean age span (years)']];
-$('#structure').innerHTML = `<table><thead><tr><th>Metric</th><th class="n">German</th><th class="n">os-taxonomy</th></tr></thead><tbody>${SL.map(([k, l]) => `<tr><td>${l}</td><td class="n">${S.de[k]}</td><td class="n">${S.os[k]}</td></tr>`).join('')}</tbody></table>`;
-
-// ---------- German explorer ----------
-const deSubjects = [...new Set(X.de.map(t => t.s))];
-$('#deSubject').innerHTML = '<option value="">All German subjects</option>' + deSubjects.map(s => `<option>${esc(s)}</option>`).join('');
+// ---------- German topics ----------
 const preOf = new Map(), depOf = new Map();
 for (const [a, b, h] of X.deEdges) { (preOf.get(a) || preOf.set(a, []).get(a)).push([b, h]); (depOf.get(b) || depOf.set(b, []).get(b)).push([a, h]); }
-const gradeLab = g => g[0] === g[1] ? (g[0] === 0 ? 'Vorschule' : `Kl. ${g[0]}`) : `Kl. ${g[0]}–${g[1]}`;
-const levelLab = t => t.cl ? ` · ${t.cl === 'eA' ? 'Leistungskurs (eA)' : 'all courses (gA)'}` : '';
+const fillSelect = (el, opts) => { const v = el.value; el.innerHTML = opts.map(([val, lab]) => `<option value="${esc(val)}">${esc(lab)}</option>`).join(''); if (opts.some(o => String(o[0]) === v)) el.value = v; };
+const searchDe = t => (Object.values(t.N).join(' ') + ' ' + pick(t.DS) + ' ' + t.d).toLowerCase();
+const searchOs = o => (o.n + ' ' + o.ds + ' ' + o.d).toLowerCase();
+let DE_SEL = null, OS_SEL = null;
 function renderDe() {
+  fillSelect($('#deSubject'), [['', L('allDeSubjects')], ...[...new Set(X.de.map(t => t.s))].map(s => [s, deSubj(s)])]);
+  fillSelect($('#deRel'), [['', L('rel.any')], ...['strong', 'partial', 'related', 'none'].map(k => [k, L('rel.' + k)])]);
+  fillSelect($('#deGrade'), [['', L('allGrades')], ['0', L('vorschule')], ...Array.from({ length: 13 }, (_, i) => [String(i + 1), `Klasse ${i + 1}`])]);
+  $('#deQ').placeholder = L('searchDe');
   const s = $('#deSubject').value, r = $('#deRel').value, g = $('#deGrade').value, gs = $('#deGS').checked, q = $('#deQ').value.trim().toLowerCase();
-  const xs = X.de.filter(t => (!s || t.s === s) && (!r || bucket(best(t)) === r) && (g === '' || (t.g[0] <= +g && t.g[1] >= +g)) && (!gs || t.gs) && (!q || (t.n + ' ' + t.nd + ' ' + t.ds + ' ' + t.d).toLowerCase().includes(q)));
-  $('#deCount').textContent = `${xs.length} topics`;
-  $('#deList').innerHTML = xs.slice(0, 600).map(t => { const b = bucket(best(t)); return `<div class="row" data-id="${t.id}"><div><b>${esc(t.nd)}</b> · ${esc(t.n)}</div><div class="meta"><span class="pill"><span class="sw" style="background:${BCOL[b]}"></span>${BLAB[b]}</span>${esc(t.s)} › ${esc(t.d)} · ${gradeLab(t.g)}${levelLab(t)}${t.gs ? ' · <span class="pill">German-specific</span>' : ''}</div></div>`; }).join('');
+  const xs = X.de.filter(t => (!s || t.s === s) && (!r || bucket(best(t)) === r) && (g === '' || (t.g[0] <= +g && t.g[1] >= +g)) && (!gs || t.gs) && (!q || searchDe(t).includes(q)));
+  $('#deCount').textContent = L('nTopics', { n: xs.length });
+  $('#deList').innerHTML = xs.slice(0, 600).map(t => { const b = bucket(best(t)); return `<div class="row" data-id="${t.id}"><div><b>${esc(nmDe(t))}</b> · ${esc(altDe(t))}</div><div class="meta"><span class="pill"><span class="sw" style="background:${BCOL[b]}"></span>${esc(L('b.' + b))}</span>${esc(deSubj(t.s))} › ${esc(deDom(t.s, t.d))} · ${gradeLab(t.g)}${esc(levelLab(t))}${t.gs ? ` · <span class="pill">${esc(L('specific'))}</span>` : ''}</div></div>`; }).join('') + (xs.length > 600 ? `<div class="row meta">${esc(L('showing600'))}</div>` : '');
+  if (DE_SEL) showDe(DE_SEL); else $('#deDetail').innerHTML = `<p class="sub">${esc(L('deDetailEmpty'))}</p>`;
 }
 function showDe(id) {
-  const t = deById.get(id); if (!t) return;
+  const t = deById.get(id); if (!t) return; DE_SEL = id;
   for (const r of document.querySelectorAll('#deList .row')) r.setAttribute('aria-selected', r.dataset.id === id);
-  const prer = (preOf.get(id) || []).map(([p, h]) => deById.get(p)).filter(Boolean);
-  const deps = (depOf.get(id) || []).map(([p]) => deById.get(p)).filter(Boolean);
-  const matches = [...t.m].sort((a, b) => relRank[a[1]] - relRank[b[1]]).map(([oid, rel, note]) => { const o = osById.get(oid); if (!o) return ''; const j = Object.entries(o.j).map(([k, a]) => `${k} ${a}`).join(' · ');
-    return `<div class="match"><span class="pill">${REL[rel]}</span> <a href="#os/${o.id}"><b>${esc(o.n)}</b></a> <span class="k">${esc(o.s)} › ${esc(o.d)} · age ${o.a[0]}–${o.a[1]} (Δ ${sgn(t.a[0] - o.a[0])})</span><div class="k">${esc(o.ds)}</div>${j ? `<div class="k">Start age by jurisdiction: ${esc(j)}</div>` : ''}${note ? `<div class="k">Note: ${esc(note)}</div>` : ''}</div>`; }).join('');
-  $('#deDetail').innerHTML = `<div class="k">${esc(t.s)} › ${esc(t.d)} · ${gradeLab(t.g)}${levelLab(t)} · age ${t.a[0]}–${t.a[1]} · ${t.ty}${t.gs ? ' · German-specific' : ''}</div><h2 style="margin-top:4px">${esc(t.nd)}</h2><div class="sub">${esc(t.n)}</div><p style="font-size:13px;line-height:1.5">${esc(t.ds)}</p>` +
-    `<h3>Evidence of mastery</h3><ul>${t.ev.map(e => `<li>${esc(e)}</li>`).join('')}</ul>` +
-    (t.ln ? `<h3>Länder variation</h3><p class="sub">${esc(t.ln)}</p>` : '') +
-    `<h3>os-taxonomy counterparts (${t.m.length})</h3>${matches || '<p class="sub">None — no comparable os-taxonomy topic.</p>'}` +
-    `<h3>Prerequisites (${prer.length})</h3><ul>${prer.map(p => `<li><a href="#" data-go="${p.id}">${esc(p.nd)}</a> <span class="k">${gradeLab(p.g)}</span></li>`).join('') || '<li class="k">none</li>'}</ul>` +
-    `<h3>Unlocks (${deps.length})</h3><ul>${deps.slice(0, 20).map(p => `<li><a href="#" data-go="${p.id}">${esc(p.nd)}</a> <span class="k">${gradeLab(p.g)}</span></li>`).join('') || '<li class="k">none</li>'}</ul>` +
-    `<h3>Standards</h3><p class="k">${t.st.map(esc).join('<br>') || 'none'}</p>` +
-    `<p><a href="../de-taxonomy/index.html#t/${esc(t.k)}">Open in the German taxonomy browser →</a> · <a href="../de-taxonomy/index.html#path/${esc(t.k)}">Learning path →</a></p>`;
+  const prer = (preOf.get(id) || []).map(([p]) => deById.get(p)).filter(Boolean), deps = (depOf.get(id) || []).map(([p]) => deById.get(p)).filter(Boolean);
+  const matches = [...t.m].sort((a, b) => relRank[a[1]] - relRank[b[1]]).map(([oid, rel, note]) => { const o = osById.get(oid); if (!o) return ''; const j = Object.entries(o.j).map(([k, a]) => `${jurName(k)} ${a}`).join(' · ');
+    return `<div class="match"><span class="pill">${esc(REL(rel))}</span> <a href="#os/${o.id}"><b>${esc(o.n)}</b></a> <span class="k">${esc(osSubj(o.s))} › ${esc(o.d)} · ${esc(L('age', { a: o.a[0], b: o.a[1] }))} (Δ ${sgn(t.a[0] - o.a[0])})</span><div class="k">${esc(o.ds)}</div>${j ? `<div class="k">${esc(L('byJur', { x: j }))}</div>` : ''}${note ? `<div class="k">${esc(L('note', { x: pick(note) }))}</div>` : ''}</div>`; }).join('');
+  $('#deDetail').innerHTML = `<div class="k">${esc(deSubj(t.s))} › ${esc(deDom(t.s, t.d))} · ${gradeLab(t.g)}${esc(levelLab(t))} · ${esc(L('age', { a: t.a[0], b: t.a[1] }))} · ${esc(L('type.' + t.ty))}${t.gs ? ' · ' + esc(L('specific')) : ''}</div><h2 style="margin-top:4px">${esc(nmDe(t))}</h2><div class="sub">${esc(altDe(t))}</div><p style="font-size:13px;line-height:1.5">${esc(pick(t.DS))}</p>` +
+    `<h3>${esc(L('evidence'))}</h3><ul>${pick(t.EV).map(e => `<li>${esc(e)}</li>`).join('')}</ul>` +
+    (t.LN ? `<h3>${esc(L('laender'))}</h3><p class="sub">${esc(pick(t.LN))}</p>` : '') +
+    `<h3>${esc(L('cp', { n: t.m.length }))}</h3>${matches || `<p class="sub">${esc(L('cpNone'))}</p>`}` +
+    `<h3>${esc(L('prereqs', { n: prer.length }))}</h3><ul>${prer.map(p => `<li><a href="#" data-go="${p.id}">${esc(nmDe(p))}</a> <span class="k">${gradeLab(p.g)}</span></li>`).join('') || `<li class="k">${esc(L('none'))}</li>`}</ul>` +
+    `<h3>${esc(L('unlocks', { n: deps.length }))}</h3><ul>${deps.slice(0, 20).map(p => `<li><a href="#" data-go="${p.id}">${esc(nmDe(p))}</a> <span class="k">${gradeLab(p.g)}</span></li>`).join('') || `<li class="k">${esc(L('none'))}</li>`}</ul>` +
+    `<h3>${esc(L('standards'))}</h3><p class="k">${t.st.map(esc).join('<br>') || esc(L('none'))}</p>` +
+    `<p><a href="../de-taxonomy/index.html${browserQ()}#t/${esc(t.k)}">${esc(L('openDeBrowser'))}</a> · <a href="../de-taxonomy/index.html${browserQ()}#path/${esc(t.k)}">${esc(L('pathLink'))}</a></p>`;
 }
 for (const id of ['#deSubject', '#deRel', '#deGrade', '#deGS']) $(id).addEventListener('change', renderDe);
 $('#deQ').addEventListener('input', renderDe);
-$('#deList').addEventListener('click', e => { const r = e.target.closest('.row'); if (r) showDe(r.dataset.id); });
+$('#deList').addEventListener('click', e => { const r = e.target.closest('.row[data-id]'); if (r) showDe(r.dataset.id); });
 $('#deDetail').addEventListener('click', e => { const a = e.target.closest('[data-go]'); if (a) { e.preventDefault(); showDe(a.dataset.go); } });
-renderDe();
 
-// ---------- os explorer ----------
-const osSubjects = [...new Set(X.os.map(t => t.s))].sort();
-$('#osSubject').innerHTML = '<option value="">All os subjects</option>' + osSubjects.map(s => `<option>${esc(s)}</option>`).join('');
+// ---------- os-taxonomy topics ----------
 const deByOs = new Map();
 for (const t of X.de) for (const [oid, rel] of t.m) (deByOs.get(oid) || deByOs.set(oid, []).get(oid)).push([t.id, rel]);
 const osBucket = t => t.c && t.c !== 'related' ? 'covered' : t.c === 'related' ? 'related' : 'none';
 function renderOs() {
+  fillSelect($('#osSubject'), [['', L('allOsSubjects')], ...[...new Set(X.os.map(t => t.s))].sort((a, b) => osSubj(a).localeCompare(osSubj(b), LANG)).map(s => [s, osSubj(s)])]);
+  fillSelect($('#osCovSel'), [['', L('cov.any')], ...['covered', 'related', 'none'].map(k => [k, L('cov.' + k)])]);
+  $('#osQ').placeholder = L('searchOs');
   const s = $('#osSubject').value, c = $('#osCovSel').value, q = $('#osQ').value.trim().toLowerCase();
-  const xs = X.os.filter(t => (!s || t.s === s) && (!c || osBucket(t) === c) && (!q || (t.n + ' ' + t.ds + ' ' + t.d).toLowerCase().includes(q)));
-  $('#osCount').textContent = `${xs.length} topics`;
-  const lab = { covered: 'Has German counterpart', related: 'Related only', none: 'No German counterpart' }, col = { covered: 'var(--ord-1)', related: 'var(--ord-3)', none: 'var(--none)' };
-  $('#osList').innerHTML = xs.slice(0, 600).map(t => { const b = osBucket(t); return `<div class="row" data-id="${t.id}"><div><b>${esc(t.n)}</b></div><div class="meta"><span class="pill"><span class="sw" style="background:${col[b]}"></span>${lab[b]}</span>${esc(t.s)} › ${esc(t.d)} · age ${t.a[0]}–${t.a[1]}</div></div>`; }).join('') + (xs.length > 600 ? '<div class="row meta">Showing first 600 — refine the filters.</div>' : '');
+  const xs = X.os.filter(t => (!s || t.s === s) && (!c || osBucket(t) === c) && (!q || searchOs(t).includes(q)));
+  $('#osCount').textContent = L('nTopics', { n: xs.length }) + (L('osEnglish') ? ' · ' + L('osEnglish') : '');
+  const col = { covered: 'var(--ord-1)', related: 'var(--ord-3)', none: 'var(--none)' };
+  $('#osList').innerHTML = xs.slice(0, 600).map(t => { const b = osBucket(t); return `<div class="row" data-id="${t.id}"><div><b>${esc(t.n)}</b></div><div class="meta"><span class="pill"><span class="sw" style="background:${col[b]}"></span>${esc(L('cov.' + b))}</span>${esc(osSubj(t.s))} › ${esc(t.d)} · ${esc(L('age', { a: t.a[0], b: t.a[1] }))}</div></div>`; }).join('') + (xs.length > 600 ? `<div class="row meta">${esc(L('showing600'))}</div>` : '');
+  if (OS_SEL) showOs(OS_SEL); else $('#osDetail').innerHTML = `<p class="sub">${esc(L('osDetailEmpty'))}</p>`;
 }
 function showOs(id) {
-  const o = osById.get(id); if (!o) return;
+  const o = osById.get(id); if (!o) return; OS_SEL = id;
   for (const r of document.querySelectorAll('#osList .row')) r.setAttribute('aria-selected', r.dataset.id === id);
-  const ms = (deByOs.get(id) || []).map(([did, rel]) => { const t = deById.get(did); return `<div class="match"><span class="pill">${REL[rel]}</span> <a href="#de/${t.k}"><b>${esc(t.nd)}</b></a> · ${esc(t.n)} <span class="k">${esc(t.s)} › ${esc(t.d)} · ${gradeLab(t.g)} · age ${t.a[0]}–${t.a[1]} (Δ ${sgn(t.a[0] - o.a[0])})</span></div>`; }).join('');
-  const j = Object.entries(o.j).map(([k, a]) => `${JUR[k]}: ${a}`).join(' · ');
-  $('#osDetail').innerHTML = `<div class="k">${esc(o.s)} › ${esc(o.d)} · age ${o.a[0]}–${o.a[1]}</div><h2 style="margin-top:4px">${esc(o.n)}</h2><p style="font-size:13px;line-height:1.5">${esc(o.ds)}</p>${j ? `<p class="k">Start age by jurisdiction — ${esc(j)}</p>` : ''}<h3>German counterparts</h3>${ms || '<p class="sub">None in the German taxonomy.</p>'}`;
+  const ms = (deByOs.get(id) || []).map(([did, rel]) => { const t = deById.get(did); if (!t) return ''; return `<div class="match"><span class="pill">${esc(REL(rel))}</span> <a href="#de/${esc(t.k)}"><b>${esc(nmDe(t))}</b></a> · ${esc(altDe(t))} <span class="k">${esc(deSubj(t.s))} › ${esc(deDom(t.s, t.d))} · ${gradeLab(t.g)} · ${esc(L('age', { a: t.a[0], b: t.a[1] }))} (Δ ${sgn(t.a[0] - o.a[0])})</span></div>`; }).join('');
+  const j = Object.entries(o.j).map(([k, a]) => `${jurName(k)}: ${a}`).join(' · ');
+  $('#osDetail').innerHTML = `<div class="k">${esc(osSubj(o.s))} › ${esc(o.d)} · ${esc(L('age', { a: o.a[0], b: o.a[1] }))}</div><h2 style="margin-top:4px">${esc(o.n)}</h2><p style="font-size:13px;line-height:1.5">${esc(o.ds)}</p>${j ? `<p class="k">${esc(L('byJur', { x: j }))}</p>` : ''}<h3>${esc(L('deCp'))}</h3>${ms || `<p class="sub">${esc(L('deCpNone'))}</p>`}`;
 }
 for (const id of ['#osSubject', '#osCovSel']) $(id).addEventListener('change', renderOs);
 $('#osQ').addEventListener('input', renderOs);
-$('#osList').addEventListener('click', e => { const r = e.target.closest('.row'); if (r) showOs(r.dataset.id); });
-renderOs();
+$('#osList').addEventListener('click', e => { const r = e.target.closest('.row[data-id]'); if (r) showOs(r.dataset.id); });
 
-// ---------- timing: when do German children meet the same idea? ----------
-const tipA = h => `data-tip="${esc(h)}"`;
+// ---------- timing ----------
 const median = xs => { if (!xs.length) return null; const s = [...xs].sort((a, b) => a - b), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
-const deByKey = new Map(X.de.map(t => [t.k, t]));
 const PAIRS = C.offsets.pairs.map(([k, oid]) => { const d = deByKey.get(k), o = osById.get(oid); const m = (d?.m || []).find(x => x[0] === oid) || []; return { d, o, rel: m[1], note: m[2] }; }).filter(p => p.d && p.o);
-const BASES = { os: 'os-taxonomy overall', ...JUR };
 const baseAge = (p, b) => b === 'os' ? p.o.a[0] : p.o.j[b];
 const BINS = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5];
 const clampBin = v => Math.max(-5, Math.min(5, v));
@@ -439,105 +613,93 @@ const dcol = v => v < 0 ? 'var(--div-neg)' : v > 0 ? 'var(--div-pos)' : 'var(--d
 function histSVG(diffs, sel) {
   const H = {}; for (const v of diffs) { const b = clampBin(v); H[b] = (H[b] || 0) + 1; }
   const vals = BINS.map(b => H[b] || 0), max = Math.max(...vals, 1), n = diffs.length;
-  const W = 480, Ht = 210, pl = 36, pr = 8, pt = 16, pb = 34, bw = (W - pl - pr) / BINS.length, y0 = Ht - pb;
-  const y = v => pt + (y0 - pt) * (1 - v / max);
-  let s = `<svg viewBox="0 0 ${W} ${Ht}" width="100%" role="img" aria-label="Histogram of age offsets">`;
+  const W = 480, Ht = 210, pl = 36, pr = 8, pt = 16, pb = 34, bw = (W - pl - pr) / BINS.length, y0 = Ht - pb, y = v => pt + (y0 - pt) * (1 - v / max);
+  let s = `<svg viewBox="0 0 ${W} ${Ht}" width="100%" role="img" aria-label="${esc(L('histAria'))}">`;
   for (const t of [...new Set([0, Math.round(max / 2), max])]) s += `<line x1="${pl}" x2="${W - pr}" y1="${y(t)}" y2="${y(t)}" stroke="var(--grid)"/><text x="${pl - 6}" y="${y(t) + 4}" text-anchor="end">${t}</text>`;
   BINS.forEach((b, i) => {
     const v = vals[i], x = pl + i * bw + 2, w = bw - 4, top = y(v), r = Math.min(4, y0 - top);
-    const tt = tipA(`<b>Δ ${binLab(b)} year${Math.abs(b) === 1 ? '' : 's'}</b><br>${v} German topics (${pct(v, n)}%)<br><span style="color:var(--muted)">Click to list them</span>`);
+    const tt = tipA(L('histTip', { b: binLab(b), v, p: pct(v, n), n: Math.abs(b) }));
     if (v) s += `<path d="M${x},${y0} V${top + r} q0,-${r} ${r},-${r} H${x + w - r} q${r},0 ${r},${r} V${y0} Z" fill="${dcol(b)}" opacity="${sel == null || sel === b ? 1 : 0.3}"/>`;
     if (sel === b) s += `<text class="vlab" x="${x + w / 2}" y="${top - 4}" text-anchor="middle">${v}</text>`;
     s += `<rect x="${x - 2}" y="${pt}" width="${bw}" height="${y0 - pt}" fill="transparent" class="click" data-bin="${b}" ${tt}/><text x="${x + w / 2}" y="${y0 + 16}" text-anchor="middle">${binLab(b)}</text>`;
   });
-  return s + `<line x1="${pl}" x2="${W - pr}" y1="${y0}" y2="${y0}" stroke="var(--axis)"/><text x="${(W + pl) / 2}" y="${Ht - 4}" text-anchor="middle">Δ years (German start age − comparison start age)</text></svg>`;
+  return s + `<line x1="${pl}" x2="${W - pr}" y1="${y0}" y2="${y0}" stroke="var(--axis)"/><text x="${(W + pl) / 2}" y="${Ht - 4}" text-anchor="middle">${esc(L('axis'))}</text></svg>`;
 }
 const TS = { base: 'os', match: 'strong', stage: '', subject: '', domain: '', bin: null, q: '', sort: 'later', open: null };
 function toTiming() { showTab('timing'); renderTiming(); scrollTo({ top: $('#tabs').offsetTop - 8 }); }
-
-// overview: histogram + jurisdiction table drill into the timing tab
-$('#hist').innerHTML = histSVG(PAIRS.map(p => p.d.a[0] - p.o.a[0]), null) + `<p class="sub">n = ${C.offsets.n} German topics with an exact/close match; median ${sgn(C.offsets.median)} years. Click a bar to see its topics.</p>`;
-$('#hist').addEventListener('click', e => { const b = e.target.closest('[data-bin]'); if (!b) return; Object.assign(TS, { base: 'os', match: 'strong', subject: '', domain: '', bin: +b.dataset.bin, q: '', open: null }); toTiming(); });
-document.querySelector('[data-to-timing]').onclick = () => toTiming();
-$('#jurStage').addEventListener('click', e => { const r = e.target.closest('tr[data-stage]'); if (!r) return; const c = e.target.closest('[data-base]'); Object.assign(TS, { stage: r.dataset.stage, subject: '', domain: '', bin: null, q: '', open: null, base: c ? c.dataset.base : TS.base }); toTiming(); });
-$('#jurTable').addEventListener('click', e => { const r = e.target.closest('tr[data-s]'); if (!r) return; const c = e.target.closest('[data-base]'); Object.assign(TS, { subject: r.dataset.s, domain: '', bin: null, q: '', open: null, base: c ? c.dataset.base : TS.base }); toTiming(); });
-
-$('#tBase').innerHTML = Object.entries(BASES).map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join('');
-$('#tSubj').innerHTML = '<option value="">All German subjects</option>' + C.offsets.bySubject.map(r => `<option>${esc(r.subject)}</option>`).join('');
-const NOTE = {
-  os: 'Uses each os-taxonomy topic’s own start age (its ageRangeStart).',
-  GB: 'England’s Year N starts at age N+4, a year before German Klasse N (age N+5), so +1 here means the same school year.',
-  US: 'US Grade N starts at about age N+5, like German Klasse N, so Δ is also the difference in school years.',
-  AU: 'Australian Year N starts at about age N+5, like German Klasse N, so Δ is also the difference in school years.',
-  CA: 'Caveat: os-taxonomy’s Ontario contexts often carry the linked topic’s own age (e.g. age 6 on Grade 4–6 expectations), so this comparison understates how late Ontario places topics.',
-};
 const AGES = PAIRS.flatMap(p => [p.d.a[0], p.o.a[0], ...Object.values(p.o.j)]);
 const AMIN = Math.min(...AGES), AMAX = Math.max(...AGES), DW = 160, ax = a => 7 + (DW - 14) * (a - AMIN) / Math.max(1, AMAX - AMIN);
 const dumb = (b, g) => { const c = dcol(g - b); let s = `<svg width="${DW}" height="16" aria-hidden="true">`; for (let a = AMIN; a <= AMAX; a++) if (a % 2 === 0) s += `<line x1="${ax(a)}" x2="${ax(a)}" y1="2" y2="14" stroke="var(--grid)"/>`; return s + `<line x1="${ax(b)}" x2="${ax(g)}" y1="8" y2="8" stroke="${c}" stroke-width="2"/><circle cx="${ax(g)}" cy="8" r="4.5" fill="${c}"/><circle cx="${ax(b)}" cy="8" r="4" fill="none" stroke="var(--text-secondary)" stroke-width="1.5"/></svg>`; };
 const dumbAxis = () => { let s = `<svg width="${DW}" height="14" aria-hidden="true" style="display:block">`; for (let a = AMIN; a <= AMAX; a++) if (a % 2 === 0) s += `<text x="${ax(a)}" y="11" text-anchor="middle">${a}</text>`; return s + '</svg>'; };
+const STAGES = () => ['0-4', '5-6', '7-10', '11-13'].map(k => [k, L('st.' + k)]);
 function pairDetail(p) {
   const d = p.d, o = p.o, ga = d.a[0];
-  const rows = [['os', o.a[0]], ...Object.keys(JUR).map(k => [k, o.j[k]])].filter(([, a]) => a != null);
+  const rows = [['os', o.a[0]], ...JK.map(k => [k, o.j[k]])].filter(([, a]) => a != null);
   const others = d.m.filter(m => (m[1] === 'exact' || m[1] === 'close') && m[0] !== o.id).map(m => osById.get(m[0])).filter(Boolean);
   return `<div class="pdg">
-    <div><div class="k">German topic · ${esc(d.s)} › ${esc(d.d)} · ${gradeLab(d.g)} · age ${d.a[0]}–${d.a[1]}</div><b>${esc(d.nd)}</b> <span class="k">· ${esc(d.n)}</span><p>${esc(d.ds)}</p>
-      <div class="k"><a href="#de/${esc(d.k)}">Open in German topics</a> · <a href="../de-taxonomy/index.html#t/${esc(d.k)}">German taxonomy</a> · <a href="../de-taxonomy/index.html#path/${esc(d.k)}">learning path</a></div></div>
-    <div><div class="k">os-taxonomy · ${esc(o.s)} › ${esc(o.d)} · age ${o.a[0]}–${o.a[1]}</div><b>${esc(o.n)}</b><p>${esc(o.ds)}</p>
-      <div class="k"><a href="#os/${esc(o.id)}">Open in os-taxonomy tab</a></div></div>
+    <div><div class="k">${esc(L('deTopic'))} · ${esc(deSubj(d.s))} › ${esc(deDom(d.s, d.d))} · ${gradeLab(d.g)} · ${esc(L('age', { a: d.a[0], b: d.a[1] }))}</div><b>${esc(nmDe(d))}</b> <span class="k">· ${esc(altDe(d))}</span><p>${esc(pick(d.DS))}</p>
+      <div class="k"><a href="#de/${esc(d.k)}">${esc(L('openDe'))}</a> · <a href="../de-taxonomy/index.html${browserQ()}#t/${esc(d.k)}">${esc(L('deTax'))}</a> · <a href="../de-taxonomy/index.html${browserQ()}#path/${esc(d.k)}">${esc(L('path'))}</a></div></div>
+    <div><div class="k">os-taxonomy · ${esc(osSubj(o.s))} › ${esc(o.d)} · ${esc(L('age', { a: o.a[0], b: o.a[1] }))}</div><b>${esc(o.n)}</b><p>${esc(o.ds)}</p>
+      <div class="k"><a href="#os/${esc(o.id)}">${esc(L('openOs'))}</a></div></div>
   </div>
-  <p class="k" style="margin:10px 0 0">Match: <b>${REL[p.rel]}</b>${p.note ? ' — ' + esc(p.note) : ''}</p>
-  <table class="mini"><thead><tr><th>Start age of the matched topic in</th><th class="n">Age</th><th class="n">Δ vs Germany (${ga})</th></tr></thead><tbody>${rows.map(([k, a]) => `<tr class="${k === TS.base ? 'on' : ''}"><td>${esc(BASES[k])}</td><td class="n">${a}</td><td class="n">${sgn(ga - a)}</td></tr>`).join('')}</tbody></table>
-  ${others.length ? `<p class="k" style="margin-top:10px">Other strong os-taxonomy counterparts: ${others.map(x => `<a href="#os/${esc(x.id)}">${esc(x.n)}</a> (age ${x.a[0]}, Δ ${sgn(ga - x.a[0])})`).join(' · ')}</p>` : ''}`;
+  <p class="k" style="margin:10px 0 0">${esc(L('matchLabel'))}: <b>${esc(REL(p.rel))}</b>${p.note ? ' — ' + esc(pick(p.note)) : ''}</p>
+  <table class="mini"><thead><tr><th>${esc(L('startIn'))}</th><th class="n">${esc(L('ageCol'))}</th><th class="n">${esc(L('deltaCol', { a: ga }))}</th></tr></thead><tbody>${rows.map(([k, a]) => `<tr class="${k === TS.base ? 'on' : ''}"><td>${esc(baseName(k))}</td><td class="n">${a}</td><td class="n">${sgn(ga - a)}</td></tr>`).join('')}</tbody></table>
+  ${others.length ? `<p class="k" style="margin-top:10px">${esc(L('otherStrong'))} ${others.map(x => `<a href="#os/${esc(x.id)}">${esc(x.n)}</a> (${esc(L('age', { a: x.a[0], b: x.a[1] }))}, Δ ${sgn(ga - x.a[0])})`).join(' · ')}</p>` : ''}`;
 }
 function renderTiming() {
+  fillSelect($('#tBase'), [['os', L('base.os')], ...JK.map(k => [k, jurName(k)])]);
+  fillSelect($('#tMatch'), [['strong', L('match.strong')], ['exact', L('match.exact')]]);
+  fillSelect($('#tSubj'), [['', L('allDeSubjects')], ...C.offsets.bySubject.map(r => [r.subject, deSubj(r.subject)])]);
+  fillSelect($('#tStage'), [['', L('allStages')], ...STAGES()]);
+  fillSelect($('#tSort'), ['later', 'earlier', 'grade', 'subject'].map(k => [k, L('sort.' + k)]));
+  $('#tClear').textContent = L('clear'); $('#tQ').placeholder = L('searchPairs');
+  $('#dumbLegend').innerHTML = `<span><svg width="14" height="12" aria-hidden="true"><circle cx="7" cy="6" r="4" fill="none" stroke="var(--text-secondary)" stroke-width="1.5"/></svg> ${esc(L('dumbOs'))}</span><span><svg width="14" height="12" aria-hidden="true"><circle cx="7" cy="6" r="4.5" fill="var(--text-secondary)"/></svg> ${esc(L('dumbDe'))}</span>`;
   $('#tBase').value = TS.base; $('#tMatch').value = TS.match; $('#tSubj').value = TS.subject; $('#tStage').value = TS.stage; $('#tSort').value = TS.sort;
   if (document.activeElement !== $('#tQ')) $('#tQ').value = TS.q;
   const diff = p => p.d.a[0] - baseAge(p, TS.base);
   const [sg0, sg1] = TS.stage ? TS.stage.split('-').map(Number) : [0, 13];
   const matchOk = p => (TS.match === 'strong' || p.rel === 'exact') && p.d.g[0] >= sg0 && p.d.g[0] <= sg1;
   const pool = PAIRS.filter(p => matchOk(p) && baseAge(p, TS.base) != null);
-  const inSub = p => !TS.subject || p.d.s === TS.subject;
-  const inDom = p => !TS.domain || p.d.s + '|' + p.d.d === TS.domain;
-  const sub = pool.filter(p => inSub(p) && inDom(p));
-  const q = TS.q.toLowerCase();
-  const list = sub.filter(p => (TS.bin == null || clampBin(diff(p)) === TS.bin) && (!q || (p.d.nd + ' ' + p.d.n + ' ' + p.o.n).toLowerCase().includes(q)));
-  const ds = sub.map(diff), med = median(ds);
-  const all = PAIRS.filter(matchOk).length;
-  $('#tNote').innerHTML = esc(NOTE[TS.base]) + (pool.length < all ? ` ${all - pool.length} of ${all} pairs have no ${esc(BASES[TS.base])} age and are left out.` : '');
+  const inSub = p => !TS.subject || p.d.s === TS.subject, inDom = p => !TS.domain || p.d.s + '|' + p.d.d === TS.domain;
+  const sub = pool.filter(p => inSub(p) && inDom(p)), q = TS.q.toLowerCase();
+  const list = sub.filter(p => (TS.bin == null || clampBin(diff(p)) === TS.bin) && (!q || (searchDe(p.d) + ' ' + searchOs(p.o)).includes(q)));
+  const ds = sub.map(diff), med = median(ds), all = PAIRS.filter(matchOk).length;
+  $('#tNote').textContent = L('note.' + TS.base) + (pool.length < all ? ' ' + L('leftOut', { x: all - pool.length, y: all, b: baseName(TS.base) }) : '');
   const e = ds.filter(v => v < 0).length, z = ds.filter(v => v === 0).length, l = ds.filter(v => v > 0).length;
-  $('#tStats').innerHTML = [[sub.length, 'matched German topics in view'], [med == null ? '–' : sgn(med) + ' yr', 'median Δ'], [pct(e, ds.length) + '%', `earlier in Germany (${e})`], [pct(z, ds.length) + '%', `same age (${z})`], [pct(l, ds.length) + '%', `later in Germany (${l})`]]
+  $('#tStats').innerHTML = [[sub.length, L('stMatched')], [med == null ? '–' : yrs(med), L('stMedian')], [pct(e, ds.length) + '%', L('stEarlier', { n: e })], [pct(z, ds.length) + '%', L('stSame', { n: z })], [pct(l, ds.length) + '%', L('stLater', { n: l })]]
     .map(([v, t]) => `<div class="stat"><div class="v">${esc(v)}</div><div class="l">${esc(t)}</div></div>`).join('');
-  $('#tHistSub').textContent = `${sub.length} German topics${TS.subject ? ' in ' + TS.subject : ''}${TS.domain ? ' › ' + TS.domain.split('|')[1] : ''}, compared with ${BASES[TS.base]}. Click a bar to list its topics; click it again to clear.`;
+  const where = TS.subject ? deSubj(TS.subject) + (TS.domain ? ' › ' + deDom(TS.subject, TS.domain.split('|')[1]) : '') : '';
+  $('#tHistSub').textContent = L('histSub', { n: sub.length, in: where ? L('inX', { x: where }) : '', b: cmpName(TS.base) });
   $('#tHist').innerHTML = histSVG(ds, TS.bin);
   const subs = [...new Set(pool.map(p => p.d.s))].map(s => { const v = pool.filter(p => p.d.s === s).map(diff); return { s, n: v.length, e: v.filter(x => x < 0).length, z: v.filter(x => x === 0).length, l: v.filter(x => x > 0).length, m: median(v) }; }).sort((a, b) => b.n - a.n);
-  $('#tSub').innerHTML = subs.map(r => `<div class="hbar click ${TS.subject === r.s ? 'on' : ''}" data-s="${esc(r.s)}"><div class="lab" title="${esc(r.s)}">${esc(r.s)} <span class="k">${r.n}</span></div><div class="track">${[['e', 'Earlier in Germany', 'var(--div-neg)'], ['z', 'Same age', 'var(--div-mid)'], ['l', 'Later in Germany', 'var(--div-pos)']].filter(([k]) => r[k]).map(([k, lab, col]) => `<div class="seg" style="width:${100 * r[k] / r.n}%;background:${col}" ${tipA(`<b>${esc(r.s)}</b><br>${lab}: ${r[k]} of ${r.n} (${pct(r[k], r.n)}%)<br>median Δ ${sgn(r.m)}`)}></div>`).join('')}</div><div class="val">${sgn(r.m)}</div></div>`).join('');
+  $('#tSub').innerHTML = subs.map(r => `<div class="hbar click ${TS.subject === r.s ? 'on' : ''}" data-s="${esc(r.s)}"><div class="lab" title="${esc(deSubj(r.s))}">${esc(deSubj(r.s))} <span class="k">${r.n}</span></div><div class="track">${[['e', L('earlier'), 'var(--div-neg)'], ['z', L('same'), 'var(--div-mid)'], ['l', L('later'), 'var(--div-pos)']].filter(([k]) => r[k]).map(([k, lab, col]) => `<div class="seg" style="width:${100 * r[k] / r.n}%;background:${col}" ${tipA(L('subjTip', { s: esc(deSubj(r.s)), lab: esc(lab), v: r[k], n: r.n, p: pct(r[k], r.n), m: sgn(r.m) }))}></div>`).join('')}</div><div class="val">${sgn(r.m)}</div></div>`).join('');
   const dp = pool.filter(inSub);
   const doms = [...new Set(dp.map(p => p.d.s + '|' + p.d.d))].map(k => { const v = dp.filter(p => p.d.s + '|' + p.d.d === k).map(diff); const [s, d] = k.split('|'); return { k, s, d, n: v.length, m: median(v), e: v.filter(x => x < 0).length, l: v.filter(x => x > 0).length }; }).filter(r => r.n >= 2).sort((a, b) => b.m - a.m || b.n - a.n);
   const mx = Math.max(1, ...doms.map(r => Math.abs(r.m)));
-  $('#tDomH').textContent = TS.subject ? `By domain · ${TS.subject}` : 'By domain · all German subjects';
-  $('#tDom').innerHTML = (doms.length ? `<div class="dbar k"><div>Domain</div><div style="display:flex;justify-content:space-between"><span>← earlier in Germany</span><span>later →</span></div><div class="val">Δ</div><div class="nn">n</div></div>` : '') + doms.map(r => {
+  $('#tDomH').textContent = TS.subject ? L('byDomH', { s: deSubj(TS.subject) }) : L('byDomAll');
+  $('#tDom').innerHTML = (doms.length ? `<div class="dbar k"><div>${esc(L('domainCol'))}</div><div style="display:flex;justify-content:space-between"><span>${esc(L('earlierArrow'))}</span><span>${esc(L('laterArrow'))}</span></div><div class="val">Δ</div><div class="nn">n</div></div>` : '') + doms.map(r => {
     const w = 50 * Math.abs(r.m) / mx, pos = r.m >= 0;
     const bar = r.m ? `<div class="b" style="left:${pos ? 50 : 50 - w}%;width:${w}%;background:${dcol(r.m)};border-radius:${pos ? '0 4px 4px 0' : '4px 0 0 4px'}"></div>` : '<div class="b" style="left:calc(50% - 2px);width:4px;background:var(--div-mid);border-radius:2px"></div>';
-    return `<div class="dbar click ${TS.domain === r.k ? 'on' : ''}" data-dom="${esc(r.k)}" ${tipA(`<b>${esc(r.s)} › ${esc(r.d)}</b><br>median Δ ${sgn(r.m)} · ${r.n} topics<br>${r.e} earlier, ${r.n - r.e - r.l} same, ${r.l} later`)}><div class="lab">${esc(r.d)}${TS.subject ? '' : ` <span class="k">· ${esc(r.s)}</span>`}</div><div class="trk">${bar}</div><div class="val">${sgn(r.m)}</div><div class="nn">${r.n}</div></div>`;
-  }).join('') || '<p class="sub">No domain has 2 or more matched topics with these filters.</p>';
+    return `<div class="dbar click ${TS.domain === r.k ? 'on' : ''}" data-dom="${esc(r.k)}" ${tipA(L('domTip', { s: esc(deSubj(r.s)), d: esc(deDom(r.s, r.d)), m: sgn(r.m), n: r.n, e: r.e, z: r.n - r.e - r.l, l: r.l }))}><div class="lab">${esc(deDom(r.s, r.d))}${TS.subject ? '' : ` <span class="k">· ${esc(deSubj(r.s))}</span>`}</div><div class="trk">${bar}</div><div class="val">${sgn(r.m)}</div><div class="nn">${r.n}</div></div>`;
+  }).join('') || `<p class="sub">${esc(L('noDom'))}</p>`;
   const chips = [];
-  if (TS.stage) chips.push(['stage', $('#tStage').selectedOptions[0].textContent]);
-  if (TS.subject) chips.push(['subject', TS.subject]);
-  if (TS.domain) chips.push(['domain', TS.domain.split('|')[1]]);
+  if (TS.stage) chips.push(['stage', L('st.' + TS.stage)]);
+  if (TS.subject) chips.push(['subject', deSubj(TS.subject)]);
+  if (TS.domain) chips.push(['domain', deDom(TS.subject || TS.domain.split('|')[0], TS.domain.split('|')[1])]);
   if (TS.bin != null) chips.push(['bin', `Δ ${binLab(TS.bin)}`]);
   if (TS.q) chips.push(['q', `“${TS.q}”`]);
-  $('#tSel').innerHTML = `${list.length} of ${pool.length} topic pairs, compared with ${esc(BASES[TS.base])}. Click a row for details.${chips.length ? '<br>' : ''}` + chips.map(([k, v]) => `<button type="button" class="fchip" data-clear="${k}" aria-label="Remove filter ${esc(v)}">${esc(v)} ✕</button>`).join('');
+  $('#tSel').innerHTML = esc(L('tSel', { l: list.length, p: pool.length, b: cmpName(TS.base) })) + (chips.length ? '<br>' : '') + chips.map(([k, v]) => `<button type="button" class="fchip" data-clear="${k}" aria-label="${esc(L('removeFilter', { x: v }))}">${esc(v)} ✕</button>`).join('');
   const srt = {
     later: (a, b) => diff(b) - diff(a) || a.d.s.localeCompare(b.d.s) || a.d.g[0] - b.d.g[0],
     earlier: (a, b) => diff(a) - diff(b) || a.d.s.localeCompare(b.d.s) || a.d.g[0] - b.d.g[0],
     grade: (a, b) => a.d.g[0] - b.d.g[0] || diff(b) - diff(a),
-    subject: (a, b) => a.d.s.localeCompare(b.d.s) || a.d.d.localeCompare(b.d.d) || diff(b) - diff(a),
+    subject: (a, b) => deSubj(a.d.s).localeCompare(deSubj(b.d.s), LANG) || a.d.d.localeCompare(b.d.d) || diff(b) - diff(a),
   }[TS.sort];
   list.sort(srt);
-  $('#tList').innerHTML = list.length ? `<table class="ptab"><thead><tr><th>German topic</th><th>Kl.</th><th>Closest os-taxonomy counterpart</th><th>Match</th><th class="dumb">Start age${dumbAxis()}</th><th class="n">Δ</th></tr></thead><tbody>` + list.map(p => {
+  $('#tList').innerHTML = list.length ? `<table class="ptab"><thead><tr><th>${esc(L('thDeTopic'))}</th><th>${esc(L('thGrade'))}</th><th>${esc(L('thOsTopic'))}</th><th>${esc(L('thMatch'))}</th><th class="dumb">${esc(L('thStart'))}${dumbAxis()}</th><th class="n">Δ</th></tr></thead><tbody>` + list.map(p => {
     const b = baseAge(p, TS.base), v = diff(p), open = TS.open === p.d.k;
-    return `<tr class="prow ${open ? 'open' : ''}" data-k="${esc(p.d.k)}"><td><b>${esc(p.d.nd)}</b><div class="k">${esc(p.d.n)} · ${esc(p.d.s)} › ${esc(p.d.d)}</div></td><td>${gradeLab(p.d.g)}</td><td>${esc(p.o.n)}<div class="k">${esc(p.o.s)} › ${esc(p.o.d)}</div></td><td><span class="pill">${REL[p.rel]}</span></td><td class="dumb" ${tipA(`German start age ${p.d.a[0]} (${gradeLab(p.d.g)})<br>${esc(BASES[TS.base])} start age ${b}<br><b>Δ ${sgn(v)}</b>`)}>${dumb(b, p.d.a[0])}</td><td class="n"><b>${sgn(v)}</b></td></tr>` + (open ? `<tr class="pdet"><td colspan="6">${pairDetail(p)}</td></tr>` : '');
-  }).join('') + '</tbody></table>' : '<p class="sub">No topic pairs match these filters.</p>';
+    return `<tr class="prow ${open ? 'open' : ''}" data-k="${esc(p.d.k)}"><td><b>${esc(nmDe(p.d))}</b><div class="k">${esc(altDe(p.d))} · ${esc(deSubj(p.d.s))} › ${esc(deDom(p.d.s, p.d.d))}</div></td><td>${gradeLab(p.d.g)}</td><td>${esc(p.o.n)}<div class="k">${esc(osSubj(p.o.s))} › ${esc(p.o.d)}</div></td><td><span class="pill">${esc(REL(p.rel))}</span></td><td class="dumb" ${tipA(L('dumbTip', { a: p.d.a[0], g: gradeLab(p.d.g), b: esc(baseName(TS.base)), c: b, d: sgn(v) }))}>${dumb(b, p.d.a[0])}</td><td class="n"><b>${sgn(v)}</b></td></tr>` + (open ? `<tr class="pdet"><td colspan="6">${pairDetail(p)}</td></tr>` : '');
+  }).join('') + '</tbody></table>' : `<p class="sub">${esc(L('noPairs'))}</p>`;
 }
 $('#tBase').onchange = e => { TS.base = e.target.value; TS.bin = null; renderTiming(); };
 $('#tMatch').onchange = e => { TS.match = e.target.value; renderTiming(); };
@@ -551,27 +713,28 @@ $('#tSub').onclick = e => { const r = e.target.closest('[data-s]'); if (!r) retu
 $('#tDom').onclick = e => { const r = e.target.closest('[data-dom]'); if (!r) return; TS.domain = TS.domain === r.dataset.dom ? '' : r.dataset.dom; renderTiming(); };
 $('#tSel').onclick = e => { const c = e.target.closest('[data-clear]'); if (!c) return; const k = c.dataset.clear; if (k === 'subject') { TS.subject = ''; TS.domain = ''; } else if (k === 'bin') TS.bin = null; else TS[k] = ''; renderTiming(); };
 $('#tList').onclick = e => { if (e.target.closest('a')) return; const r = e.target.closest('.prow[data-k]'); if (!r) return; TS.open = TS.open === r.dataset.k ? null : r.dataset.k; renderTiming(); };
-renderTiming();
-
-// deep links: #de/<key> or #os/<id>
-function openHash() {
-  const [kind, ref] = decodeURIComponent(location.hash.slice(1)).split('/');
-  const go = showTab;
-  if (kind === 'de') { const t = X.de.find(x => x.k === ref || x.id === ref); if (t) { go('de'); $('#deQ').value = t.nd; renderDe(); showDe(t.id); } }
-  else if (kind === 'os' && osById.has(ref)) { go('os'); $('#osQ').value = osById.get(ref).n; renderOs(); showOs(ref); }
-  else if (['overview', 'timing', 'de', 'os', 'gaps'].includes(kind)) go(kind);
-}
-addEventListener('hashchange', openHash); openHash();
 
 // ---------- gaps ----------
-const bySub = {};
-for (const t of C.germanOnly) (bySub[t.subject] ||= []).push(t);
-$('#gapDe').innerHTML = Object.entries(bySub).sort((a, b) => b[1].length - a[1].length).map(([s, xs]) => `<h3>${esc(s)} <span class="k">(${xs.length})</span></h3><p style="font-size:13px;line-height:1.6">${xs.map(t => `<span title="${esc(t.name)}">${esc(t.nameDe)}</span>`).join(' · ')}</p>`).join('');
-const osGap = {};
-for (const d of C.osUnmatchedDomains) (osGap[d.subject] ||= []).push(d);
-const partial = C.osCoverage.flatMap(s => s.domains.filter(d => d.covered > 0 && d.pct < 25).map(d => ({ subject: s.subject, ...d })));
-$('#gapOs').innerHTML = (Object.entries(osGap).map(([s, ds]) => `<h3>${esc(s)}</h3><ul>${ds.map(d => `<li>${esc(d.domain)} <span class="k">${d.topics} topics</span></li>`).join('')}</ul>`).join('') || '<p class="sub">Every os domain has at least one German counterpart.</p>') +
-  (partial.length ? `<h3>Barely covered (&lt; 25% of the domain)</h3><ul>${partial.map(d => `<li>${esc(d.subject)} › ${esc(d.domain)} <span class="k">${d.covered}/${d.topics}</span></li>`).join('')}</ul>` : '');
+function renderGaps() {
+  const bySub = {};
+  for (const g of C.germanOnly) (bySub[g.subject] ||= []).push(deByKey.get(g.key) || { N: { en: g.name, de: g.nameDe } });
+  $('#gapDe').innerHTML = Object.entries(bySub).sort((a, b) => b[1].length - a[1].length).map(([s, xs]) => `<h3>${esc(deSubj(s))} <span class="k">(${xs.length})</span></h3><p style="font-size:13px;line-height:1.6">${xs.map(t => `<span title="${esc(altDe(t) || '')}">${esc(nmDe(t))}</span>`).join(' · ')}</p>`).join('');
+  const osGap = {};
+  for (const d of C.osUnmatchedDomains) (osGap[d.subject] ||= []).push(d);
+  const partial = C.osCoverage.flatMap(s => s.domains.filter(d => d.covered > 0 && d.pct < 25).map(d => ({ subject: s.subject, ...d })));
+  $('#gapOs').innerHTML = (Object.entries(osGap).map(([s, ds]) => `<h3>${esc(osSubj(s))}</h3><ul>${ds.map(d => `<li>${esc(d.domain)} <span class="k">${esc(L('nTopics', { n: d.topics }))}</span></li>`).join('')}</ul>`).join('') || `<p class="sub">${esc(L('gapAllCovered'))}</p>`) +
+    (partial.length ? `<h3>${esc(L('barely'))}</h3><ul>${partial.map(d => `<li>${esc(osSubj(d.subject))} › ${esc(d.domain)} <span class="k">${d.covered}/${d.topics}</span></li>`).join('')}</ul>` : '');
+}
+
+function renderAll() { renderStatic(); renderOverview(); renderTiming(); renderDe(); renderOs(); renderGaps(); }
+// deep links: #de/<German key or id>, #os/<os id>; #overview, #timing, #de, #os, #gaps open a tab
+function openHash() {
+  const [kind, ref] = decodeURIComponent(location.hash.slice(1)).split('/');
+  if (kind === 'de' && ref) { const t = deByKey.get(ref) || deById.get(ref); if (t) { showTab('de'); $('#deQ').value = nmDe(t); renderDe(); showDe(t.id); } }
+  else if (kind === 'os' && ref && osById.has(ref)) { showTab('os'); $('#osQ').value = osById.get(ref).n; renderOs(); showOs(ref); }
+  else if (['overview', 'timing', 'de', 'os', 'gaps'].includes(kind)) showTab(kind);
+}
+renderAll(); addEventListener('hashchange', openHash); openHash();
 </script>
 </body>
 </html>

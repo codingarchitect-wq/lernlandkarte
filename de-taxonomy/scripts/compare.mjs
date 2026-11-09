@@ -146,7 +146,7 @@ const diffHist = count(topicOffsets, o => Math.max(-4, Math.min(4, o.diff)));
 const OFFSET_STAGES = [['Grundschule (Vorschule–Kl. 4)', 0, 4], ['Kl. 5–6', 5, 6], ['Kl. 7–10', 7, 10], ['Oberstufe (Kl. 11–13)', 11, 13]];
 const offsetByStage = OFFSET_STAGES.map(([stage, g0, g1]) => {
   const xs = topicOffsets.filter(o => o.grade >= g0 && o.grade <= g1);
-  return { stage, n: xs.length, medianDiff: median(xs.map(o => o.diff)), byJurisdiction: Object.fromEntries(Object.keys(JUR).map(k => { const v = xs.map(o => o.jur[k]).filter(x => x !== undefined); return [k, { n: v.length, median: median(v) }]; })) };
+  return { stage, range: `${g0}-${g1}`, n: xs.length, medianDiff: median(xs.map(o => o.diff)), byJurisdiction: Object.fromEntries(Object.keys(JUR).map(k => { const v = xs.map(o => o.jur[k]).filter(x => x !== undefined); return [k, { n: v.length, median: median(v) }]; })) };
 }).filter(r => r.n);
 // robustness: exact matches only (avoids pairing an early simple version with a later deeper one)
 const exactOnly = topicOffsets.filter(o => o.relation === 'exact');
@@ -194,7 +194,7 @@ const relationCounts = count(cw, l => l.relation);
 const deByStage = STAGES.map(([label, g0, g1]) => {
   const ts = de.filter(t => t.gradeStart >= g0 && t.gradeStart <= g1);
   const b = count(ts, t => bucket(bestRel(t.id)));
-  return { stage: label, topics: ts.length, strong: b.strong || 0, partial: b.partial || 0, related: b.related || 0, none: b.none || 0 };
+  return { stage: label, range: `${g0}-${g1}`, topics: ts.length, strong: b.strong || 0, partial: b.partial || 0, related: b.related || 0, none: b.none || 0 };
 }).filter(r => r.topics);
 
 return { result: { structure, relationCounts, deCoverage, deByStage, matrix, osCoverage, osByAge, offsets: { exactOnly: exactSummary, byStage: offsetByStage, bySubject: offsetBySubject, byDomain: offsetByDomain, overallByJurisdiction: jurOverall, histogram: diffHist, pairs: topicOffsets.map(o => [o.deKey, o.osId]), n: topicOffsets.length, median: median(topicOffsets.map(o => o.diff)), laterExamples, earlierExamples }, prerequisiteAgreement: agree, germanOnly, osUnmatchedDomains },
@@ -211,10 +211,17 @@ const osSubjects = [...new Set(os.map(t => t.subject))].sort();
 const bucket = r => r === 'exact' || r === 'close' ? 'strong' : r === 'broader' || r === 'narrower' ? 'partial' : r === 'related' ? 'related' : 'none';
 
 // ---------- explorer payload ----------
+// names and texts as maps { en, de, ro } so the page can switch language; os-taxonomy texts exist in English only
+const M = (en, de, ro) => Object.fromEntries(Object.entries({ en, de, ro }).filter(([, v]) => v != null && v !== ''));
+const deSubjData = J(join(root, 'data/subjects.json')).subjects;
 const explorer = {
-  de: de.map(t => ({ id: t.id, k: t.key, s: t.subject, tr: TIER[t.subject], d: t.domain, n: t.name, nd: t.nameDe, ds: t.description, g: [t.gradeStart, t.gradeEnd], a: [t.ageRangeStart, t.ageRangeEnd], cl: t.courseLevel || null, ty: t.type, gs: t.germanSpecific, ln: t.laenderNotes, ev: t.evidence, st: t.standards, m: (linksByDe.get(t.id) || []).map(l => [l.osId, l.relation, l.note]) })),
+  de: de.map(t => ({ id: t.id, k: t.key, s: t.subject, tr: TIER[t.subject], d: t.domain, N: M(t.name, t.nameDe, t.nameRo), DS: M(t.description, t.descriptionDe, t.descriptionRo), EV: M(t.evidence, t.evidenceDe, t.evidenceRo), LN: t.laenderNotes ? M(t.laenderNotes, t.laenderNotesDe, t.laenderNotesRo) : null, g: [t.gradeStart, t.gradeEnd], a: [t.ageRangeStart, t.ageRangeEnd], cl: t.courseLevel || null, ty: t.type, gs: t.germanSpecific, st: t.standards, m: (linksByDe.get(t.id) || []).map(l => [l.osId, l.relation, l.note ? M(l.note, l.noteDe, l.noteRo) : null]) })),
   os: os.map(t => ({ id: t.id, s: t.subject, d: t.domain, n: t.name, ds: t.description, a: [t.ageRangeStart, t.ageRangeEnd], j: osJurAge.get(t.id) || {}, c: osCovered.get(t.id) || null, cc: CORE.osCovered.get(t.id) || null })),
   deEdges: deDepsAll.map(e => [e.topicId, e.prerequisiteId, e.strength === 'hard' ? 1 : 0]),
+  names: {
+    deSubj: Object.fromEntries(deSubjData.map(s => [s.name, M(s.nameEn, s.name, s.nameRo)])),
+    deDom: Object.fromEntries(deSubjData.flatMap(s => s.domains.map(d => [s.name + '|' + d.name, M(d.nameEn, d.name, d.nameRo)]))),
+  },
 };
 
 const result = { generatedAt: new Date().toISOString().slice(0, 10), jurisdictions: JUR, ...A.result, variants: { all: A.result, core: CORE.result } };

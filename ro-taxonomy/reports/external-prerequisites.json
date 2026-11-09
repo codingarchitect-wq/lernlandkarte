@@ -1,0 +1,2656 @@
+{
+ "summary": {
+  "bm25": 146,
+  "override": 54,
+  "dropped-by-override": 3,
+  "unresolved": 2
+ },
+ "droppedForCycles": [
+  {
+   "topic": "sn-sp-anotimpuri",
+   "prerequisite": "ma-mm-calendarul"
+  }
+ ],
+ "rows": [
+  {
+   "topic": "dp-mi-ia-invatare",
+   "subject": "Informatică și TIC",
+   "concept": "basic use of generative AI tools",
+   "strength": "soft",
+   "resolvedTo": "in-ai-generative-ai",
+   "how": "bm25",
+   "score": 14.05,
+   "alternatives": [
+    "in-ai-generative-ai (14.0)",
+    "in-med-animation-3d (5.5)",
+    "in-ai-foundations (4.4)"
+   ]
+  },
+  {
+   "topic": "dp-mc-antreprenoriat-cariere",
+   "subject": "Științe socio-umane",
+   "concept": "entrepreneurship and the business plan (Economie și educație antreprenorială)",
+   "strength": "soft",
+   "resolvedTo": "su-ec-plan-de-afaceri",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ef-df-antropometrie-imc",
+   "subject": "Matematică",
+   "concept": "ratios and squares of decimal numbers",
+   "strength": "soft",
+   "resolvedTo": "ma-no-inmultirea-impartirea-zecimalelor",
+   "how": "bm25",
+   "score": 8.82,
+   "alternatives": [
+    "ma-no-inmultirea-impartirea-zecimalelor (8.8)",
+    "ma-no-fractii-zecimale (8.4)",
+    "ma-no-adunarea-zecimalelor (7.9)"
+   ]
+  },
+  {
+   "topic": "mu-ac-muzica-alte-arte",
+   "subject": "Limba și literatura română",
+   "concept": "identifying the theme and mood of a lyric poem",
+   "strength": "soft",
+   "resolvedTo": "lr-lit-textul-liric",
+   "how": "bm25",
+   "score": 14.98,
+   "alternatives": [
+    "lr-lit-textul-liric (15.0)",
+    "lr-or-recitare (8.9)",
+    "lr-lit-poezia-populara (7.9)"
+   ]
+  },
+  {
+   "topic": "fr-cul-francophonie-society",
+   "subject": "Istorie",
+   "concept": "Romanian cultural and political ties with France in the 19th and 20th centuries",
+   "strength": "soft",
+   "resolvedTo": null,
+   "how": "dropped-by-override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "la-civ-roman-society",
+   "subject": "Istorie",
+   "concept": "Antiquity: Greek and Roman civilisation",
+   "strength": "soft",
+   "resolvedTo": "is-an-modele-culturale-greco-romane",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "la-civ-roman-heritage",
+   "subject": "Istorie",
+   "concept": "Roman Dacia and Romanisation",
+   "strength": "soft",
+   "resolvedTo": "is-ro-etnogeneza",
+   "how": "bm25",
+   "score": 11.62,
+   "alternatives": [
+    "is-ro-etnogeneza (11.6)",
+    "is-an-roma-expansiune-romanizare (10.2)",
+    "is-an-romanizarea (9.1)"
+   ]
+  },
+  {
+   "topic": "in-app-advanced-spreadsheets",
+   "subject": "Matematică",
+   "concept": "percentages and linear functions",
+   "strength": "soft",
+   "resolvedTo": "ma-pf-modelare-cu-functii",
+   "how": "bm25",
+   "score": 8.48,
+   "alternatives": [
+    "ma-pf-modelare-cu-functii (8.5)",
+    "ma-pf-functia-liniara (8.0)",
+    "ma-pf-lecturi-grafice (7.4)"
+   ]
+  },
+  {
+   "topic": "in-soc-civic-digital-services",
+   "subject": "Științe socio-umane",
+   "concept": "citizens' rights and public institutions",
+   "strength": "soft",
+   "resolvedTo": "ec-cd-constitutia",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "in-ds-sets",
+   "subject": "Matematică",
+   "concept": "operations with sets (union, intersection, difference)",
+   "strength": "soft",
+   "resolvedTo": "ma-no-operatii-cu-multimi",
+   "how": "bm25",
+   "score": 23.52,
+   "alternatives": [
+    "ma-no-operatii-cu-multimi (23.5)",
+    "ma-no-intervale (12.5)",
+    "ma-dp-reuniune-intersectie (11.1)"
+   ]
+  },
+  {
+   "topic": "in-alg-backtracking",
+   "subject": "Matematică",
+   "concept": "permutations, arrangements and combinations",
+   "strength": "soft",
+   "resolvedTo": "ma-al-combinari",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "in-ai-ml-algorithms",
+   "subject": "Matematică",
+   "concept": "distance between two points in the plane",
+   "strength": "soft",
+   "resolvedTo": "ma-pf-sistem-de-axe",
+   "how": "bm25",
+   "score": 13.93,
+   "alternatives": [
+    "ma-pf-sistem-de-axe (13.9)",
+    "ma-ge-numere-complexe-in-geometrie (12.3)",
+    "ma-ge-perpendicularitate-in-spatiu (11.6)"
+   ]
+  },
+  {
+   "topic": "ma-pr-structura-argumentelor",
+   "subject": "Științe socio-umane",
+   "concept": "argument analysis in Logică",
+   "strength": "soft",
+   "resolvedTo": "su-lo-forma-adevar-validitate",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ma-pr-erori-de-rationament",
+   "subject": "Științe socio-umane",
+   "concept": "logical fallacies in Logică",
+   "strength": "soft",
+   "resolvedTo": "su-lo-erori-de-argumentare",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ma-an-optimizare",
+   "subject": "Fizică",
+   "concept": "velocity and acceleration in kinematics",
+   "strength": "soft",
+   "resolvedTo": "fi-me-vectori-cinematica",
+   "how": "bm25",
+   "score": 9.9,
+   "alternatives": [
+    "fi-me-vectori-cinematica (9.9)",
+    "fi-me-mruv (7.7)",
+    "fi-me-miscarea-circulara (6.9)"
+   ]
+  },
+  {
+   "topic": "ma-dp-frecvente",
+   "subject": "Informatică și TIC",
+   "concept": "spreadsheet formulas and charts",
+   "strength": "soft",
+   "resolvedTo": "in-app-spreadsheet-charts",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "lr-ep-practici-contestatare",
+   "subject": "Istorie",
+   "concept": "Istoria comunismului din România: repression and dissidence in the 1980s",
+   "strength": "soft",
+   "resolvedTo": "is-ro-epoca-ceausescu",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "lr-re-cv-scrisoare-de-intentie",
+   "subject": "Dezvoltare personală și consiliere",
+   "concept": "career planning and self-presentation",
+   "strength": "soft",
+   "resolvedTo": "dp-mc-trasee-plan-cariera",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "lr-le-instrumente-digitale-ia",
+   "subject": "Informatică și TIC",
+   "concept": "using generative AI tools and writing prompts",
+   "strength": "soft",
+   "resolvedTo": "in-ai-generative-ai",
+   "how": "bm25",
+   "score": 20.14,
+   "alternatives": [
+    "in-ai-generative-ai (20.1)",
+    "in-prg-text-files (5.5)",
+    "in-net-email-netiquette (5.3)"
+   ]
+  },
+  {
+   "topic": "lr-arg-erori-de-argumentare",
+   "subject": "Științe socio-umane",
+   "concept": "logic: valid reasoning and fallacies",
+   "strength": "soft",
+   "resolvedTo": "su-lo-erori-de-argumentare",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "is-gm-surse-evaluare-critica",
+   "subject": "Informatică și TIC",
+   "concept": "judging the reliability of online information and AI output",
+   "strength": "soft",
+   "resolvedTo": "in-ai-generative-ai",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "is-an-modele-culturale-greco-romane",
+   "subject": "Arte vizuale",
+   "concept": "classical art and architecture",
+   "strength": "soft",
+   "resolvedTo": "av-rc-arta-europeana",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "is-an-arta-oratoriei",
+   "subject": "Limba și literatura română",
+   "concept": "argumentative and persuasive discourse",
+   "strength": "soft",
+   "resolvedTo": "lr-le-text-argumentativ",
+   "how": "bm25",
+   "score": 7.51,
+   "alternatives": [
+    "lr-le-text-argumentativ (7.5)",
+    "lr-re-text-argumentativ (6.7)",
+    "lr-le-reclama (4.3)"
+   ]
+  },
+  {
+   "topic": "is-em-marea-schisma",
+   "subject": "Religie",
+   "concept": "Orthodox and Catholic Christianity",
+   "strength": "soft",
+   "resolvedTo": "re-vc-diversitate-religioasa",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "is-gm-eseu-argumentativ-istoric",
+   "subject": "Limba și literatura română",
+   "concept": "writing an argumentative essay",
+   "strength": "soft",
+   "resolvedTo": "lr-re-eseul-argumentativ",
+   "how": "bm25",
+   "score": 12.37,
+   "alternatives": [
+    "lr-re-eseul-argumentativ (12.4)",
+    "lr-re-text-argumentativ (9.4)",
+    "lr-le-text-argumentativ (7.5)"
+   ]
+  },
+  {
+   "topic": "is-ro-etnogeneza-continuitate",
+   "subject": "Limba latină",
+   "concept": "Latin roots of Romanian vocabulary",
+   "strength": "soft",
+   "resolvedTo": "la-lb-inherited-borrowed",
+   "how": "bm25",
+   "score": 7.91,
+   "alternatives": [
+    "la-lb-inherited-borrowed (7.9)",
+    "la-lb-etymology-word-families (5.2)",
+    "la-lb-word-formation (4.1)"
+   ]
+  },
+  {
+   "topic": "is-ro-cultura-societate-interbelica",
+   "subject": "Limba și literatura română",
+   "concept": "interwar Romanian literature",
+   "strength": "soft",
+   "resolvedTo": "lr-ep-modernism-traditionalism",
+   "how": "bm25",
+   "score": 9.54,
+   "alternatives": [
+    "lr-ep-modernism-traditionalism (9.5)",
+    "lr-ep-literatura-dincolo-de-granite (7.6)",
+    "lr-ep-literatura-contemporana (6.3)"
+   ]
+  },
+  {
+   "topic": "ge-or-reprezentarea-spatiului",
+   "subject": "Matematică",
+   "concept": "ratios, proportions and unit conversions",
+   "strength": "soft",
+   "resolvedTo": "ma-pf-proportii",
+   "how": "bm25",
+   "score": 13.44,
+   "alternatives": [
+    "ma-pf-proportii (13.4)",
+    "ma-ge-asemanarea-triunghiurilor (9.7)",
+    "ma-pf-rapoarte (9.4)"
+   ]
+  },
+  {
+   "topic": "ge-or-gis-gps",
+   "subject": "Informatică și TIC",
+   "concept": "working with layered digital data and web applications",
+   "strength": "soft",
+   "resolvedTo": "in-net-internet-web",
+   "how": "bm25",
+   "score": 8.07,
+   "alternatives": [
+    "in-net-internet-web (8.1)",
+    "in-ai-foundations (7.0)",
+    "in-med-collaborative (6.7)"
+   ]
+  },
+  {
+   "topic": "ge-te-pamantul-corp-cosmic",
+   "subject": "Fizică",
+   "concept": "gravitation and the motion of planets",
+   "strength": "soft",
+   "resolvedTo": "fi-me-gravitatia-universala",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ge-gs-minerale-roci-resurse",
+   "subject": "Chimie",
+   "concept": "chemical composition of minerals",
+   "strength": "soft",
+   "resolvedTo": "ch-at-clase-substante",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ge-gs-schimbari-climatice",
+   "subject": "Fizică",
+   "concept": "radiation and the greenhouse effect",
+   "strength": "soft",
+   "resolvedTo": "fi-te-caldura-transmitere",
+   "how": "bm25",
+   "score": 5.16,
+   "alternatives": [
+    "fi-te-caldura-transmitere (5.2)",
+    "sn-sf-interactiuni (4.1)",
+    "fi-el-electromagnetul (4.0)"
+   ]
+  },
+  {
+   "topic": "ge-gs-biosfera-soluri-diversitate",
+   "subject": "Biologie",
+   "concept": "ecosystems and biodiversity",
+   "strength": "soft",
+   "resolvedTo": "bi-sm-biodiversitate",
+   "how": "bm25",
+   "score": 10.24,
+   "alternatives": [
+    "bi-sm-biodiversitate (10.2)",
+    "bi-sm-conservarea-biodiversitatii (10.2)",
+    "bi-vm-ecosisteme-apropiate (4.8)"
+   ]
+  },
+  {
+   "topic": "su-lo-simbolizare-propozitii",
+   "subject": "Matematică",
+   "concept": "propositions and logical connectives",
+   "strength": "soft",
+   "resolvedTo": "ma-pr-propozitii-si-conectori",
+   "how": "bm25",
+   "score": 21.88,
+   "alternatives": [
+    "ma-pr-propozitii-si-conectori (21.9)",
+    "ma-pr-operatori-logici (6.7)"
+   ]
+  },
+  {
+   "topic": "su-ps-baze-bio-psiho-sociale",
+   "subject": "Biologie",
+   "concept": "neurons, synapses and the brain",
+   "strength": "soft",
+   "resolvedTo": "bi-ff-sistemul-nervos-neuron",
+   "how": "bm25",
+   "score": 12.74,
+   "alternatives": [
+    "bi-ff-sistemul-nervos-neuron (12.7)",
+    "bi-ff-sistemul-nervos (10.6)",
+    "bi-ff-ochiul (3.4)"
+   ]
+  },
+  {
+   "topic": "su-so-metode-instrumente",
+   "subject": "Matematică",
+   "concept": "frequencies, percentages and simple charts",
+   "strength": "soft",
+   "resolvedTo": "ma-dp-organizarea-datelor-vii",
+   "how": "bm25",
+   "score": 15.04,
+   "alternatives": [
+    "ma-dp-organizarea-datelor-vii (15.0)",
+    "ma-dp-reprezentari-grafice (13.7)",
+    "ma-dp-grafice-cu-bare-si-liniare (8.0)"
+   ]
+  },
+  {
+   "topic": "su-so-cercetare-sociologica",
+   "subject": "Matematică",
+   "concept": "sampling, frequencies and descriptive statistics",
+   "strength": "soft",
+   "resolvedTo": "ma-dp-sondaje",
+   "how": "bm25",
+   "score": 9.27,
+   "alternatives": [
+    "ma-dp-sondaje (9.3)",
+    "ma-dp-frecvente (7.8)",
+    "ma-dp-date-statistice (7.1)"
+   ]
+  },
+  {
+   "topic": "su-fi-etica-teorii",
+   "subject": "Religie",
+   "concept": "Christian moral teaching",
+   "strength": "soft",
+   "resolvedTo": "re-dc-pildele-invatatorul",
+   "how": "bm25",
+   "score": 5.54,
+   "alternatives": [
+    "re-dc-pildele-invatatorul (5.5)",
+    "re-rl-religii-monoteiste (3.9)",
+    "re-vc-fapte-bune (3.4)"
+   ]
+  },
+  {
+   "topic": "su-fi-estetica",
+   "subject": "Arte vizuale",
+   "concept": "art movements and styles",
+   "strength": "soft",
+   "resolvedTo": "av-rc-curente-moderne",
+   "how": "bm25",
+   "score": 6.29,
+   "alternatives": [
+    "av-rc-curente-moderne (6.3)",
+    "av-rc-arta-preistorie-baroc (5.4)",
+    "av-md-arta-digitala-3d (4.5)"
+   ]
+  },
+  {
+   "topic": "su-ec-consumator-buget",
+   "subject": "Matematică",
+   "concept": "percentages and simple interest",
+   "strength": "soft",
+   "resolvedTo": "ma-al-dobanda-simpla-compusa",
+   "how": "bm25",
+   "score": 11,
+   "alternatives": [
+    "ma-al-dobanda-simpla-compusa (11.0)",
+    "ma-no-fractii-procente-din-numar (6.4)",
+    "ma-no-procente-si-virgula (6.2)"
+   ]
+  },
+  {
+   "topic": "fi-mm-si-cifre-semnificative",
+   "subject": "Matematică",
+   "concept": "powers of ten and scientific notation",
+   "strength": "soft",
+   "resolvedTo": "ma-no-puteri-exponent-intreg",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "fi-mm-investigatia-raportul",
+   "subject": "Informatică și TIC",
+   "concept": "processing data and drawing charts in a spreadsheet",
+   "strength": "soft",
+   "resolvedTo": "in-app-spreadsheet-charts",
+   "how": "bm25",
+   "score": 15.15,
+   "alternatives": [
+    "in-app-spreadsheet-charts (15.1)",
+    "in-app-spreadsheets (7.4)",
+    "in-app-professional-documents (4.8)"
+   ]
+  },
+  {
+   "topic": "fi-me-vectori-cinematica",
+   "subject": "Matematică",
+   "concept": "vectors and vector addition",
+   "strength": "hard",
+   "resolvedTo": "fi-me-compunerea-fortelor",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "fi-me-mruv",
+   "subject": "Matematică",
+   "concept": "the quadratic function and its parabola",
+   "strength": "hard",
+   "resolvedTo": "ma-pf-functia-de-gradul-doi-grafic",
+   "how": "bm25",
+   "score": 14.65,
+   "alternatives": [
+    "ma-pf-functia-de-gradul-doi-grafic (14.7)",
+    "ma-pf-functia-de-gradul-doi-studiu (12.2)",
+    "ma-al-sisteme-neliniare (11.1)"
+   ]
+  },
+  {
+   "topic": "fi-me-miscarea-circulara",
+   "subject": "Matematică",
+   "concept": "the unit circle and radian measure",
+   "strength": "soft",
+   "resolvedTo": "ma-tr-cercul-trigonometric",
+   "how": "bm25",
+   "score": 23.7,
+   "alternatives": [
+    "ma-tr-cercul-trigonometric (23.7)",
+    "ma-ge-cercul (11.2)",
+    "ma-mm-masuri-neconventionale (8.4)"
+   ]
+  },
+  {
+   "topic": "fi-ou-oscilatii-armonice",
+   "subject": "Matematică",
+   "concept": "graphs of trigonometric functions",
+   "strength": "hard",
+   "resolvedTo": "ma-tr-grafice-trigonometrice",
+   "how": "bm25",
+   "score": 11.81,
+   "alternatives": [
+    "ma-tr-grafice-trigonometrice (11.8)",
+    "ma-tr-functii-trigonometrice-inverse (10.3)",
+    "ma-an-reprezentarea-grafica (7.6)"
+   ]
+  },
+  {
+   "topic": "fi-ou-interferenta-sunet",
+   "subject": "Matematică",
+   "concept": "logarithms",
+   "strength": "soft",
+   "resolvedTo": "ma-no-logaritmi",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "fi-pa-unde-seismice",
+   "subject": "Geografie",
+   "concept": "plate tectonics and the causes of earthquakes",
+   "strength": "soft",
+   "resolvedTo": "ge-gs-tectonica-placilor",
+   "how": "bm25",
+   "score": 19.68,
+   "alternatives": [
+    "ge-gs-tectonica-placilor (19.7)",
+    "ge-rg-geologie-relief-hazarde (10.7)",
+    "ge-gs-vulcani-cutremure (6.3)"
+   ]
+  },
+  {
+   "topic": "fi-nu-radioactivitatea",
+   "subject": "Matematică",
+   "concept": "exponential functions",
+   "strength": "hard",
+   "resolvedTo": "ma-pf-functia-exponentiala",
+   "how": "bm25",
+   "score": 10.24,
+   "alternatives": [
+    "ma-pf-functia-exponentiala (10.2)",
+    "ma-pf-ecuatii-exponentiale (9.8)",
+    "ma-pf-functia-logaritmica (7.3)"
+   ]
+  },
+  {
+   "topic": "ch-sg-ph-acizi-baze-tari",
+   "subject": "Matematică",
+   "concept": "logarithms in base 10",
+   "strength": "soft",
+   "resolvedTo": "ma-no-logaritmi",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ch-tk-viteza-reactiei",
+   "subject": "Matematică",
+   "concept": "exponential and logarithmic functions",
+   "strength": "soft",
+   "resolvedTo": "ma-pf-functia-logaritmica",
+   "how": "bm25",
+   "score": 16.64,
+   "alternatives": [
+    "ma-pf-functia-logaritmica (16.6)",
+    "ma-an-calculul-limitelor (11.2)",
+    "ma-pf-functia-exponentiala (10.2)"
+   ]
+  },
+  {
+   "topic": "ch-ec-acizi-baze-bronsted",
+   "subject": "Matematică",
+   "concept": "logarithms",
+   "strength": "hard",
+   "resolvedTo": "ma-no-logaritmi",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "bi-inv-etica-stiinta-societate",
+   "subject": "Științe socio-umane",
+   "concept": "ethical argument and moral dilemmas",
+   "strength": "soft",
+   "resolvedTo": "su-fi-etica-teorii",
+   "how": "bm25",
+   "score": 10.43,
+   "alternatives": [
+    "su-fi-etica-teorii (10.4)",
+    "su-fi-etica-aplicata (10.2)",
+    "ec-rc-valori-norme (7.9)"
+   ]
+  },
+  {
+   "topic": "bi-vm-dinamica-populatiilor",
+   "subject": "Matematică",
+   "concept": "linear and exponential growth",
+   "strength": "soft",
+   "resolvedTo": "ma-pf-functia-exponentiala",
+   "how": "bm25",
+   "score": 17.21,
+   "alternatives": [
+    "ma-pf-functia-exponentiala (17.2)",
+    "ma-al-modelare-cu-progresii (14.3)",
+    "ma-an-ecuatii-diferentiale (11.9)"
+   ]
+  },
+  {
+   "topic": "bi-ff-plasticitate-somn-stres",
+   "subject": "Științe socio-umane",
+   "concept": "memory, learning and emotions in psychology",
+   "strength": "soft",
+   "resolvedTo": "su-ps-memorie-reprezentari",
+   "how": "bm25",
+   "score": 8.45,
+   "alternatives": [
+    "su-ps-memorie-reprezentari (8.4)",
+    "su-ps-emotii-motivatie (7.1)",
+    "su-ps-psihologia-ca-stiinta (6.6)"
+   ]
+  },
+  {
+   "topic": "bi-er-legile-mendel",
+   "subject": "Matematică",
+   "concept": "classical probability",
+   "strength": "soft",
+   "resolvedTo": "ma-dp-probabilitati",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "bi-sm-impact-uman-clima",
+   "subject": "Geografie",
+   "concept": "climate and global warming",
+   "strength": "soft",
+   "resolvedTo": "ge-mi-schimbari-globale",
+   "how": "bm25",
+   "score": 9.35,
+   "alternatives": [
+    "ge-mi-schimbari-globale (9.3)",
+    "ge-gs-ocean-dinamica (6.5)",
+    "ge-or-gis-gps (4.9)"
+   ]
+  },
+  {
+   "topic": "bi-sm-clima-dezvoltare-durabila",
+   "subject": "Geografie",
+   "concept": "climate change and its regional effects",
+   "strength": "soft",
+   "resolvedTo": "ge-rg-clima-schimbari",
+   "how": "bm25",
+   "score": 12.05,
+   "alternatives": [
+    "ge-rg-clima-schimbari (12.0)",
+    "ge-gs-schimbari-climatice (11.2)",
+    "ge-mi-schimbari-globale (9.9)"
+   ]
+  },
+  {
+   "topic": "mu-lm-valori-note-pauze",
+   "subject": "Matematică",
+   "concept": "halves and quarters of a whole (simple fractions)",
+   "strength": "soft",
+   "resolvedTo": "ma-no-jumatate-sfert",
+   "how": "bm25",
+   "score": 15.9,
+   "alternatives": [
+    "ma-no-jumatate-sfert (15.9)",
+    "ma-no-fractie-dintr-un-numar (11.7)",
+    "ma-no-fractii-concept (11.3)"
+   ]
+  },
+  {
+   "topic": "mu-lm-compunere-fragmente",
+   "subject": "Informatică și TIC",
+   "concept": "using an application to create and save a file",
+   "strength": "soft",
+   "resolvedTo": "in-med-graphic-editor",
+   "how": "bm25",
+   "score": 8.44,
+   "alternatives": [
+    "in-med-graphic-editor (8.4)",
+    "in-sys-files-folders (6.5)",
+    "in-app-presentations (4.9)"
+   ]
+  },
+  {
+   "topic": "mu-ac-context-cultural",
+   "subject": "Istorie",
+   "concept": "main historical periods (Antiquity, Middle Ages, modern era)",
+   "strength": "soft",
+   "resolvedTo": "is-gm-periodizare",
+   "how": "bm25",
+   "score": 9.13,
+   "alternatives": [
+    "is-gm-periodizare (9.1)",
+    "is-gm-harti-istorice (6.4)",
+    "is-gm-surse-istorice (5.8)"
+   ]
+  },
+  {
+   "topic": "mu-ac-folclor-romanesc",
+   "subject": "Geografie",
+   "concept": "historical regions of Romania (Moldova, Muntenia, Transilvania etc.)",
+   "strength": "soft",
+   "resolvedTo": "is-ro-state-medievale",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "mu-ac-muzica-descriptiva",
+   "subject": "Fizică",
+   "concept": "sound as vibration: frequency and amplitude",
+   "strength": "soft",
+   "resolvedTo": "fi-me-sunetul",
+   "how": "bm25",
+   "score": 17.58,
+   "alternatives": [
+    "fi-me-sunetul (17.6)",
+    "sn-sf-sunete (12.8)",
+    "sn-sv-simturile (4.1)"
+   ]
+  },
+  {
+   "topic": "mu-ac-apreciere-critica",
+   "subject": "Limba și literatura română",
+   "concept": "writing an argumentative text with reasons",
+   "strength": "soft",
+   "resolvedTo": "lr-re-text-argumentativ",
+   "how": "bm25",
+   "score": 11.16,
+   "alternatives": [
+    "lr-re-text-argumentativ (11.2)",
+    "lr-le-text-argumentativ (9.3)",
+    "lr-re-cererea (7.9)"
+   ]
+  },
+  {
+   "topic": "av-lp-forma",
+   "subject": "Matematică",
+   "concept": "recognising plane shapes (square, circle, triangle, rectangle)",
+   "strength": "soft",
+   "resolvedTo": "ma-ge-figuri-plane",
+   "how": "bm25",
+   "score": 27.58,
+   "alternatives": [
+    "ma-ge-figuri-plane (27.6)",
+    "ma-pr-operatori-logici (8.5)",
+    "ma-ge-corpuri-geometrice (4.8)"
+   ]
+  },
+  {
+   "topic": "av-lp-teoria-culorii",
+   "subject": "Științe ale naturii",
+   "concept": "the rainbow: white light contains the colours of the spectrum",
+   "strength": "soft",
+   "resolvedTo": "sn-sf-lumina-umbra",
+   "how": "bm25",
+   "score": 21.74,
+   "alternatives": [
+    "sn-sf-lumina-umbra (21.7)",
+    "ge-or-semne-conventionale (5.7)",
+    "sn-sp-uscat-apa-relief (4.7)"
+   ]
+  },
+  {
+   "topic": "av-lp-perspectiva",
+   "subject": "Matematică",
+   "concept": "geometric solids (cube, prism, cylinder) and their nets",
+   "strength": "soft",
+   "resolvedTo": "ma-ge-desfasurarea-corpurilor",
+   "how": "bm25",
+   "score": 22.96,
+   "alternatives": [
+    "ma-ge-desfasurarea-corpurilor (23.0)",
+    "ma-ge-corpuri-geometrice (14.2)",
+    "ma-ge-elementele-corpurilor (13.3)"
+   ]
+  },
+  {
+   "topic": "av-rc-istoria-artei-universale",
+   "subject": "Istorie",
+   "concept": "historical time: periods and the timeline",
+   "strength": "soft",
+   "resolvedTo": "is-gm-periodizare",
+   "how": "bm25",
+   "score": 12.48,
+   "alternatives": [
+    "is-gm-periodizare (12.5)",
+    "is-gm-masurarea-timpului (8.2)",
+    "is-gm-schimbare-continuitate (7.7)"
+   ]
+  },
+  {
+   "topic": "av-rc-arta-europeana",
+   "subject": "Istorie",
+   "concept": "medieval and early modern Europe",
+   "strength": "soft",
+   "resolvedTo": "is-em-europa-crestina",
+   "how": "bm25",
+   "score": 8.04,
+   "alternatives": [
+    "is-em-europa-crestina (8.0)",
+    "is-ro-etnogeneza (7.7)",
+    "is-an-religie-crestinism (5.7)"
+   ]
+  },
+  {
+   "topic": "av-rc-arta-romaneasca",
+   "subject": "Istorie",
+   "concept": "history of the Romanian lands (Dacians, medieval principalities)",
+   "strength": "soft",
+   "resolvedTo": "is-ro-state-medievale",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "av-md-design-afis",
+   "subject": "Informatică și TIC",
+   "concept": "editing images and text in a graphics application",
+   "strength": "soft",
+   "resolvedTo": "in-med-graphic-editor",
+   "how": "bm25",
+   "score": 12.18,
+   "alternatives": [
+    "in-med-graphic-editor (12.2)",
+    "in-app-presentations (8.8)",
+    "in-sys-operating-system (8.5)"
+   ]
+  },
+  {
+   "topic": "ef-df-masurare-fitness",
+   "subject": "Matematică",
+   "concept": "measuring lengths and masses and comparing data in a table",
+   "strength": "soft",
+   "resolvedTo": "ma-mm-multiplii-submultiplii",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ef-ig-calire",
+   "subject": "Științe ale naturii",
+   "concept": "seasons and weather (temperature, sun, rain)",
+   "strength": "soft",
+   "resolvedTo": "sn-inv-calendarul-naturii",
+   "how": "bm25",
+   "score": 17.43,
+   "alternatives": [
+    "sn-inv-calendarul-naturii (17.4)",
+    "sn-sp-fenomene-naturii (15.2)",
+    "sn-sp-anotimpuri (14.4)"
+   ]
+  },
+  {
+   "topic": "ef-ig-incalzire-revenire",
+   "subject": "Matematică",
+   "concept": "multiplication to scale a 15-second count to a minute",
+   "strength": "soft",
+   "resolvedTo": "ma-no-tabla-inmultirii",
+   "how": "bm25",
+   "score": 9.09,
+   "alternatives": [
+    "ma-no-tabla-inmultirii (9.1)",
+    "ma-no-zeci-si-unitati (6.3)",
+    "ma-mm-intervale-de-timp (6.1)"
+   ]
+  },
+  {
+   "topic": "ef-ig-siguranta-prim-ajutor",
+   "subject": "Biologie",
+   "concept": "the locomotor system: bones, joints and muscles",
+   "strength": "soft",
+   "resolvedTo": "sn-sv-schelet-organe",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "re-dc-sfinti-romani",
+   "subject": "Istorie",
+   "concept": "important figures of Romanian history (e.g. Ștefan cel Mare)",
+   "strength": "soft",
+   "resolvedTo": "is-ro-voievozi",
+   "how": "bm25",
+   "score": 13.94,
+   "alternatives": [
+    "is-ro-voievozi (13.9)",
+    "is-cp-patrimoniu-romania (9.7)",
+    "is-gm-trecut-prezent (4.8)"
+   ]
+  },
+  {
+   "topic": "re-dc-vechiul-testament",
+   "subject": "Istorie",
+   "concept": "the ancient Near East and the Hebrews",
+   "strength": "soft",
+   "resolvedTo": "is-an-orientul-antic",
+   "how": "bm25",
+   "score": 14.95,
+   "alternatives": [
+    "is-an-orientul-antic (15.0)",
+    "is-an-viata-romana (4.8)",
+    "is-cp-locuri-istorice-locale (4.6)"
+   ]
+  },
+  {
+   "topic": "re-dc-viata-iisus",
+   "subject": "Geografie",
+   "concept": "reading a map with a scale and key",
+   "strength": "soft",
+   "resolvedTo": "ge-or-scara",
+   "how": "bm25",
+   "score": 10.16,
+   "alternatives": [
+    "ge-or-scara (10.2)",
+    "ge-or-semne-conventionale (8.4)",
+    "ge-gu-harta-politica (7.9)"
+   ]
+  },
+  {
+   "topic": "re-dc-pilde-minuni",
+   "subject": "Limba și literatura română",
+   "concept": "identifying the message of a narrative text",
+   "strength": "soft",
+   "resolvedTo": "lr-le-mesajul-textului",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "re-sc-sarbatori-pelerinaje",
+   "subject": "Educație civică și socială",
+   "concept": "national symbols and the National Day of Romania",
+   "strength": "soft",
+   "resolvedTo": "ec-ap-tara-insemne",
+   "how": "bm25",
+   "score": 17.38,
+   "alternatives": [
+    "ec-ap-tara-insemne (17.4)",
+    "ec-ap-apartenenta-europeana (13.5)",
+    "dp-as-igiena (3.3)"
+   ]
+  },
+  {
+   "topic": "re-vc-diversitate-religioasa",
+   "subject": "Educație civică și socială",
+   "concept": "intercultural education: identity, diversity, stereotypes",
+   "strength": "soft",
+   "resolvedTo": "ec-ic-diversitate-culturala",
+   "how": "bm25",
+   "score": 12.44,
+   "alternatives": [
+    "ec-ic-diversitate-culturala (12.4)",
+    "dp-ds-empatie-diversitate (10.5)",
+    "ec-ic-valori-interculturale (9.6)"
+   ]
+  },
+  {
+   "topic": "re-dc-duhul-sfant-biserica",
+   "subject": "Istorie",
+   "concept": "the Roman Empire and the spread of Christianity",
+   "strength": "soft",
+   "resolvedTo": "is-an-religie-crestinism",
+   "how": "bm25",
+   "score": 14.46,
+   "alternatives": [
+    "is-an-religie-crestinism (14.5)",
+    "is-an-roma-stat (8.9)",
+    "is-em-europa-crestina (8.7)"
+   ]
+  },
+  {
+   "topic": "re-sc-arta-muzica-literatura",
+   "subject": "Limba și literatura română",
+   "concept": "reading and interpreting literary texts",
+   "strength": "soft",
+   "resolvedTo": "lr-lit-interpretari-multiple",
+   "how": "bm25",
+   "score": 11.72,
+   "alternatives": [
+    "lr-lit-interpretari-multiple (11.7)",
+    "lr-lit-opinie-argumentata-text (6.9)",
+    "lr-le-informatii-detaliu (5.6)"
+   ]
+  },
+  {
+   "topic": "et-ap-materiale",
+   "subject": "Științe ale naturii",
+   "concept": "properties of materials (hard/soft, rough/smooth, absorbs water)",
+   "strength": "soft",
+   "resolvedTo": "sn-inv-sortare",
+   "how": "bm25",
+   "score": 8.27,
+   "alternatives": [
+    "sn-inv-sortare (8.3)",
+    "sn-sf-sunete (7.9)",
+    "sn-inv-observare (5.0)"
+   ]
+  },
+  {
+   "topic": "et-ap-origami-tangram",
+   "subject": "Matematică",
+   "concept": "plane shapes: square, triangle, parallelogram",
+   "strength": "soft",
+   "resolvedTo": "ma-ge-figuri-plane",
+   "how": "bm25",
+   "score": 16.13,
+   "alternatives": [
+    "ma-ge-figuri-plane (16.1)",
+    "ma-pr-operatori-logici (5.1)",
+    "ma-ge-corpuri-geometrice (4.8)"
+   ]
+  },
+  {
+   "topic": "et-ap-tesut-impletit",
+   "subject": "Matematică",
+   "concept": "repeating patterns",
+   "strength": "soft",
+   "resolvedTo": "ma-pr-regularitati",
+   "how": "bm25",
+   "score": 15.68,
+   "alternatives": [
+    "ma-pr-regularitati (15.7)",
+    "ma-no-inmultirea-adunare-repetata (7.1)",
+    "ma-no-impartirea-sens (5.2)"
+   ]
+  },
+  {
+   "topic": "et-te-plante-animale",
+   "subject": "Biologie",
+   "concept": "what plants need to grow: water, light, soil",
+   "strength": "soft",
+   "resolvedTo": "sn-sv-conditii-viata",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "et-dd-alimentatie-meniuri",
+   "subject": "Științe ale naturii",
+   "concept": "healthy eating and food groups",
+   "strength": "soft",
+   "resolvedTo": "sn-sv-dieta-echilibrata",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "et-ds-desen-tehnic",
+   "subject": "Matematică",
+   "concept": "constructing parallel and perpendicular lines and polygons with ruler, set square and compass",
+   "strength": "hard",
+   "resolvedTo": "ma-ge-paralele-perpendiculare",
+   "how": "bm25",
+   "score": 26.16,
+   "alternatives": [
+    "ma-ge-paralele-perpendiculare (26.2)",
+    "ma-ge-linii-si-segmente (11.1)",
+    "ma-ge-poligoane (9.9)"
+   ]
+  },
+  {
+   "topic": "et-te-macheta-constructii",
+   "subject": "Matematică",
+   "concept": "ratios and proportions (scale)",
+   "strength": "soft",
+   "resolvedTo": "ma-pf-proportii",
+   "how": "bm25",
+   "score": 13.44,
+   "alternatives": [
+    "ma-pf-proportii (13.4)",
+    "ma-pf-rapoarte (13.3)",
+    "ma-pf-marimi-direct-proportionale (8.9)"
+   ]
+  },
+  {
+   "topic": "et-dd-resurse-deseuri",
+   "subject": "Geografie",
+   "concept": "natural resources and environmental protection",
+   "strength": "soft",
+   "resolvedTo": "ge-gu-resurse-naturale",
+   "how": "bm25",
+   "score": 7.07,
+   "alternatives": [
+    "ge-gu-resurse-naturale (7.1)",
+    "sn-sp-resurse-naturale (6.7)",
+    "ge-gu-activitati-economice (4.9)"
+   ]
+  },
+  {
+   "topic": "et-ce-buget-plan-afaceri",
+   "subject": "Matematică",
+   "concept": "percentages and calculations with money",
+   "strength": "soft",
+   "resolvedTo": "ma-pf-probleme-cu-procente",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "et-ce-buget-plan-afaceri",
+   "subject": "Educație civică și socială",
+   "concept": "basic economic and financial education (income, expenses, saving)",
+   "strength": "soft",
+   "resolvedTo": null,
+   "how": "dropped-by-override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "et-te-materiale-textile-lemn-metal",
+   "subject": "Fizică",
+   "concept": "physical properties of materials (hardness, elasticity, density)",
+   "strength": "soft",
+   "resolvedTo": "sn-sf-proprietati-corpuri",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "et-te-energie-electrica",
+   "subject": "Fizică",
+   "concept": "electric current, voltage and simple circuits",
+   "strength": "soft",
+   "resolvedTo": "fi-el-intensitatea",
+   "how": "bm25",
+   "score": 13.39,
+   "alternatives": [
+    "fi-el-intensitatea (13.4)",
+    "fi-el-curent-protectie (13.2)",
+    "fi-el-ohm-circuit-intreg (12.0)"
+   ]
+  },
+  {
+   "topic": "et-te-circuite-locuinta",
+   "subject": "Fizică",
+   "concept": "electrical power and energy (W, kWh)",
+   "strength": "soft",
+   "resolvedTo": "fi-el-energia-puterea",
+   "how": "bm25",
+   "score": 16.92,
+   "alternatives": [
+    "fi-el-energia-puterea (16.9)",
+    "fi-en-forme-surse (8.9)",
+    "sn-sf-economisire-energie (7.3)"
+   ]
+  },
+  {
+   "topic": "dp-ds-comunicare-ascultare",
+   "subject": "Limba și literatura română",
+   "concept": "oral communication: taking turns in a conversation",
+   "strength": "soft",
+   "resolvedTo": "lr-or-reguli-conversatie",
+   "how": "bm25",
+   "score": 10.59,
+   "alternatives": [
+    "lr-or-reguli-conversatie (10.6)",
+    "lr-ci-cartea (3.0)",
+    "lr-asc-instructiuni-orale (3.0)"
+   ]
+  },
+  {
+   "topic": "dp-mi-rutine-program",
+   "subject": "Matematică",
+   "concept": "reading the clock (hours and half hours) and days of the week",
+   "strength": "soft",
+   "resolvedTo": "ma-mm-calendarul",
+   "how": "bm25",
+   "score": 17.3,
+   "alternatives": [
+    "ma-mm-calendarul (17.3)",
+    "ma-no-numerele-0-31 (6.7)",
+    "ma-no-inmultirea-adunare-repetata (2.1)"
+   ]
+  },
+  {
+   "topic": "dp-as-pubertate",
+   "subject": "Științe ale naturii",
+   "concept": "the human body and its growth",
+   "strength": "soft",
+   "resolvedTo": "sn-sv-corpul-omenesc",
+   "how": "bm25",
+   "score": 8.02,
+   "alternatives": [
+    "sn-sv-corpul-omenesc (8.0)",
+    "sn-sv-hrana (5.7)",
+    "bi-vm-impactul-omului (4.1)"
+   ]
+  },
+  {
+   "topic": "dp-ds-feedback-online",
+   "subject": "Informatică și TIC",
+   "concept": "safe and responsible use of the internet and online communication",
+   "strength": "soft",
+   "resolvedTo": "in-net-online-safety",
+   "how": "bm25",
+   "score": 12.11,
+   "alternatives": [
+    "in-net-online-safety (12.1)",
+    "in-net-internet-web (5.8)",
+    "in-sys-computer-systems (4.2)"
+   ]
+  },
+  {
+   "topic": "dp-ds-empatie-diversitate",
+   "subject": "Educație civică și socială",
+   "concept": "human rights and non-discrimination",
+   "strength": "soft",
+   "resolvedTo": "ec-dc-conventia-onu",
+   "how": "bm25",
+   "score": 10.05,
+   "alternatives": [
+    "ec-dc-conventia-onu (10.1)",
+    "ec-dc-institutii-protectie (7.3)",
+    "ec-pe-persoana (5.2)"
+   ]
+  },
+  {
+   "topic": "en-voc-numbers-1-10",
+   "subject": "Matematică",
+   "concept": "counting objects up to 10",
+   "strength": "soft",
+   "resolvedTo": "ma-no-numararea-obiectelor",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "en-rd-labels",
+   "subject": "Limba și literatura română",
+   "concept": "recognising letters and reading simple words",
+   "strength": "soft",
+   "resolvedTo": "lr-ci-cuvinte-globale",
+   "how": "bm25",
+   "score": 11.62,
+   "alternatives": [
+    "lr-ci-cuvinte-globale (11.6)",
+    "lr-ci-litere-de-tipar (7.0)",
+    "lr-re-mesaje-neconventionale (5.9)"
+   ]
+  },
+  {
+   "topic": "en-wr-label-posters",
+   "subject": "Limba și literatura română",
+   "concept": "copying letters and short words",
+   "strength": "soft",
+   "resolvedTo": "lr-ci-elemente-grafice",
+   "how": "bm25",
+   "score": 7.42,
+   "alternatives": [
+    "lr-ci-elemente-grafice (7.4)",
+    "lr-ci-litere-de-tipar (7.0)",
+    "lr-ci-cuvinte-globale (6.4)"
+   ]
+  },
+  {
+   "topic": "en-spk-prices-time",
+   "subject": "Matematică",
+   "concept": "reading the time on a clock (hours and half hours)",
+   "strength": "soft",
+   "resolvedTo": "ma-mm-ceasul",
+   "how": "bm25",
+   "score": 29.28,
+   "alternatives": [
+    "ma-mm-ceasul (29.3)",
+    "ma-mm-intervale-de-timp (9.3)",
+    "ma-no-fractie-dintr-un-numar (6.8)"
+   ]
+  },
+  {
+   "topic": "en-rd-short-texts",
+   "subject": "Limba și literatura română",
+   "concept": "reading short texts silently with understanding",
+   "strength": "soft",
+   "resolvedTo": "lr-ci-citire-propozitii",
+   "how": "bm25",
+   "score": 18.64,
+   "alternatives": [
+    "lr-ci-citire-propozitii (18.6)",
+    "lr-le-mesajul-textului (14.5)",
+    "lr-le-orientare-carte (5.4)"
+   ]
+  },
+  {
+   "topic": "en-voc-calendar-weather",
+   "subject": "Științe ale naturii",
+   "concept": "seasons and weather phenomena",
+   "strength": "soft",
+   "resolvedTo": "sn-sp-fenomene-naturii",
+   "how": "bm25",
+   "score": 18.76,
+   "alternatives": [
+    "sn-sp-fenomene-naturii (18.8)",
+    "sn-sp-anotimpuri (14.4)",
+    "sn-sp-miscarile-pamantului (9.9)"
+   ]
+  },
+  {
+   "topic": "en-rd-unknown-words",
+   "subject": "Limba și literatura română",
+   "concept": "inferring the meaning of a word from context",
+   "strength": "soft",
+   "resolvedTo": "lr-voc-sens-din-context",
+   "how": "bm25",
+   "score": 10.88,
+   "alternatives": [
+    "lr-voc-sens-din-context (10.9)",
+    "lr-voc-aceeasi-forma (8.6)",
+    "lr-voc-sens-propriu-figurat (8.1)"
+   ]
+  },
+  {
+   "topic": "en-wr-connected-text",
+   "subject": "Limba și literatura română",
+   "concept": "linking sentences in a short composition",
+   "strength": "soft",
+   "resolvedTo": "lr-re-scriere-imaginativa",
+   "how": "bm25",
+   "score": 10.36,
+   "alternatives": [
+    "lr-re-scriere-imaginativa (10.4)",
+    "lr-ci-citire-propozitii (8.3)",
+    "lr-or-povestire-intamplari (6.4)"
+   ]
+  },
+  {
+   "topic": "en-voc-environment-global",
+   "subject": "Geografie",
+   "concept": "environmental problems and protection",
+   "strength": "soft",
+   "resolvedTo": "ge-mi-schimbari-globale",
+   "how": "bm25",
+   "score": 8.17,
+   "alternatives": [
+    "ge-mi-schimbari-globale (8.2)",
+    "ge-mi-dezvoltare-durabila (7.1)",
+    "ge-mi-impactul-uman (7.0)"
+   ]
+  },
+  {
+   "topic": "fr-gr-articles-determiners",
+   "subject": "Limba și literatura română",
+   "concept": "gender and number of nouns",
+   "strength": "soft",
+   "resolvedTo": "lr-mf-numar-gen",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "fr-cul-france-places",
+   "subject": "Geografie",
+   "concept": "map of Europe: countries and capitals",
+   "strength": "soft",
+   "resolvedTo": "ge-eu-uniunea-europeana",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "la-lb-language-families",
+   "subject": "Istorie",
+   "concept": "Roman conquest and romanisation of Dacia",
+   "strength": "soft",
+   "resolvedTo": "is-ro-etnogeneza",
+   "how": "bm25",
+   "score": 11.62,
+   "alternatives": [
+    "is-ro-etnogeneza (11.6)",
+    "is-ro-burebista-decebal (10.3)",
+    "is-an-romanizarea (9.1)"
+   ]
+  },
+  {
+   "topic": "la-lb-roman-numerals",
+   "subject": "Matematică",
+   "concept": "writing natural numbers in the decimal place-value system",
+   "strength": "soft",
+   "resolvedTo": "ma-no-numerele-0-1000000",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "la-lb-inherited-borrowed",
+   "subject": "Limba și literatura română",
+   "concept": "vocabulary: word origin, neologisms and word families",
+   "strength": "soft",
+   "resolvedTo": "lr-voc-imprumuturi-istoria",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "la-lb-word-formation",
+   "subject": "Limba și literatura română",
+   "concept": "derivation with prefixes and suffixes and compounding",
+   "strength": "hard",
+   "resolvedTo": "lr-voc-derivarea",
+   "how": "bm25",
+   "score": 25.19,
+   "alternatives": [
+    "lr-voc-derivarea (25.2)",
+    "lr-voc-cuvinte-alintate (15.5)",
+    "lr-voc-familia-lexicala (9.9)"
+   ]
+  },
+  {
+   "topic": "la-lb-noun-cases",
+   "subject": "Limba și literatura română",
+   "concept": "cases of the noun and their syntactic functions",
+   "strength": "hard",
+   "resolvedTo": "lr-mf-cazurile",
+   "how": "bm25",
+   "score": 21.91,
+   "alternatives": [
+    "lr-mf-cazurile (21.9)",
+    "lr-mf-moduri-nepersonale (7.9)",
+    "lr-mf-numeralul (6.7)"
+   ]
+  },
+  {
+   "topic": "la-lb-verb-forms",
+   "subject": "Limba și literatura română",
+   "concept": "person, number and indicative tenses of the verb",
+   "strength": "hard",
+   "resolvedTo": "lr-mf-timpuri-simple",
+   "how": "bm25",
+   "score": 20.16,
+   "alternatives": [
+    "lr-mf-timpuri-simple (20.2)",
+    "lr-mf-timpuri-compuse (16.3)",
+    "lr-mf-verbul-persoana-timp (14.6)"
+   ]
+  },
+  {
+   "topic": "la-civ-rome-history",
+   "subject": "Istorie",
+   "concept": "Ancient Rome: monarchy, republic and empire",
+   "strength": "soft",
+   "resolvedTo": "is-an-roma-stat",
+   "how": "bm25",
+   "score": 21.2,
+   "alternatives": [
+    "is-an-roma-stat (21.2)",
+    "ec-cd-regimuri-politice (10.3)",
+    "is-an-viata-romana (9.7)"
+   ]
+  },
+  {
+   "topic": "la-civ-romanisation",
+   "subject": "Istorie",
+   "concept": "Dacian–Roman wars and Roman Dacia",
+   "strength": "hard",
+   "resolvedTo": "is-ro-burebista-decebal",
+   "how": "bm25",
+   "score": 17.27,
+   "alternatives": [
+    "is-ro-burebista-decebal (17.3)",
+    "is-ro-geto-dacii (7.0)",
+    "is-ro-etnogeneza (5.8)"
+   ]
+  },
+  {
+   "topic": "la-civ-gods-heroes",
+   "subject": "Istorie",
+   "concept": "Greek and Roman religion and myths",
+   "strength": "soft",
+   "resolvedTo": "is-an-cultura-greaca",
+   "how": "bm25",
+   "score": 12.71,
+   "alternatives": [
+    "is-an-cultura-greaca (12.7)",
+    "is-an-religie-crestinism (7.3)",
+    "is-an-colonizarea-greaca (5.3)"
+   ]
+  },
+  {
+   "topic": "in-net-web-search",
+   "subject": "Limba și literatura română",
+   "concept": "selecting key information from a text",
+   "strength": "soft",
+   "resolvedTo": "lr-le-cuvinte-cheie-tema",
+   "how": "bm25",
+   "score": 8.8,
+   "alternatives": [
+    "lr-le-cuvinte-cheie-tema (8.8)",
+    "lr-asc-tema-idei-text-oral (8.7)",
+    "lr-le-texte-functionale (8.4)"
+   ]
+  },
+  {
+   "topic": "in-alg-algorithms",
+   "subject": "Limba și literatura română",
+   "concept": "understanding and following written instructions",
+   "strength": "soft",
+   "resolvedTo": "lr-asc-instructiuni-orale",
+   "how": "bm25",
+   "score": 12.74,
+   "alternatives": [
+    "lr-asc-instructiuni-orale (12.7)",
+    "lr-le-mesajul-textului (6.7)",
+    "lr-mf-imperativul (4.9)"
+   ]
+  },
+  {
+   "topic": "in-alg-algorithms",
+   "subject": "Matematică",
+   "concept": "solving word problems in steps",
+   "strength": "soft",
+   "resolvedTo": "ma-pr-probleme-mai-multe-operatii",
+   "how": "bm25",
+   "score": 14.28,
+   "alternatives": [
+    "ma-pr-probleme-mai-multe-operatii (14.3)",
+    "ma-pr-probleme-o-operatie (12.5)",
+    "ma-pr-rezolvare-intr-un-exercitiu (9.8)"
+   ]
+  },
+  {
+   "topic": "in-alg-expressions",
+   "subject": "Matematică",
+   "concept": "order of operations with natural numbers",
+   "strength": "hard",
+   "resolvedTo": "ma-no-ordinea-operatiilor",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "in-alg-digits",
+   "subject": "Matematică",
+   "concept": "place value and the digits of a natural number",
+   "strength": "hard",
+   "resolvedTo": "ma-no-numerele-0-1000",
+   "how": "bm25",
+   "score": 14.22,
+   "alternatives": [
+    "ma-no-numerele-0-1000 (14.2)",
+    "ma-no-zeci-si-unitati (14.2)",
+    "ma-no-rotunjirea (11.8)"
+   ]
+  },
+  {
+   "topic": "in-alg-divisibility",
+   "subject": "Matematică",
+   "concept": "divisors, prime numbers and greatest common divisor",
+   "strength": "hard",
+   "resolvedTo": "ma-no-cmmdc-cmmmc",
+   "how": "bm25",
+   "score": 25.99,
+   "alternatives": [
+    "ma-no-cmmdc-cmmmc (26.0)",
+    "ma-no-descompunerea-in-factori-primi (15.4)",
+    "ma-no-numere-prime (15.4)"
+   ]
+  },
+  {
+   "topic": "in-alg-sequences",
+   "subject": "Matematică",
+   "concept": "number patterns and sequences",
+   "strength": "soft",
+   "resolvedTo": "ma-pr-regularitati",
+   "how": "bm25",
+   "score": 17.7,
+   "alternatives": [
+    "ma-pr-regularitati (17.7)",
+    "ma-no-pare-impare (6.3)",
+    "ma-no-numere-reale (2.7)"
+   ]
+  },
+  {
+   "topic": "in-app-word-processing",
+   "subject": "Limba și literatura română",
+   "concept": "spelling and punctuation rules",
+   "strength": "soft",
+   "resolvedTo": "lr-re-revizuire",
+   "how": "bm25",
+   "score": 9.03,
+   "alternatives": [
+    "lr-re-revizuire (9.0)",
+    "lr-ort-virgula-fraza (7.5)",
+    "lr-ci-citire-fluenta (6.8)"
+   ]
+  },
+  {
+   "topic": "in-app-spreadsheet-charts",
+   "subject": "Matematică",
+   "concept": "arithmetic mean and representing data in charts",
+   "strength": "soft",
+   "resolvedTo": "ma-dp-organizarea-datelor-vii",
+   "how": "bm25",
+   "score": 16.35,
+   "alternatives": [
+    "ma-dp-organizarea-datelor-vii (16.3)",
+    "ma-dp-media-aritmetica (13.4)",
+    "ma-dp-grafice-cu-bare-si-liniare (11.3)"
+   ]
+  },
+  {
+   "topic": "ma-pf-dependente-functionale",
+   "subject": "Fizică",
+   "concept": "measuring physical quantities and recording them in tables",
+   "strength": "soft",
+   "resolvedTo": "sn-inv-tabele-grafice",
+   "how": "bm25",
+   "score": 12.33,
+   "alternatives": [
+    "sn-inv-tabele-grafice (12.3)",
+    "fi-mm-marimi-unitati (12.0)",
+    "sn-inv-sortare (8.3)"
+   ]
+  },
+  {
+   "topic": "ma-pf-modelare-cu-functii",
+   "subject": "Fizică",
+   "concept": "uniform rectilinear motion and the distance–time relation",
+   "strength": "soft",
+   "resolvedTo": "fi-me-viteza-medie",
+   "how": "bm25",
+   "score": 19.69,
+   "alternatives": [
+    "fi-me-viteza-medie (19.7)",
+    "sn-sf-miscare-repaus (12.3)",
+    "fi-me-acceleratia (9.1)"
+   ]
+  },
+  {
+   "topic": "ma-ge-planuri-si-harti",
+   "subject": "Geografie",
+   "concept": "orientation on a simple map: legend and cardinal directions",
+   "strength": "soft",
+   "resolvedTo": null,
+   "how": "unresolved",
+   "score": 0,
+   "alternatives": [
+    "sn-sf-magneti (3.7)",
+    "sn-sp-uscat-apa-relief (1.3)"
+   ]
+  },
+  {
+   "topic": "ma-mm-calendarul",
+   "subject": "Științe ale naturii",
+   "concept": "the four seasons and their typical weather",
+   "strength": "soft",
+   "resolvedTo": "sn-sp-anotimpuri",
+   "how": "bm25",
+   "score": 22.44,
+   "alternatives": [
+    "sn-sp-anotimpuri (22.4)",
+    "sn-sp-fenomene-naturii (10.3)",
+    "sn-inv-calendarul-naturii (7.1)"
+   ]
+  },
+  {
+   "topic": "ma-dp-colectarea-datelor",
+   "subject": "Științe ale naturii",
+   "concept": "observing and recording the weather",
+   "strength": "soft",
+   "resolvedTo": "sn-inv-calendarul-naturii",
+   "how": "bm25",
+   "score": 12.11,
+   "alternatives": [
+    "sn-inv-calendarul-naturii (12.1)",
+    "sn-inv-observare (9.7)",
+    "sn-sp-fenomene-naturii (9.6)"
+   ]
+  },
+  {
+   "topic": "ma-dp-organizarea-datelor-vii",
+   "subject": "Informatică și TIC",
+   "concept": "entering data in a spreadsheet and creating a chart",
+   "strength": "soft",
+   "resolvedTo": null,
+   "how": "unresolved",
+   "score": 0,
+   "alternatives": [
+    "in-alg-data-variables (2.4)",
+    "in-net-passwords-data (2.2)",
+    "in-alg-problem-solving (1.7)"
+   ]
+  },
+  {
+   "topic": "ma-pr-probleme-o-operatie",
+   "subject": "Limba și literatura română",
+   "concept": "listening to and understanding short oral messages",
+   "strength": "soft",
+   "resolvedTo": "lr-asc-sensul-mesajului",
+   "how": "bm25",
+   "score": 10.18,
+   "alternatives": [
+    "lr-asc-sensul-mesajului (10.2)",
+    "lr-re-mesaje-neconventionale (6.9)",
+    "lr-asc-ascultare-povesti (6.1)"
+   ]
+  },
+  {
+   "topic": "ma-pr-datele-problemei",
+   "subject": "Limba și literatura română",
+   "concept": "reading short informative texts with understanding",
+   "strength": "soft",
+   "resolvedTo": "lr-le-mesajul-textului",
+   "how": "bm25",
+   "score": 14.46,
+   "alternatives": [
+    "lr-le-mesajul-textului (14.5)",
+    "lr-ci-citire-propozitii (13.1)",
+    "lr-le-texte-functionale (11.8)"
+   ]
+  },
+  {
+   "topic": "lr-or-prezentare-multimodala",
+   "subject": "Informatică și TIC",
+   "concept": "creating a slide presentation",
+   "strength": "soft",
+   "resolvedTo": "in-app-presentations",
+   "how": "bm25",
+   "score": 9.82,
+   "alternatives": [
+    "in-app-presentations (9.8)",
+    "in-prg-blocks (3.0)",
+    "in-med-animation-3d (2.9)"
+   ]
+  },
+  {
+   "topic": "lr-ci-elemente-grafice",
+   "subject": "Arte vizuale",
+   "concept": "holding and guiding drawing tools (fine motor control)",
+   "strength": "soft",
+   "resolvedTo": "av-th-desen-instrumente",
+   "how": "bm25",
+   "score": 11.51,
+   "alternatives": [
+    "av-th-desen-instrumente (11.5)",
+    "et-ap-decupare-lipire (2.8)",
+    "av-lp-forma (2.3)"
+   ]
+  },
+  {
+   "topic": "lr-le-texte-discontinue",
+   "subject": "Matematică",
+   "concept": "reading simple tables and bar charts",
+   "strength": "soft",
+   "resolvedTo": "ma-dp-grafice-cu-bare-si-liniare",
+   "how": "bm25",
+   "score": 19.22,
+   "alternatives": [
+    "ma-dp-grafice-cu-bare-si-liniare (19.2)",
+    "ma-dp-tabele (7.5)",
+    "ma-dp-colectarea-datelor (5.7)"
+   ]
+  },
+  {
+   "topic": "lr-re-texte-pentru-public",
+   "subject": "Informatică și TIC",
+   "concept": "formatting a document in a word processor",
+   "strength": "soft",
+   "resolvedTo": "in-app-word-processing",
+   "how": "bm25",
+   "score": 15.41,
+   "alternatives": [
+    "in-app-word-processing (15.4)",
+    "in-sys-hardware (3.6)",
+    "in-prg-block-decisions (3.1)"
+   ]
+  },
+  {
+   "topic": "lr-ort-sunete-litere",
+   "subject": "Limba engleză",
+   "concept": "English vowel sounds and their spellings",
+   "strength": "soft",
+   "resolvedTo": "en-spk-sound-games",
+   "how": "bm25",
+   "score": 12.93,
+   "alternatives": [
+    "en-spk-sound-games (12.9)",
+    "en-lis-cartoons-songs (1.7)",
+    "en-cul-holidays (1.6)"
+   ]
+  },
+  {
+   "topic": "lr-ort-cuvinte-straine",
+   "subject": "Limba engleză",
+   "concept": "pronunciation of common English words",
+   "strength": "soft",
+   "resolvedTo": "en-spk-sound-games",
+   "how": "bm25",
+   "score": 8.93,
+   "alternatives": [
+    "en-spk-sound-games (8.9)",
+    "en-gr-past-simple (7.2)",
+    "en-voc-colours-animals (5.9)"
+   ]
+  },
+  {
+   "topic": "lr-ic-cartea-romaneasca",
+   "subject": "Istorie",
+   "concept": "the medieval Romanian principalities (Țara Românească, Moldova)",
+   "strength": "soft",
+   "resolvedTo": "is-ro-state-medievale",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "lr-ic-traditii-obiceiuri",
+   "subject": "Religie",
+   "concept": "the main Christian feasts (Crăciunul, Paștele)",
+   "strength": "soft",
+   "resolvedTo": "re-sc-sarbatori-pelerinaje",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "lr-ic-romana-in-europa",
+   "subject": "Limba latină",
+   "concept": "Latin as the source of the Romance languages",
+   "strength": "soft",
+   "resolvedTo": "is-an-romanizarea",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "lr-ic-vecini-contacte",
+   "subject": "Geografie",
+   "concept": "Romania's neighbouring countries",
+   "strength": "soft",
+   "resolvedTo": "ge-rg-pozitie-vecini",
+   "how": "bm25",
+   "score": 14.68,
+   "alternatives": [
+    "ge-rg-pozitie-vecini (14.7)",
+    "ge-eu-caracterizare-stat (5.7)",
+    "ge-eu-state-popoare (4.3)"
+   ]
+  },
+  {
+   "topic": "lr-ic-valori-romanesti-lume",
+   "subject": "Arte vizuale",
+   "concept": "Constantin Brâncuși's sculpture",
+   "strength": "soft",
+   "resolvedTo": "av-rc-arta-romaneasca",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "is-gm-trecut-prezent",
+   "subject": "Matematică",
+   "concept": "units of time: day, week, month, year and the calendar",
+   "strength": "soft",
+   "resolvedTo": "ma-mm-calendarul",
+   "how": "bm25",
+   "score": 38.81,
+   "alternatives": [
+    "ma-mm-calendarul (38.8)",
+    "ma-mm-intervale-de-timp (34.3)",
+    "ma-mm-transformari-unitati (8.4)"
+   ]
+  },
+  {
+   "topic": "is-gm-masurarea-timpului",
+   "subject": "Matematică",
+   "concept": "natural numbers up to 10 000 and grouping in tens and hundreds",
+   "strength": "soft",
+   "resolvedTo": "ma-no-numerele-0-10000",
+   "how": "bm25",
+   "score": 27.3,
+   "alternatives": [
+    "ma-no-numerele-0-10000 (27.3)",
+    "ma-no-rotunjirea (20.1)",
+    "ma-no-numerele-0-1000000 (16.4)"
+   ]
+  },
+  {
+   "topic": "is-gm-termeni-istorici",
+   "subject": "Limba și literatura română",
+   "concept": "reading informational texts and inferring word meaning from context",
+   "strength": "soft",
+   "resolvedTo": "lr-voc-sens-din-context",
+   "how": "bm25",
+   "score": 11.85,
+   "alternatives": [
+    "lr-voc-sens-din-context (11.9)",
+    "lr-voc-aceeasi-forma (8.6)",
+    "lr-asc-deductii-text-audiat (7.2)"
+   ]
+  },
+  {
+   "topic": "is-gm-datare",
+   "subject": "Matematică",
+   "concept": "number line, Roman numerals and subtraction of natural numbers",
+   "strength": "hard",
+   "resolvedTo": "ma-no-cifrele-romane",
+   "how": "bm25",
+   "score": 21.75,
+   "alternatives": [
+    "ma-no-cifrele-romane (21.8)",
+    "ma-no-numerele-0-10 (8.9)",
+    "ma-no-fractii-zecimale (8.2)"
+   ]
+  },
+  {
+   "topic": "is-gm-argumentare",
+   "subject": "Limba și literatura română",
+   "concept": "argumentative text: thesis, arguments and conclusion",
+   "strength": "soft",
+   "resolvedTo": "lr-re-text-argumentativ",
+   "how": "bm25",
+   "score": 23.32,
+   "alternatives": [
+    "lr-re-text-argumentativ (23.3)",
+    "lr-le-text-argumentativ (17.7)",
+    "lr-le-deductii (6.7)"
+   ]
+  },
+  {
+   "topic": "is-gm-cercetare",
+   "subject": "Informatică și TIC",
+   "concept": "searching the web and evaluating the reliability of websites",
+   "strength": "soft",
+   "resolvedTo": "in-net-web-search",
+   "how": "bm25",
+   "score": 9.42,
+   "alternatives": [
+    "in-net-web-search (9.4)",
+    "in-net-internet-web (8.4)",
+    "in-sys-files-folders (3.5)"
+   ]
+  },
+  {
+   "topic": "is-an-religie-crestinism",
+   "subject": "Religie",
+   "concept": "the life of Jesus and the beginnings of the Church",
+   "strength": "soft",
+   "resolvedTo": "re-dc-iisus-maica-sfinti",
+   "how": "bm25",
+   "score": 4.58,
+   "alternatives": [
+    "re-dc-iisus-maica-sfinti (4.6)",
+    "re-dc-sfinti-romani (4.2)",
+    "re-dr-biserica-copii (2.9)"
+   ]
+  },
+  {
+   "topic": "is-mo-revolutia-industriala",
+   "subject": "Științe ale naturii",
+   "concept": "forms and sources of energy (heat, motion)",
+   "strength": "soft",
+   "resolvedTo": "sn-sf-energie-forme-surse",
+   "how": "bm25",
+   "score": 16.79,
+   "alternatives": [
+    "sn-sf-energie-forme-surse (16.8)",
+    "sn-sf-economisire-energie (7.1)",
+    "fi-me-viteza-medie (6.3)"
+   ]
+  },
+  {
+   "topic": "is-ro-voievozi",
+   "subject": "Limba și literatura română",
+   "concept": "reading legends and historical stories (legenda, textul narativ)",
+   "strength": "soft",
+   "resolvedTo": "lr-lit-personaje-loc-timp",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ge-or-orientare",
+   "subject": "Științe ale naturii",
+   "concept": "the apparent movement of the Sun across the sky during the day",
+   "strength": "soft",
+   "resolvedTo": "sn-sp-miscarile-pamantului",
+   "how": "bm25",
+   "score": 21.17,
+   "alternatives": [
+    "sn-sp-miscarile-pamantului (21.2)",
+    "ge-eu-uniunea-europeana (9.2)",
+    "sn-inv-calendarul-naturii (8.7)"
+   ]
+  },
+  {
+   "topic": "ge-or-orientare",
+   "subject": "Matematică",
+   "concept": "spatial position words: left, right, in front of, behind",
+   "strength": "soft",
+   "resolvedTo": "ma-ge-orientare-spatiala",
+   "how": "bm25",
+   "score": 15.24,
+   "alternatives": [
+    "ma-ge-orientare-spatiala (15.2)",
+    "ma-ge-vederi (11.0)",
+    "ma-ge-paralele-perpendiculare (6.5)"
+   ]
+  },
+  {
+   "topic": "ge-or-planul",
+   "subject": "Matematică",
+   "concept": "plane figures (square, rectangle, circle) and measuring lengths",
+   "strength": "soft",
+   "resolvedTo": "ma-ge-figuri-plane",
+   "how": "bm25",
+   "score": 15.52,
+   "alternatives": [
+    "ma-ge-figuri-plane (15.5)",
+    "ma-ge-perimetrul (15.1)",
+    "ma-mm-lungimea-unitati-standard (11.3)"
+   ]
+  },
+  {
+   "topic": "ge-or-scara",
+   "subject": "Matematică",
+   "concept": "multiplication and conversion between centimetres, metres and kilometres",
+   "strength": "hard",
+   "resolvedTo": "ma-mm-transformari-unitati",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ge-or-glob-coordonate",
+   "subject": "Matematică",
+   "concept": "angles and their measurement in degrees",
+   "strength": "soft",
+   "resolvedTo": "ma-ge-unghiul-masurare",
+   "how": "bm25",
+   "score": 14.19,
+   "alternatives": [
+    "ma-ge-unghiul-masurare (14.2)",
+    "ma-ge-unghiul-intuitiv (5.4)",
+    "ma-ge-poligoane (4.5)"
+   ]
+  },
+  {
+   "topic": "ge-or-grafice",
+   "subject": "Matematică",
+   "concept": "reading tables, bar charts and pie charts",
+   "strength": "hard",
+   "resolvedTo": "ma-dp-grafice-cu-bare-si-liniare",
+   "how": "bm25",
+   "score": 19.22,
+   "alternatives": [
+    "ma-dp-grafice-cu-bare-si-liniare (19.2)",
+    "ma-dp-date-statistice (9.5)",
+    "ma-dp-tabele (7.5)"
+   ]
+  },
+  {
+   "topic": "ge-or-gis",
+   "subject": "Informatică și TIC",
+   "concept": "using applications and web services safely",
+   "strength": "soft",
+   "resolvedTo": "in-net-internet-web",
+   "how": "bm25",
+   "score": 12.03,
+   "alternatives": [
+    "in-net-internet-web (12.0)",
+    "in-net-online-safety (4.9)",
+    "in-net-web-search (4.8)"
+   ]
+  },
+  {
+   "topic": "ge-ol-cadru-natural",
+   "subject": "Științe ale naturii",
+   "concept": "plants and animals in their habitats; seasonal changes",
+   "strength": "soft",
+   "resolvedTo": "sn-sv-adaptari",
+   "how": "bm25",
+   "score": 13.85,
+   "alternatives": [
+    "sn-sv-adaptari (13.8)",
+    "sn-sv-medii-de-viata (13.8)",
+    "sn-sp-anotimpuri (10.9)"
+   ]
+  },
+  {
+   "topic": "ge-te-sistemul-solar",
+   "subject": "Științe ale naturii",
+   "concept": "Sun, Earth and Moon; day and night",
+   "strength": "hard",
+   "resolvedTo": "sn-sp-soare-pamant-luna",
+   "how": "bm25",
+   "score": 20.82,
+   "alternatives": [
+    "sn-sp-soare-pamant-luna (20.8)",
+    "sn-sp-miscarile-pamantului (20.5)",
+    "sn-sp-zi-noapte (19.2)"
+   ]
+  },
+  {
+   "topic": "ge-gs-vreme-clima",
+   "subject": "Științe ale naturii",
+   "concept": "measuring temperature with a thermometer; states of water",
+   "strength": "soft",
+   "resolvedTo": "sn-inv-masuratori",
+   "how": "bm25",
+   "score": 11.72,
+   "alternatives": [
+    "sn-inv-masuratori (11.7)",
+    "sn-sf-dizolvarea (7.3)",
+    "sn-sp-circuitul-apei (6.0)"
+   ]
+  },
+  {
+   "topic": "ge-gs-ape-continentale",
+   "subject": "Științe ale naturii",
+   "concept": "the water cycle",
+   "strength": "hard",
+   "resolvedTo": "sn-sp-circuitul-apei",
+   "how": "bm25",
+   "score": 10.02,
+   "alternatives": [
+    "sn-sp-circuitul-apei (10.0)",
+    "sn-sv-cicluri-viata (5.0)",
+    "sn-sp-zi-noapte (3.9)"
+   ]
+  },
+  {
+   "topic": "ge-gs-biosfera-soluri",
+   "subject": "Științe ale naturii",
+   "concept": "living things, their habitats and adaptations",
+   "strength": "soft",
+   "resolvedTo": "sn-sv-adaptari",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ge-mi-protectia-mediului-local",
+   "subject": "Științe ale naturii",
+   "concept": "pollution and protecting the environment",
+   "strength": "soft",
+   "resolvedTo": "sn-sp-protectia-mediului",
+   "how": "bm25",
+   "score": 7.41,
+   "alternatives": [
+    "sn-sp-protectia-mediului (7.4)",
+    "sn-sp-poluare (6.7)",
+    "sn-sf-economisire-energie (6.5)"
+   ]
+  },
+  {
+   "topic": "ec-pe-persoana",
+   "subject": "Dezvoltare personală și consiliere",
+   "concept": "self-knowledge: describing one's own qualities, likes and feelings",
+   "strength": "soft",
+   "resolvedTo": "dp-as-calitati-puncte-tari",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ec-pe-trasaturi-morale",
+   "subject": "Limba și literatura română",
+   "concept": "fables and the moral of a story",
+   "strength": "soft",
+   "resolvedTo": "lr-lit-fabula",
+   "how": "bm25",
+   "score": 18.12,
+   "alternatives": [
+    "lr-lit-fabula (18.1)",
+    "lr-or-repovestire (4.5)",
+    "lr-asc-ascultare-povesti (4.4)"
+   ]
+  },
+  {
+   "topic": "ec-lf-plante-animale",
+   "subject": "Științe ale naturii",
+   "concept": "plants and animals and their life conditions",
+   "strength": "soft",
+   "resolvedTo": "sn-sv-conditii-viata",
+   "how": "bm25",
+   "score": 15.93,
+   "alternatives": [
+    "sn-sv-conditii-viata (15.9)",
+    "sn-sv-medii-de-viata (11.8)",
+    "sn-sv-viu-neviu (9.0)"
+   ]
+  },
+  {
+   "topic": "ec-gc-intrebari",
+   "subject": "Limba și literatura română",
+   "concept": "formulating questions and answers in dialogue",
+   "strength": "soft",
+   "resolvedTo": "lr-or-acte-de-limbaj",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ec-gc-argumentare",
+   "subject": "Limba și literatura română",
+   "concept": "expressing and justifying an opinion orally",
+   "strength": "soft",
+   "resolvedTo": "lr-or-parere-proprie",
+   "how": "bm25",
+   "score": 14.05,
+   "alternatives": [
+    "lr-or-parere-proprie (14.1)",
+    "lr-or-emotii (5.1)",
+    "lr-asc-tema-idei-text-oral (4.7)"
+   ]
+  },
+  {
+   "topic": "ec-ef-buget",
+   "subject": "Matematică",
+   "concept": "operations with decimal numbers and percentages",
+   "strength": "soft",
+   "resolvedTo": "ma-pf-probleme-cu-procente",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ec-ef-banci",
+   "subject": "Matematică",
+   "concept": "percentages and simple interest calculations",
+   "strength": "hard",
+   "resolvedTo": "ma-pf-probleme-cu-procente",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "sn-inv-sortare",
+   "subject": "Matematică",
+   "concept": "grouping objects into sets by a common property",
+   "strength": "soft",
+   "resolvedTo": "ma-dp-sortare-clasificare",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "sn-inv-masuratori",
+   "subject": "Matematică",
+   "concept": "measuring length, mass and capacity in standard units (m, cm, kg, g, l, ml)",
+   "strength": "hard",
+   "resolvedTo": "ma-mm-multiplii-submultiplii",
+   "how": "bm25",
+   "score": 30.84,
+   "alternatives": [
+    "ma-mm-multiplii-submultiplii (30.8)",
+    "ma-mm-masuri-neconventionale (24.5)",
+    "ma-mm-lungimea-unitati-standard (24.5)"
+   ]
+  },
+  {
+   "topic": "sn-inv-tabele-grafice",
+   "subject": "Matematică",
+   "concept": "reading and drawing simple tables and bar charts",
+   "strength": "soft",
+   "resolvedTo": "ma-dp-grafice-cu-bare-si-liniare",
+   "how": "bm25",
+   "score": 22.21,
+   "alternatives": [
+    "ma-dp-grafice-cu-bare-si-liniare (22.2)",
+    "ma-dp-tabele (9.4)",
+    "ma-no-compunere-descompunere-10 (6.3)"
+   ]
+  },
+  {
+   "topic": "sn-inv-concluzii-prezentare",
+   "subject": "Limba și literatura română",
+   "concept": "giving a short oral presentation to the class",
+   "strength": "soft",
+   "resolvedTo": "lr-or-prezentare-orala",
+   "how": "bm25",
+   "score": 11.85,
+   "alternatives": [
+    "lr-or-prezentare-orala (11.8)",
+    "lr-or-parere-proprie (8.6)",
+    "lr-re-scriere-imaginativa (6.2)"
+   ]
+  },
+  {
+   "topic": "sn-inv-investigatie-proprie",
+   "subject": "Limba și literatura română",
+   "concept": "reading short informational texts for specific facts",
+   "strength": "soft",
+   "resolvedTo": "lr-le-informatii-detaliu",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "sn-sv-sanatate",
+   "subject": "Educație fizică și sport",
+   "concept": "regular physical exercise and its effect on the body",
+   "strength": "soft",
+   "resolvedTo": "ef-df-complex-dezvoltare",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "sn-sp-anotimpuri",
+   "subject": "Matematică",
+   "concept": "naming and ordering the seasons and months",
+   "strength": "soft",
+   "resolvedTo": "ma-mm-calendarul",
+   "how": "bm25",
+   "score": 24.43,
+   "alternatives": [
+    "ma-mm-calendarul (24.4)",
+    "ma-no-numerele-0-31 (9.1)",
+    "ma-no-axa-numerelor-0-31 (6.0)"
+   ]
+  },
+  {
+   "topic": "sn-sf-miscare-repaus",
+   "subject": "Matematică",
+   "concept": "measuring time in hours, minutes and seconds",
+   "strength": "soft",
+   "resolvedTo": "ma-mm-ceasul",
+   "how": "bm25",
+   "score": 19.78,
+   "alternatives": [
+    "ma-mm-ceasul (19.8)",
+    "ma-mm-intervale-de-timp (17.0)",
+    "ma-mm-masuri-neconventionale (5.6)"
+   ]
+  },
+  {
+   "topic": "bi-inv-investigatie-proiectata",
+   "subject": "Informatică și TIC",
+   "concept": "entering data in a spreadsheet and making a chart",
+   "strength": "soft",
+   "resolvedTo": null,
+   "how": "dropped-by-override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "bi-vm-medii-romania",
+   "subject": "Geografie",
+   "concept": "locating the Danube Delta, the Black Sea and the Carpathians on the map of Romania",
+   "strength": "soft",
+   "resolvedTo": "ge-rg-trepte-de-relief",
+   "how": "bm25",
+   "score": 17,
+   "alternatives": [
+    "ge-rg-trepte-de-relief (17.0)",
+    "ge-rg-pozitie-vecini (16.5)",
+    "ge-rg-clima-ape-natura-iv (16.1)"
+   ]
+  },
+  {
+   "topic": "bi-ff-pubertatea",
+   "subject": "Dezvoltare personală și consiliere",
+   "concept": "recognising and expressing emotions and self-image in adolescence",
+   "strength": "soft",
+   "resolvedTo": "dp-as-pubertate",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "bi-sm-dezvoltare-durabila",
+   "subject": "Geografie",
+   "concept": "natural resources and their distribution",
+   "strength": "soft",
+   "resolvedTo": "ge-gu-resurse-naturale",
+   "how": "bm25",
+   "score": 7.07,
+   "alternatives": [
+    "ge-gu-resurse-naturale (7.1)",
+    "sn-sp-resurse-naturale (6.7)",
+    "ge-rg-resurse-industrie (6.2)"
+   ]
+  },
+  {
+   "topic": "bi-er-transmitere-caractere",
+   "subject": "Matematică",
+   "concept": "probability of an event as favourable over possible outcomes",
+   "strength": "soft",
+   "resolvedTo": "ma-dp-probabilitati",
+   "how": "bm25",
+   "score": 33.63,
+   "alternatives": [
+    "ma-dp-probabilitati (33.6)",
+    "ma-mm-intervale-de-timp (6.0)",
+    "ma-no-compunere-descompunere-10 (4.2)"
+   ]
+  },
+  {
+   "topic": "bi-ev-evolutia-omului",
+   "subject": "Istorie",
+   "concept": "prehistory: the first humans and their way of life",
+   "strength": "soft",
+   "resolvedTo": "is-an-primii-oameni",
+   "how": "bm25",
+   "score": 11.52,
+   "alternatives": [
+    "is-an-primii-oameni (11.5)",
+    "is-co-lumea-postbelica (6.8)",
+    "is-co-primul-razboi-mondial (6.7)"
+   ]
+  },
+  {
+   "topic": "fi-mm-marimi-unitati",
+   "subject": "Matematică",
+   "concept": "decimal numbers and multiplying or dividing by powers of 10",
+   "strength": "hard",
+   "resolvedTo": "ma-no-inmultirea-impartirea-zecimalelor",
+   "how": "bm25",
+   "score": 24.23,
+   "alternatives": [
+    "ma-no-inmultirea-impartirea-zecimalelor (24.2)",
+    "ma-no-inmultirea-cu-10-100-1000 (16.0)",
+    "ma-no-inmultirea-intregilor (14.8)"
+   ]
+  },
+  {
+   "topic": "fi-mm-masurarea-directa",
+   "subject": "Matematică",
+   "concept": "area of a rectangle and volume of a cuboid",
+   "strength": "hard",
+   "resolvedTo": "ma-ge-volum-cub-paralelipiped",
+   "how": "bm25",
+   "score": 12.75,
+   "alternatives": [
+    "ma-ge-volum-cub-paralelipiped (12.7)",
+    "ma-ge-aria-patrat-dreptunghi (10.9)",
+    "ma-ge-volumul-cu-cuburi (10.7)"
+   ]
+  },
+  {
+   "topic": "fi-mm-erori-medie",
+   "subject": "Matematică",
+   "concept": "arithmetic mean and absolute value",
+   "strength": "hard",
+   "resolvedTo": "ma-no-numere-intregi",
+   "how": "bm25",
+   "score": 11.8,
+   "alternatives": [
+    "ma-no-numere-intregi (11.8)",
+    "ma-dp-media-aritmetica (9.8)",
+    "ma-pr-reducerea-la-unitate (4.1)"
+   ]
+  },
+  {
+   "topic": "fi-mm-grafice-dependente",
+   "subject": "Matematică",
+   "concept": "points and graphs in a Cartesian coordinate system; direct proportionality",
+   "strength": "hard",
+   "resolvedTo": "ma-pf-sistem-de-axe",
+   "how": "bm25",
+   "score": 21.6,
+   "alternatives": [
+    "ma-pf-sistem-de-axe (21.6)",
+    "ma-pf-marimi-direct-proportionale (13.4)",
+    "ma-pf-regula-de-trei-simpla (12.3)"
+   ]
+  },
+  {
+   "topic": "fi-me-viteza-medie",
+   "subject": "Matematică",
+   "concept": "ratios and direct proportionality",
+   "strength": "soft",
+   "resolvedTo": "ma-pf-marimi-direct-proportionale",
+   "how": "bm25",
+   "score": 16.37,
+   "alternatives": [
+    "ma-pf-marimi-direct-proportionale (16.4)",
+    "ma-pf-regula-de-trei-simpla (12.3)",
+    "ma-pf-marimi-invers-proportionale (10.1)"
+   ]
+  },
+  {
+   "topic": "fi-me-compunerea-fortelor",
+   "subject": "Matematică",
+   "concept": "properties of the parallelogram and the right triangle",
+   "strength": "soft",
+   "resolvedTo": "ma-ge-paralelogramul",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "fi-me-presiunea",
+   "subject": "Geografie",
+   "concept": "the atmosphere: air pressure, altitude and winds",
+   "strength": "soft",
+   "resolvedTo": "ge-gs-vreme-clima",
+   "how": "bm25",
+   "score": 14.14,
+   "alternatives": [
+    "ge-gs-vreme-clima (14.1)",
+    "sn-sp-fenomene-naturii (5.7)",
+    "sn-sp-aerul (5.3)"
+   ]
+  },
+  {
+   "topic": "fi-op-legile-reflexiei",
+   "subject": "Matematică",
+   "concept": "measuring and constructing angles; symmetry with respect to a line",
+   "strength": "soft",
+   "resolvedTo": "ma-ge-perpendicularitate-distanta",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "fi-op-lentile",
+   "subject": "Matematică",
+   "concept": "similar triangles",
+   "strength": "soft",
+   "resolvedTo": "ma-ge-asemanarea-triunghiurilor",
+   "how": "bm25",
+   "score": 14.77,
+   "alternatives": [
+    "ma-ge-asemanarea-triunghiurilor (14.8)",
+    "ma-ge-teorema-inaltimii-catetei (9.7)",
+    "ma-ge-congruenta-triunghiurilor (6.3)"
+   ]
+  },
+  {
+   "topic": "ch-cc-concentratia",
+   "subject": "Matematică",
+   "concept": "percentages and solving problems with percentages",
+   "strength": "hard",
+   "resolvedTo": "ma-pf-probleme-cu-procente",
+   "how": "override",
+   "score": 0,
+   "alternatives": []
+  },
+  {
+   "topic": "ch-cc-mol",
+   "subject": "Matematică",
+   "concept": "proportions and the rule of three",
+   "strength": "soft",
+   "resolvedTo": "ma-pf-regula-de-trei-simpla",
+   "how": "bm25",
+   "score": 10.22,
+   "alternatives": [
+    "ma-pf-regula-de-trei-simpla (10.2)",
+    "ma-pf-proportii (8.0)",
+    "ma-pr-regularitati (4.7)"
+   ]
+  },
+  {
+   "topic": "ch-cc-calcule-formula",
+   "subject": "Matematică",
+   "concept": "ratios, proportions and percentages",
+   "strength": "hard",
+   "resolvedTo": "ma-pf-proportii",
+   "how": "bm25",
+   "score": 13.44,
+   "alternatives": [
+    "ma-pf-proportii (13.4)",
+    "ma-ge-asemanarea-triunghiurilor (9.7)",
+    "ma-pf-marimi-direct-proportionale (8.9)"
+   ]
+  },
+  {
+   "topic": "ch-cc-stoechiometrie",
+   "subject": "Matematică",
+   "concept": "proportions and the rule of three",
+   "strength": "hard",
+   "resolvedTo": "ma-pf-regula-de-trei-simpla",
+   "how": "bm25",
+   "score": 10.22,
+   "alternatives": [
+    "ma-pf-regula-de-trei-simpla (10.2)",
+    "ma-pf-proportii (8.0)",
+    "ma-pr-regularitati (4.7)"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Romanian vs German curriculum taxonomy</title>
+<style>
+.viz-root {
+  color-scheme: light;
+  --page: #f9f9f7; --surface-1: #fcfcfb; --text-primary: #0b0b0b; --text-secondary: #52514e; --muted: #898781;
+  --grid: #e1e0d9; --axis: #c3c2b7; --ring: rgba(11,11,11,0.10);
+  --ord-1: #104281; --ord-2: #2a78d6; --ord-3: #86b6ef; --none: #d9d8d2;
+  --series-1: #2a78d6; --div-neg: #2a78d6; --div-mid: #c3c2b7; --div-pos: #e34948;
+  --seq-0: #f0efec; --seq-1: #cde2fb; --seq-2: #86b6ef; --seq-3: #3987e5; --seq-4: #1c5cab; --seq-5: #0d366b;
+  --accent-wash: rgba(42,120,214,0.08); --ink-high: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) .viz-root {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface-1: #1a1a19; --text-primary: #f0efec; --text-secondary: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+    --ord-1: #9ec5f4; --ord-2: #3987e5; --ord-3: #184f95; --none: #383835;
+    --series-1: #3987e5; --div-neg: #3987e5; --div-mid: #5a5955; --div-pos: #e66767;
+    --seq-0: #262624; --seq-1: #104281; --seq-2: #1c5cab; --seq-3: #2a78d6; --seq-4: #6da7ec; --seq-5: #b7d3f6;
+    --accent-wash: rgba(57,135,229,0.14); --ink-high: #0b0b0b;
+  }
+}
+:root[data-theme="dark"] .viz-root {
+  color-scheme: dark;
+  --page: #0d0d0d; --surface-1: #1a1a19; --text-primary: #f0efec; --text-secondary: #c3c2b7; --muted: #898781;
+  --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+  --ord-1: #9ec5f4; --ord-2: #3987e5; --ord-3: #184f95; --none: #383835;
+  --series-1: #3987e5; --div-neg: #3987e5; --div-mid: #5a5955; --div-pos: #e66767;
+  --seq-0: #262624; --seq-1: #104281; --seq-2: #1c5cab; --seq-3: #2a78d6; --seq-4: #6da7ec; --seq-5: #b7d3f6;
+  --accent-wash: rgba(57,135,229,0.14); --ink-high: #0b0b0b;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.viz-root { background: var(--page); color: var(--text-primary); min-height: 100vh; padding: 24px clamp(12px, 3vw, 40px) 64px; }
+h1 { font-size: 22px; margin: 0 0 4px; } h2 { font-size: 16px; margin: 0 0 4px; } h3 { font-size: 14px; margin: 16px 0 6px; }
+p.sub, .sub { color: var(--text-secondary); font-size: 13px; margin: 0 0 12px; line-height: 1.45; }
+.card { background: var(--surface-1); border: 1px solid var(--ring); border-radius: 10px; padding: 16px 18px; margin-bottom: 16px; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 16px 0; }
+.kpi .v { font-size: 32px; font-weight: 600; line-height: 1.1; } .kpi .l { font-size: 12px; color: var(--text-secondary); margin-top: 4px; line-height: 1.35; }
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--grid); margin: 8px 0 16px; flex-wrap: wrap; }
+.tabs button { background: none; border: 0; padding: 8px 12px; font: inherit; font-size: 14px; color: var(--text-secondary); cursor: pointer; border-bottom: 2px solid transparent; }
+.tabs button[aria-selected="true"] { color: var(--text-primary); border-bottom-color: var(--series-1); font-weight: 600; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 16px; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--text-secondary); margin: 6px 0 10px; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+.hbar { display: grid; grid-template-columns: 170px 1fr 52px; align-items: center; gap: 8px; font-size: 13px; margin: 3px 0; }
+.hbar .lab { color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hbar .track { display: flex; gap: 2px; height: 16px; }
+.hbar .seg { height: 100%; } .hbar .seg:first-child { border-radius: 4px 0 0 4px; } .hbar .seg:last-child { border-radius: 0 4px 4px 0; } .hbar .seg:only-child { border-radius: 4px; }
+.hbar .val { font-variant-numeric: tabular-nums; color: var(--text-primary); text-align: right; }
+.hit { cursor: default; }
+.tip { position: fixed; pointer-events: none; background: var(--surface-1); color: var(--text-primary); border: 1px solid var(--ring); box-shadow: 0 4px 16px rgba(0,0,0,.12); border-radius: 8px; padding: 8px 10px; font-size: 12px; line-height: 1.4; max-width: 320px; z-index: 10; display: none; }
+.tip b { font-weight: 600; }
+svg text { fill: var(--muted); font-size: 11px; font-family: inherit; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+th { color: var(--text-secondary); font-weight: 600; font-size: 12px; }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+.heat td.c { text-align: center; font-variant-numeric: tabular-nums; min-width: 44px; }
+.filters { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+.filters select, .filters input[type=search] { font: inherit; font-size: 13px; padding: 6px 8px; border-radius: 6px; border: 1px solid var(--axis); background: var(--surface-1); color: var(--text-primary); }
+.filters input[type=search] { min-width: 300px; }
+.filters label { font-size: 13px; color: var(--text-secondary); }
+.split { display: grid; grid-template-columns: minmax(300px, 1fr) minmax(320px, 1.2fr); gap: 16px; }
+@media (max-width: 860px) { .split, .grid2 { grid-template-columns: 1fr; } .hbar { grid-template-columns: 120px 1fr 44px; } }
+.list { max-height: 70vh; overflow: auto; border: 1px solid var(--grid); border-radius: 8px; }
+.row { padding: 8px 10px; border-bottom: 1px solid var(--grid); cursor: pointer; font-size: 13px; }
+.row:hover, .row[aria-selected="true"] { background: var(--accent-wash); }
+.row .meta { color: var(--muted); font-size: 12px; }
+.pill { display: inline-block; font-size: 11px; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--axis); color: var(--text-secondary); margin-right: 4px; white-space: nowrap; }
+.pill .sw { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 4px; vertical-align: 0; }
+.detail { position: sticky; top: 12px; max-height: 80vh; overflow: auto; }
+.detail .k { color: var(--muted); font-size: 12px; }
+.detail ul, .card ul { margin: 4px 0 8px; padding-left: 18px; font-size: 13px; line-height: 1.5; }
+.match { border-top: 1px solid var(--grid); padding: 8px 0; font-size: 13px; }
+.count { color: var(--muted); font-size: 12px; margin: 0 0 6px; }
+footer { margin-top: 28px; font-size: 12px; color: var(--muted); line-height: 1.5; max-width: 900px; }
+.subjtoggle { float: right; margin-left: 8px; display: inline-flex; border: 1px solid var(--axis); border-radius: 6px; overflow: hidden; }
+.subjtoggle button { font: inherit; font-size: 12px; background: var(--surface-1); color: var(--text-secondary); border: 0; padding: 4px 9px; cursor: pointer; }
+.subjtoggle button[aria-pressed="true"] { background: var(--series-1); color: var(--ink-high); }
+.themebtn { float: right; font: inherit; font-size: 12px; background: var(--surface-1); color: var(--text-secondary); border: 1px solid var(--axis); border-radius: 6px; padding: 4px 8px; cursor: pointer; }
+a { color: var(--series-1); }
+.btn { font: inherit; font-size: 12px; background: var(--surface-1); color: var(--text-secondary); border: 1px solid var(--axis); border-radius: 6px; padding: 5px 10px; cursor: pointer; }
+.btn:hover { color: var(--text-primary); border-color: var(--series-1); }
+.stats { display: flex; gap: 36px; flex-wrap: wrap; margin-top: 6px; }
+.stat .v { font-size: 26px; font-weight: 600; line-height: 1.15; font-variant-numeric: tabular-nums; } .stat .l { font-size: 12px; color: var(--text-secondary); }
+.click { cursor: pointer; }
+.hbar.click, .dbar.click { border-radius: 4px; padding: 1px 4px; margin-left: -4px; margin-right: -4px; }
+.hbar.click:hover .lab, .dbar.click:hover .lab { color: var(--series-1); }
+.hbar.on, .dbar.on, tr.on { background: var(--accent-wash); }
+.hbar.on .lab, .dbar.on .lab { color: var(--text-primary); font-weight: 600; }
+.dbar { display: grid; grid-template-columns: minmax(150px, 1.4fr) minmax(140px, 1fr) 44px 46px; gap: 8px; align-items: center; font-size: 13px; margin: 2px 0; }
+.dbar .lab { color: var(--text-secondary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dbar .trk { position: relative; height: 14px; }
+.dbar .trk::before { content: ''; position: absolute; left: 50%; top: -3px; bottom: -3px; border-left: 1px solid var(--axis); }
+.dbar .b { position: absolute; top: 0; bottom: 0; }
+.dbar .val { text-align: right; font-variant-numeric: tabular-nums; }
+.dbar .nn { text-align: right; color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.scroll { max-height: 460px; overflow: auto; padding-right: 4px; }
+.fchip { font: inherit; font-size: 12px; border: 1px solid var(--series-1); color: var(--text-primary); background: var(--accent-wash); border-radius: 999px; padding: 2px 9px; margin: 0 6px 4px 0; cursor: pointer; }
+.ptab td { vertical-align: middle; }
+.ptab th.dumb, .ptab td.dumb { width: 170px; }
+.prow { cursor: pointer; } .prow:hover, .prow.open { background: var(--accent-wash); }
+.pdet > td { background: var(--accent-wash); padding: 10px 14px 16px; }
+.pdg { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 860px) { .pdg { grid-template-columns: 1fr; } }
+.pdg p { font-size: 13px; line-height: 1.5; margin: 4px 0 6px; }
+table.mini { width: auto; margin-top: 10px; } table.mini td, table.mini th { padding: 3px 12px 3px 0; border-bottom: 1px solid var(--grid); }
+svg text.vlab { fill: var(--text-primary); font-size: 11px; font-weight: 600; }
+.k { color: var(--muted); font-size: 12px; }
+.langtoggle { margin-left: 8px; }
+</style>
+</head>
+<body>
+<div class="viz-root">
+<div class="langtoggle subjtoggle" role="group" id="lang"><button type="button" data-lang="en">English</button><button type="button" data-lang="de">Deutsch</button><button type="button" data-lang="ro">Română</button></div>
+<button class="themebtn" id="theme" type="button"></button>
+<div class="subjtoggle" role="group" id="var"><button type="button" data-var="all"></button><button type="button" data-var="core"></button></div>
+<h1 id="title"></h1>
+<p class="sub" id="intro"></p>
+<div class="kpis" id="kpis"></div>
+<div class="tabs" role="tablist" id="tabs">
+  <button role="tab" aria-selected="true" data-tab="overview"></button>
+  <button role="tab" aria-selected="false" data-tab="timing"></button>
+  <button role="tab" aria-selected="false" data-tab="ro"></button>
+  <button role="tab" aria-selected="false" data-tab="de"></button>
+  <button role="tab" aria-selected="false" data-tab="gaps"></button>
+</div>
+
+<section data-panel="overview">
+  <div class="grid2">
+    <div class="card"><h2 data-i="covH"></h2><p class="sub" data-i="covSub"></p><div class="legend" id="covLegend"></div><div id="roCov"></div>
+      <h3 data-i="byStage"></h3><div id="stageCov"></div><p class="sub" style="margin-top:6px" data-i="stageNote"></p></div>
+    <div class="card"><h2 data-i="deCovH"></h2><p class="sub" data-i="deCovSub"></p><div id="deCov"></div></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><h2 data-i="whenH"></h2><p class="sub" data-i="whenSub"></p><div class="legend" id="dLegend1"></div><div id="hist"></div>
+      <button class="btn" type="button" data-to-timing></button></div>
+    <div class="card"><h2 data-i="offH"></h2><p class="sub" data-i="offSub"></p><div id="offTable"></div>
+      <h3 data-i="byStage"></h3><div id="offStage"></div><p class="sub" style="margin-top:8px" data-i="agesNote"></p></div>
+  </div>
+  <div class="card"><h2 data-i="matrixH"></h2><p class="sub" data-i="matrixSub"></p><div id="matrix" style="overflow:auto"></div></div>
+  <div class="card"><h2 data-i="structH"></h2><div id="structure"></div></div>
+</section>
+
+<section data-panel="timing" hidden>
+  <div class="card">
+    <h2 data-i="whenH"></h2>
+    <p class="sub" style="max-width:1000px" data-i="tIntro"></p>
+    <div class="filters">
+      <label><span data-i="compareWith"></span> <select id="tBase"></select></label>
+      <select id="tMatch"></select>
+      <select id="tSubj"></select>
+      <select id="tStage"></select>
+      <button class="btn" type="button" id="tClear"></button>
+    </div>
+    <p class="sub" id="tNote" style="max-width:1000px"></p>
+    <div class="stats" id="tStats"></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><h2 data-i="histH"></h2><p class="sub" id="tHistSub"></p><div class="legend" id="dLegend2"></div><div id="tHist"></div></div>
+    <div class="card"><h2 data-i="bySubjH"></h2><p class="sub" data-i="bySubjSub"></p><div class="legend" id="dLegend3"></div><div id="tSub"></div></div>
+  </div>
+  <div class="card"><h2 id="tDomH"></h2><p class="sub" data-i="byDomSub"></p><div class="scroll" id="tDom"></div></div>
+  <div class="card">
+    <h2 data-i="pairsH"></h2>
+    <p class="sub" id="tSel"></p>
+    <div class="filters">
+      <input type="search" id="tQ">
+      <select id="tSort"></select>
+      <span class="legend" style="margin:0" id="dumbLegend"></span>
+    </div>
+    <div id="tList" style="overflow:auto"></div>
+  </div>
+</section>
+
+<section data-panel="ro" hidden>
+  <div class="filters">
+    <select id="roSubject"></select>
+    <select id="roRel"></select>
+    <select id="roGrade"></select>
+    <label><input type="checkbox" id="roGS"> <span data-i="specificOnly"></span></label>
+    <input type="search" id="roQ">
+  </div>
+  <div class="split">
+    <div><p class="count" id="roCount"></p><div class="list" id="roList"></div></div>
+    <div class="card detail" id="roDetail"></div>
+  </div>
+</section>
+
+<section data-panel="de" hidden>
+  <div class="filters">
+    <select id="deSubject"></select>
+    <select id="deCovSel"></select>
+    <input type="search" id="deQ">
+  </div>
+  <div class="split">
+    <div><p class="count" id="deCount"></p><div class="list" id="deList"></div></div>
+    <div class="card detail" id="deDetail"></div>
+  </div>
+</section>
+
+<section data-panel="gaps" hidden>
+  <div class="grid2">
+    <div class="card"><h2 data-i="gapRoH"></h2><p class="sub" data-i="gapRoSub"></p><div id="gapRo"></div></div>
+    <div class="card"><h2 data-i="gapDeH"></h2><p class="sub" data-i="gapDeSub"></p><div id="gapDe"></div></div>
+  </div>
+</section>
+<footer id="footer"></footer>
+<div class="tip" id="tip" role="tooltip"></div>
+</div>
+
+<script id="cmp" type="application/json">__COMPARISON__</script>
+<script id="exp" type="application/json">__EXPLORER__</script>
+<script>
+// Romanian vs German curriculum taxonomy — comparison explorer in English, German or Romanian (?lang=en|de|ro).
+// ?subjects=core shows the core subjects of both taxonomies only.
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const tipA = h => `data-tip="${esc(h)}"`;
+const QS = new URLSearchParams(location.search);
+const VAR = QS.get('subjects') === 'core' ? 'core' : 'all';
+let LANG = ['en', 'de', 'ro'].includes(QS.get('lang')) ? QS.get('lang') : 'en';
+const R0 = JSON.parse(document.getElementById('cmp').textContent);
+const C = { ...R0, ...(R0.variants?.[VAR] || {}) };
+const X = JSON.parse(document.getElementById('exp').textContent);
+if (VAR === 'core') { X.ro = X.ro.filter(t => t.tr !== 'extended'); X.de = X.de.filter(t => t.tr !== 'extended'); for (const o of X.de) o.c = o.cc; }
+
+const I18N = {
+  en: {
+    title: 'Romanian curriculum taxonomy vs German curriculum taxonomy',
+    intro: 'Romanian micro-topics from clasa pregătitoare to clasa a XII-a (national <i>programe școlare</i>; theoretical liceu) compared topic-by-topic with the German taxonomy, Vorschule to Klasse 13 (Gymnasium from Klasse 7). Romanian clasa N starts at age N+6, German Klasse N at age N+5, so clasa pregătitoare and Klasse 1 both start at 6. Generated {gen}. {ro} · {de} · {map}',
+    linkRo: 'Browse the Romanian taxonomy →', linkDe: 'Browse the German taxonomy →', linkMap: '3D map →', theme: 'Theme', allSubjects: 'All subjects', coreSubjects: 'Core subjects only', language: 'Language',
+    'tab.overview': 'Overview', 'tab.timing': 'Timing: when, compared?', 'tab.ro': 'Explore Romanian topics', 'tab.de': 'Explore German topics', 'tab.gaps': 'Gaps',
+    k1: 'Romanian micro-topics in {s} subjects ({m} in the German taxonomy)', k2: 'of Romanian topics have a strong or partial German counterpart', k3: 'of German topics have a Romanian counterpart',
+    k4: 'topics flagged Romania-specific (language, history, institutions)', k5: 'median age offset vs Germany for matched topics (vs the G8 Länder {g8})', k6: 'of mappable Romanian prerequisite edges also hold in the German graph ({r} reversed)',
+    yr: '{v} yr', yr_one: '{v} yr',
+    covH: 'How much of each Romanian subject exists in the German taxonomy?', covSub: 'Share of Romanian topics by best crosswalk match. Value = strong + partial.',
+    'b.strong': 'Strong (exact/close)', 'b.partial': 'Partial (German topic broader/narrower)', 'b.related': 'Related only', 'b.none': 'No counterpart',
+    byStage: 'By school stage', stageNote: 'From Klasse 7 the German taxonomy follows the Gymnasium, so Romanian liceu topics are compared with Gymnasium and Oberstufe content.',
+    deCovH: 'How much of each German subject appears in the Romanian taxonomy?', deCovSub: 'Share of German topics with at least one strong or partial Romanian counterpart.',
+    deCovTip: '{c} of {t} German topics have a Romanian counterpart<br>{r} more are only related', ofN: '{a} of {b} ({p}%)',
+    whenH: 'When do Romanian children meet the same idea?', whenSub: 'Romanian start age minus German start age, per Romanian topic with an exact/close match. Right of 0 = later in Romania.',
+    earlier: 'Earlier in Romania', same: 'Same age', later: 'Later in Romania', earlierS: 'Earlier', laterS: 'Later', drill: 'Drill down by subject, domain and topic →',
+    histFoot: 'n = {n} Romanian topics with an exact/close match; median {m}. Click a bar to see its topics.',
+    offH: 'Median age offset by subject', offSub: 'Years later (+) or earlier (−) in Romania than in Germany for the same matched topic: against the German taxonomy (G9 numbering), and against the G8 Länder, where the Gymnasium runs a year ahead from Klasse 7. Click a row or cell to see the topics behind it.',
+    thSubject: 'Romanian subject', thStage: 'Romanian stage', vsDe: 'vs German taxonomy', vsG8: 'vs German G8 Länder', all: 'All',
+    agesNote: 'Ages: Romanian clasa N starts at N+6 (clasa pregătitoare at 6); German Klasse N at N+5 (Klasse 1 at 6). So the same age pairs clasa pregătitoare with Klasse 1 and clasa a V-a with Klasse 6.',
+    matrixH: 'Where Romanian subjects land in the German taxonomy', matrixSub: 'Number of strong/partial crosswalk links from each Romanian subject (rows) to each German subject (columns). Darker = more links.', links: '{v} links',
+    structH: 'Structure side by side', metric: 'Metric', romanian: 'Romanian', german: 'German',
+    'sl.topics': 'Topics', 'sl.subjects': 'Subjects', 'sl.domains': 'Domains', 'sl.edges': 'Prerequisite edges', 'sl.hardShare': 'Hard edges %', 'sl.edgesPerTopic': 'Edges per topic', 'sl.roots': 'Roots (no prerequisites)', 'sl.maxDepth': 'Max depth', 'sl.meanDepth': 'Mean depth', 'sl.crossSubjectEdgeShare': 'Cross-subject edges %', 'sl.curricula': 'Curriculum sources', 'sl.standards': 'Standards in catalogue', 'sl.topicsWithStandards': 'Topics with ≥1 standard %', 'sl.ageMin': 'Youngest age', 'sl.ageMax': 'Oldest age', 'sl.meanAgeSpan': 'Mean age span (years)',
+    tIntro: 'Each Romanian topic with an exact or close German match is paired with its closest counterpart. <b>Δ</b> = the age Romanian children start the topic (clasa + 6) minus the age German children start the matched topic (Klasse + 5), in the German taxonomy or in the G8 Länder. Positive = later in Romania. Click a bar, subject or domain to filter the topic list at the bottom; click a topic row to see both descriptions.',
+    compareWith: 'Compare with', 'base.de': 'German taxonomy (G9)', 'base.G8': 'German G8 Länder', 'cmpB.de': 'the German taxonomy (G9)', 'cmpB.G8': 'the German G8 Länder', 'match.strong': 'Exact and close matches', 'match.exact': 'Exact matches only',
+    allRoSubjects: 'All Romanian subjects', allStages: 'All school stages', clear: 'Clear filters',
+    'note.de': 'German start age = Klasse + 5, G9 numbering (Abitur after Klasse 13), as in most Länder today.',
+    'note.G8': 'In the G8 Länder (e.g. Berlin, Brandenburg, Sachsen, Thüringen, Hamburg) the Gymnasium runs a year ahead from Klasse 7, so German topics from Klasse 7 start a year earlier here.',
+    stMatched: 'matched Romanian topics in view', stMedian: 'median Δ', stEarlier: 'earlier in Romania ({n})', stSame: 'same age ({n})', stLater: 'later in Romania ({n})',
+    histH: 'Distribution of Δ', histSub: '{n} Romanian topics{in}, compared with {b}. Click a bar to list its topics; click it again to clear.', inX: ' in {x}',
+    histTip: '<b>Δ {b} years</b><br>{v} Romanian topics ({p}%)<br><span style="color:var(--muted)">Click to list them</span>', histTip_one: '<b>Δ {b} year</b><br>{v} Romanian topics ({p}%)<br><span style="color:var(--muted)">Click to list them</span>',
+    axis: 'Δ years (Romanian start age − German start age)', histAria: 'Histogram of age offsets',
+    bySubjH: 'By Romanian subject', bySubjSub: 'Share of matched topics met earlier, at the same age or later in Romania. Value = median Δ in years. Click a subject to filter.',
+    subjTip: '<b>{s}</b><br>{lab}: {v} of {n} ({p}%)<br>median Δ {m}',
+    byDomH: 'By domain · {s}', byDomAll: 'By domain · all Romanian subjects', byDomSub: 'Median Δ per Romanian domain with at least 2 matched topics, sorted from latest to earliest in Romania. Columns: median Δ, number of topics. Click a domain to filter.',
+    domainCol: 'Domain', earlierArrow: '← earlier in Romania', laterArrow: 'later →', domTip: '<b>{s} › {d}</b><br>median Δ {m} · {n} topics<br>{e} earlier, {z} same, {l} later', noDom: 'No domain has 2 or more matched topics with these filters.',
+    pairsH: 'Topic pairs', tSel: '{l} of {p} topic pairs, compared with {b}. Click a row for details.', removeFilter: 'Remove filter {x}', searchPairs: 'Search Romanian or German topic…',
+    'sort.later': 'Latest in Romania first', 'sort.earlier': 'Earliest in Romania first', 'sort.grade': 'By grade', 'sort.subject': 'By subject',
+    dumbDe: 'German start age (G9, or G8 Länder if chosen)', dumbRo: 'Romanian start age',
+    thRoTopic: 'Romanian topic', thGrade: 'Grade', thDeTopic: 'Closest German counterpart', thMatch: 'Match', thStart: 'Start age', noPairs: 'No topic pairs match these filters.',
+    dumbTip: 'Romanian start age {a} ({g})<br>{b} start age {c}<br><b>Δ {d}</b>',
+    roTopic: 'Romanian topic', deTopic: 'German topic', openRo: 'Open in Romanian topics', roTax: 'Romanian taxonomy', path: 'learning path', openDe: 'Open in German topics', deTax: 'German taxonomy',
+    matchLabel: 'Match', startIn: 'Start age of the matched topic in', ageCol: 'Age', deltaCol: 'Δ (Romania {a} − this)', otherStrong: 'Other strong German counterparts:',
+    'rel.any': 'All match types', 'rel.strong': 'Strong (exact/close)', 'rel.partial': 'Partial (broader/narrower)', 'rel.related': 'Related only', 'rel.none': 'No German counterpart',
+    allGrades: 'All grades', specificOnly: 'Romania-specific only', specific: 'Romania-specific', searchRo: 'Search Romanian topics (any language)…', nTopics: '{n} topics', nTopics_one: '{n} topic',
+    roDetailEmpty: 'Select a topic to see its German counterparts, the age difference and its prerequisites.', evidence: 'Evidence of mastery', notes: 'Notes',
+    cp: 'German counterparts ({n})', cpNone: 'None — no comparable German topic.', g8Age: 'In the G8 Länder: age {a} (Δ {d})', g8Only: 'In the G8 Länder: age {a}', note: 'Note: {x}',
+    prereqs: 'Prerequisites ({n})', unlocks: 'Unlocks ({n})', none: 'none', standards: 'Standards', openRoBrowser: 'Open in the Romanian taxonomy browser →', pathLink: 'Learning path →',
+    allDeSubjects: 'All German subjects', 'cov.any': 'All', 'cov.covered': 'Has a Romanian counterpart', 'cov.related': 'Related only', 'cov.none': 'No Romanian counterpart', searchDe: 'Search German topics (any language)…',
+    deDetailEmpty: 'Select a German topic to see its Romanian counterparts.', roCp: 'Romanian counterparts', roCpNone: 'None in the Romanian taxonomy.', openDeBrowser: 'Open in the German taxonomy browser →',
+    showing600: 'Showing the first 600 — refine the filters.', age: 'age {a}–{b}',
+    gapRoH: 'Romanian topics with no German counterpart', gapRoSub: 'Grouped by subject — what a German-based product would miss for a child in a Romanian school.',
+    gapDeH: 'German domains with no Romanian counterpart', gapDeSub: 'Content of the German curriculum that the Romanian programmes do not cover (or that this taxonomy has not captured).',
+    gapAllCovered: 'Every German domain has at least one Romanian counterpart.', barely: 'Barely covered (< 25% of the domain)',
+    'st.0-4': 'Primary (CP–IV)', 'st.0-2': 'CP–II', 'st.3-4': 'Grades III–IV', 'st.5-8': 'Lower secondary (V–VIII)', 'st.5-6': 'Grades V–VI', 'st.7-8': 'Grades VII–VIII', 'st.9-12': 'Liceu (IX–XII)', grade0: 'Preparatory grade (CP)', gradeN: 'Grade {r}',
+    allProfiles: 'all liceu profiles', onlyProfiles: '{x} only',
+    'rel.exact': 'exact', 'rel.close': 'close', 'rel.broader': 'DE broader', 'rel.narrower': 'DE narrower', 'rel.related2': 'related',
+    'type.CONCEPTUAL': 'Concept', 'type.PROCEDURAL': 'Skill or procedure', 'type.REPRESENTATIONAL': 'Representation', 'type.LANGUAGE': 'Language', 'type.META': 'Learning strategy',
+    footer: 'Research prototype, authored with AI assistance and not yet reviewed by Romanian or German teachers. Texts in German and Romanian are AI translations of the English.<br>Lernlandkarte © 2026 Alexandru Prian: database ODbL 1.0, content CC BY-SA 4.0, code MIT · data model after the Marble Skill Taxonomy (v1) · © Generative Spark, Inc. (Marble) · ODbL 1.0 / CC BY-SA 4.0 · <a href="https://github.com/codingarchitect-wq/lernlandkarte">Data and source on GitHub</a>.',
+  },
+  de: {
+    title: 'Rumänische und deutsche Lehrplan-Taxonomie im Vergleich',
+    intro: 'Rumänische Mikrothemen von der clasa pregătitoare bis zur clasa a XII-a (nationale <i>programe școlare</i>; theoretisches Lyzeum), Thema für Thema verglichen mit der deutschen Taxonomie von der Vorschule bis Klasse 13 (Gymnasium ab Klasse 7). Die rumänische clasa N beginnt mit N+6 Jahren, die deutsche Klasse N mit N+5; clasa pregătitoare und Klasse 1 beginnen also beide mit 6. Erstellt am {gen}. {ro} · {de} · {map}',
+    linkRo: 'Rumänische Taxonomie ansehen →', linkDe: 'Deutsche Taxonomie ansehen →', linkMap: '3D-Karte →', theme: 'Darstellung', allSubjects: 'Alle Fächer', coreSubjects: 'Nur Kernfächer', language: 'Sprache',
+    'tab.overview': 'Überblick', 'tab.timing': 'Zeitpunkt: wann, im Vergleich?', 'tab.ro': 'Rumänische Themen', 'tab.de': 'Deutsche Themen', 'tab.gaps': 'Lücken',
+    k1: 'rumänische Mikrothemen in {s} Fächern ({m} in der deutschen Taxonomie)', k2: 'der rumänischen Themen haben eine starke oder teilweise deutsche Entsprechung', k3: 'der deutschen Themen haben eine rumänische Entsprechung',
+    k4: 'als rumänienspezifisch markierte Themen (Sprache, Geschichte, Institutionen)', k5: 'mittlerer Altersabstand zu Deutschland bei zugeordneten Themen (zu den G8-Ländern {g8})', k6: 'der zuordenbaren rumänischen Voraussetzungen gelten auch im deutschen Graphen ({r} umgekehrt)',
+    yr: '{v} J.', yr_one: '{v} J.',
+    covH: 'Wie viel von jedem rumänischen Fach gibt es in der deutschen Taxonomie?', covSub: 'Anteil der rumänischen Themen nach bester Entsprechung. Wert = stark + teilweise.',
+    'b.strong': 'Stark (exakt/nah)', 'b.partial': 'Teilweise (deutsches Thema breiter/enger)', 'b.related': 'Nur verwandt', 'b.none': 'Keine Entsprechung',
+    byStage: 'Nach Schulstufe', stageNote: 'Ab Klasse 7 folgt die deutsche Taxonomie dem Gymnasium; rumänische Lyzeumsthemen werden daher mit Gymnasial- und Oberstufeninhalten verglichen.',
+    deCovH: 'Wie viel von jedem deutschen Fach erscheint in der rumänischen Taxonomie?', deCovSub: 'Anteil der deutschen Themen mit mindestens einer starken oder teilweisen rumänischen Entsprechung.',
+    deCovTip: '{c} von {t} deutschen Themen haben eine rumänische Entsprechung<br>{r} weitere sind nur verwandt', ofN: '{a} von {b} ({p} %)',
+    whenH: 'Wann begegnen rumänische Kinder derselben Idee?', whenSub: 'Startalter in Rumänien minus Startalter in Deutschland, je rumänischem Thema mit exakter oder naher Entsprechung. Rechts von 0 = später in Rumänien.',
+    earlier: 'Früher in Rumänien', same: 'Gleiches Alter', later: 'Später in Rumänien', earlierS: 'Früher', laterS: 'Später', drill: 'Nach Fach, Bereich und Thema aufschlüsseln →',
+    histFoot: 'n = {n} rumänische Themen mit exakter oder naher Entsprechung; Median {m}. Klicken Sie auf einen Balken, um seine Themen zu sehen.',
+    offH: 'Mittlerer Altersabstand nach Fach', offSub: 'Jahre später (+) oder früher (−) als in Deutschland für dasselbe zugeordnete Thema: gegenüber der deutschen Taxonomie (G9-Zählung) und gegenüber den G8-Ländern, in denen das Gymnasium ab Klasse 7 ein Jahr voraus ist. Klicken Sie auf eine Zeile oder Zelle, um die Themen dahinter zu sehen.',
+    thSubject: 'Rumänisches Fach', thStage: 'Rumänische Stufe', vsDe: 'zur deutschen Taxonomie', vsG8: 'zu den G8-Ländern', all: 'Alle',
+    agesNote: 'Alter: Die rumänische clasa N beginnt mit N+6 Jahren (clasa pregătitoare mit 6), die deutsche Klasse N mit N+5 (Klasse 1 mit 6). Gleiches Alter verbindet also clasa pregătitoare mit Klasse 1 und clasa a V-a mit Klasse 6.',
+    matrixH: 'Wo rumänische Fächer in der deutschen Taxonomie landen', matrixSub: 'Anzahl starker oder teilweiser Verknüpfungen von jedem rumänischen Fach (Zeilen) zu jedem deutschen Fach (Spalten). Dunkler = mehr Verknüpfungen.', links: '{v} Verknüpfungen',
+    structH: 'Struktur im Vergleich', metric: 'Kennzahl', romanian: 'Rumänisch', german: 'Deutsch',
+    'sl.topics': 'Themen', 'sl.subjects': 'Fächer', 'sl.domains': 'Bereiche', 'sl.edges': 'Voraussetzungen', 'sl.hardShare': 'Notwendige Voraussetzungen %', 'sl.edgesPerTopic': 'Voraussetzungen je Thema', 'sl.roots': 'Startthemen (ohne Voraussetzungen)', 'sl.maxDepth': 'Maximale Tiefe', 'sl.meanDepth': 'Mittlere Tiefe', 'sl.crossSubjectEdgeShare': 'Fächerübergreifende Voraussetzungen %', 'sl.curricula': 'Lehrplanquellen', 'sl.standards': 'Standards im Katalog', 'sl.topicsWithStandards': 'Themen mit ≥1 Standard %', 'sl.ageMin': 'Jüngstes Alter', 'sl.ageMax': 'Ältestes Alter', 'sl.meanAgeSpan': 'Mittlere Altersspanne (Jahre)',
+    tIntro: 'Jedes rumänische Thema mit exakter oder naher deutscher Entsprechung wird mit seiner nächsten Entsprechung gepaart. <b>Δ</b> = das Alter, in dem rumänische Kinder das Thema beginnen (clasa + 6), minus das Alter, in dem deutsche Kinder das zugeordnete Thema beginnen (Klasse + 5), in der deutschen Taxonomie oder in den G8-Ländern. Positiv = später in Rumänien. Klicken Sie auf einen Balken, ein Fach oder einen Bereich, um die Themenliste unten zu filtern; klicken Sie auf eine Zeile, um beide Beschreibungen zu sehen.',
+    compareWith: 'Vergleichen mit', 'base.de': 'Deutsche Taxonomie (G9)', 'base.G8': 'Deutsche G8-Länder', 'cmpB.de': 'der deutschen Taxonomie (G9)', 'cmpB.G8': 'den deutschen G8-Ländern', 'match.strong': 'Exakte und nahe Entsprechungen', 'match.exact': 'Nur exakte Entsprechungen',
+    allRoSubjects: 'Alle rumänischen Fächer', allStages: 'Alle Schulstufen', clear: 'Filter zurücksetzen',
+    'note.de': 'Startalter in Deutschland = Klasse + 5, G9-Zählung (Abitur nach Klasse 13), wie heute in den meisten Ländern.',
+    'note.G8': 'In den G8-Ländern (z. B. Berlin, Brandenburg, Sachsen, Thüringen, Hamburg) ist das Gymnasium ab Klasse 7 ein Jahr voraus; deutsche Themen ab Klasse 7 beginnen hier ein Jahr früher.',
+    stMatched: 'zugeordnete rumänische Themen in der Ansicht', stMedian: 'Median Δ', stEarlier: 'früher in Rumänien ({n})', stSame: 'gleiches Alter ({n})', stLater: 'später in Rumänien ({n})',
+    histH: 'Verteilung von Δ', histSub: '{n} rumänische Themen{in}, verglichen mit {b}. Klicken Sie auf einen Balken, um seine Themen aufzulisten; ein zweiter Klick hebt den Filter auf.', inX: ' in {x}',
+    histTip: '<b>Δ {b} Jahre</b><br>{v} rumänische Themen ({p} %)<br><span style="color:var(--muted)">Klicken, um sie aufzulisten</span>', histTip_one: '<b>Δ {b} Jahr</b><br>{v} rumänische Themen ({p} %)<br><span style="color:var(--muted)">Klicken, um sie aufzulisten</span>',
+    axis: 'Δ Jahre (Startalter Rumänien − Startalter Deutschland)', histAria: 'Histogramm der Altersabstände',
+    bySubjH: 'Nach rumänischem Fach', bySubjSub: 'Anteil der zugeordneten Themen, die in Rumänien früher, im gleichen Alter oder später behandelt werden. Wert = Median Δ in Jahren. Klicken Sie auf ein Fach, um zu filtern.',
+    subjTip: '<b>{s}</b><br>{lab}: {v} von {n} ({p} %)<br>Median Δ {m}',
+    byDomH: 'Nach Bereich · {s}', byDomAll: 'Nach Bereich · alle rumänischen Fächer', byDomSub: 'Median Δ je rumänischem Bereich mit mindestens 2 zugeordneten Themen, vom spätesten zum frühesten in Rumänien sortiert. Spalten: Median Δ, Anzahl Themen. Klicken Sie auf einen Bereich, um zu filtern.',
+    domainCol: 'Bereich', earlierArrow: '← früher in Rumänien', laterArrow: 'später →', domTip: '<b>{s} › {d}</b><br>Median Δ {m} · {n} Themen<br>{e} früher, {z} gleich, {l} später', noDom: 'Kein Bereich hat mit diesen Filtern 2 oder mehr zugeordnete Themen.',
+    pairsH: 'Themenpaare', tSel: '{l} von {p} Themenpaaren, verglichen mit {b}. Klicken Sie auf eine Zeile für Details.', removeFilter: 'Filter {x} entfernen', searchPairs: 'Rumänisches oder deutsches Thema suchen…',
+    'sort.later': 'Zuerst die spätesten in Rumänien', 'sort.earlier': 'Zuerst die frühesten in Rumänien', 'sort.grade': 'Nach Klasse', 'sort.subject': 'Nach Fach',
+    dumbDe: 'Startalter in Deutschland (G9 oder G8-Länder, falls gewählt)', dumbRo: 'Startalter in Rumänien',
+    thRoTopic: 'Rumänisches Thema', thGrade: 'Klasse', thDeTopic: 'Nächste deutsche Entsprechung', thMatch: 'Entsprechung', thStart: 'Startalter', noPairs: 'Keine Themenpaare passen zu diesen Filtern.',
+    dumbTip: 'Startalter in Rumänien {a} ({g})<br>{b}: Startalter {c}<br><b>Δ {d}</b>',
+    roTopic: 'Rumänisches Thema', deTopic: 'Deutsches Thema', openRo: 'Bei den rumänischen Themen öffnen', roTax: 'Rumänische Taxonomie', path: 'Lernpfad', openDe: 'Bei den deutschen Themen öffnen', deTax: 'Deutsche Taxonomie',
+    matchLabel: 'Entsprechung', startIn: 'Startalter des zugeordneten Themas in', ageCol: 'Alter', deltaCol: 'Δ (Rumänien {a} − dieses)', otherStrong: 'Weitere starke deutsche Entsprechungen:',
+    'rel.any': 'Alle Entsprechungsarten', 'rel.strong': 'Stark (exakt/nah)', 'rel.partial': 'Teilweise (breiter/enger)', 'rel.related': 'Nur verwandt', 'rel.none': 'Keine deutsche Entsprechung',
+    allGrades: 'Alle Klassen', specificOnly: 'Nur rumänienspezifische', specific: 'rumänienspezifisch', searchRo: 'Rumänische Themen suchen (jede Sprache)…', nTopics: '{n} Themen', nTopics_one: '{n} Thema',
+    roDetailEmpty: 'Wählen Sie ein Thema, um seine deutschen Entsprechungen, den Altersabstand und seine Voraussetzungen zu sehen.', evidence: 'Daran erkennt man, dass es sitzt', notes: 'Hinweise',
+    cp: 'Deutsche Entsprechungen ({n})', cpNone: 'Keine – kein vergleichbares deutsches Thema.', g8Age: 'In den G8-Ländern: Alter {a} (Δ {d})', g8Only: 'In den G8-Ländern: Alter {a}', note: 'Hinweis: {x}',
+    prereqs: 'Voraussetzungen ({n})', unlocks: 'Baut darauf auf ({n})', none: 'keine', standards: 'Standards', openRoBrowser: 'In der rumänischen Taxonomie öffnen →', pathLink: 'Lernpfad →',
+    allDeSubjects: 'Alle deutschen Fächer', 'cov.any': 'Alle', 'cov.covered': 'Hat eine rumänische Entsprechung', 'cov.related': 'Nur verwandt', 'cov.none': 'Keine rumänische Entsprechung', searchDe: 'Deutsche Themen suchen (jede Sprache)…',
+    deDetailEmpty: 'Wählen Sie ein deutsches Thema, um seine rumänischen Entsprechungen zu sehen.', roCp: 'Rumänische Entsprechungen', roCpNone: 'Keine in der rumänischen Taxonomie.', openDeBrowser: 'In der deutschen Taxonomie öffnen →',
+    showing600: 'Die ersten 600 werden angezeigt – bitte Filter verfeinern.', age: 'Alter {a}–{b}',
+    gapRoH: 'Rumänische Themen ohne deutsche Entsprechung', gapRoSub: 'Nach Fach gruppiert – was ein auf Deutschland ausgerichtetes Angebot für ein Kind an einer rumänischen Schule nicht abdecken würde.',
+    gapDeH: 'Deutsche Bereiche ohne rumänische Entsprechung', gapDeSub: 'Inhalte des deutschen Lehrplans, die die rumänischen Lehrpläne nicht abdecken (oder die diese Taxonomie nicht erfasst hat).',
+    gapAllCovered: 'Jeder deutsche Bereich hat mindestens eine rumänische Entsprechung.', barely: 'Kaum abgedeckt (< 25 % des Bereichs)',
+    'st.0-4': 'Primarstufe (CP–IV)', 'st.0-2': 'CP–II', 'st.3-4': 'Klassen III–IV', 'st.5-8': 'Sekundarstufe I (V–VIII)', 'st.5-6': 'Klassen V–VI', 'st.7-8': 'Klassen VII–VIII', 'st.9-12': 'Lyzeum (IX–XII)', grade0: 'Vorbereitungsklasse (CP)', gradeN: 'Klasse {r}',
+    allProfiles: 'alle Lyzeumsprofile', onlyProfiles: 'nur {x}',
+    'rel.exact': 'exakt', 'rel.close': 'nah', 'rel.broader': 'DE breiter', 'rel.narrower': 'DE enger', 'rel.related2': 'verwandt',
+    'type.CONCEPTUAL': 'Konzept', 'type.PROCEDURAL': 'Fertigkeit oder Verfahren', 'type.REPRESENTATIONAL': 'Darstellung', 'type.LANGUAGE': 'Fachsprache', 'type.META': 'Lernstrategie',
+    footer: 'Forschungsprototyp, mit KI-Unterstützung erstellt und noch nicht von rumänischen oder deutschen Lehrkräften geprüft. Die deutschen und rumänischen Texte sind KI-Übersetzungen der englischen.<br>Lernlandkarte © 2026 Alexandru Prian: Datenbank ODbL 1.0, Inhalte CC BY-SA 4.0, Code MIT · Datenmodell nach der Marble Skill Taxonomy (v1) · © Generative Spark, Inc. (Marble) · ODbL 1.0 / CC BY-SA 4.0 · <a href="https://github.com/codingarchitect-wq/lernlandkarte">Daten und Quellcode auf GitHub</a>.',
+  },
+  ro: {
+    title: 'Taxonomia curriculumului românesc comparată cu cea germană',
+    intro: 'Temele curriculumului românesc, de la clasa pregătitoare la clasa a XII-a (programele școlare naționale; liceu teoretic), comparate temă cu temă cu taxonomia germană, de la Vorschule la Klasse 13 (Gymnasium din Klasse 7). Clasa a N-a din România începe la vârsta de N+6 ani, Klasse N din Germania la N+5, deci clasa pregătitoare și Klasse 1 încep amândouă la 6 ani. Generat pe {gen}. {ro} · {de} · {map}',
+    linkRo: 'Vezi taxonomia românească →', linkDe: 'Vezi taxonomia germană →', linkMap: 'Harta 3D →', theme: 'Temă', allSubjects: 'Toate disciplinele', coreSubjects: 'Doar disciplinele de bază', language: 'Limba',
+    'tab.overview': 'Privire de ansamblu', 'tab.timing': 'Momentul: când, comparativ?', 'tab.ro': 'Teme românești', 'tab.de': 'Teme germane', 'tab.gaps': 'Lipsuri',
+    k1: 'teme românești în {s} discipline ({m} în taxonomia germană)', k2: 'dintre temele românești au un corespondent german puternic sau parțial', k3: 'dintre temele germane au un corespondent românesc',
+    k4: 'teme marcate ca specifice României (limbă, istorie, instituții)', k5: 'diferența mediană de vârstă față de Germania pentru temele corespondente (față de landurile G8: {g8})', k6: 'dintre legăturile românești care pot fi corelate sunt valabile și în graful german ({r} inversate)',
+    yr: '{v} ani', yr_one: '{v} an',
+    covH: 'Cât din fiecare disciplină românească există în taxonomia germană?', covSub: 'Ponderea temelor românești după cea mai bună corespondență. Valoare = puternică + parțială.',
+    'b.strong': 'Puternică (identică/apropiată)', 'b.partial': 'Parțială (tema germană mai largă/mai restrânsă)', 'b.related': 'Doar înrudită', 'b.none': 'Fără corespondent',
+    byStage: 'Pe niveluri de învățământ', stageNote: 'Din Klasse 7, taxonomia germană urmează Gymnasium, deci temele de liceu românești sunt comparate cu conținuturi de Gymnasium și Oberstufe.',
+    deCovH: 'Cât din fiecare disciplină germană apare în taxonomia românească?', deCovSub: 'Ponderea temelor germane cu cel puțin un corespondent românesc puternic sau parțial.',
+    deCovTip: '{c} din {t} teme germane au un corespondent românesc<br>încă {r} sunt doar înrudite', ofN: '{a} din {b} ({p}%)',
+    whenH: 'Când întâlnesc copiii români aceeași idee?', whenSub: 'Vârsta de început în România minus vârsta de început în Germania, pentru fiecare temă românească cu corespondent identic sau apropiat. La dreapta lui 0 = mai târziu în România.',
+    earlier: 'Mai devreme în România', same: 'La aceeași vârstă', later: 'Mai târziu în România', earlierS: 'Mai devreme', laterS: 'Mai târziu', drill: 'Detaliază pe discipline, domenii și teme →',
+    histFoot: 'n = {n} teme românești cu corespondent identic sau apropiat; mediana {m}. Faceți clic pe o bară pentru a vedea temele.',
+    offH: 'Diferența mediană de vârstă pe discipline', offSub: 'Cu câți ani mai târziu (+) sau mai devreme (−) în România decât în Germania, pentru aceeași temă corespondentă: față de taxonomia germană (numerotare G9) și față de landurile G8, unde Gymnasium este cu un an înainte din Klasse 7. Faceți clic pe un rând sau pe o celulă pentru a vedea temele.',
+    thSubject: 'Disciplina românească', thStage: 'Nivelul românesc', vsDe: 'față de taxonomia germană', vsG8: 'față de landurile G8', all: 'Toate',
+    agesNote: 'Vârste: clasa a N-a din România începe la N+6 ani (clasa pregătitoare la 6), Klasse N din Germania la N+5 (Klasse 1 la 6). Aceeași vârstă pune deci în pereche clasa pregătitoare cu Klasse 1 și clasa a V-a cu Klasse 6.',
+    matrixH: 'Unde ajung disciplinele românești în taxonomia germană', matrixSub: 'Numărul de legături puternice sau parțiale de la fiecare disciplină românească (rânduri) la fiecare disciplină germană (coloane). Mai închis = mai multe legături.', links: '{v} legături',
+    structH: 'Structura, față în față', metric: 'Indicator', romanian: 'Românească', german: 'Germană',
+    'sl.topics': 'Teme', 'sl.subjects': 'Discipline', 'sl.domains': 'Domenii', 'sl.edges': 'Legături de condiționare', 'sl.hardShare': 'Legături obligatorii %', 'sl.edgesPerTopic': 'Legături pe temă', 'sl.roots': 'Teme de pornire (fără condiții)', 'sl.maxDepth': 'Adâncime maximă', 'sl.meanDepth': 'Adâncime medie', 'sl.crossSubjectEdgeShare': 'Legături între discipline %', 'sl.curricula': 'Surse curriculare', 'sl.standards': 'Standarde în catalog', 'sl.topicsWithStandards': 'Teme cu ≥1 standard %', 'sl.ageMin': 'Vârsta minimă', 'sl.ageMax': 'Vârsta maximă', 'sl.meanAgeSpan': 'Durata medie (ani)',
+    tIntro: 'Fiecare temă românească cu un corespondent german identic sau apropiat este pusă în pereche cu cel mai apropiat corespondent. <b>Δ</b> = vârsta la care copiii români încep tema (clasa + 6) minus vârsta la care copiii germani încep tema corespondentă (Klasse + 5), în taxonomia germană sau în landurile G8. Pozitiv = mai târziu în România. Faceți clic pe o bară, o disciplină sau un domeniu pentru a filtra lista de jos; faceți clic pe un rând pentru a vedea ambele descrieri.',
+    compareWith: 'Compară cu', 'base.de': 'Taxonomia germană (G9)', 'base.G8': 'Landurile germane G8', 'cmpB.de': 'taxonomia germană (G9)', 'cmpB.G8': 'landurile germane G8', 'match.strong': 'Corespondențe identice și apropiate', 'match.exact': 'Doar corespondențe identice',
+    allRoSubjects: 'Toate disciplinele românești', allStages: 'Toate nivelurile', clear: 'Șterge filtrele',
+    'note.de': 'Vârsta de început în Germania = Klasse + 5, numerotare G9 (Abitur după Klasse 13), ca în majoritatea landurilor astăzi.',
+    'note.G8': 'În landurile G8 (de ex. Berlin, Brandenburg, Saxonia, Turingia, Hamburg), Gymnasium este cu un an înainte din Klasse 7, deci temele germane din Klasse 7 încep aici cu un an mai devreme.',
+    stMatched: 'teme românești corespondente afișate', stMedian: 'mediana Δ', stEarlier: 'mai devreme în România ({n})', stSame: 'la aceeași vârstă ({n})', stLater: 'mai târziu în România ({n})',
+    histH: 'Distribuția lui Δ', histSub: '{n} teme românești{in}, comparate cu {b}. Faceți clic pe o bară pentru a-i lista temele; al doilea clic anulează filtrul.', inX: ' din {x}',
+    histTip: '<b>Δ {b} ani</b><br>{v} teme românești ({p}%)<br><span style="color:var(--muted)">Clic pentru a le lista</span>', histTip_one: '<b>Δ {b} an</b><br>{v} teme românești ({p}%)<br><span style="color:var(--muted)">Clic pentru a le lista</span>',
+    axis: 'Δ ani (vârsta de început în România − în Germania)', histAria: 'Histograma diferențelor de vârstă',
+    bySubjH: 'Pe discipline românești', bySubjSub: 'Ponderea temelor corespondente întâlnite mai devreme, la aceeași vârstă sau mai târziu în România. Valoare = mediana Δ, în ani. Faceți clic pe o disciplină pentru a filtra.',
+    subjTip: '<b>{s}</b><br>{lab}: {v} din {n} ({p}%)<br>mediana Δ {m}',
+    byDomH: 'Pe domenii · {s}', byDomAll: 'Pe domenii · toate disciplinele românești', byDomSub: 'Mediana Δ pentru fiecare domeniu românesc cu cel puțin 2 teme corespondente, de la cel mai târziu la cel mai devreme în România. Coloane: mediana Δ, numărul de teme. Faceți clic pe un domeniu pentru a filtra.',
+    domainCol: 'Domeniu', earlierArrow: '← mai devreme în România', laterArrow: 'mai târziu →', domTip: '<b>{s} › {d}</b><br>mediana Δ {m} · {n} teme<br>{e} mai devreme, {z} la fel, {l} mai târziu', noDom: 'Niciun domeniu nu are 2 sau mai multe teme corespondente cu aceste filtre.',
+    pairsH: 'Perechi de teme', tSel: '{l} din {p} perechi de teme, comparate cu {b}. Faceți clic pe un rând pentru detalii.', removeFilter: 'Elimină filtrul {x}', searchPairs: 'Caută o temă românească sau germană…',
+    'sort.later': 'Întâi cele mai târzii în România', 'sort.earlier': 'Întâi cele mai timpurii în România', 'sort.grade': 'După clasă', 'sort.subject': 'După disciplină',
+    dumbDe: 'Vârsta de început în Germania (G9 sau landurile G8, dacă le alegeți)', dumbRo: 'Vârsta de început în România',
+    thRoTopic: 'Tema românească', thGrade: 'Clasa', thDeTopic: 'Cel mai apropiat corespondent german', thMatch: 'Corespondență', thStart: 'Vârsta de început', noPairs: 'Nicio pereche de teme nu corespunde acestor filtre.',
+    dumbTip: 'Vârsta de început în România {a} ({g})<br>{b}: vârsta de început {c}<br><b>Δ {d}</b>',
+    roTopic: 'Temă românească', deTopic: 'Temă germană', openRo: 'Deschide la temele românești', roTax: 'Taxonomia românească', path: 'traseu de învățare', openDe: 'Deschide la temele germane', deTax: 'Taxonomia germană',
+    matchLabel: 'Corespondență', startIn: 'Vârsta de început a temei corespondente în', ageCol: 'Vârsta', deltaCol: 'Δ (România {a} − aceasta)', otherStrong: 'Alți corespondenți germani puternici:',
+    'rel.any': 'Toate tipurile de corespondență', 'rel.strong': 'Puternică (identică/apropiată)', 'rel.partial': 'Parțială (mai largă/mai restrânsă)', 'rel.related': 'Doar înrudită', 'rel.none': 'Fără corespondent german',
+    allGrades: 'Toate clasele', specificOnly: 'Doar specifice României', specific: 'specifică României', searchRo: 'Caută teme românești (în orice limbă)…', nTopics: '{n} teme', nTopics_one: '{n} temă',
+    roDetailEmpty: 'Alegeți o temă pentru a vedea corespondenții germani, diferența de vârstă și ce trebuie știut înainte.', evidence: 'Semne că a înțeles', notes: 'Observații',
+    cp: 'Corespondenți germani ({n})', cpNone: 'Niciunul — nu există o temă germană comparabilă.', g8Age: 'În landurile G8: vârsta {a} (Δ {d})', g8Only: 'În landurile G8: vârsta {a}', note: 'Notă: {x}',
+    prereqs: 'Necesită înainte ({n})', unlocks: 'Duce mai departe la ({n})', none: 'niciuna', standards: 'Standarde', openRoBrowser: 'Deschide în taxonomia românească →', pathLink: 'Traseul de învățare →',
+    allDeSubjects: 'Toate disciplinele germane', 'cov.any': 'Toate', 'cov.covered': 'Are corespondent românesc', 'cov.related': 'Doar înrudite', 'cov.none': 'Fără corespondent românesc', searchDe: 'Caută teme germane (în orice limbă)…',
+    deDetailEmpty: 'Alegeți o temă germană pentru a vedea corespondenții ei românești.', roCp: 'Corespondenți românești', roCpNone: 'Niciunul în taxonomia românească.', openDeBrowser: 'Deschide în taxonomia germană →',
+    showing600: 'Sunt afișate primele 600 — restrângeți filtrele.', age: 'vârsta {a}–{b}',
+    gapRoH: 'Teme românești fără corespondent german', gapRoSub: 'Grupate pe discipline — ce ar rata o ofertă gândită pentru Germania pentru un copil dintr-o școală românească.',
+    gapDeH: 'Domenii germane fără corespondent românesc', gapDeSub: 'Conținuturi ale curriculumului german pe care programele românești nu le acoperă (sau pe care această taxonomie nu le-a surprins).',
+    gapAllCovered: 'Fiecare domeniu german are cel puțin un corespondent românesc.', barely: 'Abia acoperite (< 25% din domeniu)',
+    'st.0-4': 'Primar (CP–IV)', 'st.0-2': 'CP–II', 'st.3-4': 'Clasele III–IV', 'st.5-8': 'Gimnaziu (V–VIII)', 'st.5-6': 'Clasele V–VI', 'st.7-8': 'Clasele VII–VIII', 'st.9-12': 'Liceu (IX–XII)', grade0: 'Clasa pregătitoare', gradeN: 'Clasa a {r}-a', grade1: 'Clasa I',
+    allProfiles: 'toate profilurile de liceu', onlyProfiles: 'doar {x}',
+    'rel.exact': 'identic', 'rel.close': 'apropiat', 'rel.broader': 'DE mai larg', 'rel.narrower': 'DE mai restrâns', 'rel.related2': 'înrudit',
+    'type.CONCEPTUAL': 'Concept', 'type.PROCEDURAL': 'Deprindere sau procedeu', 'type.REPRESENTATIONAL': 'Reprezentare', 'type.LANGUAGE': 'Limbaj de specialitate', 'type.META': 'Strategie de învățare',
+    footer: 'Prototip de cercetare, realizat cu ajutorul inteligenței artificiale și neverificat încă de profesori români sau germani. Textele în germană și română sunt traduceri automate ale celor în engleză.<br>Lernlandkarte © 2026 Alexandru Prian: baza de date ODbL 1.0, conținut CC BY-SA 4.0, cod MIT · model de date după Marble Skill Taxonomy (v1) · © Generative Spark, Inc. (Marble) · ODbL 1.0 / CC BY-SA 4.0 · <a href="https://github.com/codingarchitect-wq/lernlandkarte">Datele și codul pe GitHub</a>.',
+  },
+};
+function L(k, v = {}) {
+  const keys = v.n === 1 ? [k + '_one', k] : [k];
+  for (const tb of [I18N[LANG], I18N.en]) for (const kk of keys) if (tb[kk] != null) return tb[kk].replace(/\{(\w+)\}/g, (m, x) => typeof v[x] === 'number' ? v[x].toLocaleString(LANG) : v[x] ?? m);
+  return k;
+}
+const pick = m => m ? (m[LANG] ?? m.en ?? Object.values(m)[0] ?? '') : '';
+const NM = X.names;
+const roSubj = s => pick(NM.roSubj[s]) || s, roDom = (s, d) => pick(NM.roDom[s + '|' + d]) || d;
+const deSubj = s => pick(NM.deSubj[s]) || s, deDom = (s, d) => pick(NM.deDom[s + '|' + d]) || d;
+const nmRo = t => pick(t.N), altRo = t => LANG === 'ro' ? t.N.en : t.N.ro;
+const nmDe = o => pick(o.N), altDe = o => LANG === 'de' ? o.N.en : o.N.de;
+const pct = (a, b) => b ? Math.round(100 * a / b) : 0;
+const sgn = v => v == null ? '–' : (v > 0 ? '+' : v < 0 ? '−' : '±') + Math.abs(v).toLocaleString(LANG);
+const yrs = v => L('yr', { v: sgn(v), n: Math.abs(v ?? 0) });
+const ROMAN = ['CP', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
+const gradeLab = g => g[0] === g[1] ? (g[0] === 0 ? 'CP' : `cl. ${ROMAN[g[0]]}`) : `${g[0] === 0 ? 'CP' : 'cl. ' + ROMAN[g[0]]}–${ROMAN[g[1]]}`;
+const deGradeLab = g => g[0] === 0 ? 'Vorschule' : `Kl. ${g[0]}`;
+const levelLab = t => t.cl ? ` · ${t.cl.length === 4 ? L('allProfiles') : L('onlyProfiles', { x: t.cl.join('/') })}` : '';
+const REL = r => L('rel.' + (r === 'related' ? 'related2' : r));
+const bucket = r => r === 'exact' || r === 'close' ? 'strong' : r === 'broader' || r === 'narrower' ? 'partial' : r === 'related' ? 'related' : 'none';
+const relRank = { exact: 0, close: 1, broader: 2, narrower: 3, related: 4 };
+const best = t => t.m.length ? t.m.map(m => m[1]).sort((a, b) => relRank[a] - relRank[b])[0] : 'none';
+const BCOL = { strong: 'var(--ord-1)', partial: 'var(--ord-2)', related: 'var(--ord-3)', none: 'var(--none)' };
+const deByKey = new Map(X.de.map(t => [t.k, t])), roById = new Map(X.ro.map(t => [t.id, t])), roByKey = new Map(X.ro.map(t => [t.k, t]));
+
+$('#theme').onclick = () => { const r = document.documentElement; const dark = r.dataset.theme ? r.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches; r.dataset.theme = dark ? 'light' : 'dark'; };
+const tip = $('#tip');
+document.addEventListener('mousemove', e => {
+  const el = e.target.closest('[data-tip]');
+  if (!el) { tip.style.display = 'none'; return; }
+  tip.innerHTML = el.dataset.tip; tip.style.display = 'block';
+  const w = tip.offsetWidth, h = tip.offsetHeight;
+  tip.style.left = Math.min(innerWidth - w - 8, e.clientX + 14) + 'px';
+  tip.style.top = Math.min(innerHeight - h - 8, e.clientY + 14) + 'px';
+});
+function showTab(tab) {
+  for (const x of document.querySelectorAll('#tabs button')) x.setAttribute('aria-selected', x.dataset.tab === tab);
+  for (const p of document.querySelectorAll('[data-panel]')) p.hidden = p.dataset.panel !== tab;
+}
+$('#tabs').addEventListener('click', e => { const b = e.target.closest('button[data-tab]'); if (b) showTab(b.dataset.tab); });
+const qsWith = (k, v) => { const u = new URLSearchParams(location.search); v == null ? u.delete(k) : u.set(k, v); const s = u.toString(); return s ? '?' + s : ''; };
+for (const b of document.querySelectorAll('#var button')) b.onclick = () => { if (b.dataset.var !== VAR) location.href = location.pathname + qsWith('subjects', b.dataset.var === 'core' ? 'core' : null) + location.hash; };
+$('#lang').addEventListener('click', e => { const b = e.target.closest('[data-lang]'); if (!b || b.dataset.lang === LANG) return; LANG = b.dataset.lang; history.replaceState(null, '', location.pathname + qsWith('lang', LANG === 'en' ? null : LANG) + location.hash); renderAll(); });
+const browserQ = own => { const p = new URLSearchParams(); if (VAR === 'core') p.set('subjects', 'core'); if (LANG !== own) p.set('lang', LANG); const s = p.toString(); return s ? '?' + s : ''; };
+
+// ---------- static texts and overview ----------
+function renderStatic() {
+  document.documentElement.lang = LANG; document.title = L('title');
+  $('#title').textContent = L('title');
+  $('#intro').innerHTML = L('intro', { gen: esc(C.generatedAt), ro: `<a class="xl" href="../ro-taxonomy/index.html${browserQ('ro')}">${esc(L('linkRo'))}</a>`, de: `<a class="xl" href="../de-taxonomy/index.html${browserQ('de')}">${esc(L('linkDe'))}</a>`, map: `<a class="xl" href="../de-taxonomy/graph.html${browserQ('de')}#ro">${esc(L('linkMap'))}</a>` });
+  for (const b of document.querySelectorAll('#lang button')) b.setAttribute('aria-pressed', b.dataset.lang === LANG);
+  $('#lang').setAttribute('aria-label', L('language'));
+  $('#theme').textContent = L('theme');
+  $('#var [data-var="all"]').textContent = L('allSubjects'); $('#var [data-var="core"]').textContent = L('coreSubjects');
+  for (const b of document.querySelectorAll('#var button')) b.setAttribute('aria-pressed', b.dataset.var === VAR);
+  for (const b of document.querySelectorAll('#tabs button')) b.textContent = L('tab.' + b.dataset.tab);
+  for (const el of document.querySelectorAll('[data-i]')) el.innerHTML = L(el.dataset.i);
+  document.querySelector('[data-to-timing]').textContent = L('drill');
+  const dl = `<span><i style="background:var(--div-neg)"></i>${esc(L('earlier'))}</span><span><i style="background:var(--div-mid)"></i>${esc(L('same'))}</span><span><i style="background:var(--div-pos)"></i>${esc(L('later'))}</span>`;
+  $('#dLegend1').innerHTML = dl; $('#dLegend2').innerHTML = dl;
+  $('#dLegend3').innerHTML = `<span><i style="background:var(--div-neg)"></i>${esc(L('earlierS'))}</span><span><i style="background:var(--div-mid)"></i>${esc(L('same'))}</span><span><i style="background:var(--div-pos)"></i>${esc(L('laterS'))}</span>`;
+  $('#footer').innerHTML = L('footer');
+}
+function renderOverview() {
+  const S = C.structure, O = C.offsets, pa = C.prerequisiteAgreement;
+  const tot = C.roCoverage.reduce((a, r) => ({ t: a.t + r.topics, c: a.c + r.strong + r.partial }), { t: 0, c: 0 });
+  const dTot = C.deCoverage.reduce((a, r) => ({ t: a.t + r.topics, c: a.c + r.covered }), { t: 0, c: 0 });
+  $('#kpis').innerHTML = [
+    [S.ro.topics.toLocaleString(LANG), L('k1', { s: S.ro.subjects, m: S.de.topics })], [pct(tot.c, tot.t) + '%', L('k2')], [pct(dTot.c, dTot.t) + '%', L('k3')],
+    [S.ro.countrySpecific, L('k4')], [yrs(O.median), L('k5', { g8: sgn(O.overall.G8.median) })], [pct(pa.agree, pa.pairs) + '%', L('k6', { r: pa.reversed })],
+  ].map(([v, l]) => `<div class="card kpi"><div class="v">${esc(v)}</div><div class="l">${esc(l)}</div></div>`).join('');
+  $('#covLegend').innerHTML = ['strong', 'partial', 'related', 'none'].map(b => `<span><i style="background:${BCOL[b]}"></i>${esc(L('b.' + b))}</span>`).join('');
+  const bars = (rows, lab) => rows.map(r => {
+    const segs = ['strong', 'partial', 'related', 'none'].filter(b => r[b] > 0).map(b => `<div class="seg hit" style="width:${100 * r[b] / r.topics}%;background:${BCOL[b]}" ${tipA(`<b>${esc(lab(r))}</b><br>${esc(L('b.' + b))}: ${L('ofN', { a: r[b], b: r.topics, p: pct(r[b], r.topics) })}`)}></div>`).join('');
+    return `<div class="hbar"><div class="lab" title="${esc(lab(r))}">${esc(lab(r))}</div><div class="track">${segs}</div><div class="val">${pct(r.strong + r.partial, r.topics)}%</div></div>`;
+  }).join('');
+  $('#roCov').innerHTML = bars(C.roCoverage, r => roSubj(r.subject));
+  $('#stageCov').innerHTML = bars(C.roByStage || [], r => L('st.' + r.range));
+  $('#deCov').innerHTML = [...C.deCoverage].sort((a, b) => b.pct - a.pct).map(r =>
+    `<div class="hbar"><div class="lab">${esc(deSubj(r.subject))}</div><div class="track"><div class="seg hit" style="width:${Math.max(r.pct, 0.5)}%;background:var(--series-1)" ${tipA(`<b>${esc(deSubj(r.subject))}</b><br>${L('deCovTip', { c: r.covered, t: r.topics, r: r.relatedOnly })}`)}></div></div><div class="val">${Math.round(r.pct)}%</div></div>`).join('');
+  $('#hist').innerHTML = histSVG(PAIRS.map(p => p.d.a[0] - p.o.a[0]), null) + `<p class="sub">${esc(L('histFoot', { n: O.n, m: yrs(O.median) }))}</p>`;
+  const head = `<th class="n">n</th><th class="n">${esc(L('vsDe'))}</th><th class="n">${esc(L('vsG8'))}</th>`;
+  $('#offTable').innerHTML = `<table><thead><tr><th>${esc(L('thSubject'))}</th>${head}</tr></thead><tbody>` +
+    O.bySubject.map(r => `<tr class="prow" data-s="${esc(r.subject)}"><td>${esc(roSubj(r.subject))}</td><td class="n">${r.n}</td><td class="n" data-base="de">${sgn(r.medianDiff)}</td><td class="n" data-base="G8">${sgn(r.byBase.G8)}</td></tr>`).join('') +
+    `<tr class="prow" data-s=""><td><b>${esc(L('all'))}</b></td><td class="n">${O.n}</td><td class="n" data-base="de"><b>${sgn(O.median)}</b></td><td class="n" data-base="G8"><b>${sgn(O.overall.G8.median)}</b></td></tr></tbody></table>`;
+  $('#offStage').innerHTML = `<table><thead><tr><th>${esc(L('thStage'))}</th>${head}</tr></thead><tbody>` +
+    (O.byStage || []).map(r => `<tr class="prow" data-stage="${esc(r.range)}"><td>${esc(L('st.' + r.range))}</td><td class="n">${r.n}</td><td class="n" data-base="de">${sgn(r.medianDiff)}</td><td class="n" data-base="G8">${sgn(r.byBase.G8.median)}</td></tr>`).join('') + '</tbody></table>';
+  const rows = C.roCoverage.map(r => r.subject), cols = [...new Set(rows.flatMap(r => Object.keys(C.matrix[r] || {})))].sort((a, b) => deSubj(a).localeCompare(deSubj(b), LANG));
+  const max = Math.max(1, ...rows.flatMap(r => cols.map(c => C.matrix[r]?.[c] || 0)));
+  const step = v => v === 0 ? 'var(--seq-0)' : `var(--seq-${Math.min(5, 1 + Math.floor(4.999 * Math.sqrt(v / max)))})`;
+  const ink = v => v > 0 && Math.sqrt(v / max) > 0.55 ? 'var(--ink-high)' : 'var(--text-primary)';
+  $('#matrix').innerHTML = `<table class="heat"><thead><tr><th></th>${cols.map(c => `<th class="n">${esc(deSubj(c))}</th>`).join('')}</tr></thead><tbody>` +
+    rows.map(r => `<tr><th>${esc(roSubj(r))}</th>${cols.map(c => { const v = C.matrix[r]?.[c] || 0; return `<td class="c hit" style="background:${step(v)};color:${ink(v)}" ${tipA(`<b>${esc(roSubj(r))} → ${esc(deSubj(c))}</b><br>${L('links', { v })}`)}>${v || ''}</td>`; }).join('')}</tr>`).join('') + '</tbody></table>';
+  const SL = ['topics', 'subjects', 'domains', 'edges', 'hardShare', 'edgesPerTopic', 'roots', 'maxDepth', 'meanDepth', 'crossSubjectEdgeShare', 'curricula', 'standards', 'topicsWithStandards', 'ageMin', 'ageMax', 'meanAgeSpan'];
+  const num = v => typeof v === 'number' ? v.toLocaleString(LANG) : v;
+  $('#structure').innerHTML = `<table><thead><tr><th>${esc(L('metric'))}</th><th class="n">${esc(L('romanian'))}</th><th class="n">${esc(L('german'))}</th></tr></thead><tbody>${SL.map(k => `<tr><td>${esc(L('sl.' + k))}</td><td class="n">${num(S.ro[k])}</td><td class="n">${num(S.de[k])}</td></tr>`).join('')}</tbody></table>`;
+}
+$('#hist').addEventListener('click', e => { const b = e.target.closest('[data-bin]'); if (!b) return; Object.assign(TS, { base: 'de', match: 'strong', subject: '', domain: '', bin: +b.dataset.bin, q: '', open: null }); toTiming(); });
+document.querySelector('[data-to-timing]').onclick = () => toTiming();
+$('#offStage').addEventListener('click', e => { const r = e.target.closest('tr[data-stage]'); if (!r) return; const c = e.target.closest('[data-base]'); Object.assign(TS, { stage: r.dataset.stage, subject: '', domain: '', bin: null, q: '', open: null, base: c ? c.dataset.base : TS.base }); toTiming(); });
+$('#offTable').addEventListener('click', e => { const r = e.target.closest('tr[data-s]'); if (!r) return; const c = e.target.closest('[data-base]'); Object.assign(TS, { subject: r.dataset.s, domain: '', bin: null, q: '', open: null, base: c ? c.dataset.base : TS.base }); toTiming(); });
+
+// ---------- Romanian topics ----------
+const preOf = new Map(), depOf = new Map();
+for (const [a, b, h] of X.roEdges) { (preOf.get(a) || preOf.set(a, []).get(a)).push([b, h]); (depOf.get(b) || depOf.set(b, []).get(b)).push([a, h]); }
+const fillSelect = (el, opts) => { const v = el.value; el.innerHTML = opts.map(([val, lab]) => `<option value="${esc(val)}">${esc(lab)}</option>`).join(''); if (opts.some(o => String(o[0]) === v)) el.value = v; };
+const searchText = t => (Object.values(t.N).join(' ') + ' ' + pick(t.DS) + ' ' + t.d).toLowerCase();
+function renderRo() {
+  fillSelect($('#roSubject'), [['', L('allRoSubjects')], ...[...new Set(X.ro.map(t => t.s))].map(s => [s, roSubj(s)])]);
+  fillSelect($('#roRel'), [['', L('rel.any')], ...['strong', 'partial', 'related', 'none'].map(k => [k, L('rel.' + k)])]);
+  fillSelect($('#roGrade'), [['', L('allGrades')], ...ROMAN.map((r, i) => [i, i === 0 ? L('grade0') : i === 1 && I18N[LANG].grade1 ? I18N[LANG].grade1 : L('gradeN', { r })])]);
+  $('#roQ').placeholder = L('searchRo');
+  const s = $('#roSubject').value, r = $('#roRel').value, g = $('#roGrade').value, gs = $('#roGS').checked, q = $('#roQ').value.trim().toLowerCase();
+  const xs = X.ro.filter(t => (!s || t.s === s) && (!r || bucket(best(t)) === r) && (g === '' || (t.g[0] <= +g && t.g[1] >= +g)) && (!gs || t.gs) && (!q || searchText(t).includes(q)));
+  $('#roCount').textContent = L('nTopics', { n: xs.length });
+  $('#roList').innerHTML = xs.slice(0, 600).map(t => { const b = bucket(best(t)); return `<div class="row" data-id="${t.id}"><div><b>${esc(nmRo(t))}</b> · ${esc(altRo(t))}</div><div class="meta"><span class="pill"><span class="sw" style="background:${BCOL[b]}"></span>${esc(L('b.' + b))}</span>${esc(roSubj(t.s))} › ${esc(roDom(t.s, t.d))} · ${gradeLab(t.g)}${esc(levelLab(t))}${t.gs ? ` · <span class="pill">${esc(L('specific'))}</span>` : ''}</div></div>`; }).join('') + (xs.length > 600 ? `<div class="row meta">${esc(L('showing600'))}</div>` : '');
+  if (RO_SEL) showRo(RO_SEL); else $('#roDetail').innerHTML = `<p class="sub">${esc(L('roDetailEmpty'))}</p>`;
+}
+let RO_SEL = null;
+function showRo(id) {
+  const t = roById.get(id); if (!t) return; RO_SEL = id;
+  for (const r of document.querySelectorAll('#roList .row')) r.setAttribute('aria-selected', r.dataset.id === id);
+  const prer = (preOf.get(id) || []).map(([p]) => roById.get(p)).filter(Boolean), deps = (depOf.get(id) || []).map(([p]) => roById.get(p)).filter(Boolean);
+  const matches = [...t.m].sort((a, b) => relRank[a[1]] - relRank[b[1]]).map(([k, rel, note]) => { const o = deByKey.get(k); if (!o) return '';
+    return `<div class="match"><span class="pill">${esc(REL(rel))}</span> <a href="#de/${esc(o.k)}"><b>${esc(nmDe(o))}</b></a> <span class="k">${esc(deSubj(o.s))} › ${esc(deDom(o.s, o.d))} · ${deGradeLab(o.g)} · ${esc(L('age', { a: o.a[0], b: o.a[1] }))} (Δ ${sgn(t.a[0] - o.a[0])})</span><div class="k">${esc(pick(o.DS))}</div>${o.g8 != null ? `<div class="k">${esc(L('g8Age', { a: o.g8, d: sgn(t.a[0] - o.g8) }))}</div>` : ''}${note ? `<div class="k">${esc(L('note', { x: pick(note) }))}</div>` : ''}</div>`; }).join('');
+  $('#roDetail').innerHTML = `<div class="k">${esc(roSubj(t.s))} › ${esc(roDom(t.s, t.d))} · ${gradeLab(t.g)}${esc(levelLab(t))} · ${esc(L('age', { a: t.a[0], b: t.a[1] }))} · ${esc(L('type.' + t.ty))}${t.gs ? ' · ' + esc(L('specific')) : ''}</div><h2 style="margin-top:4px">${esc(nmRo(t))}</h2><div class="sub">${esc(altRo(t))}</div><p style="font-size:13px;line-height:1.5">${esc(pick(t.DS))}</p>` +
+    `<h3>${esc(L('evidence'))}</h3><ul>${pick(t.EV).map(e => `<li>${esc(e)}</li>`).join('')}</ul>` +
+    (t.LN ? `<h3>${esc(L('notes'))}</h3><p class="sub">${esc(pick(t.LN))}</p>` : '') +
+    `<h3>${esc(L('cp', { n: t.m.length }))}</h3>${matches || `<p class="sub">${esc(L('cpNone'))}</p>`}` +
+    `<h3>${esc(L('prereqs', { n: prer.length }))}</h3><ul>${prer.map(p => `<li><a href="#" data-go="${p.id}">${esc(nmRo(p))}</a> <span class="k">${gradeLab(p.g)}</span></li>`).join('') || `<li class="k">${esc(L('none'))}</li>`}</ul>` +
+    `<h3>${esc(L('unlocks', { n: deps.length }))}</h3><ul>${deps.slice(0, 20).map(p => `<li><a href="#" data-go="${p.id}">${esc(nmRo(p))}</a> <span class="k">${gradeLab(p.g)}</span></li>`).join('') || `<li class="k">${esc(L('none'))}</li>`}</ul>` +
+    `<h3>${esc(L('standards'))}</h3><p class="k">${t.st.map(esc).join('<br>') || esc(L('none'))}</p>` +
+    `<p><a href="../ro-taxonomy/index.html${browserQ('ro')}#t/${esc(t.k)}">${esc(L('openRoBrowser'))}</a> · <a href="../ro-taxonomy/index.html${browserQ('ro')}#path/${esc(t.k)}">${esc(L('pathLink'))}</a></p>`;
+}
+for (const id of ['#roSubject', '#roRel', '#roGrade', '#roGS']) $(id).addEventListener('change', renderRo);
+$('#roQ').addEventListener('input', renderRo);
+$('#roList').addEventListener('click', e => { const r = e.target.closest('.row[data-id]'); if (r) showRo(r.dataset.id); });
+$('#roDetail').addEventListener('click', e => { const a = e.target.closest('[data-go]'); if (a) { e.preventDefault(); showRo(a.dataset.go); } });
+
+// ---------- German topics ----------
+const roByDe = new Map();
+for (const t of X.ro) for (const [k, rel] of t.m) (roByDe.get(k) || roByDe.set(k, []).get(k)).push([t.id, rel]);
+const deBucket = t => t.c && t.c !== 'related' ? 'covered' : t.c === 'related' ? 'related' : 'none';
+let DE_SEL = null;
+function renderDe() {
+  fillSelect($('#deSubject'), [['', L('allDeSubjects')], ...[...new Set(X.de.map(t => t.s))].sort((a, b) => deSubj(a).localeCompare(deSubj(b), LANG)).map(s => [s, deSubj(s)])]);
+  fillSelect($('#deCovSel'), [['', L('cov.any')], ...['covered', 'related', 'none'].map(k => [k, L('cov.' + k)])]);
+  $('#deQ').placeholder = L('searchDe');
+  const s = $('#deSubject').value, c = $('#deCovSel').value, q = $('#deQ').value.trim().toLowerCase();
+  const xs = X.de.filter(t => (!s || t.s === s) && (!c || deBucket(t) === c) && (!q || searchText(t).includes(q)));
+  $('#deCount').textContent = L('nTopics', { n: xs.length });
+  const col = { covered: 'var(--ord-1)', related: 'var(--ord-3)', none: 'var(--none)' };
+  $('#deList').innerHTML = xs.slice(0, 600).map(t => { const b = deBucket(t); return `<div class="row" data-id="${esc(t.k)}"><div><b>${esc(nmDe(t))}</b> · ${esc(altDe(t))}</div><div class="meta"><span class="pill"><span class="sw" style="background:${col[b]}"></span>${esc(L('cov.' + b))}</span>${esc(deSubj(t.s))} › ${esc(deDom(t.s, t.d))} · ${deGradeLab(t.g)} · ${esc(L('age', { a: t.a[0], b: t.a[1] }))}</div></div>`; }).join('') + (xs.length > 600 ? `<div class="row meta">${esc(L('showing600'))}</div>` : '');
+  if (DE_SEL) showDe(DE_SEL); else $('#deDetail').innerHTML = `<p class="sub">${esc(L('deDetailEmpty'))}</p>`;
+}
+function showDe(k) {
+  const o = deByKey.get(k); if (!o) return; DE_SEL = k;
+  for (const r of document.querySelectorAll('#deList .row')) r.setAttribute('aria-selected', r.dataset.id === k);
+  const ms = (roByDe.get(k) || []).map(([rid, rel]) => { const t = roById.get(rid); if (!t) return ''; return `<div class="match"><span class="pill">${esc(REL(rel))}</span> <a href="#ro/${esc(t.k)}"><b>${esc(nmRo(t))}</b></a> · ${esc(altRo(t))} <span class="k">${esc(roSubj(t.s))} › ${esc(roDom(t.s, t.d))} · ${gradeLab(t.g)} · ${esc(L('age', { a: t.a[0], b: t.a[1] }))} (Δ ${sgn(t.a[0] - o.a[0])})</span></div>`; }).join('');
+  $('#deDetail').innerHTML = `<div class="k">${esc(deSubj(o.s))} › ${esc(deDom(o.s, o.d))} · ${deGradeLab(o.g)} · ${esc(L('age', { a: o.a[0], b: o.a[1] }))}</div><h2 style="margin-top:4px">${esc(nmDe(o))}</h2><div class="sub">${esc(altDe(o))}</div><p style="font-size:13px;line-height:1.5">${esc(pick(o.DS))}</p>${o.g8 != null ? `<p class="k">${esc(L('g8Only', { a: o.g8 }))}</p>` : ''}<h3>${esc(L('roCp'))}</h3>${ms || `<p class="sub">${esc(L('roCpNone'))}</p>`}<p><a href="../de-taxonomy/index.html${browserQ('de')}#t/${esc(o.k)}">${esc(L('openDeBrowser'))}</a></p>`;
+}
+for (const id of ['#deSubject', '#deCovSel']) $(id).addEventListener('change', renderDe);
+$('#deQ').addEventListener('input', renderDe);
+$('#deList').addEventListener('click', e => { const r = e.target.closest('.row[data-id]'); if (r) showDe(r.dataset.id); });
+
+// ---------- timing ----------
+const median = xs => { if (!xs.length) return null; const s = [...xs].sort((a, b) => a - b), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+const PAIRS = C.offsets.pairs.map(([rk, dk]) => { const d = roByKey.get(rk), o = deByKey.get(dk); const m = (d?.m || []).find(x => x[0] === dk) || []; return { d, o, rel: m[1], note: m[2] }; }).filter(p => p.d && p.o);
+const baseAge = (p, b) => b === 'G8' && p.o.g8 != null ? p.o.g8 : p.o.a[0];
+const BINS = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5];
+const clampBin = v => Math.max(-5, Math.min(5, v));
+const binLab = b => b === 0 ? '0' : (b <= -5 ? '≤' : b >= 5 ? '≥' : '') + sgn(b);
+const dcol = v => v < 0 ? 'var(--div-neg)' : v > 0 ? 'var(--div-pos)' : 'var(--div-mid)';
+function histSVG(diffs, sel) {
+  const H = {}; for (const v of diffs) { const b = clampBin(v); H[b] = (H[b] || 0) + 1; }
+  const vals = BINS.map(b => H[b] || 0), max = Math.max(...vals, 1), n = diffs.length;
+  const W = 480, Ht = 210, pl = 36, pr = 8, pt = 16, pb = 34, bw = (W - pl - pr) / BINS.length, y0 = Ht - pb, y = v => pt + (y0 - pt) * (1 - v / max);
+  let s = `<svg viewBox="0 0 ${W} ${Ht}" width="100%" role="img" aria-label="${esc(L('histAria'))}">`;
+  for (const t of [...new Set([0, Math.round(max / 2), max])]) s += `<line x1="${pl}" x2="${W - pr}" y1="${y(t)}" y2="${y(t)}" stroke="var(--grid)"/><text x="${pl - 6}" y="${y(t) + 4}" text-anchor="end">${t}</text>`;
+  BINS.forEach((b, i) => {
+    const v = vals[i], x = pl + i * bw + 2, w = bw - 4, top = y(v), r = Math.min(4, y0 - top);
+    const tt = tipA(L('histTip', { b: binLab(b), v, p: pct(v, n), n: Math.abs(b) }));
+    if (v) s += `<path d="M${x},${y0} V${top + r} q0,-${r} ${r},-${r} H${x + w - r} q${r},0 ${r},${r} V${y0} Z" fill="${dcol(b)}" opacity="${sel == null || sel === b ? 1 : 0.3}"/>`;
+    if (sel === b) s += `<text class="vlab" x="${x + w / 2}" y="${top - 4}" text-anchor="middle">${v}</text>`;
+    s += `<rect x="${x - 2}" y="${pt}" width="${bw}" height="${y0 - pt}" fill="transparent" class="click" data-bin="${b}" ${tt}/><text x="${x + w / 2}" y="${y0 + 16}" text-anchor="middle">${binLab(b)}</text>`;
+  });
+  return s + `<line x1="${pl}" x2="${W - pr}" y1="${y0}" y2="${y0}" stroke="var(--axis)"/><text x="${(W + pl) / 2}" y="${Ht - 4}" text-anchor="middle">${esc(L('axis'))}</text></svg>`;
+}
+const TS = { base: 'de', match: 'strong', stage: '', subject: '', domain: '', bin: null, q: '', sort: 'later', open: null };
+function toTiming() { showTab('timing'); renderTiming(); scrollTo({ top: $('#tabs').offsetTop - 8 }); }
+const AGES = PAIRS.flatMap(p => [p.d.a[0], p.o.a[0], p.o.g8 ?? p.o.a[0]]);
+const AMIN = Math.min(...AGES), AMAX = Math.max(...AGES), DW = 160, ax = a => 7 + (DW - 14) * (a - AMIN) / Math.max(1, AMAX - AMIN);
+const dumb = (b, g) => { const c = dcol(g - b); let s = `<svg width="${DW}" height="16" aria-hidden="true">`; for (let a = AMIN; a <= AMAX; a++) if (a % 2 === 0) s += `<line x1="${ax(a)}" x2="${ax(a)}" y1="2" y2="14" stroke="var(--grid)"/>`; return s + `<line x1="${ax(b)}" x2="${ax(g)}" y1="8" y2="8" stroke="${c}" stroke-width="2"/><circle cx="${ax(g)}" cy="8" r="4.5" fill="${c}"/><circle cx="${ax(b)}" cy="8" r="4" fill="none" stroke="var(--text-secondary)" stroke-width="1.5"/></svg>`; };
+const dumbAxis = () => { let s = `<svg width="${DW}" height="14" aria-hidden="true" style="display:block">`; for (let a = AMIN; a <= AMAX; a++) if (a % 2 === 0) s += `<text x="${ax(a)}" y="11" text-anchor="middle">${a}</text>`; return s + '</svg>'; };
+const STAGES = () => ['0-4', '·0-2', '·3-4', '5-8', '·5-6', '·7-8', '9-12'].map(k => k[0] === '·' ? [k.slice(1), '· ' + L('st.' + k.slice(1))] : [k, L('st.' + k)]);
+function pairDetail(p) {
+  const d = p.d, o = p.o, ga = d.a[0];
+  const rows = [['de', o.a[0]], ...(o.g8 != null ? [['G8', o.g8]] : [])];
+  const others = d.m.filter(m => (m[1] === 'exact' || m[1] === 'close') && m[0] !== o.k).map(m => deByKey.get(m[0])).filter(Boolean);
+  return `<div class="pdg">
+    <div><div class="k">${esc(L('roTopic'))} · ${esc(roSubj(d.s))} › ${esc(roDom(d.s, d.d))} · ${gradeLab(d.g)} · ${esc(L('age', { a: d.a[0], b: d.a[1] }))}</div><b>${esc(nmRo(d))}</b> <span class="k">· ${esc(altRo(d))}</span><p>${esc(pick(d.DS))}</p>
+      <div class="k"><a href="#ro/${esc(d.k)}">${esc(L('openRo'))}</a> · <a href="../ro-taxonomy/index.html${browserQ('ro')}#t/${esc(d.k)}">${esc(L('roTax'))}</a> · <a href="../ro-taxonomy/index.html${browserQ('ro')}#path/${esc(d.k)}">${esc(L('path'))}</a></div></div>
+    <div><div class="k">${esc(L('deTopic'))} · ${esc(deSubj(o.s))} › ${esc(deDom(o.s, o.d))} · ${deGradeLab(o.g)} · ${esc(L('age', { a: o.a[0], b: o.a[1] }))}</div><b>${esc(nmDe(o))}</b> <span class="k">· ${esc(altDe(o))}</span><p>${esc(pick(o.DS))}</p>
+      <div class="k"><a href="#de/${esc(o.k)}">${esc(L('openDe'))}</a> · <a href="../de-taxonomy/index.html${browserQ('de')}#t/${esc(o.k)}">${esc(L('deTax'))}</a></div></div>
+  </div>
+  <p class="k" style="margin:10px 0 0">${esc(L('matchLabel'))}: <b>${esc(REL(p.rel))}</b>${p.note ? ' — ' + esc(pick(p.note)) : ''}</p>
+  <table class="mini"><thead><tr><th>${esc(L('startIn'))}</th><th class="n">${esc(L('ageCol'))}</th><th class="n">${esc(L('deltaCol', { a: ga }))}</th></tr></thead><tbody>${rows.map(([k, a]) => `<tr class="${k === TS.base ? 'on' : ''}"><td>${esc(L('base.' + k))}</td><td class="n">${a}</td><td class="n">${sgn(ga - a)}</td></tr>`).join('')}</tbody></table>
+  ${others.length ? `<p class="k" style="margin-top:10px">${esc(L('otherStrong'))} ${others.map(x => `<a href="#de/${esc(x.k)}">${esc(nmDe(x))}</a> (${esc(L('age', { a: x.a[0], b: x.a[1] }))}, Δ ${sgn(ga - x.a[0])})`).join(' · ')}</p>` : ''}`;
+}
+function renderTiming() {
+  fillSelect($('#tBase'), [['de', L('base.de')], ['G8', L('base.G8')]]);
+  fillSelect($('#tMatch'), [['strong', L('match.strong')], ['exact', L('match.exact')]]);
+  fillSelect($('#tSubj'), [['', L('allRoSubjects')], ...C.offsets.bySubject.map(r => [r.subject, roSubj(r.subject)])]);
+  fillSelect($('#tStage'), [['', L('allStages')], ...STAGES()]);
+  fillSelect($('#tSort'), ['later', 'earlier', 'grade', 'subject'].map(k => [k, L('sort.' + k)]));
+  $('#tClear').textContent = L('clear'); $('#tQ').placeholder = L('searchPairs');
+  $('#dumbLegend').innerHTML = `<span><svg width="14" height="12" aria-hidden="true"><circle cx="7" cy="6" r="4" fill="none" stroke="var(--text-secondary)" stroke-width="1.5"/></svg> ${esc(L('dumbDe'))}</span><span><svg width="14" height="12" aria-hidden="true"><circle cx="7" cy="6" r="4.5" fill="var(--text-secondary)"/></svg> ${esc(L('dumbRo'))}</span>`;
+  $('#tBase').value = TS.base; $('#tMatch').value = TS.match; $('#tSubj').value = TS.subject; $('#tStage').value = TS.stage; $('#tSort').value = TS.sort;
+  if (document.activeElement !== $('#tQ')) $('#tQ').value = TS.q;
+  const diff = p => p.d.a[0] - baseAge(p, TS.base);
+  const [sg0, sg1] = TS.stage ? TS.stage.split('-').map(Number) : [0, 12];
+  const matchOk = p => (TS.match === 'strong' || p.rel === 'exact') && p.d.g[0] >= sg0 && p.d.g[0] <= sg1;
+  const pool = PAIRS.filter(matchOk);
+  const inSub = p => !TS.subject || p.d.s === TS.subject, inDom = p => !TS.domain || p.d.s + '|' + p.d.d === TS.domain;
+  const sub = pool.filter(p => inSub(p) && inDom(p)), q = TS.q.toLowerCase();
+  const list = sub.filter(p => (TS.bin == null || clampBin(diff(p)) === TS.bin) && (!q || (searchText(p.d) + ' ' + searchText(p.o)).includes(q)));
+  const ds = sub.map(diff), med = median(ds);
+  $('#tNote').textContent = L('note.' + TS.base);
+  const e = ds.filter(v => v < 0).length, z = ds.filter(v => v === 0).length, l = ds.filter(v => v > 0).length;
+  $('#tStats').innerHTML = [[sub.length, L('stMatched')], [med == null ? '–' : yrs(med), L('stMedian')], [pct(e, ds.length) + '%', L('stEarlier', { n: e })], [pct(z, ds.length) + '%', L('stSame', { n: z })], [pct(l, ds.length) + '%', L('stLater', { n: l })]]
+    .map(([v, t]) => `<div class="stat"><div class="v">${esc(v)}</div><div class="l">${esc(t)}</div></div>`).join('');
+  const where = TS.subject ? roSubj(TS.subject) + (TS.domain ? ' › ' + roDom(TS.subject, TS.domain.split('|')[1]) : '') : '';
+  $('#tHistSub').textContent = L('histSub', { n: sub.length, in: where ? L('inX', { x: where }) : '', b: L('cmpB.' + TS.base) });
+  $('#tHist').innerHTML = histSVG(ds, TS.bin);
+  const subs = [...new Set(pool.map(p => p.d.s))].map(s => { const v = pool.filter(p => p.d.s === s).map(diff); return { s, n: v.length, e: v.filter(x => x < 0).length, z: v.filter(x => x === 0).length, l: v.filter(x => x > 0).length, m: median(v) }; }).sort((a, b) => b.n - a.n);
+  $('#tSub').innerHTML = subs.map(r => `<div class="hbar click ${TS.subject === r.s ? 'on' : ''}" data-s="${esc(r.s)}"><div class="lab" title="${esc(roSubj(r.s))}">${esc(roSubj(r.s))} <span class="k">${r.n}</span></div><div class="track">${[['e', L('earlier'), 'var(--div-neg)'], ['z', L('same'), 'var(--div-mid)'], ['l', L('later'), 'var(--div-pos)']].filter(([k]) => r[k]).map(([k, lab, col]) => `<div class="seg" style="width:${100 * r[k] / r.n}%;background:${col}" ${tipA(L('subjTip', { s: esc(roSubj(r.s)), lab: esc(lab), v: r[k], n: r.n, p: pct(r[k], r.n), m: sgn(r.m) }))}></div>`).join('')}</div><div class="val">${sgn(r.m)}</div></div>`).join('');
+  const dp = pool.filter(inSub);
+  const doms = [...new Set(dp.map(p => p.d.s + '|' + p.d.d))].map(k => { const v = dp.filter(p => p.d.s + '|' + p.d.d === k).map(diff); const [s, d] = k.split('|'); return { k, s, d, n: v.length, m: median(v), e: v.filter(x => x < 0).length, l: v.filter(x => x > 0).length }; }).filter(r => r.n >= 2).sort((a, b) => b.m - a.m || b.n - a.n);
+  const mx = Math.max(1, ...doms.map(r => Math.abs(r.m)));
+  $('#tDomH').textContent = TS.subject ? L('byDomH', { s: roSubj(TS.subject) }) : L('byDomAll');
+  $('#tDom').innerHTML = (doms.length ? `<div class="dbar k"><div>${esc(L('domainCol'))}</div><div style="display:flex;justify-content:space-between"><span>${esc(L('earlierArrow'))}</span><span>${esc(L('laterArrow'))}</span></div><div class="val">Δ</div><div class="nn">n</div></div>` : '') + doms.map(r => {
+    const w = 50 * Math.abs(r.m) / mx, pos = r.m >= 0;
+    const bar = r.m ? `<div class="b" style="left:${pos ? 50 : 50 - w}%;width:${w}%;background:${dcol(r.m)};border-radius:${pos ? '0 4px 4px 0' : '4px 0 0 4px'}"></div>` : '<div class="b" style="left:calc(50% - 2px);width:4px;background:var(--div-mid);border-radius:2px"></div>';
+    return `<div class="dbar click ${TS.domain === r.k ? 'on' : ''}" data-dom="${esc(r.k)}" ${tipA(L('domTip', { s: esc(roSubj(r.s)), d: esc(roDom(r.s, r.d)), m: sgn(r.m), n: r.n, e: r.e, z: r.n - r.e - r.l, l: r.l }))}><div class="lab">${esc(roDom(r.s, r.d))}${TS.subject ? '' : ` <span class="k">· ${esc(roSubj(r.s))}</span>`}</div><div class="trk">${bar}</div><div class="val">${sgn(r.m)}</div><div class="nn">${r.n}</div></div>`;
+  }).join('') || `<p class="sub">${esc(L('noDom'))}</p>`;
+  const chips = [];
+  if (TS.stage) chips.push(['stage', $('#tStage').selectedOptions[0].textContent.replace(/^· /, '')]);
+  if (TS.subject) chips.push(['subject', roSubj(TS.subject)]);
+  if (TS.domain) chips.push(['domain', roDom(TS.subject || TS.domain.split('|')[0], TS.domain.split('|')[1])]);
+  if (TS.bin != null) chips.push(['bin', `Δ ${binLab(TS.bin)}`]);
+  if (TS.q) chips.push(['q', `“${TS.q}”`]);
+  $('#tSel').innerHTML = esc(L('tSel', { l: list.length, p: pool.length, b: L('cmpB.' + TS.base) })) + (chips.length ? '<br>' : '') + chips.map(([k, v]) => `<button type="button" class="fchip" data-clear="${k}" aria-label="${esc(L('removeFilter', { x: v }))}">${esc(v)} ✕</button>`).join('');
+  const srt = {
+    later: (a, b) => diff(b) - diff(a) || a.d.s.localeCompare(b.d.s) || a.d.g[0] - b.d.g[0],
+    earlier: (a, b) => diff(a) - diff(b) || a.d.s.localeCompare(b.d.s) || a.d.g[0] - b.d.g[0],
+    grade: (a, b) => a.d.g[0] - b.d.g[0] || diff(b) - diff(a),
+    subject: (a, b) => roSubj(a.d.s).localeCompare(roSubj(b.d.s), LANG) || a.d.d.localeCompare(b.d.d) || diff(b) - diff(a),
+  }[TS.sort];
+  list.sort(srt);
+  $('#tList').innerHTML = list.length ? `<table class="ptab"><thead><tr><th>${esc(L('thRoTopic'))}</th><th>${esc(L('thGrade'))}</th><th>${esc(L('thDeTopic'))}</th><th>${esc(L('thMatch'))}</th><th class="dumb">${esc(L('thStart'))}${dumbAxis()}</th><th class="n">Δ</th></tr></thead><tbody>` + list.map(p => {
+    const b = baseAge(p, TS.base), v = diff(p), open = TS.open === p.d.k;
+    return `<tr class="prow ${open ? 'open' : ''}" data-k="${esc(p.d.k)}"><td><b>${esc(nmRo(p.d))}</b><div class="k">${esc(altRo(p.d))} · ${esc(roSubj(p.d.s))} › ${esc(roDom(p.d.s, p.d.d))}</div></td><td>${gradeLab(p.d.g)}</td><td>${esc(nmDe(p.o))}<div class="k">${esc(deSubj(p.o.s))} › ${esc(deDom(p.o.s, p.o.d))} · ${deGradeLab(p.o.g)}</div></td><td><span class="pill">${esc(REL(p.rel))}</span></td><td class="dumb" ${tipA(L('dumbTip', { a: p.d.a[0], g: gradeLab(p.d.g), b: esc(L('base.' + TS.base)), c: b, d: sgn(v) }))}>${dumb(b, p.d.a[0])}</td><td class="n"><b>${sgn(v)}</b></td></tr>` + (open ? `<tr class="pdet"><td colspan="6">${pairDetail(p)}</td></tr>` : '');
+  }).join('') + '</tbody></table>' : `<p class="sub">${esc(L('noPairs'))}</p>`;
+}
+$('#tBase').onchange = e => { TS.base = e.target.value; TS.bin = null; renderTiming(); };
+$('#tMatch').onchange = e => { TS.match = e.target.value; renderTiming(); };
+$('#tStage').onchange = e => { TS.stage = e.target.value; TS.bin = null; renderTiming(); };
+$('#tSubj').onchange = e => { TS.subject = e.target.value; TS.domain = ''; renderTiming(); };
+$('#tSort').onchange = e => { TS.sort = e.target.value; renderTiming(); };
+$('#tQ').oninput = e => { TS.q = e.target.value.trim(); renderTiming(); };
+$('#tClear').onclick = () => { Object.assign(TS, { stage: '', subject: '', domain: '', bin: null, q: '', open: null }); renderTiming(); };
+$('#tHist').onclick = e => { const b = e.target.closest('[data-bin]'); if (!b) return; const v = +b.dataset.bin; TS.bin = TS.bin === v ? null : v; renderTiming(); };
+$('#tSub').onclick = e => { const r = e.target.closest('[data-s]'); if (!r) return; TS.subject = TS.subject === r.dataset.s ? '' : r.dataset.s; TS.domain = ''; renderTiming(); };
+$('#tDom').onclick = e => { const r = e.target.closest('[data-dom]'); if (!r) return; TS.domain = TS.domain === r.dataset.dom ? '' : r.dataset.dom; renderTiming(); };
+$('#tSel').onclick = e => { const c = e.target.closest('[data-clear]'); if (!c) return; const k = c.dataset.clear; if (k === 'subject') { TS.subject = ''; TS.domain = ''; } else if (k === 'bin') TS.bin = null; else TS[k] = ''; renderTiming(); };
+$('#tList').onclick = e => { if (e.target.closest('a')) return; const r = e.target.closest('.prow[data-k]'); if (!r) return; TS.open = TS.open === r.dataset.k ? null : r.dataset.k; renderTiming(); };
+
+// ---------- gaps ----------
+function renderGaps() {
+  const bySub = {};
+  for (const g of C.romanianOnly) (bySub[g.subject] ||= []).push(roByKey.get(g.key) || { N: { en: g.name, ro: g.nameRo } });
+  $('#gapRo').innerHTML = Object.entries(bySub).sort((a, b) => b[1].length - a[1].length).map(([s, xs]) => `<h3>${esc(roSubj(s))} <span class="k">(${xs.length})</span></h3><p style="font-size:13px;line-height:1.6">${xs.map(t => `<span title="${esc(altRo(t) || '')}">${esc(nmRo(t))}</span>`).join(' · ')}</p>`).join('');
+  const gap = {};
+  for (const d of C.deUnmatchedDomains) (gap[d.subject] ||= []).push(d);
+  const partial = C.deCoverage.flatMap(s => s.domains.filter(d => d.covered > 0 && d.pct < 25).map(d => ({ subject: s.subject, ...d })));
+  $('#gapDe').innerHTML = (Object.entries(gap).map(([s, ds]) => `<h3>${esc(deSubj(s))}</h3><ul>${ds.map(d => `<li>${esc(deDom(s, d.domain))} <span class="k">${esc(L('nTopics', { n: d.topics }))}</span></li>`).join('')}</ul>`).join('') || `<p class="sub">${esc(L('gapAllCovered'))}</p>`) +
+    (partial.length ? `<h3>${esc(L('barely'))}</h3><ul>${partial.map(d => `<li>${esc(deSubj(d.subject))} › ${esc(deDom(d.subject, d.domain))} <span class="k">${d.covered}/${d.topics}</span></li>`).join('')}</ul>` : '');
+}
+
+function renderAll() { renderStatic(); renderOverview(); renderTiming(); renderRo(); renderDe(); renderGaps(); }
+// deep links: #ro/<Romanian key>, #de/<German key>; #ro and #de open the two topic tabs; #overview, #timing, #gaps
+function openHash() {
+  const [kind, ref] = decodeURIComponent(location.hash.slice(1)).split('/');
+  if (kind === 'ro' && ref && roByKey.has(ref)) { showTab('ro'); const t = roByKey.get(ref); $('#roQ').value = nmRo(t); renderRo(); showRo(t.id); }
+  else if (kind === 'de' && ref && deByKey.has(ref)) { showTab('de'); $('#deQ').value = ''; renderDe(); showDe(ref); }
+  else if (kind === 'ro') showTab('ro');
+  else if (kind === 'de') showTab('de');
+  else if (['overview', 'timing', 'gaps'].includes(kind)) showTab(kind);
+}
+renderAll(); addEventListener('hashchange', openHash); openHash();
+</script>
+</body>
+</html>

@@ -22,7 +22,10 @@ tailored to the German system:
 
 **Browse it** [online](https://codingarchitect-wq.com/lernlandkarte/de-taxonomy/index.html),
 or run `npm run all` (see [Build and check](#build-and-check)) and open `index.html` in a
-browser (works offline). The built pages aren't committed. It has five views:
+browser (works offline). The built pages aren't committed. The page is in German, English or
+Romanian (the **Sprache** switch, or `index.html?lang=en` / `?lang=ro`): interface, names,
+descriptions, mastery signs, parent questions, Länder notes, prerequisite reasons and parent
+summaries. It has five views:
 - a curriculum map per subject (domains × Klasse), with a stage filter for
   Vorschule–4, 5–10 and the Oberstufe;
 - a filterable list of all topics, including the Oberstufe course level;
@@ -37,8 +40,8 @@ other pages. Every topic opens a details panel. Deep links look like
 
 **3D map:** `graph.html` ([online](https://codingarchitect-wq.com/lernlandkarte/de-taxonomy/graph.html)) shows every topic as a dot and every prerequisite as
 a thread. Height is the age a topic starts, from Vorschule to Klasse 13. Click a dot to trace
-everything that comes before it, and switch to os-taxonomy to compare the two shapes on the
-same age scale. It uses the technique of os-taxonomy's preview (`media/curriculum-viz.*`):
+everything that comes before it, and switch to the Romanian taxonomy or os-taxonomy to compare
+the shapes on the same age scale. It uses the technique of os-taxonomy's preview (`media/curriculum-viz.*`):
 positions are computed at build time, then drawn on a canvas.
 
 How it compares with os-taxonomy: **[../comparison/README.md](../comparison/README.md)**
@@ -96,7 +99,7 @@ from Vorschule to the Abitur (up to 50 steps).
 | [`data/topics.json`](data/topics.json) | Micro-topics (nodes) |
 | [`data/dependencies.json`](data/dependencies.json) | Prerequisite edges; `topicId` depends on `prerequisiteId`; `origin` = authored or cross-subject |
 | [`data/curriculum-standards.json`](data/curriculum-standards.json) | 107 German sources (KMK, EPA, GDSU, GI, Länder) with codes and paraphrased titles |
-| [`data/clusters.json`](data/clusters.json) | 589 parent-facing summaries, in English and German, per subject × domain × band (Kl. 1–2, 3–4, 5–6, 7–8, 9–10, Oberstufe) |
+| [`data/clusters.json`](data/clusters.json) | 589 parent-facing summaries, in English, German and Romanian, per subject × domain × band (Kl. 1–2, 3–4, 5–6, 7–8, 9–10, Oberstufe) |
 | [`data/subjects.json`](data/subjects.json) | Subjects (with `tier`: core or extended) and domains with descriptions and their basis in the official frameworks |
 | [`data/crosswalk-os-taxonomy.json`](data/crosswalk-os-taxonomy.json) | German topic → os-taxonomy topic links (`exact`/`close`/`broader`/`narrower`/`related`) |
 | [`data/manifest.json`](data/manifest.json) | Counts and SHA-256 checksums |
@@ -180,11 +183,22 @@ To find os-taxonomy counterparts when authoring:
    - **dropped as spurious or unfillable:** 11.
 
    For the Gymnasium topics, all 195 automatic matches were reviewed: 131 kept, 58 corrected, 6 dropped.
+5. **German and Romanian texts.** The topics were authored with English and German names and
+   English texts. Fourteen translation passes, one per authoring file, then wrote the German
+   descriptions, mastery evidence, parent questions, Länder notes and all 4,513 prerequisite
+   reasons; fourteen more wrote the same in Romanian, with Romanian names. Smaller passes
+   translated the subject descriptions, domain names and bases, parent summaries, source notes,
+   standard titles and crosswalk notes. Each translation was checked (completeness, `{{name}}`
+   placement, quotation marks, diacritics) before `tools/merge-translations.mjs` and
+   `tools/i18n-meta.mjs` merged it. The translators flagged factual slips in the English; the
+   clear ones were corrected in all three languages.
 
 ## Limitations
 
 - This is an **AI-assisted research prototype**. Placement and content follow the
   official documents, but German teachers have not reviewed them.
+- **Three languages, one source.** The English texts are the source; the German and Romanian
+  versions are AI translations, reviewed by automated checks but not by native-speaking editors.
 - **Germany has 16 curricula.** A topic's grade is the typical or majority
   placement; check `laenderNotes` and your own Land's plan. Klasse 5–13 follow
   Gymnasium plans; other school types (Realschule, Gesamtschule) differ from

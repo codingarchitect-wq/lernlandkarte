@@ -1,0 +1,67 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Romanian Curriculum Taxonomy — clusters",
+ "type": "object",
+ "required": [
+  "version",
+  "clusterCount",
+  "clusters"
+ ],
+ "additionalProperties": false,
+ "properties": {
+  "version": {
+   "type": "string"
+  },
+  "clusterCount": {
+   "type": "integer"
+  },
+  "clusters": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "subject",
+     "domain",
+     "gradeStart",
+     "ageRangeStart",
+     "summary",
+     "summaryRo"
+    ],
+    "additionalProperties": false,
+    "properties": {
+     "subject": {
+      "type": "string"
+     },
+     "domain": {
+      "type": "string"
+     },
+     "gradeStart": {
+      "enum": [
+       0,
+       3,
+       5,
+       7,
+       9,
+       11
+      ]
+     },
+     "ageRangeStart": {
+      "type": "integer"
+     },
+     "summary": {
+      "type": "string"
+     },
+     "summaryRo": {
+      "type": "string"
+     },
+     "summaryDe": {
+      "type": [
+       "string",
+       "null"
+      ]
+     }
+    }
+   }
+  }
+ }
+}

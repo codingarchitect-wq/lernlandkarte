@@ -4,65 +4,95 @@
   {
    "name": "Mathematik",
    "nameEn": "Mathematics",
+   "nameRo": "Matematică",
    "tier": "core",
    "grades": [
     1,
     13
    ],
    "description": "Core subject from Klasse 1 to the Abitur, structured nationally by the KMK Bildungsstandards (end of Kl. 4; ESA/MSA for Sek I; Allgemeine Hochschulreife 2012 with grundlegendes and erhöhtes Anforderungsniveau) with Leitideen and process competences; Länder curricula set the grade placement. At the Gymnasium, Kl. 7–10 cover algebra, functions, geometry and stochastics; the Oberstufe is organised by the Sachgebiete Analysis, Lineare Algebra/Analytische Geometrie and Stochastik. Mathematik is a compulsory Abitur-relevant subject in every Land (in Bayern all students take it at erhöhtes Niveau).",
+   "descriptionDe": "Kernfach von Klasse 1 bis zum Abitur, bundesweit strukturiert durch die KMK-Bildungsstandards (Ende Kl. 4; ESA/MSA für die Sek I; Allgemeine Hochschulreife 2012 mit grundlegendem und erhöhtem Anforderungsniveau) mit Leitideen und prozessbezogenen Kompetenzen; die Lehrpläne der Länder legen die Zuordnung zu den Jahrgangsstufen fest. Am Gymnasium behandeln die Kl. 7–10 Algebra, Funktionen, Geometrie und Stochastik; die Oberstufe ist nach den Sachgebieten Analysis, Lineare Algebra/Analytische Geometrie und Stochastik gegliedert. Mathematik ist in jedem Land ein verpflichtendes, abiturrelevantes Fach (in Bayern belegen alle Schülerinnen und Schüler es auf erhöhtem Niveau).",
+   "descriptionRo": "Disciplină de bază de la Klasse 1 până la Abitur, structurată la nivel național prin KMK Bildungsstandards (sfârșitul Kl. 4; ESA/MSA pentru Sek I; Allgemeine Hochschulreife 2012, cu nivel de cerințe de bază – grundlegendes – și ridicat – erhöhtes Anforderungsniveau), cu idei directoare (Leitideen) și competențe procesuale; programele landurilor stabilesc repartizarea pe clase. La Gymnasium, Kl. 7–10 acoperă algebra, funcțiile, geometria și stochastica; Oberstufe este organizată pe domeniile (Sachgebiete) Analysis, Lineare Algebra/Analytische Geometrie și Stochastik. Matematica este disciplină obligatorie relevantă pentru Abitur în fiecare land (în Bayern toți elevii o studiază la nivel ridicat, erhöhtes Niveau).",
    "domains": [
     {
      "name": "Zahl und Operation",
      "nameEn": "Number and Operations",
+     "nameRo": "Numere și operații",
      "basis": "KMK Leitidee 'Zahl und Operation' (Primarbereich 2022, ESA/MSA 2022)",
+     "basisDe": "KMK-Leitidee „Zahl und Operation“ (Primarbereich 2022, ESA/MSA 2022)",
+     "basisRo": "Ideea directoare (Leitidee) KMK „Zahl und Operation” (Primarbereich 2022, ESA/MSA 2022)",
      "topicCount": 97
     },
     {
      "name": "Größen und Messen",
      "nameEn": "Measures and Measurement",
+     "nameRo": "Mărimi și măsurare",
      "basis": "KMK Leitidee 'Größen und Messen' (2022)",
+     "basisDe": "KMK-Leitidee „Größen und Messen“ (2022)",
+     "basisRo": "Ideea directoare (Leitidee) KMK „Größen und Messen” (2022)",
      "topicCount": 37
     },
     {
      "name": "Muster, Strukturen und funktionaler Zusammenhang",
      "nameEn": "Patterns, Structures and Functional Relationships",
+     "nameRo": "Regularități, structuri și relații funcționale",
      "basis": "KMK Leitidee 'Muster, Strukturen und funktionaler Zusammenhang' (Primarbereich 2022); 'Strukturen und funktionaler Zusammenhang' (ESA/MSA 2022)",
+     "basisDe": "KMK-Leitidee „Muster, Strukturen und funktionaler Zusammenhang“ (Primarbereich 2022); „Strukturen und funktionaler Zusammenhang“ (ESA/MSA 2022)",
+     "basisRo": "Ideea directoare (Leitidee) KMK „Muster, Strukturen und funktionaler Zusammenhang” (Primarbereich 2022); „Strukturen und funktionaler Zusammenhang” (ESA/MSA 2022)",
      "topicCount": 53
     },
     {
      "name": "Raum und Form",
      "nameEn": "Space and Shape",
+     "nameRo": "Spațiu și formă",
      "basis": "KMK Leitidee 'Raum und Form' (2022)",
+     "basisDe": "KMK-Leitidee „Raum und Form“ (2022)",
+     "basisRo": "Ideea directoare (Leitidee) KMK „Raum und Form” (2022)",
      "topicCount": 56
     },
     {
      "name": "Daten und Zufall",
      "nameEn": "Data and Chance",
+     "nameRo": "Date și probabilități",
      "basis": "KMK Leitidee 'Daten und Zufall' (2022)",
+     "basisDe": "KMK-Leitidee „Daten und Zufall“ (2022)",
+     "basisRo": "Ideea directoare (Leitidee) KMK „Daten und Zufall” (2022)",
      "topicCount": 31
     },
     {
      "name": "Prozessbezogene Kompetenzen",
      "nameEn": "Mathematical Process Competences",
+     "nameRo": "Competențe matematice procesuale",
      "basis": "KMK prozessbezogene (allgemeine) mathematische Kompetenzen: argumentieren, kommunizieren, Probleme lösen, modellieren, darstellen, mit Objekten/Werkzeugen (und Medien) arbeiten",
+     "basisDe": "KMK prozessbezogene (allgemeine) mathematische Kompetenzen: argumentieren, kommunizieren, Probleme lösen, modellieren, darstellen, mit Objekten/Werkzeugen (und Medien) arbeiten",
+     "basisRo": "Competențele matematice procesuale (generale) KMK (prozessbezogene/allgemeine mathematische Kompetenzen): argumentare, comunicare, rezolvare de probleme, modelare, reprezentare, lucrul cu obiecte/instrumente (și medii digitale)",
      "topicCount": 18
     },
     {
      "name": "Analysis",
      "nameEn": "Calculus",
+     "nameRo": "Analiză matematică",
      "basis": "Sachgebiet Analysis der gymnasialen Oberstufe; KMK AHR 2012 Leitideen Funktionaler Zusammenhang (L4), Messen (L2), Algorithmus und Zahl (L1)",
+     "basisDe": "Sachgebiet Analysis der gymnasialen Oberstufe; KMK AHR 2012 Leitideen Funktionaler Zusammenhang (L4), Messen (L2), Algorithmus und Zahl (L1)",
+     "basisRo": "Domeniul (Sachgebiet) Analysis din gymnasiale Oberstufe; ideile directoare KMK AHR 2012 Funktionaler Zusammenhang (L4), Messen (L2), Algorithmus und Zahl (L1)",
      "topicCount": 34
     },
     {
      "name": "Lineare Algebra und Analytische Geometrie",
      "nameEn": "Linear Algebra and Analytic Geometry",
+     "nameRo": "Algebră liniară și geometrie analitică",
      "basis": "Sachgebiet Lineare Algebra/Analytische Geometrie der gymnasialen Oberstufe; KMK AHR 2012 Leitideen Raum und Form (L3), Messen (L2), Algorithmus und Zahl (L1, Alternative A1 Matrizen)",
+     "basisDe": "Sachgebiet Lineare Algebra/Analytische Geometrie der gymnasialen Oberstufe; KMK AHR 2012 Leitideen Raum und Form (L3), Messen (L2), Algorithmus und Zahl (L1, Alternative A1 Matrizen)",
+     "basisRo": "Domeniul (Sachgebiet) Lineare Algebra/Analytische Geometrie din gymnasiale Oberstufe; ideile directoare KMK AHR 2012 Raum und Form (L3), Messen (L2), Algorithmus und Zahl (L1, alternativa A1 Matrizen)",
      "topicCount": 20
     },
     {
      "name": "Stochastik",
      "nameEn": "Probability and Statistics",
+     "nameRo": "Probabilități și statistică",
      "basis": "Sachgebiet Stochastik der gymnasialen Oberstufe; KMK AHR 2012 Leitideen Daten und Zufall (L5), Messen (L2), Funktionaler Zusammenhang (L4)",
+     "basisDe": "Sachgebiet Stochastik der gymnasialen Oberstufe; KMK AHR 2012 Leitideen Daten und Zufall (L5), Messen (L2), Funktionaler Zusammenhang (L4)",
+     "basisRo": "Domeniul (Sachgebiet) Stochastik din gymnasiale Oberstufe; ideile directoare KMK AHR 2012 Daten und Zufall (L5), Messen (L2), Funktionaler Zusammenhang (L4)",
      "topicCount": 17
     }
    ],
@@ -71,83 +101,122 @@
   {
    "name": "Deutsch",
    "nameEn": "German (language and literature)",
+   "nameRo": "Limba și literatura germană",
    "tier": "core",
    "grades": [
     0,
     13
    ],
    "description": "Core subject from Klasse 1 to the Abitur: daily in primary school and about four to five lessons a week at the Gymnasium. It covers learning to read and write, spelling, writing, reading, literature and media, and reflection on language, anchored on the KMK Bildungsstandards (Primarbereich and ESA/MSA 2022, Allgemeine Hochschulreife 2012). Deutsch is compulsory until the Abitur and is taken as a Grundkurs or Leistungskurs in the Qualifikationsphase, where literary history, interpretation and reflection on language come to the fore.",
+   "descriptionDe": "Kernfach von Klasse 1 bis zum Abitur: in der Grundschule täglich, am Gymnasium etwa vier bis fünf Wochenstunden. Es umfasst Lesen- und Schreibenlernen, Rechtschreibung, Schreiben, Lesen, Literatur und Medien sowie Sprachreflexion und ist an den KMK-Bildungsstandards verankert (Primarbereich und ESA/MSA 2022, Allgemeine Hochschulreife 2012). Deutsch ist bis zum Abitur verpflichtend und wird in der Qualifikationsphase als Grundkurs oder Leistungskurs belegt; dort rücken Literaturgeschichte, Interpretation und Sprachreflexion in den Vordergrund.",
+   "descriptionRo": "Disciplină de bază de la Klasse 1 până la Abitur: zilnic în școala primară și aproximativ patru–cinci ore pe săptămână la Gymnasium. Cuprinde învățarea scris-cititului, ortografia, redactarea, lectura, literatura și media, precum și reflecția asupra limbii, ancorate în KMK Bildungsstandards (Primarbereich și ESA/MSA 2022, Allgemeine Hochschulreife 2012). Germana este obligatorie până la Abitur și se studiază ca Grundkurs sau Leistungskurs în Qualifikationsphase, unde istoria literaturii, interpretarea și reflecția asupra limbii trec în prim-plan.",
    "domains": [
     {
      "name": "Schriftspracherwerb",
      "nameEn": "Early Literacy (Learning to Read and Write)",
+     "nameRo": "Învățarea scris-cititului",
      "basis": "Anfangsunterricht; KMK Primar 4.2/4.3 (Schreibfertigkeiten, Flüssig lesen) and NRW 2021 Vorläuferfähigkeiten / Schuleingangsphase",
+     "basisDe": "Anfangsunterricht; KMK Primar 4.2/4.3 (Schreibfertigkeiten, Flüssig lesen) und NRW 2021 Vorläuferfähigkeiten / Schuleingangsphase",
+     "basisRo": "Anfangsunterricht; KMK Primar 4.2/4.3 (Schreibfertigkeiten, Flüssig lesen) și NRW 2021 Vorläuferfähigkeiten / Schuleingangsphase",
      "topicCount": 17
     },
     {
      "name": "Sprechen und Zuhören",
      "nameEn": "Speaking and Listening",
+     "nameRo": "Comunicare orală: vorbire și ascultare",
      "basis": "KMK Kompetenzbereich 'Sprechen und Zuhören' (Primar 2022, ESA/MSA 2022)",
+     "basisDe": "KMK-Kompetenzbereich „Sprechen und Zuhören“ (Primar 2022, ESA/MSA 2022)",
+     "basisRo": "Domeniul de competență (Kompetenzbereich) KMK „Sprechen und Zuhören” (Primar 2022, ESA/MSA 2022)",
      "topicCount": 23
     },
     {
      "name": "Schreibfertigkeiten",
      "nameEn": "Handwriting and Keyboarding",
+     "nameRo": "Scrierea de mână și tastarea",
      "basis": "KMK Schreiben › 'Über Schreibfertigkeiten verfügen'",
+     "basisDe": "KMK Schreiben › „Über Schreibfertigkeiten verfügen“",
+     "basisRo": "KMK Schreiben › „Über Schreibfertigkeiten verfügen”",
      "topicCount": 7
     },
     {
      "name": "Rechtschreibung und Zeichensetzung",
      "nameEn": "Spelling and Punctuation",
+     "nameRo": "Ortografie și punctuație",
      "basis": "KMK Schreiben › 'Orthografisch schreiben' and Sprache untersuchen › 'Rechtschreibung'",
+     "basisDe": "KMK Schreiben › „Orthografisch schreiben“ und Sprache untersuchen › „Rechtschreibung“",
+     "basisRo": "KMK Schreiben › „Orthografisch schreiben” și Sprache untersuchen › „Rechtschreibung”",
      "topicCount": 38
     },
     {
      "name": "Texte verfassen",
      "nameEn": "Writing Composition",
+     "nameRo": "Redactarea textelor",
      "basis": "KMK Schreiben › 'Texte verfassen' (planen, formulieren, überarbeiten)",
+     "basisDe": "KMK Schreiben › „Texte verfassen“ (planen, formulieren, überarbeiten)",
+     "basisRo": "KMK Schreiben › „Texte verfassen” (planificare, formulare, revizuire)",
      "topicCount": 50
     },
     {
      "name": "Lesen",
      "nameEn": "Reading Fluency and Comprehension",
+     "nameRo": "Lectură: fluență și înțelegere",
      "basis": "KMK Kompetenzbereich 'Lesen' (Lesefertigkeiten, Lesefähigkeiten, Strategien)",
+     "basisDe": "KMK-Kompetenzbereich „Lesen“ (Lesefertigkeiten, Lesefähigkeiten, Strategien)",
+     "basisRo": "Domeniul de competență (Kompetenzbereich) KMK „Lesen” (Lesefertigkeiten, Lesefähigkeiten, strategii)",
      "topicCount": 19
     },
     {
      "name": "Mit Texten und Medien umgehen",
      "nameEn": "Literature and Media",
+     "nameRo": "Literatură și media",
      "basis": "KMK Kompetenzbereich 'Sich mit Texten und anderen Medien auseinandersetzen'",
+     "basisDe": "KMK-Kompetenzbereich „Sich mit Texten und anderen Medien auseinandersetzen“",
+     "basisRo": "Domeniul de competență (Kompetenzbereich) KMK „Sich mit Texten und anderen Medien auseinandersetzen”",
      "topicCount": 69
     },
     {
      "name": "Grammatik: Wort und Satz",
      "nameEn": "Grammar: Words and Sentences",
+     "nameRo": "Gramatică: cuvântul și propoziția",
      "basis": "KMK Sprache und Sprachgebrauch untersuchen › 'Wörter und Sätze' + Anhang 'Grundlegende sprachliche Strukturen und Begriffe'",
+     "basisDe": "KMK Sprache und Sprachgebrauch untersuchen › „Wörter und Sätze“ + Anhang „Grundlegende sprachliche Strukturen und Begriffe“",
+     "basisRo": "KMK Sprache und Sprachgebrauch untersuchen › „Wörter und Sätze” + anexa „Grundlegende sprachliche Strukturen und Begriffe”",
      "topicCount": 50
     },
     {
      "name": "Wortschatz und Wortbildung",
      "nameEn": "Vocabulary and Word Formation",
+     "nameRo": "Vocabular și formarea cuvintelor",
      "basis": "KMK Sprache untersuchen › 'Wörter und Sätze' (Wortbausteine, Wortbildung, Wortschatz)",
+     "basisDe": "KMK Sprache untersuchen › „Wörter und Sätze“ (Wortbausteine, Wortbildung, Wortschatz)",
+     "basisRo": "KMK Sprache untersuchen › „Wörter und Sätze” (Wortbausteine, Wortbildung, Wortschatz)",
      "topicCount": 10
     },
     {
      "name": "Sprachliche Verständigung und Vielfalt",
      "nameEn": "Communication and Language Diversity",
+     "nameRo": "Comunicare și diversitate lingvistică",
      "basis": "KMK Sprache untersuchen › 'Sprachliche Verständigung und sprachliche Vielfalt untersuchen'",
+     "basisDe": "KMK Sprache untersuchen › „Sprachliche Verständigung und sprachliche Vielfalt untersuchen“",
+     "basisRo": "KMK Sprache untersuchen › „Sprachliche Verständigung und sprachliche Vielfalt untersuchen”",
      "topicCount": 13
     },
     {
      "name": "Literaturgeschichte und literarische Epochen",
      "nameEn": "Literary History and Periods",
+     "nameRo": "Istoria literaturii și epoci literare",
      "basis": "KMK Bildungsstandards AHR 2012, 2.4.1 (literaturgeschichtliches Überblickswissen von der Aufklärung bis zur Gegenwart); Oberstufe plans of NRW, Bayern, Niedersachsen and Baden-Württemberg",
+     "basisDe": "KMK-Bildungsstandards AHR 2012, 2.4.1 (literaturgeschichtliches Überblickswissen von der Aufklärung bis zur Gegenwart); Oberstufenlehrpläne von NRW, Bayern, Niedersachsen und Baden-Württemberg",
+     "basisRo": "KMK Bildungsstandards AHR 2012, 2.4.1 (literaturgeschichtliches Überblickswissen von der Aufklärung bis zur Gegenwart); programele pentru Oberstufe din NRW, Bayern, Niedersachsen și Baden-Württemberg",
      "topicCount": 17
     },
     {
      "name": "Sprachreflexion",
      "nameEn": "Reflecting on Language (Linguistics)",
+     "nameRo": "Reflecție asupra limbii (lingvistică)",
      "basis": "KMK Bildungsstandards AHR 2012, 2.5 Sprache und Sprachgebrauch reflektieren; NRW Kernlehrplan SII Inhaltsfeld Sprache/Kommunikation",
+     "basisDe": "KMK-Bildungsstandards AHR 2012, 2.5 Sprache und Sprachgebrauch reflektieren; NRW Kernlehrplan SII Inhaltsfeld Sprache/Kommunikation",
+     "basisRo": "KMK Bildungsstandards AHR 2012, 2.5 Sprache und Sprachgebrauch reflektieren; NRW Kernlehrplan SII, câmpul de conținut (Inhaltsfeld) Sprache/Kommunikation",
      "topicCount": 15
     }
    ],
@@ -156,71 +225,104 @@
   {
    "name": "Sachunterricht",
    "nameEn": "General Studies (integrated science and social studies)",
+   "nameRo": "Cunoașterea mediului (științe și societate)",
    "tier": "core",
    "grades": [
     1,
     4
    ],
    "description": "Sachunterricht is the integrated primary-school subject (Kl. 1–4; in Bayern \"Heimat- und Sachunterricht\") combining natural science, technology, geography, history and social studies around children's local world. There are no KMK Bildungsstandards; the GDSU Perspektivrahmen (2013) is the national reference, and from Kl. 5 the content splits into Biologie, Erdkunde, Geschichte, Politik and Naturwissenschaften.",
+   "descriptionDe": "Der Sachunterricht ist das integrative Fach der Grundschule (Kl. 1–4; in Bayern „Heimat- und Sachunterricht“), das Naturwissenschaften, Technik, Geographie, Geschichte und Gesellschaftslehre rund um die Lebenswelt der Kinder verbindet. KMK-Bildungsstandards gibt es nicht; bundesweiter Bezugsrahmen ist der GDSU-Perspektivrahmen (2013), und ab Kl. 5 verteilen sich die Inhalte auf Biologie, Erdkunde, Geschichte, Politik und Naturwissenschaften.",
+   "descriptionRo": "Sachunterricht este disciplina integrată a școlii primare (Kl. 1–4; în Bayern „Heimat- und Sachunterricht”) care îmbină științele naturii, tehnologia, geografia, istoria și științele sociale în jurul lumii apropiate a copiilor. Nu există KMK Bildungsstandards; referința națională este GDSU Perspektivrahmen (2013), iar din Kl. 5 conținuturile se împart în Biologie, Erdkunde, Geschichte, Politik și Naturwissenschaften.",
    "domains": [
     {
      "name": "Sachunterrichtliche Arbeitsweisen",
      "nameEn": "Inquiry and Working Methods",
+     "nameRo": "Metode de investigare și de lucru",
      "basis": "GDSU perspektivenübergreifende Denk-, Arbeits- und Handlungsweisen (Erkennen/Verstehen … Umsetzen/Handeln) and DAH NAWI 2 (naturwissenschaftliche Methoden)",
+     "basisDe": "GDSU perspektivenübergreifende Denk-, Arbeits- und Handlungsweisen (Erkennen/Verstehen … Umsetzen/Handeln) und DAH NAWI 2 (naturwissenschaftliche Methoden)",
+     "basisRo": "GDSU perspektivenübergreifende Denk-, Arbeits- und Handlungsweisen (Erkennen/Verstehen … Umsetzen/Handeln) și DAH NAWI 2 (naturwissenschaftliche Methoden)",
      "topicCount": 13
     },
     {
      "name": "Belebte Natur",
      "nameEn": "Living Nature",
+     "nameRo": "Natura vie",
      "basis": "GDSU naturwissenschaftliche Perspektive, TB NAWI 4–5 (lebende Natur); NRW Bereich Natur und Umwelt › Tiere, Pflanzen, Lebensräume",
+     "basisDe": "GDSU naturwissenschaftliche Perspektive, TB NAWI 4–5 (lebende Natur); NRW Bereich Natur und Umwelt › Tiere, Pflanzen, Lebensräume",
+     "basisRo": "GDSU naturwissenschaftliche Perspektive, TB NAWI 4–5 (lebende Natur); NRW Bereich Natur und Umwelt › Tiere, Pflanzen, Lebensräume",
      "topicCount": 22
     },
     {
      "name": "Unbelebte Natur",
      "nameEn": "Non-Living Nature: Materials and Phenomena",
+     "nameRo": "Natura nevie: materiale și fenomene",
      "basis": "GDSU TB NAWI 1–3 (nicht lebende Natur) and TB GEO 1 (Luft, Wasser, Wetter); NRW Natur und Umwelt › Stoffe…/Energie und Ressourcen; Bayern LB 3.2/3.3",
+     "basisDe": "GDSU TB NAWI 1–3 (nicht lebende Natur) und TB GEO 1 (Luft, Wasser, Wetter); NRW Natur und Umwelt › Stoffe…/Energie und Ressourcen; Bayern LB 3.2/3.3",
+     "basisRo": "GDSU TB NAWI 1–3 (nicht lebende Natur) și TB GEO 1 (Luft, Wasser, Wetter); NRW Natur und Umwelt › Stoffe…/Energie und Ressourcen; Bayern LB 3.2/3.3",
      "topicCount": 22
     },
     {
      "name": "Körper und Gesundheit",
      "nameEn": "Body and Health",
+     "nameRo": "Corpul uman și sănătatea",
      "basis": "NRW/Bayern Bereich \"Körper und Gesundheit\"; GDSU perspektivenvernetzender Themenbereich \"Gesundheit und Gesundheitsprophylaxe\"",
+     "basisDe": "NRW/Bayern Bereich „Körper und Gesundheit“; GDSU perspektivenvernetzender Themenbereich „Gesundheit und Gesundheitsprophylaxe“",
+     "basisRo": "NRW/Bayern Bereich „Körper und Gesundheit”; GDSU perspektivenvernetzender Themenbereich „Gesundheit und Gesundheitsprophylaxe”",
      "topicCount": 17
     },
     {
      "name": "Technik und Arbeit",
      "nameEn": "Technology and Work",
+     "nameRo": "Tehnologie și muncă",
      "basis": "GDSU technische Perspektive \"Technik – Arbeit\"; NRW \"Technik, digitale Technologien und Arbeit\"; Bayern \"Technik und Kultur\"",
+     "basisDe": "GDSU technische Perspektive „Technik – Arbeit“; NRW „Technik, digitale Technologien und Arbeit“; Bayern „Technik und Kultur“",
+     "basisRo": "GDSU technische Perspektive „Technik – Arbeit”; NRW „Technik, digitale Technologien und Arbeit”; Bayern „Technik und Kultur”",
      "topicCount": 13
     },
     {
      "name": "Raum und Orientierung",
      "nameEn": "Places, Maps and Orientation",
+     "nameRo": "Spațiu, hărți și orientare",
      "basis": "GDSU geographische Perspektive \"Räume – Naturgrundlagen – Lebenssituationen\"; NRW/Bayern \"Raum und Mobilität\" (Orientierung in Räumen; Räume nutzen und schützen)",
+     "basisDe": "GDSU geographische Perspektive „Räume – Naturgrundlagen – Lebenssituationen“; NRW/Bayern „Raum und Mobilität“ (Orientierung in Räumen; Räume nutzen und schützen)",
+     "basisRo": "GDSU geographische Perspektive „Räume – Naturgrundlagen – Lebenssituationen”; NRW/Bayern „Raum und Mobilität” (orientarea în spațiu; folosirea și protejarea spațiilor)",
      "topicCount": 21
     },
     {
      "name": "Mobilität und Verkehr",
      "nameEn": "Mobility and Road Safety",
+     "nameRo": "Mobilitate și educație rutieră",
      "basis": "GDSU perspektivenvernetzender Themenbereich \"Mobilität\"; KMK-Empfehlung zur Mobilitäts- und Verkehrserziehung (2012); NRW Raum und Mobilität › Mobilität im Raum",
+     "basisDe": "GDSU perspektivenvernetzender Themenbereich „Mobilität“; KMK-Empfehlung zur Mobilitäts- und Verkehrserziehung (2012); NRW Raum und Mobilität › Mobilität im Raum",
+     "basisRo": "GDSU perspektivenvernetzender Themenbereich „Mobilität”; KMK-Empfehlung zur Mobilitäts- und Verkehrserziehung (2012); NRW Raum und Mobilität › Mobilität im Raum",
      "topicCount": 12
     },
     {
      "name": "Zeit und Wandel",
      "nameEn": "Time and Change",
+     "nameRo": "Timp și schimbare",
      "basis": "GDSU historische Perspektive \"Zeit – Wandel\"; NRW/Bayern Bereich \"Zeit und Wandel\"",
+     "basisDe": "GDSU historische Perspektive „Zeit – Wandel“; NRW/Bayern Bereich „Zeit und Wandel“",
+     "basisRo": "GDSU historische Perspektive „Zeit – Wandel”; NRW/Bayern Bereich „Zeit und Wandel”",
      "topicCount": 16
     },
     {
      "name": "Demokratie und Gesellschaft",
      "nameEn": "Democracy and Society",
+     "nameRo": "Democrație și societate",
      "basis": "GDSU sozialwissenschaftliche Perspektive \"Politik – Wirtschaft – Soziales\"; NRW/Bayern Bereich \"Demokratie und Gesellschaft\"",
+     "basisDe": "GDSU sozialwissenschaftliche Perspektive „Politik – Wirtschaft – Soziales“; NRW/Bayern Bereich „Demokratie und Gesellschaft“",
+     "basisRo": "GDSU sozialwissenschaftliche Perspektive „Politik – Wirtschaft – Soziales”; NRW/Bayern Bereich „Demokratie und Gesellschaft”",
      "topicCount": 17
     },
     {
      "name": "Nachhaltige Entwicklung und Umwelt",
      "nameEn": "Sustainable Development and Environment",
+     "nameRo": "Dezvoltare durabilă și mediu",
      "basis": "GDSU perspektivenvernetzender Themenbereich \"Nachhaltige Entwicklung\" (BNE); NRW Natur und Umwelt / Räume nutzen und schützen",
+     "basisDe": "GDSU perspektivenvernetzender Themenbereich „Nachhaltige Entwicklung“ (BNE); NRW Natur und Umwelt / Räume nutzen und schützen",
+     "basisRo": "GDSU perspektivenvernetzender Themenbereich „Nachhaltige Entwicklung” (BNE – educație pentru dezvoltare durabilă); NRW Natur und Umwelt / Räume nutzen und schützen",
      "topicCount": 11
     }
    ],
@@ -229,83 +331,122 @@
   {
    "name": "Englisch",
    "nameEn": "English (first foreign language)",
+   "nameRo": "Limba engleză (prima limbă străină)",
    "tier": "core",
    "grades": [
     3,
     13
    ],
    "description": "English is the first foreign language in almost all Länder. It usually starts in Kl. 3 (Kl. 1 in some Länder), becomes a core subject with explicit grammar from Kl. 5 and reaches about A2 by Kl. 7 and B1 (Gymnasium: B1+) at the MSA in Kl. 10. In the Gymnasiale Oberstufe it is taken as a Grundkurs (grundlegendes Niveau, gA) or Leistungskurs (erhöhtes Niveau, eA). The KMK Abitur standards (2012) set B2 and, for English, C1 in the receptive skills; literature, film and the societies of the English-speaking world become central.",
+   "descriptionDe": "Englisch ist in fast allen Ländern die erste Fremdsprache. Es beginnt meist in Kl. 3 (in einigen Ländern in Kl. 1), wird ab Kl. 5 zum Kernfach mit expliziter Grammatik und erreicht etwa A2 bis Kl. 7 sowie B1 (Gymnasium: B1+) beim MSA in Kl. 10. In der gymnasialen Oberstufe wird es als Grundkurs (grundlegendes Niveau, gA) oder Leistungskurs (erhöhtes Niveau, eA) belegt. Die KMK-Abiturstandards (2012) legen B2 fest, für Englisch in den rezeptiven Kompetenzen C1; Literatur, Film und die Gesellschaften der englischsprachigen Welt rücken ins Zentrum.",
+   "descriptionRo": "Engleza este prima limbă străină în aproape toate landurile. De regulă începe în Kl. 3 (în unele landuri în Kl. 1), devine disciplină de bază cu predare explicită a gramaticii din Kl. 5 și atinge aproximativ nivelul A2 până în Kl. 7 și B1 (Gymnasium: B1+) la MSA, în Kl. 10. În Gymnasiale Oberstufe se studiază ca Grundkurs (grundlegendes Niveau, gA) sau Leistungskurs (erhöhtes Niveau, eA). Standardele KMK pentru Abitur (2012) stabilesc nivelul B2 și, pentru engleză, C1 la competențele de receptare; literatura, filmul și societățile din lumea anglofonă devin centrale.",
    "domains": [
     {
      "name": "Hör- und Hörsehverstehen",
      "nameEn": "Listening and Audiovisual Comprehension",
+     "nameRo": "Receptarea mesajelor orale și audiovizuale",
      "basis": "KMK BiSta erste Fremdsprache 2023, Funktionale kommunikative Kompetenz: Hörverstehen und audiovisuelles Verstehen; LehrplanPLUS BY GS 1.1 Hör- und Hörsehverstehen",
+     "basisDe": "KMK BiSta erste Fremdsprache 2023, Funktionale kommunikative Kompetenz: Hörverstehen und audiovisuelles Verstehen; LehrplanPLUS BY GS 1.1 Hör- und Hörsehverstehen",
+     "basisRo": "KMK BiSta erste Fremdsprache 2023, competența comunicativă funcțională (Funktionale kommunikative Kompetenz): Hörverstehen und audiovisuelles Verstehen; LehrplanPLUS BY GS 1.1 Hör- und Hörsehverstehen",
      "topicCount": 10
     },
     {
      "name": "Sprechen",
      "nameEn": "Speaking",
+     "nameRo": "Exprimare orală",
      "basis": "KMK 2023 Mündliche Interaktion / Mündliche Produktion (Lehrpläne: an Gesprächen teilnehmen / zusammenhängendes Sprechen); LehrplanPLUS BY GS 1.1 Sprechen",
+     "basisDe": "KMK 2023 Mündliche Interaktion / Mündliche Produktion (Lehrpläne: an Gesprächen teilnehmen / zusammenhängendes Sprechen); LehrplanPLUS BY GS 1.1 Sprechen",
+     "basisRo": "KMK 2023 Mündliche Interaktion / Mündliche Produktion (în programe: an Gesprächen teilnehmen / zusammenhängendes Sprechen); LehrplanPLUS BY GS 1.1 Sprechen",
      "topicCount": 13
     },
     {
      "name": "Leseverstehen",
      "nameEn": "Reading Comprehension",
+     "nameRo": "Înțelegerea textului citit",
      "basis": "KMK 2023 Leseverstehen; LehrplanPLUS BY GS 1.1 Leseverstehen",
+     "basisDe": "KMK 2023 Leseverstehen; LehrplanPLUS BY GS 1.1 Leseverstehen",
+     "basisRo": "KMK 2023 Leseverstehen; LehrplanPLUS BY GS 1.1 Leseverstehen",
      "topicCount": 8
     },
     {
      "name": "Schreiben",
      "nameEn": "Writing",
+     "nameRo": "Exprimare scrisă",
      "basis": "KMK 2023 Schriftliche Interaktion / Schriftliche Produktion; LehrplanPLUS BY GS 1.1 Schreiben",
+     "basisDe": "KMK 2023 Schriftliche Interaktion / Schriftliche Produktion; LehrplanPLUS BY GS 1.1 Schreiben",
+     "basisRo": "KMK 2023 Schriftliche Interaktion / Schriftliche Produktion; LehrplanPLUS BY GS 1.1 Schreiben",
      "topicCount": 17
     },
     {
      "name": "Sprachmittlung",
      "nameEn": "Mediation",
+     "nameRo": "Mediere lingvistică",
      "basis": "KMK 2023 Mediation / Sprachmittlung; LehrplanPLUS BY GS 1.1 Sprachmittlung",
+     "basisDe": "KMK 2023 Mediation / Sprachmittlung; LehrplanPLUS BY GS 1.1 Sprachmittlung",
+     "basisRo": "KMK 2023 Mediation / Sprachmittlung; LehrplanPLUS BY GS 1.1 Sprachmittlung",
      "topicCount": 6
     },
     {
      "name": "Wortschatz",
      "nameEn": "Vocabulary",
+     "nameRo": "Vocabular",
      "basis": "KMK 2023 Verfügen über sprachliche Mittel (Lexiko-Grammatik: Wortschatz); LehrplanPLUS BY GS Lernbereich 4 Themengebiete",
+     "basisDe": "KMK 2023 Verfügen über sprachliche Mittel (Lexiko-Grammatik: Wortschatz); LehrplanPLUS BY GS Lernbereich 4 Themengebiete",
+     "basisRo": "KMK 2023 Verfügen über sprachliche Mittel (Lexiko-Grammatik: Wortschatz); LehrplanPLUS BY GS Lernbereich 4 Themengebiete",
      "topicCount": 12
     },
     {
      "name": "Grammatik und Sprachbewusstheit",
      "nameEn": "Grammar and Language Awareness",
+     "nameRo": "Gramatică și conștientizare lingvistică",
      "basis": "KMK 2023 Lexiko-Grammatik and Sprachbewusstheit (2.4); LehrplanPLUS BY GS 1.2",
+     "basisDe": "KMK 2023 Lexiko-Grammatik und Sprachbewusstheit (2.4); LehrplanPLUS BY GS 1.2",
+     "basisRo": "KMK 2023 Lexiko-Grammatik și Sprachbewusstheit (2.4); LehrplanPLUS BY GS 1.2",
      "topicCount": 30
     },
     {
      "name": "Aussprache, Intonation und Rechtschreibung",
      "nameEn": "Pronunciation, Intonation and Spelling",
+     "nameRo": "Pronunție, intonație și ortografie",
      "basis": "KMK 2023 Aussprache und Prosodie, Orthografie (sprachliche Mittel); LehrplanPLUS BY GS 1.2",
+     "basisDe": "KMK 2023 Aussprache und Prosodie, Orthografie (sprachliche Mittel); LehrplanPLUS BY GS 1.2",
+     "basisRo": "KMK 2023 Aussprache und Prosodie, Orthografie (mijloace lingvistice – sprachliche Mittel); LehrplanPLUS BY GS 1.2",
      "topicCount": 7
     },
     {
      "name": "Interkulturelle Kompetenz",
      "nameEn": "Intercultural Competence",
+     "nameRo": "Competență interculturală",
      "basis": "KMK 2023 Interkulturelle Kompetenz (2.2); LehrplanPLUS BY GS Lernbereich 2",
+     "basisDe": "KMK 2023 Interkulturelle Kompetenz (2.2); LehrplanPLUS BY GS Lernbereich 2",
+     "basisRo": "KMK 2023 Interkulturelle Kompetenz (2.2); LehrplanPLUS BY GS Lernbereich 2",
      "topicCount": 9
     },
     {
      "name": "Sprachlernkompetenz",
      "nameEn": "Language Learning Strategies",
+     "nameRo": "Strategii de învățare a limbii",
      "basis": "KMK 2023 Sprachlernkompetenz (2.5) and fremdsprachenspezifische digitale Kompetenz (2.6); LehrplanPLUS BY GS Lernbereich 3 Methodische Kompetenzen",
+     "basisDe": "KMK 2023 Sprachlernkompetenz (2.5) und fremdsprachenspezifische digitale Kompetenz (2.6); LehrplanPLUS BY GS Lernbereich 3 Methodische Kompetenzen",
+     "basisRo": "KMK 2023 Sprachlernkompetenz (2.5) și fremdsprachenspezifische digitale Kompetenz (2.6); LehrplanPLUS BY GS Lernbereich 3 Methodische Kompetenzen",
      "topicCount": 7
     },
     {
      "name": "Text- und Medienkompetenz",
      "nameEn": "Text and Media Competence",
+     "nameRo": "Competență textuală și media",
      "basis": "KMK BiSta erste Fremdsprache 2023, 2.3 Text- und Medienkompetenz; KMK BiSta AHR fortgeführte Fremdsprache 2012, 2.3 Text- und Medienkompetenz; NRW KLP Sek I/II Text- und Medienkompetenz; LehrplanPLUS BY Gymnasium Lernbereich 3 Text- und Medienkompetenzen",
+     "basisDe": "KMK BiSta erste Fremdsprache 2023, 2.3 Text- und Medienkompetenz; KMK BiSta AHR fortgeführte Fremdsprache 2012, 2.3 Text- und Medienkompetenz; NRW KLP Sek I/II Text- und Medienkompetenz; LehrplanPLUS BY Gymnasium Lernbereich 3 Text- und Medienkompetenzen",
+     "basisRo": "KMK BiSta erste Fremdsprache 2023, 2.3 Text- und Medienkompetenz; KMK BiSta AHR fortgeführte Fremdsprache 2012, 2.3 Text- und Medienkompetenz; NRW KLP Sek I/II Text- und Medienkompetenz; LehrplanPLUS BY Gymnasium Lernbereich 3 Text- und Medienkompetenzen",
      "topicCount": 17
     },
     {
      "name": "Soziokulturelles Orientierungswissen",
      "nameEn": "Sociocultural Knowledge of the English-Speaking World",
+     "nameRo": "Cunoștințe socioculturale despre lumea anglofonă",
      "basis": "KMK BiSta AHR fortgeführte Fremdsprache 2012, 2.2 (Orientierungswissen über die Zielkulturen); NRW KLP Sek I/II Interkulturelle kommunikative Kompetenz: Soziokulturelles Orientierungswissen; LehrplanPLUS BY Gymnasium Lernbereich 5 Themengebiete",
+     "basisDe": "KMK BiSta AHR fortgeführte Fremdsprache 2012, 2.2 (Orientierungswissen über die Zielkulturen); NRW KLP Sek I/II Interkulturelle kommunikative Kompetenz: Soziokulturelles Orientierungswissen; LehrplanPLUS BY Gymnasium Lernbereich 5 Themengebiete",
+     "basisRo": "KMK BiSta AHR fortgeführte Fremdsprache 2012, 2.2 (Orientierungswissen über die Zielkulturen); NRW KLP Sek I/II Interkulturelle kommunikative Kompetenz: Soziokulturelles Orientierungswissen; LehrplanPLUS BY Gymnasium Lernbereich 5 Themengebiete",
      "topicCount": 18
     }
    ],
@@ -314,83 +455,122 @@
   {
    "name": "Informatik & Medienbildung",
    "nameEn": "Computing and Media Literacy",
+   "nameRo": "Informatică și educație media",
    "tier": "core",
    "grades": [
     1,
     13
    ],
    "description": "In Kl. 1–4 computing is integrated into Sachunterricht and Mathematik, and media education follows the KMK framework \"Bildung in der digitalen Welt\" (2016) in all subjects. A compulsory Informatik subject in Sek I now exists in most Länder but at different grades: NRW Kl. 5–6, Sachsen 7–10, Bayern in Natur und Technik 6–7 and for all pupils in Kl. 11, BW Kl. 7 (G9: Informatik und Medienbildung from Kl. 5), Niedersachsen 9–10, Schleswig-Holstein and Hamburg 4 lessons within 7–10, MV and Thüringen combined with Medienbildung; Berlin, Brandenburg, Hessen, Rheinland-Pfalz, Sachsen-Anhalt and Bremen have no compulsory subject yet (status 2026). In the Oberstufe Informatik is an Abitur subject as Grundkurs (gA) and, in most Länder, Leistungskurs (eA); the KMK EPA Informatik (2004) and the GI standards (2008/2016/2025) are the national references.",
+   "descriptionDe": "In Kl. 1–4 ist Informatik in Sachunterricht und Mathematik integriert, und die Medienbildung folgt in allen Fächern der KMK-Strategie „Bildung in der digitalen Welt“ (2016). Ein Pflichtfach Informatik in der Sek I gibt es inzwischen in den meisten Ländern, allerdings in unterschiedlichen Jahrgangsstufen: NRW Kl. 5–6, Sachsen 7–10, Bayern in Natur und Technik 6–7 und für alle Schülerinnen und Schüler in Kl. 11, BW Kl. 7 (G9: Informatik und Medienbildung ab Kl. 5), Niedersachsen 9–10, Schleswig-Holstein und Hamburg 4 Stunden innerhalb von 7–10, MV und Thüringen kombiniert mit Medienbildung; Berlin, Brandenburg, Hessen, Rheinland-Pfalz, Sachsen-Anhalt und Bremen haben noch kein Pflichtfach (Stand 2026). In der Oberstufe ist Informatik Abiturfach als Grundkurs (gA) und in den meisten Ländern als Leistungskurs (eA); bundesweite Bezugsrahmen sind die KMK EPA Informatik (2004) und die GI-Standards (2008/2016/2025).",
+   "descriptionRo": "În Kl. 1–4 informatica este integrată în Sachunterricht și Mathematik, iar educația media urmează, în toate disciplinele, cadrul KMK „Bildung in der digitalen Welt” (2016). O disciplină obligatorie Informatik în Sek I există acum în majoritatea landurilor, dar la clase diferite: NRW Kl. 5–6, Sachsen 7–10, Bayern în Natur und Technik 6–7 și pentru toți elevii în Kl. 11, BW Kl. 7 (G9: Informatik und Medienbildung din Kl. 5), Niedersachsen 9–10, Schleswig-Holstein și Hamburg 4 ore în intervalul 7–10, MV și Thüringen combinată cu Medienbildung; Berlin, Brandenburg, Hessen, Rheinland-Pfalz, Sachsen-Anhalt și Bremen nu au încă o disciplină obligatorie (situația în 2026). În Oberstufe, Informatik este disciplină de Abitur ca Grundkurs (gA) și, în majoritatea landurilor, ca Leistungskurs (eA); KMK EPA Informatik (2004) și standardele GI (2008/2016/2025) sunt referințele naționale.",
    "domains": [
     {
      "name": "Information und Daten",
      "nameEn": "Information and Data",
+     "nameRo": "Informații și date",
      "basis": "GI Primarbereich 2019 Inhaltsbereich \"Information und Daten\"; NRW KLP Informatik 5/6 Inhaltsfeld \"Information und Daten\"",
+     "basisDe": "GI Primarbereich 2019 Inhaltsbereich „Information und Daten“; NRW KLP Informatik 5/6 Inhaltsfeld „Information und Daten“",
+     "basisRo": "GI Primarbereich 2019, domeniul de conținut (Inhaltsbereich) „Information und Daten”; NRW KLP Informatik 5/6, câmpul de conținut (Inhaltsfeld) „Information und Daten”",
      "topicCount": 18
     },
     {
      "name": "Algorithmen und Programmieren",
      "nameEn": "Algorithms and Programming",
+     "nameRo": "Algoritmi și programare",
      "basis": "GI 2019 \"Algorithmen\"; NRW KLP 5/6 \"Algorithmen\"; KMK Digitale Welt 5.5; NRW MKR 6",
+     "basisDe": "GI 2019 „Algorithmen“; NRW KLP 5/6 „Algorithmen“; KMK Digitale Welt 5.5; NRW MKR 6",
+     "basisRo": "GI 2019 „Algorithmen”; NRW KLP 5/6 „Algorithmen”; KMK Digitale Welt 5.5; NRW MKR 6",
      "topicCount": 24
     },
     {
      "name": "Automaten und künstliche Intelligenz",
      "nameEn": "Automata and Artificial Intelligence",
+     "nameRo": "Automate și inteligență artificială",
      "basis": "GI 2019 \"Sprachen und Automaten\"; NRW KLP 5/6 \"Automaten und künstliche Intelligenz\"",
+     "basisDe": "GI 2019 „Sprachen und Automaten“; NRW KLP 5/6 „Automaten und künstliche Intelligenz“",
+     "basisRo": "GI 2019 „Sprachen und Automaten”; NRW KLP 5/6 „Automaten und künstliche Intelligenz”",
      "topicCount": 13
     },
     {
      "name": "Informatiksysteme",
      "nameEn": "Computing Systems",
+     "nameRo": "Sisteme informatice",
      "basis": "GI 2019 / NRW KLP 5/6 \"Informatiksysteme\"; NRW MKR 1 Bedienen und Anwenden",
+     "basisDe": "GI 2019 / NRW KLP 5/6 „Informatiksysteme“; NRW MKR 1 Bedienen und Anwenden",
+     "basisRo": "GI 2019 / NRW KLP 5/6 „Informatiksysteme”; NRW MKR 1 Bedienen und Anwenden",
      "topicCount": 14
     },
     {
      "name": "Produzieren und Präsentieren",
      "nameEn": "Producing and Presenting Media",
+     "nameRo": "Producerea și prezentarea de conținut media",
      "basis": "KMK Digitale Welt 3 \"Produzieren und Präsentieren\"; NRW MKR 4",
+     "basisDe": "KMK Digitale Welt 3 „Produzieren und Präsentieren“; NRW MKR 4",
+     "basisRo": "KMK Digitale Welt 3 „Produzieren und Präsentieren”; NRW MKR 4",
      "topicCount": 7
     },
     {
      "name": "Informieren und Recherchieren",
      "nameEn": "Searching and Evaluating Information",
+     "nameRo": "Căutarea și evaluarea informațiilor",
      "basis": "KMK Digitale Welt 1 \"Suchen, Verarbeiten und Aufbewahren\"; NRW MKR 2 \"Informieren und Recherchieren\"",
+     "basisDe": "KMK Digitale Welt 1 „Suchen, Verarbeiten und Aufbewahren“; NRW MKR 2 „Informieren und Recherchieren“",
+     "basisRo": "KMK Digitale Welt 1 „Suchen, Verarbeiten und Aufbewahren”; NRW MKR 2 „Informieren und Recherchieren”",
      "topicCount": 5
     },
     {
      "name": "Kommunizieren und Kooperieren",
      "nameEn": "Communicating and Collaborating",
+     "nameRo": "Comunicare și colaborare",
      "basis": "KMK Digitale Welt 2 \"Kommunizieren und Kooperieren\"; NRW MKR 3",
+     "basisDe": "KMK Digitale Welt 2 „Kommunizieren und Kooperieren“; NRW MKR 3",
+     "basisRo": "KMK Digitale Welt 2 „Kommunizieren und Kooperieren”; NRW MKR 3",
      "topicCount": 6
     },
     {
      "name": "Schützen und sicher Agieren",
      "nameEn": "Staying Safe and Protecting Data",
+     "nameRo": "Siguranța online și protecția datelor",
      "basis": "KMK Digitale Welt 4 \"Schützen und sicher Agieren\"; GI 2019 / NRW KLP 5/6 \"Informatik, Mensch und Gesellschaft\"",
+     "basisDe": "KMK Digitale Welt 4 „Schützen und sicher Agieren“; GI 2019 / NRW KLP 5/6 „Informatik, Mensch und Gesellschaft“",
+     "basisRo": "KMK Digitale Welt 4 „Schützen und sicher Agieren”; GI 2019 / NRW KLP 5/6 „Informatik, Mensch und Gesellschaft”",
      "topicCount": 14
     },
     {
      "name": "Analysieren und Reflektieren",
      "nameEn": "Analysing and Reflecting on Media",
+     "nameRo": "Analiza critică a conținutului media",
      "basis": "KMK Digitale Welt 6 \"Analysieren und Reflektieren\"; NRW MKR 5",
+     "basisDe": "KMK Digitale Welt 6 „Analysieren und Reflektieren“; NRW MKR 5",
+     "basisRo": "KMK Digitale Welt 6 „Analysieren und Reflektieren”; NRW MKR 5",
      "topicCount": 10
     },
     {
      "name": "Objektorientierte Modellierung und Programmierung",
      "nameEn": "Object-Oriented Modelling and Programming",
+     "nameRo": "Modelare și programare orientată pe obiecte",
      "basis": "KMK EPA Informatik 1.2.1 (objektorientierte Modellierung); GI Sek II 2016 IS-GEA-4; BY Informatik 9/10; NRW SII \"Daten und ihre Strukturierung\"",
+     "basisDe": "KMK EPA Informatik 1.2.1 (objektorientierte Modellierung); GI Sek II 2016 IS-GEA-4; BY Informatik 9/10; NRW SII „Daten und ihre Strukturierung“",
+     "basisRo": "KMK EPA Informatik 1.2.1 (modelare orientată pe obiecte – objektorientierte Modellierung); GI Sek II 2016 IS-GEA-4; BY Informatik 9/10; NRW SII „Daten und ihre Strukturierung”",
      "topicCount": 5
     },
     {
      "name": "Datenstrukturen",
      "nameEn": "Data Structures",
+     "nameRo": "Structuri de date",
      "basis": "GI Sek II 2016 ID-GEA-4; KMK EPA Informatik 1.2.1.2.4; NRW SII GK \"lineare und nichtlineare dynamische Datenstrukturen\"",
+     "basisDe": "GI Sek II 2016 ID-GEA-4; KMK EPA Informatik 1.2.1.2.4; NRW SII GK „lineare und nichtlineare dynamische Datenstrukturen“",
+     "basisRo": "GI Sek II 2016 ID-GEA-4; KMK EPA Informatik 1.2.1.2.4; NRW SII GK „lineare und nichtlineare dynamische Datenstrukturen”",
      "topicCount": 5
     },
     {
      "name": "Formale Sprachen und Automaten",
      "nameEn": "Formal Languages, Automata and Computability",
+     "nameRo": "Limbaje formale, automate și calculabilitate",
      "basis": "GI Sek II 2016 Inhaltsbereich \"Sprachen und Automaten\"; KMK EPA 1.2.2/1.2.3; NRW SII \"Formale Sprachen und Automaten\"",
+     "basisDe": "GI Sek II 2016 Inhaltsbereich „Sprachen und Automaten“; KMK EPA 1.2.2/1.2.3; NRW SII „Formale Sprachen und Automaten“",
+     "basisRo": "GI Sek II 2016, domeniul de conținut (Inhaltsbereich) „Sprachen und Automaten”; KMK EPA 1.2.2/1.2.3; NRW SII „Formale Sprachen und Automaten”",
      "topicCount": 7
     }
    ],
@@ -399,83 +579,122 @@
   {
    "name": "Physik",
    "nameEn": "Physics",
+   "nameRo": "Fizică",
    "tier": "core",
    "grades": [
     7,
     13
    ],
    "description": "At Gymnasium Physik is a separate subject from Kl. 7 at the latest (NRW teaches it from Kl. 5/6; Bayern starts within Natur und Technik 7; BW and Niedersachsen use integrated science in Kl. 5/6). The KMK MSA standards (2024) set the Sek I contents (energy, electricity, mechanics, electromagnetic and ionising radiation). In the Oberstufe, mechanics in depth is taught in the Einführungsphase, and the KMK Abitur standards (2020) define fields, oscillations and waves, and quantum physics and matter at grundlegendes (gA, Grundkurs) and erhöhtes (eA, Leistungskurs) level; relativity and nuclear/particle physics are Länder extensions.",
+   "descriptionDe": "Am Gymnasium ist Physik spätestens ab Kl. 7 ein eigenständiges Fach (NRW unterrichtet es ab Kl. 5/6; Bayern beginnt innerhalb von Natur und Technik 7; BW und Niedersachsen haben in Kl. 5/6 einen integrierten naturwissenschaftlichen Unterricht). Die KMK-Standards für den MSA (2024) legen die Inhalte der Sek I fest (Energie, Elektrizität, Mechanik, elektromagnetische und ionisierende Strahlung). In der Oberstufe wird die Mechanik in der Einführungsphase vertieft, und die KMK-Abiturstandards (2020) bestimmen Felder, Schwingungen und Wellen sowie Quantenphysik und Materie auf grundlegendem (gA, Grundkurs) und erhöhtem (eA, Leistungskurs) Niveau; Relativitätstheorie und Kern-/Teilchenphysik sind Erweiterungen der Länder.",
+   "descriptionRo": "La Gymnasium, Physik este disciplină separată cel târziu din Kl. 7 (NRW o predă din Kl. 5/6; Bayern începe în cadrul Natur und Technik 7; BW și Niedersachsen folosesc științe integrate în Kl. 5/6). Standardele KMK MSA (2024) stabilesc conținuturile din Sek I (energie, electricitate, mecanică, radiații electromagnetice și ionizante). În Oberstufe, mecanica aprofundată se predă în Einführungsphase, iar standardele KMK pentru Abitur (2020) definesc câmpurile, oscilațiile și undele, precum și fizica cuantică și materia la nivel grundlegendes (gA, Grundkurs) și erhöhtes (eA, Leistungskurs); relativitatea și fizica nucleară/a particulelor sunt extinderi ale landurilor.",
    "domains": [
     {
      "name": "Physikalische Arbeitsweisen",
      "nameEn": "Working Scientifically in Physics",
+     "nameRo": "Metode de lucru în fizică",
      "basis": "KMK WeBiS Physik 2024 Erkenntnisgewinnung und Bewertung (E1–E3, B1–B3); KMK BiSta AHR Physik 2020 Kap. 2.2/2.4",
+     "basisDe": "KMK WeBiS Physik 2024 Erkenntnisgewinnung und Bewertung (E1–E3, B1–B3); KMK BiSta AHR Physik 2020 Kap. 2.2/2.4",
+     "basisRo": "KMK WeBiS Physik 2024 Erkenntnisgewinnung und Bewertung (E1–E3, B1–B3); KMK BiSta AHR Physik 2020, cap. 2.2/2.4",
      "topicCount": 5
     },
     {
      "name": "Optik und elektromagnetische Strahlung",
      "nameEn": "Optics and Electromagnetic Radiation",
+     "nameRo": "Optică și radiație electromagnetică",
      "basis": "NRW KLP G9 IF5 \"Optische Instrumente\"; KMK WeBiS 2024 Inhaltsbereich \"Elektromagnetische Strahlung\"; BW 3.2.2; BY Ph 8 LB 2",
+     "basisDe": "NRW KLP G9 IF5 „Optische Instrumente“; KMK WeBiS 2024 Inhaltsbereich „Elektromagnetische Strahlung“; BW 3.2.2; BY Ph 8 LB 2",
+     "basisRo": "NRW KLP G9 IF5 „Optische Instrumente”; KMK WeBiS 2024, domeniul de conținut (Inhaltsbereich) „Elektromagnetische Strahlung”; BW 3.2.2; BY Ph 8 LB 2",
      "topicCount": 9
     },
     {
      "name": "Mechanik",
      "nameEn": "Mechanics",
+     "nameRo": "Mecanică",
      "basis": "KMK WeBiS 2024 \"Mechanik\"; NRW KLP G9 IF7, IF8; Oberstufe: NRW SII Einführungsphase \"Grundlagen der Mechanik\", \"Kreisbewegung, Gravitation\"",
+     "basisDe": "KMK WeBiS 2024 „Mechanik“; NRW KLP G9 IF7, IF8; Oberstufe: NRW SII Einführungsphase „Grundlagen der Mechanik“, „Kreisbewegung, Gravitation“",
+     "basisRo": "KMK WeBiS 2024 „Mechanik”; NRW KLP G9 IF7, IF8; Oberstufe: NRW SII Einführungsphase „Grundlagen der Mechanik”, „Kreisbewegung, Gravitation”",
      "topicCount": 20
     },
     {
      "name": "Energie",
      "nameEn": "Energy",
+     "nameRo": "Energie",
      "basis": "KMK WeBiS 2024 \"Energie\"; NRW KLP G9 IF7, IF11 \"Energieversorgung\"; BY Ph 9 LB 1",
+     "basisDe": "KMK WeBiS 2024 „Energie“; NRW KLP G9 IF7, IF11 „Energieversorgung“; BY Ph 9 LB 1",
+     "basisRo": "KMK WeBiS 2024 „Energie”; NRW KLP G9 IF7, IF11 „Energieversorgung”; BY Ph 9 LB 1",
      "topicCount": 7
     },
     {
      "name": "Wärmelehre",
      "nameEn": "Thermal Physics",
+     "nameRo": "Fenomene termice (termodinamică)",
      "basis": "BY Ph 9 LB 3; BW 3.3.3 Wärmelehre; NI KC Naturwissenschaften 9/10",
+     "basisDe": "BY Ph 9 LB 3; BW 3.3.3 Wärmelehre; NI KC Naturwissenschaften 9/10",
+     "basisRo": "BY Ph 9 LB 3; BW 3.3.3 Wärmelehre; NI KC Naturwissenschaften 9/10",
      "topicCount": 5
     },
     {
      "name": "Elektrizitätslehre",
      "nameEn": "Electricity and Electromagnetism",
+     "nameRo": "Electricitate și electromagnetism",
      "basis": "KMK WeBiS 2024 \"Elektrizitätslehre\"; NRW KLP G9 IF9 Elektrizität, IF11; BY Ph 8 LB 1, Ph 10 LB 1",
+     "basisDe": "KMK WeBiS 2024 „Elektrizitätslehre“; NRW KLP G9 IF9 Elektrizität, IF11; BY Ph 8 LB 1, Ph 10 LB 1",
+     "basisRo": "KMK WeBiS 2024 „Elektrizitätslehre”; NRW KLP G9 IF9 Elektrizität, IF11; BY Ph 8 LB 1, Ph 10 LB 1",
      "topicCount": 14
     },
     {
      "name": "Elektrische und magnetische Felder",
      "nameEn": "Electric and Magnetic Fields",
+     "nameRo": "Câmpuri electrice și magnetice",
      "basis": "KMK BiSta AHR Physik 2020, Inhaltsbereich 2.6.1",
+     "basisDe": "KMK BiSta AHR Physik 2020, Inhaltsbereich 2.6.1",
+     "basisRo": "KMK BiSta AHR Physik 2020, domeniul de conținut (Inhaltsbereich) 2.6.1",
      "topicCount": 11
     },
     {
      "name": "Schwingungen und Wellen",
      "nameEn": "Oscillations and Waves",
+     "nameRo": "Oscilații și unde",
      "basis": "KMK BiSta AHR Physik 2020, Inhaltsbereich 2.6.2",
+     "basisDe": "KMK BiSta AHR Physik 2020, Inhaltsbereich 2.6.2",
+     "basisRo": "KMK BiSta AHR Physik 2020, domeniul de conținut (Inhaltsbereich) 2.6.2",
      "topicCount": 11
     },
     {
      "name": "Quantenphysik und Materie",
      "nameEn": "Quantum Physics and Matter",
+     "nameRo": "Fizică cuantică și materie",
      "basis": "KMK BiSta AHR Physik 2020, Inhaltsbereich 2.6.3",
+     "basisDe": "KMK BiSta AHR Physik 2020, Inhaltsbereich 2.6.3",
+     "basisRo": "KMK BiSta AHR Physik 2020, domeniul de conținut (Inhaltsbereich) 2.6.3",
      "topicCount": 12
     },
     {
      "name": "Atom- und Kernphysik",
      "nameEn": "Atomic and Nuclear Physics",
+     "nameRo": "Fizică atomică și nucleară",
      "basis": "KMK WeBiS 2024 \"Ionisierende Strahlung\"; NRW KLP G9 IF10; KMK AHR 2020 suggested extension Kern- und Teilchenphysik; NRW SII LK \"Atom- und Kernphysik\"",
+     "basisDe": "KMK WeBiS 2024 „Ionisierende Strahlung“; NRW KLP G9 IF10; KMK AHR 2020 vorgeschlagene Erweiterung Kern- und Teilchenphysik; NRW SII LK „Atom- und Kernphysik“",
+     "basisRo": "KMK WeBiS 2024 „Ionisierende Strahlung”; NRW KLP G9 IF10; KMK AHR 2020, extindere propusă Kern- und Teilchenphysik; NRW SII LK „Atom- und Kernphysik”",
      "topicCount": 12
     },
     {
      "name": "Relativitätstheorie",
      "nameEn": "Special Relativity",
+     "nameRo": "Teoria relativității restrânse",
      "basis": "KMK AHR 2020 suggested extension; NRW SII EF; BY Ph 11 LB 3.2",
+     "basisDe": "KMK AHR 2020 vorgeschlagene Erweiterung; NRW SII EF; BY Ph 11 LB 3.2",
+     "basisRo": "KMK AHR 2020, extindere propusă; NRW SII EF; BY Ph 11 LB 3.2",
      "topicCount": 3
     },
     {
      "name": "Astronomie",
      "nameEn": "Astronomy",
+     "nameRo": "Astronomie",
      "basis": "NRW KLP G9 IF6 \"Sterne und Weltall\"; KMK WeBiS 2024 EM (Mondphasen, Finsternisse)",
+     "basisDe": "NRW KLP G9 IF6 „Sterne und Weltall“; KMK WeBiS 2024 EM (Mondphasen, Finsternisse)",
+     "basisRo": "NRW KLP G9 IF6 „Sterne und Weltall”; KMK WeBiS 2024 EM (Mondphasen, Finsternisse – fazele Lunii, eclipse)",
      "topicCount": 3
     }
    ],
@@ -484,119 +703,176 @@
   {
    "name": "Geschichte",
    "nameEn": "History",
+   "nameRo": "Istorie",
    "tier": "core",
    "grades": [
     5,
     13
    ],
    "description": "Usually starts in Kl. 6 (sometimes Kl. 5 or 7) and runs to the Abitur. Kl. 5/6 cover method, prehistory and antiquity; Kl. 7–10 form a chronological course from the High Middle Ages to reunification in 1990, with National Socialism and the Holocaust at its centre. The Oberstufe adds source criticism, history culture and remembrance, and thematic deepening (nation, modernity, democracy and dictatorship, Europe and global history), following the KMK EPA Geschichte.",
+   "descriptionDe": "Beginnt meist in Kl. 6 (teils in Kl. 5 oder 7) und reicht bis zum Abitur. Kl. 5/6 behandeln Methoden, Ur- und Frühgeschichte sowie Antike; Kl. 7–10 bilden einen chronologischen Durchgang vom Hochmittelalter bis zur Wiedervereinigung 1990, in dessen Zentrum Nationalsozialismus und Holocaust stehen. Die Oberstufe ergänzt Quellenkritik, Geschichtskultur und Erinnerung sowie thematische Vertiefungen (Nation, Moderne, Demokratie und Diktatur, Europa und Globalgeschichte) gemäß den KMK EPA Geschichte.",
+   "descriptionRo": "De regulă începe în Kl. 6 (uneori în Kl. 5 sau 7) și continuă până la Abitur. Kl. 5/6 acoperă metoda, preistoria și Antichitatea; Kl. 7–10 formează un parcurs cronologic de la Evul Mediu dezvoltat până la reunificarea din 1990, cu național-socialismul și Holocaustul în centru. Oberstufe adaugă critica surselor, cultura istorică și memoria, precum și aprofundări tematice (națiune, modernitate, democrație și dictatură, Europa și istoria globală), conform KMK EPA Geschichte.",
    "domains": [
     {
      "name": "Historisches Denken und Methoden",
      "nameEn": "Historical Thinking and Methods",
+     "nameRo": "Gândire istorică și metode",
      "basis": "NRW KLP Geschichte Methodenkompetenz; BW Geschichte 3.1.0 'Orientierung in der Zeit', 3.1.1 'Erste Begegnung mit dem Fach'",
+     "basisDe": "NRW KLP Geschichte Methodenkompetenz; BW Geschichte 3.1.0 „Orientierung in der Zeit“, 3.1.1 „Erste Begegnung mit dem Fach“",
+     "basisRo": "NRW KLP Geschichte Methodenkompetenz; BW Geschichte 3.1.0 „Orientierung in der Zeit”, 3.1.1 „Erste Begegnung mit dem Fach”",
      "topicCount": 13
     },
     {
      "name": "Geschichtskultur und Erinnerung",
      "nameEn": "History Culture and Remembrance",
+     "nameRo": "Cultură istorică și memorie",
      "basis": "NRW KLP Geschichte Sek I UK5/HK4 and Sek II UK5/HK4–5; KMK EPA Geschichte 1.2 'Auseinandersetzung mit Geschichtskultur'",
+     "basisDe": "NRW KLP Geschichte Sek I UK5/HK4 und Sek II UK5/HK4–5; KMK EPA Geschichte 1.2 „Auseinandersetzung mit Geschichtskultur“",
+     "basisRo": "NRW KLP Geschichte Sek I UK5/HK4 și Sek II UK5/HK4–5; KMK EPA Geschichte 1.2 „Auseinandersetzung mit Geschichtskultur”",
      "topicCount": 3
     },
     {
      "name": "Hoch- und Spätmittelalter",
      "nameEn": "High and Late Middle Ages",
+     "nameRo": "Evul Mediu dezvoltat și târziu",
      "basis": "NRW KLP Geschichte IF3b 'Lebenswelten im Mittelalter'; LehrplanPLUS Bayern Geschichte 7.1–7.3; BW Geschichte 3.2.1",
+     "basisDe": "NRW KLP Geschichte IF3b „Lebenswelten im Mittelalter“; LehrplanPLUS Bayern Geschichte 7.1–7.3; BW Geschichte 3.2.1",
+     "basisRo": "NRW KLP Geschichte IF3b „Lebenswelten im Mittelalter”; LehrplanPLUS Bayern Geschichte 7.1–7.3; BW Geschichte 3.2.1",
      "topicCount": 6
     },
     {
      "name": "Frühe Neuzeit",
      "nameEn": "Early Modern Period",
+     "nameRo": "Epoca modernă timpurie",
      "basis": "NRW KLP Geschichte IF4 'Frühe Neuzeit: Neue Welten, neue Horizonte'; LehrplanPLUS Bayern Geschichte 7.3–7.6; BW Geschichte 3.2.2",
+     "basisDe": "NRW KLP Geschichte IF4 „Frühe Neuzeit: Neue Welten, neue Horizonte“; LehrplanPLUS Bayern Geschichte 7.3–7.6; BW Geschichte 3.2.2",
+     "basisRo": "NRW KLP Geschichte IF4 „Frühe Neuzeit: Neue Welten, neue Horizonte”; LehrplanPLUS Bayern Geschichte 7.3–7.6; BW Geschichte 3.2.2",
      "topicCount": 7
     },
     {
      "name": "Zeitalter der Revolutionen",
      "nameEn": "Age of Revolutions",
+     "nameRo": "Epoca revoluțiilor",
      "basis": "NRW KLP Geschichte IF5 (Französische Revolution, 1848/49); LehrplanPLUS Bayern Geschichte 8.1–8.2; BW Geschichte 3.2.3–3.2.4; RLP BB Geschichte 7/8 Epochenvertiefung",
+     "basisDe": "NRW KLP Geschichte IF5 (Französische Revolution, 1848/49); LehrplanPLUS Bayern Geschichte 8.1–8.2; BW Geschichte 3.2.3–3.2.4; RLP BB Geschichte 7/8 Epochenvertiefung",
+     "basisRo": "NRW KLP Geschichte IF5 (Revoluția Franceză, 1848/49); LehrplanPLUS Bayern Geschichte 8.1–8.2; BW Geschichte 3.2.3–3.2.4; RLP BB Geschichte 7/8 Epochenvertiefung",
      "topicCount": 7
     },
     {
      "name": "Industrialisierung und Kaiserreich",
      "nameEn": "Industrialisation and the German Empire",
+     "nameRo": "Industrializarea și Imperiul German",
      "basis": "NRW KLP Geschichte IF5 (Industrialisierung, Reichsgründung); LehrplanPLUS Bayern Geschichte 8.4–8.5; BW Geschichte 3.2.5",
+     "basisDe": "NRW KLP Geschichte IF5 (Industrialisierung, Reichsgründung); LehrplanPLUS Bayern Geschichte 8.4–8.5; BW Geschichte 3.2.5",
+     "basisRo": "NRW KLP Geschichte IF5 (industrializarea, întemeierea Imperiului – Reichsgründung); LehrplanPLUS Bayern Geschichte 8.4–8.5; BW Geschichte 3.2.5",
      "topicCount": 5
     },
     {
      "name": "Imperialismus und Erster Weltkrieg",
      "nameEn": "Imperialism and the First World War",
+     "nameRo": "Imperialismul și Primul Război Mondial",
      "basis": "NRW KLP Geschichte IF6; LehrplanPLUS Bayern Geschichte 8.6; BW Geschichte 3.2.6",
+     "basisDe": "NRW KLP Geschichte IF6; LehrplanPLUS Bayern Geschichte 8.6; BW Geschichte 3.2.6",
+     "basisRo": "NRW KLP Geschichte IF6; LehrplanPLUS Bayern Geschichte 8.6; BW Geschichte 3.2.6",
      "topicCount": 6
     },
     {
      "name": "Weimarer Republik",
      "nameEn": "The Weimar Republic",
+     "nameRo": "Republica de la Weimar",
      "basis": "NRW KLP Geschichte IF7; LehrplanPLUS Bayern Geschichte 9.1; BW Geschichte 3.2.7",
+     "basisDe": "NRW KLP Geschichte IF7; LehrplanPLUS Bayern Geschichte 9.1; BW Geschichte 3.2.7",
+     "basisRo": "NRW KLP Geschichte IF7; LehrplanPLUS Bayern Geschichte 9.1; BW Geschichte 3.2.7",
      "topicCount": 4
     },
     {
      "name": "Nationalsozialismus und Zweiter Weltkrieg",
      "nameEn": "National Socialism and the Second World War",
+     "nameRo": "Național-socialismul și Al Doilea Război Mondial",
      "basis": "NRW KLP Geschichte IF8; LehrplanPLUS Bayern Geschichte 9.2; BW Geschichte 3.3.1; NRW KLP Sek II Geschichte IF4",
+     "basisDe": "NRW KLP Geschichte IF8; LehrplanPLUS Bayern Geschichte 9.2; BW Geschichte 3.3.1; NRW KLP Sek II Geschichte IF4",
+     "basisRo": "NRW KLP Geschichte IF8; LehrplanPLUS Bayern Geschichte 9.2; BW Geschichte 3.3.1; NRW KLP Sek II Geschichte IF4",
      "topicCount": 10
     },
     {
      "name": "Deutschland und die Welt nach 1945",
      "nameEn": "Germany and the World after 1945",
+     "nameRo": "Germania și lumea după 1945",
      "basis": "NRW KLP Geschichte IF9–IF10, Sek II IF5–IF6; LehrplanPLUS Bayern Geschichte 9.4–10.2; BW Geschichte 3.3.2",
+     "basisDe": "NRW KLP Geschichte IF9–IF10, Sek II IF5–IF6; LehrplanPLUS Bayern Geschichte 9.4–10.2; BW Geschichte 3.3.2",
+     "basisRo": "NRW KLP Geschichte IF9–IF10, Sek II IF5–IF6; LehrplanPLUS Bayern Geschichte 9.4–10.2; BW Geschichte 3.3.2",
      "topicCount": 10
     },
     {
      "name": "Nation und Moderne",
      "nameEn": "Nation and Modernity",
+     "nameRo": "Națiune și modernitate",
      "basis": "NRW KLP Sek II Geschichte IF2 (Nation und Imperium), IF3 'Dimensionen der Moderne'; BW Kursstufe 3.4.1 'Wege in die westliche Moderne'",
+     "basisDe": "NRW KLP Sek II Geschichte IF2 (Nation und Imperium), IF3 „Dimensionen der Moderne“; BW Kursstufe 3.4.1 „Wege in die westliche Moderne“",
+     "basisRo": "NRW KLP Sek II Geschichte IF2 (Nation und Imperium), IF3 „Dimensionen der Moderne”; BW Kursstufe 3.4.1 „Wege in die westliche Moderne”",
      "topicCount": 3
     },
     {
      "name": "Demokratie und Diktatur",
      "nameEn": "Democracy and Dictatorship",
+     "nameRo": "Democrație și dictatură",
      "basis": "NRW KLP Sek II Geschichte IF1 'Politische Partizipation und Freiheitsstreben', IF4; BW Kursstufe 3.4.3/3.4.4 (Diktaturen im 20. Jahrhundert)",
+     "basisDe": "NRW KLP Sek II Geschichte IF1 „Politische Partizipation und Freiheitsstreben“, IF4; BW Kursstufe 3.4.3/3.4.4 (Diktaturen im 20. Jahrhundert)",
+     "basisRo": "NRW KLP Sek II Geschichte IF1 „Politische Partizipation und Freiheitsstreben”, IF4; BW Kursstufe 3.4.3/3.4.4 (Diktaturen im 20. Jahrhundert)",
      "topicCount": 3
     },
     {
      "name": "Europa und die Welt",
      "nameEn": "Europe and Global History",
+     "nameRo": "Europa și istoria globală",
      "basis": "NRW KLP Sek II Geschichte IF2 (China und Russland), IF3 'Europäisierung der Welt', IF5 (Dekolonisation, LK); BW Kursstufe 3.4.7 'postkoloniale Räume'",
+     "basisDe": "NRW KLP Sek II Geschichte IF2 (China und Russland), IF3 „Europäisierung der Welt“, IF5 (Dekolonisation, LK); BW Kursstufe 3.4.7 „postkoloniale Räume“",
+     "basisRo": "NRW KLP Sek II Geschichte IF2 (China und Russland), IF3 „Europäisierung der Welt”, IF5 (Dekolonisation, LK); BW Kursstufe 3.4.7 „postkoloniale Räume”",
      "topicCount": 3
     },
     {
      "name": "Ur- und Frühgeschichte",
      "nameEn": "Prehistory",
+     "nameRo": "Preistoria",
      "basis": "NRW KLP Geschichte IF1 'Frühe Kulturen und erste Hochkulturen' (steinzeitliche Lebensformen, Handel in der Bronzezeit)",
+     "basisDe": "NRW KLP Geschichte IF1 „Frühe Kulturen und erste Hochkulturen“ (steinzeitliche Lebensformen, Handel in der Bronzezeit)",
+     "basisRo": "NRW KLP Geschichte IF1 „Frühe Kulturen und erste Hochkulturen” (modurile de viață din epoca de piatră, comerțul în epoca bronzului)",
      "topicCount": 4
     },
     {
      "name": "Frühe Hochkultur Ägypten",
      "nameEn": "Early Civilisation: Ancient Egypt",
+     "nameRo": "Primele civilizații: Egiptul antic",
      "basis": "NRW KLP Geschichte IF1 'Hochkulturen am Beispiel Ägyptens'; BW Geschichte 3.1.2 'Ägypten – Kultur und Hochkultur'",
+     "basisDe": "NRW KLP Geschichte IF1 „Hochkulturen am Beispiel Ägyptens“; BW Geschichte 3.1.2 „Ägypten – Kultur und Hochkultur“",
+     "basisRo": "NRW KLP Geschichte IF1 „Hochkulturen am Beispiel Ägyptens”; BW Geschichte 3.1.2 „Ägypten – Kultur und Hochkultur”",
      "topicCount": 5
     },
     {
      "name": "Antikes Griechenland",
      "nameEn": "Ancient Greece",
+     "nameRo": "Grecia antică",
      "basis": "NRW KLP Geschichte IF2 'Antike Lebenswelten: Griechische Poleis'; BW Geschichte 3.1.3",
+     "basisDe": "NRW KLP Geschichte IF2 „Antike Lebenswelten: Griechische Poleis“; BW Geschichte 3.1.3",
+     "basisRo": "NRW KLP Geschichte IF2 „Antike Lebenswelten: Griechische Poleis”; BW Geschichte 3.1.3",
      "topicCount": 4
     },
     {
      "name": "Römisches Reich",
      "nameEn": "The Roman Empire",
+     "nameRo": "Imperiul Roman",
      "basis": "NRW KLP Geschichte IF2 'Imperium Romanum'; BW Geschichte 3.1.3 und 3.1.4",
+     "basisDe": "NRW KLP Geschichte IF2 „Imperium Romanum“; BW Geschichte 3.1.3 und 3.1.4",
+     "basisRo": "NRW KLP Geschichte IF2 „Imperium Romanum”; BW Geschichte 3.1.3 și 3.1.4",
      "topicCount": 6
     },
     {
      "name": "Frühes Mittelalter",
      "nameEn": "Early Middle Ages",
+     "nameRo": "Evul Mediu timpuriu",
      "basis": "NRW KLP Geschichte IF3a 'Lebenswelten im Mittelalter'; BW Geschichte 3.1.4 'Von der Spätantike ins europäische Mittelalter'",
+     "basisDe": "NRW KLP Geschichte IF3a „Lebenswelten im Mittelalter“; BW Geschichte 3.1.4 „Von der Spätantike ins europäische Mittelalter“",
+     "basisRo": "NRW KLP Geschichte IF3a „Lebenswelten im Mittelalter”; BW Geschichte 3.1.4 „Von der Spätantike ins europäische Mittelalter”",
      "topicCount": 5
     }
    ],
@@ -605,65 +881,95 @@
   {
    "name": "Biologie",
    "nameEn": "Biology",
+   "nameRo": "Biologie",
    "tier": "core",
    "grades": [
     7,
     13
    ],
    "description": "Separate subject at the Gymnasium after Naturwissenschaften/BNT/Natur und Technik in Kl. 5/6 (from Kl. 7 in NRW, Berlin/Brandenburg and Baden-Württemberg; from Kl. 8 in Bayern) up to the Abitur, where it is taken at basic (gA, Grundkurs) or higher level (eA, Leistungskurs) along the KMK Bildungsstandards 2020; Sek I follows the KMK MSA standards of 2024 (WeBiS).",
+   "descriptionDe": "Eigenständiges Fach am Gymnasium nach Naturwissenschaften/BNT/Natur und Technik in Kl. 5/6 (ab Kl. 7 in NRW, Berlin/Brandenburg und Baden-Württemberg; ab Kl. 8 in Bayern) bis zum Abitur, wo es auf grundlegendem (gA, Grundkurs) oder erhöhtem Niveau (eA, Leistungskurs) gemäß den KMK-Bildungsstandards 2020 belegt wird; die Sek I folgt den KMK-Standards für den MSA von 2024 (WeBiS).",
+   "descriptionRo": "Disciplină separată la Gymnasium după Naturwissenschaften/BNT/Natur und Technik din Kl. 5/6 (din Kl. 7 în NRW, Berlin/Brandenburg și Baden-Württemberg; din Kl. 8 în Bayern) până la Abitur, unde se studiază la nivel de bază (gA, Grundkurs) sau ridicat (eA, Leistungskurs), conform KMK Bildungsstandards 2020; Sek I urmează standardele KMK MSA din 2024 (WeBiS).",
    "domains": [
     {
      "name": "Zellbiologie",
      "nameEn": "Cell Biology",
+     "nameRo": "Biologie celulară",
      "basis": "KMK WeBiS Biologie 2024 inhaltlicher Bereich „Lebewesen bestehen aus Zellen“; NRW KLP SII Inhaltsfeld Zellbiologie (EF); Basiskonzept Struktur und Funktion",
+     "basisDe": "KMK WeBiS Biologie 2024 inhaltlicher Bereich „Lebewesen bestehen aus Zellen“; NRW KLP SII Inhaltsfeld Zellbiologie (EF); Basiskonzept Struktur und Funktion",
+     "basisRo": "KMK WeBiS Biologie 2024, domeniul de conținut (inhaltlicher Bereich) „Lebewesen bestehen aus Zellen”; NRW KLP SII Inhaltsfeld Zellbiologie (EF); Basiskonzept Struktur und Funktion",
      "topicCount": 9
     },
     {
      "name": "Stoffwechsel und Energie",
      "nameEn": "Metabolism and Energy",
+     "nameRo": "Metabolism și energie",
      "basis": "KMK AHR Biologie 2020 Inhaltsbereich „Leben und Energie“; WeBiS 2024 „Fotosynthese und Zellatmung, Enzymreaktion“; Basiskonzept Stoff- und Energieumwandlung",
+     "basisDe": "KMK AHR Biologie 2020 Inhaltsbereich „Leben und Energie“; WeBiS 2024 „Fotosynthese und Zellatmung, Enzymreaktion“; Basiskonzept Stoff- und Energieumwandlung",
+     "basisRo": "KMK AHR Biologie 2020, Inhaltsbereich „Leben und Energie”; WeBiS 2024 „Fotosynthese und Zellatmung, Enzymreaktion”; Basiskonzept Stoff- und Energieumwandlung",
      "topicCount": 12
     },
     {
      "name": "Humanbiologie und Gesundheit",
      "nameEn": "Human Biology and Health",
+     "nameRo": "Anatomia și fiziologia omului; sănătate",
      "basis": "KMK WeBiS Biologie 2024 „Der Mensch als Lebewesen“ (Organsysteme, Immunabwehr und Impfung, Gesundheitsbildung, Ernährung)",
+     "basisDe": "KMK WeBiS Biologie 2024 „Der Mensch als Lebewesen“ (Organsysteme, Immunabwehr und Impfung, Gesundheitsbildung, Ernährung)",
+     "basisRo": "KMK WeBiS Biologie 2024 „Der Mensch als Lebewesen” (sisteme de organe, apărarea imunitară și vaccinarea, educația pentru sănătate, alimentația)",
      "topicCount": 7
     },
     {
      "name": "Sexualbildung und Fortpflanzung",
      "nameEn": "Sex Education and Reproduction",
+     "nameRo": "Educație sexuală și reproducere",
      "basis": "KMK WeBiS Biologie 2024 „Sexualbildung und Diversität, Pubertät, Fortpflanzung“; NRW KLP Biologie IF8 Sexualerziehung; continues Naturwissenschaften 5/6 „Sexualerziehung“",
+     "basisDe": "KMK WeBiS Biologie 2024 „Sexualbildung und Diversität, Pubertät, Fortpflanzung“; NRW KLP Biologie IF8 Sexualerziehung; setzt Naturwissenschaften 5/6 „Sexualerziehung“ fort",
+     "basisRo": "KMK WeBiS Biologie 2024 „Sexualbildung und Diversität, Pubertät, Fortpflanzung”; NRW KLP Biologie IF8 Sexualerziehung; continuă tema „Sexualerziehung” din Naturwissenschaften 5/6",
      "topicCount": 5
     },
     {
      "name": "Informationsverarbeitung in Lebewesen",
      "nameEn": "Information Processing in Organisms",
+     "nameRo": "Procesarea informației în organismele vii",
      "basis": "KMK AHR Biologie 2020 Inhaltsbereich „Informationsverarbeitung in Lebewesen“; Basiskonzepte Information und Kommunikation, Steuerung und Regelung",
+     "basisDe": "KMK AHR Biologie 2020 Inhaltsbereich „Informationsverarbeitung in Lebewesen“; Basiskonzepte Information und Kommunikation, Steuerung und Regelung",
+     "basisRo": "KMK AHR Biologie 2020, Inhaltsbereich „Informationsverarbeitung in Lebewesen”; Basiskonzepte Information und Kommunikation, Steuerung und Regelung",
      "topicCount": 15
     },
     {
      "name": "Genetik",
      "nameEn": "Genetics",
+     "nameRo": "Genetică",
      "basis": "KMK WeBiS 2024 „Zellen, Mitose, Meiose“ und „Vererbung, genetische Variabilität“; AHR 2020 „Vielfalt des Lebens › Molekulargenetische Grundlagen“ und fachliche Verfahren",
+     "basisDe": "KMK WeBiS 2024 „Zellen, Mitose, Meiose“ und „Vererbung, genetische Variabilität“; AHR 2020 „Vielfalt des Lebens › Molekulargenetische Grundlagen“ und fachliche Verfahren",
+     "basisRo": "KMK WeBiS 2024 „Zellen, Mitose, Meiose” și „Vererbung, genetische Variabilität”; AHR 2020 „Vielfalt des Lebens › Molekulargenetische Grundlagen” și procedeele de specialitate (fachliche Verfahren)",
      "topicCount": 18
     },
     {
      "name": "Evolution",
      "nameEn": "Evolution",
+     "nameRo": "Evoluție",
      "basis": "KMK WeBiS 2024 „Vielfalt und Veränderung von Lebewesen“; AHR 2020 „Vielfalt des Lebens › Entstehung und Entwicklung des Lebens“; Basiskonzept individuelle und evolutive Entwicklung",
+     "basisDe": "KMK WeBiS 2024 „Vielfalt und Veränderung von Lebewesen“; AHR 2020 „Vielfalt des Lebens › Entstehung und Entwicklung des Lebens“; Basiskonzept individuelle und evolutive Entwicklung",
+     "basisRo": "KMK WeBiS 2024 „Vielfalt und Veränderung von Lebewesen”; AHR 2020 „Vielfalt des Lebens › Entstehung und Entwicklung des Lebens”; Basiskonzept individuelle und evolutive Entwicklung",
      "topicCount": 12
     },
     {
      "name": "Ökologie und Nachhaltigkeit",
      "nameEn": "Ecology and Sustainability",
+     "nameRo": "Ecologie și sustenabilitate",
      "basis": "KMK WeBiS 2024 und AHR 2020 „Lebewesen in ihrer Umwelt“ (Ökosysteme, Biodiversität, Stoffkreisläufe, Klimawandel, Nachhaltigkeit)",
+     "basisDe": "KMK WeBiS 2024 und AHR 2020 „Lebewesen in ihrer Umwelt“ (Ökosysteme, Biodiversität, Stoffkreisläufe, Klimawandel, Nachhaltigkeit)",
+     "basisRo": "KMK WeBiS 2024 și AHR 2020 „Lebewesen in ihrer Umwelt” (ecosisteme, biodiversitate, circuitele materiei, schimbări climatice, sustenabilitate)",
      "topicCount": 14
     },
     {
      "name": "Erkenntnisgewinnung und Bewertung",
      "nameEn": "Scientific Inquiry and Evaluation",
+     "nameRo": "Investigație științifică și evaluare",
      "basis": "KMK WeBiS 2024 Kompetenzbereiche Erkenntnisgewinnung (E1–E5), Kommunikation (K2.2) und Bewertung (B1–B3); AHR 2020 Kap. 2.2 und 2.4",
+     "basisDe": "KMK WeBiS 2024 Kompetenzbereiche Erkenntnisgewinnung (E1–E5), Kommunikation (K2.2) und Bewertung (B1–B3); AHR 2020 Kap. 2.2 und 2.4",
+     "basisRo": "KMK WeBiS 2024, domeniile de competență Erkenntnisgewinnung (E1–E5), Kommunikation (K2.2) și Bewertung (B1–B3); AHR 2020, cap. 2.2 și 2.4",
      "topicCount": 5
     }
    ],
@@ -672,83 +978,122 @@
   {
    "name": "Chemie",
    "nameEn": "Chemistry",
+   "nameRo": "Chimie",
    "tier": "core",
    "grades": [
     7,
     13
    ],
    "description": "Separate subject from Kl. 7 (NRW G9, often Kl. 7 or 8; Berlin/Brandenburg; Niedersachsen), Kl. 8 (Baden-Württemberg, Bayern NTG) or Kl. 9 (other Bayern branches) up to the Abitur at gA or eA level (KMK Bildungsstandards 2020); Sek I follows the three Basiskonzepte of the KMK MSA standards 2024 (WeBiS): structure and properties of substances and particles, chemical reaction, energy.",
+   "descriptionDe": "Eigenständiges Fach ab Kl. 7 (NRW G9, oft Kl. 7 oder 8; Berlin/Brandenburg; Niedersachsen), Kl. 8 (Baden-Württemberg, Bayern NTG) oder Kl. 9 (übrige bayerische Ausbildungsrichtungen) bis zum Abitur auf gA- oder eA-Niveau (KMK-Bildungsstandards 2020); die Sek I folgt den drei Basiskonzepten der KMK-Standards für den MSA 2024 (WeBiS): Aufbau und Eigenschaften der Stoffe und ihrer Teilchen, chemische Reaktion, Energie.",
+   "descriptionRo": "Disciplină separată din Kl. 7 (NRW G9, adesea Kl. 7 sau 8; Berlin/Brandenburg; Niedersachsen), Kl. 8 (Baden-Württemberg, Bayern NTG) sau Kl. 9 (celelalte profiluri din Bayern) până la Abitur, la nivel gA sau eA (KMK Bildungsstandards 2020); Sek I urmează cele trei concepte de bază (Basiskonzepte) ale standardelor KMK MSA 2024 (WeBiS): structura și proprietățile substanțelor și ale particulelor lor, reacția chimică, energia.",
    "domains": [
     {
      "name": "Stoffe und ihre Eigenschaften",
      "nameEn": "Substances and Their Properties",
+     "nameRo": "Substanțe și proprietățile lor",
      "basis": "KMK WeBiS Chemie 2024 Basiskonzept „Aufbau und Eigenschaften der Stoffe und ihrer Teilchen“, makroskopische Ebene (S1); BW BP2016 3.2.1.1",
+     "basisDe": "KMK WeBiS Chemie 2024 Basiskonzept „Aufbau und Eigenschaften der Stoffe und ihrer Teilchen“, makroskopische Ebene (S1); BW BP2016 3.2.1.1",
+     "basisRo": "KMK WeBiS Chemie 2024, Basiskonzept „Aufbau und Eigenschaften der Stoffe und ihrer Teilchen”, nivelul macroscopic (S1); BW BP2016 3.2.1.1",
      "topicCount": 7
     },
     {
      "name": "Atombau und Periodensystem",
      "nameEn": "Atomic Structure and the Periodic Table",
+     "nameRo": "Structura atomului și tabelul periodic",
      "basis": "KMK WeBiS Chemie 2024 submikroskopische Ebene (S2.2–S2.3), verbindliche Inhalte Periodensystem und differenziertes Atommodell; BW BP2016 3.2.1.2",
+     "basisDe": "KMK WeBiS Chemie 2024 submikroskopische Ebene (S2.2–S2.3), verbindliche Inhalte Periodensystem und differenziertes Atommodell; BW BP2016 3.2.1.2",
+     "basisRo": "KMK WeBiS Chemie 2024, nivelul submicroscopic (S2.2–S2.3), conținuturi obligatorii: tabelul periodic și modelul atomic diferențiat; BW BP2016 3.2.1.2",
      "topicCount": 5
     },
     {
      "name": "Chemische Bindung und Wechselwirkungen",
      "nameEn": "Chemical Bonding and Interactions",
+     "nameRo": "Legături chimice și interacțiuni",
      "basis": "KMK WeBiS Chemie 2024 S2.4–S2.7 (Bindungstypen, Wechselwirkungen); AHR 2020 „Stoffe, Strukturen, Eigenschaften › Chemische Bindung, Strukturen“; BW BP2016 3.2.1.3",
+     "basisDe": "KMK WeBiS Chemie 2024 S2.4–S2.7 (Bindungstypen, Wechselwirkungen); AHR 2020 „Stoffe, Strukturen, Eigenschaften › Chemische Bindung, Strukturen“; BW BP2016 3.2.1.3",
+     "basisRo": "KMK WeBiS Chemie 2024 S2.4–S2.7 (tipuri de legături, interacțiuni); AHR 2020 „Stoffe, Strukturen, Eigenschaften › Chemische Bindung, Strukturen”; BW BP2016 3.2.1.3",
      "topicCount": 8
     },
     {
      "name": "Chemische Reaktion",
      "nameEn": "Chemical Reactions",
+     "nameRo": "Reacții chimice",
      "basis": "KMK WeBiS Chemie 2024 Basiskonzept „Chemische Reaktion“ (Kennzeichen, Massenerhaltung, Stöchiometrie) und Ebene der Repräsentationen (S3); BW BP2016 3.2.2.1–3.2.2.2",
+     "basisDe": "KMK WeBiS Chemie 2024 Basiskonzept „Chemische Reaktion“ (Kennzeichen, Massenerhaltung, Stöchiometrie) und Ebene der Repräsentationen (S3); BW BP2016 3.2.2.1–3.2.2.2",
+     "basisRo": "KMK WeBiS Chemie 2024, Basiskonzept „Chemische Reaktion” (caracteristici, conservarea masei, stoechiometrie) și nivelul reprezentărilor (S3); BW BP2016 3.2.2.1–3.2.2.2",
      "topicCount": 8
     },
     {
      "name": "Energetik",
      "nameEn": "Chemical Energetics",
+     "nameRo": "Energetica reacțiilor chimice",
      "basis": "KMK WeBiS Chemie 2024 Energiekonzept; AHR 2020 „Chemische Reaktionen › Energetische und kinetische Aspekte“ (Enthalpie, Hess, Entropie); BW BP2016 3.2.2.3",
+     "basisDe": "KMK WeBiS Chemie 2024 Energiekonzept; AHR 2020 „Chemische Reaktionen › Energetische und kinetische Aspekte“ (Enthalpie, Hess, Entropie); BW BP2016 3.2.2.3",
+     "basisRo": "KMK WeBiS Chemie 2024, conceptul de energie (Energiekonzept); AHR 2020 „Chemische Reaktionen › Energetische und kinetische Aspekte” (entalpie, legea lui Hess, entropie); BW BP2016 3.2.2.3",
      "topicCount": 7
     },
     {
      "name": "Reaktionsgeschwindigkeit und chemisches Gleichgewicht",
      "nameEn": "Reaction Rate and Chemical Equilibrium",
+     "nameRo": "Viteza de reacție și echilibrul chimic",
      "basis": "KMK AHR Chemie 2020 „Energetische und kinetische Aspekte“ und „Gleichgewichtsreaktionen“; NRW KLP SII Inhaltsfeld Reaktionsgeschwindigkeit und chemisches Gleichgewicht (EF)",
+     "basisDe": "KMK AHR Chemie 2020 „Energetische und kinetische Aspekte“ und „Gleichgewichtsreaktionen“; NRW KLP SII Inhaltsfeld Reaktionsgeschwindigkeit und chemisches Gleichgewicht (EF)",
+     "basisRo": "KMK AHR Chemie 2020 „Energetische und kinetische Aspekte” și „Gleichgewichtsreaktionen”; NRW KLP SII Inhaltsfeld Reaktionsgeschwindigkeit und chemisches Gleichgewicht (EF)",
      "topicCount": 7
     },
     {
      "name": "Säure-Base-Reaktionen",
      "nameEn": "Acid–Base Reactions",
+     "nameRo": "Reacții acido-bazice",
      "basis": "KMK WeBiS 2024 „Säure-Base-Reaktionen als Donator-Akzeptor-Vorgänge“; AHR 2020 „Chemische Reaktionen › Protonenübergänge“; NRW KLP Chemie IF9",
+     "basisDe": "KMK WeBiS 2024 „Säure-Base-Reaktionen als Donator-Akzeptor-Vorgänge“; AHR 2020 „Chemische Reaktionen › Protonenübergänge“; NRW KLP Chemie IF9",
+     "basisRo": "KMK WeBiS 2024 „Säure-Base-Reaktionen als Donator-Akzeptor-Vorgänge”; AHR 2020 „Chemische Reaktionen › Protonenübergänge”; NRW KLP Chemie IF9",
      "topicCount": 11
     },
     {
      "name": "Redoxreaktionen und Elektrochemie",
      "nameEn": "Redox Reactions and Electrochemistry",
+     "nameRo": "Reacții redox și electrochimie",
      "basis": "KMK WeBiS 2024 „Redoxreaktionen als Donator-Akzeptor-Vorgänge“; AHR 2020 „Chemische Reaktionen › Elektronenübergänge“; NRW KLP Chemie IF4/IF7",
+     "basisDe": "KMK WeBiS 2024 „Redoxreaktionen als Donator-Akzeptor-Vorgänge“; AHR 2020 „Chemische Reaktionen › Elektronenübergänge“; NRW KLP Chemie IF4/IF7",
+     "basisRo": "KMK WeBiS 2024 „Redoxreaktionen als Donator-Akzeptor-Vorgänge”; AHR 2020 „Chemische Reaktionen › Elektronenübergänge”; NRW KLP Chemie IF4/IF7",
      "topicCount": 12
     },
     {
      "name": "Organische Chemie",
      "nameEn": "Organic Chemistry",
+     "nameRo": "Chimie organică",
      "basis": "AHR Chemie 2020 „Verbindungen mit funktionellen Gruppen“ und „Reaktionsmechanismen in der organischen Chemie“; NRW KLP Chemie IF10 und SII Organische Stoffklassen / Reaktionswege",
+     "basisDe": "AHR Chemie 2020 „Verbindungen mit funktionellen Gruppen“ und „Reaktionsmechanismen in der organischen Chemie“; NRW KLP Chemie IF10 und SII Organische Stoffklassen / Reaktionswege",
+     "basisRo": "AHR Chemie 2020 „Verbindungen mit funktionellen Gruppen” și „Reaktionsmechanismen in der organischen Chemie”; NRW KLP Chemie IF10 și SII Organische Stoffklassen / Reaktionswege",
      "topicCount": 12
     },
     {
      "name": "Makromoleküle und Naturstoffe",
      "nameEn": "Macromolecules and Natural Products",
+     "nameRo": "Macromolecule și compuși naturali",
      "basis": "AHR Chemie 2020 „Natürliche und synthetische Stoffe“ und „Synthesen“; NRW KLP SII Inhaltsfeld Moderne Werkstoffe",
+     "basisDe": "AHR Chemie 2020 „Natürliche und synthetische Stoffe“ und „Synthesen“; NRW KLP SII Inhaltsfeld Moderne Werkstoffe",
+     "basisRo": "AHR Chemie 2020 „Natürliche und synthetische Stoffe” și „Synthesen”; NRW KLP SII Inhaltsfeld Moderne Werkstoffe",
      "topicCount": 7
     },
     {
      "name": "Analytische Verfahren",
      "nameEn": "Chemical Analysis",
+     "nameRo": "Chimie analitică",
      "basis": "AHR Chemie 2020 Inhaltsbereich „Arbeitsweisen“ (qualitative, quantitative und instrumentelle Analyse); WeBiS 2024 Erkenntnisgewinnung E1",
+     "basisDe": "AHR Chemie 2020 Inhaltsbereich „Arbeitsweisen“ (qualitative, quantitative und instrumentelle Analyse); WeBiS 2024 Erkenntnisgewinnung E1",
+     "basisRo": "AHR Chemie 2020, Inhaltsbereich „Arbeitsweisen” (analiză calitativă, cantitativă și instrumentală); WeBiS 2024 Erkenntnisgewinnung E1",
      "topicCount": 4
     },
     {
      "name": "Chemie in Technik und Gesellschaft",
      "nameEn": "Chemistry in Technology and Society",
+     "nameRo": "Chimia în tehnică și societate",
      "basis": "AHR Chemie 2020 Inhaltsbereich „Lebenswelt und Gesellschaft“; WeBiS 2024 Bewertungskompetenz (B1–B3)",
+     "basisDe": "AHR Chemie 2020 Inhaltsbereich „Lebenswelt und Gesellschaft“; WeBiS 2024 Bewertungskompetenz (B1–B3)",
+     "basisRo": "AHR Chemie 2020, Inhaltsbereich „Lebenswelt und Gesellschaft”; WeBiS 2024 Bewertungskompetenz (B1–B3)",
      "topicCount": 4
     }
    ],
@@ -757,77 +1102,113 @@
   {
    "name": "Politik und Wirtschaft",
    "nameEn": "Politics and Economics",
+   "nameRo": "Educație civică și economică",
    "tier": "core",
    "grades": [
     5,
     13
    ],
    "description": "Civic and economic education under many names: Wirtschaft-Politik (NRW), Politik-Wirtschaft (Niedersachsen), Politik und Gesellschaft plus Wirtschaft und Recht (Bayern), Gemeinschaftskunde and Wirtschaft (BW), Politische Bildung (Berlin/Brandenburg), Sozialkunde (several Länder); in the Oberstufe often Sozialwissenschaften (NRW) or Politik und Wirtschaft (Hessen). It starts with family, school and municipality in Kl. 5/6 and covers the Grundgesetz, democracy, the rule of law, the EU, the social market economy, consumer and career education and international politics in Kl. 7–10. The Oberstufe adds political theory, sociology, economic policy, globalisation and peace and security policy, following the KMK EPA Sozialkunde/Politik and Wirtschaft.",
+   "descriptionDe": "Politische und ökonomische Bildung unter vielen Namen: Wirtschaft-Politik (NRW), Politik-Wirtschaft (Niedersachsen), Politik und Gesellschaft sowie Wirtschaft und Recht (Bayern), Gemeinschaftskunde und Wirtschaft (BW), Politische Bildung (Berlin/Brandenburg), Sozialkunde (mehrere Länder); in der Oberstufe häufig Sozialwissenschaften (NRW) oder Politik und Wirtschaft (Hessen). Das Fach beginnt in Kl. 5/6 mit Familie, Schule und Gemeinde und behandelt in Kl. 7–10 Grundgesetz, Demokratie, Rechtsstaat, EU, soziale Marktwirtschaft, Verbraucherbildung und Berufsorientierung sowie internationale Politik. Die Oberstufe ergänzt politische Theorie, Soziologie, Wirtschaftspolitik, Globalisierung sowie Friedens- und Sicherheitspolitik gemäß den KMK EPA Sozialkunde/Politik und Wirtschaft.",
+   "descriptionRo": "Educație civică și economică sub multe denumiri: Wirtschaft-Politik (NRW), Politik-Wirtschaft (Niedersachsen), Politik und Gesellschaft plus Wirtschaft und Recht (Bayern), Gemeinschaftskunde și Wirtschaft (BW), Politische Bildung (Berlin/Brandenburg), Sozialkunde (mai multe landuri); în Oberstufe adesea Sozialwissenschaften (NRW) sau Politik und Wirtschaft (Hessen). Începe cu familia, școala și comuna în Kl. 5/6 și acoperă în Kl. 7–10 Grundgesetz (Legea fundamentală), democrația, statul de drept, UE, economia socială de piață, educația pentru consum și orientarea profesională, precum și politica internațională. Oberstufe adaugă teoria politică, sociologia, politica economică, globalizarea și politica de pace și securitate, conform KMK EPA Sozialkunde/Politik și Wirtschaft.",
    "domains": [
     {
      "name": "Demokratie und Mitbestimmung",
      "nameEn": "Democracy and Participation",
+     "nameRo": "Democrație și participare",
      "basis": "NRW KLP Wirtschaft-Politik IF2 'Sicherung und Weiterentwicklung der Demokratie'",
+     "basisDe": "NRW KLP Wirtschaft-Politik IF2 „Sicherung und Weiterentwicklung der Demokratie“",
+     "basisRo": "NRW KLP Wirtschaft-Politik IF2 „Sicherung und Weiterentwicklung der Demokratie”",
      "topicCount": 12
     },
     {
      "name": "Rechte und Staat",
      "nameEn": "Rights and the State",
+     "nameRo": "Drepturi și statul",
      "basis": "NRW KLP Wirtschaft-Politik IF2 (Rechte und Pflichten von Kindern und Jugendlichen); RLP BB Gesellschaftswissenschaften 5/6 Themenfelder 3.6, 3.7",
+     "basisDe": "NRW KLP Wirtschaft-Politik IF2 (Rechte und Pflichten von Kindern und Jugendlichen); RLP BB Gesellschaftswissenschaften 5/6 Themenfelder 3.6, 3.7",
+     "basisRo": "NRW KLP Wirtschaft-Politik IF2 (drepturile și obligațiile copiilor și tinerilor); RLP BB Gesellschaftswissenschaften 5/6 Themenfelder 3.6, 3.7",
      "topicCount": 12
     },
     {
      "name": "Wirtschaften im Alltag",
      "nameEn": "Everyday Economics",
+     "nameRo": "Economia în viața de zi cu zi",
      "basis": "NRW KLP Wirtschaft-Politik IF1 'Wirtschaftliches Handeln in der marktwirtschaftlichen Ordnung', IF3 'Nachhaltige Entwicklung'",
+     "basisDe": "NRW KLP Wirtschaft-Politik IF1 „Wirtschaftliches Handeln in der marktwirtschaftlichen Ordnung“, IF3 „Nachhaltige Entwicklung“",
+     "basisRo": "NRW KLP Wirtschaft-Politik IF1 „Wirtschaftliches Handeln in der marktwirtschaftlichen Ordnung”, IF3 „Nachhaltige Entwicklung”",
      "topicCount": 12
     },
     {
      "name": "Medien und Information",
      "nameEn": "Media and Information",
+     "nameRo": "Media și informare",
      "basis": "NRW KLP Wirtschaft-Politik IF5 'Medien und Information in der digitalisierten Welt'",
+     "basisDe": "NRW KLP Wirtschaft-Politik IF5 „Medien und Information in der digitalisierten Welt“",
+     "basisRo": "NRW KLP Wirtschaft-Politik IF5 „Medien und Information in der digitalisierten Welt”",
      "topicCount": 5
     },
     {
      "name": "Wirtschaftsordnung und Wirtschaftspolitik",
      "nameEn": "Economic Order and Economic Policy",
+     "nameRo": "Ordinea economică și politica economică",
      "basis": "NRW KLP Wirtschaft-Politik IF1; NRW KLP Sek II Sozialwissenschaften IF1, IF4; KMK EPA Wirtschaft 1.2 Leitideen",
+     "basisDe": "NRW KLP Wirtschaft-Politik IF1; NRW KLP Sek II Sozialwissenschaften IF1, IF4; KMK EPA Wirtschaft 1.2 Leitideen",
+     "basisRo": "NRW KLP Wirtschaft-Politik IF1; NRW KLP Sek II Sozialwissenschaften IF1, IF4; KMK EPA Wirtschaft 1.2, ideile directoare (Leitideen)",
      "topicCount": 10
     },
     {
      "name": "Arbeit und Beruf",
      "nameEn": "Work and Careers",
+     "nameRo": "Muncă și orientare profesională",
      "basis": "NRW KLP Wirtschaft-Politik IF6 'Unternehmen und Gewerkschaften in der Sozialen Marktwirtschaft'; LehrplanPLUS Bayern Wirtschaft und Recht 9",
+     "basisDe": "NRW KLP Wirtschaft-Politik IF6 „Unternehmen und Gewerkschaften in der Sozialen Marktwirtschaft“; LehrplanPLUS Bayern Wirtschaft und Recht 9",
+     "basisRo": "NRW KLP Wirtschaft-Politik IF6 „Unternehmen und Gewerkschaften in der Sozialen Marktwirtschaft”; LehrplanPLUS Bayern Wirtschaft und Recht 9",
      "topicCount": 4
     },
     {
      "name": "Sozialstaat und Gesellschaft",
      "nameEn": "Welfare State and Society",
+     "nameRo": "Statul social și societatea",
      "basis": "NRW KLP Wirtschaft-Politik IF7 'Soziale Sicherung in Deutschland'; NRW KLP Sek II Sozialwissenschaften IF3, IF5, IF6; KMK EPA Sozialkunde/Politik 1.2 Inhaltsbereich Gesellschaft",
+     "basisDe": "NRW KLP Wirtschaft-Politik IF7 „Soziale Sicherung in Deutschland“; NRW KLP Sek II Sozialwissenschaften IF3, IF5, IF6; KMK EPA Sozialkunde/Politik 1.2 Inhaltsbereich Gesellschaft",
+     "basisRo": "NRW KLP Wirtschaft-Politik IF7 „Soziale Sicherung in Deutschland”; NRW KLP Sek II Sozialwissenschaften IF3, IF5, IF6; KMK EPA Sozialkunde/Politik 1.2, Inhaltsbereich Gesellschaft",
      "topicCount": 9
     },
     {
      "name": "Europäische Union",
      "nameEn": "European Union",
+     "nameRo": "Uniunea Europeană",
      "basis": "NRW KLP Wirtschaft-Politik IF9; NRW KLP Sek II Sozialwissenschaften IF7; BW Gemeinschaftskunde 3.1.4.2",
+     "basisDe": "NRW KLP Wirtschaft-Politik IF9; NRW KLP Sek II Sozialwissenschaften IF7; BW Gemeinschaftskunde 3.1.4.2",
+     "basisRo": "NRW KLP Wirtschaft-Politik IF9; NRW KLP Sek II Sozialwissenschaften IF7; BW Gemeinschaftskunde 3.1.4.2",
      "topicCount": 5
     },
     {
      "name": "Internationale Politik und Globalisierung",
      "nameEn": "International Politics and Globalisation",
+     "nameRo": "Politică internațională și globalizare",
      "basis": "NRW KLP Wirtschaft-Politik IF10–IF11; NRW KLP Sek II Sozialwissenschaften IF8–IF9; BW Gemeinschaftskunde 3.1.4, 3.2.1",
+     "basisDe": "NRW KLP Wirtschaft-Politik IF10–IF11; NRW KLP Sek II Sozialwissenschaften IF8–IF9; BW Gemeinschaftskunde 3.1.4, 3.2.1",
+     "basisRo": "NRW KLP Wirtschaft-Politik IF10–IF11; NRW KLP Sek II Sozialwissenschaften IF8–IF9; BW Gemeinschaftskunde 3.1.4, 3.2.1",
      "topicCount": 9
     },
     {
      "name": "Politische Theorie",
      "nameEn": "Political Theory",
+     "nameRo": "Teorie politică",
      "basis": "KMK EPA Sozialkunde/Politik 1.2 'Politische Ideen und Ordnungsvorstellungen'; NRW KLP Sek II Sozialwissenschaften IF2 'demokratietheoretische Grundkonzepte'",
+     "basisDe": "KMK EPA Sozialkunde/Politik 1.2 „Politische Ideen und Ordnungsvorstellungen“; NRW KLP Sek II Sozialwissenschaften IF2 „demokratietheoretische Grundkonzepte“",
+     "basisRo": "KMK EPA Sozialkunde/Politik 1.2 „Politische Ideen und Ordnungsvorstellungen”; NRW KLP Sek II Sozialwissenschaften IF2 „demokratietheoretische Grundkonzepte”",
      "topicCount": 5
     },
     {
      "name": "Zusammenleben in Familie und Schule",
      "nameEn": "Living Together in Family and School",
+     "nameRo": "Viața împreună în familie și la școală",
      "basis": "NRW KLP Wirtschaft-Politik IF4 'Identität und Lebensgestaltung'; RLP BB Gesellschaftswissenschaften 5/6 Themenfeld 3.6",
+     "basisDe": "NRW KLP Wirtschaft-Politik IF4 „Identität und Lebensgestaltung“; RLP BB Gesellschaftswissenschaften 5/6 Themenfeld 3.6",
+     "basisRo": "NRW KLP Wirtschaft-Politik IF4 „Identität und Lebensgestaltung”; RLP BB Gesellschaftswissenschaften 5/6 Themenfeld 3.6",
      "topicCount": 3
     }
    ],
@@ -836,77 +1217,113 @@
   {
    "name": "Sport",
    "nameEn": "Physical Education",
+   "nameRo": "Educație fizică și sport",
    "tier": "extended",
    "grades": [
     1,
     13
    ],
    "description": "Compulsory subject from Klasse 1 to the Abitur, usually three lessons a week, organised by Bewegungsfelder and pedagogical perspectives and regulated by the Länder (no KMK Bildungsstandards; for Sport as an Abitur subject the KMK EPA Sport of 2005, amended 2017, apply). School swimming aims at sicheres Schwimmen (Bronze) by the end of the Grundschule and continues with Silber/Gold and Rettungsschwimmen; the Bundesjugendspiele are held every year. In the Oberstufe Sport can be an Abitur subject with a practical exam and sport theory (Trainingslehre, Bewegungslehre, Sport und Gesellschaft), as a Leistungskurs or eA course in several Länder.",
+   "descriptionDe": "Pflichtfach von Klasse 1 bis zum Abitur, meist mit drei Wochenstunden, gegliedert nach Bewegungsfeldern und pädagogischen Perspektiven und von den Ländern geregelt (keine KMK-Bildungsstandards; für Sport als Abiturfach gelten die KMK EPA Sport von 2005, geändert 2017). Das Schulschwimmen zielt bis zum Ende der Grundschule auf sicheres Schwimmen (Bronze) und wird mit Silber/Gold und Rettungsschwimmen fortgesetzt; jedes Jahr finden die Bundesjugendspiele statt. In der Oberstufe kann Sport Abiturfach mit praktischer Prüfung und Sporttheorie (Trainingslehre, Bewegungslehre, Sport und Gesellschaft) sein, in mehreren Ländern auch als Leistungskurs oder eA-Kurs.",
+   "descriptionRo": "Disciplină obligatorie de la Klasse 1 până la Abitur, de regulă trei ore pe săptămână, organizată pe domenii de mișcare (Bewegungsfelder) și perspective pedagogice și reglementată de landuri (nu există KMK Bildungsstandards; pentru Sport ca disciplină de Abitur se aplică KMK EPA Sport din 2005, modificate în 2017). Înotul școlar urmărește „sicheres Schwimmen” (Bronze) până la sfârșitul Grundschule și continuă cu Silber/Gold și Rettungsschwimmen (salvare acvatică); Bundesjugendspiele au loc în fiecare an. În Oberstufe, Sport poate fi disciplină de Abitur, cu probă practică și teorie sportivă (Trainingslehre, Bewegungslehre, Sport und Gesellschaft), în mai multe landuri ca Leistungskurs sau curs eA.",
    "domains": [
     {
      "name": "Laufen, Springen, Werfen",
      "nameEn": "Running, Jumping, Throwing (Athletics)",
+     "nameRo": "Atletism: alergare, sărituri, aruncări",
      "basis": "RLP Berlin-Brandenburg Sport 2.2.1/3.1 'Laufen, Springen, Werfen, Stoßen'; NRW Lehrplan GS Sport Bewegungsfeld 3",
+     "basisDe": "RLP Berlin-Brandenburg Sport 2.2.1/3.1 „Laufen, Springen, Werfen, Stoßen“; NRW Lehrplan GS Sport Bewegungsfeld 3",
+     "basisRo": "RLP Berlin-Brandenburg Sport 2.2.1/3.1 „Laufen, Springen, Werfen, Stoßen”; NRW Lehrplan GS Sport Bewegungsfeld 3",
      "topicCount": 11
     },
     {
      "name": "Bewegen im Wasser – Schwimmen",
      "nameEn": "Swimming and Water Skills",
+     "nameRo": "Înot și deprinderi acvatice",
      "basis": "RLP BB Sport 2.2.6/3.6 'Bewegen im Wasser'; Deutsche Prüfungsordnung Schwimmen (2020)",
+     "basisDe": "RLP BB Sport 2.2.6/3.6 „Bewegen im Wasser“; Deutsche Prüfungsordnung Schwimmen (2020)",
+     "basisRo": "RLP BB Sport 2.2.6/3.6 „Bewegen im Wasser”; Deutsche Prüfungsordnung Schwimmen (2020)",
      "topicCount": 11
     },
     {
      "name": "Bewegen an Geräten – Turnen",
      "nameEn": "Gymnastics on Apparatus",
+     "nameRo": "Gimnastică la aparate",
      "basis": "RLP BB Sport 2.2.3/3.3 'Bewegen an Geräten' (five Elementegruppen)",
+     "basisDe": "RLP BB Sport 2.2.3/3.3 „Bewegen an Geräten“ (fünf Elementegruppen)",
+     "basisRo": "RLP BB Sport 2.2.3/3.3 „Bewegen an Geräten” (cinci grupe de elemente – Elementegruppen)",
      "topicCount": 11
     },
     {
      "name": "Spielen",
      "nameEn": "Games",
+     "nameRo": "Jocuri sportive",
      "basis": "RLP BB Sport 2.2.2/3.2 'Spiele/Spielen' (Kleine Spiele, Sportspiele)",
+     "basisDe": "RLP BB Sport 2.2.2/3.2 „Spiele/Spielen“ (Kleine Spiele, Sportspiele)",
+     "basisRo": "RLP BB Sport 2.2.2/3.2 „Spiele/Spielen” (Kleine Spiele, Sportspiele)",
      "topicCount": 15
     },
     {
      "name": "Gestalten, Tanzen, Darstellen",
      "nameEn": "Dance, Expression and Movement Arts",
+     "nameRo": "Dans și expresie corporală",
      "basis": "RLP BB Sport 2.2.5/3.5 'Bewegungsfolgen gestalten und darstellen'",
+     "basisDe": "RLP BB Sport 2.2.5/3.5 „Bewegungsfolgen gestalten und darstellen“",
+     "basisRo": "RLP BB Sport 2.2.5/3.5 „Bewegungsfolgen gestalten und darstellen”",
      "topicCount": 6
     },
     {
      "name": "Fahren, Rollen, Gleiten",
      "nameEn": "Riding, Rolling, Gliding",
+     "nameRo": "Deplasare pe roți și alunecare",
      "basis": "RLP BB Sport 2.2.7/3.7 'Fahren, Rollen, Gleiten'",
+     "basisDe": "RLP BB Sport 2.2.7/3.7 „Fahren, Rollen, Gleiten“",
+     "basisRo": "RLP BB Sport 2.2.7/3.7 „Fahren, Rollen, Gleiten”",
      "topicCount": 3
     },
     {
      "name": "Ringen und Kämpfen",
      "nameEn": "Wrestling and Combat by Rules",
+     "nameRo": "Lupte după reguli",
      "basis": "RLP BB Sport 2.2.4/3.4 'Kämpfen nach Regeln'",
+     "basisDe": "RLP BB Sport 2.2.4/3.4 „Kämpfen nach Regeln“",
+     "basisRo": "RLP BB Sport 2.2.4/3.4 „Kämpfen nach Regeln”",
      "topicCount": 3
     },
     {
      "name": "Fairness, Gesundheit und Sicherheit",
      "nameEn": "Fair Play, Health and Safety",
+     "nameRo": "Fair-play, sănătate și siguranță",
      "basis": "RLP BB Sport 2.1 bewegungsfeldübergreifende Standards (Reflektieren und Urteilen, Interagieren, Methoden anwenden)",
+     "basisDe": "RLP BB Sport 2.1 bewegungsfeldübergreifende Standards (Reflektieren und Urteilen, Interagieren, Methoden anwenden)",
+     "basisRo": "RLP BB Sport 2.1, standarde transversale tuturor domeniilor de mișcare (Reflektieren und Urteilen, Interagieren, Methoden anwenden)",
      "topicCount": 9
     },
     {
      "name": "Trainingslehre und Fitness",
      "nameEn": "Training Science and Fitness",
+     "nameRo": "Teoria antrenamentului și condiție fizică",
      "basis": "KMK EPA Sport 1.2.2 (Grundlagen, Erhaltung und Verbesserung der körperlichen Leistungsfähigkeit durch Training); NRW KLP Sport G9 Sek I Inhaltsfeld d 'Leistung' and Bewegungsfeld 1; LehrplanPLUS Bayern Basissport Lernbereich 'Gesundheit und Fitness', Sporttheorie 12/13 'Trainingslehre'",
+     "basisDe": "KMK EPA Sport 1.2.2 (Grundlagen, Erhaltung und Verbesserung der körperlichen Leistungsfähigkeit durch Training); NRW KLP Sport G9 Sek I Inhaltsfeld d „Leistung“ und Bewegungsfeld 1; LehrplanPLUS Bayern Basissport Lernbereich „Gesundheit und Fitness“, Sporttheorie 12/13 „Trainingslehre“",
+     "basisRo": "KMK EPA Sport 1.2.2 (bazele, menținerea și îmbunătățirea capacității fizice prin antrenament); NRW KLP Sport G9 Sek I Inhaltsfeld d „Leistung” și Bewegungsfeld 1; LehrplanPLUS Bayern Basissport, Lernbereich „Gesundheit und Fitness”, Sporttheorie 12/13 „Trainingslehre”",
      "topicCount": 8
     },
     {
      "name": "Bewegungslehre und Sportbiologie",
      "nameEn": "Movement Science and Sports Biology",
+     "nameRo": "Teoria mișcării și biologia sportului",
      "basis": "KMK EPA Sport 1.2.2 (Funktionszusammenhänge von Bewegungsabläufen, Grundlagen des motorischen Lernens); NRW KLP Sport G9 Sek I Inhaltsfeld a 'Bewegungsstruktur und Bewegungslernen'; LehrplanPLUS Bayern Sporttheorie 12/13 'Bewegungslehre'",
+     "basisDe": "KMK EPA Sport 1.2.2 (Funktionszusammenhänge von Bewegungsabläufen, Grundlagen des motorischen Lernens); NRW KLP Sport G9 Sek I Inhaltsfeld a „Bewegungsstruktur und Bewegungslernen“; LehrplanPLUS Bayern Sporttheorie 12/13 „Bewegungslehre“",
+     "basisRo": "KMK EPA Sport 1.2.2 (relațiile funcționale ale secvențelor de mișcare, bazele învățării motrice); NRW KLP Sport G9 Sek I Inhaltsfeld a „Bewegungsstruktur und Bewegungslernen”; LehrplanPLUS Bayern Sporttheorie 12/13 „Bewegungslehre”",
      "topicCount": 4
     },
     {
      "name": "Sport und Gesellschaft",
      "nameEn": "Sport and Society",
+     "nameRo": "Sport și societate",
      "basis": "KMK EPA Sport 1.2.2 'Kenntnisse über den Sport im gesellschaftlichen Kontext'; NRW KLP Sport G9 Sek I Inhaltsfeld d (Leistungsverständnis); LehrplanPLUS Bayern Sporttheorie 12/13 Lernbereich 4 and Basissport 'Freizeit und Umwelt'",
+     "basisDe": "KMK EPA Sport 1.2.2 „Kenntnisse über den Sport im gesellschaftlichen Kontext“; NRW KLP Sport G9 Sek I Inhaltsfeld d (Leistungsverständnis); LehrplanPLUS Bayern Sporttheorie 12/13 Lernbereich 4 und Basissport „Freizeit und Umwelt“",
+     "basisRo": "KMK EPA Sport 1.2.2 „Kenntnisse über den Sport im gesellschaftlichen Kontext”; NRW KLP Sport G9 Sek I Inhaltsfeld d (Leistungsverständnis); LehrplanPLUS Bayern Sporttheorie 12/13 Lernbereich 4 și Basissport „Freizeit und Umwelt”",
      "topicCount": 4
     }
    ],
@@ -915,89 +1332,131 @@
   {
    "name": "Erdkunde",
    "nameEn": "Geography",
+   "nameRo": "Geografie",
    "tier": "core",
    "grades": [
     5,
     13
    ],
    "description": "Called Erdkunde (NRW, Niedersachsen), Geographie (Bayern, BW) or Geografie (Berlin/Brandenburg). After map skills and Germany and Europe in Kl. 5/6, Kl. 7–10 cover the Earth as a whole: plate tectonics and natural hazards, climate and landscape zones, water, land use, population and migration, cities, development and globalisation, and climate change. The Oberstufe adds regional analysis, urban and economic geography, sustainable development, resources and energy, and global disparities, following the KMK EPA Geographie.",
+   "descriptionDe": "Heißt Erdkunde (NRW, Niedersachsen), Geographie (Bayern, BW) oder Geografie (Berlin/Brandenburg). Nach Kartenkompetenz sowie Deutschland und Europa in Kl. 5/6 behandeln die Kl. 7–10 die Erde als Ganzes: Plattentektonik und Naturgefahren, Klima- und Landschaftszonen, Wasser, Landnutzung, Bevölkerung und Migration, Städte, Entwicklung und Globalisierung sowie Klimawandel. Die Oberstufe ergänzt Raumanalyse, Stadt- und Wirtschaftsgeographie, nachhaltige Entwicklung, Ressourcen und Energie sowie globale Disparitäten gemäß den KMK EPA Geographie.",
+   "descriptionRo": "Numită Erdkunde (NRW, Niedersachsen), Geographie (Bayern, BW) sau Geografie (Berlin/Brandenburg). După lucrul cu harta și studiul Germaniei și Europei în Kl. 5/6, Kl. 7–10 acoperă Pământul în ansamblu: tectonica plăcilor și hazardele naturale, zonele climatice și de vegetație, apa, utilizarea terenurilor, populația și migrația, orașele, dezvoltarea și globalizarea, precum și schimbările climatice. Oberstufe adaugă analiza regională, geografia urbană și economică, dezvoltarea durabilă, resursele și energia, precum și disparitățile globale, conform KMK EPA Geographie.",
    "domains": [
     {
      "name": "Orientierung und Karten",
      "nameEn": "Orientation and Maps",
+     "nameRo": "Orientare și hărți",
      "basis": "BW Geographie 3.1.1.1 'Grundlagen der Orientierung'; NRW KLP Erdkunde Methodenkompetenz MK1/MK3",
+     "basisDe": "BW Geographie 3.1.1.1 „Grundlagen der Orientierung“; NRW KLP Erdkunde Methodenkompetenz MK1/MK3",
+     "basisRo": "BW Geographie 3.1.1.1 „Grundlagen der Orientierung”; NRW KLP Erdkunde Methodenkompetenz MK1/MK3",
      "topicCount": 10
     },
     {
      "name": "Planet Erde",
      "nameEn": "Planet Earth",
+     "nameRo": "Planeta Pământ",
      "basis": "BW Geographie 3.1.1.1 (Bewegungen von Erde und Mond, Kontinente und Ozeane, Gradnetz)",
+     "basisDe": "BW Geographie 3.1.1.1 (Bewegungen von Erde und Mond, Kontinente und Ozeane, Gradnetz)",
+     "basisRo": "BW Geographie 3.1.1.1 (mișcările Pământului și ale Lunii, continente și oceane, rețeaua de grade)",
      "topicCount": 10
     },
     {
      "name": "Wetter und Klima",
      "nameEn": "Weather and Climate",
+     "nameRo": "Vreme și climă",
      "basis": "BW Geographie 3.1.2 'Teilsystem Wetter und Klima'",
+     "basisDe": "BW Geographie 3.1.2 „Teilsystem Wetter und Klima“",
+     "basisRo": "BW Geographie 3.1.2 „Teilsystem Wetter und Klima”",
      "topicCount": 9
     },
     {
      "name": "Wirtschaften im Raum",
      "nameEn": "Economic Geography",
+     "nameRo": "Geografie economică",
      "basis": "NRW KLP Erdkunde IF2 Tourismus, IF3 'Arbeit und Versorgung in Wirtschaftsräumen'; BW Geographie 3.1.4.1",
+     "basisDe": "NRW KLP Erdkunde IF2 Tourismus, IF3 „Arbeit und Versorgung in Wirtschaftsräumen“; BW Geographie 3.1.4.1",
+     "basisRo": "NRW KLP Erdkunde IF2 Tourismus, IF3 „Arbeit und Versorgung in Wirtschaftsräumen”; BW Geographie 3.1.4.1",
      "topicCount": 12
     },
     {
      "name": "Stadt und ländlicher Raum",
      "nameEn": "Urban and Rural Settlements",
+     "nameRo": "Așezări urbane și rurale",
      "basis": "NRW KLP Erdkunde IF1 'Unterschiedlich strukturierte Siedlungen'; BW Geographie 3.1.3.1 'Lebensraum Stadt'",
+     "basisDe": "NRW KLP Erdkunde IF1 „Unterschiedlich strukturierte Siedlungen“; BW Geographie 3.1.3.1 „Lebensraum Stadt“",
+     "basisRo": "NRW KLP Erdkunde IF1 „Unterschiedlich strukturierte Siedlungen”; BW Geographie 3.1.3.1 „Lebensraum Stadt”",
      "topicCount": 7
     },
     {
      "name": "Landschaftszonen und Landnutzung",
      "nameEn": "Landscape Zones and Land Use",
+     "nameRo": "Zone naturale și utilizarea terenurilor",
      "basis": "NRW KLP Erdkunde IF6 'Landwirtschaftliche Produktion in unterschiedlichen Landschaftszonen', Sek II IF3; LehrplanPLUS Bayern Geographie 10.3",
+     "basisDe": "NRW KLP Erdkunde IF6 „Landwirtschaftliche Produktion in unterschiedlichen Landschaftszonen“, Sek II IF3; LehrplanPLUS Bayern Geographie 10.3",
+     "basisRo": "NRW KLP Erdkunde IF6 „Landwirtschaftliche Produktion in unterschiedlichen Landschaftszonen”, Sek II IF3; LehrplanPLUS Bayern Geographie 10.3",
      "topicCount": 6
     },
     {
      "name": "Wasser und Meere",
      "nameEn": "Water and Oceans",
+     "nameRo": "Apele și oceanele",
      "basis": "BW Geographie 3.3.3.1 (Ressourcen) und 3.3.4.1 'Analyse ausgewählter Meeresräume'; LehrplanPLUS Bayern Geographie 7.6; RLP BB Geografie 3.5 'Umgang mit Ressourcen'",
+     "basisDe": "BW Geographie 3.3.3.1 (Ressourcen) und 3.3.4.1 „Analyse ausgewählter Meeresräume“; LehrplanPLUS Bayern Geographie 7.6; RLP BB Geografie 3.5 „Umgang mit Ressourcen“",
+     "basisRo": "BW Geographie 3.3.3.1 (resurse) și 3.3.4.1 „Analyse ausgewählter Meeresräume”; LehrplanPLUS Bayern Geographie 7.6; RLP BB Geografie 3.5 „Umgang mit Ressourcen”",
      "topicCount": 3
     },
     {
      "name": "Bevölkerung und Migration",
      "nameEn": "Population and Migration",
+     "nameRo": "Populație și migrație",
      "basis": "NRW KLP Erdkunde IF8 'Wachstum und Verteilung der Weltbevölkerung'; RLP BB Geografie 3.2 'Migration und Bevölkerung'",
+     "basisDe": "NRW KLP Erdkunde IF8 „Wachstum und Verteilung der Weltbevölkerung“; RLP BB Geografie 3.2 „Migration und Bevölkerung“",
+     "basisRo": "NRW KLP Erdkunde IF8 „Wachstum und Verteilung der Weltbevölkerung”; RLP BB Geografie 3.2 „Migration und Bevölkerung”",
      "topicCount": 6
     },
     {
      "name": "Entwicklung und Disparitäten",
      "nameEn": "Development and Disparities",
+     "nameRo": "Dezvoltare și disparități",
      "basis": "NRW KLP Erdkunde IF7 'Innerstaatliche und globale Disparitäten', Sek II IF6; LehrplanPLUS Bayern Geographie 10.2",
+     "basisDe": "NRW KLP Erdkunde IF7 „Innerstaatliche und globale Disparitäten“, Sek II IF6; LehrplanPLUS Bayern Geographie 10.2",
+     "basisRo": "NRW KLP Erdkunde IF7 „Innerstaatliche und globale Disparitäten”, Sek II IF6; LehrplanPLUS Bayern Geographie 10.2",
      "topicCount": 4
     },
     {
      "name": "Globalisierung",
      "nameEn": "Globalisation",
+     "nameRo": "Globalizare",
      "basis": "NRW KLP Erdkunde IF10 'Räumliche Strukturen unter dem Einfluss von Globalisierung und Digitalisierung'; RLP BB Geografie 3.7",
+     "basisDe": "NRW KLP Erdkunde IF10 „Räumliche Strukturen unter dem Einfluss von Globalisierung und Digitalisierung“; RLP BB Geografie 3.7",
+     "basisRo": "NRW KLP Erdkunde IF10 „Räumliche Strukturen unter dem Einfluss von Globalisierung und Digitalisierung”; RLP BB Geografie 3.7",
      "topicCount": 5
     },
     {
      "name": "Ressourcen, Energie und Nachhaltigkeit",
      "nameEn": "Resources, Energy and Sustainability",
+     "nameRo": "Resurse, energie și dezvoltare durabilă",
      "basis": "NRW KLP Sek II Geographie IF2 'Transformation der Energieversorgung'; KMK EPA Geographie 1.2 'Leitbild der Nachhaltigkeit'; BW Geographie 3.3.3.1",
+     "basisDe": "NRW KLP Sek II Geographie IF2 „Transformation der Energieversorgung“; KMK EPA Geographie 1.2 „Leitbild der Nachhaltigkeit“; BW Geographie 3.3.3.1",
+     "basisRo": "NRW KLP Sek II Geographie IF2 „Transformation der Energieversorgung”; KMK EPA Geographie 1.2 „Leitbild der Nachhaltigkeit”; BW Geographie 3.3.3.1",
      "topicCount": 3
     },
     {
      "name": "Naturräume Deutschlands und Europas",
      "nameEn": "Physical Regions of Germany and Europe",
+     "nameRo": "Geografia fizică a Germaniei și a Europei",
      "basis": "BW Geographie 3.1.1.2 und 3.1.5.1; RLP BB Gesellschaftswissenschaften 5/6 Themenfeld 3.2 'Wasser'",
+     "basisDe": "BW Geographie 3.1.1.2 und 3.1.5.1; RLP BB Gesellschaftswissenschaften 5/6 Themenfeld 3.2 „Wasser“",
+     "basisRo": "BW Geographie 3.1.1.2 și 3.1.5.1; RLP BB Gesellschaftswissenschaften 5/6 Themenfeld 3.2 „Wasser”",
      "topicCount": 5
     },
     {
      "name": "Politische Gliederung Deutschlands und Europas",
      "nameEn": "Political Geography of Germany and Europe",
+     "nameRo": "Harta politică a Germaniei și a Europei",
      "basis": "BW Geographie 3.1.1.1(3) politische Gliederung Deutschlands und Europas; RLP BB Gesellschaftswissenschaften 5/6 Themenfeld 3.4 'Europa – grenzenlos?'",
+     "basisDe": "BW Geographie 3.1.1.1(3) politische Gliederung Deutschlands und Europas; RLP BB Gesellschaftswissenschaften 5/6 Themenfeld 3.4 „Europa – grenzenlos?“",
+     "basisRo": "BW Geographie 3.1.1.1(3), împărțirea politică a Germaniei și a Europei; RLP BB Gesellschaftswissenschaften 5/6 Themenfeld 3.4 „Europa – grenzenlos?”",
      "topicCount": 3
     }
    ],
@@ -1006,83 +1465,122 @@
   {
    "name": "Religion & Ethik",
    "nameEn": "Religion & Ethics",
+   "nameRo": "Religie și etică",
    "tier": "extended",
    "grades": [
     1,
     13
    ],
    "description": "Religionsunterricht is an ordinary, confessionally bound subject (Art. 7 Abs. 3 GG: evangelisch, katholisch, increasingly islamisch, also jüdisch, alevitisch, orthodox). Pupils who opt out attend an Ersatzfach: Ethik (most Länder), Praktische Philosophie (NRW Sek I), Werte und Normen (Niedersachsen) or LER (Brandenburg, ordinary subject Kl. 5–10). Berlin has compulsory Ethik in Kl. 7–10, and Philosophie is the usual Oberstufe subject in many Länder. Ethik, Philosophie and ev./kath. Religionslehre are Abitur subjects (KMK EPA 2006). This taxonomy models the content these classes share: values and philosophical inquiry in the lower years; ethical theories, applied ethics, anthropology, epistemology, philosophy of mind, state and justice, religions and religion and science from Klasse 7 to the Abitur. Confession-specific variants are noted per topic.",
+   "descriptionDe": "Der Religionsunterricht ist ordentliches, bekenntnisgebundenes Lehrfach (Art. 7 Abs. 3 GG: evangelisch, katholisch, zunehmend islamisch, außerdem jüdisch, alevitisch, orthodox). Schülerinnen und Schüler, die sich abmelden, besuchen ein Ersatzfach: Ethik (die meisten Länder), Praktische Philosophie (NRW Sek I), Werte und Normen (Niedersachsen) oder LER (Brandenburg, ordentliches Fach Kl. 5–10). Berlin hat in Kl. 7–10 verpflichtend Ethik, und Philosophie ist in vielen Ländern das übliche Fach der Oberstufe. Ethik, Philosophie und ev./kath. Religionslehre sind Abiturfächer (KMK EPA 2006). Diese Taxonomie bildet die Inhalte ab, die diese Fächer gemeinsam haben: Werte und philosophisches Fragen in den unteren Jahrgängen; ethische Theorien, angewandte Ethik, Anthropologie, Erkenntnistheorie, Philosophie des Geistes, Staat und Gerechtigkeit, Religionen sowie Religion und Wissenschaft von Klasse 7 bis zum Abitur. Konfessionsspezifische Varianten sind beim jeweiligen Thema vermerkt.",
+   "descriptionRo": "Religionsunterricht este o disciplină obișnuită, cu caracter confesional (Art. 7 Abs. 3 GG: evangelisch, katholisch, tot mai des islamisch, de asemenea jüdisch, alevitisch, orthodox). Elevii care renunță la ea urmează o disciplină alternativă (Ersatzfach): Ethik (majoritatea landurilor), Praktische Philosophie (NRW Sek I), Werte und Normen (Niedersachsen) sau LER (Brandenburg, disciplină obișnuită în Kl. 5–10). Berlinul are Ethik obligatorie în Kl. 7–10, iar Philosophie este disciplina uzuală din Oberstufe în multe landuri. Ethik, Philosophie și ev./kath. Religionslehre sunt discipline de Abitur (KMK EPA 2006). Această taxonomie modelează conținuturile comune acestor ore: valori și investigație filosofică în clasele mici; teorii etice, etică aplicată, antropologie, epistemologie, filosofia minții, stat și dreptate, religii, religie și știință de la Klasse 7 până la Abitur. Variantele specifice fiecărei confesiuni sunt menționate la fiecare temă.",
    "domains": [
     {
      "name": "Werte und Zusammenleben",
      "nameEn": "Values and Living Together",
+     "nameRo": "Valori și viața în comunitate",
      "basis": "Bayern LehrplanPLUS Ethik Lernbereiche 1 'Menschsein: Sich selbst begegnen' and 2 'Zusammenleben: Dem anderen begegnen'",
+     "basisDe": "Bayern LehrplanPLUS Ethik Lernbereiche 1 „Menschsein: Sich selbst begegnen“ und 2 „Zusammenleben: Dem anderen begegnen“",
+     "basisRo": "Bayern LehrplanPLUS Ethik, Lernbereiche 1 „Menschsein: Sich selbst begegnen” și 2 „Zusammenleben: Dem anderen begegnen”",
      "topicCount": 15
     },
     {
      "name": "Religionen und Weltanschauungen",
      "nameEn": "Religions and Worldviews",
+     "nameRo": "Religii și concepții despre lume",
      "basis": "Bayern LehrplanPLUS Ethik Lernbereich 3 'Religion und Kultur' (GS 3/4: 3.2), Gymnasium Eth6 1 'Judentum und Christentum'",
+     "basisDe": "Bayern LehrplanPLUS Ethik Lernbereich 3 „Religion und Kultur“ (GS 3/4: 3.2), Gymnasium Eth6 1 „Judentum und Christentum“",
+     "basisRo": "Bayern LehrplanPLUS Ethik, Lernbereich 3 „Religion und Kultur” (GS 3/4: 3.2), Gymnasium Eth6 1 „Judentum und Christentum”",
      "topicCount": 18
     },
     {
      "name": "Natur und Verantwortung",
      "nameEn": "Nature and Responsibility",
+     "nameRo": "Natură și responsabilitate",
      "basis": "Bayern LehrplanPLUS Ethik Lernbereich 4 'Die moderne Welt: Der Mensch und seine Umwelt'; Eth6 4 'Konsum und Freizeit'",
+     "basisDe": "Bayern LehrplanPLUS Ethik Lernbereich 4 „Die moderne Welt: Der Mensch und seine Umwelt“; Eth6 4 „Konsum und Freizeit“",
+     "basisRo": "Bayern LehrplanPLUS Ethik, Lernbereich 4 „Die moderne Welt: Der Mensch und seine Umwelt”; Eth6 4 „Konsum und Freizeit”",
      "topicCount": 5
     },
     {
      "name": "Lebensfragen",
      "nameEn": "Big Questions of Life",
+     "nameRo": "Marile întrebări ale vieții",
      "basis": "Bayern LehrplanPLUS Ethik GS 1/2 1.4 (Wünsche), GS 3/4 3.3 (Ursprung und Grenzen des Lebens); Eth6 3 (Freundschaft)",
+     "basisDe": "Bayern LehrplanPLUS Ethik GS 1/2 1.4 (Wünsche), GS 3/4 3.3 (Ursprung und Grenzen des Lebens); Eth6 3 (Freundschaft)",
+     "basisRo": "Bayern LehrplanPLUS Ethik GS 1/2 1.4 (dorințe), GS 3/4 3.3 (originea și limitele vieții); Eth6 3 (prietenie)",
      "topicCount": 6
     },
     {
      "name": "Philosophische Methoden und Argumentation",
      "nameEn": "Philosophical Methods and Argument",
+     "nameRo": "Metode filosofice și argumentare",
      "basis": "KMK EPA Philosophie (Kompetenzbereiche, Dimensionen der Problemreflexion) and EPA Ethik 1.1.2; LehrplanPLUS Bayern Ethik Eth7 LB2 (rationales Argumentieren) and Eth10 LB1 'Ursprünge des Philosophierens'",
+     "basisDe": "KMK EPA Philosophie (Kompetenzbereiche, Dimensionen der Problemreflexion) und EPA Ethik 1.1.2; LehrplanPLUS Bayern Ethik Eth7 LB2 (rationales Argumentieren) und Eth10 LB1 „Ursprünge des Philosophierens“",
+     "basisRo": "KMK EPA Philosophie (Kompetenzbereiche, Dimensionen der Problemreflexion) și EPA Ethik 1.1.2; LehrplanPLUS Bayern Ethik Eth7 LB2 (argumentare rațională) și Eth10 LB1 „Ursprünge des Philosophierens”",
      "topicCount": 6
     },
     {
      "name": "Ethische Theorien",
      "nameEn": "Ethical Theories",
+     "nameRo": "Teorii etice",
      "basis": "KMK EPA Ethik 1.3 'Moralphilosophie'; NRW KLP SII Philosophie (2026) Inhaltsfeld 'Freiheit und moralisches Handeln'; LehrplanPLUS Bayern Eth12 LB1 'Theorie und Praxis des Handelns'",
+     "basisDe": "KMK EPA Ethik 1.3 „Moralphilosophie“; NRW KLP SII Philosophie (2026) Inhaltsfeld „Freiheit und moralisches Handeln“; LehrplanPLUS Bayern Eth12 LB1 „Theorie und Praxis des Handelns“",
+     "basisRo": "KMK EPA Ethik 1.3 „Moralphilosophie”; NRW KLP SII Philosophie (2026), Inhaltsfeld „Freiheit und moralisches Handeln”; LehrplanPLUS Bayern Eth12 LB1 „Theorie und Praxis des Handelns”",
      "topicCount": 7
     },
     {
      "name": "Angewandte Ethik",
      "nameEn": "Applied Ethics",
+     "nameRo": "Etică aplicată",
      "basis": "KMK EPA Ethik 1.3 'Angewandte Ethik' (Wissenschafts-, Technik-, Medizin-, Bio-, Medienethik); LehrplanPLUS Bayern Eth10 LB4 Medienethik, Eth11 LB3 Medizinethik",
+     "basisDe": "KMK EPA Ethik 1.3 „Angewandte Ethik“ (Wissenschafts-, Technik-, Medizin-, Bio-, Medienethik); LehrplanPLUS Bayern Eth10 LB4 Medienethik, Eth11 LB3 Medizinethik",
+     "basisRo": "KMK EPA Ethik 1.3 „Angewandte Ethik” (etica științei, a tehnicii, etica medicală, bioetica, etica mass-media); LehrplanPLUS Bayern Eth10 LB4 Medienethik, Eth11 LB3 Medizinethik",
      "topicCount": 4
     },
     {
      "name": "Anthropologie und Freiheit",
      "nameEn": "Philosophical Anthropology and Freedom",
+     "nameRo": "Antropologie filosofică și libertate",
      "basis": "KMK EPA Ethik 1.3 'Ethik und Menschenbild', 'Freiheit und Abhängigkeit'; NRW KLP SII Philosophie Inhaltsfeld 'Der Mensch – sein Selbstverständnis und sein Handeln'; LehrplanPLUS Bayern Eth11 LB1, Eth12 LB2",
+     "basisDe": "KMK EPA Ethik 1.3 „Ethik und Menschenbild“, „Freiheit und Abhängigkeit“; NRW KLP SII Philosophie Inhaltsfeld „Der Mensch – sein Selbstverständnis und sein Handeln“; LehrplanPLUS Bayern Eth11 LB1, Eth12 LB2",
+     "basisRo": "KMK EPA Ethik 1.3 „Ethik und Menschenbild”, „Freiheit und Abhängigkeit”; NRW KLP SII Philosophie, Inhaltsfeld „Der Mensch – sein Selbstverständnis und sein Handeln”; LehrplanPLUS Bayern Eth11 LB1, Eth12 LB2",
      "topicCount": 3
     },
     {
      "name": "Erkenntnis, Geist und Wissenschaft",
      "nameEn": "Knowledge, Mind and Science",
+     "nameRo": "Cunoaștere, minte și știință",
      "basis": "KMK EPA Ethik 1.3 'Wahrheit und Erkenntnis'; NRW KLP SII Philosophie Inhaltsfeld 'Wahrnehmung, Erkenntnis und Wissenschaft'; LehrplanPLUS Bayern Eth10 LB1 (Skeptizismus), Eth12 eA LB2 (Erkenntnistheorie)",
+     "basisDe": "KMK EPA Ethik 1.3 „Wahrheit und Erkenntnis“; NRW KLP SII Philosophie Inhaltsfeld „Wahrnehmung, Erkenntnis und Wissenschaft“; LehrplanPLUS Bayern Eth10 LB1 (Skeptizismus), Eth12 eA LB2 (Erkenntnistheorie)",
+     "basisRo": "KMK EPA Ethik 1.3 „Wahrheit und Erkenntnis”; NRW KLP SII Philosophie, Inhaltsfeld „Wahrnehmung, Erkenntnis und Wissenschaft”; LehrplanPLUS Bayern Eth10 LB1 (scepticism), Eth12 eA LB2 (teoria cunoașterii)",
      "topicCount": 5
     },
     {
      "name": "Staat, Recht und Gerechtigkeit",
      "nameEn": "State, Law and Justice",
+     "nameRo": "Stat, drept și dreptate",
      "basis": "KMK EPA Ethik 1.3 'Recht und Gerechtigkeit', 'Pluralismus und Grundkonsens'; NRW KLP SII Philosophie Inhaltsfeld 'Zusammenleben in Staat und Gesellschaft'; LehrplanPLUS Bayern Eth9 LB3 Friedensethik, Eth11 LB2 Politische Ethik, Eth13 LB1",
+     "basisDe": "KMK EPA Ethik 1.3 „Recht und Gerechtigkeit“, „Pluralismus und Grundkonsens“; NRW KLP SII Philosophie Inhaltsfeld „Zusammenleben in Staat und Gesellschaft“; LehrplanPLUS Bayern Eth9 LB3 Friedensethik, Eth11 LB2 Politische Ethik, Eth13 LB1",
+     "basisRo": "KMK EPA Ethik 1.3 „Recht und Gerechtigkeit”, „Pluralismus und Grundkonsens”; NRW KLP SII Philosophie, Inhaltsfeld „Zusammenleben in Staat und Gesellschaft”; LehrplanPLUS Bayern Eth9 LB3 Friedensethik, Eth11 LB2 Politische Ethik, Eth13 LB1",
      "topicCount": 5
     },
     {
      "name": "Philosophieren mit Kindern",
      "nameEn": "Philosophising with Children",
+     "nameRo": "Filosofie pentru copii",
      "basis": "Philosophieren mit Kindern (Kinderphilosophie) as practised in Ethik/Praktische Philosophie; Bayern LehrplanPLUS Ethik process competences (reflektieren, urteilen, kommunizieren)",
+     "basisDe": "Philosophieren mit Kindern (Kinderphilosophie), wie es in Ethik/Praktischer Philosophie praktiziert wird; Bayern LehrplanPLUS Ethik prozessbezogene Kompetenzen (reflektieren, urteilen, kommunizieren)",
+     "basisRo": "Philosophieren mit Kindern (Kinderphilosophie), așa cum se practică la Ethik/Praktische Philosophie; competențele procesuale din Bayern LehrplanPLUS Ethik (reflektieren, urteilen, kommunizieren)",
      "topicCount": 3
     },
     {
      "name": "Feste und Traditionen",
      "nameEn": "Festivals and Traditions",
+     "nameRo": "Sărbători și tradiții",
      "basis": "Bayern LehrplanPLUS Ethik GS 1/2 3.2 (Feste und Feiertage), Gymnasium Eth5 4 (Feste)",
+     "basisDe": "Bayern LehrplanPLUS Ethik GS 1/2 3.2 (Feste und Feiertage), Gymnasium Eth5 4 (Feste)",
+     "basisRo": "Bayern LehrplanPLUS Ethik GS 1/2 3.2 (Feste und Feiertage), Gymnasium Eth5 4 (Feste)",
      "topicCount": 5
     }
    ],
@@ -1091,59 +1589,86 @@
   {
    "name": "Musik",
    "nameEn": "Music",
+   "nameRo": "Educație muzicală",
    "tier": "extended",
    "grades": [
     1,
     13
    ],
    "description": "Compulsory subject from Klasse 1, regulated by the Länder (no KMK Bildungsstandards; the Abitur follows the KMK EPA Musik of 2005). At the Gymnasium, Klasse 7–10 combine music theory, music history by Epochen, popular music, jazz and class music-making, usually 1–2 lessons a week (in some Länder not in every year). In the Oberstufe Musik is a course with grundlegendem or erhöhtem Anforderungsniveau (Grund-/Leistungskurs) and an Abitur subject built on analysis, history and aesthetics, with practical parts in some Länder. Programmes such as JeKits (NRW) and Bläser- or Streicherklassen add instrumental tuition in the lower years.",
+   "descriptionDe": "Pflichtfach ab Klasse 1, von den Ländern geregelt (keine KMK-Bildungsstandards; das Abitur folgt den KMK EPA Musik von 2005). Am Gymnasium verbinden die Klassen 7–10 Musiktheorie, Musikgeschichte nach Epochen, Popularmusik, Jazz und Klassenmusizieren, meist mit 1–2 Wochenstunden (in einigen Ländern nicht in jedem Schuljahr). In der Oberstufe ist Musik ein Kurs mit grundlegendem oder erhöhtem Anforderungsniveau (Grund-/Leistungskurs) und ein Abiturfach, das auf Analyse, Geschichte und Ästhetik aufbaut, in einigen Ländern mit praktischen Anteilen. Programme wie JeKits (NRW) und Bläser- oder Streicherklassen ergänzen in den unteren Jahrgängen den Instrumentalunterricht.",
+   "descriptionRo": "Disciplină obligatorie din Klasse 1, reglementată de landuri (nu există KMK Bildungsstandards; Abitur urmează KMK EPA Musik din 2005). La Gymnasium, Klasse 7–10 îmbină teoria muzicii, istoria muzicii pe epoci (Epochen), muzica populară (pop), jazzul și muzicarea în clasă, de regulă 1–2 ore pe săptămână (în unele landuri nu în fiecare an). În Oberstufe, Musik este un curs cu grundlegendem sau erhöhtem Anforderungsniveau (Grund-/Leistungskurs) și o disciplină de Abitur bazată pe analiză, istorie și estetică, cu componente practice în unele landuri. Programe precum JeKits (NRW) și Bläser- sau Streicherklassen adaugă instruire instrumentală în clasele mici.",
    "domains": [
     {
      "name": "Musikalische Grundlagen und Notation",
      "nameEn": "Musical Elements and Notation",
+     "nameRo": "Elemente de limbaj muzical și notație",
      "basis": "RLP Berlin-Brandenburg Musik, Themenfeld 3.1 'Grundlagen der Musik' (Klangmaterial, Klangerzeugung, Notation)",
+     "basisDe": "RLP Berlin-Brandenburg Musik, Themenfeld 3.1 „Grundlagen der Musik“ (Klangmaterial, Klangerzeugung, Notation)",
+     "basisRo": "RLP Berlin-Brandenburg Musik, Themenfeld 3.1 „Grundlagen der Musik” (Klangmaterial, Klangerzeugung, Notation)",
      "topicCount": 19
     },
     {
      "name": "Singen",
      "nameEn": "Singing",
+     "nameRo": "Cânt vocal",
      "basis": "RLP BB Musik 2.2 'Gestalten und aufführen' › Singen; Themenfeld 3.3 'Vokalmusik'",
+     "basisDe": "RLP BB Musik 2.2 „Gestalten und aufführen“ › Singen; Themenfeld 3.3 „Vokalmusik“",
+     "basisRo": "RLP BB Musik 2.2 „Gestalten und aufführen” › Singen; Themenfeld 3.3 „Vokalmusik”",
      "topicCount": 5
     },
     {
      "name": "Instrumente spielen und musizieren",
      "nameEn": "Playing Instruments and Ensemble",
+     "nameRo": "Cânt instrumental și ansamblu",
      "basis": "RLP BB Musik 2.2 › 'Instrumente spielen', 'Proben und präsentieren'; Themenfeld 3.2 'Satzweisen'",
+     "basisDe": "RLP BB Musik 2.2 › „Instrumente spielen“, „Proben und präsentieren“; Themenfeld 3.2 „Satzweisen“",
+     "basisRo": "RLP BB Musik 2.2 › „Instrumente spielen”, „Proben und präsentieren”; Themenfeld 3.2 „Satzweisen”",
      "topicCount": 7
     },
     {
      "name": "Musik hören und verstehen",
      "nameEn": "Listening and Understanding Music",
+     "nameRo": "Audiție și înțelegerea muzicii",
      "basis": "RLP BB Musik 2.1 'Wahrnehmen und deuten'; Themenfelder 3.2 'Form und Gestaltung', 3.3 'Gattungen und Genres', 3.4 'Wirkung und Funktion'",
+     "basisDe": "RLP BB Musik 2.1 „Wahrnehmen und deuten“; Themenfelder 3.2 „Form und Gestaltung“, 3.3 „Gattungen und Genres“, 3.4 „Wirkung und Funktion“",
+     "basisRo": "RLP BB Musik 2.1 „Wahrnehmen und deuten”; Themenfelder 3.2 „Form und Gestaltung”, 3.3 „Gattungen und Genres”, 3.4 „Wirkung und Funktion”",
      "topicCount": 12
     },
     {
      "name": "Musik erfinden und umsetzen",
      "nameEn": "Inventing Music, Movement and Dance",
+     "nameRo": "Creație muzicală, mișcare și dans",
      "basis": "RLP BB Musik 2.2 › 'Musik erfinden', 'Sich bewegen und tanzen' (cf. Bayern LehrplanPLUS GS Musik 'Bewegung – Tanz – Szene')",
+     "basisDe": "RLP BB Musik 2.2 › „Musik erfinden“, „Sich bewegen und tanzen“ (vgl. Bayern LehrplanPLUS GS Musik „Bewegung – Tanz – Szene“)",
+     "basisRo": "RLP BB Musik 2.2 › „Musik erfinden”, „Sich bewegen und tanzen” (cf. Bayern LehrplanPLUS GS Musik „Bewegung – Tanz – Szene”)",
      "topicCount": 10
     },
     {
      "name": "Musik in Kultur und Gesellschaft",
      "nameEn": "Music in Culture and Society",
+     "nameRo": "Muzica în cultură și societate",
      "basis": "RLP BB Musik 2.3 'Reflektieren und kontextualisieren'; Themenfeld 3.5 'Musik im kulturellen Kontext'",
+     "basisDe": "RLP BB Musik 2.3 „Reflektieren und kontextualisieren“; Themenfeld 3.5 „Musik im kulturellen Kontext“",
+     "basisRo": "RLP BB Musik 2.3 „Reflektieren und kontextualisieren”; Themenfeld 3.5 „Musik im kulturellen Kontext”",
      "topicCount": 9
     },
     {
      "name": "Musikgeschichte und Epochen",
      "nameEn": "Music History and Eras",
+     "nameRo": "Istoria muzicii și epoci muzicale",
      "basis": "RLP BB Musik Themenfeld 3.5 'Musik im Wandel der Zeit'; LehrplanPLUS Bayern Gymnasium Musik Lernbereich 'Musik – Mensch – Zeit' (Mu7–Mu10) and Mu12/Mu13; KMK EPA Musik 1.1.1 (Musik im Zusammenhang ihrer Entstehungs- und Sozialgeschichte)",
+     "basisDe": "RLP BB Musik Themenfeld 3.5 „Musik im Wandel der Zeit“; LehrplanPLUS Bayern Gymnasium Musik Lernbereich „Musik – Mensch – Zeit“ (Mu7–Mu10) und Mu12/Mu13; KMK EPA Musik 1.1.1 (Musik im Zusammenhang ihrer Entstehungs- und Sozialgeschichte)",
+     "basisRo": "RLP BB Musik, Themenfeld 3.5 „Musik im Wandel der Zeit”; LehrplanPLUS Bayern Gymnasium Musik, Lernbereich „Musik – Mensch – Zeit” (Mu7–Mu10) și Mu12/Mu13; KMK EPA Musik 1.1.1 (Musik im Zusammenhang ihrer Entstehungs- und Sozialgeschichte)",
      "topicCount": 9
     },
     {
      "name": "Musikästhetik und Interpretation",
      "nameEn": "Music Aesthetics and Interpretation",
+     "nameRo": "Estetică muzicală și interpretare",
      "basis": "KMK EPA Musik 1.1.1 (interpretierende und wertende Aussagen, Erörterung musikbezogener Texte) and 1.2 (musikästhetische und -psychologische Fragestellungen im Leistungskurs); RLP BB Musik 2.3 'Musik beurteilen'",
+     "basisDe": "KMK EPA Musik 1.1.1 (interpretierende und wertende Aussagen, Erörterung musikbezogener Texte) und 1.2 (musikästhetische und -psychologische Fragestellungen im Leistungskurs); RLP BB Musik 2.3 „Musik beurteilen“",
+     "basisRo": "KMK EPA Musik 1.1.1 (enunțuri interpretative și evaluative, discutarea textelor despre muzică) și 1.2 (chestiuni de estetică și psihologie muzicală la Leistungskurs); RLP BB Musik 2.3 „Musik beurteilen”",
      "topicCount": 4
     }
    ],
@@ -1152,65 +1677,95 @@
   {
    "name": "Kunst",
    "nameEn": "Art",
+   "nameRo": "Educație plastică (arte vizuale)",
    "tier": "extended",
    "grades": [
     1,
     13
    ],
    "description": "Compulsory subject from Klasse 1 (often 'Kunst' or 'Bildende Kunst'), regulated by the Länder (no KMK Bildungsstandards; the Abitur follows the KMK EPA Kunst of 2005). Gymnasium Klasse 7–10 deepen drawing, painting, sculpture, printmaking, design, photography and film and add Bildanalyse and Kunstgeschichte (chronological in Bayern, thematic in NRW and Berlin-Brandenburg). In the Oberstufe Kunst is a Grund- or Leistungskurs (gA/eA) and an Abitur subject that combines bildnerische Praxis with Werkanalyse and interpretation.",
+   "descriptionDe": "Pflichtfach ab Klasse 1 (oft „Kunst“ oder „Bildende Kunst“), von den Ländern geregelt (keine KMK-Bildungsstandards; das Abitur folgt den KMK EPA Kunst von 2005). Am Gymnasium vertiefen die Klassen 7–10 Zeichnen, Malen, Plastik, Druckgrafik, Design, Fotografie und Film und ergänzen Bildanalyse und Kunstgeschichte (chronologisch in Bayern, thematisch in NRW und Berlin-Brandenburg). In der Oberstufe ist Kunst ein Grund- oder Leistungskurs (gA/eA) und ein Abiturfach, das bildnerische Praxis mit Werkanalyse und Interpretation verbindet.",
+   "descriptionRo": "Disciplină obligatorie din Klasse 1 (adesea „Kunst” sau „Bildende Kunst”), reglementată de landuri (nu există KMK Bildungsstandards; Abitur urmează KMK EPA Kunst din 2005). La Gymnasium, Klasse 7–10 aprofundează desenul, pictura, sculptura, gravura, designul, fotografia și filmul și adaugă analiza imaginii (Bildanalyse) și istoria artei (Kunstgeschichte) – cronologic în Bayern, tematic în NRW și Berlin-Brandenburg. În Oberstufe, Kunst este Grund- sau Leistungskurs (gA/eA) și disciplină de Abitur care îmbină practica artistică (bildnerische Praxis) cu analiza operei (Werkanalyse) și interpretarea.",
    "domains": [
     {
      "name": "Zeichnen und Grafik",
      "nameEn": "Drawing and Graphics",
+     "nameRo": "Desen și grafică",
      "basis": "RLP Berlin-Brandenburg Kunst, Verfahren 'Zeichnen' (Doppeljahrgangsstufen 1/2, 3/4, 5/6)",
+     "basisDe": "RLP Berlin-Brandenburg Kunst, Verfahren „Zeichnen“ (Doppeljahrgangsstufen 1/2, 3/4, 5/6)",
+     "basisRo": "RLP Berlin-Brandenburg Kunst, Verfahren „Zeichnen” (Doppeljahrgangsstufen 1/2, 3/4, 5/6)",
      "topicCount": 11
     },
     {
      "name": "Malen und Farbe",
      "nameEn": "Painting and Colour",
+     "nameRo": "Pictură și culoare",
      "basis": "RLP BB Kunst, Verfahren 'Malen' and Material 'Farbe'",
+     "basisDe": "RLP BB Kunst, Verfahren „Malen“ und Material „Farbe“",
+     "basisRo": "RLP BB Kunst, Verfahren „Malen” și Material „Farbe”",
      "topicCount": 9
     },
     {
      "name": "Plastisches Gestalten und Bauen",
      "nameEn": "Sculpture, Modelling and Building",
+     "nameRo": "Modelaj, sculptură și construcții",
      "basis": "RLP BB Kunst, Verfahren 'Bauen und Konstruieren', 'Plastisches Gestalten'",
+     "basisDe": "RLP BB Kunst, Verfahren „Bauen und Konstruieren“, „Plastisches Gestalten“",
+     "basisRo": "RLP BB Kunst, Verfahren „Bauen und Konstruieren”, „Plastisches Gestalten”",
      "topicCount": 6
     },
     {
      "name": "Drucken und Collage",
      "nameEn": "Printmaking and Collage",
+     "nameRo": "Tehnici de imprimare și colaj",
      "basis": "RLP BB Kunst, Verfahren 'Drucken', 'Sammeln und Collagieren'",
+     "basisDe": "RLP BB Kunst, Verfahren „Drucken“, „Sammeln und Collagieren“",
+     "basisRo": "RLP BB Kunst, Verfahren „Drucken”, „Sammeln und Collagieren”",
      "topicCount": 5
     },
     {
      "name": "Kunst betrachten und verstehen",
      "nameEn": "Looking at and Understanding Art",
+     "nameRo": "Receptarea și înțelegerea artei",
      "basis": "RLP BB Kunst, Inhaltsbereich 'Kunstwerke'; Kompetenzbereiche Wahrnehmen and Reflektieren",
+     "basisDe": "RLP BB Kunst, Inhaltsbereich „Kunstwerke“; Kompetenzbereiche Wahrnehmen und Reflektieren",
+     "basisRo": "RLP BB Kunst, Inhaltsbereich „Kunstwerke”; Kompetenzbereiche Wahrnehmen și Reflektieren",
      "topicCount": 13
     },
     {
      "name": "Medien und Design",
      "nameEn": "Media and Design",
+     "nameRo": "Media și design",
      "basis": "RLP BB Kunst, Material › 'Medien'; Kunstwerke › 'Design'; Verfahren 'Inszenieren'",
+     "basisDe": "RLP BB Kunst, Material › „Medien“; Kunstwerke › „Design“; Verfahren „Inszenieren“",
+     "basisRo": "RLP BB Kunst, Material › „Medien”; Kunstwerke › „Design”; Verfahren „Inszenieren”",
      "topicCount": 12
     },
     {
      "name": "Kunstgeschichte",
      "nameEn": "Art History",
+     "nameRo": "Istoria artei",
      "basis": "LehrplanPLUS Bayern Gymnasium Kunst, Lernbereich 'Bildende Kunst' (Ku7 Romanik/Gotik to Ku11 Klassische Moderne); KMK EPA Kunst 1.3 (Werke unterschiedlicher Gattungen und Epochen in kunst- und kulturgeschichtlichen Zusammenhängen)",
+     "basisDe": "LehrplanPLUS Bayern Gymnasium Kunst, Lernbereich „Bildende Kunst“ (Ku7 Romanik/Gotik bis Ku11 Klassische Moderne); KMK EPA Kunst 1.3 (Werke unterschiedlicher Gattungen und Epochen in kunst- und kulturgeschichtlichen Zusammenhängen)",
+     "basisRo": "LehrplanPLUS Bayern Gymnasium Kunst, Lernbereich „Bildende Kunst” (de la Ku7 Romanik/Gotik până la Ku11 Klassische Moderne); KMK EPA Kunst 1.3 (opere de genuri și epoci diferite în contexte de istoria artei și a culturii)",
      "topicCount": 9
     },
     {
      "name": "Architektur und Raum",
      "nameEn": "Architecture and Space",
+     "nameRo": "Arhitectură și spațiu",
      "basis": "LehrplanPLUS Bayern Gymnasium Kunst, Lernbereich 'Architektur und Produktdesign' (Ku7–Ku11) and Ku12 'Raum'; KMK EPA Kunst 1.3 (Gestaltete Umwelt, Architektur)",
+     "basisDe": "LehrplanPLUS Bayern Gymnasium Kunst, Lernbereich „Architektur und Produktdesign“ (Ku7–Ku11) und Ku12 „Raum“; KMK EPA Kunst 1.3 (Gestaltete Umwelt, Architektur)",
+     "basisRo": "LehrplanPLUS Bayern Gymnasium Kunst, Lernbereich „Architektur und Produktdesign” (Ku7–Ku11) și Ku12 „Raum”; KMK EPA Kunst 1.3 (Gestaltete Umwelt, Architektur)",
      "topicCount": 4
     },
     {
      "name": "Gestaltungspraxis und Präsentation",
      "nameEn": "Studio Practice and Exhibition",
+     "nameRo": "Practică artistică și expunere",
      "basis": "KMK EPA Kunst 1.1 'Fähigkeit zur Produktion von Bildern (Bildnerische Praxis)'; RLP BB Kunst 2.2 'Eigene Gestaltungsvorhaben entwickeln'; LehrplanPLUS Bayern Ku11 LB1, Ku13 LB2 (Interaktion und Transformation)",
+     "basisDe": "KMK EPA Kunst 1.1 „Fähigkeit zur Produktion von Bildern (Bildnerische Praxis)“; RLP BB Kunst 2.2 „Eigene Gestaltungsvorhaben entwickeln“; LehrplanPLUS Bayern Ku11 LB1, Ku13 LB2 (Interaktion und Transformation)",
+     "basisRo": "KMK EPA Kunst 1.1 „Fähigkeit zur Produktion von Bildern (Bildnerische Praxis)”; RLP BB Kunst 2.2 „Eigene Gestaltungsvorhaben entwickeln”; LehrplanPLUS Bayern Ku11 LB1, Ku13 LB2 (Interaktion und Transformation)",
      "topicCount": 5
     }
    ],
@@ -1219,77 +1774,113 @@
   {
    "name": "Französisch",
    "nameEn": "French (second foreign language)",
+   "nameRo": "Limba franceză (a doua limbă străină)",
    "tier": "extended",
    "grades": [
     6,
     13
    ],
    "description": "French is the most common second foreign language at German Gymnasien after English. It starts in Kl. 6 in most Länder (e.g. Bayern, Baden-Württemberg, Niedersachsen, Rheinland-Pfalz, Hamburg, Sachsen) and in Kl. 7 in NRW (G9), Hessen, Schleswig-Holstein and Berlin; in the Saarland and along the Rhine in Baden-Württemberg it is often the first foreign language. Learners reach about A2 by Kl. 8–9 and B1 by Kl. 10, and the Abitur in Grund- or Leistungskurs targets B2 (KMK Bildungsstandards fortgeführte Fremdsprache 2012). The DELF certificates are an optional extra.",
+   "descriptionDe": "Französisch ist nach Englisch die häufigste zweite Fremdsprache an deutschen Gymnasien. Es beginnt in den meisten Ländern in Kl. 6 (z. B. Bayern, Baden-Württemberg, Niedersachsen, Rheinland-Pfalz, Hamburg, Sachsen) und in Kl. 7 in NRW (G9), Hessen, Schleswig-Holstein und Berlin; im Saarland und entlang des Rheins in Baden-Württemberg ist es oft die erste Fremdsprache. Die Lernenden erreichen etwa A2 bis Kl. 8–9 und B1 bis Kl. 10; das Abitur im Grund- oder Leistungskurs zielt auf B2 (KMK-Bildungsstandards fortgeführte Fremdsprache 2012). Die DELF-Zertifikate sind ein freiwilliges Zusatzangebot.",
+   "descriptionRo": "Franceza este, după engleză, cea mai răspândită a doua limbă străină la gimnaziile germane (Gymnasien). În majoritatea landurilor începe în Kl. 6 (de ex. Bayern, Baden-Württemberg, Niedersachsen, Rheinland-Pfalz, Hamburg, Sachsen), iar în Kl. 7 în NRW (G9), Hessen, Schleswig-Holstein și Berlin; în Saarland și de-a lungul Rinului, în Baden-Württemberg, este adesea prima limbă străină. Elevii ating aproximativ nivelul A2 până în Kl. 8–9 și B1 până în Kl. 10, iar Abitur la Grund- sau Leistungskurs vizează nivelul B2 (KMK Bildungsstandards fortgeführte Fremdsprache 2012). Certificatele DELF sunt un plus opțional.",
    "domains": [
     {
      "name": "Hör- und Hörsehverstehen",
      "nameEn": "Listening and Audiovisual Comprehension",
+     "nameRo": "Receptarea mesajelor orale și audiovizuale",
      "basis": "KMK BiSta erste Fremdsprache 2023 (Hörverstehen und audiovisuelles Verstehen); KMK BiSta AHR fortgeführte Fremdsprache 2012, 2.1.1",
+     "basisDe": "KMK BiSta erste Fremdsprache 2023 (Hörverstehen und audiovisuelles Verstehen); KMK BiSta AHR fortgeführte Fremdsprache 2012, 2.1.1",
+     "basisRo": "KMK BiSta erste Fremdsprache 2023 (Hörverstehen und audiovisuelles Verstehen); KMK BiSta AHR fortgeführte Fremdsprache 2012, 2.1.1",
      "topicCount": 4
     },
     {
      "name": "Leseverstehen",
      "nameEn": "Reading Comprehension",
+     "nameRo": "Înțelegerea textului citit",
      "basis": "KMK 2023 Leseverstehen; KMK AHR 2012, 2.1.2",
+     "basisDe": "KMK 2023 Leseverstehen; KMK AHR 2012, 2.1.2",
+     "basisRo": "KMK 2023 Leseverstehen; KMK AHR 2012, 2.1.2",
      "topicCount": 3
     },
     {
      "name": "Sprechen",
      "nameEn": "Speaking",
+     "nameRo": "Exprimare orală",
      "basis": "KMK 2023 Mündliche Interaktion / Mündliche Produktion; KMK AHR 2012, 2.1.3 (an Gesprächen teilnehmen, zusammenhängendes monologisches Sprechen)",
+     "basisDe": "KMK 2023 Mündliche Interaktion / Mündliche Produktion; KMK AHR 2012, 2.1.3 (an Gesprächen teilnehmen, zusammenhängendes monologisches Sprechen)",
+     "basisRo": "KMK 2023 Mündliche Interaktion / Mündliche Produktion; KMK AHR 2012, 2.1.3 (participarea la conversații, vorbire monologată coerentă)",
      "topicCount": 6
     },
     {
      "name": "Schreiben",
      "nameEn": "Writing",
+     "nameRo": "Exprimare scrisă",
      "basis": "KMK 2023 Schriftliche Interaktion / Schriftliche Produktion; KMK AHR 2012, 2.1.4",
+     "basisDe": "KMK 2023 Schriftliche Interaktion / Schriftliche Produktion; KMK AHR 2012, 2.1.4",
+     "basisRo": "KMK 2023 Schriftliche Interaktion / Schriftliche Produktion; KMK AHR 2012, 2.1.4",
      "topicCount": 8
     },
     {
      "name": "Sprachmittlung",
      "nameEn": "Mediation",
+     "nameRo": "Mediere lingvistică",
      "basis": "KMK 2023 Mediation / Sprachmittlung; KMK AHR 2012, 2.1.5",
+     "basisDe": "KMK 2023 Mediation / Sprachmittlung; KMK AHR 2012, 2.1.5",
+     "basisRo": "KMK 2023 Mediation / Sprachmittlung; KMK AHR 2012, 2.1.5",
      "topicCount": 3
     },
     {
      "name": "Wortschatz",
      "nameEn": "Vocabulary",
+     "nameRo": "Vocabular",
      "basis": "KMK 2023 Verfügen über sprachliche Mittel: Lexiko-Grammatik (Wortschatz); KMK AHR 2012, 2.1.6; Themenfelder der Länderlehrpläne",
+     "basisDe": "KMK 2023 Verfügen über sprachliche Mittel: Lexiko-Grammatik (Wortschatz); KMK AHR 2012, 2.1.6; Themenfelder der Länderlehrpläne",
+     "basisRo": "KMK 2023 Verfügen über sprachliche Mittel: Lexiko-Grammatik (Wortschatz); KMK AHR 2012, 2.1.6; câmpurile tematice (Themenfelder) din programele landurilor",
      "topicCount": 4
     },
     {
      "name": "Grammatik",
      "nameEn": "Grammar",
+     "nameRo": "Gramatică",
      "basis": "KMK 2023 Lexiko-Grammatik and Sprachbewusstheit; KMK AHR 2012, 2.1.6; grammar progression of the Länder plans for Französisch als 2. Fremdsprache",
+     "basisDe": "KMK 2023 Lexiko-Grammatik und Sprachbewusstheit; KMK AHR 2012, 2.1.6; Grammatikprogression der Länderlehrpläne für Französisch als 2. Fremdsprache",
+     "basisRo": "KMK 2023 Lexiko-Grammatik și Sprachbewusstheit; KMK AHR 2012, 2.1.6; progresia gramaticală din programele landurilor pentru Französisch als 2. Fremdsprache",
      "topicCount": 22
     },
     {
      "name": "Aussprache und Orthografie",
      "nameEn": "Pronunciation and Spelling",
+     "nameRo": "Pronunție și ortografie",
      "basis": "KMK 2023 Aussprache und Prosodie, Orthografie (sprachliche Mittel)",
+     "basisDe": "KMK 2023 Aussprache und Prosodie, Orthografie (sprachliche Mittel)",
+     "basisRo": "KMK 2023 Aussprache und Prosodie, Orthografie (mijloace lingvistice – sprachliche Mittel)",
      "topicCount": 4
     },
     {
      "name": "Interkulturelle Kompetenz",
      "nameEn": "Intercultural Competence",
+     "nameRo": "Competență interculturală",
      "basis": "KMK 2023, 2.2 Interkulturelle Kompetenz; KMK AHR 2012, 2.2 (soziokulturelles Orientierungswissen: Frankreich, Frankophonie, deutsch-französische Beziehungen)",
+     "basisDe": "KMK 2023, 2.2 Interkulturelle Kompetenz; KMK AHR 2012, 2.2 (soziokulturelles Orientierungswissen: Frankreich, Frankophonie, deutsch-französische Beziehungen)",
+     "basisRo": "KMK 2023, 2.2 Interkulturelle Kompetenz; KMK AHR 2012, 2.2 (cunoștințe socioculturale de orientare: Franța, francofonia, relațiile franco-germane)",
      "topicCount": 8
     },
     {
      "name": "Text- und Medienkompetenz",
      "nameEn": "Text and Media Literacy",
+     "nameRo": "Competență textuală și media",
      "basis": "KMK 2023, 2.3 Text- und Medienkompetenz; KMK AHR 2012, 2.3",
+     "basisDe": "KMK 2023, 2.3 Text- und Medienkompetenz; KMK AHR 2012, 2.3",
+     "basisRo": "KMK 2023, 2.3 Text- und Medienkompetenz; KMK AHR 2012, 2.3",
      "topicCount": 6
     },
     {
      "name": "Sprachbewusstheit und Sprachlernkompetenz",
      "nameEn": "Language Awareness and Learning Strategies",
+     "nameRo": "Conștientizare lingvistică și strategii de învățare",
      "basis": "KMK 2023, 2.4 Sprachbewusstheit and 2.5 Sprachlernkompetenz; KMK AHR 2012, 2.4–2.5",
+     "basisDe": "KMK 2023, 2.4 Sprachbewusstheit und 2.5 Sprachlernkompetenz; KMK AHR 2012, 2.4–2.5",
+     "basisRo": "KMK 2023, 2.4 Sprachbewusstheit și 2.5 Sprachlernkompetenz; KMK AHR 2012, 2.4–2.5",
      "topicCount": 5
     }
    ],
@@ -1298,53 +1889,77 @@
   {
    "name": "Latein",
    "nameEn": "Latin",
+   "nameRo": "Limba latină",
    "tier": "extended",
    "grades": [
     6,
     13
    ],
    "description": "Latin is chosen by many Gymnasium pupils as second foreign language, usually from Kl. 6 (e.g. Bayern, Baden-Württemberg, Niedersachsen, Hamburg, Sachsen, Saarland) or Kl. 7 (NRW G9, Berlin, Schleswig-Holstein); some schools teach it as first foreign language from Kl. 5, as third language from Kl. 8/9 or as a new subject in the Oberstufe. Three to four years of textbook-based language learning lead to the reading of original authors (Nepos, Caesar, Ovid, Cicero …) from Kl. 9/10. Depending on the Land, the Latinum (KMK agreement 2005) is awarded at the end of Kl. 10 or 11. Abitur requirements follow the KMK EPA Latein (2005); there are no KMK Bildungsstandards for Latin.",
+   "descriptionDe": "Latein wird von vielen Gymnasiastinnen und Gymnasiasten als zweite Fremdsprache gewählt, meist ab Kl. 6 (z. B. Bayern, Baden-Württemberg, Niedersachsen, Hamburg, Sachsen, Saarland) oder Kl. 7 (NRW G9, Berlin, Schleswig-Holstein); manche Schulen unterrichten es als erste Fremdsprache ab Kl. 5, als dritte Fremdsprache ab Kl. 8/9 oder als neu einsetzendes Fach in der Oberstufe. Drei bis vier Jahre lehrbuchgestützter Spracherwerb führen ab Kl. 9/10 zur Lektüre von Originalautoren (Nepos, Caesar, Ovid, Cicero …). Je nach Land wird das Latinum (KMK-Vereinbarung 2005) am Ende von Kl. 10 oder 11 erworben. Die Abituranforderungen folgen den KMK EPA Latein (2005); KMK-Bildungsstandards für Latein gibt es nicht.",
+   "descriptionRo": "Latina este aleasă de mulți elevi de Gymnasium ca a doua limbă străină, de regulă din Kl. 6 (de ex. Bayern, Baden-Württemberg, Niedersachsen, Hamburg, Sachsen, Saarland) sau din Kl. 7 (NRW G9, Berlin, Schleswig-Holstein); unele școli o predau ca primă limbă străină din Kl. 5, ca a treia limbă din Kl. 8/9 sau ca disciplină nouă în Oberstufe. Trei–patru ani de învățare a limbii pe bază de manual duc, din Kl. 9/10, la lectura autorilor originali (Nepos, Caesar, Ovidiu, Cicero …). În funcție de land, Latinum (acordul KMK din 2005) se acordă la sfârșitul Kl. 10 sau 11. Cerințele pentru Abitur urmează KMK EPA Latein (2005); pentru latină nu există KMK Bildungsstandards.",
    "domains": [
     {
      "name": "Wortschatz",
      "nameEn": "Vocabulary",
+     "nameRo": "Vocabular",
      "basis": "Wortschatz (BW Bildungsplan Latein 3.x.1; KLP NRW G9 Sprachkompetenz; LehrplanPLUS Bayern Lernbereich 2.1); KMK EPA Latein 1.3.1",
+     "basisDe": "Wortschatz (BW Bildungsplan Latein 3.x.1; KLP NRW G9 Sprachkompetenz; LehrplanPLUS Bayern Lernbereich 2.1); KMK EPA Latein 1.3.1",
+     "basisRo": "Vocabular (BW Bildungsplan Latein 3.x.1; KLP NRW G9 Sprachkompetenz; LehrplanPLUS Bayern Lernbereich 2.1); KMK EPA Latein 1.3.1",
      "topicCount": 3
     },
     {
      "name": "Formenlehre",
      "nameEn": "Morphology (Inflection)",
+     "nameRo": "Morfologie (flexiune)",
      "basis": "Formenlehre (BW Bildungsplan Latein 3.x.3; KLP NRW G9 Inhaltsfeld 3 Sprachsystem; LehrplanPLUS Bayern Lernbereich 2.2)",
+     "basisDe": "Formenlehre (BW Bildungsplan Latein 3.x.3; KLP NRW G9 Inhaltsfeld 3 Sprachsystem; LehrplanPLUS Bayern Lernbereich 2.2)",
+     "basisRo": "Morfologie – Formenlehre (BW Bildungsplan Latein 3.x.3; KLP NRW G9 Inhaltsfeld 3 Sprachsystem; LehrplanPLUS Bayern Lernbereich 2.2)",
      "topicCount": 14
     },
     {
      "name": "Satzlehre",
      "nameEn": "Syntax",
+     "nameRo": "Sintaxă",
      "basis": "Satzlehre (BW Bildungsplan Latein 3.x.2; KLP NRW G9 Inhaltsfeld 3 Sprachsystem; LehrplanPLUS Bayern Lernbereich 2.3)",
+     "basisDe": "Satzlehre (BW Bildungsplan Latein 3.x.2; KLP NRW G9 Inhaltsfeld 3 Sprachsystem; LehrplanPLUS Bayern Lernbereich 2.3)",
+     "basisRo": "Sintaxă – Satzlehre (BW Bildungsplan Latein 3.x.2; KLP NRW G9 Inhaltsfeld 3 Sprachsystem; LehrplanPLUS Bayern Lernbereich 2.3)",
      "topicCount": 14
     },
     {
      "name": "Textkompetenz",
      "nameEn": "Text Skills: Decoding, Translating, Interpreting",
+     "nameRo": "Competență textuală: descifrare, traducere, interpretare",
      "basis": "Textkompetenz: Texterschließung, Übersetzung, Interpretation (KMK EPA Latein 1.3.2; KLP NRW G9; BW Bildungsplan 3.x.4 Texte und Literatur)",
+     "basisDe": "Textkompetenz: Texterschließung, Übersetzung, Interpretation (KMK EPA Latein 1.3.2; KLP NRW G9; BW Bildungsplan 3.x.4 Texte und Literatur)",
+     "basisRo": "Textkompetenz: descifrarea textului (Texterschließung), traducere, interpretare (KMK EPA Latein 1.3.2; KLP NRW G9; BW Bildungsplan 3.x.4 Texte und Literatur)",
      "topicCount": 9
     },
     {
      "name": "Lektüre und Literaturkompetenz",
      "nameEn": "Reading Latin Authors",
+     "nameRo": "Lectura autorilor latini",
      "basis": "Lektüre of original authors (KMK EPA Latein 1.3.2.2; KLP NRW Inhaltsfeld Antike Welt › Literatur; LehrplanPLUS Bayern Lernbereich 1 from Jgst. 9; BW 3.x.4 Texte und Literatur)",
+     "basisDe": "Lektüre von Originalautoren (KMK EPA Latein 1.3.2.2; KLP NRW Inhaltsfeld Antike Welt › Literatur; LehrplanPLUS Bayern Lernbereich 1 ab Jgst. 9; BW 3.x.4 Texte und Literatur)",
+     "basisRo": "Lectura (Lektüre) autorilor originali (KMK EPA Latein 1.3.2.2; KLP NRW Inhaltsfeld Antike Welt › Literatur; LehrplanPLUS Bayern Lernbereich 1 din Jgst. 9; BW 3.x.4 Texte und Literatur)",
      "topicCount": 10
     },
     {
      "name": "Kulturkompetenz",
      "nameEn": "Roman Culture and Its Reception",
+     "nameRo": "Cultura romană și receptarea ei",
      "basis": "Antike Kultur und ihr Fortwirken (KMK EPA Latein 1.3.3; KLP NRW G9 Inhaltsfeld 1 Antike Welt; BW Bildungsplan 3.x.5; LehrplanPLUS Bayern Lernbereich 3 Kultureller Kontext)",
+     "basisDe": "Antike Kultur und ihr Fortwirken (KMK EPA Latein 1.3.3; KLP NRW G9 Inhaltsfeld 1 Antike Welt; BW Bildungsplan 3.x.5; LehrplanPLUS Bayern Lernbereich 3 Kultureller Kontext)",
+     "basisRo": "Cultura antică și influența ei ulterioară – Antike Kultur und ihr Fortwirken (KMK EPA Latein 1.3.3; KLP NRW G9 Inhaltsfeld 1 Antike Welt; BW Bildungsplan 3.x.5; LehrplanPLUS Bayern Lernbereich 3 Kultureller Kontext)",
      "topicCount": 11
     },
     {
      "name": "Sprachreflexion",
      "nameEn": "Language Reflection and Comparison",
+     "nameRo": "Reflecție lingvistică și comparație între limbi",
      "basis": "Sprachreflexion: Latein als Basissprache, Sprachvergleich mit Deutsch und modernen Fremdsprachen (KLP NRW G9 Sprachkompetenz; BW 3.x.1 Wortschatz; KMK EPA Latein 1.3.1.1)",
+     "basisDe": "Sprachreflexion: Latein als Basissprache, Sprachvergleich mit Deutsch und modernen Fremdsprachen (KLP NRW G9 Sprachkompetenz; BW 3.x.1 Wortschatz; KMK EPA Latein 1.3.1.1)",
+     "basisRo": "Reflecție lingvistică (Sprachreflexion): latina ca limbă de bază, comparație cu germana și cu limbile străine moderne (KLP NRW G9 Sprachkompetenz; BW 3.x.1 Wortschatz; KMK EPA Latein 1.3.1.1)",
      "topicCount": 3
     }
    ],
@@ -1353,77 +1968,113 @@
   {
    "name": "Naturwissenschaften",
    "nameEn": "Natural Sciences",
+   "nameRo": "Științe ale naturii",
    "tier": "core",
    "grades": [
     5,
     6
    ],
    "description": "In Kl. 5/6 the sciences are taught either as an integrated subject (BW 'Biologie, Naturphänomene und Technik', Bayern 'Natur und Technik', Berlin/Brandenburg 'Naturwissenschaften 5/6') or as separate Biologie and Physik (NRW Gymnasium, Erprobungsstufe); Chemie usually starts in Kl. 7, but substance properties and separation appear in the integrated subjects.",
+   "descriptionDe": "In Kl. 5/6 werden die Naturwissenschaften entweder als integriertes Fach (BW „Biologie, Naturphänomene und Technik“, Bayern „Natur und Technik“, Berlin/Brandenburg „Naturwissenschaften 5/6“) oder getrennt als Biologie und Physik (NRW Gymnasium, Erprobungsstufe) unterrichtet; Chemie beginnt meist in Kl. 7, Stoffeigenschaften und Trennverfahren kommen aber bereits in den integrierten Fächern vor.",
+   "descriptionRo": "În Kl. 5/6 științele sunt predate fie ca disciplină integrată (BW „Biologie, Naturphänomene und Technik”, Bayern „Natur und Technik”, Berlin/Brandenburg „Naturwissenschaften 5/6”), fie separat ca Biologie și Physik (Gymnasium din NRW, Erprobungsstufe); Chemie începe de regulă în Kl. 7, dar proprietățile substanțelor și separarea amestecurilor apar în disciplinele integrate.",
    "domains": [
     {
      "name": "Naturwissenschaftliches Arbeiten",
      "nameEn": "Scientific Working Methods",
+     "nameRo": "Metode de lucru științifice",
      "basis": "BW BNT 3.1.1 'Denk- und Arbeitsweisen der Naturwissenschaften und der Technik'; NRW KLP Kompetenzbereich Erkenntnisgewinnung",
+     "basisDe": "BW BNT 3.1.1 „Denk- und Arbeitsweisen der Naturwissenschaften und der Technik“; NRW KLP Kompetenzbereich Erkenntnisgewinnung",
+     "basisRo": "BW BNT 3.1.1 „Denk- und Arbeitsweisen der Naturwissenschaften und der Technik”; NRW KLP, domeniul de competență Erkenntnisgewinnung",
      "topicCount": 6
     },
     {
      "name": "Lebewesen und Zelle",
      "nameEn": "Living Things and the Cell",
+     "nameRo": "Organisme vii și celula",
      "basis": "NRW KLP Biologie IF1 'Naturwissenschaft Biologie – Merkmale von Lebewesen'",
+     "basisDe": "NRW KLP Biologie IF1 „Naturwissenschaft Biologie – Merkmale von Lebewesen“",
+     "basisRo": "NRW KLP Biologie IF1 „Naturwissenschaft Biologie – Merkmale von Lebewesen”",
      "topicCount": 3
     },
     {
      "name": "Tiere und ihre Angepasstheit",
      "nameEn": "Animals and Adaptation",
+     "nameRo": "Animalele și adaptarea lor",
      "basis": "BW BNT 3.1.5 Wirbeltiere, 3.1.7 Wirbellose; NRW KLP Biologie IF1 'Vielfalt und Angepasstheiten von Wirbeltieren'",
+     "basisDe": "BW BNT 3.1.5 Wirbeltiere, 3.1.7 Wirbellose; NRW KLP Biologie IF1 „Vielfalt und Angepasstheiten von Wirbeltieren“",
+     "basisRo": "BW BNT 3.1.5 Wirbeltiere, 3.1.7 Wirbellose; NRW KLP Biologie IF1 „Vielfalt und Angepasstheiten von Wirbeltieren”",
      "topicCount": 10
     },
     {
      "name": "Pflanzen",
      "nameEn": "Flowering Plants",
+     "nameRo": "Plante cu flori",
      "basis": "BW BNT 3.1.8 Pflanzen; NRW KLP Biologie IF1 'Vielfalt und Angepasstheiten von Samenpflanzen'",
+     "basisDe": "BW BNT 3.1.8 Pflanzen; NRW KLP Biologie IF1 „Vielfalt und Angepasstheiten von Samenpflanzen“",
+     "basisRo": "BW BNT 3.1.8 Pflanzen; NRW KLP Biologie IF1 „Vielfalt und Angepasstheiten von Samenpflanzen”",
      "topicCount": 7
     },
     {
      "name": "Der menschliche Körper",
      "nameEn": "The Human Body",
+     "nameRo": "Corpul omenesc",
      "basis": "NRW KLP Biologie IF2 'Mensch und Gesundheit'; RLP BB Naturwissenschaften 5/6 Themenfeld 3.7 'Körper und Gesundheit'",
+     "basisDe": "NRW KLP Biologie IF2 „Mensch und Gesundheit“; RLP BB Naturwissenschaften 5/6 Themenfeld 3.7 „Körper und Gesundheit“",
+     "basisRo": "NRW KLP Biologie IF2 „Mensch und Gesundheit”; RLP BB Naturwissenschaften 5/6 Themenfeld 3.7 „Körper und Gesundheit”",
      "topicCount": 6
     },
     {
      "name": "Sexualerziehung",
      "nameEn": "Puberty and Sex Education",
+     "nameRo": "Pubertate și educație sexuală",
      "basis": "BW BNT 3.1.6 Entwicklung des Menschen; NRW KLP Biologie IF3 Sexualerziehung",
+     "basisDe": "BW BNT 3.1.6 Entwicklung des Menschen; NRW KLP Biologie IF3 Sexualerziehung",
+     "basisRo": "BW BNT 3.1.6 Entwicklung des Menschen; NRW KLP Biologie IF3 Sexualerziehung",
      "topicCount": 3
     },
     {
      "name": "Ökologie und Umwelt",
      "nameEn": "Ecology and Environment",
+     "nameRo": "Ecologie și mediu",
      "basis": "BW BNT 3.1.9 Ökologie, 3.1.2 'Materialien trennen – Umwelt schützen'",
+     "basisDe": "BW BNT 3.1.9 Ökologie, 3.1.2 „Materialien trennen – Umwelt schützen“",
+     "basisRo": "BW BNT 3.1.9 Ökologie, 3.1.2 „Materialien trennen – Umwelt schützen”",
      "topicCount": 3
     },
     {
      "name": "Stoffe und Teilchen",
      "nameEn": "Substances and Particles",
+     "nameRo": "Substanțe și particule",
      "basis": "BW BNT 3.1.2/3.1.3 (Stoffe, Wasser); RLP BB Naturwissenschaften 5/6 Themenfeld 3.2 'Stoffe im Alltag'",
+     "basisDe": "BW BNT 3.1.2/3.1.3 (Stoffe, Wasser); RLP BB Naturwissenschaften 5/6 Themenfeld 3.2 „Stoffe im Alltag“",
+     "basisRo": "BW BNT 3.1.2/3.1.3 (substanțe, apa); RLP BB Naturwissenschaften 5/6 Themenfeld 3.2 „Stoffe im Alltag”",
      "topicCount": 7
     },
     {
      "name": "Wärme und Energie",
      "nameEn": "Heat and Energy",
+     "nameRo": "Căldură și energie",
      "basis": "NRW KLP Physik IF1 'Temperatur und Wärme'; BW BNT 3.1.4 'Energie effizient nutzen'",
+     "basisDe": "NRW KLP Physik IF1 „Temperatur und Wärme“; BW BNT 3.1.4 „Energie effizient nutzen“",
+     "basisRo": "NRW KLP Physik IF1 „Temperatur und Wärme”; BW BNT 3.1.4 „Energie effizient nutzen”",
      "topicCount": 5
     },
     {
      "name": "Elektrizität und Magnetismus",
      "nameEn": "Electricity and Magnetism",
+     "nameRo": "Electricitate și magnetism",
      "basis": "NRW KLP Physik IF2 'Elektrischer Strom und Magnetismus'",
+     "basisDe": "NRW KLP Physik IF2 „Elektrischer Strom und Magnetismus“",
+     "basisRo": "NRW KLP Physik IF2 „Elektrischer Strom und Magnetismus”",
      "topicCount": 6
     },
     {
      "name": "Licht und Schall",
      "nameEn": "Light and Sound",
+     "nameRo": "Lumină și sunet",
      "basis": "NRW KLP Physik IF3 'Schall', IF4 'Licht'",
+     "basisDe": "NRW KLP Physik IF3 „Schall“, IF4 „Licht“",
+     "basisRo": "NRW KLP Physik IF3 „Schall”, IF4 „Licht”",
      "topicCount": 5
     }
    ],

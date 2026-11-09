@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-06",
+ "generatedAt": "2026-11-09",
  "jurisdictions": {
   "GB": "England (UK NC)",
   "US": "USA (CCSS/NGSS)",
@@ -233,6 +233,7 @@
  "deByStage": [
   {
    "stage": "Grundschule (Vorschule–Kl. 4)",
+   "range": "0-4",
    "topics": 632,
    "strong": 318,
    "partial": 20,
@@ -241,6 +242,7 @@
   },
   {
    "stage": "Sek I (Kl. 5–10)",
+   "range": "5-10",
    "topics": 1094,
    "strong": 367,
    "partial": 39,
@@ -249,6 +251,7 @@
   },
   {
    "stage": "Oberstufe (Kl. 11–13)",
+   "range": "11-13",
    "topics": 499,
    "strong": 17,
    "partial": 5,
@@ -908,6 +911,7 @@
   "byStage": [
    {
     "stage": "Grundschule (Vorschule–Kl. 4)",
+    "range": "0-4",
     "n": 318,
     "medianDiff": 0,
     "byJurisdiction": {
@@ -931,6 +935,7 @@
    },
    {
     "stage": "Kl. 5–6",
+    "range": "5-6",
     "n": 183,
     "medianDiff": 2,
     "byJurisdiction": {
@@ -954,6 +959,7 @@
    },
    {
     "stage": "Kl. 7–10",
+    "range": "7-10",
     "n": 184,
     "medianDiff": 2,
     "byJurisdiction": {
@@ -977,6 +983,7 @@
    },
    {
     "stage": "Oberstufe (Kl. 11–13)",
+    "range": "11-13",
     "n": 17,
     "medianDiff": 5,
     "byJurisdiction": {
@@ -5802,8 +5809,8 @@
  },
  "prerequisiteAgreement": {
   "pairs": 1122,
-  "same": 68,
-  "agree": 462,
+  "same": 69,
+  "agree": 461,
   "reversed": 93,
   "unrelated": 499,
   "examplesReversed": [
@@ -14493,6 +14500,7 @@
    "deByStage": [
     {
      "stage": "Grundschule (Vorschule–Kl. 4)",
+     "range": "0-4",
      "topics": 632,
      "strong": 318,
      "partial": 20,
@@ -14501,6 +14509,7 @@
     },
     {
      "stage": "Sek I (Kl. 5–10)",
+     "range": "5-10",
      "topics": 1094,
      "strong": 367,
      "partial": 39,
@@ -14509,6 +14518,7 @@
     },
     {
      "stage": "Oberstufe (Kl. 11–13)",
+     "range": "11-13",
      "topics": 499,
      "strong": 17,
      "partial": 5,
@@ -15168,6 +15178,7 @@
     "byStage": [
      {
       "stage": "Grundschule (Vorschule–Kl. 4)",
+      "range": "0-4",
       "n": 318,
       "medianDiff": 0,
       "byJurisdiction": {
@@ -15191,6 +15202,7 @@
      },
      {
       "stage": "Kl. 5–6",
+      "range": "5-6",
       "n": 183,
       "medianDiff": 2,
       "byJurisdiction": {
@@ -15214,6 +15226,7 @@
      },
      {
       "stage": "Kl. 7–10",
+      "range": "7-10",
       "n": 184,
       "medianDiff": 2,
       "byJurisdiction": {
@@ -15237,6 +15250,7 @@
      },
      {
       "stage": "Oberstufe (Kl. 11–13)",
+      "range": "11-13",
       "n": 17,
       "medianDiff": 5,
       "byJurisdiction": {
@@ -20062,8 +20076,8 @@
    },
    "prerequisiteAgreement": {
     "pairs": 1122,
-    "same": 68,
-    "agree": 462,
+    "same": 69,
+    "agree": 461,
     "reversed": 93,
     "unrelated": 499,
     "examplesReversed": [
@@ -28699,6 +28713,7 @@
    "deByStage": [
     {
      "stage": "Grundschule (Vorschule–Kl. 4)",
+     "range": "0-4",
      "topics": 530,
      "strong": 310,
      "partial": 12,
@@ -28707,6 +28722,7 @@
     },
     {
      "stage": "Sek I (Kl. 5–10)",
+     "range": "5-10",
      "topics": 842,
      "strong": 357,
      "partial": 39,
@@ -28715,6 +28731,7 @@
     },
     {
      "stage": "Oberstufe (Kl. 11–13)",
+     "range": "11-13",
      "topics": 400,
      "strong": 17,
      "partial": 2,
@@ -29361,6 +29378,7 @@
     "byStage": [
      {
       "stage": "Grundschule (Vorschule–Kl. 4)",
+      "range": "0-4",
       "n": 310,
       "medianDiff": 0,
       "byJurisdiction": {
@@ -29384,6 +29402,7 @@
      },
      {
       "stage": "Kl. 5–6",
+      "range": "5-6",
       "n": 180,
       "medianDiff": 2,
       "byJurisdiction": {
@@ -29407,6 +29426,7 @@
      },
      {
       "stage": "Kl. 7–10",
+      "range": "7-10",
       "n": 177,
       "medianDiff": 2,
       "byJurisdiction": {
@@ -29430,6 +29450,7 @@
      },
      {
       "stage": "Oberstufe (Kl. 11–13)",
+      "range": "11-13",
       "n": 17,
       "medianDiff": 5,
       "byJurisdiction": {
@@ -34114,8 +34135,8 @@
    },
    "prerequisiteAgreement": {
     "pairs": 1097,
-    "same": 64,
-    "agree": 454,
+    "same": 65,
+    "agree": 453,
     "reversed": 92,
     "unrelated": 487,
     "examplesReversed": [

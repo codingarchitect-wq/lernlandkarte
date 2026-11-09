@@ -3,7 +3,7 @@
 // Same technique as the os-taxonomy preview (media/curriculum-viz.*): height is the age a
 // topic starts, the cloud widens with age into a funnel, prerequisites are threads.
 // Positions are computed here (deterministic force layout); the page only projects and draws.
-// If ../os-taxonomy is present, its graph is laid out the same way so the two can be compared.
+// If ../os-taxonomy and ../ro-taxonomy are present, their graphs are laid out the same way so they can be compared.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { dirname, resolve, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -13,14 +13,14 @@ const J = p => JSON.parse(readFileSync(p, 'utf8'));
 
 // Eight colour families shared by both datasets (validated dark categorical palette).
 const FAMILIES = [
-  { key: 'math', color: '#3987e5', de: 'Mathematik', os: 'Mathematics' },
-  { key: 'lang', color: '#d95926', de: 'Deutsch', os: 'English' },
-  { key: 'su', color: '#199e70', de: 'Sachunterricht', os: '' },
-  { key: 'soc', color: '#c98500', de: 'Geschichte · Erdkunde · Politik und Wirtschaft', os: 'History · Geography' },
-  { key: 'arts', color: '#d55181', de: 'Musik · Kunst · Sport · Religion & Ethik', os: 'Personal & Social Development · Life Skills · Learning to Learn' },
-  { key: 'sci', color: '#008300', de: 'Naturwissenschaften · Biologie · Chemie · Physik', os: 'Science' },
-  { key: 'comp', color: '#9085e9', de: 'Informatik & Medienbildung', os: 'Computing' },
-  { key: 'en', color: '#e66767', de: 'Englisch · Französisch · Latein', os: '' },
+  { key: 'math', color: '#3987e5', de: 'Mathematik', os: 'Mathematics', ro: 'Matematică' },
+  { key: 'lang', color: '#d95926', de: 'Deutsch', os: 'English', ro: 'Limba și literatura română' },
+  { key: 'su', color: '#199e70', de: 'Sachunterricht', os: '', ro: 'Științe ale naturii (CP–IV)' },
+  { key: 'soc', color: '#c98500', de: 'Geschichte · Erdkunde · Politik und Wirtschaft', os: 'History · Geography', ro: 'Istorie · Geografie · Educație civică și socială · Științe socio-umane' },
+  { key: 'arts', color: '#d55181', de: 'Musik · Kunst · Sport · Religion & Ethik', os: 'Personal & Social Development · Life Skills · Learning to Learn', ro: 'Muzică · Arte vizuale · Educație fizică · Religie · Educație tehnologică · Dezvoltare personală' },
+  { key: 'sci', color: '#008300', de: 'Naturwissenschaften · Biologie · Chemie · Physik', os: 'Science', ro: 'Biologie · Fizică · Chimie' },
+  { key: 'comp', color: '#9085e9', de: 'Informatik & Medienbildung', os: 'Computing', ro: 'Informatică și TIC' },
+  { key: 'en', color: '#e66767', de: 'Englisch · Französisch · Latein', os: '', ro: 'Limba engleză · Limba franceză · Limba latină' },
 ];
 const FAM_OF = {
   Mathematik: 'math', Deutsch: 'lang', Sachunterricht: 'su', Geschichte: 'soc', Erdkunde: 'soc', 'Politik und Wirtschaft': 'soc',
@@ -28,7 +28,13 @@ const FAM_OF = {
   'Informatik & Medienbildung': 'comp', Englisch: 'en', Französisch: 'en', Latein: 'en',
   Mathematics: 'math', English: 'lang', History: 'soc', Geography: 'soc', 'Personal & Social Development': 'arts', 'Life Skills': 'arts',
   'Learning to Learn': 'arts', Science: 'sci', Computing: 'comp',
+  'Matematică': 'math', 'Limba și literatura română': 'lang', 'Științe ale naturii': 'su', 'Istorie': 'soc', 'Geografie': 'soc',
+  'Educație civică și socială': 'soc', 'Științe socio-umane': 'soc', 'Educație muzicală': 'arts', 'Arte vizuale': 'arts',
+  'Educație fizică și sport': 'arts', 'Religie': 'arts', 'Educație tehnologică': 'arts', 'Dezvoltare personală și consiliere': 'arts',
+  'Fizică': 'sci', 'Chimie': 'sci', 'Informatică și TIC': 'comp', 'Limba engleză': 'en', 'Limba franceză': 'en', 'Limba latină': 'en',
 };
+// names and texts as maps { en, de, ro } (languages without a translation are left out)
+const M = (en, de, ro) => Object.fromEntries(Object.entries({ en, de, ro }).filter(([, v]) => v != null && v !== ''));
 const famIndex = s => { const k = FAM_OF[s]; const i = FAMILIES.findIndex(f => f.key === k); if (i < 0) throw new Error('No colour family for subject ' + s); return i; };
 
 // ---------- layout ----------
@@ -103,7 +109,7 @@ const dePos = layout(deTopics.map(t => ({ age: t.ageRangeStart, dom: t.subject +
 const de = {
   nodes: deTopics.map((t, i) => ({
     p: dePos[i], f: famIndex(t.subject), c: t.centrality, a: [t.ageRangeStart, t.ageRangeEnd], g: [t.gradeStart, t.gradeEnd],
-    k: t.key, n: t.nameDe, ne: t.name, s: t.subject, d: t.domain, ds: t.description, q: t.assessmentPrompt,
+    k: t.key, N: M(t.name, t.nameDe, t.nameRo), s: t.subject, d: t.domain, DS: M(t.description, t.descriptionDe, t.descriptionRo), Q: M(t.assessmentPrompt, t.assessmentPromptDe, t.assessmentPromptRo),
     x: TIER[t.subject] === 'extended' ? 1 : 0, cl: t.courseLevel || null,
   })),
   edges: deEdges,
@@ -119,15 +125,54 @@ if (existsSync(join(osDir, 'topics.json'))) {
   const osEdges = osDeps.filter(e => osIdx.has(e.topicId) && osIdx.has(e.prerequisiteId)).map(e => [osIdx.get(e.topicId), osIdx.get(e.prerequisiteId), e.strength === 'hard' ? 1 : 0]);
   const osPos = layout(osTopics.map(t => ({ age: t.ageRangeStart, dom: t.subject + '|' + t.domain, c: t.centrality ?? 0 })), osEdges, 4003);
   os = {
-    nodes: osTopics.map((t, i) => ({ p: osPos[i], f: famIndex(t.subject), c: t.centrality ?? 0, a: [t.ageRangeStart, t.ageRangeEnd], k: t.id, n: t.name, s: t.subject, d: t.domain, q: t.assessmentPrompt })),
+    nodes: osTopics.map((t, i) => ({ p: osPos[i], f: famIndex(t.subject), c: t.centrality ?? 0, a: [t.ageRangeStart, t.ageRangeEnd], k: t.id, N: M(t.name), s: t.subject, d: t.domain, Q: M(t.assessmentPrompt) })),
     edges: osEdges,
   };
   const REL = { exact: 0, close: 1, broader: 2, narrower: 3 };
   cross = cw.filter(l => l.relation in REL && deIdx.has(l.deId) && osIdx.has(l.osId)).map(l => [deIdx.get(l.deId), osIdx.get(l.osId), REL[l.relation]]);
 }
 
-const payload = { generatedAt: new Date().toISOString().slice(0, 10), AGE0, STEP, families: FAMILIES, de, os, cross };
+// ---------- Romanian taxonomy (optional) ----------
+let ro = null, crossRo = [];
+const roDir = resolve(root, '../ro-taxonomy/data');
+if (existsSync(join(roDir, 'topics.json'))) {
+  const roTopics = J(join(roDir, 'topics.json')).topics;
+  const roDeps = J(join(roDir, 'dependencies.json')).dependencies;
+  const roTier = Object.fromEntries(J(join(roDir, 'subjects.json')).subjects.map(s => [s.name, s.tier || 'core']));
+  const roIdx = new Map(roTopics.map((t, i) => [t.id, i]));
+  const roEdges = roDeps.map(e => [roIdx.get(e.topicId), roIdx.get(e.prerequisiteId), e.strength === 'hard' ? 1 : 0]);
+  const roPos = layout(roTopics.map(t => ({ age: t.ageRangeStart, dom: t.subject + '|' + t.domain, c: t.centrality })), roEdges, 1859);
+  ro = {
+    nodes: roTopics.map((t, i) => ({
+      p: roPos[i], f: famIndex(t.subject), c: t.centrality, a: [t.ageRangeStart, t.ageRangeEnd], g: [t.gradeStart, t.gradeEnd],
+      k: t.key, N: M(t.name, t.nameDe, t.nameRo), s: t.subject, d: t.domain, DS: M(t.description, t.descriptionDe, t.descriptionRo), Q: M(t.assessmentPrompt, t.assessmentPromptDe, t.assessmentPromptRo),
+      x: roTier[t.subject] === 'extended' ? 1 : 0, cl: t.profiles || null,
+    })),
+    edges: roEdges,
+  };
+  const deKeyIdx = new Map(deTopics.map((t, i) => [t.key, i]));
+  const REL = { exact: 0, close: 1, broader: 2, narrower: 3 };
+  crossRo = J(join(roDir, 'crosswalk-de-taxonomy.json')).links.filter(l => l.relation in REL && roIdx.has(l.roId) && deKeyIdx.has(l.deKey)).map(l => [roIdx.get(l.roId), deKeyIdx.get(l.deKey), REL[l.relation]]);
+}
+
+// Legend labels per family, composed from the subject names in each language (and without the extended subjects
+// for "Core only"): famLabels[dataset][family] = { all: { en, de, ro }, core: { en, de, ro } }
+const SUBJ_ORDER = Object.keys(FAM_OF);
+function famLabels(subjectsFile, nativeLang) {
+  const subs = J(subjectsFile).subjects.map(s => ({ name: s.name, tier: s.tier || 'core', names: M(s.nameEn, nativeLang === 'de' ? s.name : s.nameDe, nativeLang === 'ro' ? s.name : s.nameRo) }))
+    .sort((a, b) => SUBJ_ORDER.indexOf(a.name) - SUBJ_ORDER.indexOf(b.name));
+  return FAMILIES.map(f => {
+    const ss = subs.filter(s => FAM_OF[s.name] === f.key);
+    const lab = (lang, core) => ss.filter(s => !core || s.tier !== 'extended').map(s => s.names[lang] || s.names.en).join(' · ');
+    return { all: { en: lab('en'), de: lab('de'), ro: lab('ro') }, core: { en: lab('en', 1), de: lab('de', 1), ro: lab('ro', 1) } };
+  });
+}
+const labels = { de: famLabels(join(root, 'data/subjects.json'), 'de') };
+if (ro) labels.ro = famLabels(join(roDir, 'subjects.json'), 'ro');
+
+// cross links: deOs = [German index, os index, relation]; roDe = [Romanian index, German index, relation]
+const payload = { generatedAt: new Date().toISOString().slice(0, 10), AGE0, STEP, families: FAMILIES, famLabels: labels, de, os, ro, cross: { deOs: cross, roDe: crossRo } };
 const json = JSON.stringify(payload).replace(/</g, '\\u003c');
 const html = readFileSync(join(root, 'scripts/graph-template.html'), 'utf8').replace('__DATA__', () => json);
 writeFileSync(join(root, 'graph.html'), html);
-console.log(`graph written: ${join(root, 'graph.html')} (${Math.round(html.length / 1024)} KB; ${de.nodes.length} German topics${os ? `, ${os.nodes.length} os-taxonomy topics` : ''})`);
+console.log(`graph written: ${join(root, 'graph.html')} (${Math.round(html.length / 1024)} KB; ${de.nodes.length} German topics${os ? `, ${os.nodes.length} os-taxonomy topics` : ''}${ro ? `, ${ro.nodes.length} Romanian topics` : ''})`);

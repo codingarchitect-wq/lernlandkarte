@@ -1,0 +1,232 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Romanian Curriculum Taxonomy — topics",
+ "description": "Same shape as the German taxonomy's topics, with Romanian fields (key, nameRo, subjectEn/domainEn, grades, stage, profiles, romaniaSpecific, notes). Grades: 0 = clasa pregătitoare, 1–12 = clasele I–XII. Ages are derived: ageRangeStart = gradeStart + 6, ageRangeEnd = gradeEnd + 7.",
+ "type": "object",
+ "required": [
+  "version",
+  "topicCount",
+  "topics"
+ ],
+ "additionalProperties": false,
+ "properties": {
+  "version": {
+   "type": "string"
+  },
+  "topicCount": {
+   "type": "integer",
+   "minimum": 0
+  },
+  "topics": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "id",
+     "key",
+     "type",
+     "subject",
+     "domain",
+     "name",
+     "nameRo",
+     "description",
+     "gradeStart",
+     "gradeEnd",
+     "stage",
+     "ageRangeStart",
+     "ageRangeEnd",
+     "evidence",
+     "assessmentPrompt",
+     "standards",
+     "romaniaSpecific"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "^ro_[A-Za-z0-9_-]{10}$"
+     },
+     "key": {
+      "type": "string",
+      "pattern": "^[a-z]{2}-[a-z0-9-]+$"
+     },
+     "type": {
+      "enum": [
+       "CONCEPTUAL",
+       "PROCEDURAL",
+       "REPRESENTATIONAL",
+       "LANGUAGE",
+       "META"
+      ]
+     },
+     "subject": {
+      "type": "string"
+     },
+     "subjectEn": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "domain": {
+      "type": "string"
+     },
+     "domainEn": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "name": {
+      "type": "string"
+     },
+     "nameRo": {
+      "type": "string"
+     },
+     "description": {
+      "type": "string",
+      "minLength": 20
+     },
+     "descriptionRo": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "description": "Romanian version of description"
+     },
+     "gradeStart": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 12
+     },
+     "gradeEnd": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 12
+     },
+     "stage": {
+      "enum": [
+       "Învățământ primar",
+       "Învățământ gimnazial",
+       "Învățământ liceal"
+      ]
+     },
+     "profiles": {
+      "type": [
+       "array",
+       "null"
+      ],
+      "items": {
+       "enum": [
+        "MI",
+        "SN",
+        "SS",
+        "FIL"
+       ]
+      },
+      "description": "Liceu only: theoretical specialisations that teach the topic (MI matematică-informatică, SN științe ale naturii, SS științe sociale, FIL filologie)"
+     },
+     "ageRangeStart": {
+      "type": "integer"
+     },
+     "ageRangeEnd": {
+      "type": "integer"
+     },
+     "centrality": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+     },
+     "evidence": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+       "type": "string"
+      }
+     },
+     "evidenceRo": {
+      "type": [
+       "array",
+       "null"
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+       "type": "string"
+      }
+     },
+     "assessmentPrompt": {
+      "type": "string",
+      "pattern": "\\{\\{name\\}\\}"
+     },
+     "assessmentPromptRo": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "pattern": "\\{\\{name\\}\\}"
+     },
+     "standards": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "pattern": "^[^:\\s]+:.+$"
+      }
+     },
+     "romaniaSpecific": {
+      "type": "boolean"
+     },
+     "notes": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "notesRo": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "nameDe": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "descriptionDe": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "evidenceDe": {
+      "type": [
+       "array",
+       "null"
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+       "type": "string"
+      }
+     },
+     "assessmentPromptDe": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "pattern": "\\{\\{name\\}\\}"
+     },
+     "notesDe": {
+      "type": [
+       "string",
+       "null"
+      ]
+     }
+    }
+   }
+  }
+ }
+}

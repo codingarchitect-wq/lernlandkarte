@@ -52,28 +52,28 @@
  },
  "files": {
   "topics.json": {
-   "sha256": "453f3e395a487d941fada16716d8e070c2eed3eb2e6aea252949a9907f5f3db7",
-   "bytes": 3052669
+   "sha256": "e834f37566c02d06693785aad1095c4f5403d2438432c67e2ea8e40214af38b4",
+   "bytes": 6778364
   },
   "dependencies.json": {
-   "sha256": "2638465b06d278e754c0e0de0896d20861cdef1e572246c94b82daae79244b6d",
-   "bytes": 821496
+   "sha256": "54e98e7ee5176494fa8a8c9a95bdb91b611bee0fd3cc073725a4c5d6cb0c5904",
+   "bytes": 1431075
   },
   "curriculum-standards.json": {
-   "sha256": "2257e4d5a63698f95c12400fba48bb1535eff84941ce1bc8f07e28175ee8c0a7",
-   "bytes": 1675063
+   "sha256": "3f1759002409ce56f857002af32bb2fb1fe31d84a60010ffecd908fdc4d8a7c2",
+   "bytes": 2171486
   },
   "clusters.json": {
-   "sha256": "b1f8453846cc2f544b03320e3d3c5df52cb7f6f7517d536c027e2c857ef63b8c",
-   "bytes": 257459
+   "sha256": "bf91f2a378f65a1a5708c86b2cbc8a0549aa0b4eb930bf22db83c9ecab19fa40",
+   "bytes": 370766
   },
   "subjects.json": {
-   "sha256": "614ec77ffbde398d51084efbc1c51124ff84515a22a3198b5a0ac32a9d23765a",
-   "bytes": 65157
+   "sha256": "3dc095fb759bde2930a5cd4f6adfbd68a492af908d7014fc096e88b8f86eaee3",
+   "bytes": 157545
   },
   "crosswalk-os-taxonomy.json": {
-   "sha256": "111977373c51acba0ddad793f1184b9b039f3fb389d02ea8e38fe53421701497",
-   "bytes": 332395
+   "sha256": "406ef6b478f8799fa50b96cbc381495eb226e863948f6f68e71dffc082c9e4b7",
+   "bytes": 486245
   }
  }
 }

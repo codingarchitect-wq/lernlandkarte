@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>German curriculum taxonomy · Vorschule–Klasse 13</title>
+<title>Lernlandkarte</title>
 <style>
 .viz-root {
   color-scheme: light;
@@ -142,33 +142,33 @@ footer { margin-top: 28px; font-size: 12px; color: var(--muted); line-height: 1.
 <div class="viz-root">
 <div class="top">
   <div>
-    <h1>German curriculum taxonomy · Vorschule–Klasse 13</h1>
-    <p class="sub" style="max-width:860px">What children learn in German schools from Vorschule to the Abitur (Gymnasium from Klasse 7, G9 numbering), as small teachable topics linked by prerequisites. Built from the KMK Bildungsstandards, the GDSU Perspektivrahmen Sachunterricht and Länder curricula (NRW, Bayern, Baden-Württemberg, Berlin/Brandenburg, Niedersachsen). Version <span id="ver"></span>, generated <span id="gen"></span>. <a class="xl" href="graph.html">See it as a 3D map →</a> · <a class="xl" href="../comparison/index.html">Compare with os-taxonomy →</a></p>
+    <h1 id="title"></h1>
+    <p class="sub" style="max-width:860px" id="intro"></p>
   </div>
   <div class="ctl">
-    <span>Subjects</span>
-    <div class="toggle" id="tier" role="group" aria-label="Subjects shown"><button type="button" data-tier="all">All</button><button type="button" data-tier="core" title="Hide Französisch, Latein, Musik, Kunst, Sport and Religion &amp; Ethik">Core only</button></div>
-    <span>Names</span>
-    <div class="toggle" id="lang" role="group" aria-label="Topic name language"><button type="button" data-lang="de" aria-pressed="true">Deutsch</button><button type="button" data-lang="en" aria-pressed="false">English</button></div>
-    <button class="btn" id="theme" type="button" aria-label="Toggle light or dark theme">Theme</button>
+    <span id="lSubjects"></span>
+    <div class="toggle" id="tier" role="group"><button type="button" data-tier="all"></button><button type="button" data-tier="core"></button></div>
+    <span id="lLang"></span>
+    <div class="toggle" id="lang" role="group"><button type="button" data-lang="en">English</button><button type="button" data-lang="de">Deutsch</button><button type="button" data-lang="ro">Română</button></div>
+    <button class="btn" id="theme" type="button"></button>
   </div>
 </div>
 <div class="kpis" id="kpis"></div>
 <div class="tabs" role="tablist" id="tabs">
-  <button role="tab" aria-selected="true" data-tab="map">Curriculum map</button>
-  <button role="tab" aria-selected="false" data-tab="topics">All topics</button>
-  <button role="tab" aria-selected="false" data-tab="path">Learning paths</button>
-  <button role="tab" aria-selected="false" data-tab="parents">Parent summaries</button>
-  <button role="tab" aria-selected="false" data-tab="sources">Curriculum sources</button>
+  <button role="tab" aria-selected="true" data-tab="map"></button>
+  <button role="tab" aria-selected="false" data-tab="topics"></button>
+  <button role="tab" aria-selected="false" data-tab="path"></button>
+  <button role="tab" aria-selected="false" data-tab="parents"></button>
+  <button role="tab" aria-selected="false" data-tab="sources"></button>
 </div>
 
 <section data-panel="map">
   <div class="sbar" id="mapSubj"></div>
   <p class="sub" id="mapDesc" style="max-width:980px"></p>
   <div class="filters">
-    <input type="search" id="mapQ" placeholder="Highlight topics: search German or English…" aria-label="Highlight topics">
-    <div class="toggle" id="mapStage" role="group" aria-label="School stage"><button type="button" data-st="all" aria-pressed="true">All Klassen</button><button type="button" data-st="gs" aria-pressed="false">Vorschule–4</button><button type="button" data-st="s1" aria-pressed="false">5–10</button><button type="button" data-st="s2" aria-pressed="false">Oberstufe 11–13</button></div>
-    <label><input type="checkbox" id="mapX"> German-specific only</label>
+    <input type="search" id="mapQ">
+    <div class="toggle" id="mapStage" role="group"></div>
+    <label><input type="checkbox" id="mapX"> <span id="lMapX"></span></label>
     <span class="k" id="mapCount"></span>
   </div>
   <div class="legend" id="mapLegend"></div>
@@ -177,15 +177,15 @@ footer { margin-top: 28px; font-size: 12px; color: var(--muted); line-height: 1.
 
 <section data-panel="topics" hidden>
   <div class="filters">
-    <select id="fS" aria-label="Subject"></select>
-    <select id="fD" aria-label="Domain"></select>
-    <select id="fG" aria-label="Klasse"><option value="">All Klassen</option><option value="0">Vorschule</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option></select>
-    <select id="fL" aria-label="Oberstufe course level"><option value="">All course levels</option><option value="gA">Oberstufe: all courses (gA)</option><option value="eA">Oberstufe: Leistungskurs only (eA)</option></select>
-    <select id="fT" aria-label="Type"></select>
-    <select id="fO" aria-label="os-taxonomy match"><option value="">With or without os-taxonomy match</option><option value="1">Has an os-taxonomy counterpart</option><option value="0">No os-taxonomy counterpart</option></select>
-    <label><input type="checkbox" id="fX"> German-specific only</label>
-    <select id="fSort" aria-label="Sort"><option value="grade">Sort by Klasse</option><option value="name">Sort by name</option><option value="unlocks">Sort by most built upon</option></select>
-    <input type="search" id="fQ" placeholder="Search German or English…" aria-label="Search topics">
+    <select id="fS"></select>
+    <select id="fD"></select>
+    <select id="fG"></select>
+    <select id="fL"></select>
+    <select id="fT"></select>
+    <select id="fO"></select>
+    <label><input type="checkbox" id="fX"> <span id="lFX"></span></label>
+    <select id="fSort"></select>
+    <input type="search" id="fQ">
   </div>
   <p class="count" id="fCount"></p>
   <div class="list" id="fList"></div>
@@ -193,35 +193,32 @@ footer { margin-top: 28px; font-size: 12px; color: var(--muted); line-height: 1.
 
 <section data-panel="path" hidden>
   <div class="filters" style="position:relative">
-    <input type="search" id="pq" placeholder="Find a topic to centre the path on…" autocomplete="off" aria-label="Find a topic">
+    <input type="search" id="pq" autocomplete="off">
     <div class="sug" id="psug" hidden></div>
-    <label>Show <select id="pSteps"><option value="auto">full path (3 steps if more than 40 topics)</option><option value="1">direct prerequisites only</option><option value="2">2 steps back</option><option value="3">3 steps back</option><option value="all">full path</option></select></label>
-    <label><input type="checkbox" id="pUnl" checked> what it unlocks</label>
-    <button class="btn" id="pBack" type="button" disabled>← Back</button>
+    <label><span id="lShow"></span> <select id="pSteps"></select></label>
+    <label><input type="checkbox" id="pUnl" checked> <span id="lUnl"></span></label>
+    <button class="btn" id="pBack" type="button" disabled></button>
   </div>
   <div class="card" id="pFocus"></div>
-  <div class="legend"><span><i class="lg-node focus"></i>centre topic</span><span><i class="lg-node"></i>same subject</span><span><i class="lg-node other"></i>other subject</span>
-    <span><svg width="28" height="8" aria-hidden="true"><line x1="0" x2="28" y1="4" y2="4" class="gedge"/></svg> required first</span>
-    <span><svg width="28" height="8" aria-hidden="true"><line x1="0" x2="28" y1="4" y2="4" class="gedge soft"/></svg> helpful first</span>
-    <span class="k">Columns count steps back along the longest chain. Click a box to centre on it.</span></div>
+  <div class="legend" id="pLegend"></div>
   <div class="graphwrap" id="graph"></div>
   <div class="card" id="pList"></div>
 </section>
 
 <section data-panel="parents" hidden>
-  <p class="sub" style="max-width:900px">Short parent-facing summaries for each subject, domain and two-year band, in German and English (<code>data/clusters.json</code>). Use the <b>Names</b> switch to change language.</p>
+  <p class="sub" style="max-width:900px" id="parIntro"></p>
   <div class="sbar" id="parSubj"></div>
   <div class="card" style="overflow:auto" id="parBody"></div>
 </section>
 
 <section data-panel="sources" hidden>
-  <p class="sub" style="max-width:900px">The curriculum documents behind the taxonomy. Codes were constructed in document order (except the KMK digital-world framework, which has official numbering); titles are short paraphrases, not official wording. Click a row to see its codes and the topics linked to them.</p>
+  <p class="sub" style="max-width:900px" id="srcIntro"></p>
   <div class="card" style="overflow:auto"><table id="srcT"></table></div>
 </section>
 
-<footer>Research prototype, authored with AI assistance and not yet reviewed by German teachers. Klasse 7–13 follow the Gymnasium in G9 numbering (in G8 Länder everything from Klasse 7 happens about a year earlier); Oberstufe topics are marked gA (all courses) or eA (Leistungskurs only). Grade placement follows the typical or majority placement across the Länder; check the <i>Varies by Land</i> notes and your own Land's plan. <br>Lernlandkarte © 2026 Alexandru Prian: database ODbL 1.0, content CC BY-SA 4.0, code MIT · builds on and contains data from the Marble Skill Taxonomy (v1) · © Generative Spark, Inc. (Marble) · ODbL 1.0 / CC BY-SA 4.0 · <a href="https://github.com/codingarchitect-wq/lernlandkarte">Data and source on GitHub</a>.</footer>
+<footer id="footer"></footer>
 
-<aside class="drawer" id="drawer" aria-label="Details"><div class="bar"><button class="btn" id="dClose" type="button">Close ✕</button></div><div id="dBody"></div></aside>
+<aside class="drawer" id="drawer"><div class="bar"><button class="btn" id="dClose" type="button"></button></div><div id="dBody"></div></aside>
 <div class="tip" id="tip" role="tooltip"></div>
 </div>
 
@@ -231,6 +228,276 @@ const D = JSON.parse(document.getElementById('data').textContent);
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const tipA = h => `data-tip="${esc(h)}"`;
+
+// ---------- country and language ----------
+// One template serves the German and the Romanian taxonomy (D.cfg.country). The page language is the
+// country's language or English (?lang=en); it changes the interface, the topic names and, where the
+// data has them, the topic texts (ds/ev/ap/ln + "N" = native version).
+const CFG = D.cfg || { country: 'de', native: 'de' };
+const NAT = CFG.native;
+const ROMAN = ['CP', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
+const COUNTRY = {
+  de: {
+    ageOff: 5, maxGrade: 13, stages: [['gs', 0, 4, 'Vorschule–4'], ['s1', 5, 10, '5–10'], ['s2', 11, 13, 'Oberstufe 11–13']],
+    gl: g => g === 0 ? 'Vorschule' : `Kl. ${g}`, gEnd: g => String(g),
+    colLab: g => g === 0 ? 'Vorschule' : g === 11 ? 'Klasse 11 · E-Phase' : g === 12 ? 'Klasse 12 · Q1' : g === 13 ? 'Klasse 13 · Q2' : 'Klasse ' + g,
+    bandOf: g => g === 0 ? 0 : g <= 2 ? 1 : g <= 4 ? 3 : g <= 6 ? 5 : g <= 8 ? 7 : g <= 10 ? 9 : 11,
+    BAND: { 0: 'Vorschule', 1: 'Kl. 1–2', 3: 'Kl. 3–4', 5: 'Kl. 5–6', 7: 'Kl. 7–8', 9: 'Kl. 9–10', 11: 'Oberstufe (Kl. 11–13)' },
+    graph: 'graph.html', compare: '../comparison/index.html', compareTopic: (k, q) => `../comparison/index.html${q}#de/${k}`,
+    defaultPath: t => (D.topics.find(x => x.k === 'ma-zo-schriftliche-subtraktion') || t),
+    levels: ['gA', 'eA'], levelMatch: (t, v) => t.cl === v, levelLab: t => t.cl ? L('lvl.' + t.cl) : '', levelHard: t => t.cl === 'eA',
+    badge: t => t.cl === 'eA' ? ['LK', L('lvl.eA')] : null, region: s => s.region || L('src.de.scope'),
+    sortSources: (a, b) => (!!a.region - !!b.region) || a.region.localeCompare(b.region) || (b.name.startsWith('KMK') - a.name.startsWith('KMK')) || a.name.localeCompare(b.name),
+  },
+  ro: {
+    ageOff: 6, maxGrade: 12, stages: [['pr', 0, 4, 'Primar CP–IV'], ['gm', 5, 8, 'Gimnaziu V–VIII'], ['li', 9, 12, 'Liceu IX–XII']],
+    gl: g => g === 0 ? 'CP' : `cl. ${ROMAN[g]}`, gEnd: g => ROMAN[g],
+    colLab: g => g === 0 ? 'Clasa pregătitoare' : g === 1 ? 'Clasa I' : `Clasa a ${ROMAN[g]}-a`,
+    bandOf: g => g <= 2 ? 0 : g <= 4 ? 3 : g <= 6 ? 5 : g <= 8 ? 7 : g <= 10 ? 9 : 11,
+    BAND: { 0: 'CP–II', 3: 'cl. III–IV', 5: 'cl. V–VI', 7: 'cl. VII–VIII', 9: 'liceu IX–X', 11: 'liceu XI–XII' },
+    graph: '../de-taxonomy/graph.html#ro', compare: '../comparison-ro-de/index.html', compareTopic: (k, q) => `../comparison-ro-de/index.html${q}#ro/${k}`,
+    defaultPath: t => D.topics.filter(x => x.s === 'Matematică' && x.g[0] <= 8).reduce((b, x) => (depth(x.i) > depth(b.i) ? x : b), D.topics.find(x => x.s === 'Matematică') || t),
+    levels: ['all4', 'some', 'MI', 'SN', 'SS', 'FIL'],
+    levelMatch: (t, v) => !!t.cl && (v === 'all4' ? t.cl.length === 4 : v === 'some' ? t.cl.length < 4 : t.cl.includes(v)),
+    levelLab: t => !t.cl ? '' : t.cl.length === 4 ? L('prof.all') : L('prof.only', { list: t.cl.map(p => PROF[p]).join(', ') }),
+    levelHard: t => !!t.cl && t.cl.length < 4, badge: t => t.cl && t.cl.length < 4 ? [t.cl.join('·'), CFG_C.levelLab(t)] : null,
+    region: () => L('src.ro.scope'), sortSources: (a, b) => (a.first ?? 99) - (b.first ?? 99) || a.name.localeCompare(b.name, 'ro'),
+  },
+};
+const CFG_C = COUNTRY[CFG.country];
+const PROF = { MI: 'matematică-informatică', SN: 'științe ale naturii', SS: 'științe sociale', FIL: 'filologie' };
+
+// Interface strings. Country-specific keys end in ".de" / ".ro"; {x} are placeholders; "_one" is the singular.
+const I18N = {
+  en: {
+    'title.de': 'German curriculum taxonomy · Vorschule–Klasse 13',
+    'intro.de': 'What children learn in German schools from Vorschule to the Abitur (Gymnasium from Klasse 7, G9 numbering), as small teachable topics linked by prerequisites. Built from the KMK Bildungsstandards, the GDSU Perspektivrahmen Sachunterricht and Länder curricula (NRW, Bayern, Baden-Württemberg, Berlin/Brandenburg, Niedersachsen). Version {ver}, generated {gen}. {graph} · {compare}',
+    'link.graph': 'See it as a 3D map →', 'link.compare.de': 'Compare with os-taxonomy →',
+    'title.ro': 'Romanian curriculum taxonomy · clasa pregătitoare – a XII-a',
+    'intro.ro': 'What children learn in Romanian schools from clasa pregătitoare to the Bacalaureat (theoretical liceu: matematică-informatică, științe ale naturii, științe sociale, filologie), as small teachable topics linked by prerequisites. Built from the national <i>programe școlare</i> and <i>planuri-cadru</i>. Version {ver}, generated {gen}. {graph} · {compare}',
+    'link.compare.ro': 'Compare with the German taxonomy →',
+    subjects: 'Subjects', all: 'All', coreOnly: 'Core only', language: 'Language', theme: 'Theme', themeAria: 'Toggle light or dark theme',
+    'core.de': 'Hide Französisch, Latein, Musik, Kunst, Sport and Religion & Ethik',
+    'core.ro': 'Hide Limba franceză, Limba latină, Educație muzicală, Arte vizuale, Educație fizică și sport, Religie, Educație tehnologică and Dezvoltare personală și consiliere',
+    'tab.map': 'Curriculum map', 'tab.topics': 'All topics', 'tab.path': 'Learning paths', 'tab.parents': 'Parent summaries', 'tab.sources': 'Curriculum sources',
+    'kpi.topics': 'micro-topics in {s} subjects', 'kpi.core': ' (core only)', 'kpi.edges': 'prerequisite links ({h} required, {s} helpful)', 'kpi.sources': 'curriculum sources with {c} referenced codes',
+    'kpi.specific.de': 'topics specific to German schools', 'kpi.upper.de': 'Gymnasium topics from Klasse 7 to the Abitur',
+    'kpi.specific.ro': 'topics specific to Romanian schools', 'kpi.upper.ro': 'liceu topics, clasa IX–XII (theoretical track)',
+    'allGrades.de': 'All Klassen', 'allGrades.ro': 'All grades', 'specificOnly.de': 'German-specific only', 'specificOnly.ro': 'Romania-specific only',
+    'specific.de': 'German-specific', 'specific.ro': 'Romania-specific',
+    match: '{n} of {tot} topics match',
+    'mapCount.de': '{tot} topics · columns show the Klasse where a topic starts; “→ 4” means it continues to Klasse 4',
+    'mapCount.ro': '{tot} topics · columns show the grade where a topic starts; “→ IV” means it continues to clasa a IV-a',
+    domain: 'Domain', nTopics: '{n} topics', nTopics_one: '{n} topic', domainTip: 'Click for the domain overview and parent summaries', age: 'age {a}–{b}',
+    noTopicsStage: '{s} has no topics starting in this stage.',
+    mapHelp: 'Click a topic for details, its prerequisites and curriculum references. Click a domain name for its parent summaries.',
+    selected: 'selected', needsFirstN: 'needs first ({n})', leadsOnToN: 'leads on to ({n})', otherSubjectsHint: 'Links to other subjects are listed in the details panel.',
+    chipTip: '{p} prerequisites · leads on to {d}',
+    allSubjects: 'All subjects', allDomains: 'All domains', allDomainsPick: 'All domains (pick a subject)', allTypes: 'All types',
+    'lvl.all.de': 'All course levels', 'lvl.gA': 'all courses (gA)', 'lvl.eA': 'Leistungskurs only (eA)', 'lvlOpt.gA': 'Oberstufe: all courses (gA)', 'lvlOpt.eA': 'Oberstufe: Leistungskurs only (eA)',
+    'lvl.all.ro': 'All specialisations', 'lvlOpt.all4': 'Liceu: all four (trunchi comun)', 'lvlOpt.some': 'Liceu: only some specialisations', 'lvlOpt.prof': 'Liceu: {p}',
+    'prof.all': 'all four liceu specialisations', 'prof.only': '{list} only',
+    'match.any.de': 'With or without os-taxonomy match', 'match.yes.de': 'Has an os-taxonomy counterpart', 'match.no.de': 'No os-taxonomy counterpart',
+    'match.any.ro': 'With or without a German counterpart', 'match.yes.ro': 'Has a German counterpart', 'match.no.ro': 'No German counterpart',
+    'sort.grade.de': 'Sort by Klasse', 'sort.grade.ro': 'Sort by grade', 'sort.name': 'Sort by name', 'sort.unlocks': 'Sort by most built upon',
+    laterBuild: '{n} later topics build on it', laterBuild_one: '1 later topic builds on it', noMatches: 'No topics match these filters.',
+    pathFind: 'Find a topic to centre the path on…', show: 'Show', 'steps.auto': 'full path (3 steps if more than 40 topics)', 'steps.1': 'direct prerequisites only', 'steps.2': '2 steps back', 'steps.3': '3 steps back', 'steps.all': 'full path',
+    unlocks: 'what it unlocks', back: '← Back',
+    'lg.centre': 'centre topic', 'lg.same': 'same subject', 'lg.other': 'other subject', 'lg.required': 'required first', 'lg.helpful': 'helpful first', 'lg.help': 'Columns count steps back along the longest chain. Click a box to centre on it.',
+    before: '{n} topics come before this one', before_one: '1 topic comes before this one', showingWithin: '; showing the {m} within {k} steps', showingWithin_one: '; showing the {m} within 1 step',
+    buildDirect: '{n} build on it directly', details: 'Details',
+    'col.next': 'Leads on to', 'col.centre': 'Centre topic', 'col.direct': 'Directly before', 'col.steps': '{k} steps before', pathAria: 'Learning path graph',
+    required: 'Required', helpful: 'Helpful', 'tip.centre': 'Centre topic: click for details', 'tip.recentre': 'Click to centre the path here',
+    everythingBefore: 'Everything before “{t}”, by grade', 'everythingBefore.de': 'Everything before “{t}”, by Klasse', startingPoint: 'No prerequisites: this is a starting point', readOrder: 'Read top to bottom for a suggested teaching order.',
+    topicsBefore: '{n} topics before', noMatch: 'No match',
+    parIntro: 'Short summaries for parents for each subject, domain and two-year band (<code>data/clusters.json</code>). The language switch at the top changes their language.',
+    'srcIntro.de': 'The curriculum documents behind the taxonomy. Codes were constructed in document order (except the KMK digital-world framework, which has official numbering); titles are short paraphrases, not official wording. Click a row to see its codes and the topics linked to them.',
+    'srcIntro.ro': 'The programe școlare behind the taxonomy. Codes follow the official numbering of each programme\'s <i>competențe specifice</i>, prefixed with the grade (e.g. <code>V.1.2</code>); titles are short paraphrases, not official wording. Click a row to see its codes and the topics linked to them.',
+    'src.source': 'Source', 'src.scope': 'Scope', 'src.level': 'Level', 'src.codes': 'Codes', 'src.topics': 'Topics', 'src.official': 'Official source ↗', 'src.code': 'Code', 'src.para': 'Paraphrase', 'src.area': 'Area', 'src.grade.de': 'Kl.', 'src.grade.ro': 'Grade',
+    'src.de.scope': 'Germany-wide', 'src.ro.scope': 'Romania-wide',
+    close: 'Close ✕', detailsAria: 'Details', yourChild: 'your child',
+    signs: 'Signs they have got it', quickCheck: 'Quick check for parents', 'notes.de': 'Varies by Land', 'notes.ro': 'Notes',
+    needsFirst: 'Needs first ({n})', leadsOnTo: 'Leads on to ({n})', nothingFirst: 'Nothing: this is a starting point.', nothingAfter: 'No later topic builds on this directly.',
+    fullPath: 'Show the full learning path ({n} topics before this)', fullPath_one: 'Show the full learning path (1 topic before this)',
+    laterAll: '{n} later topics build on this directly or indirectly.', laterAll_one: '1 later topic builds on this directly or indirectly.',
+    'req.tip': 'Required: needed before this topic', 'help.tip': 'Helpful: makes this topic easier', 'req': 'required', 'help': 'helpful',
+    parentSummary: 'Parent summary', refs: 'Curriculum references ({n})', none: 'none', source: 'source ↗',
+    'cp.de': 'os-taxonomy counterparts ({n})', 'cp.none.de': 'None: no comparable topic in os-taxonomy.', 'cp.age.de': 'os start age {a}',
+    'cp.ro': 'German counterparts ({n})', 'cp.none.ro': 'None: no comparable topic in the German taxonomy.',
+    openCompare: 'Open in the comparison explorer →', key: 'key', domainLabel: 'domain', basis: 'Basis: {b}',
+    'rel.exact': 'exact', 'rel.close': 'close', 'rel.broader': '{x} broader', 'rel.narrower': '{x} narrower', 'rel.related': 'related',
+    'type.CONCEPTUAL': 'Concept', 'type.PROCEDURAL': 'Skill or procedure', 'type.REPRESENTATIONAL': 'Representation', 'type.LANGUAGE': 'Language', 'type.META': 'Learning strategy',
+    'footer.de': 'Research prototype, authored with AI assistance and not yet reviewed by German teachers. Klasse 7–13 follow the Gymnasium in G9 numbering (in G8 Länder everything from Klasse 7 happens about a year earlier); Oberstufe topics are marked gA (all courses) or eA (Leistungskurs only). Grade placement follows the typical or majority placement across the Länder; check the <i>Varies by Land</i> notes and your own Land\'s plan.',
+    'footer.ro': 'Research prototype, authored with AI assistance and not yet reviewed by Romanian teachers. Liceu topics follow the theoretical track and the new liceu programmes, phased in from clasa a IX-a in 2026–2027; each liceu topic shows the specialisations that teach it (MI matematică-informatică, SN științe ale naturii, SS științe sociale, FIL filologie).',
+    'credit.de': 'Lernlandkarte © 2026 Alexandru Prian: database ODbL 1.0, content CC BY-SA 4.0, code MIT · builds on and contains data from the Marble Skill Taxonomy (v1) · © Generative Spark, Inc. (Marble) · ODbL 1.0 / CC BY-SA 4.0 · {gh}.',
+    'credit.ro': 'Lernlandkarte © 2026 Alexandru Prian: database ODbL 1.0, content CC BY-SA 4.0, code MIT · data model after the Marble Skill Taxonomy (v1) · © Generative Spark, Inc. (Marble) · ODbL 1.0 / CC BY-SA 4.0 · {gh}.',
+    github: 'Data and source on GitHub', textsEn: 'This text has not been translated yet and is shown in English.',
+    'search.de': 'Search in English, German or Romanian…', 'search.ro': 'Search in English, Romanian or German…', 'highlight.de': 'Highlight topics: search in any language…', 'highlight.ro': 'Highlight topics: search in any language…',
+    'stage.Elementarbereich': 'Early years (Elementarbereich)', 'stage.Primarstufe': 'Primary (Primarstufe)', 'stage.Sekundarstufe I': 'Lower secondary (Sekundarstufe I)', 'stage.Sekundarstufe II': 'Upper secondary (Sekundarstufe II)',
+    'stage.Învățământ primar': 'Primary (învățământ primar)', 'stage.Învățământ gimnazial': 'Lower secondary (gimnaziu)', 'stage.Învățământ liceal': 'Upper secondary (liceu)',
+  },
+  de: {
+    'title.de': 'Lehrplan-Taxonomie Deutschland · Vorschule bis Klasse 13',
+    'intro.de': 'Was Kinder an deutschen Schulen von der Vorschule bis zum Abitur lernen (Gymnasium ab Klasse 7, G9), als kleine, unterrichtbare Themen, die über Voraussetzungen verbunden sind. Grundlage sind die KMK-Bildungsstandards, der Perspektivrahmen Sachunterricht der GDSU und Lehrpläne der Länder (NRW, Bayern, Baden-Württemberg, Berlin/Brandenburg, Niedersachsen). Version {ver}, erstellt am {gen}. {graph} · {compare}',
+    'link.graph': 'Als 3D-Karte ansehen →', 'link.compare.de': 'Mit os-taxonomy vergleichen →',
+    subjects: 'Fächer', all: 'Alle', coreOnly: 'Nur Kernfächer', language: 'Sprache', theme: 'Darstellung', themeAria: 'Helles oder dunkles Design umschalten',
+    'core.de': 'Blendet Französisch, Latein, Musik, Kunst, Sport sowie Religion & Ethik aus',
+    'tab.map': 'Lehrplankarte', 'tab.topics': 'Alle Themen', 'tab.path': 'Lernpfade', 'tab.parents': 'Für Eltern', 'tab.sources': 'Lehrplanquellen',
+    'kpi.topics': 'Mikrothemen in {s} Fächern', 'kpi.core': ' (nur Kernfächer)', 'kpi.edges': 'Verknüpfungen über Voraussetzungen ({h} notwendig, {s} hilfreich)', 'kpi.sources': 'Lehrplanquellen mit {c} verwendeten Codes',
+    'kpi.specific.de': 'Themen, die typisch für deutsche Schulen sind', 'kpi.upper.de': 'Gymnasialthemen von Klasse 7 bis zum Abitur',
+    'allGrades.de': 'Alle Klassen', 'specificOnly.de': 'Nur deutschlandspezifische', 'specific.de': 'deutschlandspezifisch',
+    match: '{n} von {tot} Themen passen',
+    'mapCount.de': '{tot} Themen · die Spalten zeigen die Klasse, in der ein Thema beginnt; „→ 4“ heißt, es geht bis Klasse 4 weiter',
+    domain: 'Bereich', nTopics: '{n} Themen', nTopics_one: '{n} Thema', domainTip: 'Klicken für die Übersicht des Bereichs und die Texte für Eltern', age: 'Alter {a}–{b}',
+    noTopicsStage: 'In {s} beginnen in dieser Stufe keine Themen.',
+    mapHelp: 'Klicken Sie auf ein Thema für Details, Voraussetzungen und Lehrplanbezüge. Klicken Sie auf einen Bereich für die Texte für Eltern.',
+    selected: 'ausgewählt', needsFirstN: 'braucht vorher ({n})', leadsOnToN: 'führt weiter zu ({n})', otherSubjectsHint: 'Verbindungen zu anderen Fächern stehen im Detailbereich.',
+    chipTip: '{p} Voraussetzungen · führt zu {d}',
+    allSubjects: 'Alle Fächer', allDomains: 'Alle Bereiche', allDomainsPick: 'Alle Bereiche (erst ein Fach wählen)', allTypes: 'Alle Typen',
+    'lvl.all.de': 'Alle Anforderungsniveaus', 'lvl.gA': 'alle Kurse (gA)', 'lvl.eA': 'nur Leistungskurs (eA)', 'lvlOpt.gA': 'Oberstufe: alle Kurse (gA)', 'lvlOpt.eA': 'Oberstufe: nur Leistungskurs (eA)',
+    'match.any.de': 'Mit oder ohne Entsprechung in os-taxonomy', 'match.yes.de': 'Hat eine Entsprechung in os-taxonomy', 'match.no.de': 'Keine Entsprechung in os-taxonomy',
+    'sort.grade.de': 'Nach Klasse sortieren', 'sort.name': 'Nach Name sortieren', 'sort.unlocks': 'Nach Bedeutung für spätere Themen',
+    laterBuild: '{n} spätere Themen bauen darauf auf', laterBuild_one: '1 späteres Thema baut darauf auf', noMatches: 'Keine Themen passen zu diesen Filtern.',
+    pathFind: 'Thema suchen, um den Pfad darauf auszurichten…', show: 'Zeigen', 'steps.auto': 'ganzer Pfad (3 Schritte bei mehr als 40 Themen)', 'steps.1': 'nur direkte Voraussetzungen', 'steps.2': '2 Schritte zurück', 'steps.3': '3 Schritte zurück', 'steps.all': 'ganzer Pfad',
+    unlocks: 'was darauf aufbaut', back: '← Zurück',
+    'lg.centre': 'zentrales Thema', 'lg.same': 'gleiches Fach', 'lg.other': 'anderes Fach', 'lg.required': 'notwendig vorher', 'lg.helpful': 'hilfreich vorher', 'lg.help': 'Die Spalten zählen die Schritte zurück entlang der längsten Kette. Klicken Sie auf ein Feld, um den Pfad darauf auszurichten.',
+    before: '{n} Themen kommen davor', before_one: '1 Thema kommt davor', showingWithin: '; angezeigt: {m} innerhalb von {k} Schritten', showingWithin_one: '; angezeigt: {m} innerhalb von 1 Schritt',
+    buildDirect: '{n} bauen direkt darauf auf', details: 'Details',
+    'col.next': 'Führt weiter zu', 'col.centre': 'Zentrales Thema', 'col.direct': 'Direkt davor', 'col.steps': '{k} Schritte davor', pathAria: 'Lernpfad als Grafik',
+    required: 'Notwendig', helpful: 'Hilfreich', 'tip.centre': 'Zentrales Thema: klicken für Details', 'tip.recentre': 'Klicken, um den Pfad hierauf auszurichten',
+    'everythingBefore.de': 'Alles vor „{t}“, nach Klasse', startingPoint: 'Keine Voraussetzungen: ein Startpunkt', readOrder: 'Von oben nach unten gelesen ergibt sich eine mögliche Reihenfolge für den Unterricht.',
+    topicsBefore: '{n} Themen davor', noMatch: 'Kein Treffer',
+    parIntro: 'Kurze Texte für Eltern zu jedem Fach, Bereich und Doppeljahrgang (<code>data/clusters.json</code>). Der Sprachschalter oben wechselt ihre Sprache.',
+    'srcIntro.de': 'Die Lehrplandokumente hinter der Taxonomie. Die Codes wurden in der Reihenfolge der Dokumente vergeben (außer beim KMK-Rahmen „Bildung in der digitalen Welt“ mit amtlicher Nummerierung); die Titel sind kurze Paraphrasen, kein amtlicher Wortlaut. Klicken Sie auf eine Zeile, um ihre Codes und die verknüpften Themen zu sehen.',
+    'src.source': 'Quelle', 'src.scope': 'Geltung', 'src.level': 'Stufe', 'src.codes': 'Codes', 'src.topics': 'Themen', 'src.official': 'Offizielle Quelle ↗', 'src.code': 'Code', 'src.para': 'Paraphrase', 'src.area': 'Bereich', 'src.grade.de': 'Kl.',
+    'src.de.scope': 'bundesweit',
+    close: 'Schließen ✕', detailsAria: 'Details', yourChild: 'Ihr Kind',
+    signs: 'Daran erkennen Sie, dass es sitzt', quickCheck: 'Kurzer Check für Eltern', 'notes.de': 'Unterschiede zwischen den Ländern',
+    needsFirst: 'Braucht vorher ({n})', leadsOnTo: 'Führt weiter zu ({n})', nothingFirst: 'Nichts: ein Startpunkt.', nothingAfter: 'Kein späteres Thema baut direkt darauf auf.',
+    fullPath: 'Ganzen Lernpfad zeigen ({n} Themen davor)', fullPath_one: 'Ganzen Lernpfad zeigen (1 Thema davor)',
+    laterAll: '{n} spätere Themen bauen direkt oder indirekt darauf auf.', laterAll_one: '1 späteres Thema baut direkt oder indirekt darauf auf.',
+    'req.tip': 'Notwendig: muss vor diesem Thema sitzen', 'help.tip': 'Hilfreich: erleichtert dieses Thema', 'req': 'notwendig', 'help': 'hilfreich',
+    parentSummary: 'Für Eltern', refs: 'Lehrplanbezüge ({n})', none: 'keine', source: 'Quelle ↗',
+    'cp.de': 'Entsprechungen in os-taxonomy ({n})', 'cp.none.de': 'Keine: os-taxonomy hat kein vergleichbares Thema.', 'cp.age.de': 'Startalter in os {a}',
+    openCompare: 'Im Vergleich öffnen →', key: 'Schlüssel', domainLabel: 'Bereich', basis: 'Grundlage: {b}',
+    'rel.exact': 'exakt', 'rel.close': 'nah', 'rel.broader': '{x} breiter', 'rel.narrower': '{x} enger', 'rel.related': 'verwandt',
+    'type.CONCEPTUAL': 'Konzept', 'type.PROCEDURAL': 'Fertigkeit oder Verfahren', 'type.REPRESENTATIONAL': 'Darstellung', 'type.LANGUAGE': 'Fachsprache', 'type.META': 'Lernstrategie',
+    'footer.de': 'Forschungsprototyp, mit KI-Unterstützung erstellt und noch nicht von Lehrkräften geprüft. Klasse 7–13 folgen dem Gymnasium mit G9-Zählung (in G8-Ländern liegt ab Klasse 7 alles etwa ein Jahr früher); Oberstufenthemen sind mit gA (alle Kurse) oder eA (nur Leistungskurs) markiert. Die Zuordnung zu Klassen folgt der typischen bzw. mehrheitlichen Einordnung in den Ländern; beachten Sie die Hinweise zu Länderunterschieden und den Lehrplan Ihres Landes.',
+    'credit.de': 'Lernlandkarte © 2026 Alexandru Prian: Datenbank ODbL 1.0, Inhalte CC BY-SA 4.0, Code MIT · baut auf der Marble Skill Taxonomy (v1) auf und enthält Daten daraus · © Generative Spark, Inc. (Marble) · ODbL 1.0 / CC BY-SA 4.0 · {gh}.',
+    github: 'Daten und Quellcode auf GitHub', textsEn: 'Dieser Text ist noch nicht übersetzt und erscheint auf Englisch.',
+    'search.de': 'Auf Deutsch, Englisch oder Rumänisch suchen…', 'highlight.de': 'Themen hervorheben: in jeder Sprache suchen…',
+    'stage.Elementarbereich': 'Elementarbereich', 'stage.Primarstufe': 'Primarstufe', 'stage.Sekundarstufe I': 'Sekundarstufe I', 'stage.Sekundarstufe II': 'Sekundarstufe II',
+    'stage.Învățământ primar': 'Primarbereich (învățământ primar)', 'stage.Învățământ gimnazial': 'Sekundarstufe I (gimnaziu)', 'stage.Învățământ liceal': 'Sekundarstufe II (liceu)',
+    // the Romanian taxonomy in German
+    'title.ro': 'Lehrplan-Taxonomie Rumänien · clasa pregătitoare bis clasa a XII-a',
+    'intro.ro': 'Was Kinder an rumänischen Schulen von der clasa pregătitoare bis zum Bacalaureat lernen (theoretisches Lyzeum: Mathematik-Informatik, Naturwissenschaften, Sozialwissenschaften, Philologie), als kleine, unterrichtbare Themen, die über Voraussetzungen verbunden sind. Grundlage sind die nationalen Lehrpläne (<i>programe școlare</i>) und Stundentafeln (<i>planuri-cadru</i>). Version {ver}, erstellt am {gen}. {graph} · {compare}',
+    'link.compare.ro': 'Mit der deutschen Taxonomie vergleichen →',
+    'core.ro': 'Blendet die zweite Fremdsprache, Latein, Musik, Bildende Kunst, Sport, Religion, Technik und Persönlichkeitsentwicklung aus',
+    'kpi.specific.ro': 'Themen, die typisch für rumänische Schulen sind', 'kpi.upper.ro': 'Lyzeumsthemen, Klassen IX–XII (theoretischer Zweig)',
+    'search.ro': 'Auf Rumänisch, Deutsch oder Englisch suchen…', 'highlight.ro': 'Themen hervorheben: in jeder Sprache suchen…',
+    'allGrades.ro': 'Alle Klassen', 'specificOnly.ro': 'Nur rumänienspezifische', 'specific.ro': 'rumänienspezifisch',
+    'mapCount.ro': '{tot} Themen · die Spalten zeigen die Klasse, in der ein Thema beginnt; „→ IV“ heißt, es geht bis clasa a IV-a weiter',
+    'lvl.all.ro': 'Alle Profile', 'lvlOpt.all4': 'Lyzeum: alle vier (Kernbereich)', 'lvlOpt.some': 'Lyzeum: nur einige Profile', 'lvlOpt.prof': 'Lyzeum: {p}',
+    'prof.all': 'alle vier Lyzeumsprofile', 'prof.only': 'nur {list}',
+    'match.any.ro': 'Mit oder ohne deutsche Entsprechung', 'match.yes.ro': 'Hat eine deutsche Entsprechung', 'match.no.ro': 'Keine deutsche Entsprechung',
+    'sort.grade.ro': 'Nach Klasse sortieren', everythingBefore: 'Alles vor „{t}“, nach Klasse',
+    'srcIntro.ro': 'Die rumänischen Lehrpläne (<i>programe școlare</i>) hinter der Taxonomie. Die Codes folgen der amtlichen Nummerierung der <i>competențe specifice</i> jedes Lehrplans, mit vorangestellter Klasse (z. B. <code>V.1.2</code>); die Titel sind kurze Paraphrasen, kein amtlicher Wortlaut. Klicken Sie auf eine Zeile, um ihre Codes und die verknüpften Themen zu sehen.',
+    'src.grade.ro': 'Klasse', 'src.ro.scope': 'landesweit', 'notes.ro': 'Hinweise',
+    'cp.ro': 'Entsprechungen in der deutschen Taxonomie ({n})', 'cp.none.ro': 'Keine: die deutsche Taxonomie hat kein vergleichbares Thema.',
+    'footer.ro': 'Forschungsprototyp, mit KI-Unterstützung erstellt und noch nicht von Lehrkräften geprüft. Die Lyzeumsthemen folgen dem theoretischen Zweig und den neuen Lyzeumslehrplänen, die ab clasa a IX-a im Schuljahr 2026–2027 eingeführt werden; jedes Lyzeumsthema zeigt die Profile, die es unterrichten (MI Mathematik-Informatik, SN Naturwissenschaften, SS Sozialwissenschaften, FIL Philologie).',
+    'credit.ro': 'Lernlandkarte © 2026 Alexandru Prian: Datenbank ODbL 1.0, Inhalte CC BY-SA 4.0, Code MIT · Datenmodell nach der Marble Skill Taxonomy (v1) · © Generative Spark, Inc. (Marble) · ODbL 1.0 / CC BY-SA 4.0 · {gh}.',
+  },
+  ro: {
+    'title.ro': 'Taxonomia curriculumului românesc · clasa pregătitoare – a XII-a',
+    'intro.ro': 'Ce învață copiii în școlile din România, de la clasa pregătitoare până la Bacalaureat (liceu teoretic: matematică-informatică, științe ale naturii, științe sociale, filologie), sub forma unor teme mici, ușor de predat, legate între ele prin ceea ce trebuie știut înainte. Construită pe baza programelor școlare și a planurilor-cadru naționale. Versiunea {ver}, generată pe {gen}. {graph} · {compare}',
+    'link.graph': 'Vezi harta 3D →', 'link.compare.ro': 'Compară cu taxonomia germană →',
+    subjects: 'Discipline', all: 'Toate', coreOnly: 'Doar de bază', language: 'Limba', theme: 'Temă', themeAria: 'Comută între tema luminoasă și cea întunecată',
+    'core.ro': 'Ascunde Limba franceză, Limba latină, Educație muzicală, Arte vizuale, Educație fizică și sport, Religie, Educație tehnologică și Dezvoltare personală și consiliere',
+    'tab.map': 'Harta curriculumului', 'tab.topics': 'Toate temele', 'tab.path': 'Trasee de învățare', 'tab.parents': 'Pentru părinți', 'tab.sources': 'Programe școlare',
+    'kpi.topics': 'teme în {s} discipline', 'kpi.core': ' (doar disciplinele de bază)', 'kpi.edges': 'legături între teme ({h} obligatorii, {s} utile)', 'kpi.sources': 'programe școlare, cu {c} competențe citate',
+    'kpi.specific.ro': 'teme specifice școlii românești', 'kpi.upper.ro': 'teme de liceu, clasele IX–XII (filiera teoretică)',
+    'allGrades.ro': 'Toate clasele', 'specificOnly.ro': 'Doar specifice României', 'specific.ro': 'specifică României',
+    match: '{n} din {tot} teme corespund',
+    'mapCount.ro': '{tot} teme · coloanele arată clasa în care începe o temă; „→ IV” înseamnă că tema continuă până în clasa a IV-a',
+    domain: 'Domeniu', nTopics: '{n} teme', nTopics_one: '{n} temă', domainTip: 'Clic pentru prezentarea domeniului și rezumatele pentru părinți', age: 'vârsta {a}–{b}',
+    noTopicsStage: '{s} nu are teme care încep în această etapă.',
+    mapHelp: 'Faceți clic pe o temă pentru detalii, ce trebuie știut înainte și trimiterile la programă. Faceți clic pe numele unui domeniu pentru rezumatele pentru părinți.',
+    selected: 'selectată', needsFirstN: 'necesită înainte ({n})', leadsOnToN: 'duce mai departe la ({n})', otherSubjectsHint: 'Legăturile cu alte discipline apar în panoul de detalii.',
+    chipTip: '{p} teme necesare înainte · duce la {d}',
+    allSubjects: 'Toate disciplinele', allDomains: 'Toate domeniile', allDomainsPick: 'Toate domeniile (alegeți întâi o disciplină)', allTypes: 'Toate tipurile',
+    'lvl.all.ro': 'Toate specializările', 'lvlOpt.all4': 'Liceu: toate cele patru (trunchi comun)', 'lvlOpt.some': 'Liceu: doar unele specializări', 'lvlOpt.prof': 'Liceu: {p}',
+    'prof.all': 'toate cele patru specializări de liceu', 'prof.only': 'doar {list}',
+    'match.any.ro': 'Cu sau fără corespondent german', 'match.yes.ro': 'Are corespondent în taxonomia germană', 'match.no.ro': 'Fără corespondent german',
+    'sort.grade.ro': 'Sortează după clasă', 'sort.name': 'Sortează după nume', 'sort.unlocks': 'Sortează după câte teme se sprijină pe ea',
+    laterBuild: '{n} teme ulterioare se sprijină pe ea', laterBuild_one: 'o temă ulterioară se sprijină pe ea', noMatches: 'Nicio temă nu corespunde acestor filtre.',
+    pathFind: 'Căutați o temă pe care să centrați traseul…', show: 'Arată', 'steps.auto': 'tot traseul (3 pași dacă sunt peste 40 de teme)', 'steps.1': 'doar ce trebuie știut direct înainte', 'steps.2': '2 pași înapoi', 'steps.3': '3 pași înapoi', 'steps.all': 'tot traseul',
+    unlocks: 'ce urmează după ea', back: '← Înapoi',
+    'lg.centre': 'tema centrală', 'lg.same': 'aceeași disciplină', 'lg.other': 'altă disciplină', 'lg.required': 'obligatoriu înainte', 'lg.helpful': 'util înainte', 'lg.help': 'Coloanele numără pașii înapoi pe cel mai lung lanț. Faceți clic pe o casetă pentru a centra traseul pe ea.',
+    before: '{n} teme vin înaintea acesteia', before_one: 'o temă vine înaintea acesteia', showingWithin: '; sunt afișate {m}, în cel mult {k} pași', showingWithin_one: '; sunt afișate {m}, la un pas',
+    buildDirect: '{n} se sprijină direct pe ea', details: 'Detalii',
+    'col.next': 'Duce la', 'col.centre': 'Tema centrală', 'col.direct': 'Imediat înainte', 'col.steps': 'Cu {k} pași înainte', pathAria: 'Graficul traseului de învățare',
+    required: 'Obligatoriu', helpful: 'Util', 'tip.centre': 'Tema centrală: clic pentru detalii', 'tip.recentre': 'Clic pentru a centra traseul aici',
+    everythingBefore: 'Tot ce vine înainte de „{t}”, pe clase', startingPoint: 'Nu necesită nimic înainte: este un punct de pornire', readOrder: 'Citite de sus în jos, dau o ordine posibilă de predare.',
+    topicsBefore: '{n} teme înainte', noMatch: 'Niciun rezultat',
+    parIntro: 'Rezumate scurte pentru părinți, pentru fiecare disciplină, domeniu și interval de doi ani (<code>data/clusters.json</code>). Comutatorul de limbă din partea de sus le schimbă limba.',
+    'srcIntro.ro': 'Programele școlare din spatele taxonomiei. Codurile urmează numerotarea oficială a competențelor specifice din fiecare programă, precedată de clasă (de ex. <code>V.1.2</code>); titlurile sunt parafraze scurte, nu formulări oficiale. Faceți clic pe un rând pentru a vedea codurile și temele legate de ele.',
+    'src.source': 'Programa', 'src.scope': 'Aplicare', 'src.level': 'Nivel', 'src.codes': 'Coduri', 'src.topics': 'Teme', 'src.official': 'Sursa ↗', 'src.code': 'Cod', 'src.para': 'Parafrază', 'src.area': 'Competența generală', 'src.grade.ro': 'Clasa',
+    'src.ro.scope': 'la nivel național',
+    close: 'Închide ✕', detailsAria: 'Detalii', yourChild: 'copilul dumneavoastră',
+    signs: 'Semne că a înțeles', quickCheck: 'Verificare rapidă pentru părinți', 'notes.ro': 'Observații',
+    needsFirst: 'Necesită înainte ({n})', leadsOnTo: 'Duce mai departe la ({n})', nothingFirst: 'Nimic: este un punct de pornire.', nothingAfter: 'Nicio temă ulterioară nu se sprijină direct pe aceasta.',
+    fullPath: 'Arată tot traseul de învățare ({n} teme înaintea acesteia)', fullPath_one: 'Arată tot traseul de învățare (o temă înaintea acesteia)',
+    laterAll: '{n} teme ulterioare se sprijină pe aceasta, direct sau indirect.', laterAll_one: 'O temă ulterioară se sprijină pe aceasta, direct sau indirect.',
+    'req.tip': 'Obligatoriu: trebuie știut înaintea acestei teme', 'help.tip': 'Util: face tema mai ușoară', 'req': 'obligatoriu', 'help': 'util',
+    parentSummary: 'Pentru părinți', refs: 'Trimiteri la programă ({n})', none: 'niciuna', source: 'sursa ↗',
+    'cp.ro': 'Corespondente în taxonomia germană ({n})', 'cp.none.ro': 'Niciunul: taxonomia germană nu are o temă comparabilă.',
+    openCompare: 'Deschide în comparație →', key: 'cheie', domainLabel: 'domeniu', basis: 'Baza: {b}',
+    'rel.exact': 'identic', 'rel.close': 'apropiat', 'rel.broader': '{x} mai larg', 'rel.narrower': '{x} mai restrâns', 'rel.related': 'înrudit',
+    'type.CONCEPTUAL': 'Concept', 'type.PROCEDURAL': 'Deprindere sau procedeu', 'type.REPRESENTATIONAL': 'Reprezentare', 'type.LANGUAGE': 'Limbaj de specialitate', 'type.META': 'Strategie de învățare',
+    'footer.ro': 'Prototip de cercetare, realizat cu ajutorul inteligenței artificiale și neverificat încă de profesori. Temele de liceu urmează filiera teoretică și noile programe de liceu, introduse treptat începând cu clasa a IX-a în 2026–2027; fiecare temă de liceu arată specializările care o studiază (MI matematică-informatică, SN științe ale naturii, SS științe sociale, FIL filologie).',
+    'credit.ro': 'Lernlandkarte © 2026 Alexandru Prian: baza de date ODbL 1.0, conținut CC BY-SA 4.0, cod MIT · model de date după Marble Skill Taxonomy (v1) · © Generative Spark, Inc. (Marble) · ODbL 1.0 / CC BY-SA 4.0 · {gh}.',
+    github: 'Datele și codul pe GitHub', textsEn: 'Acest text nu este încă tradus și apare în engleză.',
+    'search.ro': 'Caută în română, engleză sau germană…', 'highlight.ro': 'Evidențiază teme: caută în orice limbă…',
+    'stage.Învățământ primar': 'Învățământ primar', 'stage.Învățământ gimnazial': 'Învățământ gimnazial', 'stage.Învățământ liceal': 'Învățământ liceal',
+    'stage.Elementarbereich': 'Educație timpurie (Elementarbereich)', 'stage.Primarstufe': 'Învățământ primar (Primarstufe)', 'stage.Sekundarstufe I': 'Secundar inferior (Sekundarstufe I)', 'stage.Sekundarstufe II': 'Secundar superior (Sekundarstufe II)',
+    // the German taxonomy in Romanian
+    'title.de': 'Taxonomia curriculumului german · Vorschule – Klasse 13',
+    'intro.de': 'Ce învață copiii în școlile din Germania, de la Vorschule până la Abitur (Gymnasium din Klasse 7, numerotare G9), sub forma unor teme mici, ușor de predat, legate între ele prin ceea ce trebuie știut înainte. Construită pe baza standardelor educaționale KMK, a cadrului GDSU pentru Sachunterricht și a curriculumurilor landurilor (NRW, Bavaria, Baden-Württemberg, Berlin/Brandenburg, Saxonia Inferioară). Versiunea {ver}, generată pe {gen}. {graph} · {compare}',
+    'link.compare.de': 'Compară cu os-taxonomy →',
+    'core.de': 'Ascunde a doua limbă străină, latina, muzica, artele vizuale, sportul și religia/etica',
+    'kpi.specific.de': 'teme specifice școlii germane', 'kpi.upper.de': 'teme de Gymnasium, din Klasse 7 până la Abitur',
+    'search.de': 'Caută în germană, română sau engleză…', 'highlight.de': 'Evidențiază teme: caută în orice limbă…',
+    'allGrades.de': 'Toate clasele', 'specificOnly.de': 'Doar specifice Germaniei', 'specific.de': 'specifică Germaniei',
+    'mapCount.de': '{tot} teme · coloanele arată clasa (Klasse) în care începe o temă; „→ 4” înseamnă că tema continuă până în Klasse 4',
+    'lvl.all.de': 'Toate nivelurile', 'lvl.gA': 'toate cursurile (gA)', 'lvl.eA': 'doar Leistungskurs (eA)', 'lvlOpt.gA': 'Oberstufe: toate cursurile (gA)', 'lvlOpt.eA': 'Oberstufe: doar Leistungskurs (eA)',
+    'match.any.de': 'Cu sau fără corespondent în os-taxonomy', 'match.yes.de': 'Are corespondent în os-taxonomy', 'match.no.de': 'Fără corespondent în os-taxonomy',
+    'sort.grade.de': 'Sortează după clasă',
+    'srcIntro.de': 'Documentele curriculare din spatele taxonomiei. Codurile au fost atribuite în ordinea din document (cu excepția cadrului KMK pentru lumea digitală, care are numerotare oficială); titlurile sunt parafraze scurte, nu formulări oficiale. Faceți clic pe un rând pentru a vedea codurile și temele legate de ele.',
+    'src.grade.de': 'Kl.', 'src.de.scope': 'în toată Germania', 'notes.de': 'Diferențe între landuri',
+    'cp.de': 'Corespondente în os-taxonomy ({n})', 'cp.none.de': 'Niciunul: os-taxonomy nu are o temă comparabilă.', 'cp.age.de': 'vârsta de început în os: {a}',
+    'footer.de': 'Prototip de cercetare, realizat cu ajutorul inteligenței artificiale și neverificat încă de profesori. Clasele 7–13 urmează Gymnasium cu numerotarea G9 (în landurile G8 totul se întâmplă cu aproximativ un an mai devreme începând cu Klasse 7); temele din Oberstufe sunt marcate gA (toate cursurile) sau eA (doar Leistungskurs). Plasarea pe clase urmează plasarea tipică sau majoritară din landuri; verificați notele despre diferențele dintre landuri și curriculumul landului dumneavoastră.',
+    'credit.de': 'Lernlandkarte © 2026 Alexandru Prian: baza de date ODbL 1.0, conținut CC BY-SA 4.0, cod MIT · se bazează pe Marble Skill Taxonomy (v1) și conține date din ea · © Generative Spark, Inc. (Marble) · ODbL 1.0 / CC BY-SA 4.0 · {gh}.',
+  },
+};
+const LANGS = ['en', 'de', 'ro'];
+let LANG = LANGS.includes(new URLSearchParams(location.search).get('lang')) ? new URLSearchParams(location.search).get('lang') : NAT;
+// pick(map): the text in the page language, else English, else the taxonomy's own language
+// the comparison pages open in English by default; pass the language when it differs
+const cmpQ = () => LANG === 'en' ? '' : '?lang=' + LANG;
+const pick = (m, l = LANG) => m ? (m[l] ?? m.en ?? m[NAT] ?? '') : '';
+// L(key, vars): the current language, then English; tries "key.<country>" first; "_one" for n === 1
+function L(k, v = {}) {
+  const tables = [I18N[LANG], I18N.en];
+  const keys = [...(v.n === 1 ? [`${k}.${CFG.country}_one`, `${k}_one`] : []), `${k}.${CFG.country}`, k];
+  let s;
+  outer: for (const tb of tables) for (const kk of keys) if (tb && tb[kk] != null) { s = tb[kk]; break outer; }
+  if (s == null) return k;
+  const loc = LANG;
+  return s.replace(/\{(\w+)\}/g, (m, x) => typeof v[x] === 'number' ? v[x].toLocaleString(loc) : v[x] ?? m);
+}
+const TYPE = ty => L('type.' + ty);
+const REL = r => L('rel.' + r, { x: CFG.country === 'de' ? 'os' : 'DE' });
+
 const T = D.topics; T.forEach((t, i) => { t.i = i; });
 const byKey = new Map(T.map(t => [t.k, t]));
 const pre = T.map(() => []), dep = T.map(() => []);
@@ -238,15 +505,17 @@ for (const [a, b, h, r, x] of D.edges) { pre[a].push({ t: b, h, r, x }); dep[b].
 const SUBJ = D.subjects, subjInfo = new Map(SUBJ.map(s => [s.name, s]));
 const domInfo = new Map(SUBJ.flatMap(s => s.domains.map(d => [s.name + '|' + d.name, d])));
 const nTopics = {}; for (const t of T) nTopics[t.s] = (nTopics[t.s] || 0) + 1;
-let LANG = 'de';
-const nm = t => LANG === 'de' ? t.nd : t.n, alt = t => LANG === 'de' ? t.n : t.nd;
-const sname = s => LANG === 'de' ? s : (subjInfo.get(s)?.nameEn || s);
-const dname = (s, d) => LANG === 'de' ? d : (domInfo.get(s + '|' + d)?.nameEn || d);
-const dalt = (s, d) => LANG === 'de' ? (domInfo.get(s + '|' + d)?.nameEn || '') : d;
-const gl = g => g === 0 ? 'Vorschule' : `Kl. ${g}`;
-const gradeLab = t => t.g[0] === t.g[1] ? gl(t.g[0]) : `${gl(t.g[0])}–${t.g[1]}`;
-const TYPE = { CONCEPTUAL: 'Concept', PROCEDURAL: 'Skill or procedure', REPRESENTATIONAL: 'Representation', LANGUAGE: 'Language', META: 'Learning strategy' };
-const REL = { exact: 'exact', close: 'close', broader: 'os broader', narrower: 'os narrower', related: 'related' };
+// names and texts are maps { en, de, ro }; alt() is the topic's own-language name, or English when that is the page language
+const nm = t => pick(t.N), alt = t => LANG === NAT ? t.N.en : t.N[NAT];
+const tx = (t, f) => pick(t[f]);   // DS description, EV evidence, AP parent question, LN notes
+const why = e => pick(e.r);
+const sname = s => pick(subjInfo.get(s)?.names) || s;
+const dname = (s, d) => pick(domInfo.get(s + '|' + d)?.names) || d;
+const dalt = (s, d) => { const n = domInfo.get(s + '|' + d)?.names || {}; return LANG === NAT ? n.en || '' : n[NAT] || d; };
+const stageLab = sg => { const v = L('stage.' + sg); return v === 'stage.' + sg ? sg : v; };
+T.forEach(t => { t.q = [...Object.values(t.N), ...Object.values(t.DS || {})].join(' ').toLowerCase(); });
+const gl = CFG_C.gl, colLab = CFG_C.colLab, bandOf = CFG_C.bandOf, BAND = CFG_C.BAND;
+const gradeLab = t => t.g[0] === t.g[1] ? gl(t.g[0]) : `${gl(t.g[0])}–${CFG_C.gEnd(t.g[1])}`;
 const relRank = { exact: 0, close: 1, broader: 2, narrower: 3, related: 4 };
 const COVER = new Set(['exact', 'close', 'broader', 'narrower']);
 const depthMemo = [];
@@ -259,21 +528,18 @@ function reach(i, adj, steps = Infinity) {
 const descMemo = [];
 const nDesc = i => descMemo[i] ??= reach(i, dep).size;
 const SRC = new Map(D.sources.map(s => [s.slug, s]));
-const STD = new Map(); for (const s of D.sources) for (const [code, td, te, area, gr] of s.codes) STD.set(s.slug + ':' + code, { s, code, td, te, area, gr });
+const STD = new Map(); for (const s of D.sources) for (const [code, tt, area, gr] of s.codes) STD.set(s.slug + ':' + code, { s, code, tt, area, gr });
 const stdTopics = new Map(); for (const t of T) for (const k of t.std) { if (!stdTopics.has(k)) stdTopics.set(k, []); stdTopics.get(k).push(t.i); }
-const CL = D.clusters.map(([s, d, g, su, sd]) => ({ s, d, g, su, sd }));
-const bandOf = g => g === 0 ? 0 : g <= 2 ? 1 : g <= 4 ? 3 : g <= 6 ? 5 : g <= 8 ? 7 : g <= 10 ? 9 : 11;
-const BAND = { 0: 'Vorschule', 1: 'Kl. 1–2', 3: 'Kl. 3–4', 5: 'Kl. 5–6', 7: 'Kl. 7–8', 9: 'Kl. 9–10', 11: 'Oberstufe (Kl. 11–13)' };
-const colLab = g => g === 0 ? 'Vorschule' : g === 11 ? 'Klasse 11 · E-Phase' : g === 12 ? 'Klasse 12 · Q1' : g === 13 ? 'Klasse 13 · Q2' : 'Klasse ' + g;
-const LEVEL = { gA: 'all courses (gA)', eA: 'Leistungskurs only (eA)' };
-// Core subjects only: hide second foreign languages, arts, sport, religion/ethics (?subjects=core)
+const CL = D.clusters.map(([s, d, g, su]) => ({ s, d, g, su }));
+const clText = c => pick(c.su);
+// Core subjects only: hide the extended subjects (?subjects=core)
 let CORE = new URLSearchParams(location.search).get('subjects') === 'core';
 const shown = s => !CORE || subjInfo.get(s)?.tier !== 'extended';
 const SUBJV = () => SUBJ.filter(x => shown(x.name));
 const clusterFor = (s, d, b) => CL.find(c => c.s === s && c.d === d && c.g === b);
 const byGrade = (a, b) => a.g[0] - b.g[0] || depth(a.i) - depth(b.i) || nm(a).localeCompare(nm(b));
+const ageLab = g => L('age', { a: g + CFG_C.ageOff, b: g + CFG_C.ageOff + 1 });
 
-$('#ver').textContent = D.version; $('#gen').textContent = D.generatedAt;
 $('#theme').onclick = () => { const r = document.documentElement; const dark = r.dataset.theme ? r.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches; r.dataset.theme = dark ? 'light' : 'dark'; };
 
 // tooltip
@@ -287,24 +553,72 @@ document.addEventListener('mousemove', e => {
   tip.style.top = Math.min(innerHeight - h - 8, e.clientY + 14) + 'px';
 });
 
+// ---------- static texts (re-run when the language changes) ----------
+function fillSelect(el, first, opts) {
+  const v = el.value, vals = opts.map(o => String(o[0]));
+  el.innerHTML = (first == null ? '' : `<option value="">${esc(first)}</option>`) + opts.map(([val, lab]) => `<option value="${esc(val)}">${esc(lab)}</option>`).join('');
+  el.value = vals.includes(v) ? v : first == null ? (vals[0] ?? '') : '';
+}
+function applyLang() {
+  document.documentElement.lang = LANG;
+  document.title = L('title');
+  $('#title').textContent = L('title');
+  const ver = `<span>${esc(D.version)}</span>`, gen = `<span>${esc(D.generatedAt)}</span>`;
+  $('#intro').innerHTML = L('intro', { ver, gen, graph: `<a class="xl" href="${CFG_C.graph}">${esc(L('link.graph'))}</a>`, compare: `<a class="xl" href="${CFG_C.compare}${cmpQ()}">${esc(L('link.compare'))}</a>` });
+  $('#lSubjects').textContent = L('subjects');
+  $('#tier').setAttribute('aria-label', L('subjects'));
+  $('#tier [data-tier="all"]').textContent = L('all');
+  $('#tier [data-tier="core"]').textContent = L('coreOnly'); $('#tier [data-tier="core"]').title = L('core');
+  $('#lLang').textContent = L('language'); $('#lang').setAttribute('aria-label', L('language'));
+  for (const b of document.querySelectorAll('#lang button')) b.setAttribute('aria-pressed', b.dataset.lang === LANG);
+  $('#theme').textContent = L('theme'); $('#theme').setAttribute('aria-label', L('themeAria'));
+  for (const b of document.querySelectorAll('#tabs button')) b.textContent = L('tab.' + b.dataset.tab);
+  $('#mapQ').placeholder = L('highlight'); $('#mapQ').setAttribute('aria-label', L('highlight'));
+  $('#mapStage').setAttribute('aria-label', L('allGrades'));
+  $('#mapStage').innerHTML = [['all', null, null, L('allGrades')], ...CFG_C.stages].map(([k, , , lab]) => `<button type="button" data-st="${k}" aria-pressed="${k === mapStage}">${esc(lab)}</button>`).join('');
+  $('#lMapX').textContent = L('specificOnly'); $('#lFX').textContent = L('specificOnly');
+  fillSelect($('#fG'), L('allGrades'), Array.from({ length: CFG_C.maxGrade + 1 }, (_, g) => [g, colLab(g)]));
+  fillSelect($('#fL'), L('lvl.all'), CFG_C.levels.map(v => [v, PROF[v] ? L('lvlOpt.prof', { p: PROF[v] }) : L('lvlOpt.' + v)]));
+  fillSelect($('#fT'), L('allTypes'), ['CONCEPTUAL', 'PROCEDURAL', 'REPRESENTATIONAL', 'LANGUAGE', 'META'].map(k => [k, TYPE(k)]));
+  fillSelect($('#fO'), L('match.any'), [['1', L('match.yes')], ['0', L('match.no')]]);
+  fillSelect($('#fSort'), null, [['grade', L('sort.grade')], ['name', L('sort.name')], ['unlocks', L('sort.unlocks')]]);
+  for (const [id, k] of [['#fS', 'allSubjects'], ['#fD', 'allDomains'], ['#fG', 'allGrades'], ['#fL', 'lvl.all'], ['#fT', 'allTypes'], ['#fO', 'match.any'], ['#fSort', 'sort.name']]) $(id).setAttribute('aria-label', L(k));
+  $('#fQ').placeholder = L('search'); $('#fQ').setAttribute('aria-label', L('search'));
+  $('#pq').placeholder = L('pathFind'); $('#pq').setAttribute('aria-label', L('pathFind'));
+  $('#lShow').textContent = L('show');
+  fillSelect($('#pSteps'), null, ['auto', '1', '2', '3', 'all'].map(k => [k, L('steps.' + k)]));
+  $('#lUnl').textContent = L('unlocks'); $('#pBack').textContent = L('back');
+  $('#pLegend').innerHTML = `<span><i class="lg-node focus"></i>${esc(L('lg.centre'))}</span><span><i class="lg-node"></i>${esc(L('lg.same'))}</span><span><i class="lg-node other"></i>${esc(L('lg.other'))}</span>
+    <span><svg width="28" height="8" aria-hidden="true"><line x1="0" x2="28" y1="4" y2="4" class="gedge"/></svg> ${esc(L('lg.required'))}</span>
+    <span><svg width="28" height="8" aria-hidden="true"><line x1="0" x2="28" y1="4" y2="4" class="gedge soft"/></svg> ${esc(L('lg.helpful'))}</span>
+    <span class="k">${esc(L('lg.help'))}</span>`;
+  $('#parIntro').innerHTML = L('parIntro');
+  $('#srcIntro').innerHTML = L('srcIntro');
+  $('#footer').innerHTML = `${L('footer')}<br>${L('credit', { gh: `<a href="https://github.com/codingarchitect-wq/lernlandkarte">${esc(L('github'))}</a>` })}`;
+  $('#drawer').setAttribute('aria-label', L('detailsAria')); $('#dClose').textContent = L('close');
+  tierLinks(); renderKpis();
+}
+
 // KPIs
 const codes = D.sources.reduce((a, s) => a + s.codes.length, 0);
 function renderKpis() {
   const TV = T.filter(t => shown(t.s)), E = D.edges.filter(e => shown(T[e[0]].s) && shown(T[e[1]].s)), hard = E.filter(e => e[2]).length;
+  const n = x => x.toLocaleString(LANG);
   $('#kpis').innerHTML = [
-    [TV.length.toLocaleString('en'), `micro-topics in ${SUBJV().length} subjects${CORE ? ' (core only)' : ''}`],
-    [E.length.toLocaleString('en'), `prerequisite links (${hard} required, ${E.length - hard} helpful)`],
-    [D.sources.length, `curriculum sources with ${codes.toLocaleString('en')} referenced codes`],
-    [TV.filter(t => t.x).length, 'topics specific to German schools'],
-    [TV.filter(t => t.g[0] >= 7).length.toLocaleString('en'), 'Gymnasium topics from Klasse 7 to the Abitur'],
+    [n(TV.length), L('kpi.topics', { s: SUBJV().length }) + (CORE ? L('kpi.core') : '')],
+    [n(E.length), L('kpi.edges', { h: n(hard), s: n(E.length - hard) })],
+    [D.sources.length, L('kpi.sources', { c: n(codes) })],
+    [TV.filter(t => t.x).length, L('kpi.specific')],
+    [n(TV.filter(t => t.g[0] >= (CFG.country === 'de' ? 7 : 9)).length), L('kpi.upper')],
   ].map(([v, l]) => `<div class="card kpi"><div class="v">${esc(v)}</div><div class="l">${esc(l)}</div></div>`).join('');
 }
-renderKpis();
+function tierLinks() { for (const a of document.querySelectorAll('a.xl')) { const v = new URL(a.getAttribute('href'), location.href); CORE ? v.searchParams.set('subjects', 'core') : v.searchParams.delete('subjects'); a.href = v.href; } }
+function setParam(k, v) { const u = new URL(location.href); v == null ? u.searchParams.delete(k) : u.searchParams.set(k, v); history.replaceState(null, '', u.href); }
 function setTier(core) {
   CORE = core;
   for (const b of document.querySelectorAll('#tier button')) b.setAttribute('aria-pressed', (b.dataset.tier === 'core') === CORE);
-  const u = new URL(location.href); CORE ? u.searchParams.set('subjects', 'core') : u.searchParams.delete('subjects'); history.replaceState(null, '', u.href);
-  for (const a of document.querySelectorAll('a.xl')) { const v = new URL(a.getAttribute('href'), location.href); CORE ? v.searchParams.set('subjects', 'core') : v.searchParams.delete('subjects'); a.href = v.href; }
+  setParam('subjects', CORE ? 'core' : null);
+  tierLinks();
   if (!shown(mapS)) mapS = SUBJV()[0].name;
   if (!shown(parS)) parS = SUBJV()[0].name;
 }
@@ -319,14 +633,14 @@ function go(tab) {
   for (const p of document.querySelectorAll('[data-panel]')) p.hidden = p.dataset.panel !== tab;
   RENDER[tab]();
 }
-$('#tabs').addEventListener('click', e => { const b = e.target.closest('button[data-tab]'); if (!b) return; go(b.dataset.tab); history.replaceState(null, '', '#' + b.dataset.tab); });
+$('#tabs').addEventListener('click', e => { const b = e.target.closest('button[data-tab]'); if (!b) return; go(b.dataset.tab); history.replaceState(null, '', location.search + '#' + b.dataset.tab); });
 
-// language
+// language: interface, names and (where translated) topic texts
 $('#lang').addEventListener('click', e => {
   const b = e.target.closest('button[data-lang]'); if (!b) return;
   LANG = b.dataset.lang;
-  for (const x of document.querySelectorAll('#lang button')) x.setAttribute('aria-pressed', x === b);
-  RENDER[TAB](); if (DRAW) $('#dBody').innerHTML = DRAW();
+  setParam('lang', LANG === NAT ? null : LANG);
+  applyLang(); RENDER[TAB](); if (DRAW) $('#dBody').innerHTML = DRAW();
 });
 
 function subjectBar(el, cur, onPick) {
@@ -337,7 +651,7 @@ function subjectBar(el, cur, onPick) {
 // ---------- drawer ----------
 let SEL = null, DRAW = null;
 function openDrawer(fn) { DRAW = fn; $('#dBody').innerHTML = fn(); $('#drawer').classList.add('open'); $('#drawer').scrollTop = 0; }
-function closeDrawer() { $('#drawer').classList.remove('open'); DRAW = null; SEL = null; markSel(); history.replaceState(null, '', '#' + TAB); }
+function closeDrawer() { $('#drawer').classList.remove('open'); DRAW = null; SEL = null; markSel(); history.replaceState(null, '', location.search + '#' + TAB); }
 function openTopic(i) {
   const t = T[i]; SEL = i;
   if (TAB === 'map' && t.s !== mapS) { mapS = t.s; renderMap(); }
@@ -349,13 +663,13 @@ function openTopic(i) {
       if (cr.left < wr.left + 190 || cr.right > Math.min(wr.right, innerWidth - 560)) w.scrollLeft += cr.left - wr.left - 200; }
   }
   for (const r of document.querySelectorAll('#fList .row')) r.setAttribute('aria-selected', +r.dataset.i === i);
-  history.replaceState(null, '', '#t/' + t.k);
+  history.replaceState(null, '', location.search + '#t/' + t.k);
 }
 function openDomain(s, d) { SEL = null; markSel(); openDrawer(() => domainHTML(s, d)); }
 $('#dClose').onclick = closeDrawer;
 $('#drawer').addEventListener('click', e => {
   const g = e.target.closest('[data-go]'); if (g) { e.preventDefault(); openTopic(+g.dataset.go); return; }
-  const p = e.target.closest('[data-path]'); if (p) { closeDrawer(); focusPath(+p.dataset.path); go('path'); history.replaceState(null, '', '#path/' + T[+p.dataset.path].k); return; }
+  const p = e.target.closest('[data-path]'); if (p) { closeDrawer(); focusPath(+p.dataset.path); go('path'); history.replaceState(null, '', location.search + '#path/' + T[+p.dataset.path].k); return; }
   const m = e.target.closest('[data-map]'); if (m) { const t = T[+m.dataset.map]; mapS = t.s; go('map'); openTopic(t.i); return; }
   const dm = e.target.closest('[data-dom]'); if (dm) { openDomain(dm.dataset.s, dm.dataset.dom); }
 });
@@ -364,7 +678,13 @@ document.addEventListener('keydown', e => { if (e.key !== 'Escape') return; if (
 const linkT = t => `<button type="button" class="lnk" data-go="${t.i}">${esc(nm(t))}</button>`;
 function edgeItem(e) {
   const o = T[e.t];
-  return `<li><span class="pill ${e.h ? 'hard' : ''}" ${tipA(e.h ? 'Required: needed before this topic' : 'Helpful: makes this topic easier')}>${e.h ? 'required' : 'helpful'}</span>${linkT(o)} <span class="k">${gradeLab(o)}${o.s !== cur().s ? ' · ' + esc(sname(o.s)) : ''}</span><div class="k">${esc(e.r)}</div></li>`;
+  return `<li><span class="pill ${e.h ? 'hard' : ''}" ${tipA(L(e.h ? 'req.tip' : 'help.tip'))}>${esc(L(e.h ? 'req' : 'help'))}</span>${linkT(o)} <span class="k">${gradeLab(o)}${o.s !== cur().s ? ' · ' + esc(sname(o.s)) : ''}</span><div class="k">${esc(why(e))}</div></li>`;
+}
+// counterparts in the comparison target (os-taxonomy for Germany, the German taxonomy for Romania)
+function matchHTML(m) {
+  if (CFG.country === 'de') { const [id, rel, note, n, s, d, a] = m; return `<div class="ref"><span class="pill">${esc(REL(rel))}</span><a href="../comparison/index.html${cmpQ()}#os/${esc(id)}">${esc(n)}</a> <span class="k">${esc(s)} › ${esc(d)}${a != null ? ' · ' + esc(L('cp.age', { a })) : ''}</span>${pick(note) ? `<div class="k">${esc(pick(note))}</div>` : ''}</div>`; }
+  const [k, rel, note, N, S, Dm, a, g] = m;
+  return `<div class="ref"><span class="pill">${esc(REL(rel))}</span><a href="../de-taxonomy/index.html${LANG === 'de' ? '' : '?lang=' + LANG}#t/${esc(k)}">${esc(pick(N))}</a> <span class="k">${LANG === 'de' ? '' : esc(N.de) + ' · '}${esc(pick(S))} › ${esc(pick(Dm))} · ${g === 0 ? 'Vorschule' : 'Klasse ' + g} (${esc(L('age', { a, b: a + 1 }))})</span>${pick(note) ? `<div class="k">${esc(pick(note))}</div>` : ''}</div>`;
 }
 let CUR = null; const cur = () => CUR;
 function topicHTML(t) {
@@ -375,54 +695,56 @@ function topicHTML(t) {
   const bySrc = new Map(); for (const k of t.std) { const x = STD.get(k); const slug = k.split(':')[0]; if (!bySrc.has(slug)) bySrc.set(slug, []); bySrc.get(slug).push(x || { code: k.slice(slug.length + 1) }); }
   const c = clusterFor(t.s, t.d, bandOf(t.g[0]));
   const ms = [...t.m].sort((a, b) => relRank[a[1]] - relRank[b[1]]);
+  const lvl = CFG_C.levelLab(t), notes = tx(t, 'LN');
+  const translated = LANG === 'en' || (t.DS && t.DS[LANG] != null);
   return `<div class="k"><button type="button" class="lnk" data-s="${esc(t.s)}" data-dom="${esc(t.d)}">${esc(sname(t.s))} › ${esc(dname(t.s, t.d))}</button></div>
     <h2 style="margin-top:6px">${esc(nm(t))}</h2><div class="sub" style="margin:0">${esc(alt(t))}</div>
-    <div class="pills"><span class="pill">${gradeLab(t)}</span><span class="pill">age ${t.a[0]}–${t.a[1]}</span><span class="pill">${esc(t.sg)}</span>${t.cl ? `<span class="pill ${t.cl === 'eA' ? 'hard' : ''}">${LEVEL[t.cl]}</span>` : ''}<span class="pill">${TYPE[t.ty] || t.ty}</span>${t.x ? '<span class="pill">German-specific</span>' : ''}</div>
-    <p>${esc(t.ds)}</p>
-    <h3>Signs they have got it</h3><ul>${t.ev.map(e => `<li>${esc(e)}</li>`).join('')}</ul>
-    <h3>Quick check for parents</h3><div class="quote">${esc(t.ap.replace(/\{\{name\}\}/g, 'your child'))}</div>
-    ${t.ln ? `<h3>Varies by Land</h3><p>${esc(t.ln)}</p>` : ''}
-    <h3>Needs first (${P.length})</h3>${P.length ? `<ul>${P.map(edgeItem).join('')}</ul>` : '<p class="k">Nothing: this is a starting point.</p>'}
-    ${nAnc ? `<p><button type="button" class="btn primary" data-path="${t.i}">Show the full learning path (${nAnc} topic${nAnc === 1 ? '' : 's'} before this)</button></p>` : ''}
-    <h3>Leads on to (${U.length})</h3>${U.length ? `<ul>${U.map(edgeItem).join('')}</ul>` : '<p class="k">No later topic builds on this directly.</p>'}
-    ${nD ? `<p class="k">${nD} later topic${nD === 1 ? '' : 's'} build on this directly or indirectly.</p>` : ''}
-    ${c ? `<h3>Parent summary · ${esc(sname(t.s))} › ${esc(dname(t.s, t.d))} · ${BAND[c.g]}</h3><p>${esc(LANG === 'de' ? c.sd : c.su)}</p><p class="k">${esc(LANG === 'de' ? c.su : c.sd)}</p>` : ''}
-    <h3>Curriculum references (${t.std.length})</h3>${[...bySrc].map(([slug, xs]) => { const s = SRC.get(slug); return `<div class="ref"><b>${esc(s?.name || slug)}</b>${s?.region ? ` <span class="k">· ${esc(s.region)}</span>` : ''}${s?.url ? ` · <a href="${esc(s.url)}" target="_blank" rel="noopener">source ↗</a>` : ''}<ul>${xs.map(x => `<li><code>${esc(x.code)}</code> ${esc(x.td || '')}${x.te ? ` <span class="k">— ${esc(x.te)}</span>` : ''}</li>`).join('')}</ul></div>`; }).join('') || '<p class="k">none</p>'}
-    <h3>os-taxonomy counterparts (${ms.length})</h3>${ms.length ? ms.map(([id, rel, note, n, s, d, a]) => `<div class="ref"><span class="pill">${REL[rel]}</span><a href="../comparison/index.html#os/${esc(id)}">${esc(n)}</a> <span class="k">${esc(s)} › ${esc(d)}${a != null ? ` · os start age ${a}` : ''}</span>${note ? `<div class="k">${esc(note)}</div>` : ''}</div>`).join('') : '<p class="k">None: no comparable topic in os-taxonomy.</p>'}
-    <p style="margin-top:14px"><a href="../comparison/index.html#de/${esc(t.k)}">Open in the comparison explorer →</a> <span class="k">· key <code>${esc(t.k)}</code></span></p>`;
+    <div class="pills"><span class="pill">${gradeLab(t)}</span><span class="pill">${esc(L('age', { a: t.a[0], b: t.a[1] }))}</span><span class="pill">${esc(stageLab(t.sg))}</span>${lvl ? `<span class="pill ${CFG_C.levelHard(t) ? 'hard' : ''}">${esc(lvl)}</span>` : ''}<span class="pill">${esc(TYPE(t.ty))}</span>${t.x ? `<span class="pill">${esc(L('specific'))}</span>` : ''}</div>
+    <p>${esc(tx(t, 'DS'))}</p>${translated ? '' : `<p class="k">${esc(L('textsEn'))}</p>`}
+    <h3>${esc(L('signs'))}</h3><ul>${tx(t, 'EV').map(e => `<li>${esc(e)}</li>`).join('')}</ul>
+    <h3>${esc(L('quickCheck'))}</h3><div class="quote">${esc(tx(t, 'AP').replace(/\{\{name\}\}/g, t.AP && t.AP[LANG] != null ? L('yourChild') : I18N.en.yourChild))}</div>
+    ${notes ? `<h3>${esc(L('notes'))}</h3><p>${esc(notes)}</p>` : ''}
+    <h3>${esc(L('needsFirst', { n: P.length }))}</h3>${P.length ? `<ul>${P.map(edgeItem).join('')}</ul>` : `<p class="k">${esc(L('nothingFirst'))}</p>`}
+    ${nAnc ? `<p><button type="button" class="btn primary" data-path="${t.i}">${esc(L('fullPath', { n: nAnc }))}</button></p>` : ''}
+    <h3>${esc(L('leadsOnTo', { n: U.length }))}</h3>${U.length ? `<ul>${U.map(edgeItem).join('')}</ul>` : `<p class="k">${esc(L('nothingAfter'))}</p>`}
+    ${nD ? `<p class="k">${esc(L('laterAll', { n: nD }))}</p>` : ''}
+    ${c ? `<h3>${esc(L('parentSummary'))} · ${esc(sname(t.s))} › ${esc(dname(t.s, t.d))} · ${BAND[c.g]}</h3><p>${esc(clText(c))}</p>` : ''}
+    <h3>${esc(L('refs', { n: t.std.length }))}</h3>${[...bySrc].map(([slug, xs]) => { const s = SRC.get(slug); return `<div class="ref"><b>${esc(s?.name || slug)}</b>${s?.region ? ` <span class="k">· ${esc(s.region)}</span>` : ''}${s?.url ? ` · <a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(L('source'))}</a>` : ''}<ul>${xs.map(x => `<li><code>${esc(x.code)}</code> ${esc(pick(x.tt))}</li>`).join('')}</ul></div>`; }).join('') || `<p class="k">${esc(L('none'))}</p>`}
+    <h3>${esc(L('cp', { n: ms.length }))}</h3>${ms.length ? ms.map(matchHTML).join('') : `<p class="k">${esc(L('cp.none'))}</p>`}
+    <p style="margin-top:14px"><a href="${CFG_C.compareTopic(esc(t.k), cmpQ())}">${esc(L('openCompare'))}</a> <span class="k">· ${esc(L('key'))} <code>${esc(t.k)}</code></span></p>`;
 }
 function domainHTML(s, d) {
   const di = domInfo.get(s + '|' + d) || {};
   const ts = T.filter(t => t.s === s && t.d === d).sort(byGrade);
   const bands = [...new Set([...ts.map(t => bandOf(t.g[0])), ...CL.filter(c => c.s === s && c.d === d).map(c => c.g)])].sort((a, b) => a - b);
-  return `<div class="k">${esc(sname(s))} · domain</div><h2 style="margin-top:6px">${esc(dname(s, d))}</h2><div class="sub" style="margin:0">${esc(dalt(s, d))}</div>
-    ${di.basis ? `<p class="k" style="margin-top:8px">Basis: ${esc(di.basis)}</p>` : ''}<p class="k">${ts.length} topics</p>` +
+  return `<div class="k">${esc(sname(s))} · ${esc(L('domainLabel'))}</div><h2 style="margin-top:6px">${esc(dname(s, d))}</h2><div class="sub" style="margin:0">${esc(dalt(s, d))}</div>
+    ${pick(di.basis) ? `<p class="k" style="margin-top:8px">${esc(L('basis', { b: pick(di.basis) }))}</p>` : ''}<p class="k">${esc(L('nTopics', { n: ts.length }))}</p>` +
     bands.map(b => { const c = clusterFor(s, d, b); const bt = ts.filter(t => bandOf(t.g[0]) === b);
-      return `<h3>${BAND[b]} · ${bt.length} topics</h3>${c ? `<div class="quote">${esc(LANG === 'de' ? c.sd : c.su)}</div><p class="k">${esc(LANG === 'de' ? c.su : c.sd)}</p>` : ''}<ul>${bt.map(t => `<li>${linkT(t)} <span class="k">${gradeLab(t)}${t.x ? ' · German-specific' : ''}</span></li>`).join('')}</ul>`; }).join('');
+      return `<h3>${BAND[b]} · ${esc(L('nTopics', { n: bt.length }))}</h3>${c ? `<div class="quote">${esc(clText(c))}</div>` : ''}<ul>${bt.map(t => `<li>${linkT(t)} <span class="k">${gradeLab(t)}${t.x ? ' · ' + esc(L('specific')) : ''}</span></li>`).join('')}</ul>`; }).join('');
 }
 
 // ---------- curriculum map ----------
 let mapS = SUBJ[0].name;
-const chipTip = t => `<b>${esc(nm(t))}</b><br>${esc(alt(t))}<br>${gradeLab(t)} · ${TYPE[t.ty] || t.ty}${t.x ? ' · German-specific' : ''}<br><span style="color:var(--muted)">${pre[t.i].length} prerequisites · leads on to ${dep[t.i].length}</span>`;
-const chip = t => `<button type="button" class="chip" data-i="${t.i}" ${tipA(chipTip(t))}>${esc(nm(t))}${t.g[1] > t.g[0] ? `<span class="sp">→ ${t.g[1]}</span>` : ''}${t.x ? '<span class="xde">DE</span>' : ''}${t.cl === 'eA' ? '<span class="xde" title="Leistungskurs only">LK</span>' : ''}</button>`;
-const STAGE = { all: [0, 13], gs: [0, 4], s1: [5, 10], s2: [11, 13] };
+const chipTip = t => `<b>${esc(nm(t))}</b><br>${esc(alt(t))}<br>${gradeLab(t)} · ${esc(TYPE(t.ty))}${t.x ? ' · ' + esc(L('specific')) : ''}${CFG_C.levelLab(t) && CFG_C.levelHard(t) ? ' · ' + esc(CFG_C.levelLab(t)) : ''}<br><span style="color:var(--muted)">${esc(L('chipTip', { p: pre[t.i].length, d: dep[t.i].length }))}</span>`;
+const chip = t => { const bd = CFG_C.badge(t); return `<button type="button" class="chip" data-i="${t.i}" ${tipA(chipTip(t))}>${esc(nm(t))}${t.g[1] > t.g[0] ? `<span class="sp">→ ${CFG_C.gEnd(t.g[1])}</span>` : ''}${t.x ? `<span class="xde">${CFG.country.toUpperCase()}</span>` : ''}${bd ? `<span class="xde" title="${esc(bd[1])}">${esc(bd[0])}</span>` : ''}</button>`; };
 let mapStage = 'all';
+const stageRange = k => k === 'all' ? [0, CFG_C.maxGrade] : CFG_C.stages.find(s => s[0] === k).slice(1, 3);
 $('#mapStage').addEventListener('click', e => { const b = e.target.closest('[data-st]'); if (!b) return; mapStage = b.dataset.st; for (const x of document.querySelectorAll('#mapStage button')) x.setAttribute('aria-pressed', x === b); renderMap(); });
 function renderMap() {
-  subjectBar($('#mapSubj'), mapS, s => { mapS = s; renderMap(); history.replaceState(null, '', '#map/' + encodeURIComponent(s)); });
+  subjectBar($('#mapSubj'), mapS, s => { mapS = s; renderMap(); history.replaceState(null, '', location.search + '#map/' + encodeURIComponent(s)); });
   const si = subjInfo.get(mapS);
-  $('#mapDesc').textContent = si.description;
-  const [s0, s1] = STAGE[mapStage];
+  $('#mapDesc').textContent = pick(si.descs);
+  const [s0, s1] = stageRange(mapStage);
   const ts = T.filter(t => t.s === mapS && t.g[0] >= s0 && t.g[0] <= s1);
-  if (!ts.length) { $('#map').innerHTML = `<p class="sub" style="padding:16px">${esc(sname(mapS))} has no topics starting in this stage.</p>`; applyMapFilter(); markSel(); return; }
+  if (!ts.length) { $('#map').innerHTML = `<p class="sub" style="padding:16px">${esc(L('noTopicsStage', { s: sname(mapS) }))}</p>`; applyMapFilter(); markSel(); return; }
   const g0 = Math.min(...ts.map(t => t.g[0])), g1 = Math.min(s1, Math.max(si.grades[1], ...ts.map(t => t.g[0])));
   const cols = []; for (let g = g0; g <= g1; g++) cols.push(g);
   const doms = [...new Set([...si.domains.map(d => d.name), ...ts.map(t => t.d)])].filter(d => ts.some(t => t.d === d));
-  let h = `<div class="map" style="grid-template-columns: 190px repeat(${cols.length}, minmax(165px, 1fr)); min-width: ${190 + cols.length * 165}px"><div class="hd corner">${LANG === 'de' ? 'Bereich' : 'Domain'}</div>` +
-    cols.map(g => `<div class="hd">${colLab(g)}<div class="k">age ${g + 5}–${g + 6}</div></div>`).join('');
+  let h = `<div class="map" style="grid-template-columns: 190px repeat(${cols.length}, minmax(165px, 1fr)); min-width: ${190 + cols.length * 165}px"><div class="hd corner">${esc(L('domain'))}</div>` +
+    cols.map(g => `<div class="hd">${colLab(g)}<div class="k">${esc(ageLab(g))}</div></div>`).join('');
   for (const d of doms) {
     const dt = ts.filter(t => t.d === d);
-    h += `<div class="dl" data-dom="${esc(d)}" ${tipA('Click for the domain overview and parent summaries')}>${esc(dname(mapS, d))}<span class="k">${dt.length} topics</span></div>`;
+    h += `<div class="dl" data-dom="${esc(d)}" ${tipA(esc(L('domainTip')))}>${esc(dname(mapS, d))}<span class="k">${esc(L('nTopics', { n: dt.length }))}</span></div>`;
     for (const g of cols) h += `<div class="cell">${dt.filter(t => t.g[0] === g).sort(byGrade).map(chip).join('')}</div>`;
   }
   $('#map').innerHTML = h + '</div>';
@@ -433,16 +755,16 @@ function applyMapFilter() {
   let n = 0, tot = 0;
   for (const c of document.querySelectorAll('#map .chip')) {
     const t = T[+c.dataset.i]; tot++;
-    const ok = (!q || (t.nd + ' ' + t.n + ' ' + t.ds).toLowerCase().includes(q)) && (!x || t.x);
+    const ok = (!q || t.q.includes(q)) && (!x || t.x);
     c.classList.toggle('dim', !ok); if (ok) n++;
   }
-  $('#mapCount').textContent = q || x ? `${n} of ${tot} topics match` : `${tot} topics · columns show the Klasse where a topic starts; “→ 4” means it continues to Klasse 4`;
+  $('#mapCount').textContent = q || x ? L('match', { n, tot }) : L('mapCount', { tot });
 }
 function markSel() {
   const P = SEL == null ? new Set() : new Set(pre[SEL].map(e => e.t)), U = SEL == null ? new Set() : new Set(dep[SEL].map(e => e.t));
   for (const c of document.querySelectorAll('#map .chip')) { const i = +c.dataset.i; c.classList.toggle('sel', i === SEL); c.classList.toggle('pre', P.has(i)); c.classList.toggle('dep', U.has(i)); }
-  $('#mapLegend').innerHTML = SEL == null ? '<span class="k">Click a topic for details, its prerequisites and curriculum references. Click a domain name for its parent summaries.</span>'
-    : `<span><i class="sw sel"></i>selected</span><span><i class="sw pre"></i>needs first (${P.size})</span><span><i class="sw dep"></i>leads on to (${U.size})</span><span class="k">Links to other subjects are listed in the details panel.</span>`;
+  $('#mapLegend').innerHTML = SEL == null ? `<span class="k">${esc(L('mapHelp'))}</span>`
+    : `<span><i class="sw sel"></i>${esc(L('selected'))}</span><span><i class="sw pre"></i>${esc(L('needsFirstN', { n: P.size }))}</span><span><i class="sw dep"></i>${esc(L('leadsOnToN', { n: U.size }))}</span><span class="k">${esc(L('otherSubjectsHint'))}</span>`;
 }
 $('#map').addEventListener('click', e => {
   const c = e.target.closest('.chip'); if (c) { openTopic(+c.dataset.i); return; }
@@ -451,49 +773,47 @@ $('#map').addEventListener('click', e => {
 $('#mapQ').addEventListener('input', applyMapFilter); $('#mapX').addEventListener('change', applyMapFilter);
 
 // ---------- all topics ----------
-function fillSelect(el, first, opts) { const v = el.value; el.innerHTML = `<option value="">${esc(first)}</option>` + opts.map(([val, lab]) => `<option value="${esc(val)}">${esc(lab)}</option>`).join(''); el.value = opts.some(o => o[0] === v) ? v : ''; }
 function renderTopics() {
-  fillSelect($('#fS'), 'All subjects', SUBJV().map(s => [s.name, sname(s.name)]));
+  fillSelect($('#fS'), L('allSubjects'), SUBJV().map(s => [s.name, sname(s.name)]));
   const s = $('#fS').value;
   const doms = s ? subjInfo.get(s).domains.map(d => [d.name, dname(s, d.name)]) : [];
-  fillSelect($('#fD'), s ? 'All domains' : 'All domains (pick a subject)', doms);
-  if (!$('#fT').options.length) fillSelect($('#fT'), 'All types', Object.entries(TYPE));
+  fillSelect($('#fD'), s ? L('allDomains') : L('allDomainsPick'), doms);
   const lv = $('#fL').value, d = $('#fD').value, g = $('#fG').value, ty = $('#fT').value, o = $('#fO').value, x = $('#fX').checked, q = $('#fQ').value.trim().toLowerCase(), sort = $('#fSort').value;
-  const xs = T.filter(t => shown(t.s) && (!lv || t.cl === lv) && (!s || t.s === s) && (!d || t.d === d) && (g === '' || (t.g[0] <= +g && t.g[1] >= +g)) && (!ty || t.ty === ty) && (!x || t.x) &&
-    (o === '' || (o === '1') === t.m.some(m => COVER.has(m[1]))) && (!q || (t.nd + ' ' + t.n + ' ' + t.ds + ' ' + t.d).toLowerCase().includes(q)));
+  const xs = T.filter(t => shown(t.s) && (!lv || CFG_C.levelMatch(t, lv)) && (!s || t.s === s) && (!d || t.d === d) && (g === '' || (t.g[0] <= +g && t.g[1] >= +g)) && (!ty || t.ty === ty) && (!x || t.x) &&
+    (o === '' || (o === '1') === t.m.some(m => COVER.has(m[1]))) && (!q || (t.q + ' ' + t.d.toLowerCase()).includes(q)));
   if (sort === 'name') xs.sort((a, b) => nm(a).localeCompare(nm(b)));
   else if (sort === 'unlocks') xs.sort((a, b) => nDesc(b.i) - nDesc(a.i));
   else xs.sort((a, b) => byGrade(a, b) || a.s.localeCompare(b.s));
-  $('#fCount').textContent = `${xs.length} topics`;
-  $('#fList').innerHTML = xs.map(t => `<div class="row" data-i="${t.i}" aria-selected="${t.i === SEL}"><div><b>${esc(nm(t))}</b> <span class="k">· ${esc(alt(t))}</span>${t.x ? '<span class="xde">DE</span>' : ''}</div><div class="meta">${esc(sname(t.s))} › ${esc(dname(t.s, t.d))} · ${gradeLab(t)}${t.cl ? ' · ' + LEVEL[t.cl] : ''} · ${TYPE[t.ty] || t.ty}${sort === 'unlocks' ? ` · ${nDesc(t.i)} later topics build on it` : ''}</div></div>`).join('') || '<div class="row k">No topics match these filters.</div>';
+  $('#fCount').textContent = L('nTopics', { n: xs.length });
+  $('#fList').innerHTML = xs.map(t => { const lvl = CFG_C.levelLab(t); return `<div class="row" data-i="${t.i}" aria-selected="${t.i === SEL}"><div><b>${esc(nm(t))}</b> <span class="k">· ${esc(alt(t))}</span>${t.x ? `<span class="xde">${CFG.country.toUpperCase()}</span>` : ''}</div><div class="meta">${esc(sname(t.s))} › ${esc(dname(t.s, t.d))} · ${gradeLab(t)}${lvl ? ' · ' + esc(lvl) : ''} · ${esc(TYPE(t.ty))}${sort === 'unlocks' ? ' · ' + esc(L('laterBuild', { n: nDesc(t.i) })) : ''}</div></div>`; }).join('') || `<div class="row k">${esc(L('noMatches'))}</div>`;
 }
 for (const id of ['#fS', '#fD', '#fG', '#fL', '#fT', '#fO', '#fX', '#fSort']) $(id).addEventListener('change', renderTopics);
 $('#fQ').addEventListener('input', renderTopics);
 $('#fList').addEventListener('click', e => { const r = e.target.closest('.row[data-i]'); if (r) openTopic(+r.dataset.i); });
 
 // ---------- learning paths ----------
-let PF = (byKey.get('ma-zo-schriftliche-subtraktion') || T[0]).i; const PHIST = [];
+let PF = CFG_C.defaultPath(T[0]).i; const PHIST = [];
 function focusPath(i, push = true) { if (push && i !== PF) PHIST.push(PF); PF = i; }
 function renderPath() {
   const t = T[PF], all = reach(PF, pre), sv = $('#pSteps').value;
   const lim = sv === 'all' ? Infinity : sv === 'auto' ? (all.size > 40 ? 3 : Infinity) : +sv;
   const anc = reach(PF, pre, lim), unl = $('#pUnl').checked ? dep[PF].map(e => e.t) : [];
   $('#pBack').disabled = !PHIST.length;
-  $('#pFocus').innerHTML = `<div class="k">${esc(sname(t.s))} › ${esc(dname(t.s, t.d))} · ${gradeLab(t)} · age ${t.a[0]}–${t.a[1]}</div><h2 style="margin:4px 0 2px">${esc(nm(t))}</h2><div class="sub" style="margin:0 0 6px">${esc(alt(t))}</div><p style="font-size:13px;line-height:1.5;margin:0 0 8px;max-width:900px">${esc(t.ds)}</p>
-    <div class="k">${all.size} topic${all.size === 1 ? '' : 's'} come before this one${anc.size < all.size ? `; showing the ${anc.size} within ${lim} step${lim === 1 ? '' : 's'}` : ''} · ${dep[PF].length} build on it directly · <button type="button" class="lnk" id="pDetails">Details</button></div>`;
+  $('#pFocus').innerHTML = `<div class="k">${esc(sname(t.s))} › ${esc(dname(t.s, t.d))} · ${gradeLab(t)} · ${esc(L('age', { a: t.a[0], b: t.a[1] }))}</div><h2 style="margin:4px 0 2px">${esc(nm(t))}</h2><div class="sub" style="margin:0 0 6px">${esc(alt(t))}</div><p style="font-size:13px;line-height:1.5;margin:0 0 8px;max-width:900px">${esc(tx(t, 'DS'))}</p>
+    <div class="k">${esc(L('before', { n: all.size }))}${anc.size < all.size ? esc(L('showingWithin', { m: anc.size, k: lim, n: lim })) : ''} · ${esc(L('buildDirect', { n: dep[PF].length }))} · <button type="button" class="lnk" id="pDetails">${esc(L('details'))}</button></div>`;
   $('#pDetails').onclick = () => openTopic(PF);
   $('#graph').innerHTML = drawPath(PF, anc, unl);
   const gw = $('#graph'), fx = gw.querySelector('.gnode.focus'); if (fx) gw.scrollLeft = Math.max(0, fx.getBoundingClientRect().left - gw.getBoundingClientRect().left + gw.scrollLeft - gw.clientWidth + 2 * 214 + 120);
   const grp = new Map(); for (const i of anc.keys()) { const g = T[i].g[0]; if (!grp.has(g)) grp.set(g, []); grp.get(g).push(T[i]); }
-  $('#pList').innerHTML = `<h2>${anc.size ? `Everything before “${esc(nm(t))}”, by Klasse` : 'No prerequisites: this is a starting point'}</h2>${anc.size ? `<p class="sub">Read top to bottom for a suggested teaching order.</p>` : ''}<div class="cols">${[...grp].sort((a, b) => a[0] - b[0]).map(([g, ts]) => `<div class="grp"><b>${g === 0 ? 'Vorschule' : 'Klasse ' + g}</b>${ts.sort(byGrade).map(x => `<div><button type="button" class="lnk" data-c="${x.i}">${esc(nm(x))}</button>${x.s !== t.s ? ` <span class="k">· ${esc(sname(x.s))}</span>` : ''}</div>`).join('')}</div>`).join('')}</div>`;
+  $('#pList').innerHTML = `<h2>${anc.size ? esc(L('everythingBefore', { t: nm(t) })) : esc(L('startingPoint'))}</h2>${anc.size ? `<p class="sub">${esc(L('readOrder'))}</p>` : ''}<div class="cols">${[...grp].sort((a, b) => a[0] - b[0]).map(([g, ts]) => `<div class="grp"><b>${colLab(g)}</b>${ts.sort(byGrade).map(x => `<div><button type="button" class="lnk" data-c="${x.i}">${esc(nm(x))}</button>${x.s !== t.s ? ` <span class="k">· ${esc(sname(x.s))}</span>` : ''}</div>`).join('')}</div>`).join('')}</div>`;
 }
 function drawPath(f, anc, unl) {
-  const set = new Set([f, ...anc.keys()]), L = new Map([[f, 0]]);
-  const lay = n => { if (L.has(n)) return L.get(n); let m = 0; for (const e of dep[n]) if (set.has(e.t)) m = Math.max(m, lay(e.t) + 1); L.set(n, m); return m; };
+  const set = new Set([f, ...anc.keys()]), Ly = new Map([[f, 0]]);
+  const lay = n => { if (Ly.has(n)) return Ly.get(n); let m = 0; for (const e of dep[n]) if (set.has(e.t)) m = Math.max(m, lay(e.t) + 1); Ly.set(n, m); return m; };
   for (const n of set) lay(n);
-  const maxL = Math.max(...L.values());
+  const maxL = Math.max(...Ly.values());
   const cols = Array.from({ length: maxL + 1 + (unl.length ? 1 : 0) }, () => []);
-  for (const [n, l] of L) cols[maxL - l].push(n);
+  for (const [n, l] of Ly) cols[maxL - l].push(n);
   if (unl.length) cols[maxL + 1] = unl.slice();
   const fs = T[f].s, own = n => T[n].s === fs ? 0 : 1;
   for (const c of cols) c.sort((a, b) => own(a) - own(b) || T[a].g[0] - T[b].g[0] || nm(T[a]).localeCompare(nm(T[b])));
@@ -512,17 +832,17 @@ function drawPath(f, anc, unl) {
   const XY = new Map();
   cols.forEach((c, ci) => { const off = (maxRows - c.length) * (NH + GY) / 2; c.forEach((n, k) => XY.set(n, [PAD + ci * (NW + GX), PAD + HEAD + off + k * (NH + GY)])); });
   const edges = [];
-  for (const n of set) for (const e of pre[n]) if (set.has(e.t)) edges.push([e.t, n, e.h, e.r, n]);
-  for (const e of dep[f]) if (unl.includes(e.t)) edges.push([f, e.t, e.h, e.r, e.t]);
+  for (const n of set) for (const e of pre[n]) if (set.has(e.t)) edges.push([e.t, n, e.h, why(e), n]);
+  for (const e of dep[f]) if (unl.includes(e.t)) edges.push([f, e.t, e.h, why(e), e.t]);
   const curve = (a, b) => { const [x1, y1] = XY.get(a), [x2, y2] = XY.get(b); const sx = x1 + NW, sy = y1 + NH / 2, ex = x2, ey = y2 + NH / 2, dx = Math.max(28, (ex - sx) / 2); return `M${sx},${sy} C${sx + dx},${sy} ${ex - dx},${ey} ${ex},${ey}`; };
   const trunc = (s, n) => s.length > n ? s.slice(0, n - 1) + '…' : s;
-  let s = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Learning path graph">`;
-  cols.forEach((c, ci) => { const k = maxL - ci; const lab = ci > maxL ? 'Leads on to' : k === 0 ? 'Centre topic' : k === 1 ? 'Directly before' : `${k} steps before`; s += `<text class="colhd" x="${PAD + ci * (NW + GX) + NW / 2}" y="${PAD + 12}" text-anchor="middle">${lab}</text>`; });
-  for (const [a, b, h, r, tgt] of edges) { const d = curve(a, b); const tt = tipA(`<b>${esc(nm(T[a]))}</b> → <b>${esc(nm(T[tgt]))}</b><br>${h ? 'Required' : 'Helpful'}: ${esc(r)}`); s += `<path class="gedge ${h ? '' : 'soft'}" data-a="${a}" data-b="${tgt}" d="${d}"/><path class="ghit" d="${d}" ${tt}/>`; }
+  let s = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(L('pathAria'))}">`;
+  cols.forEach((c, ci) => { const k = maxL - ci; const lab = ci > maxL ? L('col.next') : k === 0 ? L('col.centre') : k === 1 ? L('col.direct') : L('col.steps', { k }); s += `<text class="colhd" x="${PAD + ci * (NW + GX) + NW / 2}" y="${PAD + 12}" text-anchor="middle">${esc(lab)}</text>`; });
+  for (const [a, b, h, r, tgt] of edges) { const d = curve(a, b); const tt = tipA(`<b>${esc(nm(T[a]))}</b> → <b>${esc(nm(T[tgt]))}</b><br>${esc(L(h ? 'required' : 'helpful'))}: ${esc(r)}`); s += `<path class="gedge ${h ? '' : 'soft'}" data-a="${a}" data-b="${tgt}" d="${d}"/><path class="ghit" d="${d}" ${tt}/>`; }
   cols.forEach((c, ci) => c.forEach(n => {
     const [x, y] = XY.get(n), t = T[n];
     const cls = n === f && ci === maxL ? 'focus' : t.s === fs ? 'same' : '';
-    s += `<g class="gnode ${cls}" data-i="${n}" transform="translate(${x},${y})" ${tipA(`<b>${esc(nm(t))}</b><br>${esc(alt(t))}<br>${gradeLab(t)} · ${esc(sname(t.s))} › ${esc(dname(t.s, t.d))}<br><span style="color:var(--muted)">${n === f ? 'Centre topic: click for details' : 'Click to centre the path here'}</span>`)}><rect width="${NW}" height="${NH}" rx="6"/><text class="t1" x="9" y="17">${esc(trunc(nm(t), 31))}</text><text class="t2" x="9" y="32">${esc(trunc(gradeLab(t) + ' · ' + sname(t.s), 36))}</text></g>`;
+    s += `<g class="gnode ${cls}" data-i="${n}" transform="translate(${x},${y})" ${tipA(`<b>${esc(nm(t))}</b><br>${esc(alt(t))}<br>${gradeLab(t)} · ${esc(sname(t.s))} › ${esc(dname(t.s, t.d))}<br><span style="color:var(--muted)">${esc(L(n === f ? 'tip.centre' : 'tip.recentre'))}</span>`)}><rect width="${NW}" height="${NH}" rx="6"/><text class="t1" x="9" y="17">${esc(trunc(nm(t), 31))}</text><text class="t2" x="9" y="32">${esc(trunc(gradeLab(t) + ' · ' + sname(t.s), 36))}</text></g>`;
   }));
   return s + '</svg>';
 }
@@ -530,23 +850,23 @@ $('#graph').addEventListener('click', e => {
   const g = e.target.closest('.gnode'); if (!g) return;
   const i = +g.dataset.i;
   if (i === PF) { openTopic(i); return; }
-  focusPath(i); renderPath(); history.replaceState(null, '', '#path/' + T[i].k);
+  focusPath(i); renderPath(); history.replaceState(null, '', location.search + '#path/' + T[i].k);
 });
 $('#graph').addEventListener('mouseover', e => {
   const g = e.target.closest('.gnode'); const id = g ? g.dataset.i : null;
   for (const p of document.querySelectorAll('#graph .gedge')) p.classList.toggle('hl', id != null && (p.dataset.a === id || p.dataset.b === id));
 });
-$('#pList').addEventListener('click', e => { const b = e.target.closest('[data-c]'); if (b) { focusPath(+b.dataset.c); renderPath(); scrollTo({ top: $('#pFocus').offsetTop - 12, behavior: 'smooth' }); history.replaceState(null, '', '#path/' + T[PF].k); } });
-$('#pBack').onclick = () => { if (!PHIST.length) return; PF = PHIST.pop(); renderPath(); history.replaceState(null, '', '#path/' + T[PF].k); };
+$('#pList').addEventListener('click', e => { const b = e.target.closest('[data-c]'); if (b) { focusPath(+b.dataset.c); renderPath(); scrollTo({ top: $('#pFocus').offsetTop - 12, behavior: 'smooth' }); history.replaceState(null, '', location.search + '#path/' + T[PF].k); } });
+$('#pBack').onclick = () => { if (!PHIST.length) return; PF = PHIST.pop(); renderPath(); history.replaceState(null, '', location.search + '#path/' + T[PF].k); };
 $('#pSteps').addEventListener('change', renderPath); $('#pUnl').addEventListener('change', renderPath);
 $('#pq').addEventListener('input', () => {
   const q = $('#pq').value.trim().toLowerCase(), box = $('#psug');
   if (!q) { box.hidden = true; return; }
-  const xs = T.filter(t => shown(t.s) && (t.nd + ' ' + t.n).toLowerCase().includes(q)).sort((a, b) => ((b.nd.toLowerCase().startsWith(q) || b.n.toLowerCase().startsWith(q)) - (a.nd.toLowerCase().startsWith(q) || a.n.toLowerCase().startsWith(q))) || byGrade(a, b)).slice(0, 14);
-  box.innerHTML = xs.map(t => `<div class="row" data-i="${t.i}"><b>${esc(nm(t))}</b> <span class="k">· ${esc(alt(t))}</span><div class="meta">${esc(sname(t.s))} · ${gradeLab(t)} · ${reach(t.i, pre).size} topics before</div></div>`).join('') || '<div class="row k">No match</div>';
+  const xs = T.filter(t => shown(t.s) && t.q.includes(q)).sort((a, b) => (nm(b).toLowerCase().startsWith(q) - nm(a).toLowerCase().startsWith(q)) || byGrade(a, b)).slice(0, 14);
+  box.innerHTML = xs.map(t => `<div class="row" data-i="${t.i}"><b>${esc(nm(t))}</b> <span class="k">· ${esc(alt(t))}</span><div class="meta">${esc(sname(t.s))} · ${gradeLab(t)} · ${esc(L('topicsBefore', { n: reach(t.i, pre).size }))}</div></div>`).join('') || `<div class="row k">${esc(L('noMatch'))}</div>`;
   box.hidden = false;
 });
-$('#psug').addEventListener('click', e => { const r = e.target.closest('.row[data-i]'); if (!r) return; focusPath(+r.dataset.i); $('#psug').hidden = true; $('#pq').value = ''; renderPath(); history.replaceState(null, '', '#path/' + T[PF].k); });
+$('#psug').addEventListener('click', e => { const r = e.target.closest('.row[data-i]'); if (!r) return; focusPath(+r.dataset.i); $('#psug').hidden = true; $('#pq').value = ''; renderPath(); history.replaceState(null, '', location.search + '#path/' + T[PF].k); });
 document.addEventListener('click', e => { if (!e.target.closest('#psug') && e.target !== $('#pq')) $('#psug').hidden = true; });
 
 // ---------- parent summaries ----------
@@ -556,20 +876,20 @@ function renderParents() {
   const si = subjInfo.get(parS), ts = T.filter(t => t.s === parS);
   const bands = [...new Set(CL.filter(c => c.s === parS).map(c => c.g))].sort((a, b) => a - b);
   const doms = si.domains.map(d => d.name).filter(d => ts.some(t => t.d === d) || CL.some(c => c.s === parS && c.d === d));
-  $('#parBody').innerHTML = `<table class="ptable"><thead><tr><th>${LANG === 'de' ? 'Bereich' : 'Domain'}</th>${bands.map(b => `<th>${BAND[b]}</th>`).join('')}</tr></thead><tbody>` +
+  $('#parBody').innerHTML = `<table class="ptable"><thead><tr><th>${esc(L('domain'))}</th>${bands.map(b => `<th>${BAND[b]}</th>`).join('')}</tr></thead><tbody>` +
     doms.map(d => `<tr><td>${esc(dname(parS, d))}<div class="k" style="font-weight:400">${esc(dalt(parS, d))}</div></td>${bands.map(b => { const c = clusterFor(parS, d, b); const n = ts.filter(t => t.d === d && bandOf(t.g[0]) === b).length;
-      return `<td>${c ? esc(LANG === 'de' ? c.sd : c.su) : '<span class="k">–</span>'}${n ? `<div style="margin-top:4px"><button type="button" class="lnk" data-pd="${esc(d)}">${n} topic${n === 1 ? '' : 's'} →</button></div>` : ''}</td>`; }).join('')}</tr>`).join('') + '</tbody></table>';
+      return `<td>${c ? esc(clText(c)) : '<span class="k">–</span>'}${n ? `<div style="margin-top:4px"><button type="button" class="lnk" data-pd="${esc(d)}">${esc(L('nTopics', { n }))} →</button></div>` : ''}</td>`; }).join('')}</tr>`).join('') + '</tbody></table>';
 }
 $('#parBody').addEventListener('click', e => { const b = e.target.closest('[data-pd]'); if (b) openDomain(parS, b.dataset.pd); });
 
 // ---------- sources ----------
 let OPEN_SRC = null;
 function renderSources() {
-  const rows = [...D.sources].sort((a, b) => (!!a.region - !!b.region) || a.region.localeCompare(b.region) || (b.name.startsWith('KMK') - a.name.startsWith('KMK')) || a.name.localeCompare(b.name));
+  const rows = [...D.sources].sort(CFG_C.sortSources);
   const linked = s => new Set(s.codes.flatMap(c => stdTopics.get(s.slug + ':' + c[0]) || [])).size;
-  $('#srcT').innerHTML = `<thead><tr><th>Source</th><th>Scope</th><th>Level</th><th class="n">Codes</th><th class="n">Topics</th></tr></thead><tbody>` + rows.map(s => {
-    let h = `<tr class="srow" data-slug="${esc(s.slug)}"><td><b>${OPEN_SRC === s.slug ? '▾' : '▸'} ${esc(s.name)}</b><div class="k">${esc(s.version)}</div></td><td>${esc(s.region || 'Germany-wide')}</td><td>${esc(s.level)}</td><td class="n">${s.codes.length}</td><td class="n">${linked(s)}</td></tr>`;
-    if (OPEN_SRC === s.slug) h += `<tr><td colspan="5"><p class="sub">${esc(s.notes)} ${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">Official source ↗</a>` : ''}</p><table><thead><tr><th>Code</th><th>Paraphrase</th><th>Area</th><th>Kl.</th><th>Topics</th></tr></thead><tbody>${s.codes.map(([code, td, te, area, gr]) => `<tr><td><code>${esc(code)}</code></td><td>${esc(td)}<div class="k">${esc(te)}</div></td><td class="k">${esc(area)}</td><td class="k">${esc(gr)}</td><td>${(stdTopics.get(s.slug + ':' + code) || []).map(i => `<div><button type="button" class="lnk" data-go="${i}">${esc(nm(T[i]))}</button></div>`).join('') || '<span class="k">–</span>'}</td></tr>`).join('')}</tbody></table></td></tr>`;
+  $('#srcT').innerHTML = `<thead><tr><th>${esc(L('src.source'))}</th><th>${esc(L('src.scope'))}</th><th>${esc(L('src.level'))}</th><th class="n">${esc(L('src.codes'))}</th><th class="n">${esc(L('src.topics'))}</th></tr></thead><tbody>` + rows.map(s => {
+    let h = `<tr class="srow" data-slug="${esc(s.slug)}"><td><b>${OPEN_SRC === s.slug ? '▾' : '▸'} ${esc(s.name)}</b><div class="k">${esc(s.version)}</div></td><td>${esc(CFG_C.region(s))}</td><td>${esc(s.level)}</td><td class="n">${s.codes.length}</td><td class="n">${linked(s)}</td></tr>`;
+    if (OPEN_SRC === s.slug) h += `<tr><td colspan="5"><p class="sub">${esc(pick(s.notes))} ${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(L('src.official'))}</a>` : ''}</p><table><thead><tr><th>${esc(L('src.code'))}</th><th>${esc(L('src.para'))}</th><th>${esc(L('src.area'))}</th><th>${esc(L('src.grade'))}</th><th>${esc(L('src.topics'))}</th></tr></thead><tbody>${s.codes.map(([code, tt, area, gr]) => `<tr><td><code>${esc(code)}</code></td><td>${esc(pick(tt))}</td><td class="k">${esc(area)}</td><td class="k">${esc(gr)}</td><td>${(stdTopics.get(s.slug + ':' + code) || []).map(i => `<div><button type="button" class="lnk" data-go="${i}">${esc(nm(T[i]))}</button></div>`).join('') || '<span class="k">–</span>'}</td></tr>`).join('')}</tbody></table></td></tr>`;
     return h;
   }).join('') + '</tbody>';
 }
@@ -587,7 +907,7 @@ function route() {
   else if (RENDER[kind]) go(kind);
   else go('map');
 }
-setTier(CORE); addEventListener('hashchange', route); route();
+applyLang(); setTier(CORE); addEventListener('hashchange', route); route();
 </script>
 </body>
 </html>

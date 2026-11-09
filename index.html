@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lernlandkarte: what children learn at German schools</title>
-<meta name="description" content="A graph of what children learn at German schools, from Vorschule to the Abitur: topics, prerequisites and curriculum sources, compared with Marble's os-taxonomy.">
+<title>Lernlandkarte: what children learn at school in Germany and Romania</title>
+<meta name="description" content="A graph of what children learn at school in Germany and Romania, from the first school year to the Abitur and the Bacalaureat: topics, prerequisites and curriculum sources, compared with each other and with Marble's os-taxonomy.">
 <style>
 :root {
   color-scheme: light dark;
@@ -32,7 +32,7 @@ h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.1; margin: 0 0 14px; lett
 .cards .d { font-size: 14px; color: var(--text-secondary); margin: 0 0 14px; flex: 1; }
 .cards .go { font-size: 13px; color: var(--accent); font-weight: 600; }
 h2 { font-size: 15px; margin: 0 0 8px; }
-.facts { display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 0 0 32px; padding: 0; list-style: none; font-size: 14px; color: var(--text-secondary); }
+.facts { display: grid; gap: 6px; margin: 0 0 32px; padding: 0; list-style: none; font-size: 14px; color: var(--text-secondary); }
 .facts b { color: var(--text-primary); }
 footer { border-top: 1px solid var(--ring); padding-top: 16px; font-size: 12.5px; color: var(--muted); }
 footer p { margin: 0 0 8px; max-width: 820px; }
@@ -42,9 +42,11 @@ a { color: var(--accent); }
 <body>
 <main>
   <p class="kicker">Lernlandkarte · learning map</p>
-  <h1>What children learn at German schools, and what each step builds on</h1>
-  <p class="lead">Every topic from Vorschule to the Abitur, placed in the school year it starts and linked to the topics a child needs first. Built from the KMK educational standards and the curricula of the Länder, and compared with Marble's os-taxonomy.</p>
-  <p class="note">Research prototype, written with AI assistance and not yet reviewed by German teachers. From Klasse 7 it follows the Gymnasium (G9).</p>
+  <h1>What children learn at school, and what each step builds on</h1>
+  <p class="lead">Every topic of the German and the Romanian curriculum, from the first school year to the Abitur and the Bacalaureat, placed in the year it starts and linked to the topics a child needs first. Built from the official standards and curricula, and compared with each other and with Marble's os-taxonomy.</p>
+  <p class="note">Research prototype, written with AI assistance and not yet reviewed by teachers. In Germany it follows the Gymnasium (G9) from Klasse 7; in Romania the theoretical liceu.</p>
+
+  <h2>Germany</h2>
 
   <ul class="cards">
     <li><a href="de-taxonomy/graph.html">
@@ -64,14 +66,32 @@ a { color: var(--accent); }
     </a></li>
   </ul>
 
+  <h2>Romania</h2>
+  <ul class="cards">
+    <li><a href="de-taxonomy/graph.html#ro">
+      <span class="t">3D map</span>
+      <span class="d">The Romanian curriculum on the same age scale, from clasa pregătitoare to clasa a XII-a. Switch between the Romanian and German maps to compare their shapes.</span>
+      <span class="go">Open the map →</span>
+    </a></li>
+    <li><a href="ro-taxonomy/index.html">
+      <span class="t">Taxonomy browser</span>
+      <span class="d">A curriculum map per subject, all topics, learning paths, parent summaries and the <i>programe școlare</i> behind each topic, with the liceu specialisation that teaches it.</span>
+      <span class="go">Browse the taxonomy →</span>
+    </a></li>
+    <li><a href="comparison-ro-de/index.html">
+      <span class="t">Romania vs Germany</span>
+      <span class="d">Which topics the two curricula share, which only one of them teaches, and whether Romanian children meet an idea earlier or later than German children.</span>
+      <span class="go">Open the comparison →</span>
+    </a></li>
+  </ul>
+
   <h2>What's inside</h2>
   <ul class="facts">
-    <li><b>18</b> subjects, from Mathematik to Latein</li>
-    <li><b>Vorschule–Klasse 13</b>, with Grund- and Leistungskurs</li>
-    <li><b>KMK</b> standards and <b>Länder</b> curricula</li>
-    <li>German and English names</li>
+    <li><b>Germany:</b> 18 subjects, Vorschule–Klasse 13, KMK standards and Länder curricula</li>
+    <li><b>Romania:</b> clasa pregătitoare–a XII-a, national <i>programe școlare</i></li>
+    <li>Names in German or Romanian and English</li>
   </ul>
-  <p class="note">Every page has a <b>Core only</b> switch that hides Französisch, Latein, Musik, Kunst, Sport and Religion &amp; Ethik.</p>
+  <p class="note">Every page has a <b>Core only</b> switch that hides the second foreign languages, Latin, the arts, sport, religion and (in Romania) technology and personal development.</p>
 
   <footer>
     <p>Data and source code: <a href="https://github.com/codingarchitect-wq/lernlandkarte">github.com/codingarchitect-wq/lernlandkarte</a>.</p>

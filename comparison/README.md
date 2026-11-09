@@ -7,6 +7,7 @@ explorer: [online](https://codingarchitect-wq.com/lernlandkarte/comparison/index
 `index.html#de/ma-zo-bruchbegriff`, `#os/mt_N8CpN1EJrP` or `#timing`).
 - **Timing tab:** drills into the age offsets. Compare with os-taxonomy overall or with England, the US, Australia or Ontario. Filter by school stage, subject, domain or offset, and open any topic pair to see both descriptions and the start age in every jurisdiction.
 - **Core subjects only** (top right, or `index.html?subjects=core`): recomputes every number without Französisch, Latein, Musik, Kunst, Sport and Religion & Ethik.
+- **English, Deutsch, Română** (top right, or `index.html?lang=de` / `?lang=ro`): the whole page, including topic names and descriptions, in English, German or Romanian. os-taxonomy topics stay in English.
 
 The German taxonomy itself is browsable
 [online](https://codingarchitect-wq.com/lernlandkarte/de-taxonomy/index.html), and both

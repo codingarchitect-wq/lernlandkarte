@@ -1,6 +1,6 @@
 # Generated comparison tables
 
-_Generated 2026-11-06 by `de-taxonomy/scripts/compare.mjs`. Do not edit by hand._
+_Generated 2026-11-09 by `de-taxonomy/scripts/compare.mjs`. Do not edit by hand._
 
 ## Structure
 
@@ -195,7 +195,7 @@ _Caveat: os-taxonomy Ontario contexts often carry the linked topic's own age (e.
 
 ## Do the two graphs agree on prerequisite order?
 
-German prerequisite edges whose two ends both map onto os topics: **1122**. os path prerequisite → topic exists (agree): **462** (41.2%); reversed: **93**; both ends map to the same os topic: 68; no path either way: 499.
+German prerequisite edges whose two ends both map onto os topics: **1122**. os path prerequisite → topic exists (agree): **461** (41.1%); reversed: **93**; both ends map to the same os topic: 69; no path either way: 499.
 
 Reversed examples (German order is opposite to os-taxonomy):
 
